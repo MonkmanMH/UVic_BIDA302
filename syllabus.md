@@ -19,6 +19,11 @@
 
 - vectors, lists, matricies
 
+**reference**
+
+https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/
+
+
 - tidy data
 
   - data tables
