@@ -70,4 +70,10 @@ https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/
 
 {reticulate}
 
+***
 
+## Code of Conduct
+
+[R Consortium and the R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct)
+
+-30-
