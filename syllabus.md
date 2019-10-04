@@ -1,5 +1,9 @@
 # Data Analytics Coding Fundamentals
 
+https://www.celt.iastate.edu/teaching/preparing-to-teach/how-to-create-an-effective-syllabus/
+
+
+
 ## Introduction to R
 
 
