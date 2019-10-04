@@ -63,6 +63,7 @@ https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/
 
 - R Markdown
 
+- dillinger
 
 ## Other languages for data science
 
