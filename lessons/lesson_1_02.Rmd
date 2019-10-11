@@ -2,7 +2,7 @@
 title: "lesson_1_02"
 author: "Martin Monkman"
 date: "11/10/2019"
-output: ioslides_presentation
+output: html_notebook
 ---
 
 <!-- This file by Martin is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/, adapted from  -->
@@ -16,101 +16,31 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## Load the required packages
+
+For this exercise, we will load the packages within the tidyverse
 
 ```{r}
 library(tidyverse)
 ```
 
 
+Built into Base R and other packages are data sets--handy for learning R (before we get to reading and writing data files)!
+
+So let's use the `mpg` data frame (we'll talk more about data structures later). The data is the fuel consumption of 234 different cars, collected by the U.S. Environmental Protection Agency. Getting the data is simple:
+
 ```{r}
+
 mpg
+
 ```
 
-## Quiz
-
-What relationship do you expect to see between engine size (displ) and highway fuel efficiency (hwy)?
-
-## Your Turn 1
-
-Run the code on the slide to make a graph. Pay strict attention to spelling, capitalization, and parentheses!
+We can create an x-y scatter plot using R's {ggplot2} package:
 
 ```{r}
-```
 
-## Your Turn 2
-
-Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
-
-```{r}
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy))
+
 ```
 
-## Your Turn 3
-
-Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
-
-```{r}
-ggplot(data = mpg) +
-  geom_point(mapping = aes(x = class, y = hwy))
-```
-
-## Your Turn 4
-
-Make a histogram of the `hwy` variable from `mpg`.
-
-```{r}
-ggplot(data = mpg) 
-```
-
-## Your Turn 5
-
-Make a density plot of `hwy` colored by `class`.
-
-```{r}
-ggplot(data = mpg) 
-```
-
-## Your Turn 6
-
-Make a bar chart `class` colored by `class`.
-
-```{r}
-ggplot(data = mpg) 
-```
-
-## Your Turn 7
-
-Predict what this code will do. Then run it.
-
-```{r}
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy)) +
-  geom_smooth(aes(displ, hwy))
-```
-
-## Your Turn 8
-
-What does `getwd()` return?
-
-```{r}
-getwd()
-```
-
-## Your Turn 9
-
-Save the last plot and then locate it in the files pane.
-
-```{r}
-```
-
-***
-
-# Take aways
-
-You can use this code template to make thousands of graphs with **ggplot2**.
-
-```{r, eval = FALSE}
-ggplot(data = <DATA>) +
-  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
-```
