@@ -1,4 +1,4 @@
-# UVic_DACF
+# BIDA302 - 2019
 
 ## UVic Data Analytics Coding Fundamentals (BIDA302) course materials
 
