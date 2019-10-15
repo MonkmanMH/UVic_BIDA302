@@ -11,15 +11,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Data Analysis Coding Fundamentals
 
-Martin Monkman
+### Martin Monkman
 
-* email
+* email:  **mmonkman@uvic.ca**
 
-* "office hours"
+* "office hours" via skype
 
-The course website:
+### The course website
 
-Moodle:
+* martinmonkman.com/courses/bida302_2019
+
+* syllabus, materials, lesson plans
+
 
 ## Learning outcomes
 
@@ -73,6 +76,7 @@ Web-based version of R & RStudio
 
 * later today, we'll run through the steps to install R on your own computer
 
+Page for course: https://rstudio.cloud/spaces/34702/join?access_code=lr5keQ5WXcZ5ENNAZoLEAmPSQHav8seVNT2j36e%2F
 
 ## Text book:
 
