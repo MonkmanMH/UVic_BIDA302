@@ -25,5 +25,16 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 ***
 
+Add: 
+
+* Markdown cheatsheet link
+
+* R Markdown documentation link
+
+* Dillinger
+
+
+
+
 
 

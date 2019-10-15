@@ -1,0 +1,72 @@
+---
+title: "Getting started with R"
+author: "Martin Monkman"
+date: "2019/11/02"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Step 1
+
+1. Open RStudio Cloud
+
+
+## RStudio panes
+
+## Console pane
+
+R as calculator
+
+```{r} 
+
+ 0 + 4
+
+```
+
+
+## The power of named variables
+
+
+## Creating a named object 
+
+The assignment arrow `<-`
+
+(or "<ALT> -")
+
+```{r}
+x <- 10
+y <- 4
+```
+
+> Did you notice the change in the Environment pane?
+
+
+## x plus y
+
+```{r}
+
+x + y
+
+```
+
+
+# How would you set `x` equal to 20?
+
+x <- 20
+
+# And now divide `x` by `y`
+x / y
+
+
+## R files
+# * R
+# * R Markdown
+
+## Example 1
+
+- R4DS, ch.2
+
