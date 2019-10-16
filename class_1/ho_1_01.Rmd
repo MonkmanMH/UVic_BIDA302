@@ -17,50 +17,62 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## RStudio panes
 
+
 ## Console pane
 
-R as calculator
+### R as calculator
 
-```{r} 
+In the console, type:
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
 
  0 + 4
 
-```
+</font></div>
 
-
-## The power of named variables
-
-
-## Creating a named object 
+## The power of named variables |  Creating a named object 
 
 The assignment arrow `<-`
 
-(or "<ALT> -")
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
 
-```{r}
 x <- 10
+
 y <- 4
-```
+
+</font></div>
+
 
 > Did you notice the change in the Environment pane?
 
 
 ## x plus y
 
-```{r}
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
 
 x + y
 
-```
+</font> </div>
 
 
-# How would you set `x` equal to 20?
+## How would you set x equal to 20?
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
 
 x <- 20
 
-# And now divide `x` by `y`
+</font> </div>
+
+
+## And now divide `x` by `y`
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
 x / y
 
+</font></div>
+
+---
 
 ## R files
 # * R

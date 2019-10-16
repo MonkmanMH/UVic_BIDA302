@@ -24,18 +24,6 @@ knitr::opts_chunk$set(echo = FALSE)
 * syllabus, materials, lesson plans
 
 
-## Learning outcomes
-
-- Perform basic data manipulations
-- Create variables
-- Apply key concepts of variables, constants and functions
-- Calculate descriptive statistics
-- Perform basic logical formula functions
-- Group and ungroup data
-- Data importing & exporting
-- Extract and combine data
-- Create _what-if_ scenarios
-
 ## Stucture
 
 ### Class
@@ -52,16 +40,30 @@ Saturday, 9:00 am - 4:00 pm
 
 * time in class to get started
 
-* 
+ 
 
-## Thing 1: using **R**
+## Learning outcomes
+
+- Perform basic data manipulations
+- Create variables
+- Apply key concepts of variables, constants and functions
+- Calculate descriptive statistics
+- Perform basic logical formula functions
+- Group and ungroup data
+- Data importing & exporting
+- Extract and combine data
+- Create _what-if_ scenarios
+
+
+## Meta outcome 1: using **R**
 
 Programming environment designed for statistical analysis / data science 
 
 * Focus on one tool, so you get good at that
 
 
-## Thing 2: principles 
+
+## Meta outcome 2: principles 
 
 Concepts and practices that you can carry through to other environments
 
@@ -72,19 +74,19 @@ Concepts and practices that you can carry through to other environments
 
 Web-based version of R & RStudio
 
-(add web address for course content)
+_add web address for course content_
 
 * later today, we'll run through the steps to install R on your own computer
 
-Page for course: https://rstudio.cloud/spaces/34702/join?access_code=lr5keQ5WXcZ5ENNAZoLEAmPSQHav8seVNT2j36e%2F
+
 
 ## Text book:
 
 Hadley Wickham & Garrett Grolemund, _R for Data Science_
 
-* website
+* website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
 
-* picture
+![R for Data Science](r4ds.png)
 
 ## Supplementary resources and readings
 
@@ -126,14 +128,16 @@ The R user community:
 * hex stickers!
 
 
-## Icebreaker ...
-
-
 ## Code of Conduct
 
 - from the R Consortium
 
 ~ Be a decent human being
+
+
+## Icebreaker ...
+
+
 
 
 

@@ -14,3 +14,7 @@
 
 https://github.com/data-datum/learning_R
 
+
+
+Nicole Radziwill: Intro to Statistics & Data Science with R (ISATA 251)
+https://drive.google.com/drive/folders/0B4VN55HxlNvKZmdSR2c3RGJxbVE
