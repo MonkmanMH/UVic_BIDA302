@@ -4,7 +4,7 @@ author: "Martin Monkman"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["kunoichi", "ninjutsu"]
     nature:
       ratio: 16:10
       highlightStyle: github
