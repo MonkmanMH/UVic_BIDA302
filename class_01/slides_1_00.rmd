@@ -1,36 +1,55 @@
 ---
-title: "BIDA302 - Welcome!"
+title: "Welcome! BIDA 302"
+subtitle: "Data Analytics Coding Fundamentals"
 author: "Martin Monkman"
 date: "2019/11/02"
-output: ioslides_presentation
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE)
 ```
 
-## Data Analysis Coding Fundamentals
+class: inverse
 
-### Martin Monkman
+# Martin Monkman
 
-* email:  mmonkman@uvic.ca
+email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
 
-* "office hours" via skype
+"office hours" via skype
 
-  - Tuesday, 8:00 pm to 9:00 pm
+* Tuesday, 8:00 pm to 9:00 pm
   
-  -  <a href="callto:<monkmanmh>">monkmanmh</a>
-
-### The course website
-
-* martinmonkman.com/courses/bida302_2019
-
-* syllabus, materials, lesson plans
+*  skype: <a href="callto:<monkmanmh>">monkmanmh</a>
 
 
-## Stucture
+---
 
-### Class
+
+# The course website
+
+martinmonkman.com/courses/bida302_2019
+
+* syllabus
+
+* materials
+
+* lesson plans
+
+
+---
+
+# Stucture
+
+## Class
 
 Saturday, 9:00 am - 4:00 pm
 
@@ -40,13 +59,16 @@ Saturday, 9:00 am - 4:00 pm
 
 * lots of hands-on
 
-### Assignments
+## Assignments
 
 * time in class to get started
 
  
 
-## Learning outcomes
+---
+
+
+# Learning outcomes
 
 - Perform basic data manipulations
 - Create variables
@@ -59,12 +81,20 @@ Saturday, 9:00 am - 4:00 pm
 - Create _what-if_ scenarios
 
 
+
+---
+class: inverse
+
+
 ## Meta outcome 1: using **R**
 
 Programming environment designed for statistical analysis / data science 
 
 * Focus on one tool, so you get good at that
 
+
+---
+class: inverse
 
 
 ## Meta outcome 2: principles 
@@ -74,7 +104,10 @@ Concepts and practices that you can carry through to other environments
 * will have examples of coding in Excel and Python
 
 
-## RStudio Connect
+
+---
+
+# RStudio Connect
 
 Web-based version of R & RStudio
 
@@ -84,13 +117,23 @@ _add web address for course content_
 
 
 
-## Text book:
+---
+class: inverse
+
+
+# Text book
 
 Hadley Wickham & Garrett Grolemund, _R for Data Science_
 
 * website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
 
 ![R for Data Science](../img/r4ds.png)
+
+
+---
+class: inverse
+
+
 
 ## Supplementary resources and readings
 
@@ -103,6 +146,10 @@ For each section:
 _Look for this on the course website_
 
 
+---
+class: inverse
+
+
 ## Getting help
 
 * Cheatsheets
@@ -110,6 +157,10 @@ _Look for this on the course website_
 * Stack Overflow
 
 * Vignettes and blogs
+
+
+---
+class: inverse
 
 
 
@@ -132,6 +183,10 @@ The R user community:
 * hex stickers!
 
 
+---
+class: inverse
+
+
 ## Code of Conduct
 
 - from the R Consortium
@@ -139,20 +194,23 @@ The R user community:
 ~ Be a decent human being
 
 
+---
+class: inverse
+
+
 ## Icebreaker ...
 
 
+---
+class: inverse
+
+
 ## About me
 
-
-
-## About me
 
 * UVic Geography 
 
 * BC Stats 
 
   - 1993 to present (with 5 year gap)
-
-
 
