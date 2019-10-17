@@ -142,7 +142,14 @@ The R user community:
 ## Icebreaker ...
 
 
+## About me
 
+* UVic Geography 
 
+* BC Stats 
+
+  - 1993 to present (with 5 year gap)
+
+* using R for 8 years
 
 
