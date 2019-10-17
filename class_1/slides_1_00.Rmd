@@ -13,9 +13,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Martin Monkman
 
-* email:  **mmonkman@uvic.ca**
+* email:  mmonkman@uvic.ca
 
 * "office hours" via skype
+
+  - Tuesday, 8:00 pm to 9:00 pm
+  
+  -  <a href="callto:<monkmanmh>">monkmanmh</a>
 
 ### The course website
 
