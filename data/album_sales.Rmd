@@ -1,0 +1,104 @@
+---
+title: "Rolling Stone 500 - sales data"
+output: html_notebook
+---
+
+This script uses the [_Rolling Stone's_ 500 Greatest Albums of All Time](https://en.wikipedia.org/wiki/Rolling_Stone%27s_500_Greatest_Albums_of_All_Time) (2012 version) to generate a fake sales order.
+
+Data source is 
+
+* https://data.world/notgibs/rolling-stones-top-500-albums
+
+* download link https://query.data.world/s/sc4hbemuc4htolfcah7fs7l2oukegq
+
+
+```{r setup}
+
+library(tidyverse)
+
+library(glue)
+
+```
+
+
+## Read data
+
+```{r}
+
+albumlist <- read_csv("albumlist.csv")
+
+albumlist
+
+albumlist50 <- albumlist %>%
+  filter(Number < 51)
+
+```
+
+## Generate customer (store) ID table
+
+Note: store list is defunct record retailers from [Wikipedia List of defunct Canadian companies](https://en.wikipedia.org/wiki/List_of_defunct_Canadian_companies#Consumer_retail,_including_grocery)
+
+
+```{r}
+
+storelist <- c("A&A", "A&B", "HMV", "Kelly's", "Sam The Record Man")
+regionlist <- c("north", "east", "south", "west")
+
+ndf = 10
+
+customerlist <- data.frame(
+  customer.id = 100:(ndf+99),
+  store = sample(storelist, ndf, replace = TRUE),
+  region = sample(regionlist, ndf, replace = TRUE, prob = c(0.4, 0.3, 0.2, 0.1))
+  )
+
+customerlist <-
+customerlist %>%
+  mutate(customer.id = as.character(glue('X{customer.id}')))
+
+customerlist
+
+```
+
+## Create order
+
+```{r}
+
+order_fun <- function(...){
+  sample_n(albumlist50, 1) %>%
+    select(Artist, Album) %>%
+  mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
+         qty = rpois(1, 4))
+}
+
+order <- order_fun()
+order
+
+x = 1
+
+order <- tibble(x)
+order <- 
+for(i in seq_along(x)) {
+  order[[i]] <- order_fun()
+}
+
+order_fun()
+
+```
+
+
+
+```{r}
+
+
+store_order <- customerlist %>%
+  sample_n(1) %>%
+  select(customer.id) %>%
+  mutate(Artist = album$Artist,
+         Album = album$Album) %>%
+  mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
+         qty = rpois(1, 4))
+
+```
+
+
