@@ -62,27 +62,44 @@ customerlist
 
 ## Create order
 
+### album_order_fun
+
 ```{r}
 
-order_fun <- function(...){
+album_order_fun <- function(...){
   sample_n(albumlist50, 1) %>%
     select(Artist, Album) %>%
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
          qty = rpois(1, 4))
 }
 
-order <- order_fun()
-order
 
-x = 1
+# TEST
+album_order_fun()
 
-order <- tibble(x)
-order <- 
-for(i in seq_along(x)) {
-  order[[i]] <- order_fun()
+
+```
+
+
+### multiples
+
+```{r}
+# TEST
+
+n = rpois(1, 7)
+order_final <- data.frame(Artist = as.character(),
+                          Album = as.character(),
+                          format = as.character(),
+                          qty = as.integer(),
+                          stringsAsFactors = FALSE)  
+#ls.str(order_final)
+#rbind(order_final, order_fun())
+#
+for(i in 1:n){
+  order_final[i, ] <- album_order_fun()
 }
 
-order_fun()
+order_final
 
 ```
 
@@ -90,14 +107,28 @@ order_fun()
 
 ```{r}
 
+order_fun <- function(){
+  n = rpois(1, 7)
+  order_final <- data.frame(Artist = as.character(),
+                          Album = as.character(),
+                          format = as.character(),
+                          qty = as.integer(),
+                          stringsAsFactors = FALSE)  
+  
+  for(i in 1:n){
+    order_final[i, ] <- album_order_fun()
+  }
+  order_final
+  }
 
-store_order <- customerlist %>%
-  sample_n(1) %>%
-  select(customer.id) %>%
-  mutate(Artist = album$Artist,
-         Album = album$Album) %>%
-  mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
-         qty = rpois(1, 4))
+
+```
+
+
+```{r}
+
+order_fun()
+
 
 ```
 
