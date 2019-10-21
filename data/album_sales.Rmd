@@ -142,12 +142,14 @@ https://rstudio-education.github.io/tidyverse-cookbook/transform-tables.html
 
 ```{r}
 
-store_order <- 
+store_1 <- function(){ 
 storelist %>%
   sample_n(1) %>%
-  select(store.id) %>%
-  mutate(order_date = sample(1:10, 1))
+  pull(store.id) 
+}  
 
+order_final %>%
+  mutate(store.id = store_1())
 
 
 ```
