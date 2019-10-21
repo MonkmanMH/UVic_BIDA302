@@ -41,22 +41,22 @@ Note: store list is defunct record retailers from [Wikipedia List of defunct Can
 
 ```{r}
 
-storelist <- c("A&A", "A&B", "HMV", "Kelly's", "Sam The Record Man")
+chainlist <- c("A&A", "A&B", "HMV", "Kelly's", "Sam The Record Man")
 regionlist <- c("north", "east", "south", "west")
 
 ndf = 10
 
-customerlist <- data.frame(
-  customer.id = 100:(ndf+99),
-  store = sample(storelist, ndf, replace = TRUE),
+storelist <- data.frame(
+  store.id = 100:(ndf+99),
+  chain = sample(chainlist, ndf, replace = TRUE),
   region = sample(regionlist, ndf, replace = TRUE, prob = c(0.4, 0.3, 0.2, 0.1))
   )
 
-customerlist <-
-customerlist %>%
-  mutate(customer.id = as.character(glue('X{customer.id}')))
+storelist <-
+storelist %>%
+  mutate(store.id = as.character(glue('X{store.id}')))
 
-customerlist
+storelist
 
 ```
 
@@ -129,7 +129,34 @@ order_fun <- function(){
 
 order_fun()
 
+```
+
+
+# next!
+
+* nest this inside a tibble with the store.id and date fields
+
+https://tidyr.tidyverse.org/reference/nest.html
+
+https://rstudio-education.github.io/tidyverse-cookbook/transform-tables.html 
+
+```{r}
+
+store_order <- 
+storelist %>%
+  sample_n(1) %>%
+  select(store.id) %>%
+  mutate(order_date = sample(1:10, 1))
+
+
 
 ```
+
+
+
+* next that inside a bigger object
+
+
+
 
 
