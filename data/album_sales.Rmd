@@ -87,24 +87,28 @@ jan01 <- ymd("2019-01-01")
 startdate <- as_date(floor_date(jan01, "year"))
 enddate <- as_date(ceiling_date(jan01, "year") - days(1))
 daterange <- tibble(orderdate = as_date(c(startdate:enddate)))
+
 orderdate_fun <- function(){ 
 daterange %>%
   sample_n(1) %>%
   pull(orderdate) 
 }  
-orderdate <- orderdate_fun()
-orderdate
-#order_final %>%
-#  mutate(orderdate = orderdate)
-# assign order volume based on quarter (derived from month)
-order_qtr <- quarter(orderdate)
-order_qtr
-order_mean <- case_when(
-  order_qtr == 1 ~ 4,
-  order_qtr == 4 ~ 6,
-  TRUE ~ 5
-)
-order_mean
+
+#orderdate <- orderdate_fun()
+#
+#orderdate
+##order_final %>%
+##  mutate(orderdate = orderdate)
+## assign order volume based on quarter (derived from month)
+#order_qtr <- quarter(orderdate)
+#order_qtr
+#order_mean <- case_when(
+#  order_qtr == 1 ~ 4,
+#  order_qtr == 4 ~ 6,
+#  TRUE ~ 5
+#)
+#
+#order_mean
 order_mean_fun <- function(orderdate){
   order_qtr <- quarter(orderdate)
   order_mean <- case_when(
@@ -123,7 +127,7 @@ storelist %>%
   pull(store.id) 
 }  
 
-store.id <- store_fun()
+#store.id <- store_fun()
 
 ```
 
@@ -136,12 +140,14 @@ album_order_fun <- function(...){
   sample_n(albumlist50, 1) %>%
     select(Artist, Album, price) %>%
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
-         qty = rpois(1, 4),
-         orderdate = `orderdate`, 
-         store.id = `store.id`)
+         qty = rpois(1, 4)
+  )
+#         ,
+#         orderdate = `orderdate`, 
+#         store.id = `store.id`)
 }
 # TEST
-album_order_fun()
+#album_order_fun()
 ```
 
 
@@ -155,8 +161,8 @@ order_final <- data.frame(Artist = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
-                          orderdate = as_date(as.character()),
-                          store.id = as.character(),
+#                          orderdate = as_date(as.character()),
+#                          store.id = as.character(),
                           stringsAsFactors = FALSE)  
 #ls.str(order_final)
 #rbind(order_final, order_fun())
@@ -177,15 +183,15 @@ order_mean
 ```
 
 ```{r}
-order_fun <- function(order_mean){
-  n = rpois(1, order_mean)
+order_fun_1 <- function(){
+  n = rpois(1, 5)
   order_final <- data.frame(Artist = as.character(),
                           Album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
-                          date = as_date(as.character()),
-                          store.id = as.character(),
+#                          orderdate = as_date(as.character()),
+#                          store.id = as.character(),
                           stringsAsFactors = FALSE)  
   
   for(i in 1:n){
@@ -193,12 +199,54 @@ order_fun <- function(order_mean){
   }
   order_final
   }
+
+
+#TEST 
+order_fun_1()
+```
+
+
+
+
+```{r}
+# now with order date and store id appended after the run
+
+order_fun <- function(){
+  
+  orderdate <- orderdate_fun()
+
+  order_mean <- order_mean_fun(orderdate)
+  n = rpois(1, order_mean)
+  
+  store.id <- store_fun()
+  
+  order_final <- data.frame(Artist = as.character(),
+                          Album = as.character(),
+                          price = as.double(),
+                          format = as.character(),
+                          qty = as.integer(),
+#                          orderdate = as_date(as.character()),
+#                          store.id = as.character(),
+                          stringsAsFactors = FALSE)  
+  
+  for(i in 1:n){
+    order_final[i, ] <- album_order_fun()
+  }
+  order_final <- order_final %>%
+    mutate(orderdate = orderdate,
+           store.id = store.id)
+  
+  order_final
+  }
 ```
 
 
 ```{r}
-order_fun(order_mean)
+order_fun()
 ```
+
+
+
 
 
 # next!
