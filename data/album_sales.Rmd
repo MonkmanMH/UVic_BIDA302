@@ -33,9 +33,9 @@ albumlist50 <- albumlist %>%
 
 albumlist50
 
-# fix genre
+# fix genre (note: these categories are accurate, not precise)
 
-genrelist <- c("classic rock", "classic rock", "classic rock", "classic rock", "classic rock", 
+genre_rev <- c("classic rock", "classic rock", "classic rock", "classic rock", "classic rock", 
                "soul-r&b-funk", "classic rock", "punk-new wave", "classic rock", "classic rock", 
                "rock & roll", "jazz", "classic rock", "classic rock", "classic rock",
                "classic rock", "alternative", "rock", "classic rock", "soul-r&b-funk",
@@ -46,17 +46,21 @@ genrelist <- c("classic rock", "classic rock", "classic rock", "classic rock", "
                "punk-new wave", "classic rock", "rock", "punk-new wave", "classic rock",
                "reggae", "jazz", "rap", "rock", "rock & roll")
 
-albumlist50_1 <- cbind(genrelist, albumlist50)
+albumlist50 <- cbind(genre_rev, albumlist50)
 
-albumlist50_1 %>%
+albumlist50 <- albumlist50 %>%
   mutate(price =
            case_when(
-             genrelist == "classic rock" ~ 5.99,
-             genrelist == "rock" ~ 6.49,
-             genrelist == "jazz" ~ 6.99,
-             genrelist == "blues" ~ 6.99,
+             genre_rev == "classic rock" ~ 5.99,
+             genre_rev == "rock" ~ 6.49,
+             genre_rev == "jazz" ~ 6.99,
+             genre_rev == "blues" ~ 6.99,
              TRUE ~ 7.99
            ))
+
+albumlist50 %>%
+  group_by(genre_rev) %>%
+  tally()
 
 ```
 
@@ -65,12 +69,13 @@ albumlist50_1 %>%
 
 ## Generate customer (store) ID table
 
-Note: store list is defunct record retailers from [Wikipedia List of defunct Canadian companies](https://en.wikipedia.org/wiki/List_of_defunct_Canadian_companies#Consumer_retail,_including_grocery)
+Note: store list is defunct record retailers, active in the 80s and 90s, from [Wikipedia List of defunct Canadian companies](https://en.wikipedia.org/wiki/List_of_defunct_Canadian_companies#Consumer_retail,_including_grocery)
 
+* HMV was left off, as it was an international brand that was late to the market
 
 ```{r}
 
-chainlist <- c("A&A", "A&B", "HMV", "Kelly's", "Sam The Record Man")
+chainlist <- c("A&A", "A&B", "Kelly's", "Sam The Record Man")
 regionlist <- c("north", "east", "south", "west")
 
 ndf = 10
@@ -97,7 +102,7 @@ storelist
 
 album_order_fun <- function(...){
   sample_n(albumlist50, 1) %>%
-    select(Artist, Album) %>%
+    select(Artist, Album, price) %>%
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
          qty = rpois(1, 4))
 }
@@ -118,6 +123,7 @@ album_order_fun()
 n = rpois(1, 7)
 order_final <- data.frame(Artist = as.character(),
                           Album = as.character(),
+                          price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
                           stringsAsFactors = FALSE)  
@@ -132,7 +138,45 @@ order_final
 
 ```
 
+## order date
 
+https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html
+
+```{r}
+
+jan01 <- ymd("2019-01-01")
+
+startdate <- as_date(floor_date(jan01, "year"))
+enddate <- as_date(ceiling_date(jan01, "year") - days(1))
+
+daterange <- tibble(orderdate = as_date(c(startdate:enddate)))
+
+orderdate_fun <- function(){ 
+daterange %>%
+  sample_n(1) %>%
+  pull(orderdate) 
+}  
+
+orderdate <- orderdate_fun()
+orderdate
+
+#order_final %>%
+#  mutate(orderdate = orderdate)
+
+# assign order volume based on quarter (derived from month)
+
+order_qtr <- quarter(orderdate)
+order_qtr
+
+order_mean <- case_when(
+  order_qtr == 1 ~ 4,
+  order_qtr == 4 ~ 6,
+  TRUE ~ 5
+)
+
+order_mean
+
+```
 
 ```{r}
 
@@ -140,6 +184,7 @@ order_fun <- function(){
   n = rpois(1, 7)
   order_final <- data.frame(Artist = as.character(),
                           Album = as.character(),
+                          price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
                           stringsAsFactors = FALSE)  
@@ -184,34 +229,7 @@ order_final %>%
 ```
 
 
-## lubridate
 
-https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html
-
-```{r}
-
-jan01 <- ymd("2019-01-01")
-
-startdate <- as_date(floor_date(jan01, "year"))
-enddate <- as_date(ceiling_date(jan01, "year") - days(1))
-
-daterange <- tibble(orderdate = as_date(c(startdate:enddate)))
-
-orderdate <- function(){ 
-daterange %>%
-  sample_n(1) %>%
-  pull(orderdate) 
-}  
-
-orderdate()
-
-order_final %>%
-  mutate(store.id = store_1(),
-         orderdate = orderdate())
-
-
-
-```
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Retail Sales, Canada 2018"
 output: html_notebook
 ---
 
@@ -38,13 +38,47 @@ retail_df <- retail_df %>%
 retail_df <- retail_df %>%
     mutate(ref_date = ymd(ref_date, truncated = 2)) 
 
-retail_df <- retail_df <- 
+```
+
+### Canada
+
+Filter for "Sporting goods, hobby, book and music stores [451]" (in the variable `north_american_industry_classification_system_naics`)
+
+```{r}
+
+# Canada
+
+retail_ca_df <-  
+  retail_df %>%
+  filter("2018" == year(ref_date),
+         vector == "v52367130") 
+
+unique(retail_ca_df$north_american_industry_classification_system_naics)
+
+
+retail_ca_df %>%
+  mutate(qtr = quarter(retail_ca_df$ref_date)) %>%
+  group_by(qtr) %>%
+  summarise(total_sales = sum(value)) %>%
+  mutate(pct_total = total_sales / sum(total_sales) * 100,
+         share_total = total_sales / sum(total_sales) * 20)
+
+```
+
+### British Columbia
+
+
+```{r}
+
+
+
+retail_bc_df <-  
   retail_df %>%
   filter("2018" == year(ref_date),
          vector == "v52367262") 
 
-retail_df %>%
-  mutate(qtr = quarter(retail_df$ref_date)) %>%
+retail_bc_df %>%
+  mutate(qtr = quarter(retail_bc_df$ref_date)) %>%
   group_by(qtr) %>%
   summarise(total_sales = sum(value)) %>%
   mutate(pct_total = total_sales / sum(total_sales) * 100,
