@@ -1,0 +1,56 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+library(dplyr)
+library(lubridate)
+
+library(cansim)
+
+library(janitor)
+
+```
+
+## Data: Statistics Canada, retail sales
+
+[Retail trade sales by province and territory (x 1,000)](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010000801)
+
+Frequency: Monthly
+
+Table: 20-10-0008-01 (formerly CANSIM 080-0020)
+
+Geography: Canada, Province or territory
+
+
+
+```{r include=FALSE}
+# read the data - monthly
+retail_df <- get_cansim("20-10-0008-01")
+
+retail_df <- retail_df %>%
+  clean_names()
+
+
+retail_df <- retail_df %>%
+    mutate(ref_date = ymd(ref_date, truncated = 2)) 
+
+retail_df <- retail_df <- 
+  retail_df %>%
+  filter("2018" == year(ref_date),
+         vector == "v52367262") 
+
+retail_df %>%
+  mutate(qtr = quarter(retail_df$ref_date)) %>%
+  group_by(qtr) %>%
+  summarise(total_sales = sum(value)) %>%
+  mutate(pct_total = total_sales / sum(total_sales) * 100,
+         share_total = total_sales / sum(total_sales) * 20)
+
+
+```
+
+
