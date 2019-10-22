@@ -104,7 +104,8 @@ album_order_fun <- function(...){
   sample_n(albumlist50, 1) %>%
     select(Artist, Album, price) %>%
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
-         qty = rpois(1, 4))
+         qty = rpois(1, 4),
+         orderdate = `orderdate`)
 }
 
 
@@ -126,11 +127,13 @@ order_final <- data.frame(Artist = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
+                          orderdate = as_date(as.character()),
                           stringsAsFactors = FALSE)  
 #ls.str(order_final)
 #rbind(order_final, order_fun())
 #
 for(i in 1:n){
+  orderdate <- orderdate_fun()
   order_final[i, ] <- album_order_fun()
 }
 
@@ -176,17 +179,39 @@ order_mean <- case_when(
 
 order_mean
 
+order_mean_fun <- function(orderdate){
+  order_qtr <- quarter(orderdate)
+  order_mean <- case_when(
+    order_qtr == 1 ~ 4,
+    order_qtr == 4 ~ 6,
+    TRUE ~ 5
+  )
+}
+
+```
+
+test orderdate and order_mean 
+
+```{r}
+
+orderdate <- orderdate_fun()
+orderdate
+
+order_mean <- order_mean_fun(orderdate)
+order_mean
+
 ```
 
 ```{r}
 
-order_fun <- function(){
-  n = rpois(1, 7)
+order_fun <- function(order_mean){
+  n = rpois(1, order_mean)
   order_final <- data.frame(Artist = as.character(),
                           Album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
+                          date = as_date(as.character()),
                           stringsAsFactors = FALSE)  
   
   for(i in 1:n){
@@ -201,7 +226,7 @@ order_fun <- function(){
 
 ```{r}
 
-order_fun()
+order_fun(order_mean)
 
 ```
 
