@@ -17,6 +17,7 @@ Data source is
 library(tidyverse)
 
 library(glue)
+library(lubridate)
 
 ```
 
@@ -27,12 +28,40 @@ library(glue)
 
 albumlist <- read_csv("albumlist.csv")
 
-albumlist
-
 albumlist50 <- albumlist %>%
   filter(Number < 51)
 
+albumlist50
+
+# fix genre
+
+genrelist <- c("classic rock", "classic rock", "classic rock", "classic rock", "classic rock", 
+               "soul-r&b-funk", "classic rock", "punk-new wave", "classic rock", "classic rock", 
+               "rock & roll", "jazz", "classic rock", "classic rock", "classic rock",
+               "classic rock", "alternative", "rock", "classic rock", "soul-r&b-funk",
+               "rock & roll", "blues", "classic rock", "soul-r&b-funk", "soul-r&b-funk",
+               "rock", "alternative", "classic rock", "classic rock", "folk rock",
+               "folk rock", "classic rock", "punk-new wave", "classic rock", "rock", 
+               "folk rock", "rock", "blues", "rock & roll", "classic rock", 
+               "punk-new wave", "classic rock", "rock", "punk-new wave", "classic rock",
+               "reggae", "jazz", "rap", "rock", "rock & roll")
+
+albumlist50_1 <- cbind(genrelist, albumlist50)
+
+albumlist50_1 %>%
+  mutate(price =
+           case_when(
+             genrelist == "classic rock" ~ 5.99,
+             genrelist == "rock" ~ 6.49,
+             genrelist == "jazz" ~ 6.99,
+             genrelist == "blues" ~ 6.99,
+             TRUE ~ 7.99
+           ))
+
 ```
+
+## _add price, accurate genre_
+
 
 ## Generate customer (store) ID table
 
@@ -150,6 +179,36 @@ storelist %>%
 
 order_final %>%
   mutate(store.id = store_1())
+
+
+```
+
+
+## lubridate
+
+https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html
+
+```{r}
+
+jan01 <- ymd("2019-01-01")
+
+startdate <- as_date(floor_date(jan01, "year"))
+enddate <- as_date(ceiling_date(jan01, "year") - days(1))
+
+daterange <- tibble(orderdate = as_date(c(startdate:enddate)))
+
+orderdate <- function(){ 
+daterange %>%
+  sample_n(1) %>%
+  pull(orderdate) 
+}  
+
+orderdate()
+
+order_final %>%
+  mutate(store.id = store_1(),
+         orderdate = orderdate())
+
 
 
 ```
