@@ -209,6 +209,7 @@ Now a run of multiple orders...
 
 ```{r}
 
+m = 100
 
 
 order_multi <- data.frame(artist = as.character(),
@@ -220,31 +221,34 @@ order_multi <- data.frame(artist = as.character(),
                           store.id = as.character(),
                           stringsAsFactors = FALSE)  
   
-  for(i in 1:n){
-    order_multi[i, ] <- order_fun()
+  for(i in 1:m){
+    order_final <- order_fun()
+    order_multi <- rbind(order_multi, order_final)
   }
-  order_multi
-  }
-
+  
+order_multi
+  
 
 ```
 
 
+#### Summary tables
+
+```{r}
+
+order_multi %>%
+  group_by(store.id, orderdate) %>%
+  tally()
 
 
-# next!
+order_multi %>%
+  group_by(artist) %>%
+  summarise(qty = sum(qty)) %>%
+  arrange(desc(qty))
 
-* nest this inside a tibble with the store.id and date fields
-
-https://tidyr.tidyverse.org/reference/nest.html
-
-https://rstudio-education.github.io/tidyverse-cookbook/transform-tables.html 
-
+```
 
 
-
-
-* next that inside a bigger object
 
 
 
