@@ -5,6 +5,9 @@ output: html_notebook
 
 This script uses data from Walt Hickey's article [Why Classic Rock Isn’t What It Used To Be](https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/) (FiveThirtyEight, 2014-07-07)
 
+Data is available through [GitHub](https://github.com/fivethirtyeight/data/tree/master/classic-rock)
+
+
 
 
 ```{r setup}
@@ -12,41 +15,15 @@ library(tidyverse)
 library(lubridate)
 
 library(glue)
-library()
 ```
 
 
 ## Read data
 
 ```{r}
-albumlist <- read_csv("albumlist.csv")
-albumlist50 <- albumlist %>%
-  filter(Number < 51)
-albumlist50
-# fix genre (note: these categories are accurate, not precise)
-genre_rev <- c("classic rock", "classic rock", "classic rock", "classic rock", "classic rock", 
-               "soul-r&b-funk", "classic rock", "punk-new wave", "classic rock", "classic rock", 
-               "rock & roll", "jazz", "classic rock", "classic rock", "classic rock",
-               "classic rock", "alternative", "rock", "classic rock", "soul-r&b-funk",
-               "rock & roll", "blues", "classic rock", "soul-r&b-funk", "soul-r&b-funk",
-               "rock", "alternative", "classic rock", "classic rock", "folk rock",
-               "folk rock", "classic rock", "punk-new wave", "classic rock", "rock", 
-               "folk rock", "rock", "blues", "rock & roll", "classic rock", 
-               "punk-new wave", "classic rock", "rock", "punk-new wave", "classic rock",
-               "reggae", "jazz", "rap", "rock", "rock & roll")
-albumlist50 <- cbind(genre_rev, albumlist50)
-albumlist50 <- albumlist50 %>%
-  mutate(price =
-           case_when(
-             genre_rev == "classic rock" ~ 5.99,
-             genre_rev == "rock" ~ 6.49,
-             genre_rev == "jazz" ~ 6.99,
-             genre_rev == "blues" ~ 6.99,
-             TRUE ~ 7.99
-           ))
-albumlist50 %>%
-  group_by(genre_rev) %>%
-  tally()
+
+albumlist <- read_csv("classic_rock_25_538.csv")
+albumlist
 ```
 
 ## _add price, accurate genre_
@@ -59,18 +36,14 @@ Note: store list is defunct record retailers, active in the 80s and 90s, from [W
 * HMV was left off, as it was an international brand that was late to the market
 
 ```{r}
-chainlist <- c("A&A", "A&B", "Kelly's", "Sam The Record Man")
-regionlist <- c("north", "east", "south", "west")
-ndf = 10
-storelist <- data.frame(
-  store.id = 100:(ndf+99),
-  chain = sample(chainlist, ndf, replace = TRUE),
-  region = sample(regionlist, ndf, replace = TRUE, prob = c(0.4, 0.3, 0.2, 0.1))
-  )
-storelist <-
-storelist %>%
-  mutate(store.id = as.character(glue('X{store.id}')))
+storelist <- read_csv("storelist.csv")
+
 storelist
+
+storelist %>%
+  group_by(region) %>%
+  tally()
+  
 ```
 
 ## Create order
@@ -91,21 +64,9 @@ daterange %>%
   pull(orderdate) 
 }  
 
-#orderdate <- orderdate_fun()
-#
-#orderdate
-##order_final %>%
-##  mutate(orderdate = orderdate)
-## assign order volume based on quarter (derived from month)
-#order_qtr <- quarter(orderdate)
-#order_qtr
-#order_mean <- case_when(
-#  order_qtr == 1 ~ 4,
-#  order_qtr == 4 ~ 6,
-#  TRUE ~ 5
-#)
-#
-#order_mean
+# set the size of the order based on year quarter
+# - same number of orders but biggest in 4th quarter, smallest in 1st
+# - value sets the mean value of poisson distribution from which random value is pulled
 order_mean_fun <- function(orderdate){
   order_qtr <- quarter(orderdate)
   order_mean <- case_when(
@@ -118,6 +79,7 @@ order_mean_fun <- function(orderdate){
 
 
 ```{r}
+# function to randomly select the store
 store_fun <- function(){ 
 storelist %>%
   sample_n(1) %>%
@@ -134,8 +96,8 @@ storelist %>%
 
 ```{r}
 album_order_fun <- function(...){
-  sample_n(albumlist50, 1) %>%
-    select(Artist, Album, price) %>%
+  sample_n(albumlist, 1, weight = pct_plays) %>%
+    select(artist, album, price) %>%
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
          qty = rpois(1, 4)
   )
@@ -153,8 +115,8 @@ album_order_fun <- function(...){
 ```{r}
 # TEST
 n = rpois(1, 7)
-order_final <- data.frame(Artist = as.character(),
-                          Album = as.character(),
+order_final <- data.frame(artist = as.character(),
+                          album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
@@ -182,8 +144,8 @@ order_mean
 ```{r}
 order_fun_1 <- function(){
   n = rpois(1, 5)
-  order_final <- data.frame(Artist = as.character(),
-                          Album = as.character(),
+  order_final <- data.frame(artist = as.character(),
+                          album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
@@ -217,8 +179,8 @@ order_fun <- function(){
   
   store.id <- store_fun()
   
-  order_final <- data.frame(Artist = as.character(),
-                          Album = as.character(),
+  order_final <- data.frame(artist = as.character(),
+                          album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
@@ -242,6 +204,30 @@ order_fun <- function(){
 order_fun()
 ```
 
+
+Now a run of multiple orders...
+
+```{r}
+
+
+
+order_multi <- data.frame(artist = as.character(),
+                          album = as.character(),
+                          price = as.double(),
+                          format = as.character(),
+                          qty = as.integer(),
+                          orderdate = as_date(as.character()),
+                          store.id = as.character(),
+                          stringsAsFactors = FALSE)  
+  
+  for(i in 1:n){
+    order_multi[i, ] <- order_fun()
+  }
+  order_multi
+  }
+
+
+```
 
 
 
