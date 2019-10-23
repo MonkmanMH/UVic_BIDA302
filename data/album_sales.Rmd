@@ -3,37 +3,45 @@ title: "Classic Rock 25 - sales data"
 output: html_notebook
 ---
 
-This script uses data from Walt Hickey's article [Why Classic Rock Isn’t What It Used To Be](https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/) (FiveThirtyEight, 2014-07-07)
+As I embarked on teaching [Data Analytics Coding Fundamentals](https://martinmonkman.com/courses/bida302_2019/) at the University of Victoria's Continuing Studies department, I started to search for good example data sets to use. There are many already available, including R packages or open data sites. The course is part of the [Business Intelligence and Data Analytics] (https://continuingstudies.uvic.ca/business-technology-and-public-relations/series/business-intelligence-and-data-analytics) series, so in addition to gentle introductions that are referenced in [_R for Data Science_](https://r4ds.had.co.nz/) (like `mtcars` in [{datasets}](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) [{Lahman}](https://cran.r-project.org/web/packages/Lahman/index.html)) I wanted a dataset that was typical of what you might encounter in a business situation. My search for such a dataset came up empty...the tables used as examples in business courses are often summary tables that have already been wrangled. The students in a data coding course need to learn how to _create_ those tables from the ground up. So I decided to create a synthetic dataset that prenents a variety of data wrangling challenges, as well as some interesting analytic opportunities.
 
-Data is available through [GitHub](https://github.com/fivethirtyeight/data/tree/master/classic-rock)
+I cast my memory back 30 years, to a time when I was working for a wholesale company that distributed LPs, cassettes, and those new-fangled compact discs to a wide range of retailers. A table showing the details of each store's orders would do the trick...a single year's worth of order data from a handful of stores would be adequate, and could then be linked to other tables about the stores. It could also be expanded to include additional years (with some trends embedded), inventory management, and customer relationship management (CRM).
+
+The fictional wholesale company, CR25 (for "Classic Rock 25") only sells 25 album titles. They are the biggest selling / most famous albums by the 25 most-played artists shown in Walt Hickey's article [Why Classic Rock Isn’t What It Used To Be](https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/) (FiveThirtyEight, 2014-07-07). 
 
 
+### Setup
 
+The first step is to install the necessary packages. I also set the seed to a classic rock number, so that future runs of the code will generate the same data table. This is important, as some of the lessons in the course were based on summary tables drawn from the master file.
 
 ```{r setup}
-library(tidyverse)
+# tidyverse packages
+library(dplyr)
 library(lubridate)
 
-library(glue)
+# utilities
+set.seed(8675309)
+
 ```
 
 
-## Read data
+### Input data
+
+To create the album list, I created a csv file with the artist and percentage of all plays fields, using the table in the article (which is displayed as an image; note that there appears to be an error in the table, in that Boston has a lower rank but a higher percentage than Queen or Journey). I also added a representative album by that artist--I used some judgement here. The album is the biggest selling, most famous, and/or the one with the most hit singles that the artist made. I also opted for a "no compilations" rule; one could make the case that, as one example, The Rolling Stones might be better or more accurately represented by _Hot Rocks_. 
+
+I also added a price field; albums released before 1976 are $7.98, [those released 1976-1981 are $8.98](https://en.wikipedia.org/wiki/Hard_Promises#History), and 1982 and beyond are $9.98. The sole exception to this is Pink Floyd's double album _The Wall_, which I priced at $14.98.
 
 ```{r}
 
 albumlist <- read_csv("classic_rock_25_538.csv")
 albumlist
+
 ```
 
-## _add price, accurate genre_
 
+The next step was to create a csv file with some fictional stores. What I did here was use the names of Canadian chains that are now defunct record retailers that were active in the 70s and 80s. You can find them listed in the [Wikipedia List of defunct Canadian companies](https://en.wikipedia.org/wiki/List_of_defunct_Canadian_companies#Consumer_retail,_including_grocery) I left off HMV, as it was an international brand that was late to the market.
 
-## Generate customer (store) ID table
-
-Note: store list is defunct record retailers, active in the 80s and 90s, from [Wikipedia List of defunct Canadian companies](https://en.wikipedia.org/wiki/List_of_defunct_Canadian_companies#Consumer_retail,_including_grocery)
-
-* HMV was left off, as it was an international brand that was late to the market
+I also assigned each one to one of four regions (based on the cardinal points of the compass), and gave them a store ID number.
 
 ```{r}
 storelist <- read_csv("storelist.csv")
@@ -41,7 +49,7 @@ storelist <- read_csv("storelist.csv")
 storelist
 
 storelist %>%
-  group_by(region) %>%
+  group_by(chain, region) %>%
   tally()
   
 ```
@@ -165,8 +173,6 @@ order_fun_1()
 ```
 
 
-
-
 ```{r}
 # now with order date and store id appended after the run
 
@@ -174,29 +180,42 @@ order_fun <- function(){
   
   orderdate <- orderdate_fun()
 
-  order_mean <- order_mean_fun(orderdate)
-  n = rpois(1, order_mean)
+# conditional on store open date being before random order date  
+  store.opendate <- storelist %>%
+    filter(store.id == orderstore.id) %>%
+    pull(open_date)
   
-  store.id <- store_fun()
+  store.opendate < orderdate
+
+  if(store.opendate < orderdate){
+
+    order_mean <- order_mean_fun(orderdate)
+    n = rpois(1, order_mean)
   
+
+  # define blank form  
   order_final <- data.frame(artist = as.character(),
                           album = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
-#                          orderdate = as_date(as.character()),
-#                          store.id = as.character(),
                           stringsAsFactors = FALSE)  
   
   for(i in 1:n){
     order_final[i, ] <- album_order_fun()
-  }
+    }
+  
   order_final <- order_final %>%
     mutate(orderdate = orderdate,
-           store.id = store.id)
+           store.id = orderstore.id)
   
   order_final
+  
+  # end if
   }
+# end funtion
+}
+
 ```
 
 
@@ -250,5 +269,9 @@ order_multi %>%
 
 
 
+
+## References
+
+The GitHub page with the data for Walt Hickey's article is available through [GitHub](https://github.com/fivethirtyeight/data/tree/master/classic-rock)
 
 
