@@ -1,21 +1,18 @@
 ---
-title: "Rolling Stone 500 - sales data"
+title: "Classic Rock 25 - sales data"
 output: html_notebook
 ---
 
-This script uses the [_Rolling Stone's_ 500 Greatest Albums of All Time](https://en.wikipedia.org/wiki/Rolling_Stone%27s_500_Greatest_Albums_of_All_Time) (2012 version) to generate a fake sales order.
+This script uses data from Walt Hickey's article [Why Classic Rock Isn’t What It Used To Be](https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/) (FiveThirtyEight, 2014-07-07)
 
-Data source is 
-
-* https://data.world/notgibs/rolling-stones-top-500-albums
-
-* download link https://query.data.world/s/sc4hbemuc4htolfcah7fs7l2oukegq
 
 
 ```{r setup}
 library(tidyverse)
-library(glue)
 library(lubridate)
+
+library(glue)
+library()
 ```
 
 
