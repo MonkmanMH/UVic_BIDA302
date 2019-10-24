@@ -17,6 +17,7 @@ The first step is to install the necessary packages. I also set the seed to a cl
 ```{r setup}
 # tidyverse packages
 library(dplyr)
+library(readr)
 library(lubridate)
 
 # utilities
@@ -94,8 +95,6 @@ storelist %>%
   pull(store.id) 
 }  
 
-#store.id <- store_fun()
-
 ```
 
 
@@ -109,12 +108,7 @@ album_order_fun <- function(...){
   mutate(format = sample(c("lp", "cass"), 1, prob = c(0.33, 0.67)),
          qty = rpois(1, 4)
   )
-#         ,
-#         orderdate = `orderdate`, 
-#         store.id = `store.id`)
 }
-# TEST
-#album_order_fun()
 ```
 
 
@@ -128,15 +122,12 @@ order_final <- data.frame(artist = as.character(),
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
-#                          orderdate = as_date(as.character()),
-#                          store.id = as.character(),
                           stringsAsFactors = FALSE)  
-#ls.str(order_final)
-#rbind(order_final, order_fun())
-#
+
 for(i in 1:n){
   order_final[i, ] <- album_order_fun()
 }
+
 order_final
 ```
 
@@ -157,8 +148,6 @@ order_fun_1 <- function(){
                           price = as.double(),
                           format = as.character(),
                           qty = as.integer(),
-#                          orderdate = as_date(as.character()),
-#                          store.id = as.character(),
                           stringsAsFactors = FALSE)  
   
   for(i in 1:n){
@@ -181,11 +170,11 @@ order_fun <- function(){
   orderdate <- orderdate_fun()
 
 # conditional on store open date being before random order date  
+  orderstore.id <- store_fun()
+  
   store.opendate <- storelist %>%
     filter(store.id == orderstore.id) %>%
     pull(open_date)
-  
-  store.opendate < orderdate
 
   if(store.opendate < orderdate){
 
@@ -267,6 +256,35 @@ order_multi %>%
 
 ```
 
+Build a large scale summary table
+
+```{r}
+
+order_multi %>%
+  mutate(order_price = qty * price) %>%
+  group_by(artist, format) %>%
+  summarise(qty = sum(qty),
+            cost = sum(order_price)) %>%
+  arrange(desc(qty))
+
+```
+
+
+```{r}
+
+order_multi %>%
+  mutate(order_price = qty * price) %>%
+  left_join(storelist, by = "store.id") %>%
+  group_by(chain) %>%
+  summarise(qty = sum(qty),
+            cost = sum(order_price)) %>%
+  arrange(desc(qty))
+
+
+```
+
+
+turn it into a function...
 
 
 
