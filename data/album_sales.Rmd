@@ -52,6 +52,15 @@ storelist
 storelist %>%
   group_by(chain, region) %>%
   tally()
+
+storelist %>%
+  group_by(region) %>%
+  tally()
+
+storelist %>%
+  group_by(chain) %>%
+  tally()
+
   
 ```
 
@@ -217,7 +226,7 @@ Now a run of multiple orders...
 
 ```{r}
 
-m = 100
+m = 750
 
 
 order_multi <- data.frame(artist = as.character(),
@@ -267,10 +276,6 @@ order_multi %>%
             cost = sum(order_price)) %>%
   arrange(desc(qty))
 
-```
-
-
-```{r}
 
 order_multi %>%
   mutate(order_price = qty * price) %>%
@@ -280,6 +285,14 @@ order_multi %>%
             cost = sum(order_price)) %>%
   arrange(desc(qty))
 
+order_multi %>%
+  mutate(order_price = qty * price) %>%
+  left_join(storelist, by = "store.id") %>%
+  group_by(region) %>%
+  summarise(qty = sum(qty),
+            cost = sum(order_price)) %>%
+  mutate(pct_of_sales = cost / sum(cost) * 100) %>%
+  arrange(desc(qty))
 
 ```
 
