@@ -1,0 +1,76 @@
+---
+title: "Why code? Why R?"
+subtitle: "Data Analytics Coding Fundamentals"
+author: "Martin Monkman"
+date: "2019/11/02"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse
+
+# Why code?
+
+Opinionated analysis development
+
+* Replication
+
+* 2
+
+* 3
+  
+* Collaboration
+
+
+---
+
+class: inverse
+
+# Examples
+
+
+
+
+
+---
+
+class: inverse
+
+# Why R?
+
+
+---
+
+class: inverse
+
+# Community
+
+
+
+---
+class: inverse
+
+
+# Functionality
+
+
+
+---
+class: inverse
+
+
+# 
+
+
+

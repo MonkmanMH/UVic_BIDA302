@@ -230,3 +230,6 @@ class: inverse
   - 1993 to present (with 5 year gap)
 
 * writing code to do data analysis since 1993
+
+* using R since 2012
+
