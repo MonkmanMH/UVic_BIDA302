@@ -1,7 +1,7 @@
 ---
 title: "Why code? Why R?"
-subtitle: "Data Analytics Coding Fundamentals"
-author: "Martin Monkman"
+#subtitle: "Data Analytics Coding Fundamentals"
+author: "BIDA302"
 date: "2019/11/02"
 output:
   xaringan::moon_reader:
@@ -70,7 +70,36 @@ class: inverse
 class: inverse
 
 
-# 
+# Things that get in the way 
 
+---
+
+class: inverse
+
+
+## Your mind is flexible
+
+### Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
+
+
+---
+class: inverse
+
+
+# Computers are literal
+
+Accuracy matters
+
+![Hadley Wickham tweet](../img/Hadley_5minutes_2019-10-27.jpg)
+
+---
+class: inverse
+
+
+# Computers are literal
+
+Accuracy matters
+
+![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
 
 

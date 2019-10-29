@@ -234,34 +234,5 @@ class: inverse
 * using R since 2012
 
 
----
-class: inverse
-
-
-# Your mind is flexible
-
-### Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
-
-
----
-class: inverse
-
-
-# Computers are literal
-
-Accuracy matters
-
-![Hadley Wickham tweet](../img/Hadley_5minutes_2019-10-27.jpg)
-
----
-class: inverse
-
-
-# Computers are literal
-
-Accuracy matters
-
-![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
-
 
 
