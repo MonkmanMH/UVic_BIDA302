@@ -1,20 +1,84 @@
 ---
-title: "Welcome to coding ..."
-#subtitle: "Data Analytics Coding Fundamentals"
-author: "BIDA302"
+title: "Getting started with R"
+author: "Martin Monkman"
 date: "2019/11/02"
-output:
-  xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+output: ioslides_presentation
 ---
 
-
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
+## Step 1
+
+1. Open RStudio Cloud
+
+
+## RStudio panes
+
+
+## Console pane
+
+### R as calculator
+
+In the console, type:
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
+ 0 + 4
+
+</font></div>
+
+## The power of named variables |  Creating a named object 
+
+The assignment arrow `<-`
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
+x <- 10
+
+y <- 4
+
+</font></div>
+
+
+> Did you notice the change in the Environment pane?
+
+
+## x plus y
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
+x + y
+
+</font> </div>
+
+
+## How would you set x equal to 20?
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
+x <- 20
+
+</font> </div>
+
+
+## And now divide `x` by `y`
+
+<div style="background-color:powderblue;"> <font face="courier" color="red">  
+
+x / y
+
+</font></div>
+
+---
+
+## R files
+# * R
+# * R Markdown
+
+## Example 1
+
+- R4DS, ch.2
 
