@@ -1,6 +1,8 @@
 ---
 title: "BIDA302 hexsticker"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -66,7 +68,7 @@ uvic_blue_dark <- "#002754"  #RGB: 0-39-84
 
 ## trials
 
-```{r}
+```{r eval=FALSE}
 
 
 imgurl <- "uviclogo.jpg"
@@ -83,7 +85,7 @@ BIDA302_hex
 
 
 
-```{r}
+```{r eval=FALSE}
 
 imgurl <- "uvic_logo-vert.jpg"
 
@@ -107,7 +109,7 @@ BIDA302_hex
 
 
 
-```{r}
+```{r eval=FALSE}
 
 imgurl <- "UVicMark-blue.jpg"
 
