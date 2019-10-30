@@ -1,0 +1,23 @@
+---
+title: "rstudio.cloud_ref"
+author: "Martin Monkman"
+date: "30/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RStudio Cloud
+
+limits to number of users?
+
+https://community.rstudio.com/t/rstudio-cloud-limits/39656
+
+
+## project link
+
+https://rstudio.cloud/spaces/34702/join?access_code=lr5keQ5WXcZ5ENNAZoLEAmPSQHav8seVNT2j36e%2F
+
+

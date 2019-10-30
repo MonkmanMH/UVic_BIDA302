@@ -102,4 +102,19 @@ Accuracy matters
 
 ![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
 
+---
+
+# Welcome to The Tidyverse
+
+![dplyr hex](../img/tidyverse_400.png)
+
+---
+
+class: inverse
+
+# {tidyverse}
+
+"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+The [{tidyverse} site](https://tidyverse.org)
 
