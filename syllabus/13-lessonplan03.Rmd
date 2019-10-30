@@ -1,0 +1,19 @@
+---
+title: "BIDA302: Lesson Plan, Week 3"
+subtitle: "2019-11-16"
+author: "Martin Monkman"
+date: "`r Sys.Date()`"
+output: github_document
+#description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
+---
+
+# Week 3 (2019-11-16)
+
+
+
+> The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
+> - Grolemund & Wickham, _R for Data Science_, 2.15 (The map functions)
+
+
+
+-30-
