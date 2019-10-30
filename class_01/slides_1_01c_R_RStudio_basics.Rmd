@@ -54,7 +54,11 @@ Type in the console window:
 
 ---
 
-# Creating a named object with assignment arrow `<-`
+# The power of named variables |  Creating a named object 
+
+## the assignment arrow
+
+`<-`
 
 First: create a new R script file
 
@@ -166,4 +170,6 @@ summary(mpg)    ## provides statistical summary of data
 ```
 
 
+---
+## another slide
 
