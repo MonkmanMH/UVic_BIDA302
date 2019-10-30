@@ -1,0 +1,169 @@
+---
+title: "R and RStudio"
+subtitle: "the basics"
+author: "BIDA302"
+date: "2019/11/02"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+# Martin Monkman
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse
+
+# R
+
+Data science / statistics programming language
+
+
+---
+
+# RStudio
+
+Integrated Development Environment (IDE)
+
+(walk through the panes)
+
+---
+
+# rstudio.cloud
+
+web-based version
+
+
+---
+
+# Console
+
+## R as calculator
+
+Type in the console window:
+
+`10 + 4`
+
+---
+
+# Creating a named object with assignment arrow `<-`
+
+First: create a new R script file
+
+
+## assign the object "x" with the value 10
+`x <- 10` 
+
+--
+
+How would you create a new object "y" with the value 4?
+
+--
+`y <- 4`
+
+
+Now add x and y
+
+--
+
+
+`x + y`
+
+--
+
+## Did you notice the change in the Environment pane?
+
+
+---
+
+# How would you set `x` equal to 20?
+
+--
+
+x <- 20
+
+--
+
+# And now divide `x` by `y`
+
+x / y
+
+
+---
+
+# Packages
+
+R uses “packages” to extend the functionality
+
+
+
+---
+
+# Welcome to The Tidyverse
+
+![dplyr hex](../img/tidyverse_400.png)
+
+???
+
+Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
+
+---
+
+class: inverse
+
+# {tidyverse}
+
+"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+The [{tidyverse} site](https://tidyverse.org)
+
+
+
+---
+
+# Quick Detour
+## Getting help
+
+Typing a question mark (?) and a package or function brings up the Help info (bottom right pane)
+
+Type the following:
+
+`?mpg`
+
+Or, once a package is loaded, it is accessible through the Help pane (bottom right) and will auto-fill once you start typing, which often shows many other things!
+
+---
+
+One set of packages is known as “the tidyverse”
+
+Two tidyerse packages we will be using today:
+
+{dplyr} - data wrangling
+{tidyr} - to spread and gather data tables
+
+
+
+---
+
+# Quick Detour
+## some helpful base R functions
+
+```{r}
+View(mpg)       ## opens data to view, too big to show here
+
+names(mpg)      ## lists the names of all variables in dataset
+
+summary(mpg)    ## provides statistical summary of data
+
+```
+
+
+

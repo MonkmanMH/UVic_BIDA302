@@ -24,14 +24,13 @@ class: inverse
 
 Opinionated analysis development
 
-* Replication
+* Reproducible and Auditable
 
-* 2
+* Accurate
 
-* 3
-  
-* Collaboration
+* Collaborative
 
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
 
 ---
 
@@ -47,15 +46,15 @@ class: inverse
 
 class: inverse
 
-# Why R?
+# What is R?
 
+Base R: a script-based statistical analysis tool
 
----
+* with many, many packages (data, statistical functions, wrappers of other software)
 
-class: inverse
+RStudio, an IDE that streamlines much of your work
 
-# Community
-
+* including authoring tools for communication
 
 
 ---
@@ -66,11 +65,24 @@ class: inverse
 
 
 
+
+---
+
+class: inverse
+
+# Community
+
+
+
+
+
 ---
 class: inverse
 
 
-# Things that get in the way 
+# Learning a new language
+
+Also: might have to adapt your mental map of how data analytics "looks"
 
 ---
 
@@ -102,11 +114,22 @@ Accuracy matters
 
 ![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
 
+
+--- 
+
+# RStudio cloud
+
+(preview panes)
+
 ---
 
 # Welcome to The Tidyverse
 
 ![dplyr hex](../img/tidyverse_400.png)
+
+???
+
+Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
 
 ---
 

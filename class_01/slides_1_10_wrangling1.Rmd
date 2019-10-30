@@ -115,6 +115,47 @@ Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyver
 ---
 
 
+
+```{r}
+mpg %>%
+  summarise(minYear = min(year), maxYear = max(year))
+
+```
+
+
+---
+
+# a summary table
+
+```{r}
+mpg %>%                                 ## take my data, then (%>%)
+  group_by(class) %>%                   ## group data by variable "class", then
+  summarise(mean = mean(displ)) %>%     ## calculate mean of variable "displ" for each, then
+  arrange(desc(mean))                   ## sort descending by that mean (ascending is simply "arrange(mean)")
+```
+
+
+
+---
+
+dplyr::mutate
+
+You can create variables that may (or may not) be useful in your analysis
+
+
+```{r}
+
+mpg <- mpg %>%
+  mutate(mpg_per_cubic_litre = hwy / displ)
+
+summary(mpg$mpg_per_cubic_litre)
+```
+
+
+
+
+---
+
 # {tidyr}
 
 ![tidyr hex](../img/tidyr_400.png)
@@ -122,7 +163,36 @@ Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyver
 The [{tidyr} site](https://tidyr.tidyverse.org/)
 
 
+---
 
+A pivot table crosstab (1/2)
+Note that spread() (and gather(), it's complement) are from tidyr
+
+```{r}
+
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(mean = mean(displ)) %>%
+  arrange(desc(mean))
+
+class_by_cyl
+
+```
+
+
+---
+
+A pivot table crosstab (2/2)
+
+
+```{r}
+class_by_cyl_pivot <- class_by_cyl %>%
+  spread(cyl, value = mean, drop = FALSE)
+
+class_by_cyl_pivot <- as.data.frame(class_by_cyl_pivot)
+
+class_by_cyl_pivot
+```
 
 
 
