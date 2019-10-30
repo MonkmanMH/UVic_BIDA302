@@ -38,18 +38,18 @@ At the end of this lesson, learners will be able to:
 | Block      | Time           | Topics  | &#8212; |
 |---         |:---            |:---     |:---:  |
 |1a          | 9:00 to 9:30   | Welcome to BIDA302!  | &#8212; |
-|1b          | 9:30 to 10:30  | Why code? Why R? <br> Introduction to R and RStudio | &#8212; |
+|1b <br> 1c  | 9:30 to 10:30  | Why code? Why R? <br> Introduction to R and RStudio | &#8212; |
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2           | 10:45 to 12:00 | The data science process and data wrangling <br> Programming foundations | &#8212; |
+|2a <br> 2b  | 10:45 to 12:00 | The data science process <br> Data wrangling & Programming foundations | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
-|3           | 1:00 to 2:15   | Data wrangling | &#8212; |
+|3           | 1:00 to 2:15   | Data wrangling (continued) | &#8212; |
 |&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
 |4a          | 2:30 to 3:00   | Assignment 1 | &#8212; |
-|4b          | 3:00 to 4:00   | Installing R on your own computer <br> Wrap up | &#8212; |
+|4b <br> 4c  | 3:00 to 4:00   | Installing R on your own computer <br> Wrap up | &#8212; |
 
 
 
-### 1. Welcome!
+### 1a. Welcome!
 
 Format: participation and instructor lecture w/ slides
 
@@ -76,11 +76,18 @@ Time allocation: 30 minutes (9:00 to 9:30)
 
 * Moodle
 
-### 2. An introduction to R and RStudio Cloud
+### 1b. Why Code? Why R?
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (9:00 to 9:45)
+
+
+### 1c. An introduction to R and RStudio Cloud
 
 Format: learner (instructor guided), using RStudio Cloud
 
-Time allocation: 60 minutes (9:30 to 10:30)
+Time allocation: 45 minutes (9:45 to 10:30)
 
 #### RStudio Cloud
 
@@ -92,9 +99,9 @@ Time allocation: 60 minutes (9:30 to 10:30)
   
   - assignment arrow and objects
 
-* more complex example
+* more complex example with {dplyr}
 
-  - make a plot
+* R Markdown
 
 
 ## BREAK
@@ -187,18 +194,18 @@ Format: instructor summary, w/ slides
 
 ## Readings 
 
-### Getting ready for next week
+### From R4DS
 
-The BIDA302 Course Syllabus.
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
 
-Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
-
-Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
-
-[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
+* 
 
 
 ### Digging deeper into this week's topics
+
+
+Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
+
 
 Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
 
@@ -211,6 +218,19 @@ Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/n
 Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichotomize.com/2017/09/28/r-release-names/)
 
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
+
+
+
+### Getting ready for next week
+
+The BIDA302 Course Syllabus.
+
+Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
+
+Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
+
+[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
+
 
 
 

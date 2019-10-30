@@ -35,7 +35,7 @@ Adding variables
 ---
 
 
-# {dplyr}
+# {dplyr} -
 
 ![dplyr hex](../img/dplyr_400.png)
 
@@ -150,49 +150,5 @@ mpg <- mpg %>%
 
 summary(mpg$mpg_per_cubic_litre)
 ```
-
-
-
-
----
-
-# {tidyr}
-
-![tidyr hex](../img/tidyr_400.png)
-
-The [{tidyr} site](https://tidyr.tidyverse.org/)
-
-
----
-
-A pivot table crosstab (1/2)
-Note that spread() (and gather(), it's complement) are from tidyr
-
-```{r}
-
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(mean = mean(displ)) %>%
-  arrange(desc(mean))
-
-class_by_cyl
-
-```
-
-
----
-
-A pivot table crosstab (2/2)
-
-
-```{r}
-class_by_cyl_pivot <- class_by_cyl %>%
-  spread(cyl, value = mean, drop = FALSE)
-
-class_by_cyl_pivot <- as.data.frame(class_by_cyl_pivot)
-
-class_by_cyl_pivot
-```
-
 
 

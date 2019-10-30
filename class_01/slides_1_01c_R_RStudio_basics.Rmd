@@ -83,7 +83,7 @@ Now add x and y
 
 --
 
-## Did you notice the change in the Environment pane?
+did you notice the change in the Environment pane?
 
 
 ---
@@ -123,7 +123,7 @@ Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex ima
 
 class: inverse
 
-# {tidyverse}
+# {tidyverse} -
 
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
@@ -171,5 +171,7 @@ summary(mpg)    ## provides statistical summary of data
 
 
 ---
-## another slide
+# R Markdown
+
+
 
