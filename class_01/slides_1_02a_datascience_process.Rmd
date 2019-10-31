@@ -41,16 +41,6 @@ The process
 
 Also: what we'll be covering in this course 
 
----
-
-# Getting help
-
-* package page and vignettes
-
-* blogs 
-
-* Stack Overflow
-
 
 
 ---

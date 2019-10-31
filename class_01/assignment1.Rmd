@@ -91,7 +91,7 @@ displ_class_by_cyl %>%
 
 ```
 
-Solve this problem so that the table looks like the first one in this question. (Google, Stack Overflow, and _R for Data Science_!)
+Solve this problem so that the table looks like the first one in this question. Use any and all of the reference materials at your disposal!
 
 ***
 

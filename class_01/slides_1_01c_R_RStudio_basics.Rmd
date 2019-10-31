@@ -155,7 +155,22 @@ Or, once a package is loaded, it is accessible through the Help pane (bottom rig
 
 ---
 
-# FUnctions
+## Sources of help
+
+* `?package`
+
+* package page and vignettes
+
+* Stack Overflow
+
+* blogs 
+
+
+
+
+---
+
+# Functions
 
 `function_name(arg1 = val1, arg2 = val2, ...)`
 
