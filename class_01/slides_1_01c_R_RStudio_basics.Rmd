@@ -131,6 +131,14 @@ class: inverse
 
 The [{tidyverse} site](https://tidyverse.org)
 
+***
+
+Two tidyerse packages we will be using today:
+
+{dplyr} - data wrangling
+{tidyr} - to pivot (spread and gather) data tables
+{mpg} - contains a dataframe.
+
 
 
 ---
@@ -148,16 +156,6 @@ Or, once a package is loaded, it is accessible through the Help pane (bottom rig
 
 ---
 
-One set of packages is known as “the tidyverse”
-
-Two tidyerse packages we will be using today:
-
-{dplyr} - data wrangling
-{tidyr} - to spread and gather data tables
-
-
-
----
 
 # Quick Detour
 ## some helpful base R functions
@@ -174,6 +172,5 @@ summary(mpg)    ## provides statistical summary of data
 
 ---
 # R Markdown
-
 
 
