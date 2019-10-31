@@ -102,7 +102,7 @@ class: inverse
 
 # The course moodle
 
-<link>
+link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then login with NetLink 
 
 * syllabus
 
@@ -136,7 +136,7 @@ Hadley Wickham & Garrett Grolemund, _R for Data Science_
 
 * website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
 
-![R for Data Science](../img/r4ds.png)
+![R for Data Science](../img/R4DS_400.png)
 
 
 ---
