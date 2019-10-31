@@ -24,6 +24,8 @@ class: inverse
 
 # R
 
+![R logo](../img/R.jpg)
+
 Data science / statistics programming language
 
 
