@@ -143,8 +143,7 @@ Two tidyerse packages we will be using today:
 
 ---
 
-# Quick Detour
-## Getting help
+# Quick Detour: getting help
 
 Typing a question mark (?) and a package or function brings up the Help info (bottom right pane)
 
@@ -156,9 +155,14 @@ Or, once a package is loaded, it is accessible through the Help pane (bottom rig
 
 ---
 
+# FUnctions
 
-# Quick Detour
-## some helpful base R functions
+`function_name(arg1 = val1, arg2 = val2, ...)`
+
+
+---
+
+# Quick Detour: some helpful base R functions
 
 ```{r}
 View(mpg)       ## opens data to view, too big to show here
@@ -175,9 +179,11 @@ summary(mpg)    ## provides statistical summary of data
 
 R Markdown allows you to 
 
-* save and execute code and
+* save and execute code 
 
 * generate high quality reports
+
+* use as a working notebook
 
 --
 
@@ -206,5 +212,6 @@ Go to your web browser and open [dillinger.io](https://dillinger.io/)
 
 Combines text (in Markdown) with R code
 
+Work within RStudio...
 
 

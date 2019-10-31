@@ -46,8 +46,6 @@ A pivot table crosstab (1/2)
 
 ```{r}
 
-mpg <- mpg
-
 class_by_cyl <- mpg %>%
   group_by(class, cyl) %>%
   summarise(mean = mean(displ)) %>%
@@ -78,6 +76,7 @@ class_by_cyl_pivot
 # and back to longer...
 
 ```{r}
+
 class_by_cyl_pivot %>%
   pivot_longer(-class, names_to = "cyl", values_to = "mean")
 
@@ -85,35 +84,23 @@ class_by_cyl_pivot %>%
 
 
 ---
-Note that spread() (and gather(), it's complement) are the older {tidyr} functions that do the same thing
 
-```{r}
+Note that `spread()` (and `gather()`, it's complement) are the older {tidyr} functions that do the same thing
 
-mpg <- mpg
-
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(mean = mean(displ)) %>%
-  arrange(desc(mean))
-
-class_by_cyl
-
-```
-
-
----
-
-A pivot table crosstab (2/2)
-
+For example, `spread()` to replicate the `pivot_wider()` function:
 
 ```{r}
 class_by_cyl_pivot <- class_by_cyl %>%
   spread(cyl, value = mean, drop = FALSE)
 
-class_by_cyl_pivot <- as.data.frame(class_by_cyl_pivot)
-
 class_by_cyl_pivot
 ```
+
+
+---
+# Missing values
+
+(see [R for Data Science](https://r4ds.had.co.nz/transform.html#missing-values))
 
 
 

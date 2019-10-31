@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+In Lesson 1, we used the {mpg} package to calculate the average displacement by class of car:
+
+```{r}
+library(tidyverse)
+
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+
+We then created a pivot (crosstab) table with class by number of cylinders, and then unpivoted that table:
+
+```{r}
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(displ_mean = mean(displ)) %>%
+  arrange(desc(displ_mean))
+
+# pivot table (wide)
+
+class_by_cyl_pivot <- class_by_cyl %>%
+  pivot_wider(names_from = cyl, values_from = displ_mean)
+
+class_by_cyl_pivot
+
+# and back to longer...
+
+displ_class_by_cyl <- class_by_cyl_pivot %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+
+displ_class_by_cyl
+
+```
+
+What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `mpg_class_by_cyl`?
+
+```{r}
+
+displ_class_by_cyl %>%
+  group_by(class) %>%
+  summarise(mean = mean(displ_mean))
+
+```
+
+Solve this problem so that the table looks like the first one in this question. (Google, Stack Overflow, and _R for Data Science_!)
+
