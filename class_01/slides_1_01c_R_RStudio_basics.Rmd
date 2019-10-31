@@ -173,4 +173,38 @@ summary(mpg)    ## provides statistical summary of data
 ---
 # R Markdown
 
+R Markdown allows you to 
+
+* save and execute code and
+
+* generate high quality reports
+
+--
+
+Many formats of output:
+
+* HTML (for web browsers)
+
+* Word, PDF
+
+* Slides (including PowerPoint)
+
+* Blogs
+
+* Books
+
+---
+
+# Markdown
+
+Go to your web browser and open [dillinger.io](https://dillinger.io/)
+
+
+---
+
+# R Markdown
+
+Combines text (in Markdown) with R code
+
+
 
