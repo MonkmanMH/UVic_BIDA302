@@ -17,7 +17,11 @@ output:
 
 
 ```{r setup, include=FALSE}
+
 options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+
 ```
 
 class: inverse
@@ -93,18 +97,18 @@ Boolean operators are a special type of operator that return TRUE or FALSE.
 
 | Operator | Description |
 | : ----- | ---: |
-| == | *equal, tests equality* |
-| != | *not equal, tests inequality* |
-| \> | *greater than, tests greater than* (also >=) |
-| < | *less than, tests less than* (also <=) |
-| %in% | *contains, tests inclusion* |
+| `==` | *equal, tests equality* |
+| `!=` | *not equal, tests inequality* |
+| `\>` | *greater than, tests greater than* (also >=) |
+| `<` | *less than, tests less than* (also <=) |
+| `%in%` | *contains, tests inclusion* |
 
 
 Boolean operators can be combined with *and* or *or*.  
 
 | Operator | Description |
 | : ----- | ---: |
-| & | *and, returns true if preceeding and following are both true, else false* |
+| `&` | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
 
@@ -114,7 +118,26 @@ Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyver
 
 ---
 
+## Useful functions
 
+Some basic statistical functions  
+
+| Operator | Description |
+| : ----- | ---: |
+| `min()` <br> `max()` | *minimum and maximum values* |
+| `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
+| `summary()`  | *a list of measures of central tendency* |
+| `sum()`  | *adds up the values* |
+| `count()`  | *number of cases* |
+
+
+
+
+---
+
+# `summarize`
+
+Or `summarise`!
 
 ```{r}
 mpg %>%
@@ -127,20 +150,29 @@ mpg %>%
 
 # a summary table
 
+`group_by`
+
+`arrange` to have things in ascending order
+
+* `desc` for descending order
+
+
 ```{r}
 mpg %>%                                 ## take my data, then (%>%)
   group_by(class) %>%                   ## group data by variable "class", then
-  summarise(mean = mean(displ)) %>%     ## calculate mean of variable "displ" for each, then
-  arrange(desc(mean))                   ## sort descending by that mean (ascending is simply "arrange(mean)")
+  summarise(displ_mean = mean(displ)) %>%     ## calculate mean of variable "displ" for each, then
+  arrange(desc(displ_mean))                   ## sort descending by that mean (ascending is simply "arrange(displ_mean)")
 ```
 
 
 
 ---
 
-dplyr::mutate
+# create new variables
 
-You can create variables that may (or may not) be useful in your analysis
+`mutate`
+
+You can calculate new variables that may be useful in your analysis
 
 
 ```{r}
@@ -148,7 +180,15 @@ You can create variables that may (or may not) be useful in your analysis
 mpg <- mpg %>%
   mutate(mpg_per_cubic_litre = hwy / displ)
 
+```
+
+
+the `summary()` function gives you a range of measures of central tendency
+ 
+```{r}
+
 summary(mpg$mpg_per_cubic_litre)
+
 ```
 
 

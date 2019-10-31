@@ -101,7 +101,7 @@ Time allocation: 45 minutes (9:45 to 10:30)
 
 * more complex example with {dplyr}
 
-* R Markdown
+#### R Markdown
 
 
 ## BREAK
@@ -110,21 +110,20 @@ Time allocation: 15 minutes (10:30 to 10:45)
 
 ***
 
-### 3. The Data Science Process
+### 2a. The Data Science Process
 
 Format: instructor, lecture w/slides
 
 Time allocation: 15 minutes (10:45 to 11:00)
 
 
-### 4a. Data Wrangling
+### 2b. Data Wrangling
 
 Format: instructor, lecture w/slides
 
 Time allocation: 15 minutes (10:45 to 11:00)
 
 
-### 4b. Data Wrangling
 
 Format: learner (instructor guided)
 
@@ -137,13 +136,12 @@ Time allocation: 60 minutes (12:00 to 1:00)
 
 ***
 
-### 5a. Data Wrangling (part 2)
+### 3. Data Wrangling (part 2)
 
 Format: instructor, lecture w/slides
 
 Time allocation: 15 minutes (1:00 to 1:15)
 
-### 5b. Data Wrangling
 
 Format: learner (instructor guided)
 
@@ -159,31 +157,29 @@ Time allocation: 15 minutes (2:15 to 2:30)
 
 ***
 
-## 6. Assignment #1
+## 4a. Assignment #1
 
 Time allocation: 55 minutes (2:30 to 3:00)
 
 
-## 7. Installing R & RStudio on your own computer
+## 4b. Installing R & RStudio on your own computer
 
 Time allocation: 15 minutes (3:15 to 3:30)
 
-***
 
-
-### 8. Wrap up
+## 4c. Wrap up
 
 Time allocation: 30 minutes (3:30 to 4:00)
 
-#### 8a. Summary
+### Summary
 
 Format: instructor summary, w/ slides
 
-#### 8b. Questions?
+### Questions?
 
 Format: learner Q&A
 
-#### 8c. Preview/readings for next lesson
+### Preview/readings for next lesson
 
 Format: instructor summary, w/ slides
 
