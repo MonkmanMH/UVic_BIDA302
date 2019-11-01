@@ -1,0 +1,57 @@
+---
+title: "Transform Data 3: pivot"
+output: html_notebook
+---
+
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License -->
+
+
+```{r setup}
+library(tidyverse)
+library(gapminder)
+
+```
+
+## gapminder
+
+```{r}
+gapminder
+```
+
+
+## Your Turn 3.1
+
+Create a table where:
+
+* object name `lifeExp_by_continent` that has 
+* the median life expectency for each continent for every year in the dataframe, 
+* where the continent is the column and the year is the row.
+
+(This is a restructuring of the table from 2.4)
+
+```{r}
+
+
+```
+
+## Your Turn 3.2
+
+Create a table that shows:
+
+* GDP per capita for
+* the countries Canada, United States, and Mexico are the columns, and 
+* the years after 1980 are the rows
+
+```{r}
+
+
+
+```
+
+
+
+***
+
+# Take aways
+
+* Restructure data tabulations with `pivot_wider()` and `pivot_longer`  

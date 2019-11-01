@@ -54,6 +54,35 @@ mpg
 
 
 
+
+***
+
+### 4. Religion and income data (USA)
+
+The table `relig-income` is in {tidyr}.
+
+a. Why does this table not conform to the tidy principles?
+
+b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
+
+***
+
+
+### 4. Flight data
+
+For Q3a-3d, use the data `nycflights13::flights`
+
+Find all flights that:
+
+a. Had an arrival delay of two or more hours
+b. Flew to Houston (IAH or HOU)
+c. Were operated by United, American, or Delta
+d. Departed in summer (July, August, and September)
+
+
+(from [R for Data Science, "Data transformation"](https://r4ds.had.co.nz/transform.html))
+
+
 ***
 
 ### 3. Car mileage - pivot table
@@ -103,21 +132,4 @@ displ_class_by_cyl %>%
 ```
 
 Solve this problem so that the table looks like the first one in this question. Use any and all of the reference materials at your disposal!
-
-***
-
-
-### 4. Flight data
-
-For Q3a-3d, use the data `nycflights13::flights`
-
-Find all flights that:
-
-a. Had an arrival delay of two or more hours
-b. Flew to Houston (IAH or HOU)
-c. Were operated by United, American, or Delta
-d. Departed in summer (July, August, and September)
-
-
-(from [R for Data Science, "Data transformation"](https://r4ds.had.co.nz/transform.html))
 

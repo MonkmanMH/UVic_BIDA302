@@ -68,14 +68,12 @@ RStudio, an IDE that streamlines much of your work
 
 
 ---
-class: inverse
 
 # Workflow and functionality: 1
 
 ![survey workflow 1](../img/survey_workflow_1.png)
 
 ---
-class: inverse
 
 # Workflow and functionality: 2
 
@@ -93,7 +91,7 @@ R-bloggers.com
 
 Meetup groups 
 
-- RLadies
+* RLadies
 
 
 ---
@@ -102,26 +100,28 @@ class: inverse
 
 # Learning a new language
 
---
 
-Also: might have to adapt your mental map of how data analytics "looks"
+![](../img/language_learning.jpg)
+
+???
+image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
 
 ---
 
 class: inverse
 
 
-## Your mind is flexible
+## Your mind is flexible...
 
-### Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
-
-.fafaff[Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.]
+.fafaff[
+Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
+]
 
 ---
 class: inverse
 
 
-# Computers are literal
+# ...but computers are literal
 
 Accuracy matters
 
@@ -131,9 +131,7 @@ Accuracy matters
 class: inverse
 
 
-# Computers are literal
-
-Spelling matters
+And spelling matters
 
 ![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
 
@@ -149,7 +147,7 @@ IDE (interactive development environment)
 
 * also the company that developed and supports the IDE
 
-* they do a lot of other great stuff, too
+* RStudio is also active creating and supporting packages, including...
 
 
 
@@ -173,4 +171,67 @@ class: inverse
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
 The [{tidyverse} site](https://tidyverse.org)
+
+
+---
+
+
+![R logo](../img/R.jpg)
+
+Data science / statistics programming language
+
+
+
+---
+
+![RStudio logo](../img/RStudio_400.png)
+
+
+---
+
+# An analogy...
+
+R is the engine and frame of a car
+
+![VW Beetle frame](../img/VW_ad_1_crop.png)
+
+---
+
+..the packages are the other things that enhance the car's functions
+
+![VW Beetle transparent](../img/vwlooking.jpg)
+
+---
+class: inverse
+
+# packages
+
+R uses “packages” to extend the functionality
+
+* statistical and data analysis
+
+* data visualization
+
+* data
+
+
+
+---
+
+...and RStudio is the dashboard and controls
+
+![VW Beetle dashboard](../img/VW_dashboard.jpg)
+
+
+---
+
+(more like this)
+
+![VW Beetle dashboard](../img/VW_dashboard_2019.jpg)
+
+---
+
+## Who's ready for a road trip?!
+
+![VW Beetle dashboard](../img/VW_ready_to_go.png)
 

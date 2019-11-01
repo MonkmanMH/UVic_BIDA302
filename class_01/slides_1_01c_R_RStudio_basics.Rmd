@@ -22,26 +22,23 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 ```
 
-class: inverse
 
-# R
 
-![R logo](../img/R.jpg)
+## Who's ready for a road trip?!
 
-Data science / statistics programming language
-
+![VW Beetle dashboard](../img/VW_ready_to_go.png)
 
 ---
+
 class: inverse
 
+# RStudio cloud
 
-# RStudio
+Visit: https://rstudio.cloud/spaces/34702/projects
 
-Integrated development environment (IDE)
+If you haven't already, log in or sign up
 
-* also the company that makes and supports the IDE
-
-* they do a lot of other great things, as well
+"Save a copy" of the project
 
 
 ---
@@ -65,17 +62,31 @@ Type in the console window:
 
 `10 + 4`
 
+--
+
+What happened?
+
+
 ---
 class: inverse
 
-# The power of named variables |  Creating a named object 
+First create a new R script file
+
+
+---
+class: inverse
+
+# The power of named variables 
 
 ## the assignment arrow
 
 `<-`
 
-First: create a new R script file
+> "less than" plus hyphen
 
+
+---
+class: inverse
 
 ## assign the object "x" with the value 10
 
@@ -130,6 +141,26 @@ class: inverse
 
 Now print the object `t`
 
+
+---
+class: inverse
+
+# Quick Detour: functions for objects
+
+|function |action |
+| :--- | ---: |
+| `ls()`    | *list objects*|
+| `str()`    | *display structure of object*|
+| `ls.str()`    | *list objects and their structure*|
+| `names()`    | *display structure of object*|
+
+
+
+---
+
+class: inverse
+
+Try these functions on the object `t` you created
 ---
 class: inverse
 
@@ -162,17 +193,56 @@ class: inverse
 
 
 ---
+
+![R Markdown hex](../img/rmarkdown_400.png)
+
+---
 class: inverse
 
-# Packages
 
-R uses “packages” to extend the functionality
+# R Markdown
 
-* statistical and data analysis
+R Markdown allows you to 
 
-* data visualization
+* save and execute code 
 
-* data
+* generate high quality reports
+
+* use as a working notebook
+
+--
+
+Many formats of output:
+
+* HTML (for web browsers)
+
+* Word, PDF
+
+* Slides (including PowerPoint)
+
+* reports and academic articles, books, blogs and websites
+
+---
+class: inverse
+
+# Markdown
+
+Go to your web browser and open [dillinger.io](https://dillinger.io/)
+
+
+---
+class: inverse
+
+# R Markdown
+
+Combines text (in Markdown) with R code
+
+* the cheat sheet!
+
+Work within RStudio...
+
+
+
 
 ---
 class: inverse
@@ -233,69 +303,5 @@ class: inverse
 * Stack Overflow
 
 * blogs 
-
-
----
-class: inverse
-
-# Quick Detour: some helpful base R functions
-
-```{r}
-View(mpg)       ## opens data to view, too big to show here
-
-names(mpg)      ## lists the names of all variables in dataset
-
-summary(mpg)    ## provides statistical summary of data
-
-```
-
-
-
-
-
----
-class: inverse
-
-
-# R Markdown
-
-R Markdown allows you to 
-
-* save and execute code 
-
-* generate high quality reports
-
-* use as a working notebook
-
---
-
-Many formats of output:
-
-* HTML (for web browsers)
-
-* Word, PDF
-
-* Slides (including PowerPoint)
-
-* reports and academic articles, books, blogs and websites
-
----
-class: inverse
-
-# Markdown
-
-Go to your web browser and open [dillinger.io](https://dillinger.io/)
-
-
----
-class: inverse
-
-# R Markdown
-
-Combines text (in Markdown) with R code
-
-* the cheat sheet!
-
-Work within RStudio...
 
 

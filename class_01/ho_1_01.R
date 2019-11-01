@@ -1,3 +1,8 @@
+<!-- This file by Martin is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/, adapted from  -->
+  <!-- * orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
+  <!-- * orignal work at https://r4ds.had.co.nz/ by Garrett Grolemund and Hadley Wickham. -->
+  <!-- * orignal work at https://github.com/cwickham/data-science-in-tidyverse by Charlotte Wickham. -->
+  
 ## CLASS 1
 #
 ### Example 1
