@@ -30,21 +30,30 @@ Data science / statistics programming language
 
 
 ---
+class: inverse
+
 
 # RStudio
 
-Integrated Development Environment (IDE)
+Integrated development environment (IDE)
 
-(walk through the panes)
+* also the company that makes and supports the IDE
 
----
-
-# rstudio.cloud
-
-web-based version
+* they do a lot of other great things, as well
 
 
 ---
+
+class: inverse
+
+# RStudio cloud
+
+![RStudio panes](../img/RStudio_panes.png)
+
+
+
+---
+class: inverse
 
 # Console
 
@@ -55,6 +64,7 @@ Type in the console window:
 `10 + 4`
 
 ---
+class: inverse
 
 # The power of named variables |  Creating a named object 
 
@@ -66,17 +76,24 @@ First: create a new R script file
 
 
 ## assign the object "x" with the value 10
+
 `x <- 10` 
 
 --
 
-How would you create a new object "y" with the value 4?
+> To show `x` in the console, just type `x`
+
+
+---
+class: inverse
+
+> How would you create a new object "y" with the value 4?
 
 --
 `y <- 4`
 
 
-Now add x and y
+> Now add x and y
 
 --
 
@@ -85,33 +102,78 @@ Now add x and y
 
 --
 
-did you notice the change in the Environment pane?
+> Did you notice the change in the Environment pane?
 
 
 ---
+class: inverse
 
 # How would you set `x` equal to 20?
 
 --
 
-x <- 20
+`x <- 20`
 
 --
 
 # And now divide `x` by `y`
 
-x / y
+`x / y`
+
+---
+class: inverse
+
+`t <- "If it's inside quotation marks, it's a character"`
+
+
+Now print the object `t`
+
+---
+class: inverse
+
+## Vector -- a series of values
+
+`x <- 1:10`
+
+`x <- seq(1, 10)`
+
+---
+class: inverse
+
+# `c` for concatenate
+
+x <- c(1, 5, 6)
+
+y <- c("British Columbia", "Alberta")
+
 
 
 ---
+class: inverse
+
+# Functions
+
+`function_name(arg1 = val1, arg2 = val2, ...)`
+
+`mean(x)`
+
+
+
+---
+class: inverse
 
 # Packages
 
 R uses “packages” to extend the functionality
 
+* statistical and data analysis
 
+* data visualization
+
+* data
 
 ---
+class: inverse
 
 # Welcome to The Tidyverse
 
@@ -142,6 +204,8 @@ Two tidyerse packages we will be using today:
 
 
 ---
+class: inverse
+
 
 # Quick Detour: getting help
 
@@ -154,28 +218,23 @@ Type the following:
 Or, once a package is loaded, it is accessible through the Help pane (bottom right) and will auto-fill once you start typing, which often shows many other things!
 
 ---
+class: inverse
 
-## Sources of help
+## Quick Detour: Sources of help
 
-* `?package`
+* `?package` or `?function`
 
 * package page and vignettes
+
+* cheat sheets
 
 * Stack Overflow
 
 * blogs 
 
 
-
-
 ---
-
-# Functions
-
-`function_name(arg1 = val1, arg2 = val2, ...)`
-
-
----
+class: inverse
 
 # Quick Detour: some helpful base R functions
 
@@ -189,7 +248,13 @@ summary(mpg)    ## provides statistical summary of data
 ```
 
 
+
+
+
 ---
+class: inverse
+
+
 # R Markdown
 
 R Markdown allows you to 
@@ -210,11 +275,10 @@ Many formats of output:
 
 * Slides (including PowerPoint)
 
-* Blogs
-
-* Books
+* reports and academic articles, books, blogs and websites
 
 ---
+class: inverse
 
 # Markdown
 
@@ -222,10 +286,13 @@ Go to your web browser and open [dillinger.io](https://dillinger.io/)
 
 
 ---
+class: inverse
 
 # R Markdown
 
 Combines text (in Markdown) with R code
+
+* the cheat sheet!
 
 Work within RStudio...
 

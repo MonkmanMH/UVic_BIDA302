@@ -9,6 +9,10 @@ output: github_document
 
 # Week 2 (2019-11-09)
 
+>The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable >answer can be extracted from a given body of data.
+>
+>- John Tukey
+
 ## Resources
 
 google

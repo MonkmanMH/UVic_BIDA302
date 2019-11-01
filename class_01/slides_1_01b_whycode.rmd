@@ -18,6 +18,35 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+
+# Why code?
+
+Reproducible workflow
+
+Extended functionality
+
+---
+
+# Reproducible workflow
+
+>Saves time,
+
+>Produces better science,
+
+>Creates more trusted research,
+
+>Reduces the risk of errors, and
+
+>Encourages collaboration.
+
+- David Smith, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+???
+
+David Smith, 2017-04-21, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+---
+
 class: inverse
 
 # Why code?
@@ -110,18 +139,28 @@ class: inverse
 
 # Computers are literal
 
-Accuracy matters
+Spelling matters
 
 ![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
 
-
---- 
-
-# RStudio cloud
-
-(preview panes)
+...and in R, so does case
 
 ---
+class: inverse
+
+
+# RStudio
+
+IDE (interactive development environment)
+
+* also the company that developed and supports the IDE
+
+* they do a lot of other great stuff, too
+
+
+
+---
+class: inverse
 
 # Welcome to The Tidyverse
 

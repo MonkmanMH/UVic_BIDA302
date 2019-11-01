@@ -6,9 +6,20 @@ output: html_notebook
 ```{r}
 
 library(tidyverse)
+# data files
 library(nycflights13)
 
 ```
+
+
+## Introduction
+
+"code through"
+
+- example blogs
+
+
+## Questions
 
 
 ### 1. Why does this code not work?

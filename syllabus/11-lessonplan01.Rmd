@@ -83,25 +83,12 @@ Format: participation and instructor lecture w/ slides
 Time allocation: 15 minutes (9:00 to 9:45)
 
 
-### 1c. An introduction to R and RStudio Cloud
+### 1c. An introduction to R, RStudio Cloud, and R Markdown
 
 Format: learner (instructor guided), using RStudio Cloud
 
 Time allocation: 45 minutes (9:45 to 10:30)
 
-#### RStudio Cloud
-
-* the interface
-
-* simple example
-
-  - R as a calculator
-  
-  - assignment arrow and objects
-
-* more complex example with {dplyr}
-
-#### R Markdown
 
 
 ## BREAK
@@ -129,6 +116,7 @@ Format: learner (instructor guided)
 
 Time allocation: 60 minutes (11:00 to 12:00)
 
+***
 
 ## LUNCH
 
@@ -148,7 +136,7 @@ Format: learner (instructor guided)
 Time allocation: 60 minutes (1:15 to 2:15)
 
 
-
+***
 
 ## BREAK
 
@@ -159,7 +147,7 @@ Time allocation: 15 minutes (2:15 to 2:30)
 
 ## 4a. Assignment #1
 
-Time allocation: 55 minutes (2:30 to 3:00)
+Time allocation: 30 minutes (2:30 to 3:00)
 
 
 ## 4b. Installing R & RStudio on your own computer
@@ -200,8 +188,16 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 ### Digging deeper into this week's topics
 
 
+#### Opinionated analysis development / reproducible analysis
+
 Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
 
+[The reproducible workflow](https://remi-daigle.github.io/2017-CHONe-Data/cleaning.nb.html) -- from Data Management Workshop à la CHONe
+
+Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
+
+
+#### R
 
 Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
 
@@ -216,10 +212,16 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
 
 
+#### R Markdown
+
+[Introduction to literate programming in R](https://remi-daigle.github.io/2017-CHONe-Data/Rmarkdown.nb.html) -- from Data Management Workshop à la CHONe
+
 
 ### Getting ready for next week
 
 The BIDA302 Course Syllabus.
+
+#### Tidy data
 
 Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
 
@@ -227,6 +229,7 @@ Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/
 
 [Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
 
+[Data organization with spreadsheets](https://remi-daigle.github.io/2017-CHONe-Data/organization.nb.html) -- from Data Management Workshop à la CHONe
 
 
 
