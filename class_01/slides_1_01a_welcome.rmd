@@ -61,15 +61,15 @@ class: inverse
 
 # Learning outcomes
 
-- Perform basic data manipulations
-- Create variables
-- Apply key concepts of variables, constants and functions
-- Calculate descriptive statistics
-- Perform basic logical formula functions
-- Group and ungroup data
-- Data importing & exporting
-- Extract and combine data
-- Create _what-if_ scenarios
+* Perform basic data manipulations
+* Create variables
+* Apply key concepts of variables, constants and functions
+* Calculate descriptive statistics
+* Perform basic logical formula functions
+* Group and ungroup data
+* Data importing & exporting
+* Extract and combine data
+* Create _what-if_ scenarios
 
 
 
