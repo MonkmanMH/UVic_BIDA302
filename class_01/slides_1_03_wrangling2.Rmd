@@ -41,8 +41,26 @@ The [{tidyr} site](https://tidyr.tidyverse.org/)
 
 ---
 
-A pivot table crosstab (1/2)
+A pivot table crosstab using the {mpg} data package of automobile fuel economy.
 
+First, a look at the source table.
+
+
+
+---
+
+Using `group_by` and `summarise` to create a summary table of the average engine displacement:
+
+```{r}
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+---
+
+Now do the same with vehicle class and number of cylinders:
 
 ```{r}
 
@@ -55,6 +73,14 @@ class_by_cyl
 
 ```
 
+---
+
+
+What happens if you reverse the order of the grouping variables?
+
+
+
+Create a pivot (crosstab) table with class by number of cylinders:
 
 ---
 
@@ -66,7 +92,6 @@ using `pivot_wider()`
 class_by_cyl_pivot <- class_by_cyl %>%
   pivot_wider(names_from = cyl, values_from = mean)
 
-class_by_cyl_pivot <- as.data.frame(class_by_cyl_pivot)
 
 class_by_cyl_pivot
 ```
@@ -85,16 +110,60 @@ class_by_cyl_pivot %>%
 
 ---
 
-Note that `spread()` (and `gather()`, it's complement) are the older {tidyr} functions that do the same thing
+Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced earlier this year.
+
+_R for Data Science_ uses the terms `spread()` and `gather()`, the older {tidyr} functions that do the same thing.
 
 For example, `spread()` to replicate the `pivot_wider()` function:
 
 ```{r}
-class_by_cyl_pivot <- class_by_cyl %>%
-  spread(cyl, value = mean, drop = FALSE)
 
-class_by_cyl_pivot
+class_by_cyl %>%
+  spread(cyl, value = mean)
+
 ```
+
+---
+
+# Manipulate variables (back to {dplyr})
+
+You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
+
+Using `select()` to reduce the number of variables:
+
+```{r}
+gapminder %>%                                
+  select(country, year, lifeExp) 
+
+```
+
+---
+
+
+You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
+
+In this example, note we have to use `c()` to create a list:
+
+```{r}
+gapminder %>%                                
+  select(-c(continent, pop, gdpPercap))
+
+```
+
+---
+
+
+You can define a range of columns to select:
+
+```{r}
+gapminder %>%
+  select(country, year:pop)
+```
+
+
+
+
+
 
 
 ---

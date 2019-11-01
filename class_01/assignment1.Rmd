@@ -3,6 +3,9 @@ title: "BIDA302 - assignment #1"
 output: html_notebook
 ---
 
+## YOUR NAME HERE
+
+
 ```{r}
 
 library(tidyverse)
@@ -39,7 +42,7 @@ Look carefully! (This may seem like an exercise in pointlessness, but training y
 
 ### 2. Reducing the size of your data set
 
-Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
+a. Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
 
 * Volkswagen compact and subcompact models from the model year 1999
 
@@ -52,6 +55,13 @@ mpg
 
 ```
 
+***
+
+### 3. Selecting variables
+
+What happens if you include the name of variable twice in a `select()` call? Demonstrate using the {gapminder} data.
+
+
 
 
 
@@ -61,14 +71,15 @@ mpg
 
 The table `relig-income` is in {tidyr}.
 
-a. Why does this table not conform to the tidy principles?
+a. Load this table, and take a look at it. Why does this table not conform to the tidy principles?
 
 b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
+
 
 ***
 
 
-### 4. Flight data
+### 5. Flight data
 
 For Q3a-3d, use the data `nycflights13::flights`
 
@@ -85,7 +96,7 @@ d. Departed in summer (July, August, and September)
 
 ***
 
-### 3. Car mileage - pivot table
+### 6. Car mileage - pivot table
 
 In Lesson 1, we used the {mpg} package to calculate the average displacement by class of car:
 
@@ -96,10 +107,10 @@ mpg %>%
 
 ```
 
-
 We then created a pivot (crosstab) table with class by number of cylinders, and then unpivoted that table:
 
 ```{r}
+# summary table - class by cylinder
 class_by_cyl <- mpg %>%
   group_by(class, cyl) %>%
   summarise(displ_mean = mean(displ)) %>%
