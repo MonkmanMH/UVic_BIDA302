@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 At the end of this lesson, learners will be able to:
 
-1. Describe the fundamental elements of good coding practice, and 
+1. Describe the fundamental elements of data manipulation, and 
 
 2. Demonstrate how these can be applied in a data analytics context.
 
@@ -176,13 +176,45 @@ Format: instructor summary, w/ slides
 
 ***
 
-## Readings 
+## Readings & Reference Materials
 
-### From R4DS
+### Packages
+
+#### R Markdown
+
+[R Markdown reference at RStudio](https://rmarkdown.rstudio.com/docs/)
+
+[R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
+
+
+#### {dplyr} .
+
+[{dplyr} reference at tidyverse.org](https://dplyr.tidyverse.org/)
+
+[Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
+
+
+#### {tidyr} .
+
+[{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
+
+
+
+
+
+### From _R4DS_
 
 Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
 
-* 
+* [4. Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [5. Data Transformation](https://r4ds.had.co.nz/transform.html)
+
+* [6. Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+
+* [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+
+* [12. Tidy data](https://r4ds.had.co.nz/tidy-data.html)
 
 
 ### Digging deeper into this week's topics

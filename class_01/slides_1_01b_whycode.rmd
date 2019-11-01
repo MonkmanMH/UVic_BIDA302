@@ -18,16 +18,13 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+class: inverse
+
 
 # Why code?
 
-Reproducible workflow
 
-Extended functionality
-
----
-
-# Reproducible workflow
+## Reproducible workflow
 
 >Saves time,
 
@@ -45,29 +42,13 @@ Extended functionality
 
 David Smith, 2017-04-21, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
 
----
-
-class: inverse
-
-# Why code?
-
-Opinionated analysis development
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
 
 * Reproducible and Auditable
 
 * Accurate
 
 * Collaborative
-
-Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
-
----
-
-class: inverse
-
-# Examples
-
-
 
 
 
@@ -89,11 +70,16 @@ RStudio, an IDE that streamlines much of your work
 ---
 class: inverse
 
+# Workflow and functionality: 1
 
-# Functionality
+![survey workflow 1](../img/survey_workflow_1.png)
 
+---
+class: inverse
 
+# Workflow and functionality: 2
 
+![survey workflow 1](../img/survey_workflow_2.png)
 
 ---
 
@@ -101,8 +87,13 @@ class: inverse
 
 # Community
 
+Twitter: #rstats
 
+R-bloggers.com
 
+Meetup groups 
+
+- RLadies
 
 
 ---
@@ -110,6 +101,8 @@ class: inverse
 
 
 # Learning a new language
+
+--
 
 Also: might have to adapt your mental map of how data analytics "looks"
 
@@ -122,6 +115,7 @@ class: inverse
 
 ### Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
 
+.fafaff[Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.]
 
 ---
 class: inverse
