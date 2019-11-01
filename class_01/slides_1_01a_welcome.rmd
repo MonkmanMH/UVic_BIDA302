@@ -104,11 +104,11 @@ class: inverse
 
 link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then login with NetLink 
 
-* syllabus
+* course outline
 
-* materials
+* lesson plans and slide decks
 
-* lesson plans
+* links to other reading material and data files
 
 * forum
 
@@ -116,11 +116,11 @@ link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then log
 
 class: inverse
 
-# RStudio Connect
+# RStudio Cloud
 
 Web-based version of R & RStudio
 
-_add web address for course content_
+[Link](https://rstudio.cloud/spaces/34702/join?access_code=lr5keQ5WXcZ5ENNAZoLEAmPSQHav8seVNT2j36e%2F) (but will be invitation-only after today's class)
 
 * later today, we'll run through the steps to install R on your own computer
 
