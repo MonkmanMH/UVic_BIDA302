@@ -20,6 +20,7 @@ output:
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
+library(gapminder)
 ```
 
 class: inverse
@@ -78,13 +79,10 @@ class_by_cyl
 
 What happens if you reverse the order of the grouping variables?
 
-
+---
 
 Create a pivot (crosstab) table with class by number of cylinders:
 
----
-
-A pivot table crosstab (2/2)
 
 using `pivot_wider()`
 
@@ -125,9 +123,12 @@ class_by_cyl %>%
 
 ---
 
-# Manipulate variables (back to {dplyr})
+## Manipulate variables 
+##(back to {dplyr})
 
 You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
+
+---
 
 Using `select()` to reduce the number of variables:
 
@@ -162,14 +163,6 @@ gapminder %>%
 
 
 
-
-
-
-
----
-# Missing values
-
-(see [R for Data Science](https://r4ds.had.co.nz/transform.html#missing-values))
 
 
 
