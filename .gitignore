@@ -3,6 +3,10 @@
 *.html
 *.Rproj
 
+*.pdf
+hexSticker/
+css_files/
+
 # History files
 .Rhistory
 .Rapp.history
