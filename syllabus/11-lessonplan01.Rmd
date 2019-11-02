@@ -244,6 +244,13 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
 
 
+#### Naming things
+
+Jenny Bryan, ["How to name files"](https://speakerdeck.com/jennybc/how-to-name-files)
+
+* https://twitter.com/JennyBryan/status/807805087544328192?s=20
+
+
 #### R Markdown
 
 [Introduction to literate programming in R](https://remi-daigle.github.io/2017-CHONe-Data/Rmarkdown.nb.html) -- from Data Management Workshop à la CHONe

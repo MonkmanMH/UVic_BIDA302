@@ -78,6 +78,55 @@ And spelling matters
 
 ---
 
+# Naming objects in R
+
+Object names: 
+
+* must start with a letter
+
+* can only contain letters, numbers, `_`, and `.`
+
+* _no spaces!_
+
+Be descriptive!
+
+---
+
+
+## Three principles for (file) names
+
+machine readable
+
+human readable
+
+plays well with default ordering
+
+* from Jenny Bryan, ["How to name files"](https://speakerdeck.com/jennybc/how-to-name-files)
+
+---
+
+### Naming files
+
+Some other suggestions: 
+
+* only use letters, numbers, `_`, and `.`
+
+* _no spaces!_
+
+---
+
+# Dates
+
+## ISO 8601
+
+YYYY-MM-DD
+
+Note: see XKCD, ["ISO 8601"](https://xkcd.com/1179/)
+
+
+
+---
+
 class: inverse
 
 # RStudio cloud
