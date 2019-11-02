@@ -229,7 +229,7 @@ Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/
 Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
 
 
-#### R
+#### Why R?
 
 Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
 
@@ -269,6 +269,17 @@ Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/
 [Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
 
 [Data organization with spreadsheets](https://remi-daigle.github.io/2017-CHONe-Data/organization.nb.html) -- from Data Management Workshop à la CHONe
+
+#### Thinking about your project
+
+Stephanie Hazlitt's fence, 2019-02-10 - [Weather with weathercan 🇨🇦](https://github.com/stephhazlitt/some-assembly-required/blob/master/R/fence/fence.md)
+
+* https://twitter.com/stephhazlitt/status/1099904166124605441?s=20
+
+* https://twitter.com/stephhazlitt/status/1101721399243112449?s=20
+
+[Left-handed catchers in baseball](https://bayesball.blogspot.com/2014/07/left-handed-catchers.html) (Martin Monkman, 2014-07-23) -- the code is a bit dated, but you get the idea
+
 
 
 
