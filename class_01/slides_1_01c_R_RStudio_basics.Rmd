@@ -22,11 +22,59 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 ```
 
+class: inverse
 
 
-## Who's ready for a road trip?!
+## Road trip starts now!
 
-![VW Beetle dashboard](../img/VW_ready_to_go.png)
+![VW Beetle driving](../img/VW_ontheroad.jpg)
+
+
+---
+class: inverse
+
+
+# Learning a new language
+
+
+![](../img/language_learning.jpg)
+
+...is difficult
+
+???
+image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
+
+---
+
+class: inverse
+
+
+## Your mind is flexible...
+
+.fafaff[
+Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
+]
+
+---
+class: inverse
+
+
+# ...but computers are literal
+
+Accuracy matters
+
+![Hadley Wickham tweet](../img/Hadley_5minutes_2019-10-27.jpg)
+
+---
+class: inverse
+
+
+And spelling matters
+
+![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
+
+...and in R, so does case
+
 
 ---
 
@@ -143,9 +191,9 @@ Now print the object `t`
 
 
 ---
-class: inverse
 
-# Quick Detour: functions for objects
+# Quick Detour
+## functions for objects
 
 |function |action |
 | :--- | ---: |
@@ -156,11 +204,6 @@ class: inverse
 
 
 
----
-
-class: inverse
-
-Try these functions on the object `t` you created
 ---
 class: inverse
 
@@ -199,35 +242,41 @@ class: inverse
 ---
 class: inverse
 
+### R Markdown
 
-# R Markdown
-
-R Markdown allows you to 
+.pull-left[
+...allows you to 
 
 * save and execute code 
 
 * generate high quality reports
 
 * use as a working notebook
+]
 
 --
 
-Many formats of output:
+.pull-right[
+...and output:
 
 * HTML (for web browsers)
 
 * Word, PDF
 
-* Slides (including PowerPoint)
+* slides (including PowerPoint)
 
-* reports and academic articles, books, blogs and websites
+]
+
+Used for reports and academic articles, books, blogs and websites
 
 ---
 class: inverse
 
 # Markdown
 
-Go to your web browser and open [dillinger.io](https://dillinger.io/)
+A simplified formatting markup language with plain text syntax
+
+_Go to your web browser and open [dillinger.io](https://dillinger.io/)_
 
 
 ---
@@ -263,15 +312,34 @@ class: inverse
 
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
-The [{tidyverse} site](https://tidyverse.org)
+The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
-***
+---
+class: inverse
 
-Two tidyerse packages we will be using today:
+Two tidyerse data transformation packages we will be using today:
 
 {dplyr} - data wrangling
+
 {tidyr} - to pivot (spread and gather) data tables
-{mpg} - contains a dataframe.
+
+
+---
+class: inverse
+
+## Loading a package
+
+There are two steps to getting a package ready to use:
+
+1. download and install
+
+`install.packages()`
+
+Our RStudio environment has all the packages you'll need!
+
+2. load
+
+`library()`
 
 
 
@@ -279,20 +347,23 @@ Two tidyerse packages we will be using today:
 class: inverse
 
 
-# Quick Detour: getting help
+# Quick Detour
+##getting help
 
-Typing a question mark (?) and a package or function brings up the Help info (bottom right pane)
+In the console, typing a question mark (?) and a package or function brings up the Help info (bottom right pane)
 
 Type the following:
 
 `?mpg`
 
-Or, once a package is loaded, it is accessible through the Help pane (bottom right) and will auto-fill once you start typing, which often shows many other things!
+Or, once a package is loaded, it is accessible through the Help pane (bottom right) and will auto-fill once you start typing
+
 
 ---
 class: inverse
 
-## Quick Detour: Sources of help
+# Quick Detour
+## other sources of help
 
 * `?package` or `?function`
 

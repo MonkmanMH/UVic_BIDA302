@@ -49,12 +49,11 @@ The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
 ---
 
 
-# the {dplyr} functions are verbs
+## {dplyr} functions are verbs
 
-The ones we'll be discovering today:
 
 |function |action |
-| :--- | --`-: |
+| :--- | ---: |
 | `filter()`    | *keep rows*|
 | `mutate()`    | *create a new variable*|
 | `group_by()`  | *declare subsets in data*|
@@ -74,7 +73,7 @@ Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyver
 
 ---
 
-# Arithmetic operators
+## Arithmetic operators
 
 | Operator | Description |
 | : ----- | ---: |
@@ -91,7 +90,7 @@ Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyver
 
 ---
 
-# Boolean operators
+## Boolean operators
 
 Boolean operators are a special type of operator that return TRUE or FALSE.  
 
@@ -101,7 +100,14 @@ Boolean operators are a special type of operator that return TRUE or FALSE.
 | !=    | *not equal, tests inequality* |
 | \>    | *greater than, tests greater than* (also >=) |
 | <     | *less than, tests less than* (also <=) |
-| %in%` | *contains, tests inclusion* |
+| %in%  | *contains, tests inclusion* |
+
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+---
 
 
 Boolean operators can be combined with *and* or *or*.  
@@ -111,16 +117,13 @@ Boolean operators can be combined with *and* or *or*.
 | `&`     | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
-(see [R for Data Science, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators))
+.footnote[see [R for Data Science, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
 
 
-???
-
-Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
 
 ---
 
-# Useful functions
+## Useful functions
 
 Some basic statistical functions  
 
@@ -139,7 +142,7 @@ Some basic statistical functions
 
 # `summarize`
 
-Or `summarise`!
+_or_ `summarise`!
 
 ```{r}
 mpg %>%
@@ -152,30 +155,39 @@ mpg %>%
 
 # a summary table
 
-`group_by`
+`group_by()` to define the summary grouping
 
-`arrange` to have things in ascending order
+`arrange()` to have things in ascending order
 
-* `desc` for descending order
+modify with `desc()` for descending order
 
 
-```{r}
-mpg %>%                                 ## take my data, then (%>%)
-  group_by(class) %>%                   ## group data by variable "class", then
-  summarise(displ_mean = mean(displ)) %>%     ## calculate mean of variable "displ" for each, then
-  arrange(desc(displ_mean))                   ## sort descending by that mean (ascending is simply "arrange(displ_mean)")
+```{r eval=FALSE}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
 ```
-
-
 
 ---
 
-# create new variables
 
-`mutate`
+```{r}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
+```
+
+---
+
+## create new variables
+
+`mutate()`
 
 You can calculate new variables that may be useful in your analysis
 
+### _vectors of the same length_
 
 ```{r}
 
@@ -184,12 +196,29 @@ mpg <- mpg %>%
 
 ```
 
+---
+
+### _vector of the length = 1_
+
+* convert miles per US gallon to litres per 100 kilometers
+
+```{r}
+# calculate conversion constant
+lp100km <- (100 * 3.785) / (1.61)
+lp100km
+# divide constant by hwy mpg to get hwy litres per 100 km
+mpg %>%
+  mutate(hwy_lp100km = lp100km / hwy)
+
+```
+
+---
 
 the `summary()` function gives you a range of measures of central tendency
  
 ```{r}
 
-summary(mpg$mpg_per_cubic_litre)
+summary(mpg$hwy)
 
 ```
 

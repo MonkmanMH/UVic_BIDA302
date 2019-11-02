@@ -18,8 +18,6 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-class: inverse
-
 
 # Why code?
 
@@ -52,20 +50,6 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 
 
----
-
-class: inverse
-
-# What is R?
-
-Base R: a script-based statistical analysis tool
-
-* with many, many packages (data, statistical functions, wrappers of other software)
-
-RStudio, an IDE that streamlines much of your work
-
-* including authoring tools for communication
-
 
 ---
 
@@ -81,9 +65,8 @@ RStudio, an IDE that streamlines much of your work
 
 ---
 
-class: inverse
 
-# Community
+# A collaborative community
 
 Twitter: #rstats
 
@@ -91,54 +74,41 @@ R-bloggers.com
 
 Meetup groups 
 
-* RLadies
+RLadies
 
 
 ---
-class: inverse
 
 
-# Learning a new language
+![R logo](../img/R.jpg)
+
+Base R
+
+* a data science / statistics programming language
+
+* built-in analytic functions
 
 
-![](../img/language_learning.jpg)
 
-???
-image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
+---
+
+# packages
+
+Packages extend the functionality of R
+
+* statistical and data analysis
+
+* data visualization
+
+* data
+
 
 ---
 
-class: inverse
+![RStudio logo](../img/RStudio_400.png)
 
-
-## Your mind is flexible...
-
-.fafaff[
-Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
-]
 
 ---
-class: inverse
-
-
-# ...but computers are literal
-
-Accuracy matters
-
-![Hadley Wickham tweet](../img/Hadley_5minutes_2019-10-27.jpg)
-
----
-class: inverse
-
-
-And spelling matters
-
-![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
-
-...and in R, so does case
-
----
-class: inverse
 
 
 # RStudio
@@ -151,10 +121,10 @@ IDE (interactive development environment)
 
 
 
----
-class: inverse
 
-# Welcome to The Tidyverse
+---
+
+# The Tidyverse
 
 ![dplyr hex](../img/tidyverse_400.png)
 
@@ -164,34 +134,21 @@ Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex ima
 
 ---
 
-class: inverse
 
 # {tidyverse}
 
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
-The [{tidyverse} site](https://tidyverse.org)
+The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 
----
-
-
-![R logo](../img/R.jpg)
-
-Data science / statistics programming language
-
-
-
----
-
-![RStudio logo](../img/RStudio_400.png)
 
 
 ---
 
 # An analogy...
 
-R is the engine and frame of a car
+Base R is like the engine and frame of a car
 
 ![VW Beetle frame](../img/VW_ad_1_crop.png)
 
@@ -200,19 +157,6 @@ R is the engine and frame of a car
 ..the packages are the other things that enhance the car's functions
 
 ![VW Beetle transparent](../img/vwlooking.jpg)
-
----
-class: inverse
-
-# packages
-
-R uses “packages” to extend the functionality
-
-* statistical and data analysis
-
-* data visualization
-
-* data
 
 
 

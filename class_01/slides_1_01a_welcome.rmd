@@ -18,44 +18,6 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-class: inverse
-
-# Martin Monkman
-
-email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
-
-"office hours" via skype
-
-* Tuesday, 8:00 pm to 9:00 pm
-  
-*  skype: <a href="callto:<monkmanmh>">monkmanmh</a>
-
-
-
----
-
-class: inverse
-
-
-# Stucture
-
-## Class
-
-Saturday, 9:00 am - 4:00 pm
-
-* hour for lunch
-
-* a bit of lecture
-
-* lots of hands-on
-
-## Assignments
-
-* time in class to get started
-
- 
-
----
 
 class: inverse
 
@@ -90,11 +52,33 @@ class: inverse
 
 ## Meta outcome 2: principles 
 
-Concepts and practices that you can carry through to other environments
+Concepts and practices that you can carry through to data analysis in other environments
 
 * will have examples of coding in Excel and Python
 
 
+
+
+---
+
+class: inverse
+
+
+# Stucture
+
+## Class
+
+Saturday, 9:00 am - 4:00 pm
+
+* hour for lunch
+
+* a bit of lecture
+
+* lots of hands-on
+
+## Assignments
+
+* time in class to get started
 
 ---
 
@@ -111,8 +95,10 @@ link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then log
 * links to other reading material and data files
 
 * forum
+ 
 
 ---
+
 
 class: inverse
 
@@ -132,12 +118,17 @@ class: inverse
 
 # Text book
 
+.pull-left[
+
 Hadley Wickham & Garrett Grolemund, _R for Data Science_
 
 * website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
+]
+
+.pull-right[
 
 ![R for Data Science](../img/R4DS_400.png)
-
+]
 
 ---
 class: inverse
@@ -170,6 +161,17 @@ class: inverse
 * Blogs
 
 
+
+---
+class: inverse
+
+
+## Icebreaker ...
+
+
+
+
+
 ---
 class: inverse
 
@@ -194,26 +196,41 @@ The R user community:
 * hex stickers!
 
 
+
 ---
 class: inverse
 
 
 ## Code of Conduct
 
-- from the R Consortium
+_from the R Consortium_
 
-<p>
+* be open
 
-<p>
+* be considerate
+
+* be respectful
+
+In other words:
 
 ~ Be a decent human being
 
 
+
 ---
+
 class: inverse
 
+# Martin Monkman
 
-## Icebreaker ...
+email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
+
+"office hours" via skype
+
+* Tuesday, 8:00 pm to 9:00 pm
+  
+*  skype: <a href="callto:<monkmanmh>">monkmanmh</a>
+
 
 
 ---

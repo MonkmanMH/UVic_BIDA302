@@ -35,7 +35,7 @@ Forbes: ["Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science T
 
 ---
 
-The process
+## The data science process
 
 ![The data science process](../img/data-science.png)
 
@@ -45,23 +45,20 @@ Also: what we'll be covering in this course
 
 ---
 
-# The truth about how programmers work
+### The truth about how programmers really work
 
-O'Rly?
-
-![Googling the error message](../img/orly_googling_the_error_message.jpg)
+![Googling the error message](../img/orly_googling_the_error_message_400.jpg)
 
 ---
 
-# The truth about how programmers work, part 2
+### The truth about how programmers work, part 2
 
-O'Rly?
 
-![Copying and Pasting from Stack Overflow](../img/orly_copy_and_paste.jpeg)
+![Copying and Pasting from Stack Overflow](../img/orly_copy_and_paste_400.jpeg)
 
 ---
 
-# Sombreros on the pandas
+### Sombreros on the pandas
 
 ![Sombreros on the pandas](../img/sombreros_on_the_pandas.png)
 
