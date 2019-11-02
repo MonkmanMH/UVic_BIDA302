@@ -25,15 +25,10 @@ options(htmltools.dir.version = FALSE)
 ## Reproducible workflow
 
 >Saves time,
-
 >Produces better science,
-
 >Creates more trusted research,
-
 >Reduces the risk of errors, and
-
 >Encourages collaboration.
-
 - David Smith, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
 
 ???
@@ -179,3 +174,4 @@ Base R is like the engine and frame of a car
 
 ![VW Beetle dashboard](../img/VW_ready_to_go.png)
 
+© 2019 GitHub, Inc.
