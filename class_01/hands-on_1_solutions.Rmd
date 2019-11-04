@@ -354,7 +354,7 @@ Now do the same with vehicle class and number of cylinders:
 
 ```{r}
 # answer
-class_by_cyl <- mpg %>%                 # note that an ojbect `class_by_cyl` is created
+class_by_cyl <- mpg %>%                 # note that an object `class_by_cyl` is created
   group_by(class, cyl) %>%
   summarise(displ_mean = mean(displ)) 
 
