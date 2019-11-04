@@ -155,7 +155,7 @@ displ_class_by_cyl
 
 ```
 
-> a. What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `mpg_class_by_cyl`?
+> a. What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `displ_class_by_cyl`?
 
 ```{r}
 
