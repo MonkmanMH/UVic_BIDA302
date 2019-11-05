@@ -3,15 +3,154 @@ title: "BIDA302: Lesson Plan, Week 2"
 subtitle: "2019-11-09"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
-output: github_document
+output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
 # Week 2 (2019-11-09)
 
+
+| Week      | Date | Topics   | Lesson |
+|---        |:---  |:---      |:---:  |
+|2          | 2019-11-09 | Good coding habits <br> Tidy data <br> Data wrangling: the basics <br> R Markdown: the next level | &#8212; |
+
+
 >The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable >answer can be extracted from a given body of data.
 >
 >- John Tukey
+
+
+
+At the end of this lesson, learners will be able to:
+
+1. Describe the fundamental elements of data manipulation, and 
+
+2. Demonstrate how these can be applied in a data analytics context.
+
+
+***
+
+## Activities
+
+| Block      | Time           | Topics  | &#8212; |
+|---         |:---            |:---     |:---:  |
+|1a          | 9:00 to 9:30   | Review Homework #1  | &#8212; |
+|1b          | 9:30 to 10:30  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
+|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
+|2a <br> <br> 2b  | 10:45 to 12:00 | Tidy data <br> Good coding habits <br> Importing data | &#8212; |
+|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|3           | 1:00 to 2:15   | Reading data <br> Data wrangling (continued) | &#8212; |
+|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
+|4a          | 2:30 to 3:00   | Assignment 2 | &#8212; |
+|4b <br> 4c  | 3:00 to 4:00   | ? <br> Wrap up | &#8212; |
+
+
+
+### 1a. Review Homework #1
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 30 minutes (9:00 to 9:30)
+
+
+### 1b. Variable types
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (9:00 to 9:45)
+
+
+### 1c. R in data analysis - an example
+
+Format: learner (instructor guided), using RStudio Cloud
+
+Time allocation: 45 minutes (9:45 to 10:30)
+
+
+
+## BREAK
+
+Time allocation: 15 minutes (10:30 to 10:45)
+
+***
+
+### 2a. Tidy data & good coding habits
+
+Format: instructor, lecture w/slides
+
+Time allocation: 15 minutes (10:45 to 11:00)
+
+
+### 2b. Importing data
+
+Format: instructor, lecture w/slides
+
+Time allocation: 15 minutes (10:45 to 11:00)
+
+
+
+Format: learner (instructor guided)
+
+Time allocation: 60 minutes (11:00 to 12:00)
+
+***
+
+## LUNCH
+
+Time allocation: 60 minutes (12:00 to 1:00)
+
+***
+
+### 3. Data Wrangling (part 2)
+
+Format: instructor, lecture w/slides
+
+Time allocation: 15 minutes (1:00 to 1:15)
+
+
+Format: learner (instructor guided)
+
+Time allocation: 60 minutes (1:15 to 2:15)
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (2:15 to 2:30)
+
+
+***
+
+## 4a. Assignment #1
+
+Time allocation: 30 minutes (2:30 to 3:00)
+
+
+## 4b. Installing R & RStudio on your own computer
+
+Time allocation: 15 minutes (3:15 to 3:30)
+
+
+## 4c. Wrap up
+
+Time allocation: 30 minutes (3:30 to 4:00)
+
+### Summary
+
+Format: instructor summary, w/ slides
+
+### Questions?
+
+Format: learner Q&A
+
+### Preview/readings for next lesson
+
+Format: instructor summary, w/ slides
+
+
+
+
 
 ## Resources
 
@@ -27,5 +166,14 @@ https://rtask.thinkr.fr/when-development-starts-with-documentation/
 
 ## Documentation
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why writing readable code matters:<br><br>It’s like the turn signals in your car: Even though you (the driver) might know where you’re going, you still need to make your intentions clear to everyone else around you.<a href="https://twitter.com/hashtag/DevDiscuss?src=hash&amp;ref_src=twsrc%5Etfw">#DevDiscuss</a> <a href="https://t.co/5GKrYaEz41">https://t.co/5GKrYaEz41</a></p>&mdash; Olivia Liddell (@oliravi) <a href="https://twitter.com/oliravi/status/1181741102447116288?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why writing readable code matters:<br><br>It’s like the turn signals in your car: Even though you (the driver) might know where you’re going, you still need to make your intentions clear to everyone else around you.<a href="https://twitter.com/hashtag/DevDiscuss?src=hash&amp;ref_src=twsrc%5Etfw">#DevDiscuss</a> <a href="https://t.co/5GKrYaEz41">https://t.co/5GKrYaEz41</a></p>&mdash; Olivia Liddell (\@oliravi) <a href="https://twitter.com/oliravi/status/1181741102447116288?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+
+
+
+
+
+
+
+
 
