@@ -59,7 +59,8 @@ From [_R for Data Science_, "Tidy Data"](https://r4ds.had.co.nz/tidy-data.html)
 
 ---
 
-# Untidy data: example
+## Untidy data: example
+
 
 ```{r}
 #tidyr::relig_income
@@ -85,6 +86,13 @@ tidyr::relig_income %>%
   pivot_longer(-religion, names_to = "income_cat", values_to = "count")
 ```
 
+---
+
+You can see this type of table structure a lot...
+
+It is often used to present summary tables that will be read by humans
+
+_find another example...BC Stats?_
 
 
 ---
@@ -111,8 +119,76 @@ _Sometimes untidy data can be too long!_
 
 ---
 
+To tidy the table, we need to `pivot_wider()`
+
 ```{r}
 CDN_elec_2019 %>%
   pivot_wider(names_from = category, values_from = number)
+```
+
+
+---
+
+## Multiple observations per row
+
+```{r echo=FALSE}
+
+family <- tribble(
+  ~family,  ~dob_child1,  ~dob_child2, ~gender_child1, ~gender_child2,
+       1L, "1998-11-26", "2000-01-29",             1L,             2L,
+       2L, "1996-06-22",           NA,             2L,             NA,
+       3L, "2002-07-11", "2004-04-05",             2L,             2L,
+       4L, "2004-10-10", "2009-08-27",             1L,             1L,
+       5L, "2000-12-05", "2005-02-28",             2L,             1L,
+)
+family <- family %>% mutate_at(vars(starts_with("dob")), parse_date)
+family
+
+```
+
+???
+
+source: https://tidyr.tidyverse.org/articles/pivot.html
+
+---
+
+* in `names_to`, there are two things in the c():
+  - `".value"` sets part of the column name is the associated with the value (e.g. "dob" is 1998-11-26)
+  - then the second part of the name becomes the value of the "child" variable
+* use `names_sep` to specify where the split happens
+
+```{r}
+
+family %>% 
+  pivot_longer(
+    -family, 
+    names_to = c(".value", "child"), 
+    names_sep = "_"
+  )
+
+family %>% 
+  pivot_longer(
+    -family, 
+    names_to = c(".value", "child"), 
+    names_sep = "_"
+  )
+
+```
+
+
+---
+
+And with the NA row omitted...
+
+```{r}
+
+family %>% 
+  pivot_longer(
+    -family, 
+    names_to = c(".value", "child"), 
+    names_sep = "_", 
+    values_drop_na = TRUE
+  )
+
 ```
 
