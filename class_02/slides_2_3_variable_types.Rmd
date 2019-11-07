@@ -1,0 +1,47 @@
+---
+title: "Variable Types"
+subtitle: "in R"
+author: "BIDA302 - lesson 2"
+date: "2019/11/09"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+# Martin Monkman
+---
+
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+
+```
+
+class: inverse
+
+# Variable types
+
+When looking at your dataframe:
+
+`int` stands for integers.
+
+`dbl` stands for doubles, or real numbers.
+
+`chr` stands for character vectors, or strings.
+
+`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
+`date` stands for dates.
+
+`dttm` stands for date-times (a date + a time).
+
+`lgl` stands for logical, vectors that contain only TRUE or FALSE.
+
+
