@@ -237,3 +237,34 @@ The table should be
 | August 2019 | 1  | %  | another % |
 
 
+---
+
+Property Transfer Tax
+
+```{r}
+library(readxl)
+
+ptt <- read_excel("provincial_monthly_2019.xlsx",
+                  na = "nr") %>%
+  janitor::clean_names()
+ptt
+```
+
+???
+
+source: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019/resource/aa3995ff-3e11-47c2-8bbe-02a1a94fab9e
+
+```{r}
+
+ptt %>%
+  pivot_longer(-statistics, names_to = "month", values_to = "ptt_val") %>%
+  pivot_wider(names_from = statistics, values_from = ptt_val)
+
+```
+
+But even this isn't tidy! There are a number of variables that are sub-sets of others 
+
+* e.g. "TOTAL MARKET TRANSACTIONS (count)" is made up of "RESIDENTIAL TOTAL (count)", "COMMERCIAL TOTAL (count)", etc -- which in turn are made up of smaller categories ("RESIDENTIAL - SINGLE FAMILY RESIDENTIAL (count)", etc)
+
+* there are some stand-alone variables
+

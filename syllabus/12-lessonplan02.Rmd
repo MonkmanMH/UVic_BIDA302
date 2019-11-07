@@ -156,6 +156,14 @@ Format: instructor summary, w/ slides
 
 ## Resources
 
+[Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
+
+* this article uses the old {tidyr} `gather()` and `spread()` functions, but it's got some good material on how to think about how and why data needs to be reshaped
+
+
+
+
+
 google
 
 https://twitter.com/chrisalbon/status/1142988432815169536?s=20
