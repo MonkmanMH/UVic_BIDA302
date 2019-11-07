@@ -44,4 +44,4 @@ When looking at your dataframe:
 
 `lgl` stands for logical, vectors that contain only TRUE or FALSE.
 
-
+`NA` is a 
