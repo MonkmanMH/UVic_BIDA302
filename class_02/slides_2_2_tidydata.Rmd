@@ -28,9 +28,9 @@ class: inverse
 
 # Tidy data
 
-> “Happy families are all alike; every unhappy family is unhappy in its own way.” –– Leo Tolstoy
+> “Happy families are all alike; every unhappy family is unhappy in its own way.”<br> –– Leo Tolstoy
 
->“Tidy datasets are all alike, but every messy dataset is messy in its own way.” –– Hadley Wickham
+>“Tidy datasets are all alike, but every messy dataset is messy in its own way.”<br> –– Hadley Wickham
 
 
 
@@ -70,7 +70,7 @@ print(tidyr::relig_income, n=5)
 
 --
 
-It's untidy because it violates Principle #1: the income variable is spread across 10 columns
+It's untidy because it violates Principle #1: <br>the income variable is spread across 10 columns
 
 ???
 
@@ -92,11 +92,15 @@ You can see this type of table structure a lot...
 
 It is often used to present summary tables that will be read by humans
 
-_find another example...BC Stats?_
+![retail sales table](../img/StatCan_retailsales_2019-08_table1.JPG)
 
+???
+
+Source: Statistics Canada, Retail sales, August 2019 https://www150.statcan.gc.ca/n1/daily-quotidien/191022/t001a-eng.htm
 
 ---
 ## Is this data tidy?
+
 
 ```{r echo=FALSE}
 # Elections Canada October 21, 2019 Federal Election Results
@@ -113,7 +117,8 @@ CDN_elec_2019
 
 --
 
-It violiates Principles #1 & #2--there are two variables (seats and votes) combined into one column, and there are two rows (seats and rows) for each observation (in this case, party)
+It violiates Principles #1 & #2<br>
+--there are two variables (seats and votes) combined into one column, and<br>there are two rows (seats and rows) for each observation (in this case, party)
 
 _Sometimes untidy data can be too long!_
 
@@ -191,4 +196,44 @@ family %>%
   )
 
 ```
+
+---
+
+# Compound: multiple observations and variables
+
+StatCan retail sales, August 2019 -- as csv
+
+```{r}
+col_names <- names(read_csv(here::here("data", "t001a-eng.csv"), skip = 1, n_max = 0))
+col_names[[1]] <- "geo"
+
+retailsales <- read_csv(here::here("data", "t001a-eng.csv"), col_names = col_names, skip = 3, n_max = 17)
+retailsales <- janitor::clean_names(retailsales)
+retailsales
+
+```
+
+---
+
+```{r}
+retailsales %>%
+  pivot_longer(cols = july_to_august_2019:august_2018_to_august_2019, 
+               names_to = "comparison", values_to = "pct_chg") %>%
+  pivot_longer(cols = august_2018:august_2019_p,
+               names_to = "month", values_to = "$ millions")
+
+```
+
+---
+
+oh wait--that's still messy! While there are sales observations for July 2019 and August 2018, there are no YOY and MOM comparisons
+
+The table should be
+
+| month | sales | YOY   | MOM |
+| ---   | ---   | ---   | --- |
+| August 2018 | 1  | NA  | NA |
+| July 2019 | 1  | NA  | NA |
+| August 2019 | 1  | %  | another % |
+
 
