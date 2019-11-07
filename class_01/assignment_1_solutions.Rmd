@@ -143,10 +143,69 @@ The solution is to put the option "echo = FALSE" after the "r" in the opening bi
 > Find all flights that:
 >
 >a. Had an arrival delay of two or more hours
+
+Note that variable `arr_delay` is measured in minutes, so we need to find the flights where that's greater than or equal to 120 minutes.
+
+```{r}
+filter(flights, arr_delay >= 120)
+```
+
+
 >b. Flew to Houston (IAH or HOU)
+
+```{r}
+
+filter(flights, dest == "IAH" | dest == "HOU")
+
+```
+
+Note that you could also use `%in%`
+
 >c. Were operated by United, American, or Delta
+
+This one takes a bit of effort--you have to find the codes that match the values in the variable `carrier` with the airline names.
+
+The {nycflights13} package has a number of tables, including `airlines`
+
+```{r}
+nycflights13::airlines
+```
+
+From this, we can find:
+
+* United == UA
+
+* American == AA
+
+* Delta == DL
+
+```{r}
+
+filter(flights, carrier %in% c("AA", "DL", "UA"))
+
+```
+
+
 >d. Departed in summer (July, August, and September)
 
+The variable `month` is numeric, so we have to use greater than and less than to define the range.
+
+```{r}
+
+filter(flights, month >= 7, month <= 9)
+
+```
+
+
+Using the `:` operator would allow us to make a range. 
+
+```{r}
+
+filter(flights, month %in% 7:9)
+
+```
+
+You could also use "or" `|`, or `between()`
 
 
 ***
