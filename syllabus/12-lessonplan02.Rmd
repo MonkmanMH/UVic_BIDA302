@@ -60,7 +60,7 @@ Time allocation: 30 minutes (9:00 to 9:30)
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (9:00 to 9:45)
+Time allocation: 15 minutes (9:30 to 9:45)
 
 
 ### 1c. R in data analysis - an example
