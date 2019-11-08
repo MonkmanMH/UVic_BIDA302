@@ -56,7 +56,7 @@ Format: participation and instructor lecture w/ slides
 Time allocation: 30 minutes (9:00 to 9:30)
 
 
-### 1b. Variable types
+### 1b. Variable types 
 
 Format: participation and instructor lecture w/ slides
 
