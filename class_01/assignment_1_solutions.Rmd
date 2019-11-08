@@ -97,10 +97,16 @@ gapminder %>%
 > The table `relig-income` is in {tidyr}.
 >
 >a. Load this table, and take a look at it. Why does this table not conform to the tidy principles? (See the "Tidy Data" chapter in _R4DS_.)
+
+```{r}
+tidyr::relig_income
+```
+
+It violates Principle #1, each variable must have its own column. In this example, the "income" variable is spread across 10 columns.
+
 >
 >b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
 
-It violates Principle #1, each variable must have its own column. In this example, the "income" variable is spread across 10 columns.
 
 ```{r}
 

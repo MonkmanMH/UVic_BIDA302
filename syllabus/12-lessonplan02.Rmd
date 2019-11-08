@@ -37,7 +37,8 @@ At the end of this lesson, learners will be able to:
 |1a          | 9:00 to 9:30   | Review Homework #1  | &#8212; |
 |1b          | 9:30 to 10:30  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2a <br> <br> 2b  | 10:45 to 12:00 | Tidy data <br> Good coding habits <br> Importing data | &#8212; |
+|2a          | 10:45 to 12:00 | Tidy data <br> Good coding habits <br> Importing data | &#8212; |
+|2b          | &#8212;        | Importing data | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
 |3           | 1:00 to 2:15   | Reading data <br> Data wrangling (continued) | &#8212; |
 |&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |

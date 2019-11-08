@@ -24,11 +24,18 @@ library(tidyverse)
 
 ```
 
+
+```{r}
+mpg
+```
+
+
+---
+
 class: inverse
 
-# Variable types
+# Variable types 1
 
-When looking at your dataframe:
 
 `int` stands for integers.
 
@@ -36,12 +43,88 @@ When looking at your dataframe:
 
 `chr` stands for character vectors, or strings.
 
-`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
-
 `date` stands for dates.
 
 `dttm` stands for date-times (a date + a time).
 
+---
+
+class: inverse
+
+# Variable types 2 
+
 `lgl` stands for logical, vectors that contain only TRUE or FALSE.
 
-`NA` is a 
+`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
+`NA` are explicitly missing values.
+
+
+---
+
+# Missing values `NA`
+
+* missing values are contagious -- one in the input will return an `NA` in the output
+
+A simple example:
+
+```{r}
+
+1 + NA
+
+```
+
+
+
+---
+
+Or a longer example...
+
+`displ_class_by_cyl`
+
+```{r echo=FALSE}
+# summary table - class by cylinder
+displ_class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(displ_mean = mean(displ)) %>%
+  arrange(desc(displ_mean)) %>%
+  pivot_wider(names_from = cyl, values_from = displ_mean) %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+
+displ_class_by_cyl
+
+```
+
+---
+
+```{r}
+mean(displ_class_by_cyl$displ_mean)
+```
+
+--
+
+`na.rm` removes `NA`s from the calculation
+
+```{r}
+mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
+```
+
+
+
+
+
+---
+
+# Useful functions
+
+
+
+```{r}
+x <- c(1, NA, 3)
+
+is.na(x)
+
+```
+
+
+
