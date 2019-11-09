@@ -30,16 +30,16 @@ library(nycflights13)
 ## Questions
 
 
-### 1. 
+### 1. R Markdown
 > (1 mark)
 
-> This is the question
+> Using the R Markdown quick reference, figure out how to:
 
-```{r eval=FALSE}
+> a. Add a footnote.
 
+> b. Add a horizontal rule.
 
-
-```
+> c. Add a block quote.
 
 
 **Answer:**
