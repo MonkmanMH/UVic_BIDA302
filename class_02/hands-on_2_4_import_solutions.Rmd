@@ -1,0 +1,82 @@
+---
+title: "Import data"
+output: html_notebook
+---
+
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. 
+Some of it comes straight from Hadley Wickham & Garrett Grolemund's book _R for Data Science_, found online here: https://r4ds.had.co.nz/
+It uses great swaths of content from the tidyverse reference material for {readr} and {readxl}, by RStudio. 
+You can find that material here: 
+https://readr.tidyverse.org/index.html 
+https://readxl.tidyverse.org/index.html
+-->
+
+
+# Getting started
+
+Run this code chunk:
+
+```{r}
+library(tidyverse)  # we will be using the functions of {readr}
+library(readxl)
+```
+
+
+
+# 1. Reading a CSV file
+
+CSV files are very commonly used for storing flat files. They don't have any formatting--just the number or text in the cell.
+
+The package {readr} is designed to make importing these files simple.
+
+
+(This example comes straight from https://readr.tidyverse.org/index.html)
+
+Run this chunk to create an object called `mtcars`, from a CSV file of the same name.
+
+```{r}
+# example
+mtcars <- read_csv(readr_example("mtcars.csv"))
+
+```
+
+Adding the `cols()` allows us to alter what {readr} has decided for us. For example, we could set the `cyl` variable to be an integer.
+
+```{r}
+# example
+mtcars <- read_csv(readr_example("mtcars.csv"), col_types = 
+                     cols(cyl = col_integer())
+                   )
+
+```
+
+
+## Your Turn 1.1
+
+Insert an R chunk and rerun the example above, but with the `am` and `gear` variables also set to integer.
+
+
+
+
+
+STOP HERE ...
+
+
+# 2. Reading an Excel file
+
+If anything, Excel files are more common than CSV and other plain-text data files. They seem to multiply 
+
+
+## REFERENCE MATERIAL
+
+You can find more details in _R for Data Science_:
+https://r4ds.had.co.nz/data-import.html
+
+
+{readr} 
+https://readr.tidyverse.org/
+
+{readxl}
+https://readxl.tidyverse.org/index.html
+
+
