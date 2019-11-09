@@ -171,12 +171,6 @@ family %>%
     names_sep = "_"
   )
 
-family %>% 
-  pivot_longer(
-    -family, 
-    names_to = c(".value", "child"), 
-    names_sep = "_"
-  )
 
 ```
 

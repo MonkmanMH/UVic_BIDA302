@@ -13,7 +13,7 @@ The original source code, created by Martin Monkman with contributions by Julie 
 
 ### Setup
 
-```{r setup}
+```{r, setup, message=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)  # date functions
@@ -88,7 +88,7 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 **Note:** "The index base period, for which the New Housing Price Index (NHPI) equals 100, is December 2016." 
 
 
-```{r}
+```{r, message=FALSE}
 # This version (updated 2018-12-13) uses the `cansim` package to pull the data from CANSIM.
 
 table_id = "18-10-0205-01"
@@ -265,6 +265,8 @@ tbl_month_BC %>%
 
 --- 
 
+## UNDERSTAND
+
 ### Visualize - plot
 
 
@@ -328,7 +330,7 @@ ggsave(filename = "NHPI_plot.png", plot = NHPI_plot,
 
 ***
 
-### Vancouver house and land version
+## Vancouver house and land version
 
 Now we've set up the B.C. comparison to Canada, we can quickly adapt our previous work to look at another region--in this case, a deeper dive into Vancouver, comparing the changes in the two components of the NHPI.
 

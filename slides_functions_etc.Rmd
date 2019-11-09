@@ -124,12 +124,31 @@ Boolean operators can be combined with *and* or *or*.
 
 Some basic statistical functions  
 
-| Operator | Description |
+| Function | Description |
 | : ----- | ---: |
 | `min()` <br> `max()` | *minimum and maximum values* |
 | `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
 | `summary()`  | *a list of measures of central tendency* |
 | `sum()`  | *adds up the values* |
 | `count()`  | *number of cases* |
+
+
+
+
+---
+
+## Missing values
+
+Dealing with those pesky `NA` values  
+
+| function | action |
+| : -----  | ---: |
+| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
+| `anyNA(x)` | returns a single TRUE or FALSE |
+| `na.rm = TRUE` | remove `NA` values when running function|
+
+
+---
+
 
 
