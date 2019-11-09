@@ -64,7 +64,56 @@ STOP HERE ...
 
 # 2. Reading an Excel file
 
-If anything, Excel files are more common than CSV and other plain-text data files. They seem to multiply 
+If anything, Excel files are more common than CSV and other plain-text data files. They seem to multiply like coat hangers in the closet...
+
+And as we say in the article by Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989), they can encourage some ways of storing information that makes it hard for us to analyze. Excel files can also contain a wide variety of data format types. {readxl} tries to figure out what's going on, but like {readr}, it allows you to override some of those automatic decisions.
+
+
+```{r}
+deaths <- read_excel(readxl_example("deaths.xlsx"))
+deaths
+```
+
+What do you notice about the "Date of birth" and "Date of death" columns?
+
+
+## Your Turn 2.2
+
+Read in the "deaths" file, but use the `range = ` option to specify when to start reading the file:
+
+Note that in this example, {readxl} is smart enough to know that the 
+
+```{r}
+# Example
+deaths <- read_excel(readxl_example("deaths.xlsx"), 
+                     range = "A1:B3")
+
+deaths
+
+# solution
+deaths <- read_excel(
+    readxl_example("deaths.xlsx"),
+    range = "A5:F15"
+  )
+
+deaths
+
+```
+
+```{r}
+
+# solution
+deaths <- read_excel(
+    readxl_example("deaths.xlsx"),
+    skip = 4,
+    n_max = 10
+  )
+
+deaths
+
+
+```
+
 
 
 ## REFERENCE MATERIAL
