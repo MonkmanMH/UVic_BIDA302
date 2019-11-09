@@ -1,7 +1,8 @@
 ---
-title: "BIDA302 - assignment #2"
-subtitle: "solutions"
-output: html_notebook
+title: 'BIDA302 - assignment #2'
+output:
+  html_document:
+    df_print: paged
 ---
 
 ## YOUR NAME HERE
@@ -42,7 +43,6 @@ library(readxl)
 
 **Answer:**
 
-This is the answer
 
 
 
@@ -63,20 +63,16 @@ This is the answer
 **Answer:**
 
 ```{r}
-# solution
-court_cases <- read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv")
+
+
 ```
 
 > b. Read the file again, but specify that the region code should be a character.
 
 ```{r}
-# solution
-court_cases <- 
-  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
-                        col_types = cols(
-#                          Year = col_date(format = "%Y"),
-                          `Court Region Code` = col_character()
-                        ))
+
+
+
 ```
 
 
@@ -84,23 +80,17 @@ court_cases <-
 
 
 ```{r}
-# solution
-court_cases %>%
-  filter(Year == 2018) %>%
-  group_by(`Court Region`) %>%
-  summarise(total_cases = sum(Count)) %>%
-  arrange(desc(total_cases))
+
+
+
 ```
 
 > d. Create a pivot table showing the 2018 case completion, with the region as the rows and the court class as the columns. 
 
 ```{r}
-# solution
-court_cases %>%
-  filter(Year == 2018) %>%
-  group_by(`Court Region`, `Court Class`) %>%
-  summarise(total_cases = sum(Count)) %>%
-  pivot_wider(names_from = `Court Class`, values_from = total_cases)
+
+
+
 ```
 
 
@@ -119,9 +109,6 @@ court_cases %>%
 >a. What are the names of the sheets in this file?
 
 ```{r}
-# solution
-
-excel_sheets("regional_district_monthly_2019.xlsx")
 
 ```
 
@@ -129,7 +116,6 @@ excel_sheets("regional_district_monthly_2019.xlsx")
 
 ```{r}
 
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019")
 
 ```
 
@@ -138,10 +124,6 @@ c. What issues are there with the rows? How is this impacting how the values in 
 d. Change the options for your read function to address this.
 
 ```{r}
-# solution
-
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019", 
-           skip = 2)
 
 ```
 
@@ -152,11 +134,6 @@ read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019",
 
 
 ```{r}
-# solution
-
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019", 
-           skip = 2,
-           na = "nr")
 
 ```
 

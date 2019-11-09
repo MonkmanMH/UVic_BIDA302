@@ -1,5 +1,5 @@
 ---
-title: "Variable types"
+title: "Missing values"
 subtitle: "hands-on examples, with answers"
 output: html_notebook
 ---

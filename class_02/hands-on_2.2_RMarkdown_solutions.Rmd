@@ -49,6 +49,19 @@ Write something that you want bolded:
 Now, make a bullet list with the names of three colours:
 
 
+
+
+## Your Turn 1.2
+
+Add a hypertext link to the text book's title: Hadley Wickham and Garrett Grolemund, [_R for Data Science_.](https://r4ds.had.co.nz/)
+
+
+Add an image of the data science process...the file is "data-science.png"
+
+![The data science process](data-science.png)
+
+
+
 STOP HERE ...
 
 ***

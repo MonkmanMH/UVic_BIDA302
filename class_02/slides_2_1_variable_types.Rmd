@@ -115,7 +115,15 @@ mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
 
 ---
 
-# Useful functions
+## Functions for missing values
+
+Dealing with those pesky `NA` values  
+
+| function | action |
+| : -----  | ---: |
+| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
+| `anyNA(x)` | returns a single TRUE or FALSE |
+| `na.rm = TRUE` | remove `NA` values when running function|
 
 
 
