@@ -1,0 +1,31 @@
+---
+title: "Plotting in R"
+subtitle: "hands-on examples, with answers"
+output: html_notebook
+---
+
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. -->
+
+```{r setup}
+library(tidyverse)
+
+```
+
+# 1. Plotting
+
+
+## a short example
+
+
+
+## Your Turn 1.1: 
+
+
+```{r}
+# example
+
+
+```
+
+
+
