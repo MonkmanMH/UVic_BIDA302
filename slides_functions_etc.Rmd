@@ -150,5 +150,29 @@ Dealing with those pesky `NA` values
 
 ---
 
+# Ten Tidyverse Tricks
+
+## Counting/summarizing
+1. count() 
+2. count() with its three extra arguments
+3. add_count()
+4. summarize() with list columns
+
+## {ggplot2} + {forcats}
+5. fct_reorder() + geom_col() + coord_flip()
+6. fct_lump()
+7. scale_x/y_log10()
+
+## other
+8. crossing()
+9. separate()
+10. extract()
+
+???
+
+from David Robinson, via Jon Harmon https://twitter.com/JonTheGeek/status/1193203347911782402?s=20
+
+
+
 
 

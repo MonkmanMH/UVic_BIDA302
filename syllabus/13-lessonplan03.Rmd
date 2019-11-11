@@ -11,8 +11,81 @@ output: github_document
 
 
 
-> The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
-> - Grolemund & Wickham, _R for Data Science_, 2.15 (The map functions)
+> Graphs and charts let you explore and learn about the structure of the information you collect. Good data visualizations also make it easier to communicate your ideas and findings to other people.
+> - Kieran Healy, _Data Visualization: A Practical Introduction_ (2019)
+
+
+At the end of this lesson, learners will be able to:
+
+1. Describe the fundamental elements of data manipulation, and 
+
+2. Demonstrate how these can be applied in a data analytics context.
+
+
+***
+
+## Activities
+
+| Block      | Time           | Topics  | &#8212; |
+|---         |:---            |:---     |:---:  |
+|1a          | 9:00 to 9:30   | Review Homework #2  | &#8212; |
+|1b          | 9:30 to 10:30  | Introduction to data visualization  | &#8212; |
+|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
+|2a          | 10:45 to 12:00 | Working with categorical variables | &#8212; |
+|2b          | &#8212;        | Exploratory data analysis with visualization | &#8212; |
+|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|3           | 1:00 to 2:15   | Relational data | &#8212; |
+|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
+|4a          | 2:30 to 3:00   | Assignment 3 <br> Project| &#8212; |
+|4b <br> 4c  | 3:00 to 4:00   | Questions? Comments? <br> Wrap up | &#8212; |
+
+
+
+### 1a. Review Homework #2
+
+* including submissions via moodle
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 30 minutes (9:00 to 9:30)
+
+
+### 1b. Introduction to data visualization
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (9:30 to 9:45)
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (9:45 to 10:30)
+
+
+### 2a. Working with categorical variables
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (10:45 to 11:00)
+
+
+### 2b. Exploratory data analysis with visualization
+
+* including plotting with categorical variables
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (11:00 to 12:00)
+
+
+
+
+| 10:45 to 12:00 |  | &#8212; |
+|2b          | &#8212;        | Exploratory data analysis with visualization | &#8212; |
+|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|3           | 1:00 to 2:15   | Relational data | &#8212; |
+|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
+|4a          | 2:30 to 3:00   | Assignment 3 <br> Project| &#8212; |
+|4b <br> 4c  | 3:00 to 4:00   | Questions? Comments? <br> Wrap up | &#8212; |
 
 
 

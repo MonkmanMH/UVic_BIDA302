@@ -1,5 +1,6 @@
 ---
-title: "My R Markdown notebook"
+title: "Hands-on excercises - class 2"
+subtitle: "R Markdown, variable types & data import"
 output:
   html_document:
     df_print: paged
@@ -7,9 +8,11 @@ output:
 
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. -->
 
+# 1 R Markdown
+
 This document will introduce you to R Markdown notebooks, and give you some hands-on experience adding to the document.
 
-# Getting started
+### Getting started
 
 You can create a new R Markdown document in RStudio by clicking the menu item:
 
@@ -22,7 +25,7 @@ _or_
 
 For this course, we will be using the Notebook option...for your project, you may wish to use another format.
 
-## Typing, running, and knitting
+### Typing, running, and knitting
 
 When you type in an R Markdown document, you just get what you type.
 
@@ -32,7 +35,7 @@ And the real whiz-bang thing is that when you've finished, you can "knit" the do
 
 ***
 
-# 1. Markdown syntax
+## 1 Markdown syntax
 
 Markdown is a great way to write a report, slide deck, book, ... even hands-on exercises for a class!
 

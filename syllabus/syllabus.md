@@ -61,14 +61,14 @@ Here's another course description, one that I really like, so (with the author's
 
 ## Course Outline
 
-**_subject to change_**
+**_subject to change, revised 2019-11-11_**
 
 | Week      | Date | Topics   | Lesson |
 |---        |:---  |:---      |:---:  |
 |1          | 2019-11-02 | Why code? Why R? <br> Introduction to R and RStudio <br> Introduction to markdown and R Markdown <br> Programming foundations <br> Basic data manipulations | [link]({{< ref "lessonplan01" >}}) |
-|2          | 2019-11-09 | Tidy data <br> Data wrangling: the basics <br> Good coding habits <br> R Markdown: the next level | &#8212; |
-|3          | 2019-11-16 | Writing your own functions <br> Importing and exporting data: part 1 <br> Data wrangling: relational data | &#8212; |
-|4          | 2019-11-23 | An introduction to modeling <br> Working with dates <br> Working with strings <br> Importing and exporting data: part 2 | &#8212; |
+|2          | 2019-11-09 | The data science process <br> Data wrangling: tidy data <br> R Markdown: the next level | &#8212; |
+|3          | 2019-11-16 | Intro to data visualization <br> Data wrangling: relational data <br> Working with categorical variables | &#8212; |
+|4          | 2019-11-23 | Writing your own functions <br> An introduction to modeling <br> Working with dates <br> Working with strings <br> Importing and exporting data: part 2 | &#8212; |
 |5          | 2019-11-30 | What-if scenarios and forecasting <br> R Markdown: moving beyond documents and notebooks | &#8212; |
 |6          | 2019-12-07 | Project presentations <br> Where to from here? | &#8212; |
 
@@ -77,7 +77,7 @@ Here's another course description, one that I really like, so (with the author's
 
 | Course objective      | Lesson topic   | Lessons |
 |---        |:---  |:---:  |
-|Perform basic data manipulations | Basic data manipulations <br> Working with dates <br> Working with strings | &#8212;  |
+|Perform basic data manipulations | Basic data manipulations <br> Working with dates <br> Working with strings <br> Working with categorical variables | &#8212;  |
 |Create variables <br> Calculate descriptive statistics <br> Perform basic logical formula functions <br> Group and ungroup data <br> Extract and combine data | Data wrangling | &#8212; | 
 |Apply key concepts of variables, constants and functions | Programming foundations <br> Writing your own functions <br> | &#8212; | 
 |Data Importing <br> Data Exporting | Importing and exporting data | &#8212; | 
