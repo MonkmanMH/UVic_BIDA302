@@ -50,7 +50,7 @@ Format: participation and instructor lecture w/ slides
 Time allocation: 30 minutes (9:00 to 9:30)
 
 
-### 1b. Introduction to data visualization
+### 1b. Introduction to data visualization with {ggplot2}
 
 Format: participation and instructor lecture w/ slides
 
@@ -60,12 +60,30 @@ Format: hands-on exercise
 
 Time allocation: 45 minutes (9:45 to 10:30)
 
+_Reading:_
 
-### 2a. Working with categorical variables
+* _R4DS_, ["Data visualisation"](https://r4ds.had.co.nz/data-visualisation.html)
+
+* _R4DS_, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (10:30 to 10:45)
+
+***
+
+
+### 2a. Working with categorical variables - {forcats}
 
 Format: participation and instructor lecture w/ slides
 
 Time allocation: 15 minutes (10:45 to 11:00)
+
+_Reading:_
+
+* _R4DS_, ["Factors"](https://r4ds.had.co.nz/factors.html)
 
 
 ### 2b. Exploratory data analysis with visualization
@@ -76,16 +94,65 @@ Format: hands-on exercise
 
 Time allocation: 60 minutes (11:00 to 12:00)
 
+***
+
+## LUNCH
+
+Time allocation: 60 minutes (12:00 to 1:00)
+
+***
+
+
+### 3. Relational data with {dplyr}
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (1:00 to 1:15)
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (1:15 to 2:15)
+
+_Reading:_
+
+* _R4DS_, ["Relational data"](https://r4ds.had.co.nz/relational-data.html)
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (2:15 to 2:30)
+
+
+***
 
 
 
-| 10:45 to 12:00 |  | &#8212; |
-|2b          | &#8212;        | Exploratory data analysis with visualization | &#8212; |
-|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
-|3           | 1:00 to 2:15   | Relational data | &#8212; |
-|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
-|4a          | 2:30 to 3:00   | Assignment 3 <br> Project| &#8212; |
-|4b <br> 4c  | 3:00 to 4:00   | Questions? Comments? <br> Wrap up | &#8212; |
+### 4a. Assignment #3 and The Project
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 30 minutes (2:30 to 3:00)
+
+
+
+### 4b. Wrap up
+
+Time allocation: 30 minutes (3:30 to 4:00)
+
+#### Summary
+
+Format: instructor summary, w/ slides
+
+#### Questions?
+
+Format: learner Q&A
+
+#### Preview/readings for next lesson
+
+Format: instructor summary, w/ slides
+
 
 
 

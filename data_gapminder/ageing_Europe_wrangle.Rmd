@@ -1,0 +1,77 @@
+---
+title: "Gapminder - ageing Europe recreation"
+output: html_notebook
+---
+
+This is the preliminary step to recreate the chart Hans Rosling shows in the video here:
+
+* Presentation Zen, [Hans Rosling: the zen master of presenting data](https://www.presentationzen.com/presentationzen/2010/07/hans-rosling-tips-on-presenting-data.html), 2010-07-11
+
+```{r}
+library(tidyverse)
+```
+
+At the end of this section, you will have plotted some gapminder data to produce an approximation of this chart:
+
+![Hans Rosling, aging Europe 1961](../img/Hans_Rosling_aging_europe.JPG)
+
+Or, more precisely:
+Because the population aged 60+ data is published for every fifth year, there will be two charts: one for 1960, the other for 2015.
+
+```{r}
+
+```
+
+I downloaded the data tables from https://www.gapminder.org/data/, for 
+
+* Population, total
+
+* Population, aged 60+
+
+* Babies per woman (total fertility)
+
+
+### Load and select
+
+```{r}
+
+pop_total <- read_csv("population_total.csv")
+
+pop_60plus <- read_csv("population_aged_60plus_years_total_number.csv")
+
+children_per_woman <- read_csv("children_per_woman_total_fertility.csv")
+
+```
+
+
+```{r}
+
+pop_total
+
+```
+
+
+```{r}
+
+pop_total %>%
+  select(country, "1960", "2015")
+
+```
+
+
+
+```{r}
+
+pop_60plus %>%
+  select(country, "1960", "2015")
+
+```
+
+```{r}
+
+children_per_woman %>%
+  select(country, "1960", "2015")
+
+
+```
+
