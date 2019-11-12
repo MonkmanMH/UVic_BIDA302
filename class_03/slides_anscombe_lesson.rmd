@@ -1,0 +1,273 @@
+---
+title: "Anscombe's Quartet"
+subtitle: "demonstration lesson"
+author: "Martin Monkman"
+date: "2019/07/04"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse
+
+# Anscombe's Quartet
+
+### "A computer should make both calculations and graphs. Both sorts of outputs should be studied; each will contribute to understanding."
+
+- F.J. Anscombe, "Graphs in Statistical Analysis", 1973
+
+
+
+---
+class: slide-banner
+
+# The Quartet
+
+.pull-left[
+
+### Four data sets
+
+- each set has 11 pairs of _x_ and _y_ values
+
+]
+
+.pull-right[
+
+### Identical summary statistics:
+
+- N = 11
+- Mean of x = 9.0
+- Mean of y = 7.5
+- Multiple R2 = 0.667
+- Regression equation: y = 3 + 0.5x
+- And other statistical summary measures are also identical
+
+]
+
+
+---
+class: slide-banner
+
+
+# The Exercise
+
+
+### Read data into Excel
+
+### Calculate:
+
+- Means of _x_ and _y_ values
+
+- Multiple R<sup>2</sup>
+
+### Visualize each set:
+
+- Scatterplot (a.k.a. _x/y_ plot)
+
+- Scatterplot with trend line and regression equation
+
+
+
+---
+class: slide-banner
+
+# Step 1: read the data
+
+.pull-left[
+
+Open Excel
+
+- File / Open / anscombe.csv
+
+- may need to set file type to "Text Files"
+
+]
+
+.pull-right[
+
+.center[![Excel_change_file_type](images/excel_filetype_01.png)]
+
+]
+
+
+
+---
+class: slide-banner
+
+.pull-left[
+
+# Step 1: read the data
+
+Success!
+
+
+]
+
+.pull-right[
+
+.center[![Anscombe_spreadsheet](images/anscombe.csv_01.jpg)]
+
+]
+
+
+
+---
+
+# light background
+
+# h1 (largest heading)
+
+## h2 (medium heading)
+
+### h3 (small heading)
+
+some text
+
+- and a bullet
+
+code: none required; this is the default
+
+
+---
+class: inverse
+
+
+# This is class: inverse
+
+# h1 (largest heading)
+
+## h2 (medium heading)
+
+### h3 (small heading)
+
+some text
+
+- and a bullet
+
+<BR>
+
+`---`
+
+`class: inverse`
+
+
+---
+
+class: inverse, centre, middle
+
+# inverse is suitable for section breaks
+
+code:
+<BR>
+`---`
+
+`class: inverse, centre, middle`
+
+
+
+---
+
+class: slide-blackback
+
+#### A pure black background
+
+<font color = "#fafaff">
+
+- suitable for images when you want the illusion of full-bleed
+
+<BR></BR>
+
+code:
+
+<BR></BR>
+
+class: slide-blackback
+
+</font>
+
+
+
+---
+
+class: slide-blackback
+
+background-image: url(rmarkdown_hex_small.png)
+background-position: 50% 50%
+
+--
+
+
+---
+
+class: slide-banner
+
+# This is a banner slide
+
+## h2 for medium headings
+
+### h3 for small headings
+
+#### h4 for pale smallest headings
+
+This is text
+
+- this is a bullet
+
+
+code:
+<BR>
+`class: slide-banner`
+
+
+---
+
+## add slides 
+
+- pure white background
+
+#### slides with banners 
+
+
+- "fafaff" banner with eigengrau body
+
+---
+
+#### punch colours
+
+- need some thematically consistent highlight colours
+
+
+---
+
+class: slide-final, left, middle
+
+# Final slide
+
+## Thank you
+
+Where you might also say "questions?"
+
+
+### @monkmanmh
+
+<BR><BR>
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) and uses the eigengrau theme
+
+<BR>
+code:
+<BR>
+`class: slide-final, left, middle`
+
+
+
+

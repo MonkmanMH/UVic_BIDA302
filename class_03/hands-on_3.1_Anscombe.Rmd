@@ -1,0 +1,208 @@
+---
+title: "Anscombe's Quartet"
+output:
+  html_document:
+    df_print: paged
+---
+
+Using Anscobme's Quartet to introduce principles of data visualization.
+
+```{r setup}
+
+library(dplyr)
+library(tidyr)
+
+library(ggplot2)
+
+library(Tmisc)
+
+
+```
+
+
+
+The quartet is included in base R:
+
+```{r}
+
+anscombe
+
+
+#feather::write_feather(anscombe, "anscombe.feather")
+#
+#readr::write_csv(anscombe, "anscombe.csv")
+#
+
+```
+
+
+Reshape into tidy form:
+
+https://rpubs.com/dgrtwo/tidy-anscombe
+
+```{r}
+
+anscombe_tidy <- anscombe %>%
+    mutate(observation = seq_len(n())) %>%
+    gather(key, value, -observation) %>%
+    separate(key, c("variable", "set"), 1, convert = TRUE) %>%
+    mutate(set = c("I", "II", "III", "IV")[set]) %>%
+    spread(variable, value)
+
+anscombe_tidy <- anscombe %>%
+  mutate(observation = seq_len(n())) %>%
+  gather(key, value, -observation) %>%
+  separate(key, c("variable", "set"), 1, convert = TRUE) %>%
+  mutate(set = c("I", "II", "III", "IV")[set]) %>%
+  spread(variable, value) %>%
+  arrange(set)
+
+head(anscombe_tidy)
+#
+#feather::write_feather(anscombe_tidy, "anscombe_tidy.feather")
+#
+#readr::write_csv(anscombe_tidy, "anscombe_tidy.csv")
+#
+
+```
+
+
+It's also available in a different format in the package {Tmisc} as `quartet`
+
+```{r}
+
+library(Tmisc)
+data(quartet)
+str(quartet)
+
+quartet
+#
+#
+#feather::write_feather(quartet, "anscombe_quartet.feather")
+#
+#readr::write_csv(quartet, "anscombe_quartet.csv")
+#
+
+```
+
+
+### Summary statistics
+
+Each of the four sets has the same summary statistics. Let's calculate them now:
+
+Introducing {dplyr} functions:
+
+
+```{r}
+
+anscombe_tidy %>%
+  group_by(set) %>%
+  summarize(mean.x = mean(x))
+
+```
+
+```{r}
+
+anscombe_tidy %>%
+  group_by(set) %>%
+  summarize(mean.x = mean(x),
+            mean(y))
+
+```
+
+
+
+```{r}
+
+anscombe_tidy %>% 
+  group_by(set) %>% 
+  summarize(mean(x), 
+            sd(x), 
+            mean(y), 
+            sd(y), 
+            cor(x, y))
+
+```
+
+
+## Visualizing the quartet
+
+Using the R visualization package {ggplot2}
+
+
+```{r}
+
+ggplot(anscombe_tidy, aes(x = x, y = y)) + 
+  geom_point() 
+
+
+```
+
+With colour to separate each group
+
+```{r}
+
+ggplot(anscombe_tidy, aes(x, y, colour = set)) + 
+  geom_point()
+
+
+```
+
+
+Facet plot
+
+```{r}
+
+ggplot(anscombe_tidy, aes(x, y)) + 
+  geom_point() + 
+  facet_wrap(~set)
+
+```
+
+
+Add a trend line using the `geom_smooth` function.
+
+* the `method = lm` indicates a "linear model", i.e. a standard regression line. {ggplot2} provides access to other smoothing algorithms.
+
+* the `se = FALSE` turns off the "standard error" (a measure of uncertainty in the data)
+
+```{r}
+
+ggplot(anscombe_tidy, aes(x, y)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) +
+  facet_wrap(~set)
+
+```
+
+
+
+
+```{r}
+
+ggplot(anscombe_tidy, aes(x, y)) + geom_point() + geom_smooth(method = lm, se = FALSE) + 
+    facet_wrap(~set)
+
+```
+
+
+### References
+
+https://rstudio-pubs-static.s3.amazonaws.com/52381_36ec82827e4b476fb968d9143aec7c4f.html 
+
+https://rstudio-pubs-static.s3.amazonaws.com/355492_5bbde2dd99134f47b03d834b030d509b.html
+
+https://plotlyblog.tumblr.com/post/68951620673/why-graph-anscombes-quartet 
+
+https://rpubs.com/dgrtwo/tidy-anscombe
+
+https://rpubs.com/turnersd/anscombe
+
+https://www.r-bloggers.com/the-visual-difference-%E2%80%93-r-and-anscombe%E2%80%99s-quartet/
+
+
+#### Excel references
+
+https://projects.ncsu.edu/labwrite/res/gt/gt-reg-home.html
+
+
