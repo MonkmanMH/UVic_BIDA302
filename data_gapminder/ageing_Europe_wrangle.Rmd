@@ -191,6 +191,20 @@ ggplot() +
 
 # Fertility by Life Expectancy
 
+```{r}
+
+plotyear <- c(1960, 2015)
+
+df_gapmind %>%
+  filter(year == plotyear) %>%
+# plot
+ggplot() +
+  geom_point(mapping = aes(x = fert_rate, y = life_expect, color = four_regions, size = population)) +
+  scale_size_area(max_size = 15) +
+  facet_grid(. ~ year)
+
+
+```
 
 
 
