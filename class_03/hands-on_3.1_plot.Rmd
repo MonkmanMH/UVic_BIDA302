@@ -17,6 +17,24 @@ library(tidyverse)
 ## a short example
 
 
+At the end of this section, you will have plotted some gapminder data to produce this chart:
+
+![Hans Rosling, aging Europe 1961](../img/Hans_Rosling_aging_europe.JPG)
+
+Or, more precisely:
+
+```{r}
+
+```
+
+I downloaded the data tables from https://www.gapminder.org/data/, for 
+
+* Population, total
+
+* Population, aged 60+
+
+* Babies per woman (total fertility)
+
 
 ## Your Turn 1.1: 
 

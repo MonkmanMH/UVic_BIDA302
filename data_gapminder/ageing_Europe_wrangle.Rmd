@@ -7,8 +7,9 @@ This is the preliminary step to recreate the chart Hans Rosling shows in the vid
 
 * Presentation Zen, [Hans Rosling: the zen master of presenting data](https://www.presentationzen.com/presentationzen/2010/07/hans-rosling-tips-on-presenting-data.html), 2010-07-11
 
-```{r}
+```{r setup}
 library(tidyverse)
+library(readxl)
 ```
 
 At the end of this section, you will have plotted some gapminder data to produce an approximation of this chart:
@@ -56,6 +57,12 @@ pop_total
 pop_total %>%
   select(country, "1960", "2015")
 
+pop_total_6015 <- pop_total %>%
+  select(country, "1960", "2015") %>%
+  pivot_longer(-country, names_to = "year", values_to = "population")
+
+pop_total_6015
+
 ```
 
 
@@ -65,6 +72,13 @@ pop_total %>%
 pop_60plus %>%
   select(country, "1960", "2015")
 
+pop_60plus_6015 <- pop_60plus %>%
+  select(country, "1960", "2015") %>%
+  pivot_longer(-country, names_to = "year", values_to = "pop_60plus")
+
+pop_60plus_6015
+
+
 ```
 
 ```{r}
@@ -72,6 +86,86 @@ pop_60plus %>%
 children_per_woman %>%
   select(country, "1960", "2015")
 
+children_per_woman_6015 <- children_per_woman %>%
+  select(country, "1960", "2015") %>%
+  pivot_longer(-country, names_to = "year", values_to = "fert_rate")
+
+children_per_woman_6015
 
 ```
 
+
+Read country geography table
+
+```{r}
+
+data_geographies <- read_excel("Data Geographies - v1 - by Gapminder.xlsx", sheet = "list-of-countries-etc")
+
+data_geographies_select <- data_geographies %>%
+  select(geo, name, four_regions)
+
+data_geographies_select
+
+```
+
+
+### join the four tables
+
+```{r}
+
+df_gapmind <-
+pop_total_6015 %>%
+  inner_join(pop_60plus_6015, by = c("country", "year")) %>% 
+  inner_join(children_per_woman_6015, by = c("country", "year")) %>% 
+  mutate(pct_60plus = round((pop_60plus / population * 100), 2)) 
+  
+df_gapmind <-
+df_gapmind %>% 
+  inner_join(data_geographies_select, by = c("country" = "name"))
+
+df_gapmind
+```
+
+
+## Plot
+
+```{r}
+
+df_gapmind %>%
+  filter(year == 1960) %>%
+# plot
+ggplot() +
+  geom_point(mapping = aes(x = fert_rate, y = pct_60plus))
+
+
+```
+
+
+```{r}
+
+plotyear <- 1960
+
+df_gapmind %>%
+  filter(year == plotyear) %>%
+# plot
+ggplot() +
+  geom_point(mapping = aes(x = fert_rate, y = pct_60plus, color = four_regions))
+  
+```
+
+
+
+```{r}
+
+# add balloon plotting for population size
+
+plotyear <- 1960
+
+df_gapmind %>%
+  filter(year == plotyear) %>%
+# plot
+ggplot() +
+  geom_point(mapping = aes(x = fert_rate, y = pct_60plus, color = four_regions, size = population)) +
+  scale_size_area(max_size = 15)
+  
+```
