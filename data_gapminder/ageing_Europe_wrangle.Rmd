@@ -42,6 +42,8 @@ pop_60plus <- read_csv("population_aged_60plus_years_total_number.csv")
 
 children_per_woman <- read_csv("children_per_woman_total_fertility.csv")
 
+life_expectancy <- read_csv("life_expectancy_years.csv")
+
 ```
 
 
@@ -95,6 +97,20 @@ children_per_woman_6015
 ```
 
 
+
+```{r}
+
+life_expectancy %>%
+  select(country, "1960", "2015")
+
+life_expectancy_6015 <- life_expectancy %>%
+  select(country, "1960", "2015") %>%
+  pivot_longer(-country, names_to = "year", values_to = "life_expect")
+
+life_expectancy_6015
+
+```
+
 Read country geography table
 
 ```{r}
@@ -117,7 +133,8 @@ df_gapmind <-
 pop_total_6015 %>%
   inner_join(pop_60plus_6015, by = c("country", "year")) %>% 
   inner_join(children_per_woman_6015, by = c("country", "year")) %>% 
-  mutate(pct_60plus = round((pop_60plus / population * 100), 2)) 
+  mutate(pct_60plus = round((pop_60plus / population * 100), 2)) %>%
+  inner_join(life_expectancy_6015, by = c("country", "year"))
   
 df_gapmind <-
 df_gapmind %>% 
@@ -169,3 +186,21 @@ ggplot() +
   scale_size_area(max_size = 15)
   
 ```
+
+
+
+# Fertility by Life Expectancy
+
+
+
+
+## references
+
+https://towardsdatascience.com/how-to-build-animated-charts-like-hans-rosling-doing-it-all-in-r-570efc6ba382
+
+https://remi-daigle.github.io/2016-04-15-UCSB/viz/
+
+https://rafalab.github.io/dsbook/gapminder.html
+
+
+
