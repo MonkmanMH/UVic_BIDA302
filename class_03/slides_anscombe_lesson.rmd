@@ -78,27 +78,6 @@ class: slide-banner
 
 
 
----
-class: slide-banner
-
-# Step 1: read the data
-
-.pull-left[
-
-Open Excel
-
-- File / Open / anscombe.csv
-
-- may need to set file type to "Text Files"
-
-]
-
-.pull-right[
-
-.center[![Excel_change_file_type](images/excel_filetype_01.png)]
-
-]
-
 
 
 ---
@@ -108,7 +87,7 @@ class: slide-banner
 
 # Step 1: read the data
 
-Success!
+` read_csv("anscombe_tidy.csv")`
 
 
 ]
