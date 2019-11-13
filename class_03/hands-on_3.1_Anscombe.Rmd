@@ -9,29 +9,17 @@ Using Anscobme's Quartet to introduce principles of data visualization.
 
 ```{r setup}
 
-library(dplyr)
-library(tidyr)
-
-library(ggplot2)
-
-library(Tmisc)
-
+library(tidyverse)
 
 ```
 
 
 
-The quartet is included in base R:
+The quartet is included in base R, but in an untidy format:
 
 ```{r}
 
 anscombe
-
-
-#feather::write_feather(anscombe, "anscombe.feather")
-#
-#readr::write_csv(anscombe, "anscombe.csv")
-#
 
 ```
 
@@ -40,14 +28,7 @@ Reshape into tidy form:
 
 https://rpubs.com/dgrtwo/tidy-anscombe
 
-```{r}
-
-anscombe_tidy <- anscombe %>%
-    mutate(observation = seq_len(n())) %>%
-    gather(key, value, -observation) %>%
-    separate(key, c("variable", "set"), 1, convert = TRUE) %>%
-    mutate(set = c("I", "II", "III", "IV")[set]) %>%
-    spread(variable, value)
+```{r evaluate = FALSE}
 
 anscombe_tidy <- anscombe %>%
   mutate(observation = seq_len(n())) %>%
@@ -58,32 +39,11 @@ anscombe_tidy <- anscombe %>%
   arrange(set)
 
 head(anscombe_tidy)
-#
-#feather::write_feather(anscombe_tidy, "anscombe_tidy.feather")
-#
-#readr::write_csv(anscombe_tidy, "anscombe_tidy.csv")
-#
+
+readr::write_csv(anscombe_tidy, "anscombe_tidy.csv")
 
 ```
 
-
-It's also available in a different format in the package {Tmisc} as `quartet`
-
-```{r}
-
-library(Tmisc)
-data(quartet)
-str(quartet)
-
-quartet
-#
-#
-#feather::write_feather(quartet, "anscombe_quartet.feather")
-#
-#readr::write_csv(quartet, "anscombe_quartet.csv")
-#
-
-```
 
 
 ### Summary statistics
@@ -94,26 +54,28 @@ Introducing {dplyr} functions:
 
 
 ```{r}
+# read the csv file version
+anscombe_tidy <- read_csv("anscombe_tidy.csv")
 
+# example
 anscombe_tidy %>%
   group_by(set) %>%
   summarize(mean.x = mean(x))
 
 ```
 
+Using the following functions, calculate the summary statistics of _x_ and _y_, and the correlation coefficient between _x_ and _y_, for all four of the sets in the quartet:
+
+ | statistic | function |
+ | ---       | ---      |
+ | mean      | mean()   |
+ | standard deviation | sd() |
+ | correlation coefficient | cor() |
+ 
+ 
+
 ```{r}
-
-anscombe_tidy %>%
-  group_by(set) %>%
-  summarize(mean.x = mean(x),
-            mean(y))
-
-```
-
-
-
-```{r}
-
+# solution
 anscombe_tidy %>% 
   group_by(set) %>% 
   summarize(mean(x), 
@@ -131,7 +93,7 @@ Using the R visualization package {ggplot2}
 
 
 ```{r}
-
+# example
 ggplot(anscombe_tidy, aes(x = x, y = y)) + 
   geom_point() 
 
@@ -141,7 +103,7 @@ ggplot(anscombe_tidy, aes(x = x, y = y)) +
 With colour to separate each group
 
 ```{r}
-
+# solution
 ggplot(anscombe_tidy, aes(x, y, colour = set)) + 
   geom_point()
 

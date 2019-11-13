@@ -1,6 +1,6 @@
 ---
-title: "Anscombe's Quartet"
-subtitle: "demonstration lesson"
+title: "Plotting your data"
+subtitle: "part of Exploratory Data Analysis"
 author: "Martin Monkman"
 date: "2019/07/04"
 output:
@@ -16,7 +16,32 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
 ```
+
+
+# Exploratory Data Analysis
+
+"Exploratory data analysis is detective work." <br>(John W. Tukey)
+
+--
+
+>1. Generate questions about your data
+>
+>2. Search for answers by visualizing, transforming, and modeling your data
+>
+>3. Use what you learn to refine your questions and/or generate new questions
+
+
+- Wickham and Grolemund, _R4DS_
+
+
+??? 
+
+
+
+---
 
 class: inverse
 
@@ -54,6 +79,26 @@ class: slide-banner
 
 ]
 
+---
+class: slide-banner
+
+# The Quartet
+
+Four data sets with 11 pairs of _x_ and _y_ values]
+
+
+All four have identical summary statistics:
+
+| statistic   | value  |
+| --- | ---: |
+| N   | 11  |
+| mean of _x_ | 9.0 |
+| mean of _y_ | 7.5 |
+| multiple R<sup>2</sup> | 0.667 |
+| regression equation | _y_ = 3 + 0.5_x_ |
+
+]
+
 
 ---
 class: slide-banner
@@ -62,7 +107,7 @@ class: slide-banner
 # The Exercise
 
 
-### Read data into Excel
+### Read data into RStudio
 
 ### Calculate:
 
@@ -78,175 +123,29 @@ class: slide-banner
 
 
 
-
-
 ---
-class: slide-banner
 
-.pull-left[
+# basic ggplot() call
 
-# Step 1: read the data
+`ggplot(<DATA>) + `
 
-` read_csv("anscombe_tidy.csv")`
+`  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) `
 
-
-]
-
-.pull-right[
-
-.center[![Anscombe_spreadsheet](images/anscombe.csv_01.jpg)]
-
-]
 
 
 
 ---
 
-# light background
 
-# h1 (largest heading)
+`ggplot(anscombe_tidy) + 
+  geom_point(mapping = aes(x = x, y = y)) `
 
-## h2 (medium heading)
 
-### h3 (small heading)
 
-some text
+```{r echo=FALSE, message=FALSE}
+anscombe_tidy <- read_csv("anscombe_tidy.csv")
+# example
+ggplot(anscombe_tidy, aes(x = x, y = y)) + 
+  geom_point() 
 
-- and a bullet
-
-code: none required; this is the default
-
-
----
-class: inverse
-
-
-# This is class: inverse
-
-# h1 (largest heading)
-
-## h2 (medium heading)
-
-### h3 (small heading)
-
-some text
-
-- and a bullet
-
-<BR>
-
-`---`
-
-`class: inverse`
-
-
----
-
-class: inverse, centre, middle
-
-# inverse is suitable for section breaks
-
-code:
-<BR>
-`---`
-
-`class: inverse, centre, middle`
-
-
-
----
-
-class: slide-blackback
-
-#### A pure black background
-
-<font color = "#fafaff">
-
-- suitable for images when you want the illusion of full-bleed
-
-<BR></BR>
-
-code:
-
-<BR></BR>
-
-class: slide-blackback
-
-</font>
-
-
-
----
-
-class: slide-blackback
-
-background-image: url(rmarkdown_hex_small.png)
-background-position: 50% 50%
-
---
-
-
----
-
-class: slide-banner
-
-# This is a banner slide
-
-## h2 for medium headings
-
-### h3 for small headings
-
-#### h4 for pale smallest headings
-
-This is text
-
-- this is a bullet
-
-
-code:
-<BR>
-`class: slide-banner`
-
-
----
-
-## add slides 
-
-- pure white background
-
-#### slides with banners 
-
-
-- "fafaff" banner with eigengrau body
-
----
-
-#### punch colours
-
-- need some thematically consistent highlight colours
-
-
----
-
-class: slide-final, left, middle
-
-# Final slide
-
-## Thank you
-
-Where you might also say "questions?"
-
-
-### @monkmanmh
-
-<BR><BR>
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) and uses the eigengrau theme
-
-<BR>
-code:
-<BR>
-`class: slide-final, left, middle`
-
-
-
-
+```
