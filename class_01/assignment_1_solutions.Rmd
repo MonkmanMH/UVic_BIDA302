@@ -112,11 +112,21 @@ It violates Principle #1, each variable must have its own column. In this exampl
 
 ```{r}
 
-tidyr::relig_income %>%
+relig_income_long <- relig_income %>%
   pivot_longer(-religion, names_to = "income_cat", values_to = "count")
 
+relig_income_long
 ```
 
+And to pivot it back to wide layout:
+
+
+```{r}
+
+relig_income_long %>%
+  pivot_wider(names_from = "income_cat", values_from = "count")
+
+```
 
 ***
 

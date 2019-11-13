@@ -9,41 +9,68 @@ output: html_notebook
 ```{r setup}
 library(tidyverse)
 
+library(gapminder)
 ```
 
 # 1. Plotting
+
+## Objectives
+
+* Produce scatter plots, bar graphs, and time series plots using {ggplot2}.
+
+* Set universal plot settings.
+ 
+* Describe what faceting is and apply faceting in a `ggplot()` call.
+ 
+* Modify the aesthetics of an existing plot (including axis labels and color).
+ 
+* Build complex and customized plots from data in a data frame.
 
 
 ## a short example
 
 
-At the end of this section, you will have plotted some gapminder data to produce this chart:
+### 1. 
+> (3 marks)
+>
+> a. Create a scatterplot using the {gapminder} data, showing all the countries in the world for 2007, the per capita GDP on the _x_ axis, and life expectancy on the _y_
+>
 
-![Hans Rosling, aging Europe 1961](../img/Hans_Rosling_aging_europe.JPG)
-
-Or, more precisely:
-
+ 
 ```{r}
+# solution
+
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
 
 ```
 
-I downloaded the data tables from https://www.gapminder.org/data/, for 
+> b. Create a variant of the above plot, with each continent coloured differently
 
-* Population, total
-
-* Population, aged 60+
-
-* Babies per woman (total fertility)
-
-
-## Your Turn 1.1: 
-
-
+ 
 ```{r}
-# example
+# solution
 
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent)) +
+  geom_point()
 
 ```
 
 
+> c. And now using multiple facets
+ 
+```{r}
+# solution
+
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  facet_grid(~continent)
+
+```
 
