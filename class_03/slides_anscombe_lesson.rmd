@@ -58,32 +58,6 @@ class: slide-banner
 
 # The Quartet
 
-.pull-left[
-
-### Four data sets
-
-- each set has 11 pairs of _x_ and _y_ values
-
-]
-
-.pull-right[
-
-### Identical summary statistics:
-
-- N = 11
-- Mean of x = 9.0
-- Mean of y = 7.5
-- Multiple R2 = 0.667
-- Regression equation: y = 3 + 0.5x
-- And other statistical summary measures are also identical
-
-]
-
----
-class: slide-banner
-
-# The Quartet
-
 Four data sets with 11 pairs of _x_ and _y_ values]
 
 
@@ -131,11 +105,34 @@ class: slide-banner
 
 `  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) `
 
+***
 
+* `geom_()` specifies the geometry
+
+* `aes()` are the aesthetics--the visual properties of the objects
+
+  - e.g. size, shape, colour
 
 
 ---
 
+## a basic plot
+
+```{r message=FALSE}
+anscombe_tidy <- read_csv("anscombe_tidy.csv")
+# example
+ggplot(anscombe_tidy, aes(x = x, y = y)) + 
+  geom_point() 
+
+```
+
+---
+
+## add an additional aesthetic
+
+- `x` and `y` are the locations we want the points
+
+- use `color` to differentiate the sets
 
 `ggplot(anscombe_tidy) + 
   geom_point(mapping = aes(x = x, y = y)) `
@@ -149,3 +146,31 @@ ggplot(anscombe_tidy, aes(x = x, y = y)) +
   geom_point() 
 
 ```
+
+
+---
+
+## try a different aesthetic
+
+What happens when you put "shape" instead of "color"?
+
+
+
+---
+
+## another way to separate groups
+
+### facets
+
+An example:
+
+
+
+---
+
+The synatx:
+
+
+---
+
+

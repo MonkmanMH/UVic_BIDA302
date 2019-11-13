@@ -11,6 +11,8 @@ Package load:
 ```{r setup}
 library(tidyverse)
 library(readxl)
+#
+library(gapminder)
 ```
 
 
@@ -29,14 +31,48 @@ library(readxl)
 
 
 ### 1. 
-> (2 marks)
+> (3 marks)
+>
+> a. Create a scatterplot using the {gapminder} data, showing all the countries in the world for 2007, the per capita GDP on the _x_ axis, and life expectancy on the _y_
 >
 
+ 
+```{r}
+# solution
 
-**Answer:**
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
 
-This is the answer
+```
 
+> b. Create a variant of the above plot, with each continent coloured differently
+
+ 
+```{r}
+# solution
+
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent)) +
+  geom_point()
+
+```
+
+
+> c. And now using multiple facets
+ 
+```{r}
+# solution
+
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  facet_grid(~continent)
+
+```
 
 
 ### 2. 
