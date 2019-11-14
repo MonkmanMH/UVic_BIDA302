@@ -1,0 +1,56 @@
+---
+title: "BIDA302 - assignment #3"
+subtitle: "solutions"
+output: html_notebook
+---
+
+## YOUR NAME HERE
+
+
+Package load:
+```{r setup}
+library(tidyverse)
+library(readxl)
+#
+library(gapminder)
+```
+
+
+## Introduction
+
+> For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
+
+> In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
+
+> Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
+
+> Once you have finished your assignment, create an HTML document by "knitting" the document using either the "Preview" or "Knit" button in the top left of the script window frame
+
+
+## Questions
+
+
+### 1. R Markdown
+> (2 marks)
+>
+> Using the {gapminder} package, make a plot showing how the relationship between per capita GDP and life expectancy in 2007.
+
+
+```{r}
+gapminder
+
+gapminder %>%
+    filter(year == 2007) %>%
+ggplot(mapping =  aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+  
+
+```
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>%
+  arrange(desc(gdpPercap))
+  
+```
+

@@ -16,7 +16,7 @@ library(gapminder)
 
 ## Objectives
 
-* Produce scatter plots, bar graphs, and time series plots using {ggplot2}.
+* Produce scatter plots, bar graphs, histograms, and time series plots using {ggplot2}.
 
 * Set universal plot settings.
  
@@ -27,35 +27,46 @@ library(gapminder)
 * Build complex and customized plots from data in a data frame.
 
 
-## a short example
+## 1. Scatter plot
 
 
-### 1. 
-> (3 marks)
->
-> a. Create a scatterplot using the {gapminder} data, showing all the countries in the world for 2007, the per capita GDP on the _x_ axis, and life expectancy on the _y_
->
+
+For this and some of the other examples, we will be using just the 2007 data.
+
+### Your Turn 1.1
+
+Create a dataframe object with the name "gapminder_2007" by filtering the gapminder data.
+
+```{r}
+# easy peasy
+
+gapminder_2007 <- filter(gapminder, year == 2007)
+
+```
+
+
+### Your Turn 1.2
+
+
+Scatter plots are sometimes known as "X-Y plots" because they compare two values for the same observation. 
+
+Create a simple scatterplot using the {gapminder} data, showing all the countries in the world for 2007, the per capita GDP on the _x_ axis, and life expectancy on the _y_
 
  
 ```{r}
 # solution
 
-gapminder %>%
-  filter(year == 2007) %>%
-  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
   geom_point()
 
 ```
 
-> b. Create a variant of the above plot, with each continent coloured differently
+> b. Create a variant of the above plot, with each continent coloured differently.
 
  
 ```{r}
 # solution
-
-gapminder %>%
-  filter(year == 2007) %>%
-  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent)) +
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, colour = continent)) +
   geom_point()
 
 ```
@@ -66,11 +77,122 @@ gapminder %>%
 ```{r}
 # solution
 
-gapminder %>%
-  filter(year == 2007) %>%
-  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
   geom_point() +
   facet_grid(~continent)
 
 ```
+
+
+
+## 2. Bar plot
+
+
+Bar plots are often used to visualize the distribution of a discrete variable. In this case, we will show how many countries there are in each continent.
+
+* the **geom** is `geom_bar`
+
+* map the `x` variable to `continent`
+
+* there is no `y` variable! {ggplot} will count the number of observations in each category
+
+### Your Turn 2.1
+
+
+```{r}
+# solution
+
+ggplot(gapminder_2007, aes(x = continent)) +
+  geom_bar()
+
+```
+
+### Your Turn 2.2
+
+Note that `colour` (or `color`) won't work on a bar! That's for points and lines.
+
+For something that occupies a block of space--such as a bar or pie chart--you need to use `fill`.
+
+Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'll be specifing continent twice!)
+
+```{r}
+# solution
+
+ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
+  geom_bar()
+
+```
+
+
+This is the default palette. It might be a bit too vibrant for your eyes...don't worry, we will learn to fix that later.
+
+
+
+
+### Your turn 2.3
+
+Another {ggplot2} feature is that every plot is an object. If you want to save a basic version of your plot and continue to tinker with it, you can assign that basic version to an object name, and just add to it.
+
+It would look something like:
+
+`mybar <- ggplot() + geom_()`
+
+Followed by
+
+`mybar + `
+
+
+
+```{r}
+# solution
+
+mybar <- ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
+  geom_bar()
+
+```
+
+
+
+### Your turn 2.4 
+
+
+
+It's possible to turn this on its side, so that the country labels are on the left, and the bars run left-to-right instead of up-and-down.
+
+To do this, add the `coord_flip()` function to the chart object you assigned above (you might have called it `mybar`).
+
+
+
+
+```{r}
+# solution
+
+mybar + coord_flip()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+### REFERENCE
+
+Some of these examples are lifted directly from http://euclid.psych.yorku.ca/www/psy6135/tutorials/gapminder.html
+
+
+
+
+
+
+
+
+
+
 
