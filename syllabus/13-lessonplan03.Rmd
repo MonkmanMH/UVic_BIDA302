@@ -3,7 +3,7 @@ title: "BIDA302: Lesson Plan, Week 3"
 subtitle: "2019-11-16"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
-output: github_document
+output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 

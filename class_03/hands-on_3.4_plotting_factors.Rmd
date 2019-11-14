@@ -1,7 +1,7 @@
 ---
 title: "Plotting categorical variables"
 subtitle: "hands-on examples, with answers"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. -->
