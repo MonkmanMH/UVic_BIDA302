@@ -16,7 +16,7 @@ library(gapminder)
 
 ## Objectives
 
-* Produce scatter plots, bar graphs, histograms, and time series plots using {ggplot2}.
+* Produce scatter plots, histograms, and time series plots using {ggplot2}.
 
 * Set universal plot settings.
  
@@ -85,97 +85,10 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
 
 
 
-## 2. Bar plot: countries in each continent
 
+***
 
-Bar plots are often used to visualize the distribution of a discrete variable. In this case, we will show how many countries there are in each continent.
-
-* the **geom** is `geom_bar`
-
-* map the `x` variable to `continent`
-
-* there is no `y` variable! {ggplot} will count the number of observations in each category
-
-### Your Turn 2.1
-
-
-```{r}
-# solution
-
-ggplot(gapminder_2007, aes(x = continent)) +
-  geom_bar()
-
-```
-
-### Your Turn 2.2
-
-Note that `colour` (or `color`) won't work on a bar! That's for points and lines.
-
-For something that occupies a block of space--such as a bar or pie chart--you need to use `fill`.
-
-Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'll be specifing continent twice!)
-
-```{r}
-# solution
-
-ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
-  geom_bar()
-
-```
-
-
-This is the default palette. It might be a bit too vibrant for your eyes...don't worry, we will learn to fix that later.
-
-
-
-
-
-### Your turn 2.3
-
-Another {ggplot2} feature is that every plot is an object. If you want to save a basic version of your plot and continue to tinker with it, you can assign that basic version to an object name, and just add to it.
-
-It would look something like:
-
-`mybar <- ggplot() + geom_()`
-
-Followed by
-
-`mybar + `
-
-
-
-```{r}
-# solution
-
-mybar <- ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
-  geom_bar()
-
-```
-
-
-
-### Your turn 2.4 
-
-
-
-It's possible to turn this on its side, so that the country labels are on the left, and the bars run left-to-right instead of up-and-down.
-
-To do this, add the `coord_flip()` function to the chart object you assigned above (you might have called it `mybar`).
-
-
-
-
-```{r}
-# solution
-
-mybar + coord_flip()
-
-```
-
-We will work on specific ordering methods of categorical variables later...
-
-
-## 3. Histogram: life expectancy
+## 2. Histogram: life expectancy
 
 Histograms are ways to "bin" continuous variables into categories, and then count the number of observations in each bin.
 
@@ -183,7 +96,7 @@ The geom is `geom_histogram()`.
 
 Like bar plots, you don't need a `y =` variable; the Y axis is the count of the number of observations.
 
-### Your turn 3.1
+### Your turn 2.1
 
 Make a histogram using `gapminder_2007`, showing the count of countries by life expectancy.
 
@@ -196,7 +109,7 @@ ggplot(gapminder_2007, aes(x = lifeExp)) +
 ```
 
 
-### Your turn 3.2
+### Your turn 2.2
 
 An important option in the `geom_histogram()` function is `binwidth = `. This sets the range that each bin covers. Experiment with adding bin widths of 3, 5, and 10 to the histogram
 
