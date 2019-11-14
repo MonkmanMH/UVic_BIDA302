@@ -1,7 +1,7 @@
 ---
 title: "Plotting in R"
 subtitle: "hands-on examples, with answers"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. -->
@@ -125,10 +125,105 @@ ggplot(gapminder_2007, aes(x = lifeExp)) +
 
 
 
+***
+
+## 3. Line graph: change in life expectancy over time
+
+Line graphs join the dots and are useful for showing change over time.
+
+The geom is `geom_line()`.
+
+
+### Your turn 3.1
+
+Make a line graph using `gapminder`, showing the change of life expectancy for Canada between 1952 and 2007. 
+
+Here's an example that uses the `geom_point` from earlier...change this to a line.
+
+
+**plot twist**
+
+You can add a `ggplot()` call as part of a pipe! This means that you can filter, mutate, group, etc and then pipe those results into a plot.
+
+Note that the data is already identified, so you don't include it after `ggplot`
+
+
+```{r}
+# example
+gapminder %>%
+  filter(country == "Canada") %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_point()
+
+# solution
+gapminder %>%
+  filter(country == "Canada") %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line()
+
+```
+
+
+### Your turn  3.2
+
+Modify the code you wrote in #3.1 to show the life expectancy for Canada, Oman, and Japan. (In 2007, Japan had the longest life expectancy of any country, and in the years between 1952 and 2007, Oman had the biggest increase--a change of 38 years! The code for how I determined this is at the bottom of the page.) 
+
+```{r}
+
+# solution
+gapminder %>%
+  filter(country %in% c("Canada", "Oman", "Japan")) %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line()
+
+
+```
+
+### Your turn  3.3
+
+Layering geoms ... it is possible to add geoms to a plot. 
+
+See what happens when you use the code from 3.2, with `geom_line`, and then add the `geom_point` from the example in 3.1.
+
+```{r}
+
+# solution
+gapminder %>%
+  filter(country %in% c("Canada", "Oman", "Japan")) %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line() + 
+  geom_point()
+
+
+```
+
+
+### BONUS CALCULATIONS
+
+
+Biggest change in life expectancy
+
+```{r}
+
+gapminder %>%
+  filter(year %in% c(1952, 2007)) %>%
+  group_by(country) %>%
+  mutate(lifeExp_change = lifeExp - lag(lifeExp)) %>%
+  arrange(desc(lifeExp_change))
+
+
+```
+
+
+
 
 ### REFERENCE
 
-Some of these examples are lifted directly from http://euclid.psych.yorku.ca/www/psy6135/tutorials/gapminder.html
+Some of these examples are modified from http://euclid.psych.yorku.ca/www/psy6135/tutorials/gapminder.html. Thanks Michael!
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: "BIDA302 - assignment #3"
 subtitle: "solutions"
-output: html_notebook
+output: html_document
 ---
 
 ## YOUR NAME HERE
@@ -30,7 +30,7 @@ library(gapminder)
 ## Questions
 
 
-### 1. R Markdown
+### 1. Plotting
 > (2 marks)
 >
 > Using the {gapminder} package, make a plot showing how the relationship between per capita GDP and life expectancy in 2007.
@@ -50,7 +50,29 @@ ggplot(mapping =  aes(x = gdpPercap, y = lifeExp)) +
 ```{r}
 gapminder %>%
   filter(year == 2007) %>%
-  arrange(desc(gdpPercap))
+  arrange(desc(lifeExp))
   
+```
+
+
+
+### 2. Plotting
+
+This is a more complex extension of the {gapminder} plots you did as a hands-on exercise.
+
+Using your grouping and mutate skills, write a pipe that first calculates the median life expectancy for each continent for each year between 1952 and 2007, then plot a line graph showing those changes.
+
+
+
+```{r}
+
+gapminder %>%
+  group_by(continent, year) %>%
+  summarise(lifeExp_median = median(lifeExp)) %>%
+  #
+  ggplot(mapping =  aes(x = year, y = lifeExp_median, colour = continent)) +
+  geom_line()
+  
+
 ```
 
