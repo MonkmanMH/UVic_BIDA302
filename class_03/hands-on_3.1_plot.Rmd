@@ -27,7 +27,7 @@ library(gapminder)
 * Build complex and customized plots from data in a data frame.
 
 
-## 1. Scatter plot
+## 1. Scatter plot: GDP by life expectancy
 
 
 
@@ -85,7 +85,7 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
 
 
 
-## 2. Bar plot
+## 2. Bar plot: countries in each continent
 
 
 Bar plots are often used to visualize the distribution of a discrete variable. In this case, we will show how many countries there are in each continent.
@@ -125,6 +125,7 @@ ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
 
 
 This is the default palette. It might be a bit too vibrant for your eyes...don't worry, we will learn to fix that later.
+
 
 
 
@@ -171,11 +172,41 @@ mybar + coord_flip()
 
 ```
 
+We will work on specific ordering methods of categorical variables later...
 
 
+## 3. Histogram: life expectancy
+
+Histograms are ways to "bin" continuous variables into categories, and then count the number of observations in each bin.
+
+The geom is `geom_histogram()`.
+
+Like bar plots, you don't need a `y =` variable; the Y axis is the count of the number of observations.
+
+### Your turn 3.1
+
+Make a histogram using `gapminder_2007`, showing the count of countries by life expectancy.
+
+```{r}
+# solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram()
 
 
+```
 
+
+### Your turn 3.2
+
+An important option in the `geom_histogram()` function is `binwidth = `. This sets the range that each bin covers. Experiment with adding bin widths of 3, 5, and 10 to the histogram
+
+```{r}
+# solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 3)
+
+
+```
 
 
 
