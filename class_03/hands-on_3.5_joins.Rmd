@@ -85,7 +85,115 @@ planes %>%
 Sometimes tables don't have a primary key! When that happens, it can be useful to create one -- `mutate()` and `row_number()` is one approach. This is a _surrogate key_.
 
 
-# 2. Mutating joins
+## 2. Mutating joins
+
+The first kind of joins are "mutating joins" -- new variables are added to one data frame from matching observations in another.
+
+### Joins: simple examples
+
+* from [_R for Data Science, "Understanding joins"]("https://r4ds.had.co.nz/relational-data.html#mutating-joins")
+
+First, we will make two small tables, `x` and `y`
+
+```{r}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     3, "x3"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2",
+     4, "y3"
+)
+
+
+```
+
+
+**inner joins**
+
+An inner join keeps only the observations where there is a match on both sides:
+
+```{r}
+
+inner_join(x, y, key = "key")
+
+```
+
+
+**left join**
+
+Now, join them using a left join: ... all of the observations from the first table (on the left-hand side of the function), and variables from the matching records from the secon (the right-hand side of the function).
+
+The {dplyr} function for this is `left_join()`
+
+```{r}
+left_join(x, y, key = "key")
+```
+
+Note that all 3 of the `x` values are there; because there is no `y` observation with the key value of "3", the `val_y` value is `NA`.
+
+**right join**
+
+Is the same as a left join, but keeps all of the observations in `y`
+
+**full join**
+
+Keeps all of the observations in both `x` and `y`
+
+### Your turn 2.1
+
+See what happens when you join the tables with a `right_join()`, followed by a `full_join()`
+
+
+```{r}
+full_join(x, y, key = "key")
+```
+
+
+
+
+### Your turn 2.2
+
+In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables.
+
+```{r}
+flights2 <- flights %>% 
+  select(year:day, hour, origin, dest, tailnum, carrier)
+flights2
+```
+
+To this table we will add the name of the airline, which we can find in the table `airlines`.
+
+* both tables have the variable "carrier"
+
+* we want a `left_join`: all the `flight` observations, and adding the "name" variable from `airlines`
+
+
+```{r}
+# solution
+left_join(flights2, airlines, by = "carrier")
+
+
+# alternate version, using a pipe
+flights2 %>%
+  left_join(airlines, by = "carrier")
+
+```
+
+
+
+
+
+
+## 3. Filtering joins
+
+Filtering joins, which filter observations from one data frame based on whether or not they match an observation in the other table.
+
+
 
 
 
