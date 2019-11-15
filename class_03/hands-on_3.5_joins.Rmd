@@ -8,15 +8,85 @@ output: html_document
 
 ```{r setup}
 library(tidyverse)
-
-library(gapminder)
+#
+library(nycflights13)
 ```
-
-# 1. Joining tables
 
 ## Objectives
 
-* 
+* understand the function of keys in relational databases
+
+* understand how to join tables
+
+* understand the primary types of mutating and filtering joins
+
+
+## Relational data
+
+
+Often, the data you are working with are spread across multiple tables. This allows for efficient database storage (there's an entire discipline dedicated to database theory and practical implementations of those theories.)
+
+This requires you, the data analyst, to join tables, so that the information held in multiple tables can be used to answer the research question at hand.
+
+Earlier you worked with the {nycflights13} package; for this hands-on exercise we will return to it.
+
+In addition to `flights`, there are four other tables in the package:
+
+* `airlines`
+
+* `airports`
+
+* `planes`
+
+* `weather`
+
+The tables are _related_ to `flights` by the fact that they have variables in common. These are known as the "key" variables.
+
+This diagram shows the relationships:
+
+![nycflights13](relational-nycflights.png)
+
+
+## 1. Keys
+
+1. Primary: identifies a unique observation in the table.
+
+2. Foreign: a unique observation in another table, but not this one.
+
+An example: `tailnum`
+
+* _primary_ in `planes` -- there is only one observation for each aircraft
+
+* _foreign_ in `flights` -- a plane could have multiple flights in and out of NYC airports
+
+
+Having the same key in two tables forms the "relation" -- hence "relational database".
+
+
+### Your turn 1.1
+
+Use `count` to check that `planes$tailnum` is a primary key
+
+```{r}
+# solution (in _R4DS_)
+planes %>% 
+  count(tailnum) %>% 
+  filter(n > 1)
+
+# alternate solution
+planes %>% 
+  count(tailnum) %>% 
+  summarise(max(n))
+
+
+```
+
+
+Sometimes tables don't have a primary key! When that happens, it can be useful to create one -- `mutate()` and `row_number()` is one approach. This is a _surrogate key_.
+
+
+# 2. Mutating joins
+
 
 
 ## REFERENCE
