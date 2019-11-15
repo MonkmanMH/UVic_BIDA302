@@ -19,4 +19,15 @@ library(gapminder)
 * 
 
 
+## REFERENCE
+
+This hands-on exercise draws heavily on the following sources:
+
+* ["Relational data" at _R for Data Science_](https://r4ds.had.co.nz/relational-data.html)
+
+* ["Two-table verbs", article at the {dplyr} website](https://dplyr.tidyverse.org/articles/two-table.html)
+
+* ["Join two tbls together", part of the {dplyr} reference pages](https://dplyr.tidyverse.org/reference/join.html)
+
+* ["Join two tables" at the STAT545 site](https://stat545.com/join-cheatsheet.html)
 
