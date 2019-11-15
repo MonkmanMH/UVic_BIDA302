@@ -107,9 +107,15 @@ court_cases %>%
 ### 3. Importing data: Excel
 > (5 marks)
 >
-> Use the {readxl} package to read in the file "regional_district_monthly_2019.xlsx" 
+> Use the {readxl} package to read in the file "regional_district_monthly_2019_mod.xlsx" 
 >
 > This data is published by the Ministry of Finance, and shows a variety of statistics associated with the Property Transfer Tax.
+>
+> The original file has been modified:
+> 
+> * filter for the Capital Regional District (CRD) and
+>
+> * the resulting table is transposed, so the rows now become the columns.
 >
 > The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019
 >
@@ -121,7 +127,7 @@ court_cases %>%
 ```{r}
 # solution
 
-excel_sheets("regional_district_monthly_2019.xlsx")
+excel_sheets("regional_district_monthly_2019_mod.xlsx")
 
 ```
 
