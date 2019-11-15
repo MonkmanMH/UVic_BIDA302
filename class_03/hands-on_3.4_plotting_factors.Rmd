@@ -121,14 +121,83 @@ mybar + coord_flip()
 
 ```
 
-We will work on specific ordering methods of categorical variables later...
+
+## 2. Sorting factors in a plot
+
+To sort the factors in a plot, we first mutate the variable that contains the factor variable that will plot.
+
+In this example, we use the same code that we saw in hands-on 3.3, Your Turn 3.2. Other sort functions (such as `fct_relevel`) could also be used. 
+
+```{r}
+gapminder %>%
+  # sort the factors
+  mutate(continent = continent %>% 
+           fct_infreq() %>% 
+           fct_rev()) %>% 
+  # then plot
+  ggplot(aes(x = continent)) +
+    geom_bar() +
+  coord_flip()
+
+```
+
+
+### Your turn 2.2
+
+
+In this example, we will plot the four countries in our BIDA group by life expectancy.
+
+```{r}
+h_countries <- c("Belgium", "India", "Denmark", "Albania")  # see what I did there?
+
+h_gap <- gapminder %>%
+  filter(country %in% h_countries) %>%
+  mutate(country = country %>% 
+  fct_relevel("Belgium", "India", "Denmark", "Albania"))  
+
+h_gap %>%
+  filter(year == 2007) %>%
+  ggplot(mapping = aes(x = country, y = lifeExp)) +
+  geom_point(size = 6)
+
+```
+
+
+Now sort by life expectancy:
+
+```{r}
+
+
+h_gap %>%
+  filter(year == 2007) %>%
+  mutate(country = country %>% 
+           fct_reorder(lifeExp) %>% 
+           fct_rev()) %>% 
+  # now plot
+  ggplot(mapping = aes(x = country, y = lifeExp)) +
+  geom_point(size = 6)
+
+
+```
+
+
+
+## 99. Facets
+
+
+```{r}
+# solution
+
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  facet_grid(~continent)
+
+```
 
 
 
 
-
-
-### REFERENCE
+## REFERENCE
 
 Some of these examples are lifted directly from http://euclid.psych.yorku.ca/www/psy6135/tutorials/gapminder.html
 
