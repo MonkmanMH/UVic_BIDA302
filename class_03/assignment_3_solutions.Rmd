@@ -30,7 +30,7 @@ library(gapminder)
 ## Questions
 
 
-### 1. Plotting
+## 1. Plotting
 > (2 marks)
 >
 > Using the {gapminder} package, make a plot showing how the relationship between per capita GDP and life expectancy in 2007.
@@ -56,11 +56,11 @@ gapminder %>%
 
 
 
-### 2. Plotting
+## 2. Plotting
 
 This is a more complex extension of the {gapminder} plots you did as a hands-on exercise.
 
-Using your grouping and mutate skills, write a pipe that first calculates the median life expectancy for each continent for each year between 1952 and 2007, then plot a line graph showing those changes.
+Using your data manipulation skills, write a pipe that first calculates the median life expectancy for each continent for each year between 1952 and 2007, then plot a line graph showing those changes.
 
 
 
@@ -75,4 +75,96 @@ gapminder %>%
   
 
 ```
+
+
+## 3. Joins
+
+The Lahman baseball database contains a comprehensive listing of annual summaries for the major leagues of baseball, going back to 1871. For this question, smaller versions of two of the files have been created:
+
+* "Master_2000s.csv" -- all active players from the years 2000 to 2018
+
+* "Batting_2018.csv" -- the annual summary of each player's batting, for the 2018 season
+
+The batting 
+
+
+```{r}
+
+Master_2000s <- read_csv("Master_2000s.csv")
+
+Batting_2018 <- read_csv("Batting_2018.csv")
+
+```
+
+### 3a. Understanding the tables
+
+How many rows are there in the `Batting` table?
+
+How many unique (or distinct) players are represented in the `Batting` table?
+
+
+
+```{r}
+# solution
+left_join(flights2, airlines, by = "carrier")
+
+
+# alternate version, using a pipe
+flights2 %>%
+  left_join(airlines, by = "carrier")
+
+# NOTES
+#
+# * both tables have the variable "carrier"
+# 
+# * we want a `left_join`: all the `flight` observations, and adding the "name" variable from `airlines`
+
+
+```
+
+
+
+
+## REFERENCE
+
+The source of the Lahman baseball data table is http://www.seanlahman.com/baseball-archive/statistics/. I downloaded the "2018 - comma delimited version", unzipped it, and modified the Batting and Master tables as follows:
+
+```{r evaluate = FALSE}
+
+Batting <- read_csv("../data/Batting.csv")
+
+Batting_2016 <- Batting %>% 
+  filter(yearID == 2016)
+
+write_csv(Batting_2016, "Batting_2016.csv")
+
+### ---
+
+Master <- read_csv("../data/People.csv", col_types = 
+                     cols(
+                       debut = col_date(),
+                       finalGame = col_date() 
+                     ))
+
+Master_2000s <- Master %>% 
+  filter(finalGame > "2000-01-01")
+
+write_csv(Master_2000s, "Master_2000s.csv")
+
+### ---
+
+Salaries <- read_csv("../data/Salaries.csv")
+
+Salaries_2016 <- Salaries %>% 
+  filter(yearID == 2016)
+
+write_csv(Salaries_2016, "Salaries_2016.csv")
+
+```
+
+
+
+
+
+
 

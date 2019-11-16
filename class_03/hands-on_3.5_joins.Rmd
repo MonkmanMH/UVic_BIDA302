@@ -89,7 +89,7 @@ Sometimes tables don't have a primary key! When that happens, it can be useful t
 
 The first kind of joins are "mutating joins" -- new variables are added to one data frame from matching observations in another.
 
-### Joins: simple examples
+## 2a. Understanding keys 
 
 * from [_R for Data Science, "Understanding joins"]("https://r4ds.had.co.nz/relational-data.html#mutating-joins")
 
@@ -126,7 +126,9 @@ inner_join(x, y, key = "key")
 
 **left join**
 
-Now, join them using a left join: ... all of the observations from the first table (on the left-hand side of the function), and variables from the matching records from the secon (the right-hand side of the function).
+Left, right, and full joins are varieties of "outer joins".
+
+Join the two tables using a left join: ... all of the observations from the first table (on the left-hand side of the function), and variables from the matching records from the secon (the right-hand side of the function).
 
 The {dplyr} function for this is `left_join()`
 
@@ -154,8 +156,6 @@ full_join(x, y, key = "key")
 ```
 
 
-
-
 ### Your turn 2.2
 
 In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables.
@@ -176,11 +176,81 @@ To this table we will add the name of the airline, which we can find in the tabl
 ```{r}
 # solution
 left_join(flights2, airlines, by = "carrier")
-
-
 # alternate version, using a pipe
 flights2 %>%
   left_join(airlines, by = "carrier")
+```
+
+
+
+
+
+## 2.b Duplicate Keys - #1
+
+In real life, tables start to get more complex. It's often the case that you will have tables that have duplicate keys in one or both of the tables.
+
+The chunk below creates new versions of `x` and `y` tables, where there are duplicate keys in one.
+
+```{r}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     2, "x3",
+     1, "x4"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2"
+)
+```
+
+
+### Your turn 2.3
+
+Join the tables with `left_join()`, with `x` as the table on the left.
+
+```{r}
+# solution
+
+left_join(x, y, key = "key")
+
+```
+
+
+A situation where there are duplicate keys in both tables is usually an error--there is no unique identifier of a single observation. (A question to ask yourself is "Is there are third table?")
+
+
+### Your turn 2.4
+
+Here's fresh versions of `x` and `y` tables, where the key "2" is duplicated in both.
+
+```{r}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     2, "x3",
+     3, "x4"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2",
+     2, "y3",
+     3, "y4"
+)
+
+```
+
+
+What does a left join do? How many rows does the resulting table have?
+
+```{r}
+# solution
+
+left_join(x, y, by = "key")
 
 ```
 
@@ -188,6 +258,7 @@ flights2 %>%
 
 
 
+***
 
 ## 3. Filtering joins
 
