@@ -69,6 +69,8 @@ Use the `count()` function in a pipe to get a frequency table of each level in t
 
 ```{r}
 # solution
+gapminder %>%
+  count(continent)
 
 ```
 
@@ -103,8 +105,12 @@ The function we need here is `droplevels()`
 
 
 ```{r}
-#
 
+h_gap <- gapminder %>%
+  filter(country %in% h_countries) %>% 
+  droplevels()
+
+levels(h_gap$country)
 
 ```
 
@@ -154,7 +160,14 @@ Give them a try on `continent` in gapminder.
 
 ```{r}
 # solutions
+gapminder$continent %>%
+  fct_infreq() %>%
+  levels()
 
+gapminder$continent %>%
+  fct_infreq() %>%
+  fct_rev() %>%
+  levels()
 
 
 ```

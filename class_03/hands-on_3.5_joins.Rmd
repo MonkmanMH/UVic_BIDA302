@@ -262,11 +262,49 @@ left_join(x, y, by = "key")
 
 ## 3. Filtering joins
 
-Filtering joins, which filter observations from one data frame based on whether or not they match an observation in the other table.
+The other sort of joins filter observations from one data frame based on whether or not they match an observation in the other table.
+
+There are two sorts: 
+
+* `semi_join(x, y)` keeps all observations in `x` that have a match in `y`.
+
+* `anti_join(x, y)` drops all observations in `x` that have a match in `y`.
 
 
+Let's make some test tables again:
 
 
+```{r}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     3, "x3"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2",
+     4, "y3"
+)
+```
+
+Semi-join: only the observations in `x` that have a match in `y`.
+
+Note that no variables from `y` appear in the result.
+
+```{r}
+semi_join(x, y, key = "key")
+```
+
+
+Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
+
+```{r}
+anti_join(x, y, key = "key")
+```
+
+***
 
 ## REFERENCE
 

@@ -50,8 +50,8 @@ Bar plots are often used to visualize the distribution of a discrete variable. I
 
 ```{r}
 # solution
-
-
+ggplot(gapminder_2007, aes(x = continent)) +
+  geom_bar()
 ```
 
 ### Your Turn 1.2
@@ -64,6 +64,8 @@ Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'l
 
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
+  geom_bar()
 
 
 ```
@@ -92,6 +94,11 @@ Followed by
 ```{r}
 # solution
 
+
+mybar <- ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
+  geom_bar()
+
+
 ```
 
 
@@ -109,6 +116,8 @@ To do this, add the `coord_flip()` function to the chart object you assigned abo
 
 ```{r}
 # solution
+
+mybar + coord_flip()
 
 ```
 
@@ -157,6 +166,15 @@ h_gap %>%
 Now it's your turn: sort by life expectancy:
 
 ```{r}
+
+h_gap %>%
+  filter(year == 2007) %>%
+  mutate(country = country %>% 
+           fct_reorder(lifeExp) %>% 
+           fct_rev()) %>% 
+  # now plot
+  ggplot(mapping = aes(x = country, y = lifeExp)) +
+  geom_point(size = 6)
 
 
 ```

@@ -29,7 +29,7 @@ Reshape into tidy form:
 https://rpubs.com/dgrtwo/tidy-anscombe
 
 ```{r evaluate = FALSE}
-
+# old-school `gather()` and `spread()`
 anscombe_tidy <- anscombe %>%
   mutate(observation = seq_len(n())) %>%
   gather(key, value, -observation) %>%
@@ -40,23 +40,16 @@ anscombe_tidy <- anscombe %>%
 
 head(anscombe_tidy)
 
-readr::write_csv(anscombe_tidy, "anscombe_tidy.csv")
-
 ```
 
 
 
-### Summary statistics
+## 1. Summary statistics
 
 Each of the four sets has the same summary statistics. Let's calculate them now:
 
-Introducing {dplyr} functions:
-
 
 ```{r}
-# read the csv file version
-anscombe_tidy <- read_csv("anscombe_tidy.csv")
-
 # example
 anscombe_tidy %>%
   group_by(set) %>%
@@ -64,10 +57,12 @@ anscombe_tidy %>%
 
 ```
 
+### Your turn 1.1
+
 Using the following functions, calculate the summary statistics of _x_ and _y_, and the correlation coefficient between _x_ and _y_, for all four of the sets in the quartet:
 
  | statistic | function |
- | ---       | ---      |
+ | ----       | ----      |
  | mean      | mean()   |
  | standard deviation | sd() |
  | correlation coefficient | cor() |
@@ -84,10 +79,11 @@ anscombe_tidy %>%
             sd(y), 
             cor(x, y))
 
+
 ```
 
 
-## Visualizing the quartet
+## 2. Visualizing the quartet
 
 Using the R visualization package {ggplot2}
 
@@ -101,14 +97,15 @@ ggplot(anscombe_tidy, aes(x = x, y = y)) +
 ```
 
 
-## Your turn 1.1
+### Your turn 2.1
 
-With colour to differentiate each set
+With `colour` to differentiate each set
 
 ```{r}
-# solution
-ggplot(anscombe_tidy) + 
-  geom_point(aes(x, y, colour = set))
+# example
+ggplot(anscombe_tidy, aes(x = x, y = y, colour = set)) + 
+  geom_point() 
+
 
 
 ```
@@ -123,7 +120,7 @@ Filter by set
 anscombe_tidy %>%
   filter(set == "I") %>%
 ggplot() + 
-  geom_point(aes(x, y, colour = set), size = 3, colour = "purple")
+  geom_point(aes(x, y), size = 3, colour = "purple")
 
 ```
 

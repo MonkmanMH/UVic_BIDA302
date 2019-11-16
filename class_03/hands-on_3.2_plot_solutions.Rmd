@@ -38,6 +38,7 @@ Create a dataframe object with the name "gapminder_2007" by filtering the gapmin
 ```{r}
 # easy peasy
 
+gapminder_2007 <- filter(gapminder, year == 2007)
 
 ```
 
@@ -58,9 +59,13 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp))
 
 # solution
 
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
 
 
 # change the colour of the points
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(colour = "blue")           # note that the colour has to be in quotation marks
 
 
 ```
@@ -70,6 +75,8 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp))
  
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, colour = continent)) +
+  geom_point()
 
 ```
 
@@ -94,6 +101,8 @@ Make a histogram using `gapminder_2007`, showing the count of countries by life 
 
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram()
 
 
 ```
@@ -105,6 +114,8 @@ An important option in the `geom_histogram()` function is `binwidth = `. This se
 
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 3)
 
 
 ```
@@ -113,6 +124,8 @@ Some more formatting...like you did earlier with the points, change the colour o
 
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 3, colour = "red")
 
 
 ```
@@ -121,6 +134,8 @@ Some more formatting...like you did earlier with the points, change the colour o
 
 ```{r}
 # solution
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 3, fill = "white", colour = "black")
 
 
 ```
@@ -133,6 +148,9 @@ What do you think happens when you put a "fill" option in the `aes()` function?
 ```{r}
 # solution
 
+# solution
+ggplot(gapminder_2007, aes(x = lifeExp, fill = continent)) +
+  geom_histogram(binwidth = 3, colour = "black")
 
 ```
 
@@ -171,7 +189,12 @@ gapminder %>%
   ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
   geom_point()
 
-# now make a line graph
+# solution
+gapminder %>%
+  filter(country == "Canada") %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line()
 
 ```
 
@@ -183,6 +206,15 @@ Modify the code you wrote in #3.1 to show the life expectancy for Canada, Oman, 
 (In 2007, Japan had the longest life expectancy of any country, and in the years between 1952 and 2007, Oman had the biggest increase--a change of 38 years! The code for how I determined this is at the bottom of the page.) 
 
 ```{r}
+
+country_list <- c("Canada", "Oman", "Japan")
+
+# solution
+gapminder %>%
+  filter(country %in% country_list) %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line()
 
 
 ```
@@ -196,6 +228,12 @@ See what happens when you use the code from 3.2, with `geom_line`, and then add 
 ```{r}
 
 # solution
+gapminder %>%
+  filter(country %in% c("Canada", "Oman", "Japan")) %>%
+  # now the ggplot 
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line() + 
+  geom_point()
 
 
 ```
