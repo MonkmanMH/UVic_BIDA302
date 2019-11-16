@@ -58,7 +58,7 @@ class: slide-banner
 
 # The Quartet
 
-Four data sets with 11 pairs of _x_ and _y_ values]
+Four data sets with 11 pairs of _x_ and _y_ values
 
 
 All four have identical summary statistics:
@@ -101,17 +101,18 @@ class: slide-banner
 
 # basic ggplot() call
 
-`ggplot(<DATA>) + `
+`ggplot(<DATA>, mapping = aes(<MAPPINGS>)) + `
 
-`  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) `
+`  <GEOM_FUNCTION>() `
 
 ***
-
-* `geom_()` specifies the geometry
 
 * `aes()` are the aesthetics--the visual properties of the objects
 
   - e.g. size, shape, colour
+
+* `geom_()` specifies the geometry
+
 
 
 ---
@@ -134,43 +135,16 @@ ggplot(anscombe_tidy, aes(x = x, y = y)) +
 
 - use `color` to differentiate the sets
 
-`ggplot(anscombe_tidy) + 
-  geom_point(mapping = aes(x = x, y = y)) `
+`ggplot(anscombe_tidy, mapping = aes(x = x, y = y, colour = set)) + 
+  geom_point() `
 
 
 
 ```{r echo=FALSE, message=FALSE}
 anscombe_tidy <- read_csv("anscombe_tidy.csv")
 # example
-ggplot(anscombe_tidy, aes(x = x, y = y)) + 
+ggplot(anscombe_tidy, aes(x = x, y = y, colour = set)) + 
   geom_point() 
 
 ```
-
-
----
-
-## try a different aesthetic
-
-What happens when you put "shape" instead of "color"?
-
-
-
----
-
-## another way to separate groups
-
-### facets
-
-An example:
-
-
-
----
-
-The synatx:
-
-
----
-
 

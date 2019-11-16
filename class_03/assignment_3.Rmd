@@ -18,7 +18,7 @@ library(gapminder)
 
 > For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
 
-> All of the packages and data you will need for this assignment is in the rstudio.cloud project. There is no need for you to download and install anything.
+> All of the packages and data you will need for this assignment are in the rstudio.cloud project. There is no need for you to download and install anything.
 
 > In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
 
@@ -105,7 +105,9 @@ library(gapminder)
 
 ### 3d. Filtering joins
 
-> Look at the number of records in `Salaries_2016` and `Batting_2016`. Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
+> How many records are in `Batting_2016` and `Salaries_2016`?
+>
+> Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
 > 
 > Use one of the filtering joins to see how many players are listed in `Batting_2016` that don't show up in `Salaries_2016`.
 
