@@ -1,0 +1,155 @@
+---
+title: "BIDA302: Lesson Plan, Week 4"
+subtitle: "2019-11-23"
+author: "Martin Monkman"
+date: "`r Sys.Date()`"
+output: html_document
+#description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
+---
+
+# Week 3 (2019-11-23)
+
+
+
+> Graphs and charts let you explore and learn about the structure of the information you collect. Good data visualizations also make it easier to communicate your ideas and findings to other people.
+> - Kieran Healy, _Data Visualization: A Practical Introduction_ (2019)
+
+
+At the end of this lesson, learners will be able to:
+
+1. Describe the different join types, and 
+
+2. Demonstrate how they are applied in a data analytics context.
+
+
+***
+
+## Activities
+
+_(subject to change)_
+
+| Block      | Time           | Topics  | &#8212; |
+|---         |:---            |:---     |:---:  |
+|1a          | 9:00 to 9:30   | Course: mid-point review | &#8212; |
+|1b          | 9:30 to 10:30  | Review Homework Exercise #3  <BR> * Data import and plotting <BR> * Joins (relational data)  | &#8212; |
+|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
+|2           | 10:45 to 12:00 | Writing your own functions | &#8212; |
+|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|3           | 1:00 to 2:15   | Excel: macros and VBA (1) | &#8212; |
+|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
+|4a          | 2:30 to 3:00   | Excel: macros and VBA (2) | &#8212; |
+|4b          | 3:00 to 3:30   | Capstone Project <br> Assignment 4 | &#8212; |
+|4c <br> 4d  | 3:30 to 4:00   | Questions? Comments? <br> Wrap up | &#8212; |
+
+
+
+### 1a. Course: mid-point review
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 30 minutes (9:00 to 9:30)
+
+
+### 1b. Review Homework Exercise #3
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (9:30 to 9:45)
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (9:45 to 10:30)
+
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (10:30 to 10:45)
+
+***
+
+
+### 2. Writing your own functions
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (10:45 to 12:00)
+
+_Reading:_
+
+* _R4DS_, ["Functions"](https://r4ds.had.co.nz/functions.html)
+
+
+
+***
+
+## LUNCH
+
+Time allocation: 60 minutes (12:00 to 1:00)
+
+***
+
+
+### 3. Excel: macros and VBA (1)
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (1:00 to 1:15)
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (1:15 to 2:15)
+
+_Reading:_
+
+* ["Getting started with VBA in Office"](https://docs.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office), Microsoft
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (2:15 to 2:30)
+
+
+***
+
+
+### 4a. Excel: macros and VBA (2)
+
+Format: hands-on exercise
+
+Time allocation: 30 minutes (2:30 to 3:00)
+
+
+
+### 4b. Capstone Project and Assignment #4
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 30 minutes (3:00 to 3:30)
+
+
+
+### 4c. Wrap up
+
+Time allocation: 30 minutes (3:30 to 4:00)
+
+#### Summary
+
+Format: instructor summary, w/ slides
+
+#### Questions?
+
+Format: learner Q&A
+
+#### Preview/readings for next lesson
+
+Format: instructor summary, w/ slides
+
+
+
+
+-30-
