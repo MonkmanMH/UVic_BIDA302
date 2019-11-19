@@ -2,7 +2,7 @@
 title: "Capstone Project"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
-date: "17/11/2019"
+date: "2019/11/18"
 output: html_notebook
 editor_options: 
   chunk_output_type: inline
@@ -10,7 +10,7 @@ editor_options:
 
 # Project (Course Outline)
 
-Project (marks: 30)
+Project (marks: 40)
 
 * a small project that will require the application of all of the concepts introduced
 
@@ -27,8 +27,32 @@ The idea of the capstone project is that you will create an R Markdown document 
 
 ![data science process](../img/data-science.png)
 
+To do this, you will start at the end: a summary table and/or a plot of some data that has been published. The goal is to replicate that summary table and plot, starting with downloading the data ("import"), and doing any necessary data tidying, transformations, and modeling, followed by tabular or plotting visualizations.
+
+# Grading
+
+Your project will be graded based on the following scheme:
+
+* 5 marks - data import, including defining the variable types
+
+* 15 marks - tidying and manipulation
+
+* 5 marks - visualization (tables and plots)
+
+* 5 marks - going beyond: this might included adding an additional table, plot, or statistical model, or using functions so that your code isn't as WET
+
+* 10 marks - documentation throughout, explaining what the following R code chunk is doing.
+
+
+
+---
 
 # Project inspiration
+
+
+Statistics Canada 
+
+* [The Daily](https://www150.statcan.gc.ca/n1/dai-quo/index-eng.htm) -- regular reporting of social and economic statistics about Canada
 
 Maclean's magazine's annual "Charts to Watch"
 
@@ -44,7 +68,11 @@ FiveThirtyEight
 
 * R package {fivethirtyeight}
 
-# Project opions
+
+
+---
+
+# Project options
 
 You have two options:
 
