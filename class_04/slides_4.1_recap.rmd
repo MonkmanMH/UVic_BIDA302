@@ -1,0 +1,129 @@
+---
+title: "BIDA 302"
+subtitle: "mid-point review"
+author: "Martin Monkman"
+date: "2019/11/23"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+# The Data Science Process
+
+![the data science process](../img/data-science.png)
+
+- Wickham and Grolemund, _R4DS_
+
+
+
+
+# Exploratory Data Analysis
+
+"Exploratory data analysis is detective work." <br>(John W. Tukey)
+
+--
+
+>1. Generate questions about your data
+>
+>2. Search for answers by visualizing, transforming, and modeling your data
+>
+>3. Use what you learn to refine your questions and/or generate new questions
+
+
+- Wickham and Grolemund, _R4DS_
+
+
+??? 
+
+
+
+---
+
+class: inverse
+
+# Data manipulation (1)
+
+## {dplyr}
+
+`filter()`
+
+`select()`
+
+`mutate()`
+
+`summarize()`
+
+---
+
+class: inverse
+
+# Data manipulation (2)
+
+
+## {tidyr}
+
+`pivot_longer()`
+
+`pivot_wider()`
+
+
+
+---
+
+class: inverse
+
+# Data manipulation (3)
+
+## Relational data
+
+## {dplyr}
+
+joins
+
+
+
+
+---
+
+class: inverse
+
+# Visualization
+
+## charts, plots & graphs
+
+## {ggplot2}
+
+
+
+---
+
+class: inverse
+
+# Expectations
+
+
+## homework
+
+
+
+---
+
+class: inverse
+
+# Grading scheme (revised)
+
+
+
+

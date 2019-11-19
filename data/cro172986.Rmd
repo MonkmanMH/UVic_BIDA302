@@ -1,0 +1,64 @@
+---
+title: "Census data from Ministry of "
+output: html_notebook
+---
+
+
+An attempt to read using {readxl} the mess of a Census file that is found here:
+
+https://catalogue.data.gov.bc.ca/dataset/custom-census-reports-2016-2011-2006-
+
+
+
+```{r setup}
+library(tidyr)
+
+
+library(readxl)
+
+```
+
+
+list the sheets
+
+```{r}
+
+excel_sheets("cro0172986_bc_cds_csds_its-worksheets_06282019.xlsx")
+
+```
+
+
+read the CRD sheet: 1
+
+```{r}
+
+df_census_1 <- read_excel("cro0172986_bc_cds_csds_its-worksheets_06282019.xlsx", sheet = "RD5917")
+
+```
+
+* result: the file is a mess; data starts in row 8
+
+
+```{r}
+
+
+df_census_2 <- read_excel("cro0172986_bc_cds_csds_its-worksheets_06282019.xlsx", sheet = "RD5917", skip = 7)
+
+
+```
+
+* result: data is fine, but it loses the geography
+
+
+Implication: need to read row 5 separately, select columns in source, then drop middle rows
+
+```{r}
+
+df_census_geo <- read_excel("cro0172986_bc_cds_csds_its-worksheets_06282019.xlsx", sheet = "RD5917", skip = 4, n_max = 1)
+
+df_census_geo_pl <- df_census_geo %>%
+  pivot_longer(-GeoNameTypeUID, names_to = "geog_col", values_to = "null") 
+
+
+```
+
