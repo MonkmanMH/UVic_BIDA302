@@ -39,7 +39,7 @@ library(glue)
 
 Functions are an important part of programming in R. You have already used many functions ... now it's time to write your own.
 
-Functions have particular value in making your code DRY (don't repeat yourself). If you need to do the same thing over and over again (whether in this script, or next month / quarter), you can either copy-and-paste with some find-and-replace, or take the time to write a generalized function. 
+Functions have particular value in making your code DRY (don't repeat yourself). If you need to do the same thing over and over again (whether in a single script, or next month / quarter), you can either copy-and-paste with some find-and-replace, or take the time to write a generalized function. 
 
 Using functions has the following benefits: 
 
@@ -51,8 +51,12 @@ Using functions has the following benefits:
 There are three parts to any function:
 
 * function name  
+
 * inputs, which are called "arguments"  
+
 * code statement(s) that do something with/to the argument(s)  
+
+
 
 The code looks like this:
 
@@ -269,7 +273,7 @@ my_circles %>%
 
 ```
 
-## Your turn 1
+## Your turn 2.1
 
 Write a function that calculates the area of a triangle, using the formula 
 
@@ -342,12 +346,14 @@ my_triangles %>%
 
 
 
-```{r}
+```{r evaluate = FALSE}
+
+set.seed(42)
 
 my_triangles <- tibble(
   tri_name = letters[1:10], 
-  tri_h = sample(1:19,10,replace=T),
-  tri_b = sample(1:19,10,replace=T))
+  tri_h = sample(1:19, 10, replace=T),
+  tri_b = sample(1:19, 10, replace=T))
 
 write_csv(my_triangles, "my_triangles.csv")
 ```
