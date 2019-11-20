@@ -31,7 +31,7 @@ options(htmltools.dir.version = FALSE)
 
 class: inverse
 
-# Excel
+# Visual Basic for Applications (VBA)
 
 * repetitive tasks
 
