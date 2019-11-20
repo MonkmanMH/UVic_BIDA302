@@ -131,23 +131,28 @@ Let's write an equation that calculates the area of a circle that has a radius o
 
 You'll remember that the formula is "pi r squared" where r is the radius of the circle.
 
-$$\pi r ^{2}$$
+$$\ A = \pi r ^{2} $$
 
-Our formula looks like this:
+Our formula looks like this, where `ca` is "circle area":
 
 ```{r}
 
-pi * 2.5 ^ 2
+ca <- pi * 2.5 ^ 2
+
+ca
 
 ```
 
 
 But what if we have many circles of different size? Time for a function.
 
+We call the function with `circle_area()`, and pass the radius value `r`.
+
 ```{r}
 
 circle_area <- function(r) {
-  pi * r ^ 2
+  ca <- pi * r ^ 2
+  return(ca)
 }
 
 
@@ -156,11 +161,13 @@ circle_area(2.5)
 ```
 
 
-Now we can use that function to calculate any number of circle areas. Let's say we have a tibble with 10 observations of the odd numbers between 1 and 19, where `circle_r` is the radius of our circle.
+Now we can use that function to calculate any number of circle areas. Let's say we have a tibble with 26 circles, where `circle_r` is the radius of each circle.
 
 ```{r}
 
-my_circles <- tibble(circle_r = seq(1, 20, 2))
+my_circles <- tibble(
+  circle_name = letters[1:10], 
+  circle_r = seq(1, 19, 2))
 
 my_circles
 
@@ -186,7 +193,8 @@ We could rewrite our function to add that:
 
 circle_area <- function(r) {
   ca <- pi * r ^ 2
-  round(ca, 2)
+  ca <- round(ca, 2)
+  return(ca)
 }
 
 ```
@@ -209,7 +217,8 @@ What if we want want to have some flexibility in our rounding? We can add a 2nd 
 
 circle_area <- function(r, rnd) {
   ca <- pi * r ^ 2
-  round(ca, rnd)
+  ca <- round(ca, rnd)
+  return(ca)
 }
 
 ```
@@ -233,7 +242,8 @@ What if we usually want to round to 2, but to have some flexibility? We can assi
 
 circle_area <- function(r, rnd = 2) {
   ca <- pi * r ^ 2
-  round(ca, rnd)
+  ca <- round(ca, rnd)
+  return(ca)
 }
 
 ```
@@ -252,9 +262,6 @@ my_circles %>%
 Or override with rounding to 3 decimals:
 
 
-
-With no specification:
-
 ```{r}
 
 my_circles %>%
@@ -262,9 +269,61 @@ my_circles %>%
 
 ```
 
+## Your turn 1
+
+Write a function that calculates the area of a triangle, using the formula 
+
+$$\ A = hb/2$$
+where "h" is the height of the triangle, and "b" is the base.
+
+Now, write and test a function to calculate the area of a triangle. The function for a circle is pasted below:
 
 
-### REFERENCE
+```{r}
+
+circle_area <- function(r, rnd = 2) {
+  ca <- pi * r ^ 2
+  ca <- round(ca, rnd)
+  return(ca)
+}
+
+```
+
+
+
+```{r}
+# solution
+tri_area <- function(h, b, rnd = 2) {
+  ta <- (h * b) / 2
+  ta <- round(ta, rnd)
+  return(ta)
+}
+
+```
+
+
+Now, read in the CSV file "my_triangles.csv":
+
+```{r}
+
+# solution
+my_triangles <- read_csv("my_triangles.csv")
+
+```
+
+
+```{r}
+my_triangles %>% 
+  mutate(tri_a = tri_area(tri_h, tri_b))
+```
+
+
+
+
+
+
+
+## REFERENCE
 
 ["Functions" in _R for Data Science_](https://r4ds.had.co.nz/functions.html) by Hadley Wickham and Garrett Grolemund
 
@@ -279,8 +338,17 @@ my_circles %>%
 
 ["Writing simple functions"](http://environmentalcomputing.net/writing-simple-functions/) at Environmental Computing
 
+["Mathematics in R Markdown"](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html) by R Pruim (2016-10-19)
 
 
 
+```{r}
 
+my_triangles <- tibble(
+  tri_name = letters[1:10], 
+  tri_h = sample(1:19,10,replace=T),
+  tri_b = sample(1:19,10,replace=T))
+
+write_csv(my_triangles, "my_triangles.csv")
+```
 
