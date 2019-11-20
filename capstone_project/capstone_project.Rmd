@@ -76,7 +76,36 @@ FiveThirtyEight
 
 You have two options:
 
-1. Select a project from a defined list provided by the instructor. In these cases, data as downloaded from the source website will be provided. As well, the assignment documentation will include graphic images of specific charts and summary tables from the original source; the assignment will include the creation of charts and summary tables from the original data. 
+## The List
 
-2. 
+Select a project from a defined list provided by the instructor. In these cases, data as downloaded from the source website will be provided. As well, the assignment documentation will include graphic images of specific charts and summary tables from the original source; the assignment will include the creation of charts and summary tables from the original data. 
+
+
+#### 1. Gapminder: 200 Countries, 200 Years, 4 Minutes
+
+In this project, you will recreate an approximation of the chart Hans Rosling shows in the video here:
+
+* Gapminder, [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)
+
+
+#### 2. Gapminder: Aging Europe
+
+In this project, you will recreate an approximation of the chart Hans Rosling shows in the video here:
+
+* Presentation Zen, [Hans Rosling: the zen master of presenting data](https://www.presentationzen.com/presentationzen/2010/07/hans-rosling-tips-on-presenting-data.html), 2010-07-11
+
+This image captures the 1961 version of the plot:
+![Hans Rosling, aging Europe 1961](Hans_Rosling_aging_europe.JPG)
+
+
+
+#### 3. New motor vehicle registrations
+
+Source: [Statistics Canada](https://www150.statcan.gc.ca/n1/daily-quotidien/191118/dq191118c-eng.htm)
+
+
+
+
+
+**2. Define your own** 
 
