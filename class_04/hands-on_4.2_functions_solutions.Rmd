@@ -21,7 +21,6 @@ B. _Hands-On Programming with R_ by Garrett Grolemund
 
 ```{r setup}
 library(tidyverse)
-library(glue)
 ```
 
 
@@ -150,7 +149,7 @@ ca
 
 But what if we have many circles of different size? Time for a function.
 
-We call the function with `circle_area()`, and pass the radius value `r`.
+We call the function with `circle_area()`, and pass the radius value `r`. The function returns the value of `ca` after calculating the value.
 
 ```{r}
 
@@ -159,13 +158,19 @@ circle_area <- function(r) {
   return(ca)
 }
 
+```
 
-circle_area(2.5)
+
+Let's test it with our circle of radius 2.5:
+
+```{r}
+
+circle_area(r = 2.5)
 
 ```
 
 
-Now we can use that function to calculate any number of circle areas. Let's say we have a tibble with 26 circles, where `circle_r` is the radius of each circle.
+Now we can use that function to calculate any number of circle areas. Let's make a tibble with 26 circles, where `circle_r` is the radius of each circle.
 
 ```{r}
 
@@ -182,7 +187,7 @@ What is the area of those circles? I can apply my function...
 ```{r}
 
 my_circles %>%
-  mutate(circle_a = circle_area(circle_r))
+  mutate(circle_a = circle_area(r = circle_r))
 
 ```
 
@@ -209,7 +214,7 @@ Now re-run the `mutate()`:
 ```{r}
 
 my_circles %>%
-  mutate(circle_a = circle_area(circle_r))
+  mutate(circle_a = circle_area(r = circle_r))
 
 ```
 
@@ -233,7 +238,7 @@ And rerun:
 ```{r}
 
 my_circles %>%
-  mutate(circle_a = circle_area(circle_r, 4))
+  mutate(circle_a = circle_area(r = circle_r, rnd = 4))
 
 ```
 
@@ -254,6 +259,8 @@ circle_area <- function(r, rnd = 2) {
 
 
 With no specification:
+
+* note that we don't have to be explicit in telling the function how to use the variable `circle_r` -- it assumes that since it is the first argument passed, it is `r`. And because we don't pass a second argument, the function will use the default value we've specified, in this case 2.
 
 ```{r}
 
@@ -280,11 +287,13 @@ Write a function that calculates the area of a triangle, using the formula
 $$\ A = hb/2$$
 where "h" is the height of the triangle, and "b" is the base.
 
-Now, write and test a function to calculate the area of a triangle. The function for a circle is pasted below:
+Now, write and test a function to calculate the area of a triangle, where it is automatically rounded to 1 decimal place. 
+
+The function for a circle is pasted below:
 
 
 ```{r}
-
+# example
 circle_area <- function(r, rnd = 2) {
   ca <- pi * r ^ 2
   ca <- round(ca, rnd)
@@ -297,7 +306,7 @@ circle_area <- function(r, rnd = 2) {
 
 ```{r}
 # solution
-tri_area <- function(h, b, rnd = 2) {
+tri_area <- function(h, b, rnd = 1) {
   ta <- (h * b) / 2
   ta <- round(ta, rnd)
   return(ta)
@@ -321,6 +330,17 @@ my_triangles %>%
   mutate(tri_a = tri_area(tri_h, tri_b))
 ```
 
+
+## Your turn 2.2
+
+Now round to the nearest integer (zero decimals)
+
+```{r}
+
+my_triangles %>% 
+  mutate(tri_a = tri_area(tri_h, tri_b, rnd = 0))
+
+```
 
 
 
