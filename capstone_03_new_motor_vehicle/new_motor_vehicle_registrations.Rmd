@@ -1,0 +1,9 @@
+---
+title: "New motor vehicle registrations, 2011 to 2018"
+subtitle: "Statistics Canada"
+output: html_notebook
+---
+
+link: https://www150.statcan.gc.ca/n1/daily-quotidien/191118/dq191118c-eng.htm
+
+
