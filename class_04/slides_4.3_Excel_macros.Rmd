@@ -35,7 +35,113 @@ class: inverse
 
 * repetitive tasks
 
-* mundane 
+* generalizable 
+
+
+
+---
+
+class: inverse
+
+## A simple macro
+
+Imagine that first thing on Monday morning every week, we have a new spreadsheet that collects some simple sales information. 
+At the top of that spreadsheet, we've got some simple text to tell us what the sheet is all about:
+
+
+![spreadsheet](macro_01.JPG)
+
+
+---
+
+class: inverse
+
+# Step 0:
+
+### make sure "Developer" menu is in toolbar
+
+![Excel Developer menu](how-to-open-excel-options-dialog-right-clicking-on-ribbon.gif)
+
+---
+
+class: inverse
+
+
+# Step 1:
+
+### start recording
+
+* Open the Developer tab in the ribbon
+* Click on "Record Macro"
+
+
+---
+
+class: inverse
+
+
+* In the "Record Macro" dialog box
+  - "Macro name:" -- enter "sales_header"
+  - "Shortcut key:" -- enter <shift> B
+* In the "Store Macro in" drop down, select "Personal Macro Workbook"
+
+![Record Macro dialog box](macro_02.JPG)
+
+
+
+* Click **OK**.
+
+???
+
+The Personal Macro Workbook: saves general-purpose macros that are available to any workbook
+
+---
+
+class: inverse
+
+
+# Step 2:
+
+### start entering the text
+
+* In the start date cell (B2) enter the formula `=TODAY()`
+* In the "Total cost" column, in E4 enter the formula to multiply the number of units by the unit price
+* Change the formatting
+
+![spreadsheet](macro_01.JPG)
+
+
+
+---
+
+class: inverse
+
+
+# Step 3:
+
+### stop recording
+
+* Click the "Stop Recording" button in the Developer toolbar
+
+
+![stop buttons](stop-recording-macro-buttons.jpg)
+
+
+---
+
+class: inverse
+
+
+# Step 4:
+
+### test our macro
+
+* Open a new, blank Excel file
+
+* press "<CTRL> <SHIFT> B"
+
+
+
 
 
 ---
