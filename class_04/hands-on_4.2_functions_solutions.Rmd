@@ -33,7 +33,7 @@ library(tidyverse)
 
 
 
-![what's your function?](../img/shr_function.jpg)
+![function function, what's your function?](../img/shr_function.jpg)
 
 
 Functions are an important part of programming in R. You have already used many functions ... now it's time to write your own.
@@ -102,7 +102,7 @@ sum(dice)
 
 _Or_ you could write a function.
 
-In this case, our code_statement is the three lines of code:
+In this case, our _code_statement_ is the three lines of code:
 
 
 ```{r}
@@ -136,7 +136,7 @@ You'll remember that the formula is "pi r squared" where r is the radius of the 
 
 $$\ A = \pi r ^{2} $$
 
-Our formula looks like this, where `ca` is "circle area":
+When we translate that formula into code, it looks like this, where `ca` is "circle area":
 
 ```{r}
 
@@ -147,7 +147,7 @@ ca
 ```
 
 
-But what if we have many circles of different size? Time for a function.
+But what if we want to calculate the area of many circles of different size? Time for a function.
 
 We call the function with `circle_area()`, and pass the radius value `r`. The function returns the value of `ca` after calculating the value.
 
@@ -191,11 +191,11 @@ my_circles %>%
 
 ```
 
-But what if we want our result to be rounded to 2 decimal places?
+That's good. But what if we want our result to be rounded to 2 decimal places?
 
 We could rewrite our function to add that:
 
-* note that there is now an object `ca` that is used to pass values along to the next line in the function. It's `ca` that gets rounded in the 2nd line.
+* note that in the 2nd line of the function's code, we are rounding `ca` before returning it.
 
 
 ```{r}
@@ -233,7 +233,7 @@ circle_area <- function(r, rnd) {
 ```
 
 
-And rerun:
+And rerun with the area to 4 decimals:
 
 ```{r}
 
@@ -245,7 +245,7 @@ my_circles %>%
 
 Setting default values:
 
-What if we usually want to round to 2, but to have some flexibility? We can assign the default value of 2 to the rounding, so that if it doesn't get specified, it will be 2 ... but we can over-ride that with a specific call
+What if we usually want to round to 2, but to have some flexibility? We can assign the default value of 2 to the rounding argument. If `rnd` doesn't get specified, it will be 2 ... but we can over-ride that with a specific value assignment.
 
 ```{r}
 
@@ -279,6 +279,10 @@ my_circles %>%
   mutate(circle_a = circle_area(circle_r, 3))
 
 ```
+
+
+---
+
 
 ## Your turn 2.1
 
