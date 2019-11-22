@@ -3,7 +3,7 @@ title: "Classic Rock 25 - sales data"
 output: html_notebook
 ---
 
-As I embarked on teaching [Data Analytics Coding Fundamentals](https://martinmonkman.com/courses/bida302_2019/) at the University of Victoria's Continuing Studies department, I started to search for good example data sets to use. There are many already available, including R packages or open data sites. The course is part of the [Business Intelligence and Data Analytics] (https://continuingstudies.uvic.ca/business-technology-and-public-relations/series/business-intelligence-and-data-analytics) series, so in addition to gentle introductions that are referenced in [_R for Data Science_](https://r4ds.had.co.nz/) (like `mtcars` in [{datasets}](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) [{Lahman}](https://cran.r-project.org/web/packages/Lahman/index.html)) I wanted a dataset that was typical of what you might encounter in a business situation. My search for such a dataset came up empty...the tables used as examples in business courses are often summary tables that have already been wrangled. The students in a data coding course need to learn how to _create_ those tables from the ground up. So I decided to create a synthetic dataset that prenents a variety of data wrangling challenges, as well as some interesting analytic opportunities.
+As I embarked on teaching [Data Analytics Coding Fundamentals](https://martinmonkman.com/courses/bida302_2019/) at the University of Victoria's Continuing Studies department, I started to search for good example data sets to use. There are many already available, including R packages or open data sites. The course is part of the [Business Intelligence and Data Analytics] (https://continuingstudies.uvic.ca/business-technology-and-public-relations/series/business-intelligence-and-data-analytics) series, so in addition to gentle introductions that are referenced in [_R for Data Science_](https://r4ds.had.co.nz/) (like `mtcars` in [{datasets}](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) [{Lahman}](https://cran.r-project.org/web/packages/Lahman/index.html)) I wanted a dataset that was typical of what you might encounter in a business situation. My search for such a dataset came up empty...the tables used as examples in business courses are often summary tables that have already been wrangled. The students in a data coding course need to learn how to _create_ those tables from the ground up. So I decided to create a synthetic dataset that presents a variety of data wrangling challenges, as well as some interesting analytic opportunities.
 
 I cast my memory back 30 years, to a time when I was working for a wholesale company that distributed LPs, cassettes, and those new-fangled compact discs to a wide range of retailers. A table showing the details of each store's orders would do the trick...a single year's worth of order data from a handful of stores would be adequate, and could then be linked to other tables about the stores. It could also be expanded to include additional years (with some trends embedded), inventory management, and customer relationship management (CRM).
 
@@ -12,7 +12,7 @@ The fictional wholesale company, CR25 (for "Classic Rock 25") only sells 25 albu
 
 ### Setup
 
-The first step is to install the necessary packages. I also set the seed to a classic rock number, so that future runs of the code will generate the same data table. This is important, as some of the lessons in the course were based on summary tables drawn from the master file.
+The first step is to install the necessary packages. I also set the seed to [a number associated with a classic rock staple](https://www.youtube.com/watch?v=axLRUszuu9I), so that future runs of the code will generate the same data table. This is important, as some of the lessons in the course were based on summary tables drawn from the master file.
 
 ```{r setup}
 # tidyverse packages
@@ -30,7 +30,7 @@ set.seed(8675309)
 
 To create the album list, I created a csv file with the artist and percentage of all plays fields, using the table in the article (which is displayed as an image; note that there appears to be an error in the table, in that Boston has a lower rank but a higher percentage than Queen or Journey). I also added a representative album by that artist--I used some judgement here. The album is the biggest selling, most famous, and/or the one with the most hit singles that the artist made. I also opted for a "no compilations" rule; one could make the case that, as one example, The Rolling Stones might be better or more accurately represented by _Hot Rocks_. 
 
-I also added a price field; albums released before 1976 are $7.98, [those released 1976-1981 are $8.98](https://en.wikipedia.org/wiki/Hard_Promises#History), and 1982 and beyond are $9.98. The sole exception to this is Pink Floyd's double album _The Wall_, which I priced at $14.98.
+I also added a price field; albums released before 1976 are \$7.98, [those released 1976-1981 are $8.98](https://en.wikipedia.org/wiki/Hard_Promises#History), and 1982 and beyond are \$9.98. The sole exception to this is Pink Floyd's double album _The Wall_, which I priced at \$14.98.
 
 ```{r}
 
