@@ -17,6 +17,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
+
 ```
 
 # The Data Science Process ... 
@@ -141,7 +142,37 @@ class: inverse
 * press "<CTRL> <SHIFT> B"
 
 
+---
 
+class: inverse
+
+
+# Step 5:
+
+### edit the VBA code
+
+* Click on the Developer menu
+
+* Click on "Visual Basic"
+
+![Visual Basic button](Visual_Basic.png)
+
+
+---
+
+![Visual Basic code](VBA_code.JPG)
+
+
+
+---
+
+
+# MACRO #2
+
+### generate a pivot table
+
+
+![gapminder pivot table](gapminder_pivot.JPG)
 
 
 ---
@@ -161,3 +192,26 @@ class: inverse
 [5 Uses for VBA Macros in Excel with Your Job](https://www.excelcampus.com/vba/5-uses-for-macros/)
 
 [Will VBA Die in 2019?](https://www.thespreadsheetguru.com/blog/are-vba-macros-dead)
+
+
+---
+
+```{r eval=FALSE}
+
+library(gapminder)
+library(dplyr)
+
+gapminder_data <- gapminder
+
+gapminder_data1957 <- gapminder_data %>% 
+  filter(year == 1957)
+
+readr::write_csv(gapminder_data1957, "gapminder_data1957.csv")
+
+gapminder_data2007 <- gapminder_data %>%
+  filter(year == 2007)
+readr::write_csv(gapminder_data2007, "gapminder_data2007.csv")
+
+
+```
+
