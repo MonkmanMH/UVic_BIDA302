@@ -1,6 +1,5 @@
 ---
-title: "BIDA302 - assignment #3"
-subtitle: "solutions"
+title: "BIDA302 - assignment #4"
 output: html_document
 ---
 
@@ -9,9 +8,9 @@ output: html_document
 
 Package load:
 ```{r setup}
+#
 library(tidyverse)
 #
-library(gapminder)
 ```
 
 
@@ -31,56 +30,7 @@ library(gapminder)
 ## Questions
 
 
-## 1. Plotting
-> (2 marks)
->
-> Using the {gapminder} package, make a plot showing how the relationship between per capita GDP and life expectancy in 2007.
-
-
-```{r}
-# solution
-gapminder
-
-gapminder %>%
-    filter(year == 2007) %>%
-ggplot(mapping =  aes(x = gdpPercap, y = lifeExp)) +
-  geom_point()
-  
-
-```
-
-```{r}
-gapminder %>%
-  filter(year == 2007) %>%
-  arrange(desc(lifeExp))
-  
-```
-
-
-
-## 2. Plotting
-> (2 marks)
->
-> This is a more complex extension of the {gapminder} plots you did as a hands-on exercise.
->
-> Using your data manipulation skills, write a pipe that first calculates the median life expectancy for each continent for each year between 1952 and 2007, then plot a line graph showing those changes.
-
-
-
-```{r}
-
-gapminder %>%
-  group_by(continent, year) %>%
-  summarise(lifeExp_median = median(lifeExp)) %>%
-  #
-  ggplot(mapping =  aes(x = year, y = lifeExp_median, colour = continent)) +
-  geom_line()
-  
-
-```
-
-
-## 3. Joins with HR data
+## 1. Joins with HR data
 > (8 marks)
 > >
 > 
@@ -94,22 +44,23 @@ gapminder %>%
 > 
 > * "Batting_2016.csv" -- the annual summary of each player's batting, for the 2016 season. (Note #1: that this omits pitchers who did not come to bat in the 2016 season. Note #2: players who were traded between teams mid-season show up with a record for their performance of each team.)
 > 
-> Think of these as the sorts of files that you would find in any human resources department: the Master file contains the personal details of each individual employed by the enterprise, 
+> Think of these as the sorts of files that you would find in any human resources department: 
+>
+> * the Master file contains the personal details of each individual employed by the enterprise, for the years 2000 through 2018.
+>
+> * Batting contains in-depth performance measures for the employees in a specific task group
+>
+> * Salaries is an incomplete tables showing the compensation of some of the employees
 
 
-### 3a. Read in the three files
+### 1a. Read in the three files
 
 ```{r}
-# solution
-Master_2000s <- read_csv("Master_2000s.csv")
 
-Batting_2016 <- read_csv("Batting_2016.csv")
-
-Salaries_2016 <- read_csv("Salaries_2016.csv")
 
 ```
 
-### 3b. Understanding the tables
+### 1b. Understanding the tables
 
 > What is the key variable that links the three tables?
 > 
@@ -118,42 +69,19 @@ Salaries_2016 <- read_csv("Salaries_2016.csv")
 > Why would the designers of the table put only one variable in the Batting table that identifies a player?
 
 
-### 3c. Joins
+### 1c. Joins
 
 > Join the tables in such a way so that you can tabulate the number of batters that played on each team in 2016, by birth country.
 >
 > Note: because some of the non-key variables exist in multiple tables, {dplyr} will rename variables as `name.x` and `name.y` -- watch out for this! Take a look at your variables after you've completed the join.
 
 ```{r}
-# solution
-MLB_HR_data <- 
-left_join(Batting_2016, Master_2000s, by = "playerID")
-
-
-# alternate version, using a pipe
-MLB_HR_data <- 
-Batting_2016 %>%
-  left_join(Master_2000s, by = "playerID") %>% 
-  left_join(Salaries_2016, by = "playerID")
-
-MLB_HR_data
-
-MLB_HR_data %>% 
-  group_by(teamID.x, birthCountry) %>% 
-  tally() 
-
-
-# NOTES
-#
-# * both tables have the variable "playerID"
-# 
-# * we want a `left_join`: all the observations from the active season, and adding the country of birth variable from "Master"
 
 
 ```
 
 
-### 3d. Filtering joins
+### 1d. Filtering joins
 
 > How many records are in `Batting_2016` and `Salaries_2016`?
 >
@@ -163,33 +91,17 @@ MLB_HR_data %>%
 
 
 ```{r}
-# solution
 
-semi_join(Batting_2016, Salaries_2016, key = "playerID")
 
-semi_join(Batting_2016, Salaries_2016, key = "playerID") %>% 
-  group_by(playerID) %>% 
-  tally()
 
 ```
 
 
-### 3e. Plot!
+### 1e. Plot!
 
 > Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
 > 
 
-```{r}
-ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
-  geom_point()
-```
-
-
-
-```{r}
-ggplot(MLB_HR_data, aes(x = R, y = salary)) +
-  geom_point()
-```
 
 
 
@@ -198,25 +110,25 @@ ggplot(MLB_HR_data, aes(x = R, y = salary)) +
 The source of the Lahman baseball data table is the R package [{Lahman}](https://cran.r-project.org/web/packages/Lahman/index.html), which makes more accessible the data from [Sean Lahman's historical baseball database](http://www.seanlahman.com/baseball-archive/statistics/). I modified the Batting and Master tables as follows:
 
 ```{r evaluate = FALSE}
-
-library(Lahman)
-library(readr)
-
-Batting_2016 <- Batting %>%
-  filter(yearID == 2016)
- 
-write_csv(Batting_2016, "Batting_2016.csv")
-# ---
-Master_2000s <- Master %>%
-  filter(finalGame > "2000-01-01")
- 
-write_csv(Master_2000s, "Master_2000s.csv")
-# ---
-Salaries_2016 <- Salaries %>% 
- filter(yearID == 2016)
- 
-write_csv(Salaries_2016, "Salaries_2016.csv")
-
+# 
+# library(Lahman)
+# library(readr)
+# 
+# Batting_2016 <- Batting %>%
+#   filter(yearID == 2016)
+#  
+# write_csv(Batting_2016, "Batting_2016.csv")
+# # ---
+# Master_2000s <- Master %>%
+#   filter(finalGame > "2000-01-01")
+#  
+# write_csv(Master_2000s, "Master_2000s.csv")
+# # ---
+# Salaries_2016 <- Salaries %>% 
+#  filter(yearID == 2016)
+#  
+# write_csv(Salaries_2016, "Salaries_2016.csv")
+# 
 
 
 ```
