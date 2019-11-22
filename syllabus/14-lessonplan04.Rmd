@@ -7,19 +7,20 @@ output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 3 (2019-11-23)
+# Week 4 (2019-11-23)
 
 
-
-> Graphs and charts let you explore and learn about the structure of the information you collect. Good data visualizations also make it easier to communicate your ideas and findings to other people.
-> - Kieran Healy, _Data Visualization: A Practical Introduction_ (2019)
-
+## Objective
 
 At the end of this lesson, learners will be able to:
 
 1. Describe the different join types, and 
 
 2. Demonstrate how they are applied in a data analytics context.
+
+3. Demonstrate their ability to write a simple function in R.
+
+4. Create a simple macro in Excel, and edit it.
 
 
 ***
