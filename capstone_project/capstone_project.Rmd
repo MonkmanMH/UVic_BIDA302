@@ -1,5 +1,5 @@
 ---
-title: "Capstone Project"
+title: "Capstone Projects: Introduction"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
 date: "2019/11/18"
@@ -10,15 +10,15 @@ editor_options:
 
 # Project (Course Outline)
 
-Project (marks: 40)
+* a small data analytics project that will require the application of all of the concepts introduced
 
-* a small project that will require the application of all of the concepts introduced
+– importing data
 
-–importing data–data wrangling
+– tidying the data
 
-–data modeling and summarization
+– transforming, visualizing, and modeling
 
-–communication
+– communication
 
 
 # Project objective 
@@ -30,6 +30,8 @@ The idea of the capstone project is that you will create an R Markdown document 
 To do this, you will start at the end: a summary table and/or a plot of some data that has been published. The goal is to replicate that summary table and plot, starting with downloading the data ("import"), and doing any necessary data tidying, transformations, and modeling, followed by tabular or plotting visualizations.
 
 # Evaluation
+
+The capstone project has a total of 40 marks (it therefore represents 40% of your grade).
 
 Your project will be evaluated based on the following marking scheme:
 
