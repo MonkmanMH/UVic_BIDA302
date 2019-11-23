@@ -97,7 +97,36 @@ This puts some of the onus on you--I will help you track down data, but it can't
 
 ---
 
-# The List
+## The List (1)
+
+
+* Gapminder - 200 countries, 200 years
+
+* Gapminder - aging Europe
+
+---
+
+## The List (2)
+
+Statistics Canada
+
+* New motor vehicle sales in Canada (including electric and hybrid)
+
+* Auto sales as function of demographics
+
+* Women with children in the workforce
+
+* Alberta's uneven recovery
+
+* Poverty in Canada
+
+---
+
+## The List (3)
+
+
+* Classic rock album sales (fictional business data)
+
 
 
 
