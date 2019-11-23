@@ -162,17 +162,11 @@ class: inverse
 
 ![Visual Basic code](VBA_code.JPG)
 
-
-
 ---
 
+* change "Total cost" to "Price"
 
-# MACRO #2
-
-### generate a pivot table
-
-
-![gapminder pivot table](gapminder_pivot.JPG)
+* add another header row "Invoice number"
 
 
 ---
@@ -193,25 +187,4 @@ class: inverse
 
 [Will VBA Die in 2019?](https://www.thespreadsheetguru.com/blog/are-vba-macros-dead)
 
-
----
-
-```{r eval=FALSE}
-
-library(gapminder)
-library(dplyr)
-
-gapminder_data <- gapminder
-
-gapminder_data1957 <- gapminder_data %>% 
-  filter(year == 1957)
-
-readr::write_csv(gapminder_data1957, "gapminder_data1957.csv")
-
-gapminder_data2007 <- gapminder_data %>%
-  filter(year == 2007)
-readr::write_csv(gapminder_data2007, "gapminder_data2007.csv")
-
-
-```
 

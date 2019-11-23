@@ -245,7 +245,8 @@ order_multi <- data.frame(artist = as.character(),
   }
   
 order_multi
-  
+
+write_csv(order_multi, "order_multi.csv")  
 
 ```
 
