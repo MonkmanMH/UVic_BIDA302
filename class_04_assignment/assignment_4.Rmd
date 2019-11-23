@@ -31,8 +31,7 @@ library(tidyverse)
 
 
 ## 1. Joins with HR data
-> (8 marks)
-> >
+>
 > 
 > The Lahman baseball database contains a comprehensive listing of annual summaries for the major leagues of baseball, going back to 1871. 
 > 
@@ -54,6 +53,7 @@ library(tidyverse)
 
 
 ### 1a. Read in the three files
+> (1 mark)
 
 ```{r}
 
@@ -61,7 +61,7 @@ library(tidyverse)
 ```
 
 ### 1b. Understanding the tables
-
+> (1 mark)
 > What is the key variable that links the three tables?
 > 
 > Which table has the primary key? What is the reason behind your answer?
@@ -70,6 +70,7 @@ library(tidyverse)
 
 
 ### 1c. Joins
+> (3 marks)
 
 > Join the tables in such a way so that you can tabulate the number of batters that played on each team in 2016, by birth country.
 >
@@ -82,6 +83,7 @@ library(tidyverse)
 
 
 ### 1d. Filtering joins
+> (3 marks)
 
 > How many records are in `Batting_2016` and `Salaries_2016`?
 >
@@ -98,12 +100,27 @@ library(tidyverse)
 
 
 ### 1e. Plot!
+> (3 marks)
 
 > Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
 > 
 
+---
+
+### Bonus Marks!
+> (2 marks)
+
+> Imagine that time travel is possible...
+ 
+> You have just been transported back four weeks to November 1st. What is one thing you would tell your past self about this course?
+
+```{r, out.width = "700px", echo=FALSE}
+knitr::include_graphics("../img/Spock.webp")
+```
 
 
+
+---
 
 ## REFERENCE
 
