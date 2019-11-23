@@ -114,10 +114,6 @@ library(tidyverse)
  
 > You have just been transported back four weeks to November 1st. What is one thing you would tell your past self about this course?
 
-```{r, out.width = "700px", echo=FALSE}
-knitr::include_graphics("../img/Spock.webp")
-```
-
 
 
 ---
