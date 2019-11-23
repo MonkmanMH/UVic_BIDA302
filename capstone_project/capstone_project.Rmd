@@ -29,9 +29,9 @@ The idea of the capstone project is that you will create an R Markdown document 
 
 To do this, you will start at the end: a summary table and/or a plot of some data that has been published. The goal is to replicate that summary table and plot, starting with downloading the data ("import"), and doing any necessary data tidying, transformations, and modeling, followed by tabular or plotting visualizations.
 
-# Grading
+# Evaluation
 
-Your project will be graded based on the following scheme:
+Your project will be evaluated based on the following marking scheme:
 
 * 5 marks - data import, including defining the variable types
 
@@ -43,6 +43,7 @@ Your project will be graded based on the following scheme:
 
 * 10 marks - documentation throughout, explaining what the following R code chunk is doing.
 
+TOTAL: 40 marks
 
 
 ---
@@ -54,6 +55,14 @@ Statistics Canada
 
 * [The Daily](https://www150.statcan.gc.ca/n1/dai-quo/index-eng.htm) -- regular reporting of social and economic statistics about Canada
 
+
+Tidy Tuesday
+
+* [data list](https://github.com/rfordatascience/tidytuesday)
+
+* [Tidy Tuesday episodes](https://www.tidytuesday.com/episodes)
+
+
 Maclean's magazine's annual "Charts to Watch"
 
 * ["The most important charts to watch in 2019"](https://www.macleans.ca/economy/economicanalysis/the-most-important-charts-to-watch-in-2019/) -- Jason Kirby, 2018-12-04
@@ -61,6 +70,7 @@ Maclean's magazine's annual "Charts to Watch"
 * ["The 91 most important economic charts to watch in 2018"](https://www.macleans.ca/economy/economicanalysis/the-most-important-economic-charts-to-watch-in-2018/) -- Jason Kirby, 2017-12-05
 
 * ["75 charts every Canadian should watch in 2017"](https://www.macleans.ca/economy/economicanalysis/75-charts-every-canadian-should-watch-in-2017/) -- Jason Kirby, 2019-12-12
+
 
 FiveThirtyEight
 
@@ -78,34 +88,13 @@ You have two options:
 
 ## The List
 
-Select a project from a defined list provided by the instructor. In these cases, data as downloaded from the source website will be provided. As well, the assignment documentation will include graphic images of specific charts and summary tables from the original source; the assignment will include the creation of charts and summary tables from the original data. 
-
-
-#### 1. Gapminder: 200 Countries, 200 Years, 4 Minutes
-
-In this project, you will recreate an approximation of the chart Hans Rosling shows in the video here:
-
-* Gapminder, [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)
-
-
-#### 2. Gapminder: Aging Europe
-
-In this project, you will recreate an approximation of the chart Hans Rosling shows in the video here:
-
-* Presentation Zen, [Hans Rosling: the zen master of presenting data](https://www.presentationzen.com/presentationzen/2010/07/hans-rosling-tips-on-presenting-data.html), 2010-07-11
-
-This image captures the 1961 version of the plot:
-![Hans Rosling, aging Europe 1961](Hans_Rosling_aging_europe.JPG)
+Select a project from the defined list. In these cases, data as downloaded from the source website will be provided. As well, the assignment documentation will include graphic images of specific charts and summary tables from the original source; the assignment will include the creation of charts and summary tables from the original data. 
 
 
 
-#### 3. New motor vehicle registrations
+## Define your own 
 
-Source: [Statistics Canada](https://www150.statcan.gc.ca/n1/daily-quotidien/191118/dq191118c-eng.htm)
-
-
+This puts some of the onus on you--I will help you track down data, but it can't be guaranteed.
 
 
-
-**2. Define your own** 
 

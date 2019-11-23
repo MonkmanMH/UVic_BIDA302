@@ -18,15 +18,11 @@ library(readxl)
 
 ## Introduction
 
-> For this capstone project...
 
-> Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
+In this project, you will recreate single year versions of the chart Hans Rosling shows in the video here:
 
+* Gapminder, [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)
 
-
-## Data source
-
-In this assignment, you will recreate approximations of the charts Hans Rosling shows in the video here:
 
 
 
