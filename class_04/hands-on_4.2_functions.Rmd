@@ -1,6 +1,6 @@
 ---
 title: "Functions"
-subtitle: "hands-on examples, with answers"
+subtitle: "hands-on examples"
 output: html_document
 ---
 
@@ -127,6 +127,7 @@ roll()
 
 # and if we want to assign the result of the function to an object:
 my_roll <- roll()
+
 
 ```
 
@@ -311,13 +312,8 @@ circle_area <- function(r, rnd = 2) {
 ```
 
 
+
 ```{r}
-# solution
-tri_area <- function(h, b, rnd = 1) {
-  ta <- (h * b) / 2
-  ta <- round(ta, rnd)
-  return(ta)
-}
 
 ```
 
@@ -326,17 +322,11 @@ Now, read in the CSV file "my_triangles.csv":
 
 ```{r}
 
-# solution
-my_triangles <- read_csv("my_triangles.csv")
-
 ```
 
 And calculate the area of the triangles in the tibble:
 
-
 ```{r}
-my_triangles %>% 
-  mutate(tri_a = tri_area(tri_h, tri_b))
 ```
 
 
@@ -345,9 +335,6 @@ my_triangles %>%
 Now round to the nearest integer (zero decimals)
 
 ```{r}
-
-my_triangles %>% 
-  mutate(tri_a = tri_area(tri_h, tri_b, rnd = 0))
 
 ```
 
@@ -377,13 +364,13 @@ my_triangles %>%
 
 ```{r evaluate = FALSE}
 
-set.seed(42)
-
-my_triangles <- tibble(
-  tri_name = letters[1:10], 
-  tri_h = sample(1:19, 10, replace=T),
-  tri_b = sample(1:19, 10, replace=T))
-
-write_csv(my_triangles, "my_triangles.csv")
+# set.seed(42)
+# 
+# my_triangles <- tibble(
+#   tri_name = letters[1:10], 
+#   tri_h = sample(1:19, 10, replace=T),
+#   tri_b = sample(1:19, 10, replace=T))
+# 
+# write_csv(my_triangles, "my_triangles.csv")
 ```
 
