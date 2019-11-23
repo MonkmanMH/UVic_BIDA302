@@ -19,7 +19,8 @@ The first step is to install the necessary packages. I also set the seed to [a n
 library(dplyr)
 library(readr)
 library(lubridate)
-
+library(ggplot2)
+#
 # utilities
 set.seed(8675309)
 
@@ -297,7 +298,29 @@ order_multi %>%
 ```
 
 
-turn it into a function...
+
+---
+
+
+```{r}
+order_multi %>%
+  mutate(order_price = qty * price) %>%
+  left_join(storelist, by = "store.id") %>%
+  group_by(region) %>%
+  summarise(qty = sum(qty),
+            sales = sum(order_price)) %>%
+  mutate(pct_of_sales = sales / sum(sales) * 100) %>%
+  arrange(desc(qty)) %>% 
+#
+ggplot(mapping = aes(x = reorder(region, -sales), y = sales)) +
+  geom_point(size = 5) + 
+  geom_segment(aes(xend = region), yend = 0, colour = "black", size = 2) +
+  ylim(0, 60000)
+
+#ggsave("sales_region.png")
+
+```
+
 
 
 
