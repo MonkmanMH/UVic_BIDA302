@@ -1,0 +1,34 @@
+---
+title: "flights_save_as_csv"
+author: "Martin Monkman"
+date: "24/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+A short chunk to open the `nycflights2013` package, and save as a csv file
+
+
+
+```{r}
+
+library(readr)
+#
+library(nycflights13)
+
+```
+
+
+```{r}
+flights
+
+flights <- (flights)
+
+write_csv(flights, "flights.csv")
+
+```
+
