@@ -352,7 +352,21 @@ my_triangles %>%
 ```
 
 
+**Notes**: 
 
+* the area of a triangle where the height and base are integers will always be either exactly an integer or exactly 0.5 remainder ... so rounding to more than one decimal doesn't produce any greater precision.
+
+* the `round()` function in R automatically rounds an exact 0.5 to the nearest _even_ number. This is noted in the documentation, and is in conformance with international standards:
+
+> Note that for rounding off a 5, the IEC 60559 standard (see also ‘IEEE 754’) is expected to be used, ‘go to the even digit’. Therefore round(0.5) is 0 and round(-1.5) is -2. However, this is dependent on OS services and on representation error (since e.g. 0.15 is not represented exactly, the rounding rule applies to the represented number and not to the printed number, and so round(0.15, 1) could be either 0.1 or 0.2).
+
+More information can be found 
+
+* on the ISO website [ISO/IEC/IEEE 60559:2011](https://www.iso.org/standard/57469.html)
+
+* [The IEEE Standard for Floating-Point Arithmetic (IEEE 754)](https://en.wikipedia.org/wiki/IEEE_754) (Wikipedia)
+
+* [Round half to even](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even) (Wikipedia); "A tie-breaking rule without positive/negative bias _and_ without bias toward/away from zero is **round half to even**."
 
 
 

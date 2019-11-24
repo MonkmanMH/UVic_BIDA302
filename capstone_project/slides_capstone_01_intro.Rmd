@@ -127,6 +127,11 @@ Statistics Canada
 
 * Classic rock album sales (fictional business data)
 
+* and beyond ... options include
+
+ - air quality
+ - water quality
+ - rising sea levels
 
 
 
