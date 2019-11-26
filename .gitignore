@@ -3,10 +3,22 @@
 *.html
 *.Rproj
 
-*.pdf
-*.zip
-hexSticker/
+# assorted output and data files
 css_files/
+
+*.pdf
+*.png
+*.jpg
+
+*.csv
+*.xls*
+
+*.zip
+*.rar
+
+
+hexSticker/
+
 
 # History files
 .Rhistory

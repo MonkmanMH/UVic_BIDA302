@@ -138,7 +138,8 @@ semi_join(Batting_2016, Salaries_2016, key = "playerID") %>%
 
 ```{r}
 ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
-  geom_point()
+  geom_point() +
+  xlim()
 ```
 
 
