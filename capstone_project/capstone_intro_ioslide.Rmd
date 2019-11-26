@@ -1,5 +1,6 @@
 ---
 title: "Capstone Project"
+subtitle: "BIDA 302"
 output: ioslides_presentation
 ---
 
@@ -89,7 +90,7 @@ You will recreate an approximation of the opening and closing charts Hans Roslin
 
 For this project, you will create a summary table as was shown here, along with a graph. You may also want to explore provincial sales.
 
-![new motor vehicle registrations, Canada](\capstone_03_new_motor_vehicle\new_motor_vehicle_registrations.jpg)
+![new motor vehicle registrations, Canada](capstone_03_new_motor_vehicle\new_motor_vehicle_registrations.jpg)
 
 The Statistics Canada _The Daily_ can be found here:
 [New motor vehicle registrations, 2011 to 2018](https://www150.statcan.gc.ca/n1/daily-quotidien/191118/dq191118c-eng.htm)
@@ -100,7 +101,7 @@ The Statistics Canada _The Daily_ can be found here:
 [Auto sales point to a slowdown for the economy](https://www.macleans.ca/economy/economicanalysis/the-most-important-charts-to-watch-in-2019/)
 
 
-![new motor vehicle sales, Canada](\capstone_04_auto_sales\David-Doyle-car-sales.png)
+![new motor vehicle sales, Canada](capstone_04_auto_sales\David-Doyle-car-sales.png)
 
 
 
@@ -115,7 +116,7 @@ On 2016-11-18, [Dr. Tammy Schirle](https://legacy.wlu.ca/homepage.php?grp_id=180
 
 ## .
 
-![Proportion of Canadian women with young children employed and at work](capstone_05_lfs_women_children/schirle_lfs_women_age_of_child.JPG)
+![Proportion of Canadian women with young children employed and at work](capstone_05_lfs_women_children/schirle_lfs_women_age_of_child.png)
 
 
 ## #6 Alberta's uneven recovery
