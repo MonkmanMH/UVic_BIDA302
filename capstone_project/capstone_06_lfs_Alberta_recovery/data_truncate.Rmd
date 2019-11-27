@@ -1,0 +1,60 @@
+---
+title: "AB_recovery - data reduction"
+output: html_notebook
+---
+
+This notebook contains the code used to truncate the source file 14100287.csv to a size that can be accommodated within the rstudio.cloud environment.
+
+
+```{r setup}
+library(tidyverse)
+#
+library(here)
+```
+
+read data
+
+```{r}
+
+data_14100287 <- read_csv("capstone_project/capstone_06_lfs_Alberta_recovery/14100287.csv")
+
+```
+
+select relevant columns
+
+```{r}
+
+data_14100287_trunc <- data_14100287 %>% 
+  select(REF_DATE, 
+         GEO,
+         DGUID, 
+         `Labour force characteristics`,
+         Sex, 
+         `Age group`, 
+         Statistics,
+         `Data type`,
+         UOM,
+         SCALAR_FACTOR, 
+         VECTOR,
+         VALUE
+         ) %>%
+  filter(Statistics == "Estimate")
+
+write_csv(data_14100287_trunc, "data_14100287_trunc.csv")
+
+```
+
+
+what values do we have?
+
+```{r}
+
+data_14100287_trunc %>% 
+  distinct(GEO, `Labour force characteristics`, Sex, `Age group`, Statistics, `Data type`)
+
+data_14100287_trunc %>% 
+  group_by(GEO, `Labour force characteristics`, Sex, `Age group`, Statistics, `Data type`) %>% 
+  tally()
+
+```
+

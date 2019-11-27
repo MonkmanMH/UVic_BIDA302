@@ -16,7 +16,16 @@ output: html_notebook
 ![Change in employment rates](Trevor-Tombe-Alberta-employment.png)
 
 
-**Data source**
+### Data source
+
+data file: "data_14100287_trunc.csv"
+
+**NOTE:** 
+
+the data available for this project is a truncated of the source file listed below. A number of variables have been removed, and any non-estimate values have been filtered out. See the file data_truncate.Rmd for details.
+
+
+
 
 [Labour force characteristics, monthly, seasonally adjusted and trend-cycle, last 5 months](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701)
 
