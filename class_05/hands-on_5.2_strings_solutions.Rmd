@@ -1,0 +1,103 @@
+---
+title: "Functions"
+subtitle: "hands-on examples, with answers"
+output: html_document
+---
+
+<!-- 
+This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). 
+
+Some content is drawn from 
+
+A. _R for Data Science_ by Hadley Wickham and Garrett Grolemund
+-- (https://r4ds.had.co.nz/) -- which is licensed under the Creative Commons
+Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US) 
+
+
+-->
+
+```{r setup}
+library(tidyverse)
+```
+
+
+
+## Objectives
+
+* Understand basic functions in {stringr} for working with functions
+
+* Demonstrate ability to use those functions
+
+
+### Basic functions
+
+
+```{r x}
+
+x <- c("Sly", "Billie", "Thelonious", "Maroon", "Antonio", "Led")
+x
+str_length(x) 
+
+```
+
+
+use `str_c` to collapse list into one string
+
+```{r str_c}
+
+str_c(x, collapse = ", ")
+
+```
+
+
+
+use `str_c` to join two character vectors, separated by a space
+
+```{r str_c_2}
+
+
+y <- c("Stone", "Ellish", "Monk", "5", "Vivaldi", "Zeppelin")
+
+str_c(x, y, sep = " ")
+
+```
+
+## Your turn 1.1
+
+Now join `x` to `y`, separated by an apostrophe and a space
+
+```{r your_turn_1.1}
+
+#solution
+str_c(y, x, sep = ", ")
+
+
+```
+
+
+
+```{r}
+
+str_count(x, "[aeiou]")
+str_detect(x, "[aeiou]")
+
+
+
+str_sub(x, 1, 2)  
+
+str_sub(x, 1, 2) <- "XX"
+x
+
+
+
+
+```
+
+
+
+## REFERENCE
+
+["Strings" in _R for Data Science_](https://r4ds.had.co.nz/strings.html) by Hadley Wickham and Garrett Grolemund
+
+[{stringr}](https://stringr.tidyverse.org/)
+

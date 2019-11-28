@@ -18,6 +18,7 @@ output:
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
+library(stringr)
 ```
 
 # The Data Science Process
@@ -59,9 +60,11 @@ class: inverse
 
 | function | purpose |
 | ---- | ---- |
-| str | display structure of object |
-| class | returns the class of an object |
-| levels | returns the values of the levels |
-| nlevels | return the number of levels |
+| str_length(x)  | the number of characters in `x` |
+| str_c() | concatenates a list of strings |
+| str_sub(x, start = , end = ) | returns characters of `x` |
+| str_detect(x, pattern) | TRUE/FALSE if there is a pattern match |
+| str_replace(x, pattern, newtext | replace |
 
 
+---
