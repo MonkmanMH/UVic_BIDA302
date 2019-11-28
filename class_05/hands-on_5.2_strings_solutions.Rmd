@@ -101,7 +101,18 @@ See the help function for `?'"'`
 interrobang <- "\u2048"
 interrobang
 
-shruggie <- glue::glue("¯\\", "_(ツ)_/¯")
+```
+
+
+To make a shruggie, you need to escape the backslash
+
+```{r}
+shruggie <- glue::glue("¯\\_(ツ)_/¯")
+shruggie
+
+
+
+shruggie <- glue::glue("¯\\", "_(ツ)_", "/¯")
 shruggie
 
 ```
@@ -110,11 +121,13 @@ shruggie
 
 
 
-### Basic functions
+### Basic functions in {stringr}
+ 
+
+![stringr hex](..\img\stringr_300.png)
 
 
-
-```{r x}
+```{r string_length}
 
 x <- c("Sly", "Billie", "Thelonious", "Maroon", "Antonio", "Led")
 x
@@ -131,9 +144,10 @@ str_c(x, collapse = ", ")
 
 ```
 
+#### Combining strings
 
+Use `str_c` to join two character vectors, separated by a space
 
-use `str_c` to join two character vectors, separated by a space
 
 ```{r str_c_2}
 
@@ -158,11 +172,18 @@ str_c(y, x, sep = ", ")
 
 
 
-```{r}
+```{r str_count}
 
 str_count(x, "[aeiou]")
 str_detect(x, "[aeiou]")
 
+```
+
+
+
+
+
+```{r str_sub}
 
 
 str_sub(x, 1, 2)  
