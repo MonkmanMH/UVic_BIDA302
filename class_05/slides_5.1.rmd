@@ -1,0 +1,67 @@
+---
+title: "Working with strings"
+subtitle: "BIDA 302"
+author: "Martin Monkman"
+date: "2019/11/23"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+# The Data Science Process
+
+![the data science process](../img/data-science.png)
+
+- Wickham and Grolemund, _R4DS_
+
+
+---
+
+# regexps
+
+## REGular EXPressions
+
+
+> regexps are a concise language for describing patterns in strings
+
+
+??? 
+
+- Wickham and Grolemund, _R4DS_
+
+
+
+---
+
+class: inverse
+
+
+![R](../img/stringr_400.png)
+
+**stringr.tidyverse.org**
+
+
+---
+
+{stringr} functions 
+
+| function | purpose |
+| ---- | ---- |
+| str | display structure of object |
+| class | returns the class of an object |
+| levels | returns the values of the levels |
+| nlevels | return the number of levels |
+
+
