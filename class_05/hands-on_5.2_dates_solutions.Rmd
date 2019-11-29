@@ -40,7 +40,9 @@ library(tidyverse)
 
 ["Dates and times" in _R for Data Science_](https://r4ds.had.co.nz/dates-and-times.html) by Hadley Wickham and Garrett Grolemund
 
-[{lubridate}](https://lubridate.tidyverse.org/index.html)
+[Dates and Times Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf) (PDF file)
+
+[{lubridate}](https://lubridate.tidyverse.org/index.html) package reference
 
 [Working with dates and time in R using the lubridate package](https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/), University of Virginia Library Research Data Services + Sciences
 
