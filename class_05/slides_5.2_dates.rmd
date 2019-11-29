@@ -1,5 +1,5 @@
 ---
-title: "Working with strings"
+title: "Working with dates"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
 date: "2019/11/23"
@@ -18,29 +18,56 @@ output:
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
-library(stringr)
+library(lubridate)
 ```
 
 # The Data Science Process
 
 ![the data science process](../img/data-science.png)
 
+Working with dates and times is an important "tidy" skill, but it also comes into play for the "Understand" phase
+
 - Wickham and Grolemund, _R4DS_
 
 
 ---
 
-# regexps
-
-## REGular EXPressions
+# Dates and times
 
 
-> regexps are a concise language for describing patterns in strings
+Does every year have 365 days?
 
+Does every day have 24 hours?
+
+Does every minute have 60 seconds?
+
+--
+
+No!
 
 ??? 
 
 - Wickham and Grolemund, _R4DS_
+
+---
+
+
+#ISO 8601 and R
+
+
+```{r}
+now()
+```
+
+"2019-11-29 10:45:12 PST"
+
+```{r}
+now(tz = "UTC")
+```
+
+
+UTC
+"2019-11-30 19:45:12 UTC"
 
 
 
@@ -49,22 +76,62 @@ library(stringr)
 class: inverse
 
 
-![R](../img/stringr_400.png)
+![R](../img/lubridate_400.png)
 
-**stringr.tidyverse.org**
+**lubridate.tidyverse.org/**
 
 
 ---
 
-{stringr} functions 
+## Three types: 
+
+Variable types in tibbles:
+
+* date: `<date>`
+
+* time: `<time>`
+
+* date-time: `<dttm>` 
+
+
+---
+
+## POSIXct
+
+Another object type that will appear in your data!
+
+Lubridate will store them as one of the three variable types
+
+---
+
+## {lubridate} parsing functions 
 
 | function | purpose |
 | ---- | ---- |
-| str_length(x)  | the number of characters in `x` |
-| str_c() | concatenates a list of strings |
+| ymd()  | returns yyyy-mm-dd |
+| dmy() | returns yyyy-mm-dd from day-month-year |
+| _etc_ |  |
+| ymd_hms() | returns date and time |
+
+```{r}
+dmy(121110)
+```
+
+
+---
+
+
+
+
+---
+
+## {lubridate} functions 
+
+| function | purpose |
+| ---- | ---- |
+| today() |  |
 | str_sub(x, start = , end = ) | returns characters of `x` |
 | str_detect(x, pattern) | TRUE/FALSE if there is a pattern match |
 | str_replace(x, pattern, newtext | replace |
-
 
 ---
