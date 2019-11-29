@@ -18,6 +18,7 @@ Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US)
 
 ```{r setup}
 library(tidyverse)
+library(lubridate)
 ```
 
 
@@ -31,7 +32,217 @@ library(tidyverse)
 * Demonstrate ability to use those functions
 
 
-### Dates and times
+
+## {lubridate} functions
+
+See https://lubridate.tidyverse.org/reference/index.html 
+
+### parsing functions 
+
+| function | purpose |
+| ---- | ---- |
+| ymd()  | returns yyyy-mm-dd |
+| dmy() | returns yyyy-mm-dd from day-month-year |
+| _etc_ |  |
+| ymd_hms() | returns date and time |
+
+
+### getting, setting, rounding
+
+| function | purpose |
+| ---- | ---- |
+| today() |  |
+| now() |  |
+| year(), month(), day() | get components of date|
+| _etc_ |  |
+| floor_date() | rounds _down_ to nearest boundary of specified time unit |
+| ceiling_date() | rounds _up_ to nearest boundary of specified time unit |
+
+
+## 1. Parsing
+
+{lubridate} will happily work with numbers and strings, including strings with separators
+
+```{r}
+
+ymd(20191130)
+
+ymd("2019-11-30")
+
+```
+
+
+## Your turn 1.1 
+
+Parse "10-11-12" using `dmy()` ... what do you get back?
+
+```{r}
+# solution
+dmy("10-11-12")
+
+```
+
+
+
+
+## 2. Date 
+
+The three functions `year()`, `month()`, and `day()` allow you to pull that component from a ymd value.
+
+Here are three dates:
+
+```{r}
+date1 <- "2019-11-02"
+date2 <- "2019-12-04"
+date3 <- "2020-02-29"
+
+```
+
+Here's how we would get the year from `date1`:
+
+```{r}
+
+year(date1)
+
+```
+
+
+## Your turn 2.1
+
+Get the month from `date2`
+
+```{r}
+# solution
+
+month(date2)
+
+```
+
+Get the day from `date3`
+
+```{r}
+
+day(date3)
+
+```
+
+
+What happens when you add the options `label` and `abbr` to the function you used to get the day?
+
+* experiment with setting the options to TRUE or FALSE
+
+```{r}
+# solution
+month(date2, label = TRUE, abbr = FALSE)
+
+```
+
+
+## Your turn 2.2
+
+What does `wday()` do? 
+
+* again, experiment with `label` and `abbr` 
+
+```{r}
+# solution
+
+wday(date3)
+
+wday(date3, label = TRUE, abbr = FALSE)
+
+```
+
+Bonus: what type of variable is `wday` returning?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Date-time
+
+
+
+## Your Turn 1.1
+
+What is the difference between `today()` and `now()`?
+
+```{r}
+
+```
+
+
+## Your Turn 1.2
+
+You can specify time zones by adding a time zone option to your call. For example, our time zone is often represented as "America/Los_Angeles" or "America/Vancouver".
+
+```{r}
+
+Sys.timezone()
+
+```
+
+
+
+
+What time is it right now?
+
+* here in Victoria -- or maybe Vancouver
+
+* in Seoul, South Korea
+
+* and Universal Time Coordinated (the time zone is represented as "UTC")
+
+(You can use the function `OlsonNames()` to print a list of all 425 time zones around the world!)
+
+```{r}
+
+now(tzone = "America/Vancouver")
+
+now(tzone = "Asia/Seoul")
+
+now(tzone = "UTC")
+
+```
+
+
+
+```{r}
+# solution -- beware the length!
+OlsonNames()
+```
+
+
+(Note: wrapping a function call with an assignment both runs the assignment _and_ prints the object!)
+
+```{r }
+(x1 <- ymd_hms("2015-06-01 12:00:00", tz = "America/New_York"))
+
+(x2 <- ymd_hms("2015-06-01 18:00:00", tz = "Europe/Copenhagen"))
+
+(x3 <- ymd_hms("2015-06-02 04:00:00", tz = "Pacific/Auckland"))
+
+```
+
+
+Subtract date-time from each other
+
+```{r}
+#
+x1 - x2
+
+```
 
 
 

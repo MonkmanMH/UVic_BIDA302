@@ -117,21 +117,24 @@ Lubridate will store them as one of the three variable types
 dmy(121110)
 ```
 
-
 ---
 
-
-
-
----
-
-## {lubridate} functions 
+## {lubridate} getting, setting, rounding
 
 | function | purpose |
 | ---- | ---- |
 | today() |  |
-| str_sub(x, start = , end = ) | returns characters of `x` |
-| str_detect(x, pattern) | TRUE/FALSE if there is a pattern match |
-| str_replace(x, pattern, newtext | replace |
+| now() |  |
+| year(), month(), day() | get components of date|
+| _etc_ |  |
 
 ---
+
+
+## {lubridate} etc
+
+* functions and options for periods, intervals, durations, etc.
+
+
+
+
