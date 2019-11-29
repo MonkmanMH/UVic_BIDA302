@@ -1,5 +1,5 @@
 ---
-title: "Functions"
+title: "Strings"
 subtitle: "hands-on examples, with answers"
 output: html_document
 ---
