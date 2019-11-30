@@ -221,8 +221,8 @@ str_sub(x, 1, 2)
 
 ```{r}
 
-# look for one of the vowels
-str_locate(x, "[aeiou]")
+# look for pairs of vowels
+str_locate(x, "[aeiou][aeiou]")
 
 # look for a specific match ...
 str_locate(x, "oo")
@@ -238,7 +238,15 @@ str_extract(x, "[aeiou]")
 
 ```
 
+## Your turn 1.2
 
+Extract the pairs of vowels:
+
+```{r}
+# solution
+str_extract(x, "[aeiou][aeiou]")
+
+```
 
 
 
@@ -327,14 +335,42 @@ four_dates3
 
 ```{r}
 
-four_dates4 <- four_dates3 %>% 
+four_dates_list <- four_dates3 %>% 
   glue::glue_data("{ref_year}-{ref_mon2}-01")
 
-four_dates4
-
-ymd(four_dates4)
+four_dates_list
 
 ```
+
+
+Now it's in a format that {lubridate} can understand, and convert to a <date> class:
+
+```{r}
+
+
+ymd(four_dates_list)
+
+```
+
+
+And here's three different ways to add our new list back onto the data table:
+
+```{r}
+# in a pipe:
+four_dates3 %>% 
+  mutate(ref_date_x = ymd(four_dates_list))
+
+# for fans of the <table>$<variable> structure:
+four_dates3$ref_date_y <- ymd(four_dates_list)
+
+# and a new function, `cbind()`:
+cbind(four_dates3, ymd(four_dates_list))
+
+```
+
+
+For more on `cbind()` (for column bind) and its parallel `rbind()` (for row bind), see:
+https://www.dummies.com/programming/r/how-to-add-variables-to-a-data-frame-in-r/
 
 
 
