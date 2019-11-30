@@ -80,8 +80,6 @@ ymd("2019-11-30")
 Parse "10-11-12" using `dmy()` ... what do you get back?
 
 ```{r}
-# solution
-dmy("10-11-12")
 
 ```
 
@@ -115,17 +113,12 @@ year(date1)
 Get the month from `date2`
 
 ```{r}
-# solution
-
-month(date2)
 
 ```
 
 Get the day from `date3`
 
 ```{r}
-
-day(date3)
 
 ```
 
@@ -135,8 +128,7 @@ What happens when you add the options `label` and `abbr` to the function you use
 * experiment with setting the options to TRUE or FALSE
 
 ```{r}
-# solunion
-month(date2, label = TRUE, abbr = FALSE)
+
 
 ```
 
@@ -148,15 +140,6 @@ What does `wday()` do?
 * again, experiment with `label` and `abbr` 
 
 ```{r}
-# solution
-
-wday(date3)
-
-my_wday <- wday(date3, label = TRUE, abbr = FALSE)
-my_wday
-
-class(my_wday)
-class(month(date2, label = TRUE, abbr = FALSE))
 
 
 ```
@@ -206,14 +189,6 @@ start_date + years(1)
 2020 is a leap year... what happens if you use the same three equations that add a year but change the date to "2020-01-01"?
 
 ```{r}
-# solution
-start_date <- ymd("2020-01-01")
-
-start_date + 365
-
-start_date + dyears(1)
-
-start_date + years(1)
 
 
 ```
@@ -243,10 +218,6 @@ What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` f
 
 
 ```{r}
-# solution
-lfs_BC_2000 <-
-  lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(REF_DATE))
 
 ```
 
@@ -280,12 +251,7 @@ lfs_BC_2000
 Now convert `ref_date_2` using `ymd` ...
 
 ```{r}
-# solution
 
-lfs_BC_2000 <- lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(ref_date_2))
-
-lfs_BC_2000
 ```
 
 
@@ -293,9 +259,6 @@ And now a summary table...the annual average of the number of people in the B.C.
 
 ```{r}
 
-lfs_BC_2000 %>%
-  group_by(year(ref_date_2)) %>% 
-  summarise(annual_average = mean(VALUE))
 
 ```
 
@@ -309,17 +272,6 @@ Is there any seaonality in the size of the labour force? Calculate the **monthly
 
 ```{r}
 
-# solution 1
-lfs_BC_2000 %>%
-  group_by(month(ref_date_2)) %>% 
-  summarise(monthly_average = mean(VALUE))
-
-
-# solution 2
-lfs_BC_2000 %>%
-  mutate(month = month(ref_date_2)) %>% 
-  group_by(month) %>% 
-  summarise(monthly_average = mean(VALUE))
 
 ```
 
@@ -334,12 +286,6 @@ Of course the answer is "Yes!" Visualization is an important tool in exploratory
 
 ```{r}
 
-lfs_BC_2000 %>%
-  mutate(month = month(ref_date_2)) %>% 
-  group_by(month) %>% 
-  summarise(monthly_average = mean(VALUE)) %>% 
-  ggplot(aes(x = month, y = monthly_average)) +
-  geom_line()
 
 
 ```
@@ -400,30 +346,10 @@ now(tzone = "UTC")
 You can use the function `OlsonNames()` to print a list of all 425 time zones around the world!
 
 ```{r}
-# solution -- beware the length!
-OlsonNames()
-```
-
-
-(Note: wrapping a function call with an assignment both runs the assignment _and_ prints the object!)
-
-```{r }
-(x1 <- ymd_hms("2015-06-01 12:00:00", tz = "America/New_York"))
-
-(x2 <- ymd_hms("2015-06-01 18:00:00", tz = "Europe/Copenhagen"))
-
-(x3 <- ymd_hms("2015-06-02 04:00:00", tz = "Pacific/Auckland"))
 
 ```
 
 
-Subtract date-time from each other
-
-```{r}
-#
-x1 - x2
-
-```
 
 
 
