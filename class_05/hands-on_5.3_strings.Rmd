@@ -82,9 +82,7 @@ str_view(x, "ea")
 
 Which words end with "a"?
 
-```{r}
-# solution
-str_view(x, "a$")
+```{r your_turn_1.1}
 
 
 ```
@@ -107,13 +105,14 @@ The question mark is useful for words with various spellings -- the British and 
 | "{n,}" | n or more |
 | "{n,m}" | between n and m times |
 
-
 ```{r}
 # which words have a double "p"?
 
 str_view(x, "p{2}")
 
+
 ```
+
 
 
 ## 2. Special characters
@@ -239,10 +238,8 @@ str_c(x, y, sep = " ")
 
 Now join `x` to `y` (the other way around!), separated by an apostrophe and a space
 
-```{r your_turn_1.1}
+```{r your_turn_4.1}
 
-#solution
-str_c(y, x, sep = ", ")
 
 
 ```
@@ -258,18 +255,12 @@ Are there any vowels in the string `x`? Use `str_detect()`
 And count them with `str_count()`:
 
 ```{r str_count}
-# solution
-str_detect(x, "[aeiou]")
-
-str_count(x, "[aeiou]")
 
 ```
 
 Are there any digits in `y`? (Don't forget that you need to escape any backslashes you use!)
 
 ```{r}
-# solution
-str_detect(y, "\\d")
 
 ```
 
@@ -312,12 +303,7 @@ str_extract(x, "[aeiou]")
 
 Extract the pairs of vowels:
 
-```{r}
-# solution
-str_extract(x, "[aeiou][aeiou]")
-
-# alternate solution
-str_extract(x, "[aeiou]{2}")
+```{r your_turn_5.2}
 
 
 ```
