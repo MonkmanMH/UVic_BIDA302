@@ -1,5 +1,5 @@
 ---
-title: "Dates"
+title: "Dates and times"
 subtitle: "hands-on examples, with answers"
 output: html_document
 ---
@@ -158,10 +158,10 @@ class(month(date2, label = TRUE, abbr = FALSE))
 
 ```
 
-Bonus: what type of variable is `wday` returning?
+Bonus: what class of variable is `wday` returning?
 
 
-## Time span
+## 3. Time span
 
 There are three classes that we can use:
 
@@ -177,7 +177,7 @@ The ideas of duration and interval are useful in some contexts, where you want t
 
 For this exercise, we will keep using our three dates and measure the period between them.
 
-We can subtract two dates:
+We can **subtract** two dates:
 
 ```{r}
 
@@ -186,7 +186,7 @@ date2 - date1
 ```
 
 
-Here's three different ways of adding a year to a date:
+Here's three different ways of **adding** a year to a date:
 
 ```{r}
 start_date <- ymd("2019-01-01")
@@ -198,7 +198,9 @@ start_date + dyears(1)
 start_date + years(1)
 ```
 
-2020 is a leap year... what happens if you change the date to "2020-01-01"?
+## Your turn 3.1
+
+2020 is a leap year... what happens if you use the same three equations that add a year but change the date to "2020-01-01"?
 
 ```{r}
 # solution
@@ -215,24 +217,11 @@ start_date + years(1)
 
 
 
-
-We can define an Interval using the %--% operator.
-
-```{r}
-
-time.interval <- date1 %--% date2
-time.interval
-
-
-```
-
-
-
-
-
 ---
 
-## Your turn
+## 4. Working with dates
+
+### Your turn 4.1
 
 
 Read in this extract of a file downloaded from Statistics Canada, which has monthly data.
@@ -247,8 +236,11 @@ The date is shown in the variable `REF_DATE`; since it's monthly data, the chara
 
 What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` function?
 
-```{r}
+### Your turn 4.2
 
+
+```{r}
+# solution
 lfs_BC_2000 <-
   lfs_BC_2000 %>% 
   mutate(ref_date_2 = ymd(REF_DATE))
@@ -262,9 +254,13 @@ Since the variable `REF_DATE` is a character string, I am going to force them to
 
 * https://glue.tidyverse.org/
 
-**NOTE:** as with pretty much everything else, this is only one way to solve this problem!
+**NOTE:** 
 
-**NOTE:** you can use a function that you have installed but not loaded through the `library()` function, by putting the name of the package followed by the function you want to use. In this case, we are using the `glue()` function from the {glue} package, so our code looks like `glue::glue()`. The variable from our data frame gets put in braces, and the string returned is all within quotation marks.
+* As with pretty much everything else, this is only one way to solve this problem!
+
+**NOTE:** 
+
+* You can use a function that you have installed but not loaded through the `library()` function, by putting the name of the package followed by the function you want to use. In this case, we are using the `glue()` function from the {glue} package, so our code looks like `glue::glue()`. The variable from our data frame gets put in braces, and the string returned is all within quotation marks.
 
 
 ```{r}
@@ -275,6 +271,8 @@ lfs_BC_2000 <-lfs_BC_2000 %>%
 lfs_BC_2000
 ```
 
+
+### Your turn 4.3
 
 Now convert `ref_date_2` using `ymd` ...
 
@@ -301,7 +299,10 @@ lfs_BC_2000 %>%
 
 Looks like the B.C. labour force is growing!
 
-Is there any seaonality in the size of the labour force? Calculate the monthly average over the 20 years in our data:
+
+### Your turn 4.4
+
+Is there any seaonality in the size of the labour force? Calculate the **monthly** average over the 20 years in our data:
 
 ```{r}
 
@@ -319,9 +320,14 @@ lfs_BC_2000 %>%
 
 ```
 
+
+### Your turn 4.5
+
 Would a simple data visualization (a plot) help you see if there is a pattern?
 
-(The answer is "Yes!" of course! Note that if you haven't already, you will have to create a separate variable with the month value.)
+Of course the answer is "Yes!" Visualization is an important tool in exploratory data analysis. But you knew that already.
+
+(Note that if you haven't already, you will have to create a separate variable with the month value.)
 
 ```{r}
 
@@ -337,6 +343,9 @@ lfs_BC_2000 %>%
 
 
 
+
+
+---
 
 
 ## Date-time
@@ -373,7 +382,6 @@ What time is it right now?
 
 * and Universal Time Coordinated (the time zone is represented as "UTC")
 
-(You can use the function `OlsonNames()` to print a list of all 425 time zones around the world!)
 
 ```{r}
 
@@ -386,6 +394,7 @@ now(tzone = "UTC")
 ```
 
 
+You can use the function `OlsonNames()` to print a list of all 425 time zones around the world!
 
 ```{r}
 # solution -- beware the length!
