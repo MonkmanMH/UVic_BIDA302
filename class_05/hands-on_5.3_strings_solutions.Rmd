@@ -44,6 +44,14 @@ string1
 
 ```
 
+## Regular expressions
+
+See https://stringr.tidyverse.org/articles/regular-expressions.html
+
+Also, as a handy tool: https://regex101.com/
+
+
+
 ## Special characters
 
 **quotes**
@@ -108,10 +116,9 @@ interrobang
 To make a shruggie, you need to escape the backslash
 
 ```{r}
+
 shruggie <- glue::glue("¯\\_(ツ)_/¯")
 shruggie
-
-
 
 shruggie <- glue::glue("¯\\", "_(ツ)_", "/¯")
 shruggie
@@ -122,7 +129,7 @@ shruggie
 
 
 
-## Basic functions in {stringr}
+## Basic functions in {stringr}.
  
 
 ![stringr hex](..\img\stringr_300.png)
@@ -130,7 +137,7 @@ shruggie
 
 ```{r string_length}
 
-x <- c("Sly", "Billie", "Thelonious", "Maroon", "Antonio", "Led")
+x <- c("Sly", "Billie", "Thelonious", "Maroon", "Willie", "Led")
 x
 str_length(x) 
 
@@ -156,7 +163,7 @@ Use `str_c` to join two character vectors, separated by a space
 ```{r str_c_2}
 
 
-y <- c("Stone", "Ellish", "Monk", "5", "Vivaldi", "Zeppelin")
+y <- c("Stone", "Ellish", "Monk", "5", "Nelson", "Zeppelin")
 
 str_c(x, y, sep = " ")
 
@@ -178,16 +185,28 @@ str_c(y, x, sep = ", ")
 
 ## Pattern matching
 
+Are there any vowels in the string? And count them:
 
 ```{r str_count}
 
-str_count(x, "[aeiou]")
 str_detect(x, "[aeiou]")
+
+str_count(x, "[aeiou]")
+
+```
+
+Are there any digits?
+
+```{r}
+
+str_detect(y, "\\d")
 
 ```
 
 
-Find chunks of text by their location: `str_sub(x, start, end)`
+
+
+Extract chunks of text by their location: `str_sub(x, start, end)`
 
 
 ```{r str_sub}
@@ -202,9 +221,23 @@ str_sub(x, 1, 2)
 
 ```{r}
 
-str_locate(x, "([a])")
+# look for one of the vowels
+str_locate(x, "[aeiou]")
+
+# look for a specific match ...
+str_locate(x, "oo")
 
 ```
+
+
+Extract the first case of a vowel:
+
+```{r}
+
+str_extract(x, "[aeiou]")
+
+```
+
 
 
 
@@ -242,10 +275,11 @@ str_split(our_date, " ")
 
 ```
 
+Here we have four month-years, arranged alphabetically:
 
 ```{r}
 
-four_dates <- tribble(~ref_date, "Jan 2018", "Dec 2019", "Feb 2020", "Mar 2112")
+four_dates <- tribble(~ref_date, "Dec 2019", "Feb 2020", "Jan 2018", "Mar 2021")
 
 four_dates <- four_dates %>% 
   mutate(value = 1:4)
@@ -270,6 +304,39 @@ four_dates2
 https://stackoverflow.com/questions/6549239/convert-months-mmm-to-numeric
 
 
+Back to factors!
+
+```{r}
+
+# create a list that will be the month levels:
+
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+
+
+four_dates3 <- four_dates2 %>% 
+  mutate(ref_mon2 = factor(ref_mon, levels = month_levels)) %>%
+  arrange(ref_mon2)
+
+four_dates3
+
+```
+
+
+```{r}
+
+four_dates4 <- four_dates3 %>% 
+  glue::glue_data("{ref_year}-{ref_mon2}-01")
+
+four_dates4
+
+ymd(four_dates4)
+
+```
+
+
 
 ---
 
@@ -280,6 +347,5 @@ https://stackoverflow.com/questions/6549239/convert-months-mmm-to-numeric
 [{stringr}](https://stringr.tidyverse.org/)
 
 [regex101](https://regex101.com/)
-
 
 
