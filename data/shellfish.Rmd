@@ -1,0 +1,22 @@
+---
+title: "shellfish"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r Kat_chunk}
+
+my_species <-  c("Clam, Geoduck", "Mussels, Common (Mussels, Sea)") 
+
+filtered_psp <- filter(psp_table, Harvest_Area == 12, Harvest_Sub_Area == 15:16, `Species` %in% my_species, Harvest_Date_ymd >= as.Date("2016-04-01") &  Harvest_Date_ymd <= as.Date("2016-06-30") )%>%
+  ggplot(aes(x = `Harvest_Date_ymd` , y = `PSP Result`, colour = `Species`,)) +
+ geom_point() +
+  geom_line()
+
+```
+
