@@ -42,7 +42,9 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 # Run in rstudio.cloud
 
-{reticulate}
+{reticulate} -- R Interface to Python
+
+* [reference pages](https://rstudio.github.io/reticulate/)
 
 
 

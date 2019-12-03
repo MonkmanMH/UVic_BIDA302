@@ -1,0 +1,71 @@
+---
+title: "hands-on: python"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{r libraries}
+library(reticulate)
+
+```
+
+
+The {reticulate} function `py_config()` can be used to see what version of Python is running, and other configuration details
+
+```{r}
+py_config()
+
+```
+
+
+It's possible to run Python code chunks inside your R Markdown document:
+
+```{python}
+# import the `pandas` module so that it's available for use
+import pandas
+# read the csv file "flights.csv" and assign it to the object "flights"
+flights = pandas.read_csv("flights.csv")
+print(flights.head())
+flights = flights[flights['dest'] == "ORD"]
+print(flights.head())
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+print(flights.head())
+flights = flights.dropna()
+print(flights.head())
+
+```
+
+
+Run the same code inside an R chunk, by running a Python script ".py" file
+
+```{r}
+
+source_python("py_code.py")
+
+```
+
+Assign the python data frame "flights" to an R object
+
+```{r}
+
+flights <- py$flights
+flights
+```
+
+
+
+```{r}
+
+library(ggplot2)
+
+ggplot(py$flights, aes(carrier, arr_delay)) +
+  geom_point()
+
+```
+
