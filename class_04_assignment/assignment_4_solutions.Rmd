@@ -113,6 +113,18 @@ MLB_HR_data %>%
 ### 1d. Filtering joins
 
 > How many records are in `Batting_2016` and `Salaries_2016`?
+
+```{r}
+
+Batting_2016 %>% 
+  tally()
+
+Salaries_2016 %>% 
+  tally
+
+```
+
+
 >
 > Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
 > 
@@ -138,8 +150,12 @@ semi_join(Batting_2016, Salaries_2016, key = "playerID") %>%
 
 ```{r}
 ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
-  geom_point() +
-  xlim()
+  geom_point()
+
+
+ggplot(MLB_HR_data, aes(x = birthDate, y = salary)) +
+  geom_point()
+
 ```
 
 
