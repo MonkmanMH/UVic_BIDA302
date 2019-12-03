@@ -1,0 +1,146 @@
+---
+title: "Data analysis with Python"
+subtitle: "BIDA 302"
+author: "Martin Monkman"
+date: "2019/12/04"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+# The Data Science Process
+
+![the data science process](../img/data-science.png)
+
+- Wickham and Grolemund, _R4DS_
+
+We have spent 5.5 weeks talking about this process with **R** ... but it's not the only tool set available.
+
+
+---
+
+# Python
+
+
+
+
+---
+
+
+# Run in rstudio.cloud
+
+{reticulate}
+
+
+
+---
+
+## code chunk 
+
+
+
+!```{python }
+!
+! some python code
+!
+!```
+
+
+---
+
+# An analogy...
+
+Base R is like the engine and frame of a car
+
+![VW Beetle frame](../img/VW_ad_1_crop.png)
+
+---
+
+...the packages are the other things that enhance the car's functions
+
+![VW Beetle transparent](../img/vwlooking.jpg)
+
+
+
+---
+
+...and RStudio is the dashboard and controls
+
+![VW Beetle dashboard](../img/VW_dashboard.jpg)
+
+
+---
+
+(more like this)
+
+![VW Beetle dashboard](../img/VW_dashboard_2019.jpg)
+
+
+---
+
+Python is like an engine.
+
+It can power a car...or a boat, or a water pump, or ...
+
+![VW Beetle engine](../img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L.jpg)
+
+
+---
+
+Python is a general=purpose programming language. 
+
+Which means that it _doesn't_ have data analysis functions built in.
+
+When you load base R, in addition to the engine you get the frame, steering wheel, and pedals.
+
+To do data analysis in Python, you need to load the packages that are the frame, steering wheel, etc.
+
+---
+
+## Who's ready for a road trip?!
+
+![VW Beetle dashboard](../img/VW_ready_to_go.png)
+
+
+![VW Beetle driving](../img/VW_ontheroad.jpg)
+
+
+
+---
+
+## Python data analysis packages
+
+* [numpy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
+
+* [pandas](https://pandas.pydata.org/) -- "providing...data structures and data analysis tools"
+
+* [matplotlib](https://matplotlib.org/) -- data visualization
+
+---
+
+## Some Python resources
+
+
+[__](), Wes McKinney (2017)
+
+["A Quick Introduction to the “Pandas” Python Library"](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673) -- Adi Bronshtein, 2017-04-17
+
+
+---
+
+## Cheat sheets
+
+[data wrangling with pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
