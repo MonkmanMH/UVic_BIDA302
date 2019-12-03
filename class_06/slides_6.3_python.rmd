@@ -134,10 +134,13 @@ To do data analysis in Python, you need to load the packages that are the frame,
 ## Some Python resources
 
 
-[__](), Wes McKinney (2017)
+[_Python for Data Analysis_, 2nd edition](https://www.oreilly.com/library/view/python-for-data/9781491957653/), Wes McKinney (2017)
 
 ["A Quick Introduction to the “Pandas” Python Library"](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673) -- Adi Bronshtein, 2017-04-17
 
+["Pandas basics"](https://www.learnpython.org/en/Pandas_Basics)
+
+[Beginner's Tutorial on the Pandas Python Library](https://stackabuse.com/beginners-tutorial-on-the-pandas-python-library/)
 
 ---
 
