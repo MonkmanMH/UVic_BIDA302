@@ -54,7 +54,11 @@ library(gapminder)
 > * Salaries is an incomplete tables showing the compensation of some of the employees
 
 
-### 1a. Read in the three files
+### 1a. Read the data
+
+Read in the three files and assign them to an object.
+
+
 
 ```{r}
 # solution
@@ -139,6 +143,10 @@ semi_join(Batting_2016, Salaries_2016, key = "playerID")
 semi_join(Batting_2016, Salaries_2016, key = "playerID") %>% 
   group_by(playerID) %>% 
   tally()
+
+# note: this is a semi_join:
+#  - _keeps_ all of the observations in x that have a match in y
+# an anti-join _drops_ all of the observations in x that have a match in y
 
 ```
 
