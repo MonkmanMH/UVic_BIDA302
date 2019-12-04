@@ -111,6 +111,35 @@ MLB_HR_data %>%
 # * we want a `left_join`: all the observations from the active season, and adding the country of birth variable from "Master"
 
 
+## ---
+
+# another approach
+
+Batting1<-Batting_2016 %>%
+filter(yearID==2016) %>%
+  select(playerID,stint,teamID)
+Master1<-Master_2000s %>%
+  select(playerID,birthCountry)
+
+Num_2016<-Batting1 %>%
+  inner_join(Master1,by="playerID") %>%
+  select(playerID,teamID,birthCountry)
+
+Num_2016%>%
+ count(birthCountry,teamID,sort = TRUE)
+
+# and another
+
+Batters2016 <- left_join(Master_2000s, Batting_2016, by = "playerID") %>%
+  select(birthCountry, teamID,yearID, playerID) %>%
+  filter(yearID == "2016")
+
+Batters2016 %>%
+  group_by(birthCountry, teamID) %>%
+  count("playerID") %>%
+  select("birthCountry","teamID", "n") %>%
+  rename(PlayerCount = "n")
+
 ```
 
 

@@ -297,6 +297,9 @@ lfs_BC_2000 %>%
   group_by(year(ref_date_2)) %>% 
   summarise(annual_average = mean(VALUE))
 
+lfs_BC_2000 %>%
+  filter(year(ref_date_2) >= 2015)
+
 ```
 
 
