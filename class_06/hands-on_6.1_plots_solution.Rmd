@@ -209,95 +209,166 @@ dataplot +
 
 
 
+## 3. Themes
+
+Themes control the overall look--the non-data elements--of the plot.
+
+There are a number of built-in themes. This code chunk changes it to the `theme_bw()`
+
+
+```{r}
+dataplot+
+  theme_bw()
+```
+
+### Your turn 3.1
+
+Try a different theme or two, following the list here: 
+https://ggplot2.tidyverse.org/reference/ggtheme.html
+
+(And if you want to go deeper, there's another package {ggthemes} that adds still more:
+https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/ )
+
+```{r}
+# solution
+dataplot +
+  theme_void()
+
+```
+
+
+You can also have full control over the theme elements. In the example case, the `theme_bw()` function is further tweaked using `theme()`
+
+```{r}
+
+dataplot +
+  theme_bw() +
+  theme(
+    panel.border = element_rect(colour="white"),
+    plot.title = element_text(face="bold"),
+    axis.line = element_line(colour="black"),
+    axis.title = element_text(size=12),
+    axis.text = element_text(size=12)
+  )
+
+
+```
+
+
+The `theme()` also controls the location of the legend:
+
+```{r}
+dataplot +
+  theme(
+    legend.position=c(1,0), 
+    legend.justification=c(1,0),
+    legend.title = element_text(size=12),
+    legend.text = element_text(size=11),
+  )
+
+```
+
+
+OK! Let's put all of the `scale_` and `theme` pieces together and create a new plot object:
+
 
 ```{r}
 dataplot2 <- dataplot +
   scale_colour_manual(name=NULL,
                       breaks=c("Canada", "British Columbia"),
                       labels=c("Canada", "British Columbia"), 
-                      values=c("#325A80", "#CCB550")) +
-  bcstats_chart_theme
-#  theme_bw() +
-#  theme(
-#    panel.border = element_rect(colour="white"),
-#    plot.title = element_text(face="bold"),
-#    legend.position=c(1,0), 
-#    legend.justification=c(1,0),
-#    legend.title = element_text(size=12),
-#    legend.text = element_text(size=11),
-#    axis.line = element_line(colour="black"),
-#    axis.title = element_text(size=12),
-#    axis.text = element_text(size=12)
-#  )
-#
+                    values=c("#325A80", "#CCB550")) +
+  theme_bw() +
+  theme(
+    panel.border = element_rect(colour="white"),
+    plot.title = element_text(face="bold"),
+    legend.position=c(1,0), 
+    legend.justification=c(1,0),
+    legend.title = element_text(size=12),
+    legend.text = element_text(size=11),
+    axis.line = element_line(colour="black"),
+    axis.title = element_text(size=12),
+    axis.text = element_text(size=12)
+  )
+
 dataplot2 
 ```
 
-## _COMMUNICATE_ - plot
+
+## 4. Titles and labels
+
+Titles and labels are controled with the `labs()` function.
+
+* title and sub-title above the plot
+
+* caption below
+
+
+This adds a title to our chart:
 
 ```{r}
-# experiments with ggplot2's new subtitle and caption options
+# add titles / X-Y axis labels
+dataplot2 +
+  labs(title = "New Housing Price Index, Canada & B.C.")
+
+```
+
+
+### Your turn 4.1
+
+In addition to the title, add a subtitle and a caption. The text is here:
+
+* subtitle: "December 2016 = 100"
+
+* caption: "Source: Statistics Canada, CANSIM table 18-10-0205-01"
+
+
+```{r}
+# solution
+dataplot2 +
+  labs(title = "New Housing Price Index, Canada & B.C.",
+       subtitle = "December 2016 = 100",
+       caption = "Source: Statistics Canada, CANSIM table 18-10-0205-01")
+
+```
+
+`labs()` can also be used to change the labels on the X and Y axes
+
+* if you want to remove an element, use "NULL"
+
+```{r}
+
+dataplot2 +
+  labs(x = NULL, 
+       y = "NHPI (Dec. 2016 = 100)") 
+
+
+```
+
+
+
+## 5. Putting it all together
+
+But first...you can pass values to the functions. In this example, the title, subtile, and caption are defined separately.
+
+This will come in handy when you are automating the creation of multiple charts.
+
+
+```{r}
+# define values
 NHPI_title <- as.character("New Housing Price Index, Canada & B.C.")
 NHPI_subtitle <- as.character("December 2016 = 100")
 NHPI_caption <- as.character("Source: Statistics Canada, CANSIM table 18-10-0205-01")
+
+
 # add titles / X-Y axis labels
 NHPI_plot <- dataplot2 +
   labs(title = NHPI_title,
        subtitle = NHPI_subtitle,
        caption = NHPI_caption, 
        x = NULL, y = "NHPI (Dec. 2016 = 100)") 
+
 NHPI_plot
-ggsave(filename = "NHPI_plot.png", plot = NHPI_plot,
-       width = 8, height = 6)
-```
-
-
-***
-
-## Vancouver house and land version
-
-Now we've set up the B.C. comparison to Canada, we can quickly adapt our previous work to look at another region--in this case, a deeper dive into Vancouver, comparing the changes in the two components of the NHPI.
-
-```{r}
-startdate <- as.Date("2007-01-01")
-# filter to have Vancouver
-thedata_YVR <- thedata %>%
-  filter(ref_date >= startdate) %>%
-  filter(geo %in% c("Vancouver, British Columbia"), 
-         new_housing_price_indexes %in% c("House only", "Land only")) %>%
-  arrange(desc(ref_date))
-thedata_YVR
-```
-
-the plot
-
-```{r}
-
-NHPI_title <- as.character("New Housing Price Index, Vancouver: house and land")
-NHPI_subtitle <- as.character("December 2016 = 100")
-NHPI_caption <- as.character("Source: Statistics Canada, CANSIM table 18-10-0205-01")
-
-# with formatting applied
-NHPI_Vancouver_plot <- 
-  ggplot(thedata_YVR, aes(x=ref_date, y=value,
-                           colour=new_housing_price_indexes)) + 
-  geom_line(size=1.5) +
-  #
-  scale_x_date(date_breaks = "2 years", labels = year) +
-  scale_y_continuous(labels = comma, limits = c(80, 120)) +
-  scale_colour_manual(name=NULL,
-                      breaks=c("House only", "Land only"),
-                      labels=c("House only", "Land only"), 
-                      values=c("#325A80", "#CCB550")) +
-  bcstats_chart_theme +
-  # set chart titles and labels
-  labs(title = NHPI_title,
-       subtitle = NHPI_subtitle,
-       caption = NHPI_caption, 
-       x = NULL, y = "NHPI (Dec. 2016 = 100)") 
-
-NHPI_Vancouver_plot
 
 ```
-
 
