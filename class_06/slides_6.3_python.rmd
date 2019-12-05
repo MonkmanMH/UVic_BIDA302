@@ -2,7 +2,7 @@
 title: "Data analysis with Python"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
-date: "2019/12/04"
+date: "2019/12/07"
 output:
   xaringan::moon_reader:
     css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
@@ -32,33 +32,9 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 ---
 
-# Python
+![Python](../img/python-logo-master-v3-TM-flattened.png)
 
-
-
-
----
-
-
-# Run in rstudio.cloud
-
-{reticulate} -- R Interface to Python
-
-* [reference pages](https://rstudio.github.io/reticulate/)
-
-
-
----
-
-## code chunk 
-
-
-
-!```{python }
-!
-! some python code
-!
-!```
+[python.org](https://www.python.org/)
 
 
 ---
@@ -67,11 +43,15 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 Base R is like the engine and frame of a car
 
+* some basic controls like the pedals and steering wheel
+
 ![VW Beetle frame](../img/VW_ad_1_crop.png)
 
 ---
 
 ...the packages are the other things that enhance the car's functions
+
+* the body, windshield, headlights, A/C, sound system, etc
 
 ![VW Beetle transparent](../img/vwlooking.jpg)
 
@@ -88,7 +68,13 @@ Base R is like the engine and frame of a car
 
 (more like this)
 
-![VW Beetle dashboard](../img/VW_dashboard_2019.jpg)
+![VW Beetle dashboard, tan](../img/VW_dashboard_2019.jpg)
+
+---
+
+dark mode!
+
+![VW Beetle dashboard, black](../img/2018_volkswagen_beetle_dashboard.jpg)
 
 
 ---
@@ -102,34 +88,52 @@ It can power a car...or a boat, or a water pump, or ...
 
 ---
 
-Python is a general=purpose programming language. 
+Python is a general-purpose programming language. 
 
-Which means that it _doesn't_ have data analysis functions built in.
+* Which means that it _doesn't_ have data analysis functions built in.
 
-When you load base R, in addition to the engine you get the frame, steering wheel, and pedals.
+* When you load base R, you get the engine and the frame, steering wheel, and pedals.
 
-To do data analysis in Python, you need to load the packages that are the frame, steering wheel, etc.
-
----
-
-## Who's ready for a road trip?!
-
-![VW Beetle dashboard](../img/VW_ready_to_go.png)
-
-
-![VW Beetle driving](../img/VW_ontheroad.jpg)
-
+* To do data analysis in Python, you need to load the _modules_ that are the frame, steering wheel, etc.
 
 
 ---
 
-## Python data analysis packages
+
+# Run in rstudio.cloud
+
+{reticulate} -- R Interface to Python
+
+* [reference pages](https://rstudio.github.io/reticulate/)
+
+
+
+---
+
+## Python code chunk in R Markdown
+
+
+
+` ```{python}   ` <br>
+`  some python code  ` <br>
+` ```  `
+
+
+
+
+---
+
+## Python data analysis modules
 
 * [numpy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
 
 * [pandas](https://pandas.pydata.org/) -- "providing...data structures and data analysis tools"
 
 * [matplotlib](https://matplotlib.org/) -- data visualization
+
+
+
+
 
 ---
 
@@ -148,4 +152,7 @@ To do data analysis in Python, you need to load the packages that are the frame,
 
 ## Cheat sheets
 
+[{reticulate}](https://github.com/rstudio/cheatsheets/raw/master/reticulate.pdf) -- calling Python from R
+
 [data wrangling with pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
+
