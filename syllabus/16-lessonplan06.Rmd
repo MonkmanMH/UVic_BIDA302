@@ -16,17 +16,15 @@ _subject to change_
 
 At the end of this lesson, learners will be able to:
 
-1. Explain the use of statistical models in data analysis,
+1. Understand the range of options for formatting {ggplot2} charts.
 
-2. Demonstrate the necessary R script to build a simple model,
+2. Demonstrate the necessary R script to build a simple model.
 
-3. Explain why iteration is a cornerstone of programming, 
+3. Explain why iteration is a cornerstone of programming. 
 
 4. Understand the fundamental differences between the R and Python ecosystems, and
 
 5. Write a script in Python to summarize a familiar data table.
-
-6. What-if scenario analysis (WISA)
 
 
 
@@ -38,13 +36,13 @@ _(subject to change)_
 
 | Block      | Time           | Topics  | &#8212; |
 |---         |:---            |:---     |:---:  |
-|1          | 9:00 to 10:30   | Modeling | &#8212; |
+|1          | 9:00 to 10:30   | Plots, charts and other data visualizations | &#8212; |
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2           | 10:45 to 12:00 | Iterations  | &#8212; |
+|2           | 10:45 to 12:00 | Modeling, forecasting & what-if scenario analysis   | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
-|3           | 1:00 to 2:15   | What-if scenarios & forecasting  | &#8212; |
+|3           | 1:00 to 2:15   | Iteration  | &#8212; |
 |&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
-|4           | 2:30 to 4:00   | Data analysis with Python | &#8212; |
+|4           | 2:30 to 4:00   | Data analysis with Python <br> Course wrap-up | &#8212; |
 
 
 
@@ -84,7 +82,7 @@ Time allocation: 15 minutes (10:30 to 10:45)
 ***
 
 
-### 2. Introduction to modeling
+### 2. Modeling, forecasting & what-if scenario analysis
 
 Format: participation and instructor lecture w/ slides
 
@@ -102,6 +100,10 @@ _Reading:_
   - ["Model Basics"](https://r4ds.had.co.nz/model-basics.html), and 
   - ["Model building"](https://r4ds.had.co.nz/model-building.html)
 
+* Stefano Rizzi, ["What-If Analysis"](http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf), 
+
+* [Introduction to What-If Analysis](https://support.office.com/en-us/article/introduction-to-what-if-analysis-22bffa5f-e891-4acc-bf7a-e4645c446fb4) -- for Microsoft Excel
+
 
 
 
@@ -114,7 +116,7 @@ Time allocation: 60 minutes (12:00 to 1:00)
 ***
 
 
-### 3. What-If Scenario Analysis (WISA)
+### 3. Iteration
 
 Format: participation and instructor lecture w/ slides
 
@@ -126,9 +128,7 @@ Time allocation: 60 minutes (1:15 to 2:15)
 
 _Reading:_
 
-* Stefano Rizzi, ["What-If Analysis"](http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf), 
-
-* [Introduction to What-If Analysis](https://support.office.com/en-us/article/introduction-to-what-if-analysis-22bffa5f-e891-4acc-bf7a-e4645c446fb4) -- for Microsoft Excel
+* _R4DS_, ["Iteration"](https://r4ds.had.co.nz/iteration.html) 
 
 
 ***
@@ -141,13 +141,22 @@ Time allocation: 15 minutes (2:15 to 2:30)
 ***
 
 
-### 4. Capstone Project
+### 4a. Python as data analysis tool
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 90 minutes (2:30 to 4:00)
+Format: hands-on exercise
 
 
+Time allocation: 60 minutes (2:30 to 3:30)
+
+
+### 4b. Course wrap-up
+
+Format: participation and instructor lecture w/ slides
+
+
+Time allocation: 30 minutes (3:30 to 4:00)
 
 
 
