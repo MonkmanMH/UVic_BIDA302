@@ -333,6 +333,11 @@ ggplot(thedata_BC_Can, aes(x=ref_date, y=value, group=geo)) +
 dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
   geom_line(size=1.5) 
 dataplot
+
+ggsave(dataplot, filename = "NHPI_plot_draft.png",
+       width = 8, height = 6)
+
+
 ```
 
 with more formatting

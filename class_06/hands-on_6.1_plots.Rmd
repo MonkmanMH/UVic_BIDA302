@@ -1,0 +1,303 @@
+---
+title: "Refine your plots"
+author: "Martin Monkman"
+subtitle: "New Housing Price Index"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+
+## New Housing Price Index
+
+This set of scripts creates summary tables and graphs plotting the New Housing Price Index (NHPI) data collected and reported by Statistics Canada.
+
+The original source code, created by Martin Monkman with contributions by Julie Hawkins and Stephanie Yurchak, can be found here:  https://github.com/bcgov/CANSIM-dataviewer/blob/master/scr/NHPI_cansim.Rmd
+
+### Setup
+
+```{r, setup, message=FALSE}
+# tidyverse
+library(tidyverse)
+library(scales)     # extending {ggplot2}
+#
+```
+
+
+chart theme
+
+```{r bcstats_chart_theme}
+
+bcstats_chart_theme <-
+  theme_bw() +
+  theme(
+    panel.border = element_rect(colour="white"),
+    plot.title = element_text(face="bold"),
+    legend.position=c(1,0), 
+    legend.justification=c(1,0),
+    legend.title = element_text(size=12),
+    legend.text = element_text(size=11),
+    axis.line = element_line(colour="black"),
+    axis.title = element_text(size=12),
+    axis.text = element_text(size=12)
+  )
+
+
+```
+
+
+---
+
+## Read in the data
+
+
+```{r data_read}
+
+thedata_BC_Can <- readRDS("thedata_BC_Can.RData")
+
+thedata_BC_Can
+
+```
+
+
+--- 
+
+## 1. Visualize - a draft plot
+
+
+```{r plot_draft}
+# PLOT!
+# basic
+
+# with formatting applied
+dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
+  geom_line() 
+dataplot
+
+
+```
+
+
+### Your turn 1.1
+
+Make the line thicker ... add a `size = 1.5` option to the `geom_line()`
+
+```{r}
+# solution
+
+dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
+  geom_line(size = 1.5) 
+dataplot
+
+```
+
+## 2. Scales
+
+Controling the breaks and labels of the X and Y axes
+
+[{ggplot2}: Scales](https://ggplot2.tidyverse.org/reference/index.html#section-scales)
+
+* note that `ref_date` is a date type, so the `scale_x_` function is `scale_x_date`
+
+  - this also allows us to specify the breaks and labels using `year` -- if you had one year of data, you could use `month`
+  
+  - and even though the last data point is in 2019, specifying "2 years" extends it to 2020
+
+* note that the Y variable is a number (dbl), so it's continuous (not discrete)
+
+```{r}
+dataplot +
+  scale_x_date(date_breaks = "2 years", labels = year) +
+  scale_y_continuous(labels = comma, limits = c(80, 120)) 
+
+```
+
+
+
+### Colour of the lines
+
+In this case, we want to override the default `colour = geo`
+
+* modify the `scale_colour_`, in this case with `scale_colour_manual`
+
+* in this case, the colours are defined using hex codes
+
+  - see https://htmlcolorcodes.com/ for more
+  
+  - you can also simply name the colours; there are 657 names colours! 
+  
+  - See http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf for a full list
+  
+  - [R color cheatsheet](https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf)
+
+
+```{r}
+dataplot +
+  scale_colour_manual(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"), 
+                      # define the colours using hex codes
+                      values=c("#325A80", "#CCB550"))
+```
+
+
+### Your turn 2.1
+
+Change the colours of the lines by putting "red" and "blue" as the values (and yes, you need the quotation marks!)
+
+
+```{r}
+# solution
+dataplot +
+  scale_colour_manual(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"), 
+                      # define the colours using hex codes
+                      values=c("red", "blue"))
+```
+
+
+### Your turn 2.2
+
+What happens if you use `scale_colour_grey`?
+
+* note that you need to remove the `values()` line
+
+```{r}
+# solution
+dataplot +
+  scale_colour_grey(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"))
+```
+
+
+### Your turn 2.2
+
+There are a variety of pre-defined colour palettes available in {ggplot2}. 
+
+One is the Color Brewer palettes, originally designed to provide color advice for maps, but the palettes work well for differentiating colours on charts as well.
+
+* a list of the palettes can be found here: [Sequential, diverging and qualitative colour scales from colorbrewer.org](https://ggplot2.tidyverse.org/reference/scale_brewer.html)
+
+* [colorbrewer2.org](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+
+
+In this case, we the values we have are not sequential, nor are they diverging (starting at a central point and getting bigger or smaller). One of the qualitative palettes might be the best bet:
+
+```{r}
+# solution
+dataplot +
+  scale_colour_brewer(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"),
+                      palette = "Set1")
+```
+
+What happens if you change it to "Set2" or "Dark2"?
+
+```{r}
+# solution
+dataplot +
+  scale_colour_brewer(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"),
+                      palette = "Dark2")
+```
+
+
+
+
+```{r}
+dataplot2 <- dataplot +
+  scale_colour_manual(name=NULL,
+                      breaks=c("Canada", "British Columbia"),
+                      labels=c("Canada", "British Columbia"), 
+                      values=c("#325A80", "#CCB550")) +
+  bcstats_chart_theme
+#  theme_bw() +
+#  theme(
+#    panel.border = element_rect(colour="white"),
+#    plot.title = element_text(face="bold"),
+#    legend.position=c(1,0), 
+#    legend.justification=c(1,0),
+#    legend.title = element_text(size=12),
+#    legend.text = element_text(size=11),
+#    axis.line = element_line(colour="black"),
+#    axis.title = element_text(size=12),
+#    axis.text = element_text(size=12)
+#  )
+#
+dataplot2 
+```
+
+## _COMMUNICATE_ - plot
+
+```{r}
+# experiments with ggplot2's new subtitle and caption options
+NHPI_title <- as.character("New Housing Price Index, Canada & B.C.")
+NHPI_subtitle <- as.character("December 2016 = 100")
+NHPI_caption <- as.character("Source: Statistics Canada, CANSIM table 18-10-0205-01")
+# add titles / X-Y axis labels
+NHPI_plot <- dataplot2 +
+  labs(title = NHPI_title,
+       subtitle = NHPI_subtitle,
+       caption = NHPI_caption, 
+       x = NULL, y = "NHPI (Dec. 2016 = 100)") 
+NHPI_plot
+ggsave(filename = "NHPI_plot.png", plot = NHPI_plot,
+       width = 8, height = 6)
+```
+
+
+***
+
+## Vancouver house and land version
+
+Now we've set up the B.C. comparison to Canada, we can quickly adapt our previous work to look at another region--in this case, a deeper dive into Vancouver, comparing the changes in the two components of the NHPI.
+
+```{r}
+startdate <- as.Date("2007-01-01")
+# filter to have Vancouver
+thedata_YVR <- thedata %>%
+  filter(ref_date >= startdate) %>%
+  filter(geo %in% c("Vancouver, British Columbia"), 
+         new_housing_price_indexes %in% c("House only", "Land only")) %>%
+  arrange(desc(ref_date))
+thedata_YVR
+```
+
+the plot
+
+```{r}
+
+NHPI_title <- as.character("New Housing Price Index, Vancouver: house and land")
+NHPI_subtitle <- as.character("December 2016 = 100")
+NHPI_caption <- as.character("Source: Statistics Canada, CANSIM table 18-10-0205-01")
+
+# with formatting applied
+NHPI_Vancouver_plot <- 
+  ggplot(thedata_YVR, aes(x=ref_date, y=value,
+                           colour=new_housing_price_indexes)) + 
+  geom_line(size=1.5) +
+  #
+  scale_x_date(date_breaks = "2 years", labels = year) +
+  scale_y_continuous(labels = comma, limits = c(80, 120)) +
+  scale_colour_manual(name=NULL,
+                      breaks=c("House only", "Land only"),
+                      labels=c("House only", "Land only"), 
+                      values=c("#325A80", "#CCB550")) +
+  bcstats_chart_theme +
+  # set chart titles and labels
+  labs(title = NHPI_title,
+       subtitle = NHPI_subtitle,
+       caption = NHPI_caption, 
+       x = NULL, y = "NHPI (Dec. 2016 = 100)") 
+
+NHPI_Vancouver_plot
+
+```
+
+

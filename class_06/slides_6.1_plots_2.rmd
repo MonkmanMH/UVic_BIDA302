@@ -1,0 +1,93 @@
+---
+title: "Refine your plots"
+subtitle: "BIDA 302"
+author: "Martin Monkman"
+date: "2019/12/07"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+![ggplot2 hex](../img/ggplot2_400.png)
+
+[{ggplot2}](https://ggplot2.tidyverse.org/) -- tidyverse reference pages
+
+
+
+---
+
+![cover of "Data Visualization"](../img/Healy_data_visualziation_500.jpg)
+
+[socviz.co](http://socviz.co/) -- draft version of manuscript
+
+---
+
+# What type of plot?
+
+--
+
+Or, do you need a plot at all?!
+
+--
+
+* one number
+
+* table
+
+---
+
+# What story are you telling?
+
+* what's the point of your graph?
+
+
+---
+
+![New Housing Price Index, B.C. and Canada](NHPI_plot.png)
+
+???
+
+Shows the change in new house prices in B.C. and Canada monthly, since 2007
+
+* "The price of new housing in B.C. rose more rapidly in B.C. than in Canada between 2015 and 2018, but has fallen slightly during 2019"
+
+
+---
+
+.pull-left[
+![New Housing Price Index, B.C. and Canada - draft](NHPI_plot_draft.png)
+]
+
+.pull-right[
+![New Housing Price Index, B.C. and Canada](NHPI_plot.png)
+]
+
+
+
+
+
+---
+
+## Some {ggplot2} resources
+
+
+
+---
+
+## Other data visualization resources
+
+Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_
+
+* [companion website](http://www.storytellingwithdata.com/)
