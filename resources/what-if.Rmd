@@ -1,0 +1,19 @@
+---
+title: "what-if in R"
+output: html_notebook
+---
+
+
+
+https://cran.r-project.org/web/packages/WhatIf/WhatIf.pdf
+
+
+
+http://zomalex.co.uk/slides-and-sample-code-from-what-if-in-excel-r-presentation/
+
+
+What-if == regression
+https://www.linkedin.com/pulse/power-bi-r-olympics-part-6-what-scenarios-predictive-anthony-bulk
+
+http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf
+

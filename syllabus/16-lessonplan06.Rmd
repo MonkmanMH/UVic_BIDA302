@@ -1,13 +1,13 @@
 ---
 title: "BIDA302: Lesson Plan, Week 6"
-subtitle: "2019-12-06"
+subtitle: "2019-12-07"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
 output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 6 (2019-12-06)
+# Week 6 (2019-12-07)
 
 _subject to change_
 
@@ -26,6 +26,8 @@ At the end of this lesson, learners will be able to:
 
 5. Write a script in Python to summarize a familiar data table.
 
+6. What-if scenario analysis (WISA)
+
 
 
 ***
@@ -36,24 +38,22 @@ _(subject to change)_
 
 | Block      | Time           | Topics  | &#8212; |
 |---         |:---            |:---     |:---:  |
-|1a          | 9:00 to 9:30   | Review Homework Assignment #4 | &#8212; |
-|1b          | 9:30 to 10:30  | Working with dates | &#8212; |
+|1          | 9:00 to 10:30   | Modeling | &#8212; |
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2           | 10:45 to 12:00 | Capstone Project  | &#8212; |
+|2           | 10:45 to 12:00 | Iterations  | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
-|3           | 1:00 to 2:15   | Working with strings | &#8212; |
+|3           | 1:00 to 2:15   | What-if scenarios & forecasting  | &#8212; |
 |&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
-|4           | 2:30 to 4:00   | Capstone Project | &#8212; |
+|4           | 2:30 to 4:00   | Data analysis with Python | &#8212; |
 
 
 
-### 1a. Review Homework Exercise #3
+### 1. Plots, charts and other data visualizations
 
 Format: participation and instructor lecture w/ slides
 
 Time allocation: 15 minutes (9:30 to 9:45)
 
-### 1b. Working with strings 
 
 Format: hands-on exercise
 
@@ -62,11 +62,16 @@ Time allocation: 45 minutes (9:45 to 10:30)
 
 _Reading:_
 
-* _R4DS_, ["Strings"](https://r4ds.had.co.nz/strings.html)
+* _R4DS_, ["Data visualisation"](https://r4ds.had.co.nz/data-visualisation.html)
 
-* [Work with Strings Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf) (PDF file)
+* _R4DS_, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 
-* [regex101.com](https://regex101.com/) -- "regular expression debugger with real time explanation, error detection and highlighting"
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](http://socviz.co/) (draft version of the manuscript)
+
+  - If I were teaching a 6-week course on data visualization, this book would be a required text. If you are making charts as part of your work or studies, I _strongly_ encourage you to read through Chapters 1-7! The book is very well laid-out, and includes great advice on good data visualization practice (see [Chapter 1, "Look at data"](http://socviz.co/lookatdata.html#lookatdata))  
+  
+  - For this class, we will focus on [8. "Refine your plots"](http://socviz.co/refineplots.html#refineplots)
+  
 
 
 
@@ -109,7 +114,7 @@ Time allocation: 60 minutes (12:00 to 1:00)
 ***
 
 
-### 3. Work with dates
+### 3. What-If Scenario Analysis (WISA)
 
 Format: participation and instructor lecture w/ slides
 
@@ -121,9 +126,9 @@ Time allocation: 60 minutes (1:15 to 2:15)
 
 _Reading:_
 
-* _R4DS_, ["Dates and times"](https://r4ds.had.co.nz/dates-and-times.html)
+* Stefano Rizzi, ["What-If Analysis"](http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf), 
 
-* [Dates and Times Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf) (PDF file)
+* [Introduction to What-If Analysis](https://support.office.com/en-us/article/introduction-to-what-if-analysis-22bffa5f-e891-4acc-bf7a-e4645c446fb4) -- for Microsoft Excel
 
 
 ***
