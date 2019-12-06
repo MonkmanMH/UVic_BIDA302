@@ -1,0 +1,79 @@
+---
+title: "BIDA 302"
+subtitle: "course wrap-up"
+author: "Martin Monkman"
+date: "2019/12/07"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+
+# BIDA 302: Data Analytics Coding Fundamentals
+
+The data science process
+
+![the data science process](../img/data-science.png)
+
+- Wickham and Grolemund, _R4DS_
+
+
+
+---
+
+![R](../img/R.jpg)
+
+---
+class: inverse
+
+![RStudio](../img/RStudio_400.png)
+
+---
+class: inverse
+
+![the tidyverse](../img/tidyverse_400.png)
+
+
+---
+class: inverse
+
+
+# Then...
+
+![pushing a VW Beetle](../img/main-bugpush-1810151019.jpg)
+
+
+---
+class: inverse
+
+
+# ...now
+
+![VW Beetle on the road](../img/VW_ontheroad.jpg)
+
+
+
+---
+
+class: inverse
+
+## Thanks for being part of BIDA 302!
+
+
+--
+
+![achievement unlocked](../img/achievement_unlocked.jpg)
+
