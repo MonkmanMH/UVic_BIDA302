@@ -1,0 +1,77 @@
+---
+title: "Model"
+author: "Martin Monkman"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+```{r}
+
+library(tidyverse)
+#
+library(modelr)
+
+```
+
+
+
+
+## Relationship between variables
+
+When we talk about a "model" in the context of data analysis, we usually mean that we are summarizing the relationship between two or more variables. The question we are asking is "What's the pattern in the data?"
+
+In this example, we will be using linear regression to predict one value based on one or more values. 
+
+As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
+
+This pair of images shows how a simple linear model works: first we have the X-Y scatter plot.
+
+![scatter plot](https://d33wubrfki0l68.cloudfront.net/5820de63ae712a13e130b3452e0b74942912ec28/9f8c9/model-basics_files/figure-html/unnamed-chunk-2-1.png)
+
+
+Then we can add the line of best fit that shows the trend:
+
+![scatter plot](https://d33wubrfki0l68.cloudfront.net/79386bd0dd3322e1e6efa887e1d10a5f5c0a8aef/40dce/model-basics_files/figure-html/unnamed-chunk-4-1.png)
+
+The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase that value.
+
+Being a statistics-based program), linear regression is a function in base R ... it's `lm()`, for "linear model". 
+
+The syntax of the `lm()` function is a bit different than what we're used to.
+
+`lm(y ~ x, data)`
+
+(`sim1` is a data table in the package {modelr})
+
+```{r}
+
+lm(y ~ x, data = sim1)
+
+```
+
+The regression equation is the same as an equation for defining a line in geometry:
+
+$y = b_{0} + b_{1}x_{1} + e$
+
+How to read this:
+
+* the value of `y` (i.e. the point on the `y` axis) can be predicted by
+
+* the intercept value `b_{0}`, plus
+
+* the coefficient `b_{1}` times the value of `x`
+
+The distance between that predicted point and the actual point is the error term.
+
+
+The equation calculated by the `lm()` function above means that 
+
+
+$y = b_{0} + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{n}x_{n} + e$
+
+
+
+
+

@@ -1,0 +1,32 @@
+---
+title: "modeling-forecast"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(readxl)
+
+options(scipen = 999)
+```
+
+
+
+```{r}
+df_widgets <- read_excel("forecasting_widgets.xlsx")
+df_widgets
+```
+
+
+```{r}
+ggplot(df_widgets, aes(x = total_cost, y = units)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+
+
+
+```{r}
+lm(units ~ fixed_costs + labour + materials, data = df_widgets)
+```
+
