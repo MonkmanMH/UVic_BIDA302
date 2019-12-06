@@ -205,7 +205,21 @@ So to see the impact of a $1,000 increase in facebook advertising, we'd evaluate
 
 We would expect to see an increase of sales of 191.57 units, for each additional expenditure of $1000 of facebook adverstising.
 
+---
 
+## Working with model data
+
+As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract--we have just been reading the numbers on the screen and typing them in.
+
+To "tidy" the data, you can use the package {broom}.
+
+![broom hex](../img/broom_400.png)
+
+* [_R for Data Science_, "25 Many models"](https://r4ds.had.co.nz/many-models.html)
+
+* [Introduction to broom: let's tidy up a bit](https://broom.tidyverse.org/articles/broom.html)
+
+* [{broom} reference site](https://broom.tidyverse.org/)
 
 
 -30-

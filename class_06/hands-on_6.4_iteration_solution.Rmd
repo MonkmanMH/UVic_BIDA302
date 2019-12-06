@@ -1,0 +1,28 @@
+---
+title: "Iteration"
+author: "Martin Monkman"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+```{r}
+
+library(tidyverse)
+#
+library(purrr)
+```
+
+
+
+
+## Iteration
+
+
+
+
+## Resources
+
+JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
+
