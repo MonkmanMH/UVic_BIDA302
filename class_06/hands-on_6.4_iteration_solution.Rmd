@@ -12,17 +12,100 @@ output:
 library(tidyverse)
 #
 library(purrr)
+#library(tidyr)
+#
+library(gapminder)
+
 ```
 
 
-
-
 ## Iteration
+
+Like functions, iteration is a way to reduce repetion in your code, and repetition in copy-and-paste tasks.
+
+Iteration:  
+
+> helps you when you need to do the same thing to multiple inputs: repeating the same operation on different columns, or on different datasets. ([_R4DS_, "21 Iteration"](https://r4ds.had.co.nz/iteration.html))
+
+
+A simple example, with 4 columns of 50 records each, with a normal distribution centred on 100. (This is a variation on what's in _R4DS_.)
+
+
+```{r}
+set.seed(8675309)
+
+df <- tibble(
+  a = rnorm(50, mean = 100, sd = 10),
+  b = rnorm(50, mean = 100, sd = 10),
+  c = rnorm(50, mean = 100, sd = 10),
+  d = rnorm(50, mean = 100, sd = 10)
+)
+  
+df
+
+```
+
+Calculate the median of each:
+
+```{r}
+median(df$a)
+median(df$b)
+median(df$c)
+median(df$d)
+```
+
+Or, write a for loop:
+
+```{r}
+# define the output object before you start the loop --
+#   this makes your loop more efficient
+output <- vector("double", ncol(df))  # 1. output
+
+# the loop
+for (i in seq_along(df)) {            # 2. sequence
+  output[[i]] <- median(df[[i]])      # 3. body
+}
+
+# print the output object
+output
+
+```
+
+
+## Square brackets!
+
+These are _accessors_ -- a method of accessing data by defining the location of that data in the object.
+
+Square brackets inside square brackets is old-school way of referencing a particular location in a list.
+
+```{r}
+
+# one square bracket: the first list in the object
+#  - think of this a subset of the object
+df[1]
+
+# two square brackets: the contents of the first object
+df[[1]]
+
+# two values inside two square brackets: this is a single value, [[row, column]]
+df[[50, 1]]
+
+
+
+```
+
+(For a good explanation, see 
+
+* ["[, [[, $: R accessors explained"](https://www.r-bloggers.com/r-accessors-explained/)) by Christopher Brown
+
+* [_R Cookbook_, 2nd ed., "2.9 Selecting Vector Elements"](https://rc2e.com/somebasics#recipe-id039) by JD Long and Paul Teetor
 
 
 
 
 ## Resources
+
+[_R4DS_, "21 Iteration"](https://r4ds.had.co.nz/iteration.html)
 
 JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
 

@@ -197,7 +197,7 @@ For a given predictor (youtube or facebook), the coefficient is the effect on Y 
 
 So to see the impact of a $1,000 increase in facebook advertising, we'd evaluate the equation as
 
-`3.52 + (0.046 * 1) + (0.188 * 1000)` = `191.57`
+`3.52 + (0.046 * 1) + (0.188 * 1000) = 191.57`
 
 We would expect to see an increase of sales of 191.57 units, for each additional expenditure of $1000 of facebook adverstising.
 
@@ -219,5 +219,4 @@ To "tidy" the data, you can use the package {broom}.
 
 
 -30-
-=======
->>>>>>> 1eebe532f08e60d4f13ed4b9cf8789bb24a1f96e
+
