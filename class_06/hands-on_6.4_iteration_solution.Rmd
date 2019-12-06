@@ -72,7 +72,9 @@ output
 ```
 
 
-## Square brackets!
+---
+
+## Detour: square brackets!
 
 These are _accessors_ -- a method of accessing data by defining the location of that data in the object.
 
@@ -94,11 +96,100 @@ df[[50, 1]]
 
 ```
 
-(For a good explanation, see 
+For a good explanation of R's accessors and the application in selecting vector and matrix elements, see 
 
-* ["[, [[, $: R accessors explained"](https://www.r-bloggers.com/r-accessors-explained/)) by Christopher Brown
+* ["\[, \[\[, $: R accessors explained"](https://www.r-bloggers.com/r-accessors-explained/)) by Christopher Brown
 
 * [_R Cookbook_, 2nd ed., "2.9 Selecting Vector Elements"](https://rc2e.com/somebasics#recipe-id039) by JD Long and Paul Teetor
+
+
+---
+
+## Data frame iteration
+
+Let's calculate the mean of every column in the `mtcars` data frame:
+
+```{r}
+
+mtcars
+
+```
+
+
+
+Advice from _R4DS_:
+> Think about the output, sequence, and body **before** you start writing the loop.
+
+
+* Note that we can use the `names()` function to pull the variable names (column names) from the data table.
+
+```{r}
+# create the output vector
+output <- vector("double", ncol(mtcars))
+
+# the names() function 
+names(output)
+# assign the names to the `output` vector
+names(output) <- names(mtcars)
+
+# the loop
+for (i in names(mtcars)) {
+  output[i] <- mean(mtcars[[i]])
+}
+
+# print the output
+output
+
+```
+
+
+## A very practical case
+
+(This is modified from ["21.3.5 Exercises"](https://r4ds.had.co.nz/iteration.html#exercises-56) in _R for Data Science_, which uses CSV files.)
+
+
+Imagine you have a directory full of Excel files that you want to read in. You have their paths in a vector, files <- dir("data/", pattern = "\\.xls*$", full.names = TRUE), and now want to read each one with `read_excel()`. Write the for loop that will load them into a single data frame.
+
+
+First, let's get the names of those files that are in the sub-folder "data":
+
+```{r}
+
+files <- dir("data/", pattern = "\\.xls*", full.names = TRUE)
+files
+
+```
+
+We now know find out how many files there are, and can use that to assign our object:
+
+```{r}
+
+df_list <- vector("list", length(files))
+
+```
+
+```{r}
+for (i in seq_along(files)) {
+  df_list[[i]] <- readxl::read_excel(files[[i]])
+}
+```
+
+This creates an interesting R object--it's a list of data frames! Let's take a look:
+
+```{r}
+df_list
+```
+
+The last step is to use the function `bind_rows()` to combine the list of data frames into a single data frame.
+
+```{r}
+
+df <- bind_rows(df_list)
+
+df 
+
+```
+
 
 
 
