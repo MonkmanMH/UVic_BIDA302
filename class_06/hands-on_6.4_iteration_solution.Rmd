@@ -191,6 +191,27 @@ df
 ```
 
 
+### an alternative
+
+In this approach, we create the output object to be a list with the file names:
+
+```{r}
+# this is the same
+df2_list <- vector("list", length(files))
+# assign the file names
+names(df2_list) <- files
+
+# the loop
+for (fname in files) {
+  df2_list[[fname]] <- readxl::read_excel(fname)
+}
+
+
+df2 <- bind_rows(df2_list)
+df2
+```
+
+
 
 
 
