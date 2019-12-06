@@ -12,7 +12,7 @@ output:
 library(tidyverse)
 #
 library(modelr)
-
+library(datarium)
 ```
 
 
@@ -26,14 +26,30 @@ In this example, we will be using linear regression to predict one value based o
 
 As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
 
+
+## 1. A simple example
+
 This pair of images shows how a simple linear model works: first we have the X-Y scatter plot.
 
-![scatter plot](https://d33wubrfki0l68.cloudfront.net/5820de63ae712a13e130b3452e0b74942912ec28/9f8c9/model-basics_files/figure-html/unnamed-chunk-2-1.png)
+
+```{r}
+
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point()
+
+```
+
 
 
 Then we can add the line of best fit that shows the trend:
 
-![scatter plot](https://d33wubrfki0l68.cloudfront.net/79386bd0dd3322e1e6efa887e1d10a5f5c0a8aef/40dce/model-basics_files/figure-html/unnamed-chunk-4-1.png)
+```{r plot_sim1}
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+```
+
 
 The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase that value.
 
@@ -45,9 +61,13 @@ The syntax of the `lm()` function is a bit different than what we're used to.
 
 (`sim1` is a data table in the package {modelr})
 
-```{r}
+This code creates a regression model object, `mod_sim1`
 
-lm(y ~ x, data = sim1)
+```{r mod_sim1}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+mod_sim1
 
 ```
 
@@ -66,12 +86,93 @@ How to read this:
 The distance between that predicted point and the actual point is the error term.
 
 
-The equation calculated by the `lm()` function above means that 
+The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, a point on the line) is equal to 4.221 + 2.052 * the value of `x`.
 
+If `x` = 2.5, then `y` = 4.221 + (2.052 * 2.5), which is 9.351. Look back at the line of best fit--if `x` = 2.5, the `y` point on the line is just below 10. 
+
+We can also see how well the data predicts the line, by examining the summary statistics of the model:
+
+```{r summary_sim1_mod}
+
+summary(sim1_mod)
+
+```
+
+This isn't a statistics class, so we won't go into the details ... 
+
+Can you find the coefficients for the equation?
+
+The Multiple R-squared statistics tells us how well the line fits the points ... this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line)--if the relationship is negative (as one goes up the other goes down), it will be in the range from -1 to 0. In this case, it's 0.8846, which is a very good fit.
+
+
+**The equation predicts a value of Y, based on what we know about X.**
+
+This has enormous practical applications.
+
+
+## 2. A deeper dive
+
+In the following example, we will use some data from another package, {datarium}. In this example, there are three types of adverstising: youtube, facebook, and newspaper. What we are interested in predicting is sales--how much do they go up for each dollar spent on each of the three media?
+
+Here's what the first 6 rows of the 200 rows in the `marketing` table look like:
+
+* note that `sales` is 1000 units
+
+```{r}
+df_marketing <- datarium::marketing 
+
+head(df_marketing)
+```
+
+
+### Your turn 2.1
+
+Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp:
+
+```{r}
+# solution
+ggplot(df_marketing, aes(x = youtube, y = sales)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+
+```
+
+
+### Your turn 2.2
+
+Then, run the regression model to create a new model object, and use `summary()` to get the model statistics:
+
+```{r}
+# solution
+mod_youtube <- lm(sales ~ youtube, df_marketing)
+
+summary(mod_youtube)
+```
+
+Y = 8439 + (47.54 * X)
+
+The way to read this is that we will get 8,439 (8.439 * 1000) units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
+
+
+## 3. Multiple predictors
+
+Regression equations also allow us to use multiple variables to predict our outcome. In this sales example, there's not just youtube, but facebook and newspaper advertising happening at the same time.
+
+A full regression equation looks like this:
 
 $y = b_{0} + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{n}x_{n} + e$
 
 
+In R syntax, it is quite simple:
+
+
+```{r}
+# solution
+mod_all <- lm(sales ~ youtube + facebook + newspaper, df_marketing)
+
+summary(mod_all)
+```
 
 
 
