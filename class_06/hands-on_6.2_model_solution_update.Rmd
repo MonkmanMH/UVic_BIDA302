@@ -1,5 +1,5 @@
 ---
-title: "Iteration"
+title: "Model"
 author: "Martin Monkman"
 output:
   html_document:
@@ -8,35 +8,33 @@ output:
     toc_float: true
 ---
 ```{r}
-
 library(tidyverse)
 #
-library(purrr)
+library(modelr)
+library(datarium)
 ```
 
 
 
 
-## Iteration
+## Relationship between variables
+
+When we talk about a "model" in the context of data analysis, we usually mean that we are summarizing the relationship between two or more variables. The question we are asking is "What's the pattern in the data?"
+
+In this example, we will be using linear regression to predict one value based on one or more values. 
+
+As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
 
 
+## 1. A simple example
 
-
-## Resources
-
-JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
-
-<<<<<<< HEAD
 This pair of images shows how a simple linear model works: first we have the X-Y scatter plot.
 
 
 ```{r}
-
 ggplot(sim1, aes(x = x, y = y)) +
   geom_point()
-
 ```
-
 
 
 Then we can add the line of best fit that shows the trend:
