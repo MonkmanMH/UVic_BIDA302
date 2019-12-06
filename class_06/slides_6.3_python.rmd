@@ -125,11 +125,13 @@ Python is a general-purpose programming language.
 
 ## Python data analysis modules
 
-* [numpy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
+* [NumPy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
 
 * [pandas](https://pandas.pydata.org/) -- "providing...data structures and data analysis tools"
 
-* [matplotlib](https://matplotlib.org/) -- data visualization
+* [SciPy](https://www.scipy.org/)
+
+* [Matplotlib](https://matplotlib.org/) -- data visualization
 
 
 
@@ -147,6 +149,10 @@ Python is a general-purpose programming language.
 ["Pandas basics"](https://www.learnpython.org/en/Pandas_Basics)
 
 [Beginner's Tutorial on the Pandas Python Library](https://stackabuse.com/beginners-tutorial-on-the-pandas-python-library/)
+
+[pandas: Python data analysis library](https://teachdatascience.com/pandas/)
+
+[reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
 
 ---
 

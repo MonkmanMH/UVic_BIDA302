@@ -80,8 +80,14 @@ Shows the change in new house prices in B.C. and Canada monthly, since 2007
 
 ---
 
-## Some {ggplot2} resources
+## Some more {ggplot2} resources
 
+[_The R Cookbook_, 2nd edition, "10 Graphics"](https://rc2e.com/graphics)
+
+
+Kieran Healy, [_Data Visualization: A Practical Introduction_](https://kieranhealy.org/publications/dataviz/)
+
+* [socviz.co](http://socviz.co/) -- draft version of manuscript
 
 
 ---
