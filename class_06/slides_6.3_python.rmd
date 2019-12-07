@@ -39,13 +39,10 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 ---
 
-# An analogy...
+Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
 
-Base R is like the engine and frame of a car
 
-* some basic controls like the pedals and steering wheel
-
-![VW Beetle frame](../img/VW_ad_1_crop.png)
+![VW Beetle frame](../img/VW_ad_1_crop.jpg)
 
 ---
 
