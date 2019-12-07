@@ -59,9 +59,6 @@ Calculate the median of the other three variables:
 ```{r}
 # solution
 
-median(df$b)
-median(df$c)
-median(df$d)
 
 ```
 
@@ -157,7 +154,7 @@ output
 ```
 
 
-## A very practical case
+## 3. A very practical case
 
 (This is modified from ["21.3.5 Exercises"](https://r4ds.had.co.nz/iteration.html#exercises-56) in _R for Data Science_, which uses CSV files.)
 
@@ -191,6 +188,9 @@ for (i in seq_along(files)) {
   df_list[[i]] <- readxl::read_excel(files[[i]])
 }
 ```
+
+
+
 
 This creates an interesting R object--it's a list of data frames! Let's take a look:
 

@@ -127,9 +127,6 @@ Let's start with just the youtube and see how well it predicts sales. First, we 
 
 ```{r}
 # solution
-ggplot(df_marketing, aes(x = youtube, y = sales)) +
-  geom_point() +
-  geom_smooth(method = lm)
 
 
 ```
@@ -141,9 +138,7 @@ Then, run the regression model to create a new model object, and use `summary()`
 
 ```{r}
 # solution
-mod_youtube <- lm(sales ~ youtube, df_marketing)
 
-summary(mod_youtube)
 ```
 
 Y = 8.44 + (0.048 * X)
@@ -207,9 +202,7 @@ This means that we can re-run the model, but without newspaper as a predictive v
 
 ```{r}
 # solution
-mod_all <- lm(sales ~ youtube + facebook, df_marketing)
 
-summary(mod_all)
 ```
 
 
@@ -235,11 +228,6 @@ Rather than calculating this long-hand, we can write a short function to calcula
 
 # solution
 
-ad_impact2 <- function(youtube, facebook) {
-  3.52 + (0.046 * youtube) + (0.188 * facebook)
-}
-
-
 ```
 
 
@@ -247,8 +235,6 @@ Let's test: calculate the impact of a $1000 spend on facebook
 
 ```{r}
 # solution
-
-ad_impact2(1, 1000)
 
 ```
 
@@ -260,8 +246,6 @@ What if we split our spending? What's the impact of a \$500 spend on youtube and
 
 ```{r}
 # solution
-
-ad_impact2(500, 500)
 
 ```
 
