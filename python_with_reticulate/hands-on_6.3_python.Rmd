@@ -8,6 +8,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+![reticulate hex](../img/reticulate-735.jpg)
+
 
 
 ```{r libraries}
@@ -28,16 +30,28 @@ It's possible to run Python code chunks inside your R Markdown document:
 
 ```{python}
 # import the `pandas` module so that it's available for use
-import pandas
+import pandas as pd
 # read the csv file "flights.csv" and assign it to the object "flights"
-flights = pandas.read_csv("flights.csv")
+flights = pd.read_csv("flights.csv")
 print(flights.head())
-flights = flights[flights['dest'] == "ORD"]
-print(flights.head())
-flights = flights[['carrier', 'dep_delay', 'arr_delay']]
-print(flights.head())
-flights = flights.dropna()
-print(flights.head())
+
+```
+
+It's a big table ... over 300,000 rows!
+
+
+So let's filter it down to a bite size chunk, and create a new Python data frame, `flights_ORD`:
+
+```{python}
+
+# filter so that flights contains just those that are going to ORD
+flights_ORD = flights[flights['dest'] == "ORD"]
+# select the carrier, departure delay, and arrival delay columns
+flights_ORD = flights_ORD[['carrier', 'dep_delay', 'arr_delay']]
+# drop the NAs
+flights_ORD = flights_ORD.dropna()
+# print the remainer
+print(flights_ORD)
 
 ```
 
@@ -54,11 +68,130 @@ Assign the python data frame "flights" to an R object
 
 ```{r}
 
-flights <- py$flights
-flights
+flights_ORD <- py$flights_ORD
+flights_ORD
 ```
 
 
+Notice how Python (well, pandas) assigns row numbers.
+
+
+
+
+
+## Calculating summary statistics
+
+Mean of departure delay, median of arrival delay.
+
+
+
+```{python}
+
+flights_ORD['dep_delay'].mean()
+
+
+flights_ORD['arr_delay'].median()
+
+```
+
+
+Another way to go about it would be to select the column as a new object, then calculate.
+
+```{python}
+
+departure_delay = flights_ORD['dep_delay']
+
+departure_delay.mean()
+
+```
+
+
+pandas also has a `describe` function that produces many summary stats:
+
+```{python}
+
+flights_ORD.describe()
+
+```
+
+
+## Grouping
+
+```{python}
+
+flights_ORD.groupby("carrier").mean()
+
+```
+
+
+
+
+## Pivoting
+
+In pandas, the functions to pivot are:
+
+* longer is `melt`
+
+* wider is `pivot`
+
+
+
+```{python}
+
+df_melted = pd.melt(flights_ORD, id_vars=["carrier"], value_vars=["dep_delay", "arr_delay"], value_name="delay.time")
+
+print(df_melted)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{python}
+
+df_melted
+
+df_pivot = df_melted.pivot(index ='carrier', columns ='variable', values ='delay.time')
+
+print(df_pivot)
+
+
+```
+
+
+
+
+
+### Using a Python data frame in an R {ggplot2} 
 
 ```{r}
 
@@ -68,4 +201,27 @@ ggplot(py$flights, aes(carrier, arr_delay)) +
   geom_point()
 
 ```
+
+
+
+![reticulated Python](../img/reticulated_python.png)
+
+---
+
+# resources
+
+## {reticulate} package
+
+[{reticulate}: R Interface to Python](https://rstudio.github.io/reticulate/)
+
+* [Calling Python from R](https://rstudio.github.io/reticulate/articles/calling_python.html)
+
+Teach Data Science
+
+* [reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
+
+RStudio Community
+
+* https://community.rstudio.com/t/use-python-3-in-rstudio-cloud/23918
+
 
