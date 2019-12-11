@@ -44,9 +44,15 @@ Roger Peng, 2019-12-22, [_R Programming for Data Science_](https://bookdown.org/
 
 ### Articles
 
+#### Why R?
+
+Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
+
+#### Tidy data
+
 Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
 
-[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
+* [Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
 
 Hilary Parker, 2017-08-31, [Opinionated Analysis Development](https://peerj.com/preprints/3210/)
 

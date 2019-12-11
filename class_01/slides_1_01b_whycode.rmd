@@ -71,6 +71,11 @@ Meetup groups
 
 RLadies
 
+???
+
+Reading:
+
+Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
 
 ---
 
