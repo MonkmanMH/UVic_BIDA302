@@ -11,4 +11,7 @@
 
 
 
+## more data science with Python
+
+[Python Statistics Fundamentals: How to Describe Your Data](https://realpython.com/python-statistics/)
 
