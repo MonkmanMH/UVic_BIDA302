@@ -34,6 +34,7 @@ Other resources&#8212;some required, some vital reference resources, and some op
 
 ### Other text books
 
+James (JD) Long & Paul Teetor, 2019, [_R Cookbook, 2nd Edition_](https://rc2e.com/)
 
 Garrett Grolemund, [_Hands-On Programming with R_](https://rstudio-education.github.io/hopr/)
 
