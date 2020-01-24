@@ -1,6 +1,16 @@
-# pandas
+# Data Science with Python
 
-## Resouces
+Some resources to get started
+
+
+## NumPy
+
+[NumPy: the absolute basics for beginners](https://numpy.org/devdocs/user/absolute_beginners.html)
+
+
+## pandas
+
+### Resouces
 
 [10 minutes to pandas¶](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) -- "a short introduction to pandas, geared mainly for new users."
 
@@ -8,6 +18,7 @@
 
 
 [Pandas Python Tutorial: A Complete Introduction for Beginners](https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/)
+
 
 
 
