@@ -1,4 +1,6 @@
-# BIDA3029
+BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
+==========================================================
+
 
 ## UVic Data Analytics Coding Fundamentals (BIDA302) course materials
 
