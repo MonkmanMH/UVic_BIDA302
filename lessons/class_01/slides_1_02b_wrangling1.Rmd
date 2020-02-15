@@ -1,7 +1,7 @@
 ---
-title: "R functions"
-subtitle: "always handy"
-author: "compiled by Martin Monkman"
+title: "Data wrangling"
+subtitle: "Part 1: {dplyr}"
+author: "BIDA302"
 date: "2019/11/02"
 output:
   xaringan::moon_reader:
@@ -17,21 +17,24 @@ output:
 
 
 ```{r setup, include=FALSE}
+
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
+
 ```
 
+class: inverse
 
-## functions for objects
+# Data wrangling
 
-|function |action |
-| :--- | ---: |
-| `ls()`    | *list objects*|
-| `str()`    | *display structure of object*|
-| `ls.str()`    | *list objects and their structure*|
-| `names()`    | *display structure of object*|
+Cleaning
 
+Reshaping
+
+Filtering
+
+Adding variables
 
 ---
 
@@ -124,7 +127,7 @@ Boolean operators can be combined with *and* or *or*.
 
 Some basic statistical functions  
 
-| Function | Description |
+| Operator | Description |
 | : ----- | ---: |
 | `min()` <br> `max()` | *minimum and maximum values* |
 | `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
@@ -137,42 +140,86 @@ Some basic statistical functions
 
 ---
 
-## Missing values
+# `summarize`
 
-Dealing with those pesky `NA` values  
+_or_ `summarise`!
 
-| function | action |
-| : -----  | ---: |
-| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
-| `anyNA(x)` | returns a single TRUE or FALSE |
-| `na.rm = TRUE` | remove `NA` values when running function|
+```{r}
+mpg %>%
+  summarise(minYear = min(year), maxYear = max(year))
+
+```
 
 
 ---
 
-# Ten Tidyverse Tricks
+# a summary table
 
-## Counting/summarizing
-1. count() 
-2. count() with its three extra arguments
-3. add_count()
-4. summarize() with list columns
+`group_by()` to define the summary grouping
 
-## {ggplot2} + {forcats}
-5. fct_reorder() + geom_col() + coord_flip()
-6. fct_lump()
-7. scale_x/y_log10()
+`arrange()` to have things in ascending order
 
-## other
-8. crossing()
-9. separate()
-10. extract()
-
-???
-
-from David Robinson, via Jon Harmon https://twitter.com/JonTheGeek/status/1193203347911782402?s=20
+modify with `desc()` for descending order
 
 
+```{r eval=FALSE}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
+```
 
+---
+
+
+```{r}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
+```
+
+---
+
+## create new variables
+
+`mutate()`
+
+You can calculate new variables that may be useful in your analysis
+
+### _vectors of the same length_
+
+```{r}
+
+mpg <- mpg %>%
+  mutate(mpg_per_cubic_litre = hwy / displ)
+
+```
+
+---
+
+### _vector of the length = 1_
+
+* convert miles per US gallon to litres per 100 kilometers
+
+```{r}
+# calculate conversion constant
+lp100km <- (100 * 3.785) / (1.61)
+lp100km
+# divide constant by hwy mpg to get hwy litres per 100 km
+mpg %>%
+  mutate(hwy_lp100km = lp100km / hwy)
+
+```
+
+---
+
+the `summary()` function gives you a range of measures of central tendency
+ 
+```{r}
+
+summary(mpg$hwy)
+
+```
 
 

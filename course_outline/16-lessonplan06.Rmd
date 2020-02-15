@@ -1,0 +1,165 @@
+---
+title: "BIDA302: Lesson Plan, Week 6"
+subtitle: "2019-12-07"
+author: "Martin Monkman"
+date: "`r Sys.Date()`"
+output: html_document
+#description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
+---
+
+# Week 6 (2019-12-07)
+
+_subject to change_
+
+
+## Objective
+
+At the end of this lesson, learners will be able to:
+
+1. Understand the range of options for formatting {ggplot2} charts.
+
+2. Demonstrate the necessary R script to build a simple model.
+
+3. Explain why iteration is a cornerstone of programming. 
+
+4. Understand the fundamental differences between the R and Python ecosystems, and
+
+5. Write a script in Python to summarize a familiar data table.
+
+
+
+***
+
+## Activities
+
+_(subject to change)_
+
+| Block      | Time           | Topics  | &#8212; |
+|---         |:---            |:---     |:---:  |
+|1          | 9:00 to 10:30   | Plots, charts and other data visualizations | &#8212; |
+|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
+|2           | 10:45 to 12:00 | Modeling, forecasting & what-if scenario analysis   | &#8212; |
+|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|3           | 1:00 to 2:15   | Iteration  | &#8212; |
+|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
+|4           | 2:30 to 4:00   | Data analysis with Python <br> Course wrap-up | &#8212; |
+
+
+
+### 1. Plots, charts and other data visualizations
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (9:30 to 9:45)
+
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (9:45 to 10:30)
+
+
+_Reading:_
+
+* _R4DS_, ["Data visualisation"](https://r4ds.had.co.nz/data-visualisation.html)
+
+* _R4DS_, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](http://socviz.co/) (draft version of the manuscript)
+
+  - If I were teaching a 6-week course on data visualization, this book would be a required text. If you are making charts as part of your work or studies, I _strongly_ encourage you to read through Chapters 1-7! The book is very well laid-out, and includes great advice on good data visualization practice (see [Chapter 1, "Look at data"](http://socviz.co/lookatdata.html#lookatdata))  
+  
+  - For this class, we will focus on [8. "Refine your plots"](http://socviz.co/refineplots.html#refineplots)
+  
+
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (10:30 to 10:45)
+
+***
+
+
+### 2. Modeling, forecasting & what-if scenario analysis
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (10:45 to 11:00)
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (11:00 to 12:00)
+
+_Reading:_
+
+* _R4DS_, section IV Model:
+
+  - ["Model - Introduction"](https://r4ds.had.co.nz/model-intro.html) 
+  - ["Model Basics"](https://r4ds.had.co.nz/model-basics.html), and 
+  - ["Model building"](https://r4ds.had.co.nz/model-building.html)
+
+* Stefano Rizzi, ["What-If Analysis"](http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf), 
+
+* [Introduction to What-If Analysis](https://support.office.com/en-us/article/introduction-to-what-if-analysis-22bffa5f-e891-4acc-bf7a-e4645c446fb4) -- for Microsoft Excel
+
+
+
+
+***
+
+## LUNCH
+
+Time allocation: 60 minutes (12:00 to 1:00)
+
+***
+
+
+### 3. Iteration
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (1:00 to 1:15)
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (1:15 to 2:15)
+
+_Reading:_
+
+* _R4DS_, ["Iteration"](https://r4ds.had.co.nz/iteration.html) 
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (2:15 to 2:30)
+
+
+***
+
+
+### 4a. Python as data analysis tool
+
+Format: participation and instructor lecture w/ slides
+
+Format: hands-on exercise
+
+
+Time allocation: 60 minutes (2:30 to 3:30)
+
+
+### 4b. Course wrap-up
+
+Format: participation and instructor lecture w/ slides
+
+
+Time allocation: 30 minutes (3:30 to 4:00)
+
+
+
+
+
+-30-

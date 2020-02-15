@@ -1,0 +1,121 @@
+---
+title: "Transform Data 3: pivot"
+output: html_notebook
+---
+
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License -->
+
+
+```{r setup}
+library(tidyverse)
+# data packages
+library(gapminder)
+
+```
+
+
+## Your Turn 3.1
+
+A pivot table crosstab using the {mpg} data package of automobile fuel economy.
+
+First, a look at the source table.
+
+```{r}
+mpg
+```
+
+Using `group_by` and `summarise` to create a summary table of the average engine displacement by vehicle class:
+
+```{r}
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+Now do the same with vehicle class and number of cylinders:
+
+```{r}
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(displ_mean = mean(displ)) 
+
+class_by_cyl
+
+```
+
+
+What happens if you reverse the order of the grouping variables?
+
+
+
+Create a pivot (crosstab) table with class by number of cylinders:
+
+
+```{r}
+
+# pivot table (wide)
+
+class_by_cyl_pivot <- class_by_cyl %>%
+  pivot_wider(names_from = cyl, values_from = displ_mean)
+
+class_by_cyl_pivot
+
+
+```
+
+Now, unpivot it back to the original structure:
+
+```{r}
+# and back to longer...
+
+displ_class_by_cyl <- class_by_cyl_pivot %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+
+displ_class_by_cyl
+
+```
+
+What do you notice about the structure of the unpivoted table?
+
+
+
+## Your Turn 3.2
+
+Making some summary tables with the {gapminder} data.
+
+Create a table where:
+
+* object name `lifeExp_by_continent` that has 
+* the median life expectency for each continent for every year in the dataframe, 
+* where the continent is the column and the year is the row.
+
+(This is a restructuring of the table from 2.4)
+
+```{r}
+
+
+```
+
+## Your Turn 3.3
+
+Create a table that shows:
+
+* GDP per capita for
+* the countries Canada, United States, and Mexico are the columns, and 
+* the years after 1980 are the rows
+
+```{r}
+
+
+
+```
+
+
+
+
+***
+
+# Take aways
+
+* Restructure data tabulations with `pivot_wider()` and `pivot_longer`  

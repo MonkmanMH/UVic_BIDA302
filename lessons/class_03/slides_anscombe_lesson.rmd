@@ -1,0 +1,150 @@
+---
+title: "Plotting your data"
+subtitle: "part of Exploratory Data Analysis"
+author: "Martin Monkman"
+date: "2019/07/04"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+
+# Exploratory Data Analysis
+
+"Exploratory data analysis is detective work." <br>(John W. Tukey)
+
+--
+
+>1. Generate questions about your data
+>
+>2. Search for answers by visualizing, transforming, and modeling your data
+>
+>3. Use what you learn to refine your questions and/or generate new questions
+
+
+- Wickham and Grolemund, _R4DS_
+
+
+??? 
+
+
+
+---
+
+class: inverse
+
+# Anscombe's Quartet
+
+### "A computer should make both calculations and graphs. Both sorts of outputs should be studied; each will contribute to understanding."
+
+- F.J. Anscombe, "Graphs in Statistical Analysis", 1973
+
+
+
+---
+class: slide-banner
+
+# The Quartet
+
+Four data sets with 11 pairs of _x_ and _y_ values
+
+
+All four have identical summary statistics:
+
+| statistic   | value  |
+| --- | ---: |
+| N   | 11  |
+| mean of _x_ | 9.0 |
+| mean of _y_ | 7.5 |
+| multiple R<sup>2</sup> | 0.667 |
+| regression equation | _y_ = 3 + 0.5_x_ |
+
+]
+
+
+---
+class: slide-banner
+
+
+# The Exercise
+
+
+### Read data into RStudio
+
+### Calculate:
+
+- Means of _x_ and _y_ values
+
+- Multiple R<sup>2</sup>
+
+### Visualize each set:
+
+- Scatterplot (a.k.a. _x/y_ plot)
+
+- Scatterplot with trend line and regression equation
+
+
+
+---
+
+# basic ggplot() call
+
+`ggplot(<DATA>, mapping = aes(<MAPPINGS>)) + `
+
+`  <GEOM_FUNCTION>() `
+
+***
+
+* `aes()` are the aesthetics--the visual properties of the objects
+
+  - e.g. size, shape, colour
+
+* `geom_()` specifies the geometry
+
+
+
+---
+
+## a basic plot
+
+```{r message=FALSE}
+anscombe_tidy <- read_csv("anscombe_tidy.csv")
+# example
+ggplot(anscombe_tidy, aes(x = x, y = y)) + 
+  geom_point() 
+
+```
+
+---
+
+## add an additional aesthetic
+
+- `x` and `y` are the locations we want the points
+
+- use `color` to differentiate the sets
+
+`ggplot(anscombe_tidy, mapping = aes(x = x, y = y, colour = set)) + 
+  geom_point() `
+
+
+
+```{r echo=FALSE, message=FALSE}
+anscombe_tidy <- read_csv("anscombe_tidy.csv")
+# example
+ggplot(anscombe_tidy, aes(x = x, y = y, colour = set)) + 
+  geom_point() 
+
+```
+

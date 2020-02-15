@@ -1,0 +1,140 @@
+---
+title: "Working with dates"
+subtitle: "BIDA 302"
+author: "Martin Monkman"
+date: "2019/11/23"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+# The Data Science Process
+
+![the data science process](../img/data-science.png)
+
+Working with dates and times is an important "tidy" skill, but it also comes into play for the "Understand" phase
+
+- Wickham and Grolemund, _R4DS_
+
+
+---
+
+# Dates and times
+
+
+Does every year have 365 days?
+
+Does every day have 24 hours?
+
+Does every minute have 60 seconds?
+
+--
+
+No!
+
+??? 
+
+- Wickham and Grolemund, _R4DS_
+
+---
+
+
+#ISO 8601 and R
+
+
+```{r}
+now()
+```
+
+"2019-11-29 10:45:12 PST"
+
+```{r}
+now(tz = "UTC")
+```
+
+
+UTC
+"2019-11-30 19:45:12 UTC"
+
+
+
+---
+
+class: inverse
+
+
+![R](../img/lubridate_400.png)
+
+**lubridate.tidyverse.org/**
+
+
+---
+
+## Three types: 
+
+Variable types in tibbles:
+
+* date: `<date>`
+
+* time: `<time>`
+
+* date-time: `<dttm>` 
+
+
+---
+
+## POSIXct
+
+Another object type that will appear in your data!
+
+Lubridate will store them as one of the three variable types
+
+---
+
+## {lubridate} parsing functions 
+
+| function | purpose |
+| ---- | ---- |
+| ymd()  | returns yyyy-mm-dd |
+| dmy() | returns yyyy-mm-dd from day-month-year |
+| _etc_ |  |
+| ymd_hms() | returns date and time |
+
+```{r}
+dmy(121110)
+```
+
+---
+
+## {lubridate} getting, setting, rounding
+
+| function | purpose |
+| ---- | ---- |
+| today() |  |
+| now() |  |
+| year(), month(), day() | get components of date|
+| _etc_ |  |
+
+---
+
+
+## {lubridate} etc
+
+* functions and options for periods, intervals, durations, etc.
+
+
+
+
