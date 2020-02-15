@@ -1,0 +1,178 @@
+---
+title: "R functions"
+subtitle: "always handy"
+author: "compiled by Martin Monkman"
+date: "2019/11/02"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+# Martin Monkman
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+
+## functions for objects
+
+|function |action |
+| :--- | ---: |
+| `ls()`    | *list objects*|
+| `str()`    | *display structure of object*|
+| `ls.str()`    | *list objects and their structure*|
+| `names()`    | *display structure of object*|
+
+
+---
+
+
+# {dplyr} -
+
+![dplyr hex](../img/dplyr_400.png)
+
+The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
+
+
+---
+
+
+## {dplyr} functions are verbs
+
+
+|function |action |
+| :--- | ---: |
+| `filter()`    | *keep rows*|
+| `mutate()`    | *create a new variable*|
+| `group_by()`  | *declare subsets in data*|
+| `select()`    | *keep variables (or drop them -var)*|
+| `rename()`    | *renaming variables*|
+| `summarize()` | *summarize the data, by groups if they have been declared*|
+| `tally()`     | *counting (by groups if group_by() applied)*|
+| `distinct()`  | *returns only rows that are unique*| 
+| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
+
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+* with modifications by Martin Monkman
+
+---
+
+## Arithmetic operators
+
+| Operator | Description |
+| : ----- | ---: |
+| + | *plus* |
+| - | *minus* |
+| \* | *multiplication*  |
+| / | *division* |
+| ^ | *exponential* |
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+
+---
+
+## Boolean operators
+
+Boolean operators are a special type of operator that return TRUE or FALSE.  
+
+| Operator | Description |
+| : ----- | ---: |
+| ==    | *equal, tests equality* |
+| !=    | *not equal, tests inequality* |
+| \>    | *greater than, tests greater than* (also >=) |
+| <     | *less than, tests less than* (also <=) |
+| %in%  | *contains, tests inclusion* |
+
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+---
+
+
+Boolean operators can be combined with *and* or *or*.  
+
+| Operator | Description |
+| : ----- | ---: |
+| `&`     | *and, returns true if preceeding and following are both true, else false* |
+| &#124;  | *or, returns true if either preceeding and following are true, else false* |
+
+.footnote[see [R for Data Science, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+
+
+
+---
+
+## Useful functions
+
+Some basic statistical functions  
+
+| Function | Description |
+| : ----- | ---: |
+| `min()` <br> `max()` | *minimum and maximum values* |
+| `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
+| `summary()`  | *a list of measures of central tendency* |
+| `sum()`  | *adds up the values* |
+| `count()`  | *number of cases* |
+
+
+
+
+---
+
+## Missing values
+
+Dealing with those pesky `NA` values  
+
+| function | action |
+| : -----  | ---: |
+| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
+| `anyNA(x)` | returns a single TRUE or FALSE |
+| `na.rm = TRUE` | remove `NA` values when running function|
+
+
+---
+
+# Ten Tidyverse Tricks
+
+## Counting/summarizing
+1. count() 
+2. count() with its three extra arguments
+3. add_count()
+4. summarize() with list columns
+
+## {ggplot2} + {forcats}
+5. fct_reorder() + geom_col() + coord_flip()
+6. fct_lump()
+7. scale_x/y_log10()
+
+## other
+8. crossing()
+9. separate()
+10. extract()
+
+???
+
+from David Robinson, via Jon Harmon https://twitter.com/JonTheGeek/status/1193203347911782402?s=20
+
+
+
+
+
