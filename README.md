@@ -12,6 +12,10 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
 > - Grolemund & Wickham, _R for Data Science_, 2.15 (The map functions)
 
+## Course outline:
+
+[BIDA302, Spring 2020](https://github.com/MonkmanMH/UVic_BIDA302/blob/master/course_outline/00_course-outline.md) -- draft, subject to change
+
 
 ## Versions:
 
