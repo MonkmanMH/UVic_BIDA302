@@ -22,6 +22,10 @@ This walkthrough follows the data science process, as described by Hadley Wickha
 
 This set of scripts creates summary tables and graphs plotting the New Housing Price Index (NHPI) data collected and reported by Statistics Canada.
 
+Our end point will be this chart:
+
+![New Housing Price Index, B.C. and Canada](NHPI_plot.png)
+
 The original source code, created by Martin Monkman with contributions by Julie Hawkins and Stephanie Yurchak, can be found here:  https://github.com/bcgov/CANSIM-dataviewer/blob/master/scr/NHPI_cansim.Rmd
 
 ### Setup
@@ -40,7 +44,8 @@ library(kableExtra) # - format kable tables
 ```
 
 
-functions
+First, we have some code for two custom functions that calculate month-over-month and year-over-year statistics. These will be called later in the scripts. Functions give us a shorthand way to do the same thing multiple times.
+
 
 ```{r functions}
 get_mom_stats <- function(df) {
@@ -63,7 +68,8 @@ get_yoy_stats <- function(df) {
 }
 ```
 
-chart theme
+We then create a chart theme that will also be called later. Like functions, this streamlines our code and helps reduce the chance of error. For this chart theme, more than 10 lines of code gets reduced to a simple, memorable name.
+
 
 ```{r bcstats_chart_theme}
 
@@ -88,6 +94,8 @@ bcstats_chart_theme <-
 ---
 
 ### IMPORT
+
+The first step is to import the data. For this, we will access Statistics Canada's database CANSIM, using an R package [{cansim}](https://github.com/mountainMath/cansim). The file has 18 variables and over 56,000 rows (as of February 2020) and growing every month. 
 
 
 **data source**
@@ -116,7 +124,9 @@ thedata
 
 ### cleaning
 
-names and variable formats
+Cleaning up our data table before we start working is often the next step. In this case, we wil use the [{janitor}](http://sfirke.github.io/janitor/) package to clean the names. 
+
+The date field is also problematic, so we will also clean that up.
 
 ```{r}
 thedata <- janitor::clean_names(thedata)
@@ -129,6 +139,8 @@ thedata
 
 ### what's in the data frame?
 
+{cansim} (like many other data-focussed packages) provides some utility functions that let us quickly explore the data. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
+
 ```{r}
 # from the {cansim} package
 get_cansim_table_overview(table_id)
@@ -136,7 +148,7 @@ get_cansim_table_overview(table_id)
 ```
 
 
-geography list
+We can explore the individual variables as well--let's generate a small table showing all of the instances of the `geo` and `geo_uid` variables:
 
 ```{r}
 
@@ -146,6 +158,8 @@ thedata %>%
 ```
 
 ### data manipulation
+
+In this next step, we will:
 
 * select our variables of interest to make the dataframe more manageable
 
@@ -172,6 +186,10 @@ thedata
 
 #### BC & Canada data
 
+For our chart, we don't need all the geographic regions--just B.C. and Canada. And for our purposes, we want the chart to start in 2007, not 1981.
+
+To do that, we use two functions from the {dplyr} package: `filter` (to pick the rows we want) and `select` (to pick the columns).
+
 ```{r}
 startdate <- as.Date("2007-01-01")
 
@@ -197,6 +215,9 @@ thedata_BC_Can
 
 #### table: months as columns
 
+One way to understand your data is to create a summary table that is more easily scanned by the human eye.
+
+In this case, we will put the rows as each year, and the columns as the months January through December.
 
 
 ```{r}
@@ -246,6 +267,15 @@ NHPI_table3
 using `dplyr::rowwise()`
 
 * https://community.rstudio.com/t/dplyr-alternatives-to-rowwise/8071/45
+
+* https://speakerdeck.com/jennybc/row-oriented-workflows-in-r-with-the-tidyverse
+
+  - https://github.com/jennybc/row-oriented-workflows
+
+  - https://github.com/jennybc/row-oriented-workflows/blob/master/ex09_row-summaries.md
+
+* https://github.com/tidyverse/dplyr/issues/4767 
+
 
 
 ```{r}
