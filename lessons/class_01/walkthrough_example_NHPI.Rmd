@@ -14,7 +14,7 @@ output:
 
 This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
 
-![The data science process](../img/data-science.png)
+![The data science process](../../img/data-science.png)
 
 ***
 
@@ -239,6 +239,23 @@ NHPI_table3 <- thedata_BC_Can %>%
   arrange(desc(year))
 
 NHPI_table3
+```
+
+
+
+using `dplyr::rowwise()`
+
+* https://community.rstudio.com/t/dplyr-alternatives-to-rowwise/8071/45
+
+
+```{r}
+
+NHPI_table4 <- NHPI_table %>%
+  rowwise() %>% 
+  mutate(annual_avg = mean(c(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec), na.rm = TRUE))
+
+NHPI_table4
+
 ```
 
 ## _COMMUNICATE_ - table
