@@ -109,8 +109,9 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 **Note:** "The index base period, for which the New Housing Price Index (NHPI) equals 100, is December 2016." 
 
 
-```{r, message=FALSE}
 # This version (updated 2018-12-13) uses the `cansim` package to pull the data from CANSIM.
+
+```{r}
 
 table_id = "18-10-0205-01"
 
@@ -119,14 +120,13 @@ thedata
 
 ```
 
-
 ## TIDY
 
 ### cleaning
 
-Cleaning up our data table before we start working is often the next step. In this case, we wil use the [{janitor}](http://sfirke.github.io/janitor/) package to clean the names. 
+Cleaning up our data table before we start working is often the next step. In this case, we wil use the [{janitor}](http://sfirke.github.io/janitor/) package to clean the variable names. 
 
-The date field is also problematic, so we will also clean that up.
+The values in the date field is also problematic--they are stored as character strings. We will clean the values by specifying them as a "date" format.
 
 ```{r}
 thedata <- janitor::clean_names(thedata)
@@ -139,7 +139,9 @@ thedata
 
 ### what's in the data frame?
 
-{cansim} (like many other data-focussed packages) provides some utility functions that let us quickly explore the data. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
+It's a good practice before starting any data analysis to understand the structure of your data, by interogating the variables and the values in those variables.
+
+{cansim} (like many other data-focussed packages) provides some utility functions that let us quickly understand the data frame. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
 
 ```{r}
 # from the {cansim} package
@@ -161,7 +163,7 @@ thedata %>%
 
 In this next step, we will:
 
-* select our variables of interest to make the dataframe more manageable
+* select our variables of interest to make the dataframe more manageable (we don't need all 18 in the original data frame)
 
 * add month-over-month and year-over-year values
 
@@ -213,8 +215,6 @@ thedata_BC_Can
 ### Visualize - tables
 
 
-#### table: months as columns
-
 One way to understand your data is to create a summary table that is more easily scanned by the human eye.
 
 In this case, we will put the rows as each year, and the columns as the months January through December.
@@ -229,10 +229,14 @@ NHPI_table <- thedata_BC_Can %>%
   select(year, month, value) %>%
   pivot_wider(names_from = month, values_from = value) %>%
   arrange(desc(year))
+
+# display the table
 NHPI_table
 
 ```
 
+
+For the next piece, we will calculate an annual average for each year, and add that column to the table.
 
 
 ```{r}
