@@ -33,7 +33,7 @@ library(nycflights13)
 ### 1. Assign a variable
 > (1 mark)
 
-> Why does this code not work?
+> Why does this code chunk not work?
 
 ```{r}
 stringlenght <- 10
@@ -51,7 +51,7 @@ stringlength
 
 > Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
 >
->* Volkswagen compact and subcompact models from the model year 1999
+>* compact and subcompact Volkswagens from the model year 1999
 >
 >* manufacturer, model, mileage in both city and highway 
 
@@ -64,7 +64,7 @@ mpg
 ### 3. Selecting variables
 > (1 mark)
 
-> What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.
+> What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
 
 
 

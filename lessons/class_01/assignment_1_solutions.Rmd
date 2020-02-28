@@ -36,7 +36,7 @@ library(nycflights13)
 ### 1. Assign a variable
 > (1 mark)
 
-> Why does this code not work?
+> Why does this code chunk not work?
 
 ```{r eval=FALSE}
 stringlenght <- 10
@@ -56,7 +56,7 @@ The variable is spelled differently in each case.
 
 > Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
 >
->* Volkswagen compact and subcompact models from the model year 1999
+>* compact and subcompact Volkswagens from the model year 1999
 >
 >* manufacturer, model, mileage in both city and highway 
 
