@@ -310,13 +310,13 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 ---
 
-# Workflow and functionality: 1
+## Workflow and functionality: 1
 
-![survey workflow 1](/static/img/survey_workflow_1.png)
+![survey workflow 1](/static/img/survey_workflow_1_800.png)
 
 ---
 
-# Workflow and functionality: 2
+## Workflow and functionality: 2
 
 ![survey workflow 1](/static/img/survey_workflow_2.png)
 
@@ -325,7 +325,7 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 ### A collaborative community
 
-![R community](/static/img_allison_horst/code_hero_rstats.png)
+![R community](/static/img_allison_horst/code_hero_rstats_600.png)
 
 ---
 
