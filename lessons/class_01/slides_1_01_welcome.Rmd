@@ -22,7 +22,7 @@ options(htmltools.dir.version = FALSE)
 
 # point up-directory to css and img folders
 
-#xaringan::inf_mr('lessons/class_01/slides_1_01a_welcome.rmd')
+#xaringan::inf_mr('lessons/class_01/slides_1_01_welcome.rmd')
 
 ```
 
@@ -211,18 +211,6 @@ IRL we work together
 
 "To teach is to learn twice"
 
-The R user community:
-
-* welcoming & non-judgemental
-
-* twitter #rstats
-
-* in-person: conferences & user groups
-
-* RLadies
-
-* hex stickers!
-
 
 
 ---
@@ -278,6 +266,196 @@ class: inverse
 
 * using R since 2012
 
+
+
+---
+
+class: inverse
+
+
+---
+
+class: inverse
+
+# Why code? # Why R?
+
+
+---
+
+## Reproducible workflow
+
+>Saves time,
+>Produces better science,
+>Creates more trusted research,
+>Reduces the risk of errors, and
+>Encourages collaboration.
+- David Smith, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+???
+
+David Smith, 2017-04-21, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
+
+* Reproducible and Auditable
+
+* Accurate
+
+* Collaborative
+
+
+
+
+---
+
+# Workflow and functionality: 1
+
+![survey workflow 1](/static/img/survey_workflow_1.png)
+
+---
+
+# Workflow and functionality: 2
+
+![survey workflow 1](/static/img/survey_workflow_2.png)
+
+---
+
+
+### A collaborative community
+
+![R community](/static/img_allison_horst/code_hero_rstats.png)
+
+---
+
+The R user community:
+
+* welcoming & non-judgemental
+
+* in-person: conferences & user groups
+
+* hex stickers!
+
+
+
+---
+
+### R community
+
+Twitter: #rstats
+
+R-bloggers.com
+
+Meetup groups 
+
+RLadies
+
+???
+
+Reading:
+
+Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
+
+---
+
+
+![R logo](/static/img/R.jpg)
+
+Base R
+
+* a data science / statistics programming language
+
+* built-in analytic functions
+
+
+
+---
+
+# packages
+
+Packages extend the functionality of R
+
+* statistical and data analysis
+
+* data visualization
+
+* data
+
+
+---
+
+![RStudio logo](/static/img/RStudio_400.png)
+
+
+---
+
+
+# RStudio
+
+IDE (interactive development environment)
+
+* also the company that developed and supports the IDE
+
+* RStudio is also active creating and supporting packages, including...
+
+
+
+
+---
+
+# The Tidyverse
+
+![dplyr hex](/static/img/tidyverse_400.png)
+
+???
+
+Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
+
+---
+
+
+# {tidyverse}
+
+"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+The [{tidyverse} site](https://tidyverse.org): tidyverse.org
+
+
+
+
+---
+
+# An analogy...
+
+Base R is like the engine and frame of a car
+
+![VW Beetle frame](/static/img/VW_ad_1_crop.png)
+
+---
+
+..the packages are the other things that enhance the car's functions
+
+![VW Beetle transparent](/static/img/vwlooking.jpg)
+
+
+
+---
+
+...and RStudio is the dashboard and controls
+
+![VW Beetle dashboard](/static/img/VW_dashboard.jpg)
+
+
+---
+
+(more like this)
+
+![VW Beetle dashboard](/static/img/VW_dashboard_2019.jpg)
+
+---
+
+## Who's ready for a road trip?!
+
+![VW Beetle dashboard](/static/img/VW_ready_to_go.png)
 
 
 
