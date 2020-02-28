@@ -118,6 +118,8 @@ link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then log
 
 * links to other reading material and data files
 
+* place to upload assignment
+
 * forum
  
 
@@ -161,7 +163,7 @@ class: inverse
 
 
 
-## Supplementary resources and readings
+## Resources and readings
 
 In each lesson plan:
 
@@ -277,7 +279,7 @@ class: inverse
 
 class: inverse
 
-# Why code? # Why R?
+# Why code? Why R?
 
 
 ---
@@ -327,7 +329,7 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 ---
 
-The R user community:
+### The R user community:
 
 * welcoming & non-judgemental
 
@@ -357,20 +359,27 @@ Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://
 
 ---
 
+class: inverse
+
+# About R
+
+
+---
 
 ![R logo](/static/img/R.jpg)
 
-Base R
+## R
 
 * a data science / statistics programming language
 
 * built-in analytic functions
 
+* "base R"
 
 
 ---
 
-# packages
+## packages
 
 Packages extend the functionality of R
 
@@ -447,9 +456,16 @@ Base R is like the engine and frame of a car
 
 ---
 
-(more like this)
+...although it's much more modern
 
 ![VW Beetle dashboard](/static/img/VW_dashboard_2019.jpg)
+
+---
+
+(or dark mode!)
+
+![VW Beetle dashboard](/static/img/VW_dashboard_2018.jpg)
+
 
 ---
 
