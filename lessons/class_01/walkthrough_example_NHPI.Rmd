@@ -14,7 +14,7 @@ output:
 
 This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
 
-![The data science process](../../img/data-science.png)
+![The data science process](../../static/img/data-science.png)
 
 ***
 
@@ -28,9 +28,13 @@ Our end point will be this chart:
 
 The original source code, created by Martin Monkman with contributions by Julie Hawkins and Stephanie Yurchak, can be found here:  https://github.com/bcgov/CANSIM-dataviewer/blob/master/scr/NHPI_cansim.Rmd
 
+***
+
 ### Setup
 
-```{r, setup, message=FALSE}
+This chunk of R code loads the packages that we will be using
+
+```{r setup, message=FALSE, warning=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)  # date functions
@@ -49,7 +53,6 @@ First, we have some code for two custom functions that calculate month-over-mont
 
 ```{r functions}
 get_mom_stats <- function(df) {
-  
   df %>%
     arrange(ref_date) %>%
     mutate(mom_val = lag(value), 
@@ -59,13 +62,13 @@ get_mom_stats <- function(df) {
 
 
 get_yoy_stats <- function(df) {
-  
   df %>%
     arrange(ref_date) %>%
     mutate(yoy_val = lag(value, n = 12),
            yoy_pct = ((value / lag(value, n = 12)) - 1) * 100,
            yoy_chg = (value - lag(value, n = 12)))
 }
+
 ```
 
 We then create a chart theme that will also be called later. Like functions, this streamlines our code and helps reduce the chance of error. For this chart theme, more than 10 lines of code gets reduced to a simple, memorable name.
@@ -109,9 +112,9 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 **Note:** "The index base period, for which the New Housing Price Index (NHPI) equals 100, is December 2016." 
 
 
-# This version (updated 2018-12-13) uses the `cansim` package to pull the data from CANSIM.
+This version (updated 2018-12-13) uses the `cansim` package to pull the data from CANSIM.
 
-```{r}
+```{r data_import}
 
 table_id = "18-10-0205-01"
 
@@ -128,7 +131,7 @@ Cleaning up our data table before we start working is often the next step. In th
 
 The values in the date field is also problematic--they are stored as character strings. We will clean the values by specifying them as a "date" format.
 
-```{r}
+```{r cleanup}
 thedata <- janitor::clean_names(thedata)
 
 thedata <- thedata %>%
@@ -143,7 +146,7 @@ It's a good practice before starting any data analysis to understand the structu
 
 {cansim} (like many other data-focussed packages) provides some utility functions that let us quickly understand the data frame. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
 
-```{r}
+```{r interogate1}
 # from the {cansim} package
 get_cansim_table_overview(table_id)
 
@@ -152,7 +155,7 @@ get_cansim_table_overview(table_id)
 
 We can explore the individual variables as well--let's generate a small table showing all of the instances of the `geo` and `geo_uid` variables:
 
-```{r}
+```{r interogate2}
 
 thedata %>%
   group_by(geo, geo_uid) %>%
@@ -168,7 +171,7 @@ In this next step, we will:
 * add month-over-month and year-over-year values
 
 
-```{r}
+```{r manipulation}
 
 thedata <- thedata %>%
   select(ref_date, geo, new_housing_price_indexes,
@@ -192,7 +195,7 @@ For our chart, we don't need all the geographic regions--just B.C. and Canada. A
 
 To do that, we use two functions from the {dplyr} package: `filter` (to pick the rows we want) and `select` (to pick the columns).
 
-```{r}
+```{r filter}
 startdate <- as.Date("2007-01-01")
 
 # filter to have BC and Canada
@@ -220,7 +223,7 @@ One way to understand your data is to create a summary table that is more easily
 In this case, we will put the rows as each year, and the columns as the months January through December.
 
 
-```{r}
+```{r table1}
 
 NHPI_table <- thedata_BC_Can %>%
   filter(geo == "British Columbia") %>%
@@ -239,7 +242,7 @@ NHPI_table
 For the next piece, we will calculate an annual average for each year, and add that column to the table.
 
 
-```{r}
+```{r table2}
 # how to add annual average
 # Julie's genius solution
 NHPI_table2 <- NHPI_table %>%
@@ -250,7 +253,7 @@ NHPI_table2
 
 
 
-```{r}
+```{r table3}
 # Stephanie's genius solution
 # starts with the raw data table
 NHPI_table3 <- thedata_BC_Can %>%
@@ -282,7 +285,7 @@ using `dplyr::rowwise()`
 
 
 
-```{r}
+```{r table4}
 
 NHPI_table4 <- NHPI_table %>%
   rowwise() %>% 
@@ -292,10 +295,16 @@ NHPI_table4
 
 ```
 
-## _COMMUNICATE_ - table
+
+***
+
+## COMMUNICATE - table
 
 ### table: monthly summary
 
+One way we often communicate the data is through a summary table. 
+
+This code produces a table with the B.C. data, and then formats it ready for publication.
 
 ```{r}
 
@@ -418,7 +427,7 @@ dataplot2 <- dataplot +
 dataplot2 
 ```
 
-## _COMMUNICATE_ - plot
+## COMMUNICATE - plot
 
 ```{r}
 # experiments with ggplot2's new subtitle and caption options
@@ -439,7 +448,9 @@ ggsave(filename = "NHPI_plot.png", plot = NHPI_plot,
 
 ***
 
-## Vancouver house and land version
+## REPEAT WITH DIFFERENT VALUES
+
+### Vancouver house and land version
 
 Now we've set up the B.C. comparison to Canada, we can quickly adapt our previous work to look at another region--in this case, a deeper dive into Vancouver, comparing the changes in the two components of the NHPI.
 
