@@ -140,7 +140,7 @@ class: inverse
 
 # RStudio cloud
 
-Visit: https://rstudio.cloud/spaces/34702/projects
+Visit: https://rstudio.cloud/spaces/49481/projects
 
 If you haven't already, log in or sign up
 
@@ -297,6 +297,7 @@ class: inverse
 
 ![R Markdown hex](/static/img/rmarkdown_400.png)
 
+
 ---
 class: inverse
 
@@ -326,6 +327,10 @@ class: inverse
 ]
 
 Used for reports and academic articles, books, blogs and websites
+
+---
+
+![R markdown](/static/img_allison_horst/rmarkdown_wizards.png)
 
 ---
 class: inverse
