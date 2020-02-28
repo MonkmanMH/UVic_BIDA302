@@ -176,7 +176,7 @@ Here's another course description, one that I really like, so (with the author's
 
 ### Weekly assignments (marks: 12 each, 48 total)
 
-* Tour assignments, due Weeks 2 through 5.
+* Four assignments, due Weeks 2 through 5.
 
 * These four assignments will review the concepts introduced in that week's lesson and build on previous concepts.
 

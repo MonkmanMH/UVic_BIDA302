@@ -2,32 +2,41 @@
 title: "R and RStudio"
 subtitle: "the basics"
 author: "BIDA302"
-date: "2019/11/02"
+date: "2020/02/29"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
-# Martin Monkman
 ---
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_1_01c_R_RStudio_basics.Rmd')
+
+```
+
+```{r, include=FALSE}
 library(tidyverse)
 ```
+
 
 class: inverse
 
 
 ## Road trip starts now!
 
-![VW Beetle driving](../img/VW_ontheroad.jpg)
+![VW Beetle driving](/static/img/VW_ontheroad.jpg)
 
 
 ---
@@ -37,7 +46,7 @@ class: inverse
 # Learning a new language
 
 
-![](../img/language_learning.jpg)
+![](/static/img/language_learning.jpg)
 
 ...is difficult
 
@@ -63,7 +72,7 @@ class: inverse
 
 Accuracy matters
 
-![Hadley Wickham tweet](../img/Hadley_5minutes_2019-10-27.jpg)
+![Hadley Wickham tweet](/static/img/Hadley_5minutes_2019-10-27.jpg)
 
 ---
 class: inverse
@@ -71,7 +80,7 @@ class: inverse
 
 And spelling matters
 
-![Kara Woo tweet](../img/Kara_5minutes_2019-10-27.jpg)
+![Kara Woo tweet](/static/img/Kara_5minutes_2019-10-27.jpg)
 
 ...and in R, so does case
 
@@ -144,7 +153,7 @@ class: inverse
 
 # RStudio cloud
 
-![RStudio panes](../img/RStudio_panes.png)
+![RStudio panes](/static/img/RStudio_panes.png)
 
 
 
@@ -286,7 +295,7 @@ class: inverse
 
 ---
 
-![R Markdown hex](../img/rmarkdown_400.png)
+![R Markdown hex](/static/img/rmarkdown_400.png)
 
 ---
 class: inverse
@@ -347,7 +356,7 @@ class: inverse
 
 # Welcome to The Tidyverse
 
-![dplyr hex](../img/tidyverse_400.png)
+![dplyr hex](/static/img/tidyverse_400.png)
 
 ???
 

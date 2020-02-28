@@ -2,22 +2,28 @@
 title: "The data science process"
 subtitle: ""
 author: "BIDA302"
-date: "2019/11/02"
+date: "2020/02/29"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
-# Martin Monkman
 ---
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_1_02a_datascience_process.Rmd')
+
 ```
 
 class: inverse
@@ -37,7 +43,7 @@ Forbes: ["Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science T
 
 ## The data science process
 
-![The data science process](../img/data-science.png)
+![The data science process](/static/img/data-science.png)
 
 Also: what we'll be covering in this course 
 
@@ -47,19 +53,19 @@ Also: what we'll be covering in this course
 
 ### The truth about how programmers really work
 
-![Googling the error message](../img/orly_googling_the_error_message_400.jpg)
+![Googling the error message](/static/img/orly_googling_the_error_message_400.jpg)
 
 ---
 
 ### The truth about how programmers work, part 2
 
 
-![Copying and Pasting from Stack Overflow](../img/orly_copy_and_paste_400.jpeg)
+![Copying and Pasting from Stack Overflow](/static/img/orly_copy_and_paste_400.jpeg)
 
 ---
 
 ### Sombreros on the pandas
 
-![Sombreros on the pandas](../img/sombreros_on_the_pandas.png)
+![Sombreros on the pandas](/static/img/sombreros_on_the_pandas.png)
 
 

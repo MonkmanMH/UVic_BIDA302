@@ -2,23 +2,32 @@
 title: "Data wrangling"
 subtitle: "Part 2: introducing {tidyr}"
 author: "BIDA302"
-date: "2019/11/02"
+date: "2020/02/29"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
-# Martin Monkman
 ---
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_1_03_wrangling2.rmd')
+
+```
+
+
+```{r, include=FALSE}
 library(tidyverse)
 library(gapminder)
 ```
@@ -35,7 +44,7 @@ Reshaping
 
 # {tidyr} -
 
-![tidyr hex](../img/tidyr_400.png)
+![tidyr hex](/static/img/tidyr_400.png)
 
 The [{tidyr} site](https://tidyr.tidyverse.org/)
 
@@ -108,9 +117,9 @@ class_by_cyl_pivot %>%
 
 ---
 
-Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced earlier this year.
+Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
 
-_R for Data Science_ uses the terms `spread()` and `gather()`, the older {tidyr} functions that do the same thing.
+The older {tidyr} functions that do the same thing: `spread()` and `gather()`.
 
 For example, `spread()` to replicate the `pivot_wider()` function:
 

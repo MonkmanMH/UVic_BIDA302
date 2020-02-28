@@ -2,10 +2,10 @@
 title: "Why code? Why R?"
 #subtitle: "Data Analytics Coding Fundamentals"
 author: "BIDA302"
-date: "2019/11/02"
+date: "2020/02/29"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -16,6 +16,14 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_1_01b_whycode.rmd')
+
 ```
 
 
@@ -50,18 +58,25 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 # Workflow and functionality: 1
 
-![survey workflow 1](../img/survey_workflow_1.png)
+![survey workflow 1](/static/img/survey_workflow_1.png)
 
 ---
 
 # Workflow and functionality: 2
 
-![survey workflow 1](../img/survey_workflow_2.png)
+![survey workflow 1](/static/img/survey_workflow_2.png)
 
 ---
 
 
-# A collaborative community
+### A collaborative community
+
+![R community](/static/img_allison_horst/code_hero_rstats.png)
+
+
+---
+
+### R community
 
 Twitter: #rstats
 
@@ -80,7 +95,7 @@ Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://
 ---
 
 
-![R logo](../img/R.jpg)
+![R logo](/static/img/R.jpg)
 
 Base R
 
@@ -105,7 +120,7 @@ Packages extend the functionality of R
 
 ---
 
-![RStudio logo](../img/RStudio_400.png)
+![RStudio logo](/static/img/RStudio_400.png)
 
 
 ---
@@ -126,7 +141,7 @@ IDE (interactive development environment)
 
 # The Tidyverse
 
-![dplyr hex](../img/tidyverse_400.png)
+![dplyr hex](/static/img/tidyverse_400.png)
 
 ???
 
@@ -150,13 +165,13 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 Base R is like the engine and frame of a car
 
-![VW Beetle frame](../img/VW_ad_1_crop.png)
+![VW Beetle frame](/static/img/VW_ad_1_crop.png)
 
 ---
 
 ..the packages are the other things that enhance the car's functions
 
-![VW Beetle transparent](../img/vwlooking.jpg)
+![VW Beetle transparent](/static/img/vwlooking.jpg)
 
 
 
@@ -164,19 +179,19 @@ Base R is like the engine and frame of a car
 
 ...and RStudio is the dashboard and controls
 
-![VW Beetle dashboard](../img/VW_dashboard.jpg)
+![VW Beetle dashboard](/static/img/VW_dashboard.jpg)
 
 
 ---
 
 (more like this)
 
-![VW Beetle dashboard](../img/VW_dashboard_2019.jpg)
+![VW Beetle dashboard](/static/img/VW_dashboard_2019.jpg)
 
 ---
 
 ## Who's ready for a road trip?!
 
-![VW Beetle dashboard](../img/VW_ready_to_go.png)
+![VW Beetle dashboard](/static/img/VW_ready_to_go.png)
 
 © 2019 GitHub, Inc.

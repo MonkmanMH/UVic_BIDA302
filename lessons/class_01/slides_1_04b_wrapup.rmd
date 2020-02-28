@@ -2,10 +2,10 @@
 title: "Lesson 1 - wrap up"
 #subtitle: "Data Analytics Coding Fundamentals"
 author: "BIDA302"
-date: "2019/11/02"
+date: "2020/02/29"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -16,6 +16,14 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_1_04b_wrapup.rmd')
+
 ```
 
 
