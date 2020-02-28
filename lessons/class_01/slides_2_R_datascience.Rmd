@@ -1,6 +1,6 @@
 ---
-title: "R and RStudio"
-subtitle: "the basics"
+title: "R and the data science process"
+subtitle: ""
 author: "BIDA302"
 date: "2020/02/29"
 output:
@@ -22,7 +22,7 @@ options(htmltools.dir.version = FALSE)
 
 # point up-directory to css and img folders
 
-#xaringan::inf_mr('lessons/class_01/slides_1_01c_R_RStudio_basics.Rmd')
+#xaringan::inf_mr('lessons/class_01/slides_2_R_datascience.Rmd')
 
 ```
 
@@ -209,6 +209,8 @@ class: inverse
 > How would you create a new object "y" with the value 4?
 
 --
+
+
 `y <- 4`
 
 
@@ -274,7 +276,9 @@ class: inverse
 ---
 class: inverse
 
-# `c` for concatenate
+# `c` to make a list
+
+`c` is for "concatenate"
 
 x <- c(1, 5, 6)
 
@@ -287,7 +291,13 @@ class: inverse
 
 # Functions
 
+general structure:
+
 `function_name(arg1 = val1, arg2 = val2, ...)`
+
+--
+
+a simple example:
 
 `mean(x)`
 
@@ -437,5 +447,59 @@ class: inverse
 * Stack Overflow
 
 * blogs 
+
+
+
+---
+
+class: inverse
+
+# The Data Science Process
+
+---
+
+class: inverse
+
+# What data scientists do
+
+
+> Data scientists spend 60% of their time on cleaning and organizing data. Collecting data sets comes second at 19% of their time, meaning data scientists spend around 80% of their time on preparing and managing data for analysis.
+
+- Forbes: "Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science Task, Survey Says"
+
+???
+
+Forbes: ["Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science Task, Survey Says"](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#22d5a9446f63)
+
+---
+
+## The data science process
+
+![The data science process](/static/img/data-science.png)
+
+Also: what we'll be covering in this course 
+
+
+
+---
+
+### The truth about how programmers really work
+
+![Googling the error message](/static/img/orly_googling_the_error_message_400.jpg)
+
+---
+
+### The truth about how programmers work, part 2
+
+
+![Copying and Pasting from Stack Overflow](/static/img/orly_copy_and_paste_400.jpeg)
+
+---
+
+### Sombreros on the pandas
+
+![Sombreros on the pandas](/static/img/sombreros_on_the_pandas_500.PNG)
+
+
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Data wrangling"
-subtitle: "Part 1: {dplyr}"
+subtitle: ""
 author: "BIDA302"
 date: "2020/02/29"
 output:
@@ -22,7 +22,7 @@ options(htmltools.dir.version = FALSE)
 
 # point up-directory to css and img folders
 
-#xaringan::inf_mr('lessons/class_01/slides_1_02b_wrangling1.rmd')
+#xaringan::inf_mr('lessons/class_01/slides_3_wrangling.Rmd')
 
 ```
 
@@ -39,16 +39,19 @@ class: inverse
 
 Cleaning
 
-Reshaping
-
-Filtering
+Filtering and selecting
 
 Adding variables
+
+Reshaping
+
+
 
 ---
 
 
-# {dplyr} -
+# Part 1: {dplyr} -
+
 
 ![dplyr hex](/static/img/dplyr_400.png)
 
@@ -126,7 +129,7 @@ Boolean operators can be combined with *and* or *or*.
 | `&`     | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
-.footnote[see [R for Data Science, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
 
 
 
@@ -230,5 +233,141 @@ the `summary()` function gives you a range of measures of central tendency
 summary(mpg$hwy)
 
 ```
+
+---
+
+# Part 2 - {tidyr} -
+
+
+![tidyr hex](/static/img/tidyr_400.png)
+
+The [{tidyr} site](https://tidyr.tidyverse.org/)
+
+
+---
+
+A pivot table crosstab using the {mpg} data package of automobile fuel economy.
+
+First, a look at the source table.
+
+
+
+---
+
+Using `group_by` and `summarise` to create a summary table of the average engine displacement:
+
+```{r}
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+---
+
+Now do the same with vehicle class and number of cylinders:
+
+```{r}
+
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(mean = mean(displ)) %>%
+  arrange(desc(mean))
+
+class_by_cyl
+
+```
+
+---
+
+
+What happens if you reverse the order of the grouping variables?
+
+---
+
+Create a pivot (crosstab) table with class by number of cylinders:
+
+
+using `pivot_wider()`
+
+```{r}
+class_by_cyl_pivot <- class_by_cyl %>%
+  pivot_wider(names_from = cyl, values_from = mean)
+
+
+class_by_cyl_pivot
+```
+
+---
+
+# and back to longer...
+
+```{r}
+
+class_by_cyl_pivot %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "mean")
+
+```
+
+
+---
+
+Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
+
+The older {tidyr} functions that do the same thing: `spread()` and `gather()`.
+
+For example, `spread()` to replicate the `pivot_wider()` function:
+
+```{r}
+
+class_by_cyl %>%
+  spread(cyl, value = mean)
+
+```
+
+---
+
+## Manipulate variables 
+##(back to {dplyr})
+
+You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
+
+---
+
+Using `select()` to reduce the number of variables:
+
+```{r}
+library(gapminder)
+
+gapminder %>%                                
+  select(country, year, lifeExp) 
+
+```
+
+---
+
+
+You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
+
+In this example, note we have to use `c()` to create a list:
+
+```{r}
+gapminder %>%                                
+  select(-c(continent, pop, gdpPercap))
+
+```
+
+---
+
+
+You can define a range of columns to select:
+
+```{r}
+gapminder %>%
+  select(country, year:pop)
+```
+
+
+
 
 
