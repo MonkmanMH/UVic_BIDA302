@@ -119,9 +119,19 @@ This version (updated 2018-12-13) uses the `cansim` package to pull the data fro
 table_id = "18-10-0205-01"
 
 thedata <- get_cansim(table_id)
-head(thedata)
+
+thedata
 
 ```
+
+Now we can review other aspects of the data object:
+
+```{r}
+
+ls.str(thedata)
+
+```
+
 
 ***
 
