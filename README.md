@@ -16,6 +16,9 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 [BIDA302, Spring 2020](https://github.com/MonkmanMH/UVic_BIDA302/blob/master/course_outline/00_course-outline.md) -- draft, subject to change
 
+## Solutions to hands-on exercises
+
+Solutions to the in-class hands-on exercises can be found as online interactive tutorials; see [tutormanner](https://github.com/MonkmanMH/tutormanner) for details
 
 ## Versions:
 
