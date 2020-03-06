@@ -5,22 +5,25 @@ author: "BIDA302 - lesson 2"
 date: "2019/11/09"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
 # Martin Monkman
 ---
 
 
 ```{r setup, include=FALSE}
-
 options(htmltools.dir.version = FALSE)
 
-library(tidyverse)
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_02/slides_2_1_variable_types.Rmd')
 
 ```
 

@@ -2,23 +2,28 @@
 title: "Tidy data"
 subtitle: "with {tidyr}"
 author: "BIDA302 - lesson 2"
-date: "2019/11/09"
+date: "2020/03/07"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
 # Martin Monkman
 ---
 
 
 ```{r setup, include=FALSE}
-
 options(htmltools.dir.version = FALSE)
+
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_02/slides_2_2_tidydata.Rmd')
 
 library(tidyverse)
 
@@ -50,7 +55,7 @@ class: inverse
 --
 
 
-![tidy principles](../img/tidy-1.png)
+![tidy principles](/static/img/tidy-1.png)
 
 ???
 
@@ -86,17 +91,6 @@ tidyr::relig_income %>%
   pivot_longer(-religion, names_to = "income_cat", values_to = "count")
 ```
 
----
-
-You can see this type of table structure a lot...
-
-It is often used to present summary tables that will be read by humans
-
-![retail sales table](../img/StatCan_retailsales_2019-08_table1.JPG)
-
-???
-
-Source: Statistics Canada, Retail sales, August 2019 https://www150.statcan.gc.ca/n1/daily-quotidien/191022/t001a-eng.htm
 
 ---
 ## Is this data tidy?
@@ -195,9 +189,24 @@ family %>%
 
 # Compound: multiple observations and variables
 
+
+---
+
+You can see this type of table structure a lot...
+
+It is often used to present summary tables that will be read by humans
+
+![retail sales table](/static/img/StatCan_retailsales_2019-08_table1.JPG)
+
+???
+
+Source: Statistics Canada, Retail sales, August 2019 https://www150.statcan.gc.ca/n1/daily-quotidien/191022/t001a-eng.htm
+---
+
+
 StatCan retail sales, August 2019 -- as csv
 
-```{r}
+```{r, echo=FALSE, message=FALSE}
 col_names <- names(read_csv(here::here("data", "t001a-eng.csv"), skip = 1, n_max = 0))
 col_names[[1]] <- "geo"
 
@@ -230,12 +239,4 @@ The table should be
 | July 2019 | 1  | NA  | NA |
 | August 2019 | 1  | %  | another % |
 
-
----
-
-But even this isn't tidy! There are a number of variables that are sub-sets of others 
-
-* e.g. "TOTAL MARKET TRANSACTIONS (count)" is made up of "RESIDENTIAL TOTAL (count)", "COMMERCIAL TOTAL (count)", etc -- which in turn are made up of smaller categories ("RESIDENTIAL - SINGLE FAMILY RESIDENTIAL (count)", etc)
-
-* there are some stand-alone variables
 
