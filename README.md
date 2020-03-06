@@ -18,7 +18,7 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 ## Solutions to hands-on exercises
 
-Solutions to the in-class hands-on exercises can be found as online interactive tutorials; see [tutormanner](https://github.com/MonkmanMH/tutormanner) for details
+Solutions to the in-class hands-on exercises can be found as online interactive tutorials; they are housed in the [tutormanner](https://github.com/MonkmanMH/tutormanner) 
 
 ## Versions:
 
