@@ -36,7 +36,7 @@ Run this chunk to create an object called `mtcars`, from a CSV file of the same 
 
 ```{r}
 # example
-mtcars <- read_csv(readr_example("mtcars.csv"))
+mtcars <- read_csv("mtcars.csv")
 
 ```
 
@@ -44,9 +44,10 @@ Adding the `cols()` allows us to alter what {readr} has decided for us. For exam
 
 ```{r}
 # example
-read_csv(readr_example("mtcars.csv"), col_types = 
+read_csv("mtcars.csv", 
+         col_types = 
            cols(cyl = col_integer())
-         )
+)
 
 ```
 
@@ -57,11 +58,12 @@ Insert an R chunk and rerun the example above, but with the `am` and `gear` vari
 
 ```{r}
 # solution
-read_csv(readr_example("mtcars.csv"), col_types = 
-                     cols(cyl = col_integer(),
-                          am = col_integer(),
-                          gear = col_integer())
-                   )
+read_csv("mtcars.csv",
+         col_types = 
+           cols(cyl = col_integer(),
+                am = col_integer(),
+                gear = col_integer())
+)
 
 ```
 
@@ -83,9 +85,9 @@ Read the first 5 rows of the "mtcars.csv" file.
 
 ```{r}
 # solution
-read_csv(readr_example("mtcars.csv"), 
-                   n_max = 5)
-                   
+read_csv("mtcars.csv", 
+         n_max = 5)
+
 
 
 ```
@@ -100,11 +102,11 @@ STOP HERE ...
 
 If anything, Excel files are more common than CSV and other plain-text data files. They seem to multiply like coat hangers in the closet...
 
-And as we say in the article by Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989), they can encourage some ways of storing information that makes it hard for us to analyze. Excel files can also contain a wide variety of data format types. {readxl} tries to figure out what's going on, but like {readr}, it allows you to override some of those automatic decisions.
+And as we see in the article by Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989), they can encourage some ways of storing information that makes it hard for us to analyze. Excel files can also contain a wide variety of data format types. {readxl} tries to figure out what's going on, but like {readr}, it allows you to override some of those automatic decisions.
 
 
 ```{r}
-deaths <- read_excel(readxl_example("deaths.xlsx"))
+deaths <- read_excel("deaths.xlsx")
 deaths
 ```
 
@@ -118,16 +120,16 @@ Read in the "deaths" file, but use the `range = ` option to specify when to star
 
 ```{r}
 # Example
-deaths <- read_excel(readxl_example("deaths.xlsx"), 
+deaths <- read_excel("deaths.xlsx", 
                      range = "A1:B3")
 
 deaths
 
 # solution
 deaths <- read_excel(
-    readxl_example("deaths.xlsx"),
-    range = "A5:F15"
-  )
+  "deaths.xlsx",
+  range = "A5:F15"
+)
 
 deaths
 
@@ -140,10 +142,10 @@ Use the `skip =` and `n_max =` options to achieve the same thing:
 
 # solution
 deaths <- read_excel(
-    readxl_example("deaths.xlsx"),
-    skip = 4,
-    n_max = 10
-  )
+  readxl_example("deaths.xlsx"),
+  skip = 4,
+  n_max = 10
+)
 
 deaths
 
@@ -160,7 +162,7 @@ Note that if you don't specify the sheet, {readxl} will default to the first one
 The `excel_sheets()` function will tell you the name of the sheets in an Excel file.
 
 ```{r}
-datasets <- readxl_example("datasets.xlsx")
+datasets <- "datasets.xlsx"
 
 excel_sheets(datasets)
 
