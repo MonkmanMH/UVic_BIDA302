@@ -11,13 +11,14 @@
 *.jpg
 
 *.csv
-*.xls*
+.xls*
 
 *.zip
 *.rar
 
 
 hexSticker/
+class_list.*
 
 
 # History files
