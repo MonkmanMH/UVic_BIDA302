@@ -56,9 +56,11 @@ library(readxl)
 >
 > a. Read in the file "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv", which has the number of concluded court cases in B.C. by a variety of dimensions.
 > 
-> The file is sourced from here: 
-> https://catalogue.data.gov.bc.ca/dataset/courts-concluded-cases-5-yr-regional-report-dashboard-2014-2018
 
+<!--
+The file is sourced from here: 
+> https://catalogue.data.gov.bc.ca/dataset/courts-concluded-cases-5-yr-regional-report-dashboard-2014-2018
+-->
 
 **Answer:**
 
@@ -100,8 +102,11 @@ library(readxl)
 > Use the {readxl} package to read in the file "regional_district_monthly_2019.xlsx" 
 >
 > This data is published by the Ministry of Finance, and shows a variety of statistics associated with the Property Transfer Tax.
->
-> The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019
+
+<!-- The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019 -->
+
+
+
 >
 > The reference page for {readxl} is here: https://readxl.tidyverse.org/
 >
