@@ -1,6 +1,6 @@
 ---
 title: "BIDA302: Lesson Plan, Week 2"
-subtitle: "2019-11-09"
+subtitle: "2020-03-07"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
 output: html_document
@@ -35,9 +35,9 @@ At the end of this lesson, learners will be able to:
 | Block      | Time           | Topics  | &#8212; |
 |---         |:---            |:---     |:---:  |
 |1a          | 9:00 to 9:30   | Review Homework #1  | &#8212; |
-|1b          | 9:30 to 10:30  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
-|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2a          | 10:45 to 12:00 | Tidy data <br> running R Markdown | &#8212; |
+|1b          | 9:30 to 10:00  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
+|&#8212:     | 10:00 to 10:15 | _break_ | &#8212; |
+|2a          | 10:15 to 12:00 | Tidy data <br> running R Markdown | &#8212; |
 |2b          | &#8212;        | Importing data | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
 |3           | 1:00 to 2:15   | Importing data (continued) | &#8212; |
@@ -53,21 +53,16 @@ At the end of this lesson, learners will be able to:
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 30 minutes (9:00 to 9:30)
+Time allocation: 30 minutes (9:00 to 9:45)
 
 
 ### 1b. Variable types 
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (9:30 to 9:45)
+Time allocation: 15 minutes (9:45 to 10:00)
 
 
-### 1c. R in data analysis - an example
-
-Format: learner (instructor guided), using RStudio Cloud
-
-Time allocation: 45 minutes (9:45 to 10:30)
 
 
 
@@ -75,7 +70,7 @@ Time allocation: 45 minutes (9:45 to 10:30)
 
 ## BREAK
 
-Time allocation: 15 minutes (10:30 to 10:45)
+Time allocation: 15 minutes (10:00 to 10:15)
 
 ***
 
@@ -83,7 +78,7 @@ Time allocation: 15 minutes (10:30 to 10:45)
 
 Format: instructor, lecture w/slides
 
-Time allocation: 15 minutes (10:45 to 11:00)
+Time allocation: 30 minutes (10:15 to 10:45)
 
 
 ### 2b. Importing data
