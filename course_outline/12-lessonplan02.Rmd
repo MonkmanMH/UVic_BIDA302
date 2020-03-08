@@ -159,29 +159,15 @@ Format: instructor summary, w/ slides
 * this article uses the old {tidyr} `gather()` and `spread()` functions, but it's got some good material on how to think about how and why data needs to be reshaped
 
 
+## COVID19 data
+
+
+Map: [Coronavirus COVID-19 Global Cases by Johns Hopkins CSSE](https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html?fbclid=IwAR3PMzQMuQe2eif2py8qRSk_dZtOilkX0aphxWAKGlxuO9pyKm3qoa0fU_A#/bda7594740fd40299423467b48e9ecf6)
+
+Dashboard: [Coronavirus data visualization](https://ramikrispin.github.io/coronavirus_dashboard/?fbclid=IwAR04ENIjfmU-I9xId2m_g1x_sZLN9ZlewrPRTWN0S91_QmtRJi4steG1kaU#summary) -- built using R
+
+Data tables: [COVID-19 Coronavirus Outbreak](https://www.worldometers.info/coronavirus/) from worldometers.info
 
 
 
-google
-
-https://twitter.com/chrisalbon/status/1142988432815169536?s=20
-
-
-## Workflow
-
-https://rtask.thinkr.fr/when-development-starts-with-documentation/
-
-
-## Documentation
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why writing readable code matters:<br><br>It’s like the turn signals in your car: Even though you (the driver) might know where you’re going, you still need to make your intentions clear to everyone else around you.<a href="https://twitter.com/hashtag/DevDiscuss?src=hash&amp;ref_src=twsrc%5Etfw">#DevDiscuss</a> <a href="https://t.co/5GKrYaEz41">https://t.co/5GKrYaEz41</a></p>&mdash; Olivia Liddell (\@oliravi) <a href="https://twitter.com/oliravi/status/1181741102447116288?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
-
-
-
-
-
-
-
-
-
+-30-
