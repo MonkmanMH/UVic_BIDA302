@@ -20,6 +20,10 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 Solutions to the in-class hands-on exercises can be found as online interactive tutorials; they are housed in the [tutormanner](https://github.com/MonkmanMH/tutormanner) 
 
+## Capstone projects
+
+The [capstone projects for BIDA302 get their own repo](https://github.com/MonkmanMH/UVic_BIDA302_capstone)
+
 ## Versions:
 
 2020.2.x -- offered 2020, spring (2020-02-29 to 2020-04-04) 
