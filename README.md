@@ -8,7 +8,7 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
-> - Grolemund & Wickham, [_R for Data Science_, 2.15 (The map functions)](https://r4ds.had.co.nz/iteration.html#the-map-functions)
+> - Grolemund & Wickham, [_R for Data Science_, 21.5 (The map functions)](https://r4ds.had.co.nz/iteration.html#the-map-functions)
 
 ## Course outline:
 
