@@ -4,13 +4,11 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 ## UVic Data Analytics Coding Fundamentals (BIDA302) course materials
 
-[Data Analytics Coding Fundamentals](https://continuingstudies.uvic.ca/business-technology-and-public-relations/courses/data-analytics-coding-fundamentals)
-
-[Series: Business Intelligence and Data Analytics](https://continuingstudies.uvic.ca/business-technology-and-public-relations/series/business-intelligence-and-data-analytics)
+[Data Analytics Coding Fundamentals](https://continuingstudies.uvic.ca/business-technology-and-public-relations/courses/data-analytics-coding-fundamentals) (BIDA302) is offered by the University of Victoria's Continuing Studies, part of the [Business Intelligence and Data Analytics](https://continuingstudies.uvic.ca/business-technology-and-public-relations/series/business-intelligence-and-data-analytics) series.
 
 
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
-> - Grolemund & Wickham, _R for Data Science_, 2.15 (The map functions)
+> - Grolemund & Wickham, [_R for Data Science_, 21.5 (The map functions)](https://r4ds.had.co.nz/iteration.html#the-map-functions)
 
 ## Course outline:
 
