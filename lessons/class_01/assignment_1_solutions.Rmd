@@ -98,7 +98,8 @@ gapminder %>%
 
 > The table `relig-income` is in {tidyr}.
 >
->a. Load this table, and take a look at it. Why does this table not conform to the tidy principles? (See the "Tidy Data" chapter in _R4DS_.)
+>a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the "Tidy Data" chapter in _R4DS_.)
+>
 
 ```{r}
 tidyr::relig_income
