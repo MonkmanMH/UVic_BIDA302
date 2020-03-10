@@ -1,13 +1,13 @@
 ---
 title: "BIDA302: Lesson Plan, Week 3"
-subtitle: "2019-11-16"
+subtitle: "2020-03-14"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
 output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 3 (2019-11-16)
+# Week 3 (2020-03-14)
 
 
 
@@ -17,9 +17,11 @@ output: html_document
 
 At the end of this lesson, learners will be able to:
 
-1. Describe the fundamental elements of data manipulation, and 
+1. Describe the fundamental elements of data visualization in a data analytics context, 
 
-2. Demonstrate how these can be applied in a data analytics context.
+2. Manipulate data by joining two or more data tables, and 
+
+2. Demonstrate how these can be applied using R.
 
 
 ***
