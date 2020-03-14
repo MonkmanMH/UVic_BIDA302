@@ -102,6 +102,7 @@ x <- tribble(
      2, "x2",
      3, "x3"
 )
+
 y <- tribble(
   ~key, ~val_y,
      1, "y1",
@@ -152,6 +153,7 @@ See what happens when you join the tables with a `right_join()`, followed by a `
 
 
 ```{r}
+# solution
 full_join(x, y, key = "key")
 ```
 
@@ -199,6 +201,7 @@ x <- tribble(
      2, "x3",
      1, "x4"
 )
+
 y <- tribble(
   ~key, ~val_y,
      1, "y1",

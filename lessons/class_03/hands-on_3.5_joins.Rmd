@@ -1,6 +1,6 @@
 ---
 title: "Data manipulation: joins"
-subtitle: "hands-on examples"
+subtitle: "hands-on examples, with answers"
 output: html_document
 ---
 
@@ -68,15 +68,7 @@ Having the same key in two tables forms the "relation" -- hence "relational data
 Use `count` to check that `planes$tailnum` is a primary key
 
 ```{r}
-# solution (in _R4DS_)
-planes %>% 
-  count(tailnum) %>% 
-  filter(n > 1)
-
-# alternate solution
-planes %>% 
-  count(tailnum) %>% 
-  summarise(max(n))
+# solution
 
 
 ```
@@ -102,6 +94,7 @@ x <- tribble(
      2, "x2",
      3, "x3"
 )
+
 y <- tribble(
   ~key, ~val_y,
      1, "y1",
@@ -133,8 +126,7 @@ Join the two tables using a left join: ... all of the observations from the firs
 The {dplyr} function for this is `left_join()`
 
 ```{r}
-
-
+left_join(x, y, key = "key")
 ```
 
 Note that all 3 of the `x` values are there; because there is no `y` observation with the key value of "3", the `val_y` value is `NA`.
@@ -153,6 +145,7 @@ See what happens when you join the tables with a `right_join()`, followed by a `
 
 
 ```{r}
+# solution
 
 
 ```
@@ -176,6 +169,8 @@ To this table we will add the name of the airline, which we can find in the tabl
 
 
 ```{r}
+# solution
+
 
 
 ```
@@ -198,6 +193,7 @@ x <- tribble(
      2, "x3",
      1, "x4"
 )
+
 y <- tribble(
   ~key, ~val_y,
      1, "y1",
@@ -211,6 +207,7 @@ y <- tribble(
 Join the tables with `left_join()`, with `x` as the table on the left.
 
 ```{r}
+# solution
 
 
 ```
@@ -245,6 +242,7 @@ y <- tribble(
 What does a left join do? How many rows does the resulting table have?
 
 ```{r}
+# solution
 
 
 ```
@@ -289,16 +287,14 @@ Semi-join: only the observations in `x` that have a match in `y`.
 Note that no variables from `y` appear in the result.
 
 ```{r}
-
-
+semi_join(x, y, key = "key")
 ```
 
 
 Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
 
 ```{r}
-
-
+anti_join(x, y, key = "key")
 ```
 
 ***

@@ -71,6 +71,9 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp))
 ```{r}
 # solution
 
+
+# with shape instead of colour
+
 ```
 
 
@@ -160,7 +163,9 @@ Here's an example that uses the `geom_point` from earlier...change this to a lin
 
 You can add a `ggplot()` call as part of a pipe! This means that you can filter, mutate, group, etc and then pipe those results into a plot.
 
-Note that the data is already identified, so you don't include it after `ggplot`
+Note that the data is already identified, so you don't include it after `ggplot`.
+
+And as we saw earlier, the `aes()` could also be included in the `geom_()` function.
 
 
 ```{r}
@@ -171,7 +176,8 @@ gapminder %>%
   ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
   geom_point()
 
-# now make a line graph
+# solution 
+
 
 ```
 
@@ -183,6 +189,9 @@ Modify the code you wrote in #3.1 to show the life expectancy for Canada, Oman, 
 (In 2007, Japan had the longest life expectancy of any country, and in the years between 1952 and 2007, Oman had the biggest increase--a change of 38 years! The code for how I determined this is at the bottom of the page.) 
 
 ```{r}
+
+country_list <- c("Canada", "Oman", "Japan")
+
 
 
 ```
@@ -196,7 +205,6 @@ See what happens when you use the code from 3.2, with `geom_line`, and then add 
 ```{r}
 
 # solution
-
 
 ```
 

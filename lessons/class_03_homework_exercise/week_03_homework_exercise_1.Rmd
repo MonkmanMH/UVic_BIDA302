@@ -1,6 +1,6 @@
 ---
 title: "BIDA 302 - week 3"
-subtitle: "homework exercise #1"
+subtitle: "homework exercise #1: solutions"
 author: "Martin Monkman"
 date: "17/11/2019"
 output: html_notebook
@@ -61,12 +61,26 @@ library(readxl)
 
 ```
 
-> Read the file again and create a data frame object, so that the header rows are in the right place, and with the "Note:" column omitted.
+> Read the file again, so that the header rows are in the right place, and with the "Note:" column omitted.
 > 
 > (See [this page on the {readxl} reference material](https://readxl.tidyverse.org/reference/cell-specification.html) for some tips.)
 > 
 > Note: some solutions to this problem would involve some of the {dplyr} data manipulations, once you've created an object that you can manipulate in the R environment.
 
+
+
+```{r}
+
+
+```
+
+
+
+
+```{r}
+
+
+```
 
 
 
@@ -83,7 +97,10 @@ library(readxl)
 > 
 > If so, use the pivot functions from {tidyr} to turn it into a tidy structure.
 
+```{r}
 
+
+```
 
 ### 1d. EDA: plotting, 1
 
@@ -123,6 +140,8 @@ library(readxl)
 
 
 ```{r}
+
+
 
 
 ```

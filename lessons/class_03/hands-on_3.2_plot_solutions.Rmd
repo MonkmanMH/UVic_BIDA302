@@ -78,6 +78,10 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
 ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, colour = continent)) +
   geom_point()
 
+
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, shape = continent)) +
+  geom_point()
+
 ```
 
 
@@ -178,7 +182,9 @@ Here's an example that uses the `geom_point` from earlier...change this to a lin
 
 You can add a `ggplot()` call as part of a pipe! This means that you can filter, mutate, group, etc and then pipe those results into a plot.
 
-Note that the data is already identified, so you don't include it after `ggplot`
+Note that the data is already identified, so you don't include it after `ggplot`.
+
+And as we saw earlier, the `aes()` could also be included in the `geom_()` function.
 
 
 ```{r}
@@ -189,12 +195,20 @@ gapminder %>%
   ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
   geom_point()
 
-# solution
+# solution 1
 gapminder %>%
   filter(country == "Canada") %>%
   # now the ggplot 
   ggplot(aes(x = year, y = lifeExp)) +  # IMPORTANT - it's a "+", not a "%>%"
   geom_line()
+
+# solution 2
+gapminder %>%
+  filter(country == "Canada") %>%
+  # now the ggplot 
+  ggplot() +  # IMPORTANT - it's a "+", not a "%>%"
+  geom_line(aes(x = year, y = lifeExp))
+
 
 ```
 

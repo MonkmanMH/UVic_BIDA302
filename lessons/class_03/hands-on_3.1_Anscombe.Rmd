@@ -85,13 +85,20 @@ anscombe_tidy %>%
 
 ## 2. Visualizing the quartet
 
-Using the R visualization package {ggplot2}
+Using the R visualization package {ggplot2}.
 
+The template of a `ggplot()` function call looks like this:
+
+`ggplot(data = <DATA>) + ` <BR>
+`  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))`  
+
+
+With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `x` and `y` as points.
 
 ```{r}
 # example
-ggplot(anscombe_tidy, aes(x = x, y = y)) + 
-  geom_point() 
+ggplot(anscombe_tidy) + 
+  geom_point(aes(x = x, y = y)) 
 
 
 ```
@@ -99,12 +106,14 @@ ggplot(anscombe_tidy, aes(x = x, y = y)) +
 
 ### Your turn 2.1
 
+
+
 With `colour` to differentiate each set
 
 ```{r}
 # example
-ggplot(anscombe_tidy, aes(x = x, y = y, colour = set)) + 
-  geom_point() 
+ggplot(anscombe_tidy) + 
+  geom_point(aes(x = x, y = y, colour = set)) 
 
 
 
@@ -151,20 +160,22 @@ Add a trend line using the `geom_smooth` function.
 
 ```{r}
 
-ggplot(anscombe_tidy, aes(x, y)) + 
-  geom_point() + 
-  geom_smooth(method = lm) +
+ggplot(anscombe_tidy) + 
+  geom_point(aes(x, y)) + 
+  geom_smooth(aes(x, y), method = lm) +
   facet_wrap(~set)
 
 ```
 
 
+But that duplicates the `aes(x, y)` text ... so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
 
 
 ```{r}
 
 ggplot(anscombe_tidy, aes(x, y)) + 
-  geom_point() + geom_smooth(method = lm, se = FALSE) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
   facet_wrap(~set)
 
 ```
