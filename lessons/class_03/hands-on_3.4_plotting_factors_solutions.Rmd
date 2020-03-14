@@ -22,6 +22,15 @@ library(gapminder)
  
 * Extend learning of {ggplot2} functions
 
+## REFERENCES
+
+* https://www.r-graph-gallery.com/267-reorder-a-variable-in-ggplot2.html
+
+* https://stat545.com/factors-boss.html#reorder-factors
+
+
+## Set up the data
+
 
 
 Create a dataframe object with the name "gapminder_2007" by filtering the gapminder data.

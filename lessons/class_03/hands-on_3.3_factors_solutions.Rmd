@@ -22,6 +22,20 @@ library(gapminder)
 * understand how to manipulate factors
 
 
+## REFERENCES
+
+This hands-on exercise draws heavily on material at the following 
+
+* The [{forcats} reference site](https://forcats.tidyverse.org/)
+
+* ["Factors" in _R for Data Science_](https://r4ds.had.co.nz/factors.html) by Hadley Wickham & Garrett Grolemund
+
+* ["Be the boss of your factors" at STAT545](https://stat545.com/factors-boss.html)
+
+
+
+
+
 # 1. Categorical variables: factors
 
 We love factors. We hate factors. 
@@ -221,16 +235,5 @@ i_gap$country %>%
 ```
 
 
-
-
-## REFERENCES
-
-This hands-on exercise draws heavily on material at the following 
-
-* The [{forcats} reference site](https://forcats.tidyverse.org/)
-
-* ["Factors" in _R for Data Science_](https://r4ds.had.co.nz/factors.html) by Hadley Wickham & Garrett Grolemund
-
-* ["Be the boss of your factors" at STAT545](https://stat545.com/factors-boss.html)
 
 

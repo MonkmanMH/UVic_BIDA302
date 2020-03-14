@@ -25,6 +25,14 @@ library(gapminder)
 * Modify the aesthetics of an existing plot (including color).
  
 
+## REFERENCES
+
+* _R4DS_, ["Data visualisation"](https://r4ds.had.co.nz/data-visualisation.html)
+
+* _R4DS_, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+
+
+
 
 ## 1. Scatter plot: GDP by life expectancy
 
