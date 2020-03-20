@@ -1,6 +1,6 @@
 ---
 title: "BIDA302: Lesson Plan, Week 4"
-subtitle: "2019-11-23"
+subtitle: "2020-03-21"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
 output: html_document
@@ -16,11 +16,10 @@ At the end of this lesson, learners will be able to:
 
 1. Describe the different join types, and 
 
-2. Demonstrate how they are applied in a data analytics context.
+2. Demonstrate how joins are applied in a data analytics context.
 
 3. Demonstrate their ability to write a simple function in R.
 
-4. Create a simple macro in Excel, and edit it.
 
 
 ***
@@ -29,37 +28,84 @@ At the end of this lesson, learners will be able to:
 
 _(subject to change)_
 
-| Block      | Time           | Topics  | &#8212; |
-|---         |:---            |:---     |:---:  |
-|1a          | 9:00 to 9:30   | Course: mid-point review | &#8212; |
-|1b          | 9:30 to 10:30  | Review Homework Exercise #3  <BR> * Data import and plotting <BR> * Joins (relational data)  | &#8212; |
-|&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2           | 10:45 to 12:00 | Writing your own functions | &#8212; |
-|&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
-|3           | 1:00 to 2:15   | Excel: macros and VBA (1) | &#8212; |
-|&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
-|4a          | 2:30 to 3:00   | Excel: macros and VBA (2) | &#8212; |
-|4b          | 3:00 to 3:30   | Capstone Project <br> Assignment 4 | &#8212; |
-|4c <br> 4d  | 3:30 to 4:00   | Questions? Comments? <br> Wrap up | &#8212; |
+| Hour  | Block      | Time              | Topics  | &#8212; |
+|---    |:---        |:---               |:---:  |
+|**1**  |            | **9:00 to 10:00** |    |   |
+|       |1a          | 9:00 to 9:20      | Moving online: Blackboard Collaborative | &#8212; |
+|       |1c          | 9:20 to 9:30      | Revised course evaluation | &#8212; |
+|       |1c          | 9:30 to 10:00     | Course: mid-point review | &#8212; |
+|**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
+|       |2a          | 10:15 to 11:00    | Review Homework Exercise #3  <BR> * Data import and plotting | &#8212; |
+|**3**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
+|       |3a          | 11:15 to 12:00    | Review Homework Exercise #3  <BR> Joins (relational data) | &#8212; |
+|&#8212;|&#8212;     | 12:00 to 1:00     | _lunch_ | &#8212; |
+|**4**  |            | **1:00 to 2:00**  | &#8212;  | &#8212; |
+|       |4a          | 1:00 to 2:00      | Writing your own functions | &#8212; |
+|**5**  |            | **2:00 to 3:00**  | &#8212;  | &#8212; |
+|       |&#8212;     | 2:00 to 2:15      | _break_ | &#8212; |
+|       |5a          | 2:15 to 3:00      | Writing your own functions | &#8212; |
+|**6**  |            | **3:00 to 4:00**  | &#8212;  | &#8212; |
+|       |&#8212;     | 3:00 to 3:15      | _break_ | &#8212; |
+|       |4a          | 3:15 to 3:30      | Capstone Project | &#8212; |
+|       |4b          | 3:30 to 3:45      | Assignment 4 | &#8212; |
+|       |4c          | 3:45 to 4:00      | Questions? Comments? <br> Wrap up | &#8212; |
 
 
 
-### 1a. Course: mid-point review
+### 1a. Moving online: Blackboard Collaborative
+
+Format: instructor demonstration and participation 
+
+Time allocation: 20 minutes (9:00 to 9:20)
+
+Link: https://ca.bbcollab.com/guest/c98a1689208746e988ce36a13be8cb55
+
+* remember to use the Google Chrome browser!
+
+If you want to dial in (perhaps your computer doesn't have good audio) you can call
+
+Call in anonymously. Attendees using this PIN appear as anonymous callers in the session. 
+• +1-571-392-7651
+• PIN: 7409529098
+
+
+### 1b. Revised course evaluation
+
+Format: instructor lecture w/ slides 
+
+Time allocation: 10 minutes (9:20 to 9:30)
+
+
+### 1c. Course: mid-point review
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 30 minutes (9:00 to 9:30)
-
-
-### 1b. Review Homework Exercise #3
-
-Format: participation and instructor lecture w/ slides
-
-Time allocation: 15 minutes (9:30 to 9:45)
 
 Format: hands-on exercise
 
-Time allocation: 45 minutes (9:45 to 10:30)
+Time allocation: 30 minutes (9:30 to 10:00)
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (10:00 to 10:15)
+
+***
+
+
+### 2a. Review Homework Exercise #3 - data importing and plotting
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (10:15 to 10:30)
+
+Format: hands-on exercise
+
+Time allocation: 30 minutes (10:30 to 11:00)
 
 
 
@@ -67,21 +113,20 @@ Time allocation: 45 minutes (9:45 to 10:30)
 
 ## BREAK
 
-Time allocation: 15 minutes (10:30 to 10:45)
+Time allocation: 15 minutes (11:00 to 11:15)
 
 ***
 
 
-### 2. Writing your own functions
+### 3a. Review Homework Exercise #3 - joins (relational data)
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (10:45 to 12:00)
+Time allocation: 15 minutes (11:15 to 11:30)
 
-_Reading:_
+Format: hands-on exercise
 
-* _R4DS_, ["Functions"](https://r4ds.had.co.nz/functions.html)
-
+Time allocation: 30 minutes (11:30 to 12:00)
 
 
 ***
@@ -93,58 +138,92 @@ Time allocation: 60 minutes (12:00 to 1:00)
 ***
 
 
-### 3. Excel: macros and VBA (1)
+
+
+
+### 4. Writing your own functions (1)
 
 Format: participation and instructor lecture w/ slides
 
 Time allocation: 15 minutes (1:00 to 1:15)
 
-Format: hands-on exercise
-
-Time allocation: 60 minutes (1:15 to 2:15)
-
 _Reading:_
 
-* ["Getting started with VBA in Office"](https://docs.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office), Microsoft
+* _R4DS_, ["Functions"](https://r4ds.had.co.nz/functions.html)
+
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (1:15 to 2:00)
+
 
 
 ***
 
 ## BREAK
 
-Time allocation: 15 minutes (2:15 to 2:30)
+Time allocation: 15 minutes (2:00 to 2:15)
+
+***
+
+
+
+
+### 5. Writing your own functions (2)
+
+
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (2:15 to 3:00)
+
+
+
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (3:00 to 3:15)
 
 
 ***
 
 
-### 4a. Excel: macros and VBA (2)
-
-Format: hands-on exercise
-
-Time allocation: 30 minutes (2:30 to 3:00)
 
 
-
-### 4b. Capstone Project and Assignment #4
+### 6a. Capstone Project
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 30 minutes (3:00 to 3:30)
+Time allocation: 15 minutes (3:15 to 3:30)
+
+
+Descriptions of the capstone projects are here:
+
+https://github.com/MonkmanMH/UVic_BIDA302_capstone
 
 
 
-### 4c. Wrap up
 
-Time allocation: 30 minutes (3:30 to 4:00)
+### 6b. Assignment #4
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (3:30 to 3:45)
+
+
+
+
+### 6c. Wrap up
+
+Time allocation: 15 minutes (3:45 to 4:00)
 
 #### Summary
 
 Format: instructor summary, w/ slides
 
-#### Questions?
-
-Format: learner Q&A
 
 #### Preview/readings for next lesson
 
