@@ -1,0 +1,298 @@
+---
+title: "Model"
+author: "Martin Monkman"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+```{r}
+library(tidyverse)
+#
+library(modelr)
+library(datarium)
+```
+
+
+
+
+## Relationship between variables
+
+When we talk about a "model" in the context of data analysis, we usually mean that we are summarizing the relationship between two or more variables. The question we are asking is "What's the pattern in the data?"
+
+In this example, we will be using linear regression to predict one value based on one or more values. 
+
+As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
+
+
+## 1. A simple example
+
+This pair of plots shows how a simple linear model works: first we have the X-Y scatter plot.
+
+(Note that the data set `sim1` comes from the package {modelr}.)
+
+
+```{r}
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point()
+```
+
+
+Then we can add the line of best fit that shows the trend, using the `geom_smooth()` function, where `method = lm`:
+
+```{r plot_sim1}
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+```
+
+
+The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase that value.
+
+Being a statistics-based program), linear regression is a function in base R ... it's `lm()`, for "linear model". 
+
+The syntax of the `lm()` function is a bit different than what we're used to.
+
+`lm(y ~ x, data)`
+
+This code creates a regression model, which we will assign to the object `mod_sim1`
+
+```{r mod_sim1}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+mod_sim1
+
+```
+
+The regression equation is the same as an equation for defining a line in geometry:
+
+$y = b_{0} + b_{1}x_{1} + e$
+
+How to read this:
+
+* the value of `y` (i.e. the point on the `y` axis) can be predicted by
+
+* the intercept value `b_{0}`, plus
+
+* the coefficient `b_{1}` times the value of `x`
+
+The distance between that predicted point and the actual point is the error term.
+
+
+The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, a point on the line) is equal to 4.221 + 2.052 * the value of `x`.
+
+If `x` = 2.5, then `y` = 4.221 + (2.052 * 2.5), which is 9.351. Look back at the line of best fit--if `x` = 2.5, the `y` point on the line is just below 10. 
+
+
+### Your turn 1.1
+
+
+We can also see how well the data predicts the line, by examining the summary statistics of the model with the `summary()` function:
+
+```{r summary_sim1_mod}
+
+summary(mod_sim1)
+
+```
+
+This isn't a statistics class, so we won't go into the details ... 
+
+Can you find the coefficients for the equation?
+
+The Multiple R-squared statistics tells us how well the line fits the points ... this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line)--if the relationship is negative (as one goes up the other goes down), it will be in the range from -1 to 0. In this case, it's 0.8846, which is a very good fit.
+
+
+**The equation predicts a value of Y, based on what we know about X.**
+
+This has enormous practical applications.
+
+
+---
+
+## 2. A deeper dive
+
+In the following example, we will use some data from another package, {datarium}. In this example, there are three types of adverstising: youtube, facebook, and newspaper. What we are interested in predicting is sales--how much do they go up for each dollar spent on each of the three media?
+
+Here's what the first 6 rows of the 200 rows in the `marketing` table look like:
+
+* note that `sales` is 1000 units
+
+```{r}
+df_marketing <- datarium::marketing 
+
+head(df_marketing)
+```
+
+
+### Your turn 2.1
+
+Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp:
+
+```{r}
+# solution
+ggplot(df_marketing, aes(x = youtube, y = sales)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+
+```
+
+
+### Your turn 2.2
+
+Then, run the regression model to create a new model object, and use `summary()` to get the model statistics:
+
+```{r}
+# solution
+mod_youtube <- lm(sales ~ youtube, df_marketing)
+
+summary(mod_youtube)
+```
+
+Y = 8.44 + (0.048 * X)
+
+The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
+
+(For interpreting the regression model summary, see [_The R Cookbook_, 2nd edition, "11.4 Understanding the Regression Summary"](https://rc2e.com/linearregressionandanova#recipe-id240))
+
+
+### Your turn 2a. Function
+
+Write a function called `ad_impact` that takes a value called `youtube` that represents the amount spent on youtube advertising, and then calculates the predicted sales, using the values from the model.
+
+
+```{r model_function}
+
+# solution
+
+ad_impact <- function(youtube) {
+  8.439 + (0.048 * youtube)
+}
+
+
+```
+
+Let's test our function, seeing the sales impact of spending $1000 on youtube advertising.
+
+
+```{r}
+
+ad_impact(1000)
+
+```
+
+
+
+
+
+## 3. Multiple predictors
+
+Regression equations also allow us to use multiple variables to predict our outcome. In this sales example, there's not just youtube, but facebook and newspaper advertising happening at the same time.
+
+A full regression equation looks like this:
+
+$y = b_{0} + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{n}x_{n} + e$
+
+
+In R syntax, it is quite simple:
+
+
+```{r}
+# solution
+mod_all <- lm(sales ~ youtube + facebook + newspaper, df_marketing)
+
+summary(mod_all)
+```
+
+Note that the value for newspaper is very small (and less important, negative). With such a small number, it's time to introduce the statistical significance measure, shown on the right with the handy asterix column. The "P value" is the probability that the estimate is _not_ significant, so the smaller the better. There's no asterix associated with the newspaper line, so it's not signficant, but the other two variables get the full 3-star rating.
+
+
+### Your turn 3.1
+
+This means that we can re-run the model, but without newspaper as a predictive variable:
+
+
+```{r}
+# solution
+mod_all <- lm(sales ~ youtube + facebook, df_marketing)
+
+summary(mod_all)
+```
+
+
+Interpretation:
+
+Y = 3.52 + 0.046 (youtube) + 0.188 (facebook) 
+
+For a given predictor (youtube or facebook), the coefficient is the effect on Y of a one unit increase in that predictor, holding the other predictors constant.
+
+So to see the impact of a $1,000 increase in facebook advertising, we'd evaluate the equation as
+
+`3.52 + (0.046 * 1) + (0.188 * 1000) = 191.57`
+
+We would expect to see an increase of sales of 191.57 units, for each additional expenditure of $1000 of facebook adverstising.
+
+
+
+### Your turn 3.2
+
+Rather than calculating this long-hand, we can write a short function to calculate this for us:
+
+```{r model_function2}
+
+# solution
+
+ad_impact2 <- function(youtube, facebook) {
+  3.52 + (0.046 * youtube) + (0.188 * facebook)
+}
+
+
+```
+
+
+Let's test: calculate the impact of a $1000 spend on facebook
+
+```{r}
+# solution
+
+ad_impact2(1, 1000)
+
+```
+
+
+### Your turn 3.3
+
+
+What if we split our spending? What's the impact of a \$500 spend on youtube and a \$500 spend on facebook?
+
+```{r}
+# solution
+
+ad_impact2(500, 500)
+
+```
+
+
+
+---
+
+## Working with model data
+
+As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract--we have just been reading the numbers on the screen and typing them in.
+
+To "tidy" the data, you can use the package {broom}.
+
+![broom hex](/static/img/broom_400.png)
+
+* [_R for Data Science_, "25 Many models"](https://r4ds.had.co.nz/many-models.html)
+
+* [Introduction to broom: let's tidy up a bit](https://broom.tidyverse.org/articles/broom.html)
+
+* [{broom} reference site](https://broom.tidyverse.org/)
+
+
+-30-
+

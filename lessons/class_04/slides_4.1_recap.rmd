@@ -2,15 +2,16 @@
 title: "BIDA 302"
 subtitle: "mid-point review"
 author: "Martin Monkman"
-date: "2019/11/23"
+date: "2020/03/21"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+# Martin Monkman
 ---
 
 
@@ -22,7 +23,7 @@ library(tidyverse)
 
 # The Data Science Process
 
-![the data science process](../img/data-science.png)
+![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
 
 - Wickham and Grolemund, _R4DS_
 
@@ -50,7 +51,7 @@ library(tidyverse)
 
 ---
 
-![R](../img/R.jpg)
+![R](E:/github/UVic_BIDA302/static/img/R.jpg)
 
 
 ---
@@ -118,7 +119,7 @@ class: inverse
 
 
 ```{r, out.width = "700px", echo=FALSE}
-knitr::include_graphics("main-bugpush-1810151019.jpg")
+knitr::include_graphics("E:/github/UVic_BIDA302/static/img/main-bugpush-1810151019.jpg")
 ```
 
 ???
@@ -130,19 +131,59 @@ https://www.uvic.ca/unitedway/events/bug/index.php
 
 class: inverse
 
-# Expectations
-
-
-## homework
-
-Goal: Thursday at 23:59 (11:59 pm)
-
-Submissions close: Friday at 23:59 (11:59 pm)
-
-* we will cover the assignment bright & early on Saturday morning!
+# Next steps
 
 ---
 
+
+## Course Outline
+
+
+| Week      | Date | Topics   | Lesson |
+|---        |:---  |:---      |:---:  |
+|1          | 2020-02-29 | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling  | &#8212; |
+|2          | 2020-03-07 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level | &#8212; |
+|3          | 2020-03-14 | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA | &#8212; |
+
+---
+class: inverse
+
+
+```{r, out.width = "700px", echo=FALSE}
+knitr::include_graphics("E:/github/UVic_BIDA302/static/img/Beetle_off_road_1.jpg")
+```
+
+???
+
+
+---
+class: inverse
+
+
+```{r, out.width = "700px", echo=FALSE}
+knitr::include_graphics("E:/github/UVic_BIDA302/static/img/Beetle_off_road_2.jpg")
+```
+
+???
+
+
+---
+
+## Course Outline (revised)
+
+**_revised, but still subject to change_**
+
+
+| Week      | Date | Topics   | Lesson |
+|---        |:---  |:---      |:---:  |
+|_PIVOT_          |  |  | &#8212; |
+|4          | 2020-03-21 | Review <br> Writing your own functions <br> Introduction to modeling | &#8212; |
+|5          | 2020-03-28 | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> _R Markdown: moving beyond documents and notebooks_ | &#8212; |
+|6          | 2019-04-04 | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges | &#8212; |
+
+
+
+---
 
 # Evaluation (revised)
 
@@ -154,5 +195,44 @@ Submissions close: Friday at 23:59 (11:59 pm)
 | Capstone project | 30 | 40 |
 | _bonus_ | 2 | 4 |
 | **TOTAL** | **100**| **100**|
+
+
+---
+
+
+## assignments
+
+Only one homework assignment left!
+
+Goal: Thursday at 23:59 (11:59 pm)
+
+Submissions close: Friday at 23:59 (11:59 pm)
+
+* we will cover the assignment bright & early on Saturday morning!
+
+
+---
+
+
+## capstone project
+
+We will talk about that later today...
+
+
+---
+
+
+## office hours
+
+_move to Blackboard Collaborate_
+
+Tuesday, 8:00 pm to 9:00 pm
+
+_options:_
+
+Wednesday
+
+Thursday
+
 
 

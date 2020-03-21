@@ -7,7 +7,7 @@ output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 4 (2019-11-23)
+# Week 4 
 
 
 ## Objective
@@ -19,6 +19,8 @@ At the end of this lesson, learners will be able to:
 2. Demonstrate how joins are applied in a data analytics context.
 
 3. Demonstrate their ability to write a simple function in R.
+
+4. Have a foundational understanding of modeling in R.
 
 
 
@@ -45,7 +47,7 @@ _(subject to change)_
 |       |4a          | 1:00 to 2:00      | Writing your own functions | &#8212; |
 |**5**  |            | **2:00 to 3:00**  | &#8212;  | &#8212; |
 |       |&#8212;     | 2:00 to 2:15      | _break_ | &#8212; |
-|       |5a          | 2:15 to 3:00      | Writing your own functions | &#8212; |
+|       |5a          | 2:15 to 3:00      | Introduction to modeling | &#8212; |
 |**6**  |            | **3:00 to 4:00**  | &#8212;  | &#8212; |
 |       |&#8212;     | 3:00 to 3:15      | _break_ | &#8212; |
 |       |4a          | 3:15 to 3:30      | Capstone Project | &#8212; |
