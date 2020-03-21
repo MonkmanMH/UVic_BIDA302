@@ -33,7 +33,7 @@ library(tidyverse)
 
 
 
-![function function, what's your function?](../img/shr_function.jpg)
+![function function, what's your function?](E:/github/UVic_BIDA302/static/img/shr_function.jpg)
 
 
 Functions are an important part of programming in R. You have already used many functions ... now it's time to write your own.
