@@ -74,9 +74,17 @@ court_cases <- read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-
 court_cases <- 
   read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
                         col_types = cols(
-#                          Year = col_date(format = "%Y"),
                           `Court Region Code` = col_character()
                         ))
+
+# if we wanted to also specifiy that "Year" be in date format:
+court_cases <- 
+  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
+                        col_types = cols(
+                          `Court Region Code` = col_character(),
+                           Year = col_date(format = "%Y")
+                        ))
+
 ```
 
 
