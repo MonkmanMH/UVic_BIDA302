@@ -70,6 +70,8 @@ Use `count` to check that `planes$tailnum` is a primary key
 ```{r}
 # solution
 
+planes %>%
+  distinct(tailnum)
 
 ```
 
@@ -102,7 +104,8 @@ y <- tribble(
      4, "y3"
 )
 
-
+x
+y
 ```
 
 
@@ -171,6 +174,7 @@ To this table we will add the name of the airline, which we can find in the tabl
 ```{r}
 # solution
 
+left_join(flights2, airlines, key = "carrier")
 
 
 ```
@@ -209,6 +213,7 @@ Join the tables with `left_join()`, with `x` as the table on the left.
 ```{r}
 # solution
 
+left_join(x, y)
 
 ```
 
@@ -244,6 +249,7 @@ What does a left join do? How many rows does the resulting table have?
 ```{r}
 # solution
 
+left_join(x, y)
 
 ```
 
@@ -294,7 +300,7 @@ semi_join(x, y, key = "key")
 Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
 
 ```{r}
-anti_join(x, y, key = "key")
+anti_join(y, x, key = "key")
 ```
 
 ***
