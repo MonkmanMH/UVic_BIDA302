@@ -96,7 +96,7 @@ gapminder %>%
 ### 4. Religion and income data (USA)
 > (2 marks)
 
-> The table `relig-income` is in {tidyr}.
+> The table `relig_income` is in {tidyr}.
 >
 >a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the "Tidy Data" chapter in _R4DS_.)
 >
