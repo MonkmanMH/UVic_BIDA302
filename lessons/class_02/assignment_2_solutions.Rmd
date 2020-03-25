@@ -42,7 +42,9 @@ library(readxl)
 
 **Answer:**
 
-This is the answer
+A:
+
+Add a footnote
 
 
 
@@ -78,12 +80,12 @@ court_cases <-
                         ))
 
 # if we wanted to also specifiy that "Year" be in date format:
-court_cases <- 
-  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
-                        col_types = cols(
-                          `Court Region Code` = col_character(),
-                           Year = col_date(format = "%Y")
-                        ))
+#court_cases <- 
+#  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
+#                        col_types = cols(
+#                          `Court Region Code` = col_character(),
+#                           Year = col_date(format = "%Y")
+#                        ))
 
 ```
 
@@ -143,7 +145,7 @@ excel_sheets("regional_district_monthly_2019_mod.xlsx")
 
 ```{r}
 
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019")
+read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019")
 
 ```
 
@@ -154,7 +156,7 @@ d. Change the options for your read function to address this.
 ```{r}
 # solution
 
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019", 
+read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019", 
            skip = 2)
 
 ```
@@ -168,9 +170,10 @@ read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019",
 ```{r}
 # solution
 
-read_excel("regional_district_monthly_2019.xlsx", sheet = "CRD_MONTHLY_2019", 
+read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019", 
            skip = 2,
-           na = "nr")
+           na = "nr") %>% 
+  summarise(foreign_inv_res = sum(`FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`, na.rm = TRUE))
 
 ```
 
