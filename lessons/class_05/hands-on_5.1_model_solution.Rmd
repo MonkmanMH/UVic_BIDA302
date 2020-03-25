@@ -23,14 +23,16 @@ When we talk about a "model" in the context of data analysis, we usually mean th
 
 In this example, we will be using linear regression to predict one value based on one or more values. 
 
-As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
+In a simple example, it's easy to see that we use more fuel in the winter. As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? 
+
+And in a more complex model, we could see if a combination of temperature and relative humidity is a better predictor.
 
 
 ## 1. A simple example
 
 This pair of plots shows how a simple linear model works: first we have the X-Y scatter plot.
 
-(Note that the data set `sim1` comes from the package {modelr}.)
+(Note that the data set `sim1` comes from the package {modelr}. There are 30 x-y pairs.)
 
 
 ```{r}
@@ -49,11 +51,11 @@ ggplot(sim1, aes(x = x, y = y)) +
 ```
 
 
-The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase that value.
+The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase the total distance.
 
-Being a statistics-based program), linear regression is a function in base R ... it's `lm()`, for "linear model". 
+Being a statistics-based program, linear regression is a function in base R ... it's `lm()`, for "linear model". 
 
-The syntax of the `lm()` function is a bit different than what we're used to.
+The syntax of the `lm()` function is a bit different than what we've seen in the tidyverse.
 
 `lm(y ~ x, data)`
 
@@ -67,7 +69,7 @@ mod_sim1
 
 ```
 
-The regression equation is the same as an equation for defining a line in geometry:
+The regression equation is the same as an equation for defining a line in Cartesian geometry:
 
 $y = b_{0} + b_{1}x_{1} + e$
 
@@ -96,7 +98,7 @@ We can also see how well the data predicts the line, by examining the summary st
 
 ```
 
-This isn't a statistics class, so we won't go into the details ... 
+This isn't a statistics class, so we won't go into all the details...but some things are worth noting.
 
 Can you find the coefficients for the equation?
 
@@ -112,7 +114,7 @@ This has enormous practical applications.
 
 ## 2. A deeper dive
 
-In the following example, we will use some data from another package, {datarium}. In this example, there are three types of adverstising: youtube, facebook, and newspaper. What we are interested in predicting is sales--how much do they go up for each dollar spent on each of the three media?
+In the following example, we will use some data from another package, {datarium}. In this example, there are three types of adverstising: youtube, facebook, and newspaper. What we are interested in predicting is sales—how much do they go up for each dollar spent on each of the three media?
 
 Here's what the first 6 rows of the 200 rows in the `marketing` table look like:
 
@@ -188,7 +190,7 @@ A full regression equation looks like this:
 $y = b_{0} + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{n}x_{n} + e$
 
 
-In R syntax, it is quite simple:
+In R syntax, it looks like this:
 
 
 ```{r}

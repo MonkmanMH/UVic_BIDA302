@@ -119,6 +119,8 @@ We can do data analysis using GUI (Graphical User Interface) tools, such as Exce
 
 The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you'll be using. 
 
+By the end of this course, you will see the relationship between your raw data and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
+
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Excel and Python.
 
 Here's another course description, one that I really like, so (with the author's permission) I am including it here:
