@@ -75,6 +75,10 @@ Salaries_2016 <- read_csv("Salaries_2016.csv")
 > What is the key variable that links the three tables?
 > 
 > Which table has the primary key? What is the reason behind your answer?
+>
+> * There is one variable that is common to all three tables (the key), but in only one of the tables will there be only one instance of each value (where it is unique). 
+>
+> * Remember that the `Batting_2016` and `Salaries_2016` are extracts from longer tables that cover multiple seasons.
 > 
 > Why would the designers of the table put only one variable in the Batting table that identifies a player?
 
@@ -167,15 +171,15 @@ Salaries_2016 %>%
 ```{r}
 # solution
 
-semi_join(Batting_2016, Salaries_2016, key = "playerID")
+anti_join(Batting_2016, Salaries_2016, key = "playerID")
 
-semi_join(Batting_2016, Salaries_2016, key = "playerID") %>% 
+anti_join(Batting_2016, Salaries_2016, key = "playerID") %>% 
   group_by(playerID) %>% 
   tally()
 
-# note: this is a semi_join:
-#  - _keeps_ all of the observations in x that have a match in y
-# an anti-join _drops_ all of the observations in x that have a match in y
+# note: this is an anti_join:
+#  - _drops_ all of the observations in x that have a match in y
+# a semi-join _keeps_ all of the observations in x that have a match in y
 
 ```
 
