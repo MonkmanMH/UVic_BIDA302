@@ -72,10 +72,6 @@ Glue together separate year (as a variable), month, and day values, separated by
 this_year <- 2020
 
 # solution
-glue({this_year},
-     '02',
-     '29', 
-     .sep = "-")
 
 ```
 
@@ -137,8 +133,6 @@ Create a new variable in the data frame by glueing the variables `species` and `
 ```{r}
 # solution
 
-starwars %>% 
-  mutate(species_gender = glue("{species} - {gender}"))
 
 ```
 
@@ -213,9 +207,7 @@ What happens if you put `y` first in the `coalesce()` function?
 
 ```{r}
 # solution
-coalesce(y, x)
 
-# the last value in the sequence is pulled from `y` instead of `x`
 
 ```
 
@@ -236,7 +228,9 @@ Find the cases where the subject is duplicated.
 
 ```{r}
 # solution
-roster %>% get_dupes(subject)
+
+
+
 ```
 
 
