@@ -11,7 +11,7 @@
 *.jpg
 
 *.csv
-.xls*
+*.xls*
 
 *.zip
 *.rar

@@ -61,6 +61,8 @@ _(revised 2020-03-26; subject to change)_
 
 _Reading and resources:_
 
+* [{glue}](https://glue.tidyverse.org/)
+
 * [{janitor}](http://sfirke.github.io/janitor/)
 
   - [#twofunctionsmostdays: janitor](https://github.com/sharlagelfand/twofunctionsmostdays/tree/master/2020/03/16)
