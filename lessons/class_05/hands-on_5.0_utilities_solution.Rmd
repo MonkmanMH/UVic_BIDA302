@@ -7,12 +7,14 @@ output:
 ---
 
 ```{r setup}
-library(tidyverse)
+# bonus utility - {pacman}
+# https://github.com/trinker/pacman
+pacman::p_load(tidyverse, gapminder)
 #
 # utilities
 library(janitor)
 library(datapasta)
-#library(glue)
+library(glue)
 ```
 
 
@@ -21,26 +23,202 @@ library(datapasta)
 ## Utilities in R
 
 
-## {glue} 
+## 1. {glue} - 
+
+The {glue} package provides some useful tools for sticking together character strings and data.
 
 * [{glue}](https://glue.tidyverse.org/)
 
 * You can use a function that you have installed but not loaded through the `library()` function, by putting the name of the package followed by the function you want to use. In this case, we are using the `glue()` function from the {glue} package, so our code looks like `glue::glue()`. The variable from our data frame gets put in braces, and the string returned is all within quotation marks.
 
 
+### `glue()`  
+
+Here's a simple example:
+
+```{r}
+
+glue('BIDA', '302')
+
+```
+
+We can also paste together variables, by putting the name inside curly braces `{}`:
+
+```{r}
+
+course <- "BIDA"
+course_number <- 301
+
+glue({course}, {course_number})
+
+```
+
+We can specify a character to separate the elements we are glueing, with `.sep = "<string>"`. In this example it's a space: 
+
+```{r}
+
+glue('_The Mandolorian_',
+  'is a tv series on the Disney+ streaming service',
+  'that featured Baby Yoda.', .sep = " ")
+
+```
+
+### 1.1 Your turn
+
+Glue together separate year (as a variable), month, and day values, separated by a hyphen "-", to create a single date string.
+
+```{r}
+# assign year to variable
+this_year <- 2020
+
+# solution
+glue({this_year},
+     '02',
+     '29', 
+     .sep = "-")
+
+```
 
 
 
-## {janitor} 
+
+
+
+### `glue_data()`  
+
+
+We can glue data in a {dplyr} pipe with the `glue_data()` function. 
+
+First, let's filter the {gapminder} data so we have a smaller piece to work with:
+
+```{r}
+
+gm_3 <- gapminder %>%
+  filter(year == 2007,
+         country %in% c("Canada", "Japan", "New Zealand"))
+
+gm_3
+
+```
+
+Now we can create multiple strings:
+
+```{r}
+
+gm_3 %>%
+  glue_data("{country} has a life expectancy of {lifeExp}.")
+
+```
+
+
+We can also apply functions within the curly braces:
+
+```{r}
+
+gm_3 %>%
+  glue_data("{country} has a life expectancy of {round(lifeExp, 1)}.")
+
+```
+
+
+### 1.2 Your turn
+
+Introducing the `starwars` character data table:
+
+```{r}
+
+head(starwars)
+
+```
+
+
+Create a new variable in the data frame by glueing the variables `species` and `gender`.
+
+```{r}
+# solution
+
+starwars %>% 
+  mutate(species_gender = glue("{species} - {gender}"))
+
+```
+
+
+
+## 2. {janitor} -
+
+Some simple functions for examining and cleaning data.
 
 * [{janitor}](http://sfirke.github.io/janitor/)
 
   - [#twofunctionsmostdays: janitor](https://github.com/sharlagelfand/twofunctionsmostdays/tree/master/2020/03/16)
 
+Let's look at a very messy Excel file. (This is all-too typical of the sorts of things you see in real life.) Some problems with this:
+
+* Dreadful column names
+
+* Rows and columns containing Excel formatting but no data
+
+* Dates stored as numbers
+
+* Values spread inconsistently over the “Certification” columns
+
+
+```{r}
+
+roster_raw <- readxl::read_excel("dirty_data.xlsx") # available at http://github.com/sfirke/janitor
+glimpse(roster_raw)
+
+roster_raw
+
+```
+
+
+```{r}
+roster <- roster_raw %>%
+  clean_names() %>%
+  remove_empty(c("rows", "cols")) 
+
+roster
+```
+
+We can also extend the pipe with other cleaning functions. Note that `excel_numeric_to_date()` is another {janitor} function, while `coalesce()` is from {dplyr} (and is similar to the SQL function of the same name).
+
+```{r}
+roster <- roster_raw %>%
+  clean_names() %>%
+  remove_empty(c("rows", "cols")) %>%
+  mutate(hire_date = excel_numeric_to_date(hire_date),
+         cert = coalesce(certification_9, certification_10)) %>% # from dplyr
+  select(-certification_9, -certification_10) # drop unwanted columns
+
+roster
+```
+
+### duplicate records
+
+We can find the cases where there are duplicates in the data records. In this case, we are looking for duplicate names:
+
+```{r}
+roster %>% get_dupes(first_name, last_name)
+```
+
+
+### 2.2 Your turn
+
+
+Find the cases where the subject is duplicated.
+
+```{r}
+# solution
+roster %>% get_dupes(subject)
+```
+
+
+### simple tables
 
 
 
-## {datapasta}
+## 3. {datapasta} -
 
 * [{datapasta}](https://milesmcbain.github.io/datapasta/)
 
