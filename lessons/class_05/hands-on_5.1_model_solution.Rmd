@@ -2,14 +2,14 @@
 title: "Model"
 author: "Martin Monkman"
 output:
-  html_document:
-    toc: true
-    toc_depth: 3
-    toc_float: true
+  html_document
+  
 ---
-```{r}
+
+```{r setup}
 library(tidyverse)
 #
+# data sources
 library(modelr)
 library(datarium)
 ```
@@ -95,8 +95,10 @@ We can also see how well the data predicts the line, by examining the summary st
 
 ```{r summary_sim1_mod}
 
+summary(mod_sim1)
 
 ```
+
 
 This isn't a statistics class, so we won't go into all the details...but some things are worth noting.
 
@@ -129,10 +131,13 @@ head(df_marketing)
 
 ### Your turn 2.1
 
-Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp:
+Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp, using both the points and the regression line:
 
 ```{r}
 
+ggplot(df_marketing, aes(x = youtube, y = sales)) +
+  geom_point() +
+  geom_smooth(method = lm)
 
 ```
 
@@ -143,13 +148,15 @@ Then, run the regression model to create a new model object, and use `summary()`
 
 ```{r}
 
+mod_youtube <- lm(sales ~ youtube, df_marketing)
 
+summary(mod_youtube)
 
 ```
 
 Y = 8.44 + (0.048 * X)
 
-The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
+The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 (the `summary()` function shows 0.047537 but let's round up a bit) in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
 
 (For interpreting the regression model summary, see [_The R Cookbook_, 2nd edition, "11.4 Understanding the Regression Summary"](https://rc2e.com/linearregressionandanova#recipe-id240))
 
@@ -210,6 +217,10 @@ This means that we can re-run the model, but without newspaper as a predictive v
 
 ```{r}
 
+mod_you_fb <- lm(sales ~ youtube + facebook, df_marketing)
+
+summary(mod_you_fb)
+
 
 ```
 
@@ -249,6 +260,7 @@ Let's test: calculate the impact of a $1000 spend on facebook
 ```{r}
 # solution
 
+ad_impact2(0, 1000)
 
 ```
 
@@ -261,6 +273,7 @@ What if we split our spending? What's the impact of a \$500 spend on youtube and
 ```{r}
 # solution
 
+ad_impact2(500, 500)
 
 ```
 

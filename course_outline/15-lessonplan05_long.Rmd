@@ -36,10 +36,10 @@ _(revised 2020-03-26; subject to change)_
 |---    |:---        |:---               |:---:  |
 |**1**  |            | **9:00 to 10:00** |    |   |
 |       |1a          | 9:00 to 9:30      | Assignment 4: review | &#8212; |
-|       |1b          | 9:30 to 10:00     | Utilities | &#8212; |
+|       |1b          | 9:30 to 10:00     | Modeling (1) | &#8212; |
 |**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
-|       |2a          | 10:15 to 11:00    | Modeling   | &#8212; |
+|       |2a          | 10:15 to 11:00    | Modeling (2)  | &#8212; |
 |**3**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
 |       |3a          | 11:15 to 12:00    | Working with dates & times | &#8212; |
@@ -56,37 +56,42 @@ _(revised 2020-03-26; subject to change)_
 
 
 
+### 1a. Review Homework Assignment #4
 
-### 1. Utilities to streamline your workflow
+Format: participation and instructor lecture w/ slides
 
-_Reading and resources:_
+Time allocation: 30 minutes (9:00 to 9:30)
 
-* [{janitor}](http://sfirke.github.io/janitor/)
 
-  - [#twofunctionsmostdays: janitor](https://github.com/sharlagelfand/twofunctionsmostdays/tree/master/2020/03/16)
-
-* [{datapasta}](https://milesmcbain.github.io/datapasta/)
+### 1b. Introduction to modeling
 
 
 
-### 2. Introduction to modeling
+***
 
-_Reading and resources:_
+## BREAK
 
-* _R4DS_, ["Model"](https://r4ds.had.co.nz/model-intro.html)
+Time allocation: 15 minutes (10:30 to 10:45)
 
-* JD Long and Paul Teetor, _R Cookbook, 2nd edition_, ["Linear Regression and ANOVA"](https://rc2e.com/linearregressionandanova) 
-
+***
 
 
 ### 3. Work with dates and times
 
 
+
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (11:00 to 11:15)
+
+Format: hands-on exercise
+
+Time allocation: 45 minutes (11:45 to 12:00)
+
 _Reading and resources:_
 
 * _R4DS_, ["Dates and times"](https://r4ds.had.co.nz/dates-and-times.html)
-
-* JD Long and Paul Teetor, _R Cookbook, 2nd edition_, ["Strings and Dates"](https://rc2e.com/stringsanddates) 
 
 * [Dates and Times Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf) (PDF file)
 
@@ -96,20 +101,72 @@ _Reading and resources:_
 
 
 
-### 4. Working with strings 
+***
 
+## BREAK
+
+Time allocation: 15 minutes (10:30 to 10:45)
+
+***
+
+
+
+
+***
+
+## LUNCH
+
+Time allocation: 60 minutes (12:00 to 1:00)
+
+***
+
+### 3. Working with strings 
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (1:00 to 1:15)
+
+Format: hands-on exercise
+
+Time allocation: 60 minutes (1:15 to 2:15)
 
 
 _Reading:_
 
 * _R4DS_, ["Strings"](https://r4ds.had.co.nz/strings.html)
 
-* JD Long and Paul Teetor, _R Cookbook, 2nd edition_, ["Strings and Dates"](https://rc2e.com/stringsanddates) 
-
 * [Work with Strings Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf) (PDF file)
 
 * [regex101.com](https://regex101.com/) -- "regular expression debugger with real time explanation, error detection and highlighting"
 
+
+
+***
+
+## BREAK
+
+Time allocation: 15 minutes (2:15 to 2:30)
+
+
+***
+
+### 4. Capstone Project: picking your project and getting started
+
+Format: participation and instructor lecture w/ slides
+
+Format: hands-on
+
+Time allocation: 90 minutes (10:45 to 12:00)
+
+
+
+### 5. Capstone Project: code together
+
+Format: participation and instructor lecture w/ slides
+
+Format: hands-on
+
+Time allocation: 90 minutes (2:30 to 4:00)
 
 
 
