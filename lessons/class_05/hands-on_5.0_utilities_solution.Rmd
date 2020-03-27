@@ -1,0 +1,51 @@
+---
+title: "Utilities"
+author: "Martin Monkman"
+output:
+  html_document
+  
+---
+
+```{r setup}
+library(tidyverse)
+#
+# utilities
+library(janitor)
+library(datapasta)
+#library(glue)
+```
+
+
+
+
+## Utilities in R
+
+
+## {glue} 
+
+* [{glue}](https://glue.tidyverse.org/)
+
+* You can use a function that you have installed but not loaded through the `library()` function, by putting the name of the package followed by the function you want to use. In this case, we are using the `glue()` function from the {glue} package, so our code looks like `glue::glue()`. The variable from our data frame gets put in braces, and the string returned is all within quotation marks.
+
+
+
+
+
+## {janitor} 
+
+* [{janitor}](http://sfirke.github.io/janitor/)
+
+  - [#twofunctionsmostdays: janitor](https://github.com/sharlagelfand/twofunctionsmostdays/tree/master/2020/03/16)
+
+
+
+
+## {datapasta}
+
+* [{datapasta}](https://milesmcbain.github.io/datapasta/)
+
+
+
+
+-30-
+

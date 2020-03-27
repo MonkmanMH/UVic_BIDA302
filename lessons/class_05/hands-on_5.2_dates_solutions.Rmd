@@ -68,9 +68,9 @@ See https://lubridate.tidyverse.org/reference/index.html
 
 ```{r}
 
-ymd(20191130)
+ymd(20200328)
 
-ymd("2019-11-30")
+ymd("2020-03-28")
 
 ```
 
@@ -135,7 +135,7 @@ What happens when you add the options `label` and `abbr` to the function you use
 * experiment with setting the options to TRUE or FALSE
 
 ```{r}
-# solunion
+# solution
 month(date2, label = TRUE, abbr = FALSE)
 
 ```
@@ -259,7 +259,7 @@ Since the variable `REF_DATE` is a character string, I am going to force them to
 
 **NOTE:** 
 
-* As with pretty much everything else, this is only one way to solve this problem!
+* As with pretty much everything else, there is more than one way to solve this problem!
 
 **NOTE:** 
 
@@ -363,6 +363,11 @@ lfs_BC_2000 %>%
 What is the difference between `today()` and `now()`?
 
 ```{r}
+# solution
+
+today()
+
+now()
 
 ```
 
@@ -404,7 +409,7 @@ You can use the function `OlsonNames()` to print a list of all 425 time zones ar
 
 ```{r}
 # solution -- beware the length!
-OlsonNames()
+head(OlsonNames())
 ```
 
 
