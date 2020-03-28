@@ -2,15 +2,16 @@
 title: "Working with strings"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
-date: "2019/11/23"
+#date: "2019/11/23"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+# Martin Monkman
 ---
 
 
@@ -23,7 +24,7 @@ library(stringr)
 
 # The Data Science Process
 
-![the data science process](../img/data-science.png)
+![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
 
 - Wickham and Grolemund, _R4DS_
 
@@ -49,7 +50,7 @@ library(stringr)
 class: inverse
 
 
-![R](../img/stringr_400.png)
+![stringr](E:/github/UVic_BIDA302/static/img/stringr_400.png)
 
 **stringr.tidyverse.org**
 
@@ -67,7 +68,6 @@ class: inverse
 | str_replace(x, pattern, newtext | replace |
 
 
----
 
 
 
