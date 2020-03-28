@@ -232,7 +232,7 @@ Read in this extract of a file downloaded from Statistics Canada, which has mont
 ```{r}
 
 lfs_BC_2000 <- read_csv("lfs_BC_2000.csv")
-
+lfs_BC_2000
 ```
 
 The date is shown in the variable `REF_DATE`; since it's monthly data, the character representation contains the year and the month, but not the day.
@@ -248,6 +248,7 @@ lfs_BC_2000 <-
   lfs_BC_2000 %>% 
   mutate(ref_date_2 = ymd(REF_DATE))
 
+lfs_BC_2000
 ```
 
 
@@ -429,11 +430,19 @@ Subtract date-time from each other
 
 ```{r}
 #
-x1 - x2
+x2 - x3
 
 ```
 
+Different ways to represent March 28, 2020:
 
+March 28, 2020
+2020-03-28
+28 Mar 2020
+28-3-20
+3/28/2020
+
+Also, keep in mind that a written-out-month is spelled differently in different languages! For example, April in French is "Avril".
 
 
 ## REFERENCE
