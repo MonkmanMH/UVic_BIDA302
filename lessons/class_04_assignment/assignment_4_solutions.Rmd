@@ -10,8 +10,6 @@ output: html_document
 Package load:
 ```{r setup}
 library(tidyverse)
-#
-library(gapminder)
 ```
 
 
@@ -54,11 +52,7 @@ library(gapminder)
 > * Salaries is an incomplete tables showing the compensation of some of the employees
 
 
-### 1a. Read the data
-
-Read in the three files and assign them to an object.
-
-
+### 1a. Read in the three files
 
 ```{r}
 # solution
@@ -72,16 +66,19 @@ Salaries_2016 <- read_csv("Salaries_2016.csv")
 
 ### 1b. Understanding the tables
 
-> What is the key variable that links the three tables?
-> 
-> Which table has the primary key? What is the reason behind your answer?
->
-> * There is one variable that is common to all three tables (the key), but in only one of the tables will there be only one instance of each value (where it is unique). 
->
-> * Remember that the `Batting_2016` and `Salaries_2016` are extracts from longer tables that cover multiple seasons.
-> 
-> Why would the designers of the table put only one variable in the Batting table that identifies a player?
+> i. What is the key variable that links the three tables?
 
+A: playerID
+
+The ID is unique so they don’t need any other way to identify the players. Any other table can be joined with the players table for more information about a player.
+ 
+> ii. Which table has the primary key? What is the reason behind your answer?
+
+A: `Master_2000s.csv` has the primary key. It lists all individual players. The other dataframes potentially include multiple entries for each player ID. For example, a player might be traded mid-season and have two records in `Batting_2016`, one for each team played for that season. 
+
+> iii. Why would the designers of the table put only one variable in the Batting table that identifies a player?
+
+A: Since all of the data in `Master` is constant (name, birthdate, etc) there is no need to repeat those variables in the other tables where there are multiple records for the same player. It also means that this contsistent data only has to be edited in one location, not across all of the tables.
 
 ### 1c. Joins
 
@@ -91,8 +88,11 @@ Salaries_2016 <- read_csv("Salaries_2016.csv")
 
 ```{r}
 # solution
-MLB_HR_data <- 
+MLB_HR_data1 <- 
 left_join(Batting_2016, Master_2000s, by = "playerID")
+
+MLB_HR_data <- 
+left_join(MLB_HR_data1, Salaries_2016, by = "playerID")
 
 
 # alternate version, using a pipe
@@ -113,36 +113,9 @@ MLB_HR_data %>%
 # * both tables have the variable "playerID"
 # 
 # * we want a `left_join`: all the observations from the active season, and adding the country of birth variable from "Master"
+#
+# * an `inner_join` will work for "Batting_2016", with added "Master_2000s" because all players are listed in both. Adding "Salaries_2016" using an inner join will drop the records of players for whom there is no salary data
 
-
-## ---
-
-# another approach
-
-Batting1<-Batting_2016 %>%
-filter(yearID==2016) %>%
-  select(playerID,stint,teamID)
-Master1<-Master_2000s %>%
-  select(playerID,birthCountry)
-
-Num_2016<-Batting1 %>%
-  inner_join(Master1,by="playerID") %>%
-  select(playerID,teamID,birthCountry)
-
-Num_2016%>%
- count(birthCountry,teamID,sort = TRUE)
-
-# and another
-
-Batters2016 <- left_join(Master_2000s, Batting_2016, by = "playerID") %>%
-  select(birthCountry, teamID,yearID, playerID) %>%
-  filter(yearID == "2016")
-
-Batters2016 %>%
-  group_by(birthCountry, teamID) %>%
-  count("playerID") %>%
-  select("birthCountry","teamID", "n") %>%
-  rename(PlayerCount = "n")
 
 ```
 
@@ -150,18 +123,6 @@ Batters2016 %>%
 ### 1d. Filtering joins
 
 > How many records are in `Batting_2016` and `Salaries_2016`?
-
-```{r}
-
-Batting_2016 %>% 
-  tally()
-
-Salaries_2016 %>% 
-  tally
-
-```
-
-
 >
 > Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
 > 
@@ -177,9 +138,7 @@ anti_join(Batting_2016, Salaries_2016, key = "playerID") %>%
   group_by(playerID) %>% 
   tally()
 
-# note: this is an anti_join:
-#  - _drops_ all of the observations in x that have a match in y
-# a semi-join _keeps_ all of the observations in x that have a match in y
+# this is an anti_join -- it will filter "Batting_2016" and leave only those records where there is on matching record in "Salaries_2016
 
 ```
 
@@ -191,12 +150,8 @@ anti_join(Batting_2016, Salaries_2016, key = "playerID") %>%
 
 ```{r}
 ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
-  geom_point()
-
-
-ggplot(MLB_HR_data, aes(x = birthDate, y = salary)) +
-  geom_point()
-
+  geom_point() +
+  xlim()
 ```
 
 
