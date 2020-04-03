@@ -1,0 +1,89 @@
+---
+title: "py_3rd"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+devtools::install_github("rstudio/reticulate")
+
+reticulate::py_discover_config()
+
+```
+
+```{r}
+
+reticulate::py_config()
+
+```
+
+```{r libraries}
+library(reticulate)
+
+```
+
+
+
+
+```{r}
+py_config()
+
+
+
+#use_virtualenv("/home/rstudio-user/.local/share/r-miniconda/envs/r-reticulate")
+#use_python(python = "/home/rstudio-user/.local/share/r-miniconda/envs/r-reticulate/bin/python", required = TRUE)
+
+```
+
+
+
+```{r install_keras}
+
+devtools::install_github("rstudio/keras")
+
+```
+#
+#
+#```{r install_keras}
+## keras::install_keras()
+#
+#library(keras)
+#library(tensorflow)
+#
+#```
+
+skip on over to the terminal and enter 
+`pip install -- pandas`
+
+
+```{python}
+
+import pandas
+flights = pandas.read_csv("flights.csv")
+flights = flights[flights['dest'] == "ORD"]
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+flights = flights.dropna()
+print(flights.head())
+
+```
+
+```{r}
+
+source_python("py_code.py")
+
+```
+
+
+```{r}
+
+library(ggplot2)
+
+ggplot(py$flights, aes(carrier, arr_delay)) +
+  geom_point()
+
+```
+
