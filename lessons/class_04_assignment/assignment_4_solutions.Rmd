@@ -30,8 +30,6 @@ library(tidyverse)
 
 
 ## 1. Joins with HR data
-> (8 marks)
-> >
 > 
 > The Lahman baseball database contains a comprehensive listing of annual summaries for the major leagues of baseball, going back to 1871. 
 > 
@@ -53,6 +51,7 @@ library(tidyverse)
 
 
 ### 1a. Read in the three files
+> (1 mark)
 
 ```{r}
 # solution
@@ -65,6 +64,7 @@ Salaries_2016 <- read_csv("Salaries_2016.csv")
 ```
 
 ### 1b. Understanding the tables
+> (2 mark)
 
 > i. What is the key variable that links the three tables?
 
@@ -81,6 +81,7 @@ A: `Master_2000s.csv` has the primary key. It lists all individual players. The 
 A: Since all of the data in `Master` is constant (name, birthdate, etc) there is no need to repeat those variables in the other tables where there are multiple records for the same player. It also means that this contsistent data only has to be edited in one location, not across all of the tables.
 
 ### 1c. Joins
+> (3 marks)
 
 > Join the tables in such a way so that you can tabulate the number of batters that played on each team in 2016, by birth country.
 >
@@ -122,6 +123,8 @@ MLB_HR_data %>%
 
 ### 1d. Filtering joins
 
+> (3 marks)
+
 > How many records are in `Batting_2016` and `Salaries_2016`?
 >
 > Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
@@ -145,8 +148,11 @@ anti_join(Batting_2016, Salaries_2016, key = "playerID") %>%
 
 ### 1e. Plot!
 
-> Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
-> 
+(3 marks)
+
+> Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). 
+> First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
+> Write a short explanation of what you see in the charts.
 
 ```{r}
 ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
@@ -160,6 +166,17 @@ ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
 ggplot(MLB_HR_data, aes(x = R, y = salary)) +
   geom_point()
 ```
+
+
+
+---
+
+### Bonus Marks!
+> (2 marks)
+
+> Imagine that time travel is possible...
+ 
+> You have just been transported back four weeks to the day before the course started. What is one thing you would tell your past self about this course?
 
 
 
