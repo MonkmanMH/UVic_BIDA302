@@ -196,7 +196,7 @@ print(df_melted)
 
 ### 7b. pivot_table
 
-The `pivot_table` function give another way to calculate grouped statistics. The `index` variable works in the same was a `groupby`.
+The `pivot_table` function gives another way to calculate grouped statistics. The `index` variable works in the same way as `groupby`.
 
 ```{python}
 

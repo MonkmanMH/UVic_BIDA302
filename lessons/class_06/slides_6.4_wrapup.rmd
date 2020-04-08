@@ -2,10 +2,10 @@
 title: "BIDA 302"
 subtitle: "course wrap-up"
 author: "Martin Monkman"
-date: "2019/12/07"
+date: "2020/04/04"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -22,11 +22,16 @@ library(lubridate)
 ```
 
 
+![BIDA302](E:/github/UVic_BIDA302/static/img/BIDA302_hex_400.jpg)
+
+
+--
+
 # BIDA 302: Data Analytics Coding Fundamentals
 
 The data science process
 
-![the data science process](../img/data-science.png)
+![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
 
 - Wickham and Grolemund, _R4DS_
 
@@ -34,17 +39,17 @@ The data science process
 
 ---
 
-![R](../img/R.jpg)
+![R](E:/github/UVic_BIDA302/static/img/R.jpg)
 
 ---
 class: inverse
 
-![RStudio](../img/RStudio_400.png)
+![RStudio](E:/github/UVic_BIDA302/static/img/RStudio_400.png)
 
 ---
 class: inverse
 
-![the tidyverse](../img/tidyverse_400.png)
+![the tidyverse](E:/github/UVic_BIDA302/static/img/tidyverse_400.png)
 
 
 ---
@@ -53,7 +58,7 @@ class: inverse
 
 # Then...
 
-![pushing a VW Beetle](../img/main-bugpush-1810151019.jpg)
+![pushing a VW Beetle](E:/github/UVic_BIDA302/static/img/main-bugpush-1810151019.jpg)
 
 
 ---
@@ -62,7 +67,7 @@ class: inverse
 
 # ...now
 
-![VW Beetle on the road](../img/VW_ontheroad.jpg)
+![VW Beetle on the road](E:/github/UVic_BIDA302/static/img/VW_ontheroad.jpg)
 
 
 
@@ -75,5 +80,7 @@ class: inverse
 
 --
 
-![achievement unlocked](../img/achievement_unlocked.jpg)
+![achievement unlocked](E:/github/UVic_BIDA302/static/img/achievement_unlocked.jpg)
+
+
 

@@ -5,7 +5,7 @@ author: "Martin Monkman"
 date: "2019/12/07"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -23,7 +23,7 @@ library(lubridate)
 
 # The Data Science Process
 
-![the data science process](../img/data-science.png)
+![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
 
 - Wickham and Grolemund, _R4DS_
 
@@ -32,7 +32,7 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 ---
 
-![Python](../img/python-logo-master-v3-TM-flattened.png)
+![Python](E:/github/UVic_BIDA302/static/img/python-logo-master-v3-TM-flattened.png)
 
 [python.org](https://www.python.org/)
 
@@ -42,7 +42,7 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
 
 
-![VW Beetle frame](../img/VW_ad_1_crop.jpg)
+![VW Beetle frame](E:/github/UVic_BIDA302/static/img/VW_ad_1_crop.png)
 
 ---
 
@@ -50,7 +50,7 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 * the body, windshield, headlights, A/C, sound system, etc
 
-![VW Beetle transparent](../img/vwlooking.jpg)
+![VW Beetle transparent](E:/github/UVic_BIDA302/static/img/vwlooking.jpg)
 
 
 
@@ -58,20 +58,7 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 ...and RStudio is the dashboard and controls
 
-![VW Beetle dashboard](../img/VW_dashboard.jpg)
-
-
----
-
-(more like this)
-
-![VW Beetle dashboard, tan](../img/VW_dashboard_2019.jpg)
-
----
-
-dark mode!
-
-![VW Beetle dashboard, black](../img/2018_volkswagen_beetle_dashboard.jpg)
+![VW Beetle dashboard](E:/github/UVic_BIDA302/static/img/VW_dashboard.jpg)
 
 
 ---
@@ -80,7 +67,7 @@ Python is like an engine.
 
 It can power a car...or a boat, or a water pump, or ...
 
-![VW Beetle engine](../img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
+![VW Beetle engine](E:/github/UVic_BIDA302/static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
 
 
 ---
@@ -91,11 +78,14 @@ Python is a general-purpose programming language.
 
 * When you load base R, you get the engine and the frame, steering wheel, and pedals.
 
-* To do data analysis in Python, you need to load the _modules_ that are the frame, steering wheel, etc.
+* To do data analysis in Python, you need to load the _modules_ or _packages_ that are the frame, steering wheel, etc.
 
 
 ---
 
+![reticulate](E:/github/UVic_BIDA302/static/img/reticulate-735.jpg)
+
+---
 
 # Run in rstudio.cloud
 
@@ -122,9 +112,9 @@ Python is a general-purpose programming language.
 
 ## Python data analysis modules
 
-* [NumPy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
-
 * [pandas](https://pandas.pydata.org/) -- "providing...data structures and data analysis tools"
+
+* [NumPy](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
 
 * [SciPy](https://www.scipy.org/)
 

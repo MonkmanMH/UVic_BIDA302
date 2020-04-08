@@ -182,6 +182,7 @@ We now know the `length()` function, we can find out how many files there are, a
 
 df_list <- vector("list", length(files))
 
+df_list
 ```
 
 The `files` object is used in our loop:

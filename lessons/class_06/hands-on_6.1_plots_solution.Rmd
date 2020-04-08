@@ -33,12 +33,13 @@ library(scales)     # extending {ggplot2}
 
 ## Read in the data
 
+And assign it to an object `df_BC_Can`
 
 ```{r data_read}
 
-thedata_BC_Can <- readRDS("thedata_BC_Can.RData")
+df_BC_Can <- readRDS("thedata_BC_Can.RData")
 
-thedata_BC_Can
+df_BC_Can
 
 ```
 
@@ -52,11 +53,8 @@ thedata_BC_Can
 # PLOT!
 # basic
 
-# with formatting applied
-dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
+ggplot(df_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
   geom_line() 
-dataplot
-
 
 ```
 
@@ -65,10 +63,12 @@ dataplot
 
 Make the line thicker ... add a `size = 1.5` option to the `geom_line()`
 
+And assign it to an object, so we can add layers to that object.
+
 ```{r}
 # solution
 
-dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
+dataplot <- ggplot(df_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
   geom_line(size = 1.5) 
 dataplot
 
@@ -135,7 +135,7 @@ dataplot +
   scale_colour_manual(name=NULL,
                       breaks=c("Canada", "British Columbia"),
                       labels=c("Canada", "British Columbia"), 
-                      # define the colours using hex codes
+                      # define the colours
                       values=c("red", "blue"))
 ```
 

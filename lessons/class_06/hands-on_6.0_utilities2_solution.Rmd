@@ -1,0 +1,125 @@
+---
+title: "Utilities"
+subtitle: "some more handy tools"
+author: "Martin Monkman"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+
+```{r, setup, message=FALSE}
+# tidyverse
+library(tidyverse)
+
+
+```
+
+Some additional handy utilities
+
+## {dplyr::select}
+
+Earlier, we covered the {dplyr} function to `select()` variables (columns) in a data frame.
+
+Here's some tools to make that selection process a bit more streamlined:
+
+
+| function | tool |
+| ---      | --- |
+| `starts_with()` | Starts with a prefix |
+| `ends_with()` | Ends with a suffix |
+| `contains()` |  Contains a literal string | 
+| `matches()` | Matches a regular expression |
+
+
+
+(Note: these functions are some of the "select_helpers" imported into {dplyr} from the [{tidyselect}](https://www.rdocumentation.org/packages/tidyselect/versions/1.0.0/topics/select_helpers) package. )
+
+Examples using the {iris} data:
+
+```{r}
+
+head(iris)
+
+```
+
+
+```{r}
+iris %>% 
+  select(contains("Petal")) %>%
+  head()
+```
+
+```{r}
+iris %>% 
+  select(starts_with("Sep")) %>%
+  head()
+```
+
+```{r}
+iris %>% 
+  select(matches(".gt.")) %>%
+  head()
+```
+
+
+## `source()` -- modularizing your code
+
+As you get deeper into programming, a good practice is to "modularize" your work. As your projects get bigger, they can start to sprawl, and what started as just a few lines of code can end up being a thousand or more lines. You've already learned about functions to help make your code less WET, and it's possible to build your own packages (something beyond the scope of this course, but the book [_R Packages_, by Hadley Wickham and Jenny Bryan](https://r-pkgs.org/), is the single best resource for this.)
+
+Another strategy is to split your code into separate R script files and then _source_ them into the R session.
+
+Here's a simple example that takes the two R code chunks below, which are saved as separate .R files. 
+
+First, the summary statistics and a regression model saved as the R script file "iris_summary.R":
+
+```{r eval = FALSE} 
+
+# summary statistics for the {iris} data 
+summary(iris)
+
+# linear regression of Sepal.Length predicted by Sepal.Width
+
+mod_petal <- lm(Petal.Length ~ Petal.Width, iris)
+
+summary(mod_petal)
+
+```
+
+And code to create a plot of the petal variables, saved as the R script file "iris_plot.R":
+
+```{r eval=FALSE}
+
+# iris petal plot
+ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+```
+
+
+To run these two script files, we call them using the `source()` function. 
+
+Note that we put each line inside parenthesis, so that it "prints" into our R markdown notebook.
+
+```{r}
+
+(source("iris_summary.R"))
+
+(source("iris_plot.R"))
+
+```
+
+
+
+For some further details on using modules, see [Modules as files](https://cran.r-project.org/web/packages/modules/vignettes/modulesAsFiles.html). 
+
+
+
+R has some additional module helpers in the [package {modules}](http://wahani.github.io/modules/).
+
+
+
+-30-

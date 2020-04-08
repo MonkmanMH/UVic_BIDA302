@@ -2,10 +2,10 @@
 title: "Refine your plots"
 subtitle: "BIDA 302"
 author: "Martin Monkman"
-date: "2019/12/07"
+#date: "2019/12/07"
 output:
   xaringan::moon_reader:
-    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -20,7 +20,7 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 ```
 
-![ggplot2 hex](../img/ggplot2_400.png)
+![ggplot2 hex](E:/github/UVic_BIDA302/static/img/ggplot2_400.png)
 
 [{ggplot2}](https://ggplot2.tidyverse.org/) -- tidyverse reference pages
 
@@ -28,34 +28,31 @@ library(tidyverse)
 
 ---
 
-![cover of "Data Visualization"](../img/Healy_data_visualziation_500.jpg)
+![cover of "Data Visualization"](E:/github/UVic_BIDA302/static/img/Healy_data_visualziation_500.jpg)
 
 [socviz.co](http://socviz.co/) -- draft version of manuscript
 
 ---
 
-# What type of plot?
+## _Storytelling with Data_
 
---
+1. Understand the context
 
-Or, do you need a plot at all?!
+2. Choose the right type of display
 
---
+3. Eliminate clutter
 
-* one number
+4. Draw attention to where you want it
 
-* table
+5. Tell a visual story
 
----
+6. Practice makes perfect
 
-# What story are you telling?
-
-* what's the point of your graph?
 
 
 ---
 
-![New Housing Price Index, B.C. and Canada](NHPI_plot.png)
+![New Housing Price Index, B.C. and Canada](E:/github/UVic_BIDA302/static/img/NHPI_plot.png)
 
 ???
 
@@ -66,14 +63,7 @@ Shows the change in new house prices in B.C. and Canada monthly, since 2007
 
 ---
 
-.pull-left[
-![New Housing Price Index, B.C. and Canada - draft](NHPI_plot_draft.png)
-]
-
-.pull-right[
-![New Housing Price Index, B.C. and Canada](NHPI_plot.png)
-]
-
+![New Housing Price Index, B.C. and Canada - draft](E:/github/UVic_BIDA302/static/img/NHPI_plot_draft.png)
 
 
 
@@ -90,6 +80,8 @@ Kieran Healy, [_Data Visualization: A Practical Introduction_](https://kieranhea
 * [socviz.co](http://socviz.co/) -- draft version of manuscript
 
 
+Martin Frigaard, [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) (2017-09-22)
+
 ---
 
 ## Other data visualization resources
@@ -97,3 +89,8 @@ Kieran Healy, [_Data Visualization: A Practical Introduction_](https://kieranhea
 Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_
 
 * [companion website](http://www.storytellingwithdata.com/)
+
+* [quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
+
+
+Miriam Gilbert, [Data Stories workshop](https://www.slideshare.net/miriamgilbert08/data-stories-workshop-34390209) -- slides (2014-02-24)

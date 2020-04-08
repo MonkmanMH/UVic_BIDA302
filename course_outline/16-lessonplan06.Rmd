@@ -33,16 +33,16 @@ At the end of this lesson, learners will be able to:
 
 _(subject to change)_
 
-_(revised 2020-03-26; subject to change)_
+_(revised 2020-04-03; subject to change)_
 
 
 | Hour  | Block      | Time              | Topics  | &#8212; |
 |---    |:---        |:---               |:---:  |
 |**1**  |            | **9:00 to 10:00** |    |   |
-|       |1a          | 9:00 to 10:00     | Plots, charts and other data visualizations | &#8212; |
+|       |1a          | 9:00 to 10:00     | Plots, charts and other data visualizations (1) | &#8212; |
 |**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
-|       |2a          | 10:15 to 11:00    | Modeling, forecasting & what-if scenario analysis   | &#8212; |
+|       |2a          | 10:15 to 11:00    | Plots, charts and other data visualizations (2) | &#8212; |
 |**3**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
 |       |3a          | 11:15 to 12:00    | Iteration | &#8212; |
@@ -74,8 +74,21 @@ _Reading:_
   - If I were teaching a 6-week course on data visualization, this book would be a required text. If you are making charts as part of your work or studies, I _strongly_ encourage you to read through Chapters 1-7! The book is very well laid-out, and includes great advice on good data visualization practice (see [Chapter 1, "Look at data"](http://socviz.co/lookatdata.html#lookatdata))  
   
   - For this class, we will focus on [8. "Refine your plots"](http://socviz.co/refineplots.html#refineplots)
-  
 
+  
+Martin Frigaard, [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) (2017-09-22)
+
+
+_General data visualization resources_
+
+Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_
+
+* [companion website](http://www.storytellingwithdata.com/)
+
+* [quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
+
+
+Miriam Gilbert, [Data Stories workshop](https://www.slideshare.net/miriamgilbert08/data-stories-workshop-34390209) -- slides (2014-02-24)
 
 
 ### 2. Modeling, forecasting & what-if scenario analysis
@@ -107,9 +120,27 @@ _Reading:_
 ### 4. Python as data analysis tool
 
 
-_Reading and Resources:_
+### {reticulate} package -- calling Python from R
 
-**SciPy**
+[{reticulate}: R Interface to Python](https://rstudio.github.io/reticulate/)
+
+* [Calling Python from R](https://rstudio.github.io/reticulate/articles/calling_python.html)
+
+* [reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
+
+* [{reticulate} cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/reticulate.pdf)
+
+
+
+### data science with Python: text books
+
+Wes McKinney, [_Python for Data Analysis_, 2nd ed.](https://wesmckinney.com/pages/book.html), 2017
+
+Jake VanderPlas, [_Python Data Science Handbook_](http://shop.oreilly.com/product/0636920034919.do), 2016
+
+
+
+#### SciPy
 
 (https://www.scipy.org/) -- [SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.]
 
@@ -121,6 +152,20 @@ The core packages include:
 
 * [data wrangling with pandas cheat sheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
 
+* [Pandas Pivot Table Explained](https://pbpython.com/pandas-pivot-table-explained.html), Chris Moffitt
+
+* [3 Examples Using Pivot Table in Pandas](https://cmdlinetips.com/2018/12/pivot-table-in-python-pandas/) (uses the gapminder table as the example)
+
+
+* ["A Quick Introduction to the “Pandas” Python Library"](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673) -- Adi Bronshtein, 2017-04-17
+
+* ["Pandas basics"](https://www.learnpython.org/en/Pandas_Basics)
+
+* [Beginner's Tutorial on the Pandas Python Library](https://stackabuse.com/beginners-tutorial-on-the-pandas-python-library/)
+
+* [pandas: Python data analysis library](https://teachdatascience.com/pandas/)
+
+
 
 [**Matplotlib**: Visualization with Python](https://matplotlib.org/)
 
@@ -130,10 +175,14 @@ The core packages include:
 
 See also: 
 
-**ggplot**
+#### ggplot
 
 * [ggplot from ŷhat](http://ggplot.yhathq.com/) -- "ggplot is a plotting system for Python based on R's ggplot2 and the Grammar of Graphics. It is built for making profressional looking, plots quickly with minimal code."
 
+
+#### Jupyter notebook
+
+[First Python Notebook](http://www.firstpythonnotebook.org/) -- a step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 
 
