@@ -265,4 +265,6 @@ To "tidy" the data, you can use the package {broom}.
 * [{broom} reference site](https://broom.tidyverse.org/)
 
 
+Another tool to investigate is the [{infer} package](https://infer.netlify.com/).
+
 -30-
