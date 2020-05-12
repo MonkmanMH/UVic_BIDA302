@@ -167,6 +167,8 @@ p <- ggplot(df_xy, aes(y = data.analytics, x = coding.fundamentals)) +
   geom_point(colour = uvic_yellow, size = 1)
 #  geom_point(colour = uvic_blue_dark, size = 2)
 
+p1 <- p
+
 p <- p +
   theme_classic() +
   theme(
@@ -184,6 +186,8 @@ p <- p +
   ) +
   coord_equal() +
   expand_limits(x = c(0, 10), y = c(0, 10))
+
+p
 
 #  scale_x_continuous(breaks = c(0, 2, 4, 6, 8, 10), minor_breaks = NULL) +
 #  scale_y_continuous(breaks = c(0, 2, 4, 6, 8, 10), minor_breaks = NULL)
@@ -258,3 +262,20 @@ BIDA302_hex
 ggplot2::ggsave("BIDA302_hex.png", width = 2, height = 2)
 
 ```
+
+## just the plot
+
+```{r}
+
+# Pantone 19-4052 Classic Blue
+
+p1 +
+  geom_point(size = 3, colour = "#34558b") +
+  geom_smooth() +
+#  geom_smooth(method = lm) +
+  coord_equal() +
+  xlim(0, 12.5) +
+  ylim(0, 12.5)
+
+```
+

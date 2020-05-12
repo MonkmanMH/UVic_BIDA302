@@ -240,3 +240,7 @@ df2
 
 JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
 
+Another strategy for creating a merged file, using the `lapply` function:
+
+https://twitter.com/GrantHumphries/status/1260184782090252294?s=20
+
