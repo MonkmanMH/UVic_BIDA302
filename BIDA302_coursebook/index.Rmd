@@ -1,0 +1,63 @@
+--- 
+title: "Data Analytics Coding Fundamentals: UVic BIDA302"
+subtitle: "Course Book"
+author: "Martin Monkman"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+links-as-notes: true
+colorlinks: true
+cover-image: BIDA302_hex_400.jpg
+#github-repo: MonkmanMH/DataScienceResources_book
+description: "The course book for BIDA302"
+---
+
+
+
+# Preface  {-}
+
+<img src="BIDA302_hex_400.jpg" width="350" height="350" alt="BIDA302 hex" />
+
+_Draft_
+
+This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's Continuing Studies Department.
+
+
+
+## Acknowledgements {-}
+
+The author would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within.
+
+
+## Some important details {-}
+
+**License**
+
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a><br />This work by [Martin Monkman](https://github.com/MonkmanMH) is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License</a>.
+
+
+**Source code**
+
+The source code for this ebook can be found at this github repository: https://github.com/MonkmanMH/UVic_BIDA302 
+
+This book is written in **Markdown**, using the [**bookdown**](https://bookdown.org/yihui/bookdown/) package, and published to the web at [bookdown.org](https://bookdown.org/).
+
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+
+
+
+**Cover image**
+
+The course hex image was created using the [{hexSticker} R package](https://github.com/GuangchuangYu/hexSticker) by Guangchuang Yu.
+
+
