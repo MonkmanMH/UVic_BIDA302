@@ -46,7 +46,7 @@ So what is a "reproducible workflow"?
 
 
 
-### Why R?
+## Why R?
 
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Python.
 
