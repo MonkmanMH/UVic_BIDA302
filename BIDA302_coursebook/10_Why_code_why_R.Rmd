@@ -1,0 +1,69 @@
+# Why Code? Why R? {#why_code}
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+
+## Using a programming language to do data analysis
+
+Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
+
+We can do data analysis using GUI (Graphical User Interface) tools, such as Excel or Tableau. But using a programing language to write code that generates your analysis will make you more efficient and effective, open up a universe of additional functionality, and make your analysis workflow: 
+
+* reproducible and auditable, 
+
+* accurate, and 
+
+* collaborative.  
+
+The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you'll be using. 
+
+By the end of this course, you will see the relationship between your raw data and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
+
+
+### Reproducible workflow
+
+In the paper “Opinionated Analysis Development” [@Parker_2017], Hilary Parker makes the case for coding your data analysis so that it's
+
+* Reproducible and Auditable
+
+* Accurate
+
+* Collaborative
+
+In his presentation "Reproducible Data Science with R" [@Smith_reproducible_2017], David Smith says that no matter what tool or language you are using, a reproducible process
+
+> * Saves time,
+> * Produces better science,
+> * Creates more trusted research,
+> * Reduces the risk of errors, and
+> * Encourages collaboration.
+
+So what is a "reproducible workflow"?
+
+
+
+### Why R?
+
+In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Python.
+
+Here's another course description, one that I really like, so (with the author's permission) I am including it here:
+
+> Over the last decade there has been a revolution in statistical and scientific computing. Open source languages like R and Python have overtaken older (and expensive!) corporate software packages like SAS and SPSS, and there are now thousands of books and blog posts and other online resources with excellent tutorials about how to analyze pretty much any kind of data.
+>This class will expose you to R—one of the most popular, sought-after, and in-demand statistical programming languages. Armed with the foundation of R skills you’ll learn in this class, you’ll know enough to be able to find how to analyze any sort of data-based question in the future.
+<small>(from the Syllabus to [PMAP 8521: Program Evaluation for Public Service](https://evalf19.classes.andrewheiss.com/syllabus/#pep-talk), Andrew Heiss, Georgia State University)</small>
+
+It goes without saying that data science is an expansive subject area. A key tool supporting data science work is the statistical programming language R, which has grown signficantly over the past few years and has, in the words of Roger Peng, "become the de facto programming language for data science. Its flexibility, power, sophistication, and expressiveness have made it an invaluable tool for data scientists around the world." [@Peng2018]
+
+Proprietary tools (including statistical programs like SAS, SPSS, and Stata) have had a one-version-at-a-time approach to development and release. With each release, many new features are added, extending the functionality. These releases are scheduled big events; as one example, SAS has been releasing version updates roughly once a year since 2010.
+
+The open source nature of R and its package-centric ecosystem has encouraged the expansion of functionality, and like the universe as a whole, this expansion is in all directions simultaneously and non-stop. There are no annual updates with the latest bells and whistles—it sometimes seems that every day brings news that additional features are being applied to existing R packages, and new packages are being released.
+
+This "bazaar"[@Raymond_CatB] of development makes it impossible to be an expert on all things R, and that paper-based text books may be out-of-date before they get to the presses. More importantly, it also means that somebody somewhere may have already found a creative solution to the problem you've just encountered.
+
+This is where the R community really shines. The spirit of the bazaar extends to open data, open science, open research, and open development. Your friends in the R community around the world are making their tools and techniques available, and are using social media channels to tell one another about it, which spurs on collaboration and futher innovations, in a never-ending virtuous cycle.
+
+
