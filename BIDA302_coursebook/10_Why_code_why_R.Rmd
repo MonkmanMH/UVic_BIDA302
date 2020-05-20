@@ -11,6 +11,21 @@ options(width = 100, dplyr.width = 100)
 
 Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
+
+### The data science process
+
+In this course, we will use the term "data science" to describe the use of a computer programming language to do data analysis. In this use, a data scientist is someone who applies subject matter expertise, foundational statistical knowledge, and some pragmatic programming skills to a data analysis problem. [@Monkman_bird_2019]
+
+The process of data science has been defined like this [@Wickham_Grolemund2016]:
+
+
+```{r echo=FALSE}
+knitr::include_graphics('static/img/data-science.png')
+```
+
+
+We will be refering to this model frequently...get used to seeing it!
+
 We can do data analysis using GUI (Graphical User Interface) tools, such as Excel or Tableau. But using a programing language to write code that generates your analysis will make you more efficient and effective, open up a universe of additional functionality, and make your analysis workflow: 
 
 * reproducible and auditable, 
@@ -26,7 +41,7 @@ By the end of this course, you will see the relationship between your raw data a
 
 ### Reproducible workflow
 
-In the paper “Opinionated Analysis Development” [@Parker_2017], Hilary Parker makes the case for coding your data analysis so that it's
+In the paper “Opinionated Analysis Development” [@Parker_2017], Hilary Parker makes the case for coding your data analysis so that it is:
 
 * Reproducible and Auditable
 
@@ -43,6 +58,14 @@ In his presentation "Reproducible Data Science with R" [@Smith_reproducible_2017
 > * Encourages collaboration.
 
 So what is a "reproducible workflow"?
+
+Here's an insight into how the work on a data analysis project looks in real life. In this case, the author of the tweet has specified a "scientific project", but it applies to any type of data analysis, whether in the context of business intelligence, economics, history, ecology, or astrophysics:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every scientific project will be redone in its entirety about 10-20 times from start to publication. Plan your work flow accordingly, e.g. a piece of R code that takes a data file and produces the analysis and figure/s. Change the data? Just rerun the code.</p>&mdash; Trevor A. Branch (@TrevorABranch) <a href="https://twitter.com/TrevorABranch/status/1157006269292507136?ref_src=twsrc%5Etfw">August 1, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+In the work that I do in my day job, we are often producing monthly and quarterly reports. The reports look more or less like the previous edition—we update the data, create new summary tables and charts, and sometimes add new text elements. Every month, the steps are the same: a lot of point-and-click copy-and-paste drag-and-drop work to download the data, update the tables, calculate the new summary tables, change the charts, and then hit "print". We the humans had to do all of those steps before; now we have written some code, it streamlines our workflow.
+
+Here's an example:
 
 
 
