@@ -16,7 +16,7 @@ Analysis of data helps us make better decisions. And computers have accelerated 
 
 In this course, we will use the term "data science" to describe the use of a computer programming language to do data analysis. In this use, a data scientist is someone who applies subject matter expertise, foundational statistical knowledge, and some pragmatic programming skills to a data analysis problem. [@Monkman_bird_2019]
 
-The process of data science has been defined like this [@Wickham_Grolemund2016]:
+The _process_ of data science has been defined like this [@Wickham_Grolemund2016]:
 
 
 ```{r echo=FALSE}
@@ -36,7 +36,7 @@ We can do data analysis using GUI (Graphical User Interface) tools, such as Exce
 
 The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you'll be using. 
 
-By the end of this course, you will see the relationship between your raw data and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
+By the end of this course, you will see the relationship between the raw data that you will import and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
 
 
 ### Reproducible workflow
@@ -47,7 +47,7 @@ In the paper “Opinionated Analysis Development” [@Parker_2017], Hilary Parke
 
 * Accurate
 
-* Collaborative
+* Collaborative 
 
 In his presentation "Reproducible Data Science with R" [@Smith_reproducible_2017], David Smith says that no matter what tool or language you are using, a reproducible process
 
