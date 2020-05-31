@@ -35,7 +35,7 @@ From [UVic Continuing Studies website](https://continuingstudies.uvic.ca/busines
 
 Note that the emphasis of the course will be learning R. The concepts learned in that programming language can be applied in others; we will explore similar functions in Python towards the end of the course.
 
-### Learning objectives
+### Learning objectives {-}
 
 BIDA302 learning objectives:
 
@@ -62,15 +62,15 @@ BIDA302 learning objectives:
 >* Create what-if scenarios
 
 
-## Meta outcomes
+## Meta outcomes {-}
 
-### 1: using **R**
+### 1: using **R** {-}
 
 Programming environment designed for statistical analysis / data science 
 
 * Focus on one tool, so you get good at that
 
-### 2: principles 
+### 2: principles  {-}
 
 Concepts and practices that you can carry through to data analysis in other environments
 
@@ -131,7 +131,7 @@ One of the most important developers of R packages (and co-author of our textboo
 ><small>Source: [Advice to Young (and Old) Programmers: A Conversation with Hadley Wickham](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/), at [R-posts.com](https://r-posts.com/)</small>
 
 
-### Some advice from people who took BIDA302 before...
+### Some advice from people who took BIDA302 before... {-}
 
 People who have previously taken this course were asked, mid-way through their studies, "Imagine that time travel is possible...You have just been transported back four weeks to the day before this course started. What is one thing you would tell your past self about this course?" Here's some of their answers:
 
@@ -163,7 +163,7 @@ People who have previously taken this course were asked, mid-way through their s
 
 The book's layout is currently in 12 chapters, each corresponding to the 12 half-day lessons of the course:
 
-### 1.  
+### 1.   {-}
 
 
 ***

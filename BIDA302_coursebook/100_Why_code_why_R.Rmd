@@ -90,3 +90,10 @@ This "bazaar"[@Raymond_CatB] of development makes it impossible to be an expert 
 This is where the R community really shines. The spirit of the bazaar extends to open data, open science, open research, and open development. Your friends in the R community around the world are making their tools and techniques available, and are using social media channels to tell one another about it, which spurs on collaboration and futher innovations, in a never-ending virtuous cycle.
 
 
+
+```{r echo=FALSE}
+knitr::include_graphics('static/img/code_hero_rstats_600.png')
+```
+
+Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
+
