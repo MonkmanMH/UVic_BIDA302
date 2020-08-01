@@ -23,7 +23,102 @@ Take a quick look at the data in the {gapminder} package.
 gapminder
 ```
 
-## Your Turn 1.1: filter() rows
+## Choosing columns
+
+
+Using `select()` from the package {dplyr} to reduce the number of variables:
+
+```{r}
+# answer
+gapminder %>%                                
+  select(country, year, lifeExp) 
+
+```
+
+
+
+You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
+
+In this example, note we can use `c()` to create a list:
+
+
+```{r}
+# answer
+gapminder %>%                                
+  select(-(c(continent, pop, gdpPercap))) 
+
+# alternate answer
+gapminder %>%                                
+  select(-continent, -pop, -gdpPercap) 
+
+```
+
+
+
+You can define a range of columns to select by using the `:`
+
+```{r}
+# answer
+gapminder %>%
+  select(country, year:pop)
+```
+
+
+And moving columns is accomplished with the function `relocate()`. 
+
+By specifying a column, it gets moved to the first (left-most) column. In this example, we can move "continent" to the first spot.
+
+```{r}
+# example
+
+gapminder %>% 
+  relocate(continent)
+
+```
+
+
+
+
+## Your turn
+
+(add `select()` example)
+
+
+
+
+How would you move "lifeExp" to the last (furthest right) column?
+
+```{r}
+# solution: specify all the other columns to move ahead of it
+
+gapminder %>% 
+  relocate(country, continent, year, pop, gdpPercap)
+
+# solution: specify the one you don't want to move
+
+gapminder %>% 
+  relocate(-(lifeExp))
+
+# solution: use `.after`
+
+gapminder %>% 
+  relocate(lifeExp, .after = gdpPercap)
+
+```
+
+
+
+## Take aways
+
+* Restructure data frame columns with `select()` and `relocate()`
+
+
+
+
+## Choosing rows with `filter()` 
+
+
+## Your Turn 1.2: filter() rows
 
 See if you can use the logical operators to manipulate our code below to show:
 
@@ -58,7 +153,7 @@ filter(gapminder, lifeExp > 82)
 ```
 
 
-## Your Turn 1.2: multiple criteria
+## Your Turn 1.3: multiple criteria
 
 Use Boolean operators to alter the code below to return only the rows that contain:
 
@@ -127,7 +222,7 @@ gapminder %>%
 
 ```
 
-## Your Turn 1.3: sorting with `arrange()`
+## Your Turn 1.4: sorting with `arrange()`
 
 Find the records with the smallest population.
 ```{r}
@@ -152,7 +247,7 @@ gapminder %>% arrange(-gdpPercap)
 ```
 
 
-## Your Turn 1.4: creating new variables
+## Your Turn 1.5: creating new variables
 
 Calculate a new variable with total GDP
 
@@ -179,7 +274,7 @@ gapminder %>%
 
 
 
-## Your Turn 1.5
+## Your Turn 1.6
 
 Alter the code to add a `prev_lifeExp` column that contains the life expectancy from the previous record.
 
@@ -446,10 +541,8 @@ gapminder %>%
 
 * Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
 
+* Reinforce other data transformation functions
 
-***
-
-# Transform data 4: select()
 
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License -->
 
@@ -462,56 +555,6 @@ library(gapminder)
 ```
 
 
-## Your Turn 4.1
-
-{gapminder} again
-
-```{r}
-gapminder
-```
-
-Using `select()` to reduce the number of variables:
-
-```{r}
-# answer
-gapminder %>%                                
-  select(country, year, lifeExp) 
-
-```
-
-
-
-You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
-
-In this example, note we can use `c()` to create a list:
-
-
-```{r}
-# answer
-gapminder %>%                                
-  select(-(c(continent, pop, gdpPercap))) 
-
-# alternate answer
-gapminder %>%                                
-  select(-continent, -pop, -gdpPercap) 
-
-```
-
-
-
-You can define a range of columns to select by using the `:`
-
-```{r}
-# answer
-gapminder %>%
-  select(country, year:pop)
-```
-
-
-## Take aways
-
-* Restructure data frames with `select()` and `pull()`  
-* Reinforce other data transformation functions
 
 
 
