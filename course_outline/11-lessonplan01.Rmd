@@ -292,6 +292,10 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 #### Tidy data
 
+Julia Lowndes and Allison Horst, [Tidy data for efficiency, reproducibility, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/)
+
+* in google slide version: ["Make friends with tidy data"](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
+
 Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
 
 Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
