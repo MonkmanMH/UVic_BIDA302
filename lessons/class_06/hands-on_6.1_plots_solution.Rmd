@@ -387,7 +387,7 @@ Here's a basic version of our plot:
 # basic
 
 # with no formatting applied
-dataplot <- ggplot(thedata_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
+dataplot <- ggplot(df_BC_Can, aes(x=ref_date, y=value, colour=geo)) + 
   geom_line() 
 dataplot
 
