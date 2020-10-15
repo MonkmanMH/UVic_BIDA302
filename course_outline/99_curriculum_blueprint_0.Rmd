@@ -1,0 +1,22 @@
+---
+title: 'BIDA302: Course Outline'
+subtitle: 'Data Analytics Coding Fundamentals'
+author: "Martin Monkman"
+date: "latest revision: `r Sys.Date()`"
+output:
+  word_document: default
+  html_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, child=c('00_objectives.Rmd', '00_outline.Rmd', '00_coursematerials.Rmd')}
+
+```
+
+
+
