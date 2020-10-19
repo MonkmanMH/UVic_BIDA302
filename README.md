@@ -12,7 +12,7 @@ BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
 
 ## Course outline:
 
-[BIDA302, Spring 2020](https://github.com/MonkmanMH/UVic_BIDA302/blob/master/course_outline/00_course-outline.md) -- draft, subject to change
+[BIDA302, most recent offering](https://github.com/MonkmanMH/UVic_BIDA302/blob/master/course_outline/00_course-outline.md) -- draft, subject to change
 
 ## Solutions to hands-on exercises
 
@@ -23,6 +23,8 @@ Solutions to the in-class hands-on exercises can be found as online interactive 
 The [capstone projects for BIDA302 get their own repo](https://github.com/MonkmanMH/UVic_BIDA302_capstone)
 
 ## Versions:
+
+2020.2.x -- offered 2020, fall (2020-10-24 to 2020-11-29)
 
 2020.1.x -- offered 2020, spring (2020-02-29 to 2020-04-04) 
 
