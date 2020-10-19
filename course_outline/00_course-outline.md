@@ -15,11 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Data Analytics & Coding Fundamentals: BIDA302
 
-February 29–April 4, 2020
+October 24–November 29, 2020
 
-9:00 am–4:00 pm (lunch break 12:00–1:00pm)
+9:00 am–12:00 pm 
 
-[Continuing Studies Building Lab C](https://www.uvic.ca/search/browse/maps.php)
 
 
 
@@ -64,10 +63,9 @@ Martin Monkman
 
 * email: <mmonkman@uvic.ca>
 
-* skype: <a href="skype:monkmanmh?call">monkmanmh</a>
 
 
-virtual (skype) office hours:
+virtual (zoom) office hours:
 
 * Tuesday, 8:00 pm - 9:00 pm
 
@@ -80,7 +78,7 @@ RStudio cloud:
 
 * This course uses rstudio.cloud
 
-* To access the course site, please click this link: [rstudio.cloud: BIDA302_2020a]()
+* To access the course site, please click this link: [rstudio.cloud: BIDA302_2020_fall]() **TBD**
 
 * You will need to create an account (if you don't have one already) when you initially log in
 
@@ -92,9 +90,11 @@ Moodle:
 * To access, login to [https://distance.moodle.uvcs.uvic.ca/](https://distance.moodle.uvcs.uvic.ca/) with your Netlink ID.
 
 
-Text: 
+Texts: 
 
-* Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/). (Free online text.)
+* Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/). (Free online text.)
+
+* J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/)
 
 * Additional readings will be introduced with each lesson.
 
@@ -120,6 +120,8 @@ We can do data analysis using GUI (Graphical User Interface) tools, such as Exce
 
 The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you'll be using. 
 
+By the end of this course, you will see the relationship between your raw data and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
+
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Excel and Python.
 
 Here's another course description, one that I really like, so (with the author's permission) I am including it here:
@@ -140,12 +142,12 @@ Here's another course description, one that I really like, so (with the author's
 
 | Week      | Date | Topics   | Lesson |
 |---        |:---  |:---      |:---:  |
-|1          | 2020-02-29 | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling  | &#8212; |
-|2          | 2020-03-07 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level | &#8212; |
-|3          | 2020-03-14 | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA | &#8212; |
-|4          | 2020-03-21 | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 | &#8212; |
-|5          | 2020-03-28 | Modeling, forecasting and what-if scenarios (R and Excel) <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks | &#8212; |
-|6          | 2019-04-04 | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges | &#8212; |
+|1          | 2020-10-24 & 25 | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling  | &#8212; |
+|2          | 2020-10-31 & 2020-11-01 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level | &#8212; |
+|3          | 2020-11-07 & 08 | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA | &#8212; |
+|4          | 2020-11-14 & 15 | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 | &#8212; |
+|5          | 2020-11-21 & 22 | Modeling, forecasting and what-if scenarios (R and Excel) <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks | &#8212; |
+|6          | 2020-11-28 & 29 | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges | &#8212; |
 
 
 #### Concordance: course objective to lesson topics
@@ -172,12 +174,14 @@ Here's another course description, one that I really like, so (with the author's
 
 * asking questions and responding to the questions of others
 
+* participating in zoom break-out groups
+
 * collaborating with other participants
 
 
 ### Weekly assignments (marks: 12 each, 48 total)
 
-* Tour assignments, due Weeks 2 through 5.
+* Four assignments, due Weeks 2 through 5.
 
 * These four assignments will review the concepts introduced in that week's lesson and build on previous concepts.
 
@@ -185,7 +189,7 @@ Here's another course description, one that I really like, so (with the author's
 
 * There will be no "weekly assignment" introduced in week 5 and to hand in at Week 6, because you'll be working on your Capstone Project that week.
 
-* **Due date:** Each assignment is due at 23:59 (11:59 pm) on the Thursday following the class; late assignments will be accepted until 8:00 am Saturday following class. Anything later than that will not be accepted, as we will review the assignment during Saturday's class.
+* **Due date:** Each assignment is due at 23:59 (11:59 pm) on the Thursday following the class; late assignments will be accepted until 8:00 am on Saturday, one hour prior to class. Anything later than that will not be accepted, as we will review the assignment during Saturday's class.
 
 
 ### Additional optional stretch assignments (marks: 0)
@@ -229,25 +233,35 @@ One of the most important developers of R packages (and co-author of our textboo
 
 ## Some advice from people who took BIDA302 before...
 
-People who have previously taken this course were asked "Imagine that time travel is possible...You have just been transported back four weeks to the day before this course started. What is one thing you would tell your past self about this course?" Here's some of their answers:
+People who have previously taken this course were asked "Imagine that time travel is possible...You have just been transported back four weeks to the day before this course started. What is one thing you would tell your past self about this course?" Here are some of their answers:
 
 * It won’t be as scary as you think it will be.
+
+* It is fun! Keep up!
 
 * You’ll get better soon.
 
 * Need to spend more time studying since the class is 6 hours a week, 1-2 hours a week outside class won’t be enough for a dinosaur like me.
 
-* To do the homework on Saturday after class so you haven’t forgotten everything!
+* To do the homework on Saturday* after class so you haven’t forgotten everything!
 
 * **Reading the textbook will help you, use it.**
 
   - Review the data before starting to work with it. It helps to understand what the data is, how it might be used.
 
-  - Review the material in the Saturday lesson as you will need it for the assignment.
+  - Review the material in the Saturday* lesson as you will need it for the assignment.
 
   - If you start having to use functions you aren’t familiar with, you’re on the wrong track.
 
   - Keep it simple, and then add on as you go.
+
+* Be confident in yourself and make sure you read the textbook!
+
+* The learning curve is the steepest on day one! Just because you’ve never programmed before doesn’t mean you are a lost cause and won’t be able to succeed. Take a deep breath, experiment, and revel in the feeling of satisfaction and accomplishment when R finally executes your code and doesn’t spit out another error message!
+
+  - P.S. Googling the Error Message may not be a real book, but Google will definitely offer up helpful message boards and YouTube tutorials from friendly members of the R community.
+
+  - P.P.S. Start an R Notebook and work out the problems in the R for Data Science textbook as you read the relevant chapters. Practice is the best way to learn programming.
 
 * Prepare to learn lots about R and RStudio. …And bring coffee!
 
@@ -260,9 +274,9 @@ People who have previously taken this course were asked "Imagine that time trave
 
 Congratulations! You read to the end of the Syllabus. 
 
-For a single bonus mark, before 2020-03-05 11:59 PM PDT please email me the following:
+For a single bonus mark, before 2020-10-28 11:59 PM PDT please email me the following:
 
-* a picture of a geographic location (a building, city skyline, natural landscape, etc., real or imaginary) with a bit of information as to what the picture shows, and why you chose it.
+* a picture of a geographic location (a building, streetscape, city skyline, natural landscape, etc., real or imaginary) with a bit of information as to what the picture shows, and why you chose it.
 
 
 
