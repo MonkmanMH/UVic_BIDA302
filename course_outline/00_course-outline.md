@@ -21,11 +21,9 @@ October 24–November 29, 2020
 
 Classes will be held via Zoom meeting 
 
-- Sign in via [uvic.zoom.us](https://uvic.zoom.us/)
+- Sign in via [uvic.zoom.us](https://uvic.zoom.us/) using your UVic Netlink ID
 
-- Zoom meeting: []() **TBD**
-
-- you will need your UVic Netlink ID in order to access the Zoom meeting
+- [Zoom meeting link](https://uvic.zoom.us/j/94775748954)
 
 
 ## Prerequisites
