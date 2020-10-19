@@ -9,10 +9,6 @@ output:
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Data Analytics & Coding Fundamentals: BIDA302
 
 October 24–November 29, 2020
