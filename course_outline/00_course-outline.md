@@ -19,7 +19,13 @@ October 24–November 29, 2020
 
 9:00 am–12:00 pm 
 
+Classes will be held via Zoom meeting 
 
+- Sign in via [uvic.zoom.us](https://uvic.zoom.us/)
+
+- Zoom meeting: []() **TBD**
+
+- you will need your UVic Netlink ID in order to access the Zoom meeting
 
 
 ## Prerequisites
@@ -74,6 +80,7 @@ virtual (zoom) office hours:
 
 ## Course content
 
+
 RStudio cloud:
 
 * This course uses rstudio.cloud
@@ -94,9 +101,11 @@ Texts:
 
 * Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/). (Free online text.)
 
-* J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/)
+* J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/). (Free online text.)
 
 * Additional readings will be introduced with each lesson.
+
+
 
 ***
 
