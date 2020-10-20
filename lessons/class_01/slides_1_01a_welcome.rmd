@@ -579,6 +579,11 @@ First create a new R script file
 
 > "less than" plus hyphen
 
+--
+
+Read it as:
+
+`new_thing <- old_thing`
 
 ---
 
@@ -619,9 +624,18 @@ First create a new R script file
 
 --
 
+One solution:
+
 `x <- 20`
 
---
+-- 
+
+Another solution: since we earlier assigned `x` a value of 10
+
+`x <- x * 2`
+
+
+---
 
 # And now divide `x` by `y`
 
@@ -653,9 +667,14 @@ Now print the object `t`
 
 ## Vector -- a series of values
 
-`x <- 1:10`
+`z <- 1:10`
 
-`x <- seq(1, 10)`
+`z <- seq(1, 10)`
+
+--
+
+What do you get when you multiply `z` by 2?
+
 
 ---
 
@@ -673,13 +692,14 @@ y <- c("British Columbia", "Alberta")
 
 A vector can contain only one type of variable (all numbers, or all characters)
 
-* 1, 2, 3
+`nums <- c(1, 2, 3)`
 
-* "BC", "AB", "SK"
+`provs <- c("BC", "AB", "SK")`
+
 
 A list can contain any type of variable
 
-* 1, "BC", NA
+`mylist <- c(1, "BC", NA)`
 
 
 ---
@@ -699,6 +719,7 @@ a simple example:
 
 
 ---
+class: inverse
 
 ![R Markdown hex](../../static/img/rmarkdown_400.png)
 
