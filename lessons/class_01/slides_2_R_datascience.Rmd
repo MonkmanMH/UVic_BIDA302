@@ -36,7 +36,7 @@ class: inverse
 
 ## Road trip starts now!
 
-![VW Beetle driving](/static/img/VW_ontheroad.jpg)
+![VW Beetle driving](../../static/img/VW_ontheroad.jpg)
 
 
 ---
@@ -105,7 +105,7 @@ If you haven't already, log in or sign up
 
 class: inverse
 
-# RStudio cloud
+## RStudio cloud
 
 ![RStudio panes](../../static/img/RStudio_panes.png)
 
@@ -119,9 +119,9 @@ First create a new R script file
 ---
 class: inverse
 
-# Console
+## Console
 
-## R as calculator
+R as a calculator:
 
 Type in the console window:
 
