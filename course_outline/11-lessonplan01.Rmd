@@ -28,7 +28,7 @@ At the end of this lesson, learners will be able to:
 
 1. Describe the fundamental elements of data manipulation, and 
 
-2. Demonstrate how these can be applied in a data analytics context.
+2. Demonstrate how these can be applied using R.
 
 
 ***
@@ -41,7 +41,7 @@ At the end of this lesson, learners will be able to:
 |1a          | 9:00 to 9:30   | Welcome to BIDA302!  | &#8212; |
 |1b <br> 1c  | 9:30 to 10:30  | Why code? Why R? <br> Introduction to R and RStudio | &#8212; |
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
-|2a <br> 2b  | 10:45 to 12:00 | The data science process <br> Data wrangling & Programming foundations | &#8212; |
+|2a <br> 2b  | 10:45 to 12:00 | The data science process <br> Programming foundations | &#8212; |
 |**Sunday**     | &#8212;  | &#8212; | &#8212; |
 |3           | 9:00 to 9:30   | The data science process (walk-through) <br> Data wrangling (continued) | &#8212; |
 |&#8212;     | 10:30 to 10:45   | _break_ | &#8212; |
@@ -114,7 +114,7 @@ Format: instructor, lecture w/slides
 Time allocation: 15 minutes (10:45 to 11:00)
 
 
-### 2b. Data Wrangling
+### 2b. Programming foundations
 
 Format: instructor, lecture w/slides
 
@@ -126,6 +126,21 @@ Format: learner (instructor guided)
 
 Time allocation: 60 minutes (11:00 to 12:00)
 
+
+### Take-home exercise:
+
+[Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925)
+
+
+
+## Reading ahead...
+
+* [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
+
+
+
 ***
 
 ## Sunday (2020-10-25)
@@ -135,19 +150,19 @@ Time allocation: 60 minutes (11:00 to 12:00)
 
 Format: instructor, lecture w/slides
 
-Time allocation: 30 minutes (1:00 to 1:30)
+Time allocation: 30 minutes (9:00 to 9:30)
 
 
-### 3b. Data Wrangling (part 2)
+### 3b. Data Wrangling 
 
 Format: instructor, lecture w/slides
 
-Time allocation: 15 minutes (1:30 to 1:45)
+Time allocation: 15 minutes (9:30 to 9:45)
 
 
 Format: learner (instructor guided)
 
-Time allocation: 60 minutes (1:45 to 2:45)
+Time allocation: 45 minutes (9:45 to 10:30)
 
 
 ***

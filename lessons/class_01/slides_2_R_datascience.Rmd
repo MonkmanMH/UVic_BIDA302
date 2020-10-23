@@ -40,52 +40,6 @@ class: inverse
 
 
 ---
-class: inverse
-
-
-# Learning a new language
-
-
-![](/static/img/language_learning.jpg)
-
-...is difficult
-
-???
-image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
-
----
-
-class: inverse
-
-
-## Your mind is flexible...
-
-.fafaff[
-Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
-]
-
----
-class: inverse
-
-
-# ...but computers are literal
-
-Accuracy matters
-
-![Hadley Wickham tweet](/static/img/Hadley_5minutes_2019-10-27.jpg)
-
----
-class: inverse
-
-
-And spelling matters
-
-![Kara Woo tweet](/static/img/Kara_5minutes_2019-10-27.jpg)
-
-...and in R, so does case
-
-
----
 
 # Naming objects in R
 
@@ -153,8 +107,13 @@ class: inverse
 
 # RStudio cloud
 
-![RStudio panes](/static/img/RStudio_panes.png)
+![RStudio panes](../../static/img/RStudio_panes.png)
 
+
+
+---
+
+First create a new R script file
 
 
 ---
@@ -179,8 +138,8 @@ class: inverse
 First create a new R script file
 
 
+
 ---
-class: inverse
 
 # The power of named variables 
 
@@ -190,9 +149,15 @@ class: inverse
 
 > "less than" plus hyphen
 
+--
+
+Read it as:
+
+`object <- value`
+
+`new_thing <- old_thing`
 
 ---
-class: inverse
 
 ## assign the object "x" with the value 10
 
@@ -204,7 +169,6 @@ class: inverse
 
 
 ---
-class: inverse
 
 > How would you create a new object "y" with the value 4?
 
@@ -227,27 +191,35 @@ class: inverse
 
 
 ---
-class: inverse
 
 # How would you set `x` equal to 20?
 
 --
 
+One solution:
+
 `x <- 20`
 
---
+-- 
+
+Another solution: since we earlier assigned `x` a value of 10
+
+`x <- x * 2`
+
+
+---
 
 # And now divide `x` by `y`
 
 `x / y`
 
 ---
-class: inverse
 
 `t <- "If it's inside quotation marks, it's a character"`
 
 
 Now print the object `t`
+
 
 
 ---
@@ -278,7 +250,7 @@ class: inverse
 
 # `c` to make a list
 
-`c` is for "concatenate"
+`c` is for "combine"
 
 x <- c(1, 5, 6)
 
@@ -305,7 +277,7 @@ a simple example:
 
 ---
 
-![R Markdown hex](/static/img/rmarkdown_400.png)
+![R Markdown hex](../../static/img/rmarkdown_400.png)
 
 
 ---
@@ -340,7 +312,7 @@ Used for reports and academic articles, books, blogs and websites
 
 ---
 
-![R markdown](/static/img_allison_horst/rmarkdown_wizards.png)
+![R markdown](../../static/img_allison_horst/rmarkdown_wizards.png)
 
 ---
 class: inverse
@@ -371,7 +343,7 @@ class: inverse
 
 # Welcome to The Tidyverse
 
-![dplyr hex](/static/img/tidyverse_400.png)
+![dplyr hex](../../static/img/tidyverse_400.png)
 
 ???
 
@@ -408,7 +380,9 @@ There are two steps to getting a package ready to use:
 
 `install.packages()`
 
-Our RStudio environment has all the packages you'll need!
+**In our RStudio environment you do not need to do this!!!**
+
+It is set up with all the packages you'll need!
 
 2. load
 
@@ -475,9 +449,10 @@ Forbes: ["Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science T
 
 ## The data science process
 
-![The data science process](/static/img/data-science.png)
+![The data science process](../../static/img/data-science.png)
 
 Also: what we'll be covering in this course 
+
 
 
 
@@ -485,21 +460,23 @@ Also: what we'll be covering in this course
 
 ### The truth about how programmers really work
 
-![Googling the error message](/static/img/orly_googling_the_error_message_400.jpg)
+![Googling the error message](../../static/img/orly_googling_the_error_message_400.jpg)
 
 ---
 
 ### The truth about how programmers work, part 2
 
 
-![Copying and Pasting from Stack Overflow](/static/img/orly_copy_and_paste_400.jpeg)
+![Copying and Pasting from Stack Overflow](../../static/img/orly_copy_and_paste_400.jpeg)
 
 ---
 
 ### Sombreros on the pandas
 
-![Sombreros on the pandas](/static/img/sombreros_on_the_pandas_500.PNG)
+![Sombreros on the pandas](../../static/img/sombreros_on_the_pandas_500.PNG)
 
 
+
+---
 
 
