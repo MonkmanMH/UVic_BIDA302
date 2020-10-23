@@ -1,10 +1,11 @@
 ---
-title: "BIDA302: Lesson Plan, Week 1"
-subtitle: "2020-10-24 & 2020-10-25"
+title: 'BIDA302: Lesson Plan, Week 1'
 author: "Martin Monkman"
-date: "latest revision: `r Sys.Date()`"
-output: html_document
-#description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
+date: 'latest revision: `r Sys.Date()`'
+output:
+  word_document: default
+  html_document: default
+subtitle: 2020-10-24 & 2020-10-25
 ---
 
 
