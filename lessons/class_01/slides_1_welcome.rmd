@@ -84,6 +84,20 @@ class: inverse
 
 # Course Stucture
 
+
+
+---
+
+# Martin Monkman
+
+email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
+
+"office hours" via zoom
+
+* Tuesday, 8:00 pm to 9:00 pm
+
+
+
 ---
 
 ## Class
@@ -208,6 +222,18 @@ _Look for the lesson plans on the course moodle_
 ---
 class: inverse
 
+# "Data science"
+
+---
+
+![Drew Conway data science Venn diagram](../../static/img/Data_Science_VD.png)
+
+Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
+
+
+---
+class: inverse
+
 
 ## Icebreaker ...
 
@@ -225,7 +251,7 @@ IRL we work together
 
 The R user community:
 
-* welcoming & non-judgemental
+* welcoming & non-judgmental
 
 * twitter #rstats
 
@@ -270,18 +296,6 @@ Hex stickers!
 ![Martin's laptop](../../static/img/Martin_laptop.jpg)
 
 
----
-
-# Martin Monkman
-
-email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
-
-"office hours" via zoom
-
-* Tuesday, 8:00 pm to 9:00 pm
-
-
-
 
 ---
 
@@ -305,6 +319,10 @@ email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
 
 ---
 
+![Drew Conway data science Venn diagram](../../static/img/Data_Science_VD.png)
+
+---
+
 ![I am not trained for this...and yet](../../static/img/I-am-not-trained-for-this_laptop_600.jpg)]
 
 ---
@@ -318,6 +336,7 @@ class: inverse
 # Why code?
 
 If we can do this work with other tools, why should we learn to undertake data analytics in a coding environment?
+
 
 ---
 
@@ -368,6 +387,13 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 
 ---
 
+## The data science process
+
+![The data science process](../../static/img/data-science.png)
+
+
+---
+
 # Workflow and functionality: 1
 
 ![survey workflow 1](../../static/img/survey_workflow_720.png)
@@ -381,17 +407,16 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 ---
 
 
-# A collaborative community
+# Collaboration
 
-Twitter: #rstats
+Your code (and additional recordkeeping with your code) helps explain your work to others
 
-R-bloggers.com
-
-Meetup groups 
-
-RLadies
+> In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you.
+—Hadley Wickham
 
 ???
+
+Wickham quote source: Roel M. Hogervorst;   https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/
 
 Reading:
 
@@ -423,9 +448,9 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 Packages extend the functionality of R
 
-* data analysis and statistical modeling
-
 * data wrangling & cleaning
+
+* data analysis and statistical modeling
 
 * data visualization
 
@@ -481,7 +506,7 @@ IDE (interactive development environment)
 
 * "RStudio" is also the company that developed and supports the IDE
 
-* RStudio is also active creating and supporting packages, including many of the tidyverse packages
+* and RStudio is active creating and supporting packages, including many of the tidyverse packages
 
 
 
@@ -520,6 +545,7 @@ class: inverse
 
 # Learning a new language
 
+poll questions!
 
 ---
 
