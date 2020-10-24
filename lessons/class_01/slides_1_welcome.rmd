@@ -237,6 +237,7 @@ The R user community:
 
 ![R code hero](../../static/img_allison_horst/code_hero_rstats_600.png)
 
+<p><small><italic>Image: Allison Horst</italic></small></p>
 
 
 
@@ -313,7 +314,6 @@ class: inverse
 
 
 ---
-class: inverse
 
 # Why code?
 
@@ -348,19 +348,35 @@ Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/prepri
 * Collaborative
 
 
+---
+
+## Opinionated Analysis Development
+
+* Reproducible and Auditable
+
+* Accurate
+
+* Collaborative
+
+  - Hilary Parker
+
+???
+
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
+
 
 
 ---
 
 # Workflow and functionality: 1
 
-![survey workflow 1](../../static/img/survey_workflow_1.png)
+![survey workflow 1](../../static/img/survey_workflow_720.png)
 
 ---
 
 # Workflow and functionality: 2
 
-![survey workflow 1](../../static/img/survey_workflow_2.png)
+![survey workflow 1](../../static/img/survey_workflow_2_720.png)
 
 ---
 
@@ -394,6 +410,11 @@ Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://
 
 * built-in analytic and statistical functions
 
+---
+
+Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
+
+![VW Beetle frame](../../static/img/VW_ad_1_crop_2.png)
 
 
 ---
@@ -410,25 +431,16 @@ Packages extend the functionality of R
 
 * data
 
----
-
-![RStudio logo](../../static/img/RStudio_400.png)
 
 
 ---
 
+...the packages are the other things that enhance the car's functions
 
-# 3. RStudio
-
-IDE (interactive development environment)
-
-* we will be using the cloud (internet) version of the IDE
-
-* "RStudio" is also the company that developed and supports the IDE
-
-* RStudio is also active creating and supporting packages, including...
+* the body, windshield, headlights, A/C, sound system, etc
 
 
+![VW Beetle transparent](../../static/img/vwlooking.jpg)
 
 
 ---
@@ -455,17 +467,22 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 ---
 
-# An analogy...
+![RStudio logo](../../static/img/RStudio_400.png)
 
-Base R is like the engine and frame of a car
-
-![VW Beetle frame](../../static/img/VW_ad_1_crop.png)
 
 ---
 
-..the packages are the other things that enhance the car's functions
 
-![VW Beetle transparent](../../static/img/vwlooking.jpg)
+# 3. RStudio
+
+IDE (interactive development environment)
+
+* we will be using the cloud (internet) version of the IDE
+
+* "RStudio" is also the company that developed and supports the IDE
+
+* RStudio is also active creating and supporting packages, including many of the tidyverse packages
+
 
 
 
@@ -484,6 +501,13 @@ Base R is like the engine and frame of a car
 
 ---
 
+(or dark mode!)
+
+![VW Beetle dashboard, black](../../static/img/2018_volkswagen_beetle_dashboard.jpg)
+
+
+---
+
 ## Who's ready for a road trip?!
 
 ![VW Beetle dashboard](../../static/img/VW_ready_to_go.png)
@@ -491,15 +515,6 @@ Base R is like the engine and frame of a car
 ---
 
 
-class: inverse
-
-
-## Road trip starts now!
-
-![VW Beetle driving](../../static/img/VW_ontheroad.jpg)
-
-
----
 
 class: inverse
 
@@ -513,7 +528,7 @@ class: inverse
 
 ![](../../static/img/language_learning.jpg)
 
-...is difficult
+...are difficult
 
 ???
 image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
@@ -556,9 +571,10 @@ And spelling matters
 
 * Package vignettes
 
+
 ---
 
-## And future help...
+## And for future reference...
 
 * RStudio Community: https://community.rstudio.com/ 
 
