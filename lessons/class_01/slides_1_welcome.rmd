@@ -110,6 +110,8 @@ Sunday, 9:00 am - 12:00 noon
 
 * due the following Friday at 23:59 (one minute before midnight)
 
+  - upload to Moodle
+
 ---
 
 ## Capstone project
@@ -131,7 +133,7 @@ link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then log
 
 * links to other reading material and data files
 
-* forum
+* forum for Q&A
  
 
 ---
@@ -142,7 +144,7 @@ link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then log
 
 Web-based version of R & RStudio
 
-[Link](https://rstudio.cloud/spaces/34702/join?access_code=lr5keQ5WXcZ5ENNAZoLEAmPSQHav8seVNT2j36e%2F) (but will be invitation-only after today's class)
+Link will be provided at the start of Sunday's class
 
 * later in the course we'll run through the steps to install R on your own computer 
 
@@ -185,20 +187,22 @@ JD Long & Paul Teetor, _R Cookbook, 2nd edition_
 
 .pull-right[
 
-![R for Data Science](../../static/img/rc2e.jpg)
+![R for Data Science](../../static/img/rc2e_500.jpg)
 ]
 
 ---
 
 ## Supplementary resources and readings
 
-For each topic:
+For each week:
 
-- specific material
+- specific material relevant to that topic
 
 - optional: supplementary deeper-dives
 
-_Look for this on the course moodle_
+- included in the weekly lesson plan
+
+_Look for the lesson plans on the course moodle_
 
 
 ---
@@ -229,13 +233,10 @@ The R user community:
 
 * RLadies
 
-
 ---
 
-Hex stickers!
+![R code hero](../../static/img_allison_horst/code_hero_rstats_600.png)
 
-
-![Martin's laptop]()
 
 
 
@@ -258,6 +259,14 @@ In other words:
 
 ~ Be a decent human being
 
+
+
+---
+
+Hex stickers!
+
+
+![Martin's laptop](../../static/img/Martin_laptop.jpg)
 
 
 ---
@@ -295,7 +304,7 @@ email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
 
 ---
 
-![I am not trained for this...and yet](../../static/img/strange_planet.jpg)]
+![I am not trained for this...and yet](../../static/img/I-am-not-trained-for-this_laptop_600.jpg)]
 
 ---
 class: inverse
