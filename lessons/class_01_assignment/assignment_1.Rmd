@@ -1,18 +1,20 @@
 ---
-title: "BIDA302 - assignment #1"
-output: html_notebook
+title: 'BIDA302 - assignment #1'
+subtitle: 'solutions'
+output: html_document
 ---
-
-## YOUR NAME HERE
 
 
 Package load:
-```{r}
+```{r setup}
 library(tidyverse)
 # data files
 library(nycflights13)
 
 ```
+
+## YOUR NAME HERE
+
 
 
 ## Introduction
@@ -23,7 +25,8 @@ library(nycflights13)
 
 > Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
 
-> Once you have submitted your assignment, I will be hitting the "Preview" button -- please ensure that the output renders correctly.
+> Once you have submitted your assignment, I will be hitting the "Knit" button—please ensure that the output renders correctly.
+
 
 
 
@@ -75,11 +78,14 @@ mpg
 ### 4. Religion and income data (USA)
 > (2 marks)
 
-> The table `relig-income` is in {tidyr}.
+> The table `relig_income` is in {tidyr}.
 >
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the "Tidy Data" chapter in _R4DS_.)
+>a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+>
+
 >
 >b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
+
 
 
 
@@ -92,6 +98,9 @@ mpg
 > The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
 >
 > Enter a chunk option so that the chart shows in the output, but the code does not.
+>
+> (Hint: use the RMarkdown cheatsheet to find the solution!)
+
 
 ```{r}
 # hide this code!
@@ -108,13 +117,18 @@ ggplot(data = mpg) +
 
 > For Q3a-3d, use the data `nycflights13::flights`
 >
+> Pay close attention to how the variables are coded.
+>
 > Find all flights that:
 >
 >a. Had an arrival delay of two or more hours
->b. Flew to Houston (IAH or HOU)
->c. Were operated by United, American, or Delta
->d. Departed in summer (July, August, and September)
 
+
+>b. Flew to Houston (there are two airports, with the codes IAH or HOU)
+
+>c. Were operated by United, American, or Delta
+
+>d. Departed in summer (July, August, and September)
 
 
 ***

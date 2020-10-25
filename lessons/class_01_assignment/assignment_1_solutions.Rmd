@@ -1,21 +1,20 @@
 ---
 title: 'BIDA302 - assignment #1'
-subtitle: solutions
-output:
-  html_document:
-    df_print: paged
+subtitle: 'solutions'
+output: html_document
 ---
-
-## YOUR NAME HERE
 
 
 Package load:
-```{r}
+```{r setup}
 library(tidyverse)
 # data files
 library(nycflights13)
 
 ```
+
+## YOUR NAME HERE
+
 
 
 ## Introduction
@@ -26,7 +25,7 @@ library(nycflights13)
 
 > Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
 
-> Once you have submitted your assignment, I will be hitting the "Preview" button -- please ensure that the output renders correctly.
+> Once you have submitted your assignment, I will be hitting the "Knit" button—please ensure that the output renders correctly.
 
 
 
@@ -61,7 +60,7 @@ The variable is spelled differently in each case.
 >* manufacturer, model, mileage in both city and highway 
 
 ```{r}
-
+# one possible solution
 mpg %>%
   filter(manufacturer == "volkswagen",
          class %in% c("compact", "subcompact"),
@@ -98,7 +97,7 @@ gapminder %>%
 
 > The table `relig_income` is in {tidyr}.
 >
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the "Tidy Data" chapter in _R4DS_.)
+>a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 >
 
 ```{r}
@@ -138,6 +137,8 @@ relig_income_long %>%
 > The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
 >
 > Enter a chunk option so that the chart shows in the output, but the code does not.
+>
+> (Hint: use the RMarkdown cheatsheet to find the solution!)
 
 ```{r}
 # hide this code!
@@ -166,6 +167,8 @@ ggplot(data = mpg) +
 
 > For Q3a-3d, use the data `nycflights13::flights`
 >
+> Pay close attention to how the variables are coded.
+>
 > Find all flights that:
 >
 >a. Had an arrival delay of two or more hours
@@ -177,7 +180,7 @@ filter(flights, arr_delay >= 120)
 ```
 
 
->b. Flew to Houston (IAH or HOU)
+>b. Flew to Houston (there are two airports, with the codes IAH or HOU)
 
 ```{r}
 
@@ -233,6 +236,16 @@ filter(flights, month %in% 7:9)
 
 You could also use "or" `|`, or `between()`
 
+
+```{r}
+
+filter(flights, month == 7 |
+         month == 8 |
+         month == 9)
+
+filter(flights, between(month, 7, 9))
+
+```
 
 ***
 
