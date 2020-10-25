@@ -14,66 +14,16 @@ library(gapminder)
 
 > Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
-When working with data, particularly large data sets, you encounter a situation where you need to: 
+When working with data, one of the first things in our analysis is often the calculation of summary statistics. We may want the number of cases, or the maximum value, or the mean of all the records. 
 
-* subset the data so that it contains only those records you are interested in (Why deal with a data table that has every province in Canada when you just need the British Columbia data?)
-
-* subset the data so that it contains only those variables you are interested in (Why keep looking at variables that do not factor into your analysis, or you will not print in your report?)
-
-* create new variables, often through calculations based on variables in your data
-
-
-
-To achieve these three goals, we will be using functions from the tidyverse package {dplyr}. The functions are verbs that describe what they do. Here's a list of the {dplyr} functions that you'll be using:
+Here's a list of the {dplyr} functions that you'll be using:
 
 
 |function |action |
 | :--- | :--- |
-| `filter()`    | *keep rows*|
-| `select()`    | *keep variables (or drop them -var)*|
-| `mutate()`    | *create a new variable*|
-| `arrange()`    | *sort from smallest to largest*|
-| `arrange(desc())`    | *sort from largest to smallest*|
-
-
-
-### other operators
-
-In addition to these functions, R has a number of operators that add significantly to your code.
-
-**Arithmetic operators**
-
-| Operator | Description |
-| :--- | :--- |
-| + | *plus* |
-| - | *minus* |
-| \* | *multiplication*  |
-| / | *division* |
-| ^ | *exponential* |
-
-<P>
-
-**Boolean operators** are a special type of operator that return TRUE or FALSE.  
-
-| Operator | Description |
-| :--- | :--- |
-| ==    | *equal, tests equality* |
-| !=    | *not equal, tests inequality* |
-| \>    | *greater than, tests greater than* (also >=) |
-| <     | *less than, tests less than* (also <=) |
-| %in%  | *contains, tests inclusion* |
-
-<P>
-
-Boolean operators can be combined with *and* or *or*.  
-
-| Operator | Description |
-| :--- | :--- |
-| `&`     | *and, returns true if preceeding and following are both true, else false* |
-| &#124;  | *or, returns true if either preceeding and following are true, else false* |
-
-
-* see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+| `group_by()`  | *declare subsets in data*|
+| `summarize()` | *summarize the data, by groups if they have been declared*|
+| `tally()`     | *counting (by groups if group_by() applied)*|
 
 
 

@@ -107,13 +107,20 @@ gapminder
 
 ## Your Turn 1: filter() rows
 
+The `filter()` function allows us to specify the observations (records) that we want to keep in our data analysis.
+
+The general structure of a `filter()` function is:
+
+`filter(.data, variable <test> value)`
+
+Note that whatever comes first in the `filter()` function will be read as the data frame.
+
+
 See if you can use the logical operators to manipulate our code below to show:
 
-The data for Canada
+* the data for Canada
 
 ```{r}
-filter(.data = gapminder, country == "New Zealand")
-
 filter(gapminder, country == "New Zealand")
 ```
 
@@ -123,23 +130,51 @@ All data for countries in Oceania
 filter(gapminder, country == "New Zealand")
 ```
 
+
 Rows where the life expectancy is greater than 82
 ```{r}
 filter(gapminder, country == "New Zealand")
 ```
 
 
+Return records for all continents except Europe
+
+
+```{r}
+
+```
+
+
+
 ## Your Turn 2: multiple criteria
+
+
+### Introducing the pipe operator ` %>% `
+
+(see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
+
+The pipe operator ` %>% ` allows us to put the data first, and then have other functions work with the outcome of the first line.
+
+For example, we could write
+
+`function(data, arg)` or, with a pipe
+
+`data %>% function(arg)` 
+
+If we want to do anything with the first statement, we have to assign it to an intermediate object, and then use that object in the second statement. With the pipe, we can simply add another pipe and the results of the first function are passed to the second statement.
+
+As we get to increasingly complex statements, the power of this will become more evident.
+
+***
 
 Use Boolean operators to alter the code below to return only the rows that contain:
 
 * United States before 1970
 
-```{r}
-
-gapminder %>%
-  filter(country == "New Zealand", 
-         year > 2000)
+```{r filter4_example, exercise=TRUE, exercise.eval=FALSE}
+# example 
+gapminder %>%                                       # Note use of `%>%` pipe symbol
+  filter(country == "New Zealand", year > 2000)
 
 ```
 
@@ -150,21 +185,78 @@ gapminder %>%
 
 ```
 
+### Creating lists
+
+R allows us to create lists using the `c()` function.
+
+A list can be referenced in a `filter()` statement using the `%in%` as the evaluator.
+
+In this example, we filter to get three countries, "New Zealand", "Canada", and "United States".
+
+Note that to get all three, the statement is _OR_, not _AND_! There are no cases where `country == "New Zealand"` and simultaneously `country == "Canada"` ... 
+
+```{r}
+
+gapminder %>% 
+  filter(country == "New Zealand" |
+           country == "Canada" |
+           country == "United States")
+
+```
+
+Instead of this rather verbose syntax, we can achieve the same result by creating a list. 
 
 
-* Create a list object and return records for any of "New Zealand", "Canada" or "United States"
+```{r filter6_example-solution}
+# answer
+gapminder %>%
+  filter(country %in% c("New Zealand", "Canada", "United States"))
+
+```
+
+Another option would be to create a named object that contains our list, and then use the named object in our `filter()`
+
+
+```{r}
+  
+# alternate answer
+country_list <- c("New Zealand", "Canada", "United States")   # create object that is list of countries
+
+gapminder %>%
+  filter(country %in% country_list)                           # filter uses that object 
+  
+
+```
+
+
+* Create a list object and return records for any of "Belguim", "India", "Denmark" or "Angola" 
 
 
 ```{r}
 
 ```
 
-* Return records for all continents except Europe
 
+* Return the records for all continents except Europe
 
-```{r}
+```{r filter7_example}
 
 ```
+
+
+```{r filter7_example-solution}
+# answer
+gapminder %>%
+  filter(continent != "Europe")
+  
+# answer with a double-check
+gapminder %>%
+  filter(continent != "Europe") %>%
+  distinct(continent)                 # the `distinct()` function returns the list of all the 
+                                      # continent names after the filter is applied
+
+```
+
 
 ## Your Turn 3: sorting
 
@@ -182,7 +274,8 @@ Sort the records so that those with the largest GDP per capita are shown first.
 
 ## Your Turn 4: creating new variables
 
-Calculate a new variable with total GDP
+
+Use the `mutate()` function to calculate a new variable with total GDP, by multiplying the total population by the GDP per capita.
 
 ```{r, error = TRUE}
 
@@ -210,6 +303,48 @@ gapminder %>%
 ```
 
 
+
+
+## Your Turn 6: select cases
+
+{gapminder} again
+
+```{r}
+gapminder
+```
+
+Using `select()` to reduce the number of variables:
+
+```{r}
+gapminder %>%                                
+  select(country, year, lifeExp) 
+
+```
+
+
+
+You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
+
+In this example, note we have to use `c()` to create a list:
+
+
+```{r}
+gapminder %>%                                
+  select(-(c(continent, pop, gdpPercap))) 
+
+```
+
+
+
+You can define a range of columns to select by using the `:`
+
+```{r}
+gapminder %>%
+  select(country, year:pop)
+```
+
+
+
 ***
 
 # Take aways
@@ -218,3 +353,5 @@ gapminder %>%
 * Filter using a list with `%in%`
 * Make new variables, with `mutate()`  
 * Connect operations with `%>%`  
+* Restructure data frames with `select()`  
+
