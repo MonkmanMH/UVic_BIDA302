@@ -24,7 +24,6 @@ knitr::opts_chunk$set(echo = TRUE)
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
 > - Grolemund & Wickham, _R for Data Science_
 
-
 At the end of this lesson, learners will be able to:
 
 1. Describe the fundamental elements of data manipulation, and 
@@ -381,7 +380,6 @@ _R4DS_
 > 2. Search for answers by visualising, transforming, and modelling your data.
 >
 > 3. Use what you learn to refine your questions and/or generate new questions.
-
 
 Cole Nussbaumer Knaflic, [_Storytelling with Data: A Data Visualization Guide for Business Professionals_](http://www.storytellingwithdata.com/books) (2015, Wiley)--this book is focussed on data visualization, but "the data visualization is always in the service of making a point about what the data tell us. In the context of business, this then translates into influencing decisions. The chapter “Lessons in storytelling” falls almost exactly in the middle of the book; after we’ve been introduced to the principles of making good data visualizations, Nussbaumer Knaflic gives us a way to think about the purpose of the visualization. With all of the pieces in place, the remainder of the book is focussed on the applications of storytelling with data."
 

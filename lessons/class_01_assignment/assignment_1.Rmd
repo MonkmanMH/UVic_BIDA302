@@ -60,7 +60,22 @@ stringlength
 
 ```{r}
 mpg
+
 ```
+
+
+```{r}
+
+audi <- filter(mpg$manufacturer == "audi")
+select(audi$model)
+
+mpg %>% 
+  filter(manufacturer == "audi") %>% 
+  select(model)
+
+```
+
+
 
 ***
 
