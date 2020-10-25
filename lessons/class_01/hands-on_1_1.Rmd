@@ -13,17 +13,7 @@ library(gapminder)
 
 ## Objectives
 
-At the end of this exercise, you will demonstrate the use of the following functions from the {dplyr} package:
-
-
-|function |action |
-| :--- | :--- |
-| `filter()`    | *keep rows*|
-| `select()`    | *keep variables (or drop them -var)*|
-| `mutate()`    | *create a new variable*|
-| `arrange()`    | *sort from smallest to largest*|
-| `arrange(desc())`    | *sort from largest to smallest*|
-
+At the end of this exercise, you will demonstrate the use of functions from the {dplyr} package.
 
 
 ***
@@ -89,7 +79,7 @@ Boolean operators can be combined with *and* or *or*.
 | &#124;  | *or, returns true if either preceding and following are true, else false* |
 
 
-* see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+* see [_R for Data Science_, "Comparisions"](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
 
 
 
@@ -142,6 +132,7 @@ Return records for all continents except Europe
 
 ```{r}
 
+
 ```
 
 
@@ -153,15 +144,19 @@ Return records for all continents except Europe
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
-The pipe operator ` %>% ` allows us to put the data first, and then have other functions work with the outcome of the first line.
+The pipe operator ` %>% ` allows us to name the data frame first, and then have other functions work with the outcome of the first line.
 
 For example, we could write
 
-`function(data, arg)` or, with a pipe
+`function(data, arg)` 
+
+or, with a pipe
 
 `data %>% function(arg)` 
 
-If we want to do anything with the first statement, we have to assign it to an intermediate object, and then use that object in the second statement. With the pipe, we can simply add another pipe and the results of the first function are passed to the second statement.
+Read the pipe symbol as "then".  We start with our data, _then_ we apply the function.
+
+If we want to do anything with the output from the first statement, we have to assign it to an intermediate object, and then use that intermediate object in the second statement. With the pipe, we can simply add another pipe and the results of the first function are passed to the second statement.
 
 As we get to increasingly complex statements, the power of this will become more evident.
 
@@ -229,15 +224,16 @@ gapminder %>%
 ```
 
 
-* Create a list object and return records for any of "Belguim", "India", "Denmark" or "Angola" 
+* Create a list object and return the 2007 records for Belgium, India, Denmark and Angola 
 
 
 ```{r}
 
+
 ```
 
 
-* Return the records for all continents except Europe
+* Return the 2007 records for all continents except Europe
 
 ```{r filter7_example}
 
@@ -247,11 +243,13 @@ gapminder %>%
 ```{r filter7_example-solution}
 # answer
 gapminder %>%
-  filter(continent != "Europe")
+  filter(year == 2007,
+         continent != "Europe")
   
 # answer with a double-check
 gapminder %>%
-  filter(continent != "Europe") %>%
+  filter(year == 2007,
+    continent != "Europe") %>%
   distinct(continent)                 # the `distinct()` function returns the list of all the 
                                       # continent names after the filter is applied
 
@@ -325,7 +323,7 @@ gapminder %>%
 
 You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
 
-In this example, note we have to use `c()` to create a list:
+For the minus sign to work, note that we have to use `c()` to create a list:
 
 
 ```{r}
