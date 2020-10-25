@@ -241,7 +241,7 @@ summary(mpg$hwy)
 # Part 2 - {tidyr} -
 
 
-![tidyr hex](/static/img/tidyr_400.png)
+![tidyr hex](../../static/img/tidyr_400.png)
 
 The [{tidyr} site](https://tidyr.tidyverse.org/)
 
