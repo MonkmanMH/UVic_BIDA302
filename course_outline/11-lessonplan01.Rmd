@@ -3,8 +3,8 @@ title: 'BIDA302: Lesson Plan, Week 1'
 author: "Martin Monkman"
 date: 'latest revision: `r Sys.Date()`'
 output:
-  word_document: default
   html_document: default
+  word_document: default
 subtitle: 2020-10-24 & 2020-10-25
 ---
 
@@ -202,6 +202,17 @@ Format: instructor summary, w/ slides
 ***
 
 ## Readings & Reference Materials
+
+### Installing R on your own computer
+
+[_R Cookbook, 2nd ed._](https://rc2e.com/gettingstarted#recipe-id001)
+
+* 1.1 Downloading and Installing R
+
+* 1.2 Installing RStudio
+
+* 1.3 Starting RStudio
+
 
 ### Packages
 

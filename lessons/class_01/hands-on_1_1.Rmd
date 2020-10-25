@@ -11,10 +11,95 @@ library(gapminder)
 
 ```
 
+## Objectives
+
+At the end of this exercise, you will demonstrate the use of the following functions from the {dplyr} package:
+
+
+|function |action |
+| :--- | :--- |
+| `filter()`    | *keep rows*|
+| `select()`    | *keep variables (or drop them -var)*|
+| `mutate()`    | *create a new variable*|
+| `arrange()`    | *sort from smallest to largest*|
+| `arrange(desc())`    | *sort from largest to smallest*|
+
+
+
+***
+
+> Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
+
+When working with data, particularly large data sets, you encounter a situation where you need to: 
+
+* subset the data so that it contains only those _records_ (rows) you are interested in (Why deal with a data table that has every province in Canada when you just need the British Columbia data?)
+
+* subset the data so that it contains only those _variables_ (columns) you are interested in (Why keep looking at variables that do not factor into your analysis, or you will not print in your report?)
+
+* create new variables, often through calculations based on variables in your data
+
+
+
+To achieve these three goals, we will be using functions from the tidyverse package {dplyr}. The functions are verbs that describe what they do. Here's a list of the {dplyr} functions that you'll be using:
+
+
+|function |action |
+| :--- | :--- |
+| `filter()`    | *keep rows*|
+| `select()`    | *keep variables (or drop them -var)*|
+| `mutate()`    | *create a new variable*|
+| `arrange()`    | *sort from smallest to largest*|
+| `arrange(desc())`    | *sort from largest to smallest*|
+
+
+
+### other operators
+
+In addition to these functions, R has a number of operators that add significantly to your code.
+
+**Arithmetic operators**
+
+| Operator | Description |
+| :--- | :--- |
+| + | *plus* |
+| - | *minus* |
+| \* | *multiplication*  |
+| / | *division* |
+| ^ | *exponential* |
+
+<P>
+
+**Boolean operators** are a special type of operator that return TRUE or FALSE.  
+
+| Operator | Description |
+| :--- | :--- |
+| ==    | *equal, tests equality* |
+| !=    | *not equal, tests inequality* |
+| \>    | *greater than, tests greater than* (also >=) |
+| <     | *less than, tests less than* (also <=) |
+| %in%  | *contains, tests inclusion* |
+
+<P>
+
+Boolean operators can be combined with *and* or *or*.  
+
+| Operator | Description |
+| :--- | :--- |
+| `&`     | *and, returns true if preceding and following are both true, else false* |
+| &#124;  | *or, returns true if either preceding and following are true, else false* |
+
+
+* see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+
+
+
+
+
 ## gapminder
 
 These exercises use a summary of data about the countries of the world, drawn from the gapminder.org tables. This table is stored in the R package {gapminder}.
 
+To view the data in the console or in the R Markdown output, enter the name of the data table:
 
 ```{r}
 gapminder
@@ -27,6 +112,8 @@ See if you can use the logical operators to manipulate our code below to show:
 The data for Canada
 
 ```{r}
+filter(.data = gapminder, country == "New Zealand")
+
 filter(gapminder, country == "New Zealand")
 ```
 
@@ -81,12 +168,13 @@ gapminder %>%
 
 ## Your Turn 3: sorting
 
-Find the records with the smallest population.
+Sort the records so that those with the smallest population are shown first.
+
 ```{r}
 
 ```
 
-Find the records with the largest GDP per capita.
+Sort the records so that those with the largest GDP per capita are shown first.
 ```{r}
 
 ```
