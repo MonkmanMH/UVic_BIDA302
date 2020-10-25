@@ -173,7 +173,7 @@ mpg %>%
 
 `arrange()` to have things in ascending order
 
-modify with `desc()` for descending order
+* modify with `desc()` for descending order
 
 
 ```{r eval=FALSE}
@@ -244,6 +244,12 @@ summary(mpg$hwy)
 ![tidyr hex](../../static/img/tidyr_400.png)
 
 The [{tidyr} site](https://tidyr.tidyverse.org/)
+
+---
+
+Slide deck:
+
+Julie Lowndes & Allison Horst, [Make friends with tidy data](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
 
 
 ---
@@ -326,6 +332,15 @@ class_by_cyl %>%
   spread(cyl, value = mean)
 
 ```
+
+---
+
+More about tidy data:
+
+* ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_.
+
+* ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+
 
 ---
 

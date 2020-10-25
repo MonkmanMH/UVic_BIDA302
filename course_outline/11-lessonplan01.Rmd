@@ -44,10 +44,11 @@ At the end of this lesson, learners will be able to:
 |&#8212:     | 10:30 to 10:45 | _break_ | &#8212; |
 |2a <br> 2b  | 10:45 to 12:00 | The data science process <br> Programming foundations | &#8212; |
 |**Sunday**     | &#8212;  | &#8212; | &#8212; |
-|3           | 9:00 to 9:30   | The data science process (walk-through) <br> Data wrangling (continued) | &#8212; |
+|3a           | 9:00 to 9:30   | Getting started with R and RStudio |
+|3b           | 9:30 to 10:30   | Data wrangling (part 1) | &#8212; |
 |&#8212;     | 10:30 to 10:45   | _break_ | &#8212; |
-|4a          | 9:30 to 10:30   | Assignment 1 | &#8212; |
-|4b <br> 4c  | 10:45 to 12:00   | Installing R on your own computer <br> Wrap up | &#8212; |
+|4a          | 10:45 to 11:30   | Data wrangling (part 2) | &#8212; |
+|4b <br> 4c  | 11:30 to 12:00   | Assignment 1 <br> Wrap up | &#8212; |
 
 
 ***
@@ -147,14 +148,14 @@ Time allocation: 60 minutes (11:00 to 12:00)
 ## Sunday (2020-10-25)
 
 
-### 3a. The Data Science Process -- example walkthrough
+### 3a. Getting started with R and RStudio
 
 Format: instructor, lecture w/slides
 
 Time allocation: 30 minutes (9:00 to 9:30)
 
 
-### 3b. Data Wrangling 
+### 3b. Data Wrangling (part 1)
 
 Format: instructor, lecture w/slides
 
@@ -170,19 +171,26 @@ Time allocation: 45 minutes (9:45 to 10:30)
 
 ## BREAK
 
-Time allocation: 15 minutes (2:45 to 3:00)
+Time allocation: 15 minutes (10:30 to 10:45)
 
 
 ***
 
-## 4a. Assignment #1
+### 4a. Data Wrangling (part 2)
 
-Time allocation: 30 minutes (3:00 to 3:30)
+Format: instructor, lecture w/slides
+
+Time allocation: 15 minutes (10:45 to 11:00)
 
 
-## 4b. Wrap up
+Format: learner (instructor guided)
 
-Time allocation: 30 minutes (3:30 to 4:00)
+Time allocation: 30 minutes (11:00 to 11:30)
+
+## 4b. Assignment #1 and wrap-up
+
+Time allocation: 30 minutes (11:30 to 12:00)
+
 
 ### Summary
 
@@ -196,6 +204,12 @@ Format: learner Q&A
 
 Format: instructor summary, w/ slides
 
+
+
+
+### Take-home exercise:
+
+[Data Manipulation using {dplyr} and {tidyr}](https://monkmanmh.shinyapps.io/R4SS_data_manipulation)
 
 
 
@@ -257,17 +271,17 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 #### 
 
-The BIDA302 [Course Outline](https://distance.moodle.uvcs.uvic.ca/mod/resource/view.php?id=154351)
+The BIDA302 [Course Outline](https://distance.moodle.uvcs.uvic.ca/pluginfile.php/224076/mod_resource/content/2/BIDA302_course-outline_2020-10-23.html)
 
-
-#### Naming things
-
-Jenny Bryan, ["How to name files"](https://speakerdeck.com/jennybc/how-to-name-files)
-
-* https://twitter.com/JennyBryan/status/807805087544328192?s=20
 
 
 #### Tidy data
+
+More about tidy data:
+
+["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+
+
 
 [Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
 
