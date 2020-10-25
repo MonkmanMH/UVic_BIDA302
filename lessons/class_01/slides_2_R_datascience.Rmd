@@ -39,67 +39,23 @@ class: inverse
 
 ![VW Beetle driving](../../static/img/VW_ontheroad.jpg)
 
-
 ---
-
-# Naming objects in R
-
-Object names: 
-
-* must start with a letter
-
-* can only contain letters, numbers, `_`, and `.`
-
-* _no spaces!_
-
-Be descriptive!
-
----
-
-
-## Three principles for (file) names
-
-machine readable
-
-human readable
-
-plays well with default ordering
-
-* from Jenny Bryan, ["How to name files"](https://speakerdeck.com/jennybc/how-to-name-files)
-
----
-
-### Naming files
-
-Some other suggestions: 
-
-* only use letters, numbers, `_`, and `.`
-
-* _no spaces!_
-
----
-
-# Dates
-
-## ISO 8601
-
-YYYY-MM-DD
-
-Note: see XKCD, ["ISO 8601"](https://xkcd.com/1179/)
-
-
-
----
-
-class: inverse
 
 # RStudio cloud
 
-Visit: https://rstudio.cloud/spaces/49481/projects
 
-If you haven't already, log in or sign up
+Go to [rstudio.cloud](https://rstudio.cloud/) and create an account
 
-"Save a copy" of the project
+
+---
+
+# The BIDA302 rstudio.cloud space
+
+Join [the BIDA302 space](https://rstudio.cloud/spaces/99987/join?access_code=Rkf%2FgI5RlxEOUYWRgcaIxqNvG7kVlqkqWMMENbX6):
+
+https://rstudio.cloud/spaces/99987/join?access_code=Rkf%2FgI5RlxEOUYWRgcaIxqNvG7kVlqkqWMMENbX6
+
+This link will only work until the end of today's class--after that, an invitation will be required.
 
 
 ---
@@ -479,5 +435,56 @@ Also: what we'll be covering in this course
 
 
 ---
+
+
+# Naming things
+
+---
+
+## Naming objects in R
+
+Object names: 
+
+* must start with a letter
+
+* can only contain letters, numbers, `_`, and `.`
+
+* _no spaces!_
+
+Be descriptive!
+
+---
+
+
+## Three principles for (file) names
+
+machine readable
+
+human readable
+
+plays well with default ordering
+
+* from Jenny Bryan, ["How to name files"](https://speakerdeck.com/jennybc/how-to-name-files)
+
+---
+
+### Naming files
+
+Some other suggestions: 
+
+* only use letters, numbers, `_`, and `.`
+
+* _no spaces!_
+
+---
+
+## Dates
+
+### ISO 8601
+
+YYYY-MM-DD
+
+Note: see XKCD, ["ISO 8601"](https://xkcd.com/1179/)
+
 
 
