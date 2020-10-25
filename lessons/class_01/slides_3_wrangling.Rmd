@@ -2,10 +2,11 @@
 title: "Data wrangling"
 subtitle: ""
 author: "BIDA302"
-date: "2020/02/29"
+date: "2020/10/25"
 output:
   xaringan::moon_reader:
-    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -37,13 +38,14 @@ class: inverse
 
 # Data wrangling
 
-Cleaning
-
 Filtering and selecting
 
 Adding variables
 
 Reshaping
+
+Cleaning
+
 
 
 
@@ -53,7 +55,7 @@ Reshaping
 # Part 1: {dplyr} -
 
 
-![dplyr hex](/static/img/dplyr_400.png)
+![dplyr hex](../../static/img/dplyr_400.png)
 
 The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
 

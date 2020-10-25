@@ -2,10 +2,11 @@
 title: "R and the data science process"
 subtitle: ""
 author: "BIDA302"
-date: "2020/02/29"
+date: "2020/10/25"
 output:
   xaringan::moon_reader:
-    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -14,25 +15,33 @@ output:
 ---
 
 
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
-# to knit:
-# see https://github.com/yihui/xaringan/issues/29
-
-# point up-directory to css and img folders
-
-#xaringan::inf_mr('lessons/class_01/slides_2_R_datascience.Rmd')
-
-```
-
-```{r, include=FALSE}
 library(tidyverse)
 ```
 
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
 
-class: inverse
-
+```
 
 
 ## Road trip starts now!
@@ -74,7 +83,6 @@ First create a new R script file
 
 
 ---
-class: inverse
 
 ## Console
 
@@ -90,11 +98,12 @@ What happened?
 
 
 ---
-class: inverse
+
+# R script file
 
 First create a new R script file
 
-
+* an R script file allows you to save your R code
 
 ---
 
@@ -194,7 +203,6 @@ Now print the object `t`
 
 
 ---
-class: inverse
 
 ## Vector -- a series of values
 
@@ -203,20 +211,18 @@ class: inverse
 `x <- seq(1, 10)`
 
 ---
-class: inverse
 
 # `c` to make a list
 
 `c` is for "combine"
 
-x <- c(1, 5, 6)
+`x <- c(1, 5, 6)`
 
-y <- c("British Columbia", "Alberta")
+`y <- c("British Columbia", "Alberta")`
 
 
 
 ---
-class: inverse
 
 # Functions
 
@@ -238,7 +244,10 @@ a simple example:
 
 
 ---
-class: inverse
+
+![R markdown](../../static/img_allison_horst/rmarkdown_wizards.png)
+
+---
 
 ### R Markdown
 
@@ -269,22 +278,10 @@ Used for reports and academic articles, books, blogs and websites
 
 ---
 
-![R markdown](../../static/img_allison_horst/rmarkdown_wizards.png)
-
----
-class: inverse
-
 # Markdown
 
 A simplified formatting markup language with plain text syntax
 
-_Go to your web browser and open [dillinger.io](https://dillinger.io/)_
-
-
----
-class: inverse
-
-# R Markdown
 
 Combines text (in Markdown) with R code
 
@@ -308,7 +305,6 @@ Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex ima
 
 ---
 
-class: inverse
 
 # {tidyverse} -
 
@@ -317,7 +313,6 @@ class: inverse
 The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 ---
-class: inverse
 
 Two tidyerse data transformation packages we will be using today:
 
@@ -327,7 +322,6 @@ Two tidyerse data transformation packages we will be using today:
 
 
 ---
-class: inverse
 
 ## Loading a package
 
@@ -348,7 +342,6 @@ It is set up with all the packages you'll need!
 
 
 ---
-class: inverse
 
 
 # Quick Detour
@@ -364,7 +357,6 @@ Or, once a package is loaded, it is accessible through the Help pane (bottom rig
 
 
 ---
-class: inverse
 
 # Quick Detour
 ## other sources of help
@@ -375,9 +367,6 @@ class: inverse
 
 * cheat sheets
 
-* Stack Overflow
-
-* blogs 
 
 
 
@@ -387,9 +376,18 @@ class: inverse
 
 # The Data Science Process
 
+
 ---
 
-class: inverse
+## The data science process
+
+![The data science process](../../static/img/data-science.png)
+
+Also: what we'll be covering in this course 
+
+
+
+---
 
 # What data scientists do
 
@@ -401,15 +399,6 @@ class: inverse
 ???
 
 Forbes: ["Cleaning Big Data: Most Time-Consuming, Least Enjoyable Data Science Task, Survey Says"](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#22d5a9446f63)
-
----
-
-## The data science process
-
-![The data science process](../../static/img/data-science.png)
-
-Also: what we'll be covering in this course 
-
 
 
 
@@ -435,7 +424,7 @@ Also: what we'll be covering in this course
 
 
 ---
-
+class:inverse
 
 # Naming things
 
