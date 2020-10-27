@@ -95,11 +95,9 @@ RStudio cloud:
 
 Texts:
 
-  - Garrett Grolemund and Hadley Wickham, [*R for Data
-    Science*](https://r4ds.had.co.nz/). (Free online text.)
+  - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/). (Free online text.)
 
-  - J.D. Long and Paul Teetor, [*R Cookbook*, 2nd
-    edition](https://rc2e.com/). (Free online text.)
+  - J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/). (Free online text.)
 
   - Additional readings will be introduced with each lesson.
 
