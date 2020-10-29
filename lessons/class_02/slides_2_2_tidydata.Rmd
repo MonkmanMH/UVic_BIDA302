@@ -2,34 +2,46 @@
 title: "Tidy data"
 subtitle: "with {tidyr}"
 author: "BIDA302 - lesson 2"
-date: "2020/03/07"
+date: "2020/10/31"
 output:
   xaringan::moon_reader:
-    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Martin Monkman
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
-# to knit:
-# see https://github.com/yihui/xaringan/issues/29
-
-# point up-directory to css and img folders
-
-#xaringan::inf_mr('lessons/class_02/slides_2_2_tidydata.Rmd')
-
 library(tidyverse)
-
 ```
 
-class: inverse
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
 
 # Tidy data
 
@@ -55,7 +67,7 @@ class: inverse
 --
 
 
-![tidy principles](/static/img/tidy-1.png)
+![tidy principles](../../static/img/tidy-1.png)
 
 ???
 
@@ -67,11 +79,18 @@ From [_R for Data Science_, "Tidy Data"](https://r4ds.had.co.nz/tidy-data.html)
 ## Untidy data: example
 
 
+```{r echo=FALSE}
+#tidyr::relig_income
+kableExtra::kbl(tidyr::relig_income, n=5)
+
+```
+
 ```{r}
 #tidyr::relig_income
 print(tidyr::relig_income, n=5)
 
 ```
+
 
 --
 
@@ -86,9 +105,11 @@ from {tidyr}; see https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-d
 
 To make it tidy, we need to pivot it into a longer form:
 
-```{r}
+```{r echo=FALSE}
+kableExtra::kbl(
 tidyr::relig_income %>%
   pivot_longer(-religion, names_to = "income_cat", values_to = "count")
+)
 ```
 
 
@@ -107,6 +128,7 @@ CDN_elec_2019 <- tibble(party = c("Liberal", "Conservative", "Bloc Québécois",
 CDN_elec_2019 <- CDN_elec_2019 %>%
   pivot_longer(-party, names_to = "category", values_to = "number")
 CDN_elec_2019
+
 ```
 
 --
@@ -130,6 +152,7 @@ CDN_elec_2019 %>%
 
 ## Multiple observations per row
 
+
 ```{r echo=FALSE}
 
 family <- tribble(
@@ -145,11 +168,19 @@ family
 
 ```
 
+What tidy principle(s) are being violated?
+
+* one observation per row (here there are two)
+
+* one column per variable (2 date-of-birth columns, 2 gender columns)
+
 ???
 
 source: https://tidyr.tidyverse.org/articles/pivot.html
 
 ---
+
+## To tidy:
 
 * in `names_to`, there are two things in the c():
   - `".value"` sets part of the column name is the associated with the value (e.g. "dob" is 1998-11-26)
@@ -196,7 +227,7 @@ You can see this type of table structure a lot...
 
 It is often used to present summary tables that will be read by humans
 
-![retail sales table](/static/img/StatCan_retailsales_2019-08_table1.JPG)
+![retail sales table](../../static/img/StatCan_retailsales_2019-08_table1.JPG)
 
 ???
 

@@ -2,29 +2,44 @@
 title: "Variable Types"
 subtitle: "in R"
 author: "BIDA302 - lesson 2"
-date: "2019/11/09"
+date: "2020/10/31"
 output:
   xaringan::moon_reader:
-    css: [/static/css_files/eigengrau.css, /static/css_files/eigengrau-fonts.css]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Martin Monkman
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
-# to knit:
-# see https://github.com/yihui/xaringan/issues/29
+library(tidyverse)
+```
 
-# point up-directory to css and img folders
-
-#xaringan::inf_mr('lessons/class_02/slides_2_1_variable_types.Rmd')
-
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
 ```
 
 
@@ -35,9 +50,8 @@ mpg
 
 ---
 
-class: inverse
 
-# Variable types 1
+# Variable types (1)
 
 
 `int` stands for integers.
@@ -50,31 +64,43 @@ class: inverse
 
 `dttm` stands for date-times (a date + a time).
 
+`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
 ---
 
-class: inverse
 
-# Variable types 2 
+# Variable types (2) 
 
 `lgl` stands for logical, vectors that contain only TRUE or FALSE.
 
-`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
 
 `NA` are explicitly missing values.
+
+* they can be included as any type: e.g. numeric or character
 
 
 ---
 
-# Missing values `NA`
+# Missing values `NA` 
 
-* missing values are contagious -- one in the input will return an `NA` in the output
+Missing values are _contagious_
 
-A simple example:
+* an `NA` in the input will return an `NA` in the output
+
+Three simple examples:
 
 ```{r}
-
 1 + NA
+```
 
+```{r}
+num_list <- c(1, 2, NA, 4, 5)
+1 + num_list
+```
+
+```{r}
+mean(num_list)
 ```
 
 
@@ -134,7 +160,6 @@ Dealing with those pesky `NA` values
 x <- c(1, NA, 3)
 
 is.na(x)
-
 ```
 
 
