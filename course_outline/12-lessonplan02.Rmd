@@ -15,7 +15,7 @@ output: html_document
 |2          | 2019-11-09 | Good coding habits <br> Tidy data <br> Data wrangling: the basics <br> R Markdown: the next level | &#8212; |
 
 
->The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable >answer can be extracted from a given body of data.
+>The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data.
 >
 >- John Tukey
 
@@ -34,12 +34,14 @@ At the end of this lesson, learners will be able to:
 
 | Block      | Time           | Topics  | &#8212; |
 |---         |:---            |:---     |:---:  |
+|**Saturday**     | &#8212;  | &#8212; | &#8212; |
 |1a          | 9:00 to 9:30   | Review Homework #1  | &#8212; |
 |1b          | 9:30 to 10:00  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
 |&#8212:     | 10:00 to 10:15 | _break_ | &#8212; |
 |2a          | 10:15 to 12:00 | Tidy data <br> running R Markdown | &#8212; |
 |2b          | &#8212;        | Importing data | &#8212; |
 |&#8212;     | 12:00 to 1:00  | _lunch_ | &#8212; |
+|**Sunday**     | &#8212;  | &#8212; | &#8212; |
 |3           | 1:00 to 2:15   | Importing data (continued) | &#8212; |
 |&#8212;     | 2:15 to 2:30   | _break_ | &#8212; |
 |4a          | 2:30 to 3:00   | Assignment 2 | &#8212; |

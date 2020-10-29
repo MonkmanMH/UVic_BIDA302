@@ -221,7 +221,7 @@ Andrew Heiss, Georgia State University)</small>
 
   - **Due date:** Each assignment is due at 23:59 (11:59 pm) on the
     Thursday following the class; late assignments will be accepted
-    until 8:00 am on Saturday, one hour prior to class. Anything later
+    until 23:59 (11:59 pm) on the Friday following the class. Anything later
     than that will not be accepted, as we will review the assignment
     during Saturday’s class.
 

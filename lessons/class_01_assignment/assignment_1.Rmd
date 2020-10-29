@@ -84,6 +84,12 @@ mpg %>%
 
 > What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
 
+```{r}
+library(gapminder)
+
+
+
+```
 
 
 
