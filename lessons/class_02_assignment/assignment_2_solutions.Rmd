@@ -1,7 +1,8 @@
 ---
 title: "BIDA302 - assignment #2"
 subtitle: "solutions"
-output: html_document
+  html_document:
+    df_print: paged
 ---
 
 ## YOUR NAME HERE
