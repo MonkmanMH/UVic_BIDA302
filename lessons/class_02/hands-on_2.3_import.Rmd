@@ -16,7 +16,7 @@ https://readxl.tidyverse.org/index.html
 
 Run this code chunk:
 
-```{r}
+```{r setup}
 library(tidyverse)  # we will be using the functions of {readr}
 library(readxl)
 ```
@@ -25,7 +25,7 @@ library(readxl)
 
 # 1. Reading a CSV file
 
-CSV files are very commonly used for storing flat files. They don't have any formatting--just the number or text in the cell.
+CSV files are very commonly used for storing flat files. They don't have any formatting—just the number or text in the cell, and very often a header row.
 
 The package {readr} is designed to make importing these files simple.
 

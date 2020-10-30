@@ -1,7 +1,7 @@
 ---
 title: "BIDA302 - assignment #2"
 subtitle: "solutions"
-output: html_notebook
+output: html_document
 ---
 
 ## YOUR NAME HERE
