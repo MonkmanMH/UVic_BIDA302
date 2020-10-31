@@ -1,5 +1,5 @@
 ---
-title: "Variable Types"
+title: "Understanding your data"
 subtitle: "in R"
 author: "BIDA302 - lesson 2"
 date: "2020/10/31"
@@ -19,8 +19,12 @@ output:
 This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
--->
 
+function list is from Data Carpentry's "R for Social Science" 
+https://datacarpentry.org/r-socialsci/02-starting-with-data/index.html,
+which is licensed under a Creative Commons Attribution 4.0 International License
+
+-->
 
 
 
@@ -28,6 +32,7 @@ https://creativecommons.org/licenses/by/4.0/
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
+library(gapminder)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -43,15 +48,91 @@ style_duo_accent(
 ```
 
 
-```{r}
-mpg
-```
+![gapminder spreadsheet](excel_gapminder_2.JPG)
+
+Gapminder data in Excel
+
+---
+
+![on screen](gapminder_STNG_onscreen_x.png)
+
+"On screen!"
+
+---
+class: inverse
+
+# Looking at your data
+
+We load our data
+
+* it's an object
+
+* shows up in our Environment pane
+
+---
+
+![gapminder in RStudio](gapminder_RStudio_2.JPG)
+
+A different view of the universe
 
 
 ---
 
+## Takaing a look at your data
 
-# Variable types (1)
+In R, there are a few options for viewing your data:
+
+
+| function | description |  
+|---|---|  
+|*Content: * | |
+|`head()` | shows the first 6 rows |
+|`tail()` | shows the last 6 rows | 
+|`view()` or `View()`| display in tab |
+
+---
+
+Other functions to understand your dataframe:
+
+| function | description |  
+|---|---|  
+|*Size:*  | |
+|`dim()` | returns a vector with the number of rows as the first element, and the number of columns as the second element (the dimensions of the object) |
+|`nrow()` | returns the number of rows |
+|`ncol()` | returns the number of columns |
+
+---
+
+| function | description |  
+|---|---|  
+|*Names:* | |
+|`names()` | returns the column names (synonym of colnames() for data.frame objects) |
+|*Summary:* | |
+|`ls()` | returns the names in a specified environment or object  |
+|`str()` | structure of the object and information about the class, length and content of each column |
+| `ls.str()` | combines `ls()` and `str()`| 
+|`summary()` | summary statistics for each column |
+|`glimpse()` | returns the number of columns and rows of the tibble, the names and class of each column, and previews as many values will fit on the screen. Unlike the other inspecting functions listed above, glimpse() is not a “base R” function so you need to have the dplyr or tibble packages loaded to be able to execute it. |
+
+Note: most of these functions are “generic.” They can be used on other types of objects besides data frames or tibbles.  
+
+
+---
+
+```{r}
+gapminder
+
+```
+
+
+---
+class: inverse
+
+# Variable types
+
+---
+
+## Variable types (1)
 
 
 `int` stands for integers.
@@ -109,6 +190,8 @@ mean(num_list)
 
 Or a longer example...
 
+This data has multiple NAs in the "displ_mean" column.
+
 `displ_class_by_cyl`
 
 ```{r echo=FALSE}
@@ -126,11 +209,15 @@ displ_class_by_cyl
 
 ---
 
+What happens when we calculate the mean of "displ_mean"?
+
 ```{r}
 mean(displ_class_by_cyl$displ_mean)
 ```
 
 --
+
+The solution:
 
 `na.rm` removes `NA`s from the calculation
 
