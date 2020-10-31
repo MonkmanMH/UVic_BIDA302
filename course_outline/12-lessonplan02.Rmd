@@ -1,18 +1,13 @@
 ---
 title: "BIDA302: Lesson Plan, Week 2"
-subtitle: "2020-03-07"
+subtitle: "2020-10-31 and 2020-11-01"
 author: "Martin Monkman"
 date: "`r Sys.Date()`"
 output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 2 (2019-11-09)
-
-
-| Week      | Date | Topics   | Lesson |
-|---        |:---  |:---      |:---:  |
-|2          | 2019-11-09 | Good coding habits <br> Tidy data <br> Data wrangling: the basics <br> R Markdown: the next level | &#8212; |
+# Week 2 
 
 
 >The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data.
@@ -23,9 +18,11 @@ output: html_document
 
 At the end of this lesson, learners will be able to:
 
-1. Describe the fundamental elements of data manipulation, and 
+1. Describe the fundamental elements of data manipulation, 
 
-2. Demonstrate how these can be applied in a data analytics context.
+2. Demonstrate how these can be applied in a data analytics context,
+
+3. Successfully import CSV and Excel files into R.
 
 
 ***
