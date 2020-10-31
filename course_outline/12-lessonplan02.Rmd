@@ -36,14 +36,13 @@ At the end of this lesson, learners will be able to:
 |---         |:---            |:---     |:---:  |
 |**Saturday**     | &#8212;  | &#8212; | &#8212; |
 |1a          | 9:00 to 9:30   | Review Homework #1  | &#8212; |
-|1b          | 9:30 to 10:00  | Variable types (including NA) <br> R in data analysis - example  | &#8212; |
+|1b          | 9:30 to 10:00  | Understanding your data (including variable types)  | &#8212; |
 |&#8212:     | 10:00 to 10:15 | _break_ | &#8212; |
 |2a          | 10:15 to 11:00 | Tidy data   | &#8212; |
 |&#8212:     | 11:00 to 11:15 | _break_ | &#8212; |
 |2b          | 11:15 to 11:45 | Data wrangling | &#8212; |
 |2c          | 11:45 to 12:00 | Running R Markdown | &#8212; |
 |**Sunday**     | &#8212;  | &#8212; | &#8212; |
-
 |3a          | 9:00 to 10:00   | Importing data  | &#8212; |
 |&#8212:     | 10:00 to 10:15 | _break_ | &#8212; |
 |3a          | 10:15 to 11:00   | Importing data (part 2)  | &#8212; |
@@ -53,127 +52,71 @@ At the end of this lesson, learners will be able to:
 
 
 
-## Saturday (2020-10-31)
+
+## Readings & Reference Materials
 
 
-### 1a. Review Homework #1
+### Tutorials
 
-* including submissions via moodle
-
-Format: participation and instructor lecture w/ slides
-
-Time allocation: 30 minutes (9:00 to 9:30)
-
-
-### 1b. Variable types 
-
-Format: participation and instructor lecture w/ slides
-
-Time allocation: 30 minutes (9:30 to 10:00)
+[Data Manipulation using dplyr and tidyr](https://monkmanmh.shinyapps.io/R4SS_data_manipulation/) -- part of the [Data Carpentries "R for Social Scientists"](https://datacarpentry.org/r-socialsci/)
 
 
 
+### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [12. Tidy data](https://r4ds.had.co.nz/tidy-data.html), sections 12.1 to 12.3
+
+* [11. Import data](https://r4ds.had.co.nz/data-import.html)
 
 
-***
+#### Tidy data
 
-## BREAK
+More about tidy data:
 
-Time allocation: 15 minutes (10:00 to 10:15)
-
-***
-
-### 2a. Tidy data & good coding habits
-
-Format: instructor, lecture w/slides
-
-Time allocation: 30 minutes (10:15 to 10:45)
+["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 
 
-### 2b. Importing data
-
-Format: instructor, lecture w/slides
-
-Time allocation: 15 minutes (10:45 to 11:00)
-
-
-
-Format: learner (instructor guided)
-
-Time allocation: 60 minutes (11:00 to 12:00)
-
-***
-
-
-## Sunday (2020-11-01)
-
-
-### 3. Data Wrangling (part 2)
-
-Format: instructor, lecture w/slides
-
-Time allocation: 15 minutes (1:00 to 1:15)
-
-
-Format: learner (instructor guided)
-
-Time allocation: 60 minutes (1:15 to 2:15)
-
-
-***
-
-## BREAK
-
-Time allocation: 15 minutes (2:15 to 2:30)
-
-
-***
-
-## 4a. Assignment #1
-
-Time allocation: 30 minutes (2:30 to 3:00)
-
-
-## 4b. Installing R & RStudio on your own computer
-
-Time allocation: 15 minutes (3:15 to 3:30)
-
-
-## 4c. Wrap up
-
-Time allocation: 30 minutes (3:30 to 4:00)
-
-### Summary
-
-Format: instructor summary, w/ slides
-
-### Questions?
-
-Format: learner Q&A
-
-### Preview/readings for next lesson
-
-Format: instructor summary, w/ slides
-
-
-
-
-
-## Resources
 
 [Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
 
-* this article uses the old {tidyr} `gather()` and `spread()` functions, but it's got some good material on how to think about how and why data needs to be reshaped
+* this article uses the old {tidyr} `gather()` and `spread()` functions instead of `pivot_longer()` and `pivot_wider()`, but it's got some good material on how to think about how and why data needs to be reshaped.
 
 
-## COVID19 data
+
+### Packages
+
+#### R Markdown
+
+[R Markdown reference at RStudio](https://rmarkdown.rstudio.com/docs/)
+
+[R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
 
 
-Map: [Coronavirus COVID-19 Global Cases by Johns Hopkins CSSE](https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html?fbclid=IwAR3PMzQMuQe2eif2py8qRSk_dZtOilkX0aphxWAKGlxuO9pyKm3qoa0fU_A#/bda7594740fd40299423467b48e9ecf6)
+#### {dplyr} .
 
-Dashboard: [Coronavirus data visualization](https://ramikrispin.github.io/coronavirus_dashboard/?fbclid=IwAR04ENIjfmU-I9xId2m_g1x_sZLN9ZlewrPRTWN0S91_QmtRJi4steG1kaU#summary) -- built using R
+[{dplyr} reference at tidyverse.org](https://dplyr.tidyverse.org/)
 
-Data tables: [COVID-19 Coronavirus Outbreak](https://www.worldometers.info/coronavirus/) from worldometers.info
+[Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
+
+
+#### {tidyr} .
+
+[{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
+
+
+
+
+#### {readr} .
+
+[{readr} reference at tidyverse.org](https://readr.tidyverse.org/)
+
+#### {readxl} .
+
+[{readxl} reference at tidyverse.org](https://readxl.tidyverse.org/)
+
+
 
 
 
