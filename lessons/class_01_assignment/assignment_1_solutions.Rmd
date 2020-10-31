@@ -188,7 +188,20 @@ filter(flights, dest == "IAH" | dest == "HOU")
 
 ```
 
+
 Note that you could also use `%in%`
+
+```{r}
+
+filter(flights, dest %in% c("IAH", "HOU"))
+
+# create named variable "houston"
+houston <- c("IAH", "HOU")
+filter(flights, dest %in% houston)
+
+
+```
+
 
 >c. Were operated by United, American, or Delta
 
@@ -209,7 +222,7 @@ From this, we can find:
 * Delta == DL
 
 ```{r}
-
+# the `%in%` approach -- other methods are possible!
 filter(flights, carrier %in% c("AA", "DL", "UA"))
 
 ```
