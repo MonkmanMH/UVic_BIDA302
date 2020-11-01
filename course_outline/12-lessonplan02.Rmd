@@ -115,6 +115,28 @@ More about tidy data:
 
 
 
+## Next week
+
+### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [3. Data visualisation](https://r4ds.had.co.nz/data-visualisation.html)
+
+* [15. Factors](https://r4ds.had.co.nz/factors.html)
+
+* [13. Relational data](https://r4ds.had.co.nz/relational-data.html)
+
+
+#### {ggplot2} .
+
+[{ggplot2} reference at tidyverse.org](https://ggplot2.tidyverse.org/)
+
+#### {dplyr} .
+
+[{dplyr}: two-table verbs](https://dplyr.tidyverse.org/articles/two-table.html)
+
+
 
 
 -30-

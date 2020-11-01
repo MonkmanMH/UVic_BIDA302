@@ -158,6 +158,40 @@ Format: learner Q&A
 Format: instructor summary, w/ slides
 
 
+---
+
+
+
+## Readings & Reference Materials
+
+
+
+### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [3. Data visualisation](https://r4ds.had.co.nz/data-visualisation.html)
+
+* [15. Factors](https://r4ds.had.co.nz/factors.html)
+
+* [13. Relational data](https://r4ds.had.co.nz/relational-data.html)
+
+### Packages
+
+#### {ggplot2} .
+
+[{ggplot2} reference at tidyverse.org](https://ggplot2.tidyverse.org/)
+
+David Smith, [The Financial Times and BBC use R for publication graphics](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html) - _Revolutions_, 2018/06-27
+
+[Why The Urban Institute Visualizes Data with ggplot2](https://medium.com/@urban_institute/why-the-urban-institute-visualizes-data-with-ggplot2-46d8cfc7ee67), 2018-05-01
+
+
+#### {dplyr} .
+
+[{dplyr}: two-table verbs](https://dplyr.tidyverse.org/articles/two-table.html)
+
+
 
 
 -30-
