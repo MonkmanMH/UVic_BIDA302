@@ -43,9 +43,18 @@ library(readxl)
 
 **Answer:**
 
-A:
+a:  Add a footnote^[This is a footnote.]
 
-Add a footnote
+b: A horizontal rule is three hyphens
+
+****
+
+c. A blockquote line starts with a greater than sign
+
+> This is my blockquote
+
+
+
 
 
 
@@ -58,9 +67,9 @@ Add a footnote
 >
 >
 > a. Read in the file "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv", which has the number of concluded court cases in B.C. by a variety of dimensions.
+>
+> b. Assign the contents of the file to a named object (remember, name things in a descriptive way!)
 > 
-> The file is sourced from here: 
-> https://catalogue.data.gov.bc.ca/dataset/courts-concluded-cases-5-yr-regional-report-dashboard-2014-2018
 
 
 **Answer:**

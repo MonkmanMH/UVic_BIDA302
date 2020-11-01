@@ -1,6 +1,6 @@
 ---
 title: "Import data"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. 
@@ -71,7 +71,7 @@ The {readr} package allows a lot of control over how the file is read. Of partic
 
 ## Your Turn 1.2
 
-Read the first 5 rows of the "mtcars.csv" file.
+a. Read the first 5 rows of the "mtcars.csv" file.
 
 ```{r}
 
