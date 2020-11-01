@@ -1,0 +1,156 @@
+---
+title: "The journey"
+subtitle: "...so far"
+author: "BIDA302"
+date: "2020/11/01"
+output:
+  xaringan::moon_reader:
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+![BIDA302](../../hex_sticker/BIDA302_hex.png)
+
+
+
+---
+
+## The data science process
+
+
+![The data science process](../../static/img/data-science.png)
+
+
+---
+
+## Text book
+
+.pull-left[
+
+Hadley Wickham & Garrett Grolemund, _R for Data Science_
+
+* website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
+]
+
+
+.pull-right[
+
+![R for Data Science](../../static/img/R4DS_400.png)
+]
+
+
+
+---
+class: inverse
+
+![tidyverse hex](../../static/img/tidyverse_400.png)
+
+---
+
+## Data wrangling
+
+![dplyr hex](../../static/img/dplyr_400.png)
+
+
+---
+.pull-left[
+
+### with {dplyr}
+
+- `filter()`
+
+- `select()`
+
+- `mutate()`
+
+]
+
+.pull-right[
+
+### with {tidyr}
+
+- `pivot_wider()`
+
+- `pivot_longer()`
+
+]
+
+---
+
+## Importing
+
+![readr hex](../../static/img/readr_400.png)
+
+
+---
+
+## with {readr} 
+
+`read_csv()`
+
+
+## {readxl} 
+
+`read_excel()`
+
+---
+
+## documenting your work
+
+![R Markdown](../../static/img/rmarkdown_400.png)
+
+
+---
+
+## Next: data visualization
+
+![ggplot2](../../static/img/ggplot2_400.png)
+
+
+---
+
+## Perhaps how the road trip feels right now...
+
+![how it feels](../../static/img/main-bugpush-1810151019.jpg)
+
+---
+
+
+## ...but it _will_ be like this! 
+
+![how it feels](../../static/img/VW_ontheroad.jpg)
+
