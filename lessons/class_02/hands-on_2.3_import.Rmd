@@ -68,6 +68,11 @@ The {readr} package allows a lot of control over how the file is read. Of partic
 
 * `n_max = Inf` -- the maximum number of records to read
 
+* `col_names = FALSE` -- if your data doesn't include header rows, set `col_names = FALSE`
+
+* `col_names = c("name1", "name2")` -- you can rename the columns when they get read in. This works with both data with or without an existing header row
+
+
 
 ## Your Turn 1.2
 

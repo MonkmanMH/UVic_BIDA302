@@ -128,9 +128,15 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 * [13. Relational data](https://r4ds.had.co.nz/relational-data.html)
 
 
+### Packages
+
 #### {ggplot2} .
 
 [{ggplot2} reference at tidyverse.org](https://ggplot2.tidyverse.org/)
+
+#### {forcats}
+
+[{forcats} reference at tidyverse.org](https://forcats.tidyverse.org/)
 
 #### {dplyr} .
 

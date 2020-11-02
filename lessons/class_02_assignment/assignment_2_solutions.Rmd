@@ -112,7 +112,7 @@ court_cases %>%
   arrange(desc(total_cases))
 ```
 
-> d. Create a pivot table showing the 2018 case completion, with the region as the rows and the court class as the columns. 
+> d. Create a pivot table showing the total number of cases completed in each region during 2018, with the region as the rows and the court class as the columns. 
 
 ```{r}
 # solution
@@ -121,6 +121,18 @@ court_cases %>%
   group_by(`Court Region`, `Court Class`) %>%
   summarise(total_cases = sum(Count)) %>%
   pivot_wider(names_from = `Court Class`, values_from = total_cases)
+```
+
+
+```{r}
+read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
+        col_type = cols(`Court Region` = col_character())) %>%
+
+ filter(Year == 2018) %>%
+  arrange(desc(Count)) %>%
+ 
+  pivot_wider(names_from = `Court Region`, values_from = Count) %>%
+  pivot_longer(names_to = `Court Region`, values_to = Count)
 ```
 
 
