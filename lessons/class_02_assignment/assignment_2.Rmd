@@ -87,7 +87,7 @@ The file is sourced from here:
 
 ```
 
-> d. Create a pivot table showing the 2018 case completion, with the region as the rows and the court class as the columns. 
+> d. Create a pivot table showing the total number of cases completed in each region during 2018, with the region as the rows and the court class as the columns. 
 
 ```{r}
 
@@ -99,7 +99,7 @@ The file is sourced from here:
 ### 3. Importing data: Excel
 > (5 marks)
 >
-> Use the {readxl} package to read in the file "regional_district_monthly_2019.xlsx" 
+> Use the {readxl} package to read in the file "regional_district_monthly_2019_mod.xlsx" 
 >
 > This data is published by the Ministry of Finance, and shows a variety of statistics associated with the Property Transfer Tax.
 
@@ -133,7 +133,7 @@ d. Change the options for your read function to address this.
 ```
 
 > 
-> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign > involvement.
+> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign involvement.
 > 
 > **Note:** Depending on what you did in 3.d, you may need to go back and read the data in again, adding more options.
 

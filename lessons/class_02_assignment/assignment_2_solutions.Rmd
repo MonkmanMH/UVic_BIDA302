@@ -171,9 +171,9 @@ read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019"
 
 ```
 
-c. What issues are there with the rows? How is this impacting how the values in the columns are being represented?
+* c. What issues are there with the rows? What is the header row, and in what row does the data begin? How does this structure impact how the values in the columns are being represented? 
 
-d. Change the options for your read function to address this.
+d. Change the options for your read function to address the issues you identified in 3.c
 
 ```{r}
 # solution
