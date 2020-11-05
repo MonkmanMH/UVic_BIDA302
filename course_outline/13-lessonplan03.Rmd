@@ -46,6 +46,9 @@ _(subject to change)_
 
 
 
+## Saturday 2020-11-08
+
+
 ### 1a. Review Homework #2
 
 * including submissions via moodle
@@ -99,13 +102,11 @@ Format: hands-on exercise
 
 Time allocation: 60 minutes (11:00 to 12:00)
 
-***
 
-## LUNCH
-
-Time allocation: 60 minutes (12:00 to 1:00)
 
 ***
+
+## Sunday 2020-11-09
 
 
 ### 3. Relational data with {dplyr}
@@ -160,6 +161,20 @@ Format: instructor summary, w/ slides
 
 
 ---
+
+
+## Exercises
+
+
+[BIDA302: Plotting with {ggplot2}](https://monkmanmh.shinyapps.io/BIDA302_3_2_plot/#section-plotting-with-ggplot2)
+
+* an introduction to plotting
+
+[BIDA302: Factors and Plotting](https://monkmanmh.shinyapps.io/BIDA_3_3_factor_plot/#section-factors)
+
+* further examples of plotting, with an introduction to factor variables
+
+
 
 
 
