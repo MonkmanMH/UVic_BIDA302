@@ -44,7 +44,7 @@ For this and some of the other examples, we will be using just the 2007 data.
 Create a dataframe object with the name "gapminder_2007" by filtering the gapminder data.
 
 ```{r}
-# easy peasy
+# you can do this!
 
 
 ```

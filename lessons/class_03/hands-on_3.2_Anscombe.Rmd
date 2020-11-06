@@ -14,6 +14,9 @@ library(tidyverse)
 ```
 
 
+## The quartet
+
+"Anscombe's Quartet" comprises four data sets that each have eleven rows, each with two variables (_x_ and _y_). The quartet was constructed by Francis Anscombe, and published in a 1973 paper titled ["Graphs in Statistical Analysis" in the journal _American Statistician_](https://www.sjsu.edu/faculty/gerstman/StatPrimer/anscombe1973.pdf).
 
 The quartet is included in base R, but in an untidy format:
 
@@ -38,7 +41,7 @@ anscombe_tidy <- anscombe %>%
   spread(variable, value) %>%
   arrange(set)
 
-head(anscombe_tidy)
+anscombe_tidy
 
 ```
 
@@ -46,7 +49,7 @@ head(anscombe_tidy)
 
 ## 1. Summary statistics
 
-Each of the four sets has the same summary statistics. Let's calculate them now:
+Each of the four sets in Anscombe's Quartet has the same summary statistics. Let's calculate the mean of _x_ for each of the four sets:
 
 
 ```{r}
