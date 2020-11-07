@@ -198,6 +198,11 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 [{ggplot2} reference at tidyverse.org](https://ggplot2.tidyverse.org/)
 
+Winston Chang, [_R Graphics Cookbook, 2nd edition_](https://r-graphics.org/) (2020-11-06)
+
+Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/index.html#preface) (2018-04-25)
+
+
 David Smith, [The Financial Times and BBC use R for publication graphics](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html) - _Revolutions_, 2018/06-27
 
 [Why The Urban Institute Visualizes Data with ggplot2](https://medium.com/@urban_institute/why-the-urban-institute-visualizes-data-with-ggplot2-46d8cfc7ee67), 2018-05-01
