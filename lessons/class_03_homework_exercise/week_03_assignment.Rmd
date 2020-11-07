@@ -1,10 +1,14 @@
 ---
 title: "BIDA 302 - week 3"
-subtitle: "homework exercise #1: solutions"
+subtitle: "assignment"
 author: "Martin Monkman"
-date: "17/11/2019"
+date: ""
 output: html_notebook
 ---
+
+# YOUR NAME HERE!
+
+
 
 ```{r setup}
 
@@ -77,30 +81,19 @@ library(readxl)
 
 
 
-```{r}
-
-
-```
-
-
-
-```{r}
-
-
-```
-
-
-
 ### 1c. Tidy data
 
 > Does this data frame violate any of the principles of tidy data?
 > 
 > If so, use the pivot functions from {tidyr} to turn it into a tidy structure.
 
+
 ```{r}
 
 
 ```
+
+
 
 ### 1d. EDA: plotting, 1
 
