@@ -1,6 +1,6 @@
 ---
 title: "Plotting in R"
-subtitle: "hands-on examples, with answers"
+subtitle: "hands-on examples"
 output: html_document
 ---
 
