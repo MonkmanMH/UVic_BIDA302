@@ -59,7 +59,7 @@ excel_sheets("bc-stats_2018-new-homes-data_tosend.xlsx")
 
 ```{r}
 
-read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Purpose Built Rental")
+read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Single Detached")
 
 ```
 
@@ -80,11 +80,24 @@ housing1 <- read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Sing
 
 # Because this has columns F and G included, we can then use "select" to pick the ones we want
 
-housing1 <- housing1 %>% 
+housing1 %>% 
   select(1:4) %>% 
   rename("community" = `...1` )
 
-housing1
+# alternate solution
+housing1 %>% 
+  select(-(5:6)) %>% 
+  rename("community" = `...1` )
+
+
+# others with names
+housing1 %>% 
+  select("community" = `...1`,
+         "2016", "2017", "2018")
+
+housing1 %>% 
+  select("community" = `...1`,
+         "2016":"2018")
 
 ```
 
@@ -164,7 +177,7 @@ ggplot(aes(x = year, y = units)) +
 
 ### 1e. EDA: plotting, 2
 
-> Plot the total number of single detached homes built in B.C. by municipality, but only the top 10 municipalities, sorted from most to least.
+> Plot the total number of single detached homes built in B.C. by municipality, but only the 10 municipalities with the greatest number of homes built, sorted from most to least. (I will leave it up to you to decide if you want to do that by a single year or by the total of all three years in the data.)
 > 
 > **Hints and resources:**
 > 

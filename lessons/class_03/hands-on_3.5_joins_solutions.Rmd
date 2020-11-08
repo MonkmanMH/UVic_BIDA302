@@ -78,6 +78,9 @@ planes %>%
   count(tailnum) %>% 
   summarise(max(n))
 
+flights %>%
+  group_by(tailnum) %>% 
+  tally()
 
 ```
 
@@ -178,9 +181,16 @@ To this table we will add the name of the airline, which we can find in the tabl
 ```{r}
 # solution
 left_join(flights2, airlines, by = "carrier")
+
 # alternate version, using a pipe
 flights2 %>%
   left_join(airlines, by = "carrier")
+
+# example of pipe utility
+flights2 %>%
+  left_join(airlines, by = "carrier") %>% 
+  group_by(name) %>% 
+  tally()
 ```
 
 
@@ -304,8 +314,42 @@ semi_join(x, y, key = "key")
 Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
 
 ```{r}
-anti_join(x, y, key = "key")
+anti_join(x, y, by = "key")
 ```
+
+## keys with different names
+
+```{r}
+left_tbl <- tribble(
+  ~key_x, ~val_x,
+     1, "x1",
+     2, "x2",
+     3, "x3"
+)
+
+right_tbl <- tribble(
+  ~key_y, ~val_y, ~val_y2,
+     1, "y1", "Monday",
+     2, "y2", "Tuesday",
+     4, "y3", "Wednesday"
+)
+
+
+# to specify key variables with different names:
+left_join(left_tbl, right_tbl, by = c("key_x" = "key_y"))
+
+left_tbl %>% 
+  left_join(right_tbl, by = c("key_x" = "key_y"))
+
+
+# to specify variables to add to new table
+# one solution: put select in the table naming 
+full_join(left_tbl, 
+          right_tbl %>% select(key_y, val_y2), 
+          by = c("key_x" = "key_y"))
+
+```
+
 
 ***
 

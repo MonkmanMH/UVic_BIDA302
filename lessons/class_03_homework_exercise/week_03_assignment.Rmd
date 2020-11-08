@@ -120,7 +120,7 @@ library(readxl)
 
 ### 1e. EDA: plotting, 2
 
-> Plot the total number of single detached homes built in B.C. by municipality, but only the top 10 municipalities, sorted from most to least.
+> Plot the total number of single detached homes built in B.C. by municipality, but only the 10 municipalities with the greatest number of homes built, sorted from most to least. (I will leave it up to you to decide if you want to do that by a single year or by the total of all three years in the data.)
 > 
 > **Hints and resources:**
 > 
@@ -129,6 +129,7 @@ library(readxl)
 > * The [{forcats} reference pages](https://forcats.tidyverse.org/)
 > 
 > * Again, you might need to do further data manipulation before you can plot what you want
+
 
 
 
