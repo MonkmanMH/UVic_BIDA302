@@ -1,0 +1,52 @@
+---
+title: "rowwise NA count"
+output: html_notebook
+---
+
+
+```{r setup}
+library(dplyr)
+library(tibble)
+
+```
+
+
+```{r}
+
+df <- tribble(
+  ~var1, ~var2, ~var3,
+  1, NA, 1,
+  2, 2, NA,
+  3, 3, 3,
+  NA, NA, 4
+)
+
+df
+
+```
+
+```{r}
+
+df %>% 
+  rowwise() %>% 
+  mutate(valid = sum(c(var1, var2, var3), na.rm = TRUE))
+
+
+df %>% 
+  rowwise() %>% 
+  mutate(valid = mean(c_across(var1:var3), na.rm = TRUE))
+
+```
+
+
+```{r}
+# Julie's solution 
+# https://stackoverflow.com/questions/37801338/count-nas-per-row-in-dataframe 
+df %>% 
+  mutate(isna_notvalid = rowSums(is.na(.)))
+
+
+
+```
+
+
