@@ -84,6 +84,8 @@ housing1 <- housing1 %>%
   select(1:4) %>% 
   rename("community" = `...1` )
 
+### ---
+
 # alternate solution
 housing1 %>% 
   select(-(5:6)) %>% 
