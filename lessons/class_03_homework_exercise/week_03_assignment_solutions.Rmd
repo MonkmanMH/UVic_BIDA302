@@ -153,6 +153,7 @@ housing1 %>%
   pivot_longer(-community, names_to = "year", values_to = "units", values_drop_na = TRUE)
 ```
 
+
 ```{r}
 
 

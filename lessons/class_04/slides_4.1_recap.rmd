@@ -1,24 +1,49 @@
 ---
 title: "BIDA 302"
-subtitle: "mid-point review"
-author: "Martin Monkman"
-date: "2020/03/21"
+subtitle: "Mid-point recap"
+date: "2020/11/14"
 output:
   xaringan::moon_reader:
-    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Martin Monkman
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+function list is from Data Carpentry's "R for Social Science" 
+https://datacarpentry.org/r-socialsci/02-starting-with-data/index.html,
+which is licensed under a Creative Commons Attribution 4.0 International License
+
+-->
+
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
 library(tidyverse)
+library(gapminder)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
 ```
 
 # The Data Science Process
@@ -176,10 +201,9 @@ knitr::include_graphics("E:/github/UVic_BIDA302/static/img/Beetle_off_road_2.jpg
 
 | Week      | Date | Topics   | Lesson |
 |---        |:---  |:---      |:---:  |
-|_PIVOT_          |  |  | &#8212; |
-|4          | 2020-03-21 | Review <br> Writing your own functions <br> Introduction to modeling | &#8212; |
-|5          | 2020-03-28 | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> _R Markdown: moving beyond documents and notebooks_ | &#8212; |
-|6          | 2019-04-04 | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges | &#8212; |
+|4          | 2020-11-14 & 15 | Review <br> Writing your own functions <br> Introduction to modeling | &#8212; |
+|5          | 2020-11-21 & 22 | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> _R Markdown: moving beyond documents and notebooks_ | &#8212; |
+|6          | 2020-11-28 & 29 | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges | &#8212; |
 
 
 
@@ -192,7 +216,7 @@ knitr::include_graphics("E:/github/UVic_BIDA302/static/img/Beetle_off_road_2.jpg
 | ---- | ----: | ----: |
 | Class participation | 20 | 20 |
 | Weekly assignments | 4 assignments <br> 12 marks each <br> 48 total | 3 assignments <br> 12 marks each <br> 36 total |
-| Capstone project | 30 | 40 |
+| Capstone project | 40 | 40 |
 | _bonus_ | 2 | 4 |
 | **TOTAL** | **100**| **100**|
 
@@ -224,15 +248,12 @@ We will talk about that later today...
 
 ## office hours
 
-_move to Blackboard Collaborate_
+_reminder_
 
 Tuesday, 8:00 pm to 9:00 pm
 
-_options:_
+on the zoom meeting
 
-Wednesday
-
-Thursday
 
 
 
