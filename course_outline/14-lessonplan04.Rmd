@@ -42,10 +42,11 @@ _(subject to change)_
 |       |3a          | 11:15 to 11:45    | Writing your own functions (2) | &#8212; |
 |       |3b          | 11:45 to 12:00    | Questions? Comments? <br> Wrap up | &#8212; |
 |**Sunday**     | &#8212;  | &#8212; | &#8212; |
-|**4**  |4a          | 9:00 to 9:30      | &#8212;  | &#8212; |
-|       |4b          | 9:30 to 10:00     | Writing your own functions | &#8212; |
+|**4**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
+|       |4a          | 9:00 to 9:30      | Discussion: "Data Organization in Spreadsheets"  | &#8212; |
+|       |4b          | 9:30 to 10:00     | Introduction to modeling (1) | &#8212; |
 |**5**  |            | **10:00 to 11:00**| _break_  | &#8212; |
-|       |5a          | 10:15 to 11:00    | Introduction to modeling | &#8212; |
+|       |5a          | 10:15 to 11:00    | Introduction to modeling (2) | &#8212; |
 |**6**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
 |       |6a          | 11:15 to 11:45    | Assignment 4 | &#8212; |
@@ -202,6 +203,23 @@ Format: instructor summary, w/ slides
 
 Format: instructor summary, w/ slides
 
+
+
+## Readings & Reference Materials
+
+
+Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science
+
+* https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+
+
+### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [19. Functions](https://r4ds.had.co.nz/functions.html)
+
+* [Model: 22. Introduction and 23. Model Basics](https://r4ds.had.co.nz/model-intro.html)
 
 
 
