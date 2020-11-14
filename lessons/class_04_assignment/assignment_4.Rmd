@@ -8,9 +8,7 @@ output: html_document
 
 Package load:
 ```{r setup}
-#
 library(tidyverse)
-#
 ```
 
 
@@ -31,7 +29,6 @@ library(tidyverse)
 
 
 ## 1. Joins with HR data
->
 > 
 > The Lahman baseball database contains a comprehensive listing of annual summaries for the major leagues of baseball, going back to 1871. 
 > 
@@ -55,18 +52,24 @@ library(tidyverse)
 ### 1a. Read in the three files
 > (1 mark)
 
-```{r}
+Read in the three files, saving each as a separate object.
 
+```{r}
+# solution
 
 ```
 
 ### 1b. Understanding the tables
-> (1 mark)
-> What is the key variable that links the three tables?
-> 
-> Which table has the primary key? What is the reason behind your answer?
-> 
-> Why would the designers of the table put only one variable in the Batting table that identifies a player?
+> (2 marks)
+
+> i. What is the key variable that links the three tables?
+
+
+> ii. Which table has the primary key? What is the reason behind your answer?
+
+
+> iii. Why would the designers of the table put only one variable in the Batting table that identifies a player?
+
 
 
 ### 1c. Joins
@@ -77,33 +80,38 @@ library(tidyverse)
 > Note: because some of the non-key variables exist in multiple tables, {dplyr} will rename variables as `name.x` and `name.y` -- watch out for this! Take a look at your variables after you've completed the join.
 
 ```{r}
+# solution
 
 
-```
+# alternate version, using a pipe
 
 
-### 1d. Filtering joins
-> (3 marks)
-
-> How many records are in `Batting_2016` and `Salaries_2016`?
->
-> Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
-> 
-> Use one of the filtering joins to see how many players are listed in `Batting_2016` that don't show up in `Salaries_2016`.
-
-
-```{r}
 
 
 
 ```
 
 
-### 1e. Plot!
-> (3 marks)
 
-> Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
-> 
+
+## 2. Data organization in spreadsheets
+
+>(6 marks)
+
+> Read the following article: 
+
+> Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science, 2018
+
+> * it is available on the moodle site or from this link: https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+
+
+> 2.a  What are basic principles for using spreadsheets for good data organization?
+
+
+
+> 2.b  What are good approaches for handling dates in spreadsheets?
+
+
 
 ---
 
@@ -112,42 +120,7 @@ library(tidyverse)
 
 > Imagine that time travel is possible...
  
-> You have just been transported back four weeks to November 1st. What is one thing you would tell your past self about this course?
-
-
-
----
-
-## REFERENCE
-
-The source of the Lahman baseball data table is the R package [{Lahman}](https://cran.r-project.org/web/packages/Lahman/index.html), which makes more accessible the data from [Sean Lahman's historical baseball database](http://www.seanlahman.com/baseball-archive/statistics/). I modified the Batting and Master tables as follows:
-
-```{r evaluate = FALSE}
-# 
-# library(Lahman)
-# library(readr)
-# 
-# Batting_2016 <- Batting %>%
-#   filter(yearID == 2016)
-#  
-# write_csv(Batting_2016, "Batting_2016.csv")
-# # ---
-# Master_2000s <- Master %>%
-#   filter(finalGame > "2000-01-01")
-#  
-# write_csv(Master_2000s, "Master_2000s.csv")
-# # ---
-# Salaries_2016 <- Salaries %>% 
-#  filter(yearID == 2016)
-#  
-# write_csv(Salaries_2016, "Salaries_2016.csv")
-# 
-
-
-```
-
-
-
+> You have just been transported back four weeks to the day before the course started. What is one thing you would tell your past self about this course?
 
 
 

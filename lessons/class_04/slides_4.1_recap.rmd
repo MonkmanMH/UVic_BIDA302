@@ -54,6 +54,8 @@ style_duo_accent(
 
 
 
+---
+
 
 # Exploratory Data Analysis
 
@@ -81,8 +83,6 @@ style_duo_accent(
 
 ---
 
-class: inverse
-
 # Data manipulation (1)
 
 ## {dplyr}
@@ -96,8 +96,6 @@ class: inverse
 `summarize()`
 
 ---
-
-class: inverse
 
 # Data manipulation (2)
 
@@ -113,8 +111,6 @@ Principles of tidy data
 
 ---
 
-class: inverse
-
 # Data manipulation (3)
 
 Relational data
@@ -128,7 +124,6 @@ joins
 
 ---
 
-class: inverse
 
 # Visualization
 
@@ -140,7 +135,6 @@ charts, plots & graphs
 
 
 ---
-class: inverse
 
 
 ```{r, out.width = "700px", echo=FALSE}

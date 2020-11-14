@@ -70,7 +70,7 @@ Time allocation: 30 minutes (9:00 to 9:30)
 
 Format: instructor lecture w/ slides
 
-Time allocation: 45 minutes (9:30 to 10:15)
+Time allocation: 30 minutes (9:30 to 10:00)
 
 
 
@@ -79,16 +79,16 @@ Time allocation: 45 minutes (9:30 to 10:15)
 
 ## BREAK
 
-Time allocation: 15 minutes (10:15 to 10:30)
+Time allocation: 15 minutes (10:00 to 10:15)
 
 ***
 
 
-### 2a. Review Homework Exercise #3 - data importing and plotting
+### 2a. Writing your own functions (1)
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (10:30 to 10:45)
+Time allocation: 15 minutes (10:15 to 10:30)
 
 Format: hands-on exercise
 
@@ -105,7 +105,21 @@ Time allocation: 15 minutes (11:00 to 11:15)
 ***
 
 
-### 3a. Review Homework Exercise #3 - joins (relational data)
+### 3a. Writing your own functions (2)
+
+Format: hands-on exercise
+
+Time allocation: 30 minutes (11:15 to 11:45)
+
+
+
+
+### 3b. Reading / Questions? Comments
+
+Format: participation
+
+Time allocation: 15 minutes (11:45 to 12:00
+
 
 
 
@@ -115,20 +129,41 @@ Time allocation: 15 minutes (11:00 to 11:15)
 
 
 
-### 4. Writing your own functions (1)
+### 4a. Discussion
+
+Format: breakout rooms
+
+Time allocation: 30 minutes (9:00 to 9:15)
+
+
+Reading: 
+
+Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science, 2018
+
+* https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+
+
+Discussion questions:
+
+* How many people have used spreadsheets, in their research, courses, or at home?
+
+* How many people have accidentally done something that made them frustrated or sad?
+
+* What are basic principles for using spreadsheets for good data organization?
+
+* What are good approaches for handling dates in spreadsheets?
+
+
+
+### 4b. Introduction to modeling (1) 
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (1:00 to 1:15)
-
-_Reading:_
-
-* _R4DS_, ["Functions"](https://r4ds.had.co.nz/functions.html)
-
+Time allocation: 15 minutes (9:15 to 9:30)
 
 Format: hands-on exercise
 
-Time allocation: 45 minutes (1:15 to 2:00)
+Time allocation: 30 minutes (9:30 to 10:00)
 
 
 
@@ -136,20 +171,25 @@ Time allocation: 45 minutes (1:15 to 2:00)
 
 ## BREAK
 
-Time allocation: 15 minutes (2:00 to 2:15)
+Time allocation: 15 minutes (10:00 to 10:15)
 
 ***
 
 
 
 
-### 5. Writing your own functions (2)
+### 5. Introduction to modeling (2) 
 
 
+
+Format: participation and instructor lecture w/ slides
+
+Time allocation: 15 minutes (10:15 to 10:30)
 
 Format: hands-on exercise
 
-Time allocation: 45 minutes (2:15 to 3:00)
+Time allocation: 30 minutes (10:30 to 11:00)
+
 
 
 
@@ -159,7 +199,7 @@ Time allocation: 45 minutes (2:15 to 3:00)
 
 ## BREAK
 
-Time allocation: 15 minutes (3:00 to 3:15)
+Time allocation: 15 minutes (11:00 to 11:15)
 
 
 ***
@@ -167,36 +207,17 @@ Time allocation: 15 minutes (3:00 to 3:15)
 
 
 
-### 6a. Capstone Project
+### 6a. Assignment #4 
 
 Format: participation and instructor lecture w/ slides
 
-Time allocation: 15 minutes (3:15 to 3:30)
-
-
-Descriptions of the capstone projects are here:
-
-https://github.com/MonkmanMH/UVic_BIDA302_capstone
+Time allocation: 15 minutes (11:15 to 11:45)
 
 
 
+### 6b. Wrap up
 
-### 6b. Assignment #4
-
-Format: participation and instructor lecture w/ slides
-
-Time allocation: 15 minutes (3:30 to 3:45)
-
-
-
-
-### 6c. Wrap up
-
-Time allocation: 15 minutes (3:45 to 4:00)
-
-#### Summary
-
-Format: instructor summary, w/ slides
+Time allocation: 15 minutes (11:45 to 12:00)
 
 
 #### Preview/readings for next lesson

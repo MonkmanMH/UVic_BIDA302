@@ -121,51 +121,24 @@ MLB_HR_data %>%
 ```
 
 
-### 1d. Filtering joins
-
-> (3 marks)
-
-> How many records are in `Batting_2016` and `Salaries_2016`?
->
-> Earlier it was noted that the batting table _omits_ players ... but it's the longer of the two!
-> 
-> Use one of the filtering joins to see how many players are listed in `Batting_2016` that don't show up in `Salaries_2016`.
 
 
-```{r}
-# solution
+## 2. Data organization in spreadsheets
 
-anti_join(Batting_2016, Salaries_2016, key = "playerID")
+>(6 marks)
 
-anti_join(Batting_2016, Salaries_2016, key = "playerID") %>% 
-  group_by(playerID) %>% 
-  tally()
+> Read the following article: 
 
-# this is an anti_join -- it will filter "Batting_2016" and leave only those records where there is on matching record in "Salaries_2016
+> Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science, 2018
 
-```
+> * it is available on the moodle site or from this link: https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
 
 
-### 1e. Plot!
-
-(3 marks)
-
-> Use your exploratory data analysis skills to create two visualizations to see what might explain player compensation (salary). 
-> First, compare it to the age of player, and then to the player's performance, using the crude measure of runs scored (the "R" variable in the batting table).
-> Write a short explanation of what you see in the charts.
-
-```{r}
-ggplot(MLB_HR_data, aes(x = birthYear, y = salary)) +
-  geom_point() +
-  xlim()
-```
+> 2.a  What are basic principles for using spreadsheets for good data organization?
 
 
 
-```{r}
-ggplot(MLB_HR_data, aes(x = R, y = salary)) +
-  geom_point()
-```
+> 2.b  What are good approaches for handling dates in spreadsheets?
 
 
 
