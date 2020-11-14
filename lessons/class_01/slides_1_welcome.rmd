@@ -472,7 +472,7 @@ Packages extend the functionality of R
 
 ## The Tidyverse
 
-![dplyr hex](../../static/img/tidyverse_400.png)
+![tidyverse hex](../../static/img/tidyverse_400.png)
 
 ???
 
