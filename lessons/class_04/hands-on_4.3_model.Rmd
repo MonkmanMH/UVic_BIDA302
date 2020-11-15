@@ -7,7 +7,7 @@ output:
     toc_depth: 3
     toc_float: true
 ---
-```{r}
+```{r setup}
 library(tidyverse)
 #
 library(modelr)
@@ -23,7 +23,7 @@ When we talk about a "model" in the context of data analysis, we usually mean th
 
 In this example, we will be using linear regression to predict one value based on one or more values. 
 
-As it gets colder outside, we use more energy to heat our homes--can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature + relative humidity is a better predictor.
+As it gets colder outside, we use more energy to heat our homes—can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature plus relative humidity is a better predictor.
 
 
 ## 1. A simple example
