@@ -76,6 +76,41 @@ The ID is unique so they don’t need any other way to identify the players. Any
 
 A: `Master_2000s.csv` has the primary key. It lists all individual players. The other dataframes potentially include multiple entries for each player ID. For example, a player might be traded mid-season and have two records in `Batting_2016`, one for each team played for that season. 
 
+Test `Batting_2016`:
+
+```{r}
+
+Batting_2016 %>% 
+  group_by(playerID) %>% 
+  tally() %>% 
+  arrange(desc(n))
+
+Batting_2016 %>% 
+  group_by(playerID) %>% 
+  tally() %>% 
+  top_n(n = 1)
+
+```
+
+```{r}
+
+Master_2000s %>% 
+  semi_join(Salaries_2016, key = playerID)
+
+
+# all entries in batting that DO NOT have match in salaries
+Batting_2016 %>% 
+  anti_join(Salaries_2016, key = playerID)
+
+# all entries in batting that have match in salaries
+Batting_2016 %>% 
+  semi_join(Salaries_2016, key = playerID)
+
+
+```
+
+
+
 > iii. Why would the designers of the table put only one variable in the Batting table that identifies a player?
 
 A: Since all of the data in `Master` is constant (name, birthdate, etc) there is no need to repeat those variables in the other tables where there are multiple records for the same player. It also means that this contsistent data only has to be edited in one location, not across all of the tables.
@@ -141,6 +176,11 @@ MLB_HR_data %>%
 > 2.b  What are good approaches for handling dates in spreadsheets?
 
 
+See this XKCD comic:
+
+![ISO 8601](iso_8601.png)
+
+Source:  https://xkcd.com/1179/
 
 ---
 
