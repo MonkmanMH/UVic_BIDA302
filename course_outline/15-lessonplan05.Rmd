@@ -1,13 +1,16 @@
 ---
 title: "BIDA302: Lesson Plan, Week 5"
-subtitle: "2019-11-30"
+subtitle: ""
 author: "Martin Monkman"
-date: "`r Sys.Date()`"
+date: "update: `r Sys.Date()`"
 output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 5 (2019-11-30)
+# Week 5 
+
+## November 21 & 22, 2020
+
 
 _subject to change_
 
@@ -34,25 +37,28 @@ _(revised 2020-03-26; subject to change)_
 
 | Hour  | Block      | Time              | Topics  | &#8212; |
 |---    |:---        |:---               |:---:  |
-|**1**  |            | **9:00 to 10:00** |    |   |
-|       |1a          | 9:00 to 9:30      | Assignment 4: review | &#8212; |
+|**Saturday**     | &#8212;  | &#8212; | &#8212; |
+|**1**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
+|       |1a          | 9:00 to 9:30      | Review Homework Exercise #4  <BR> | &#8212; |
 |       |1b          | 9:30 to 10:00     | Utilities | &#8212; |
 |**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
-|       |2a          | 10:15 to 11:00    | Modeling   | &#8212; |
+|       |2a          | 10:15 to 11:00    | Working with dates & times | &#8212; |
 |**3**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
-|       |3a          | 11:15 to 12:00    | Working with dates & times | &#8212; |
-|&#8212;|&#8212;     | 12:00 to 1:00     | _lunch_ | &#8212; |
-|**4**  |            | **1:00 to 2:00**  | &#8212;  | &#8212; |
-|       |4a          | 1:00 to 2:00      | Working with strings | &#8212; |
-|**5**  |            | **2:00 to 3:00**  | &#8212;  | &#8212; |
-|       |&#8212;     | 2:00 to 2:15      | _break_ | &#8212; |
-|       |5a          | 2:15 to 3:00      | Capstone Project: picking your project and getting started | &#8212; |
-|**6**  |            | **3:00 to 4:00**  | &#8212;  | &#8212; |
-|       |&#8212;     | 3:00 to 3:15      | _break_ | &#8212; |
-|       |4a          | 3:15 to 3:30      | Capstone Project: code together | &#8212; |
-|       |4c          | 3:45 to 4:00      | Wrap up: the week ahead | &#8212; |
+|       |3a          | 11:15 to 11:45    |  | &#8212; |
+|       |3b          | 11:45 to 12:00    | Questions? Comments? <br> Wrap up | &#8212; |
+|**Sunday**     | &#8212;  | &#8212; | &#8212; |
+|**4**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
+|       |4a          | 9:00 to 9:30      | Working with strings  | &#8212; |
+|       |4b          | 9:30 to 10:00     |  | &#8212; |
+|**5**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
+|       |5a          | 10:15 to 11:00    | Capstone project | &#8212; |
+|**6**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
+|       |6a          | 11:15 to 11:45    | Capstone project | &#8212; |
+|       |6b          | 11:45 to 12:00    | Questions? Comments? <br> Wrap up | &#8212; |
 
 
 

@@ -339,7 +339,9 @@ pl_sim1 <- ggplot(sim1, aes(x = x, y = y)) +
 pl_sim1
 ```
 
-To our object "pl_sim1" (for "plot_sim1") we can add the line using the `geom_line()` function. Note that in the first solution, the data is specified using the `df$var` syntax.
+To our object "pl_sim1" (for "plot_sim1") we can add the line using the `geom_line()` function. This is pulling data from a second dataframe—{ggplot2} gives you the power to plot data points from multiple data frames.
+
+Note that in the first solution, the data is specified using the `df$var` syntax.
 
 ```{r}
 
@@ -350,6 +352,18 @@ pl_sim1 +
 pl_sim1 +
   geom_line(data = mod_sim1_table, aes(x = x, y = .fitted))
 
+
+```
+
+Another version of the syntax that skips the creation of an object.
+
+```{r}
+# embedding the data and aes in the `geom_` functions
+# note that `data = ` has to be specified`
+ggplot() +
+  geom_point(data = sim1, aes(x = x, y = y)) +
+  geom_line(data = mod_sim1_table, aes(x = x, y = .fitted))
+  
 
 ```
 
