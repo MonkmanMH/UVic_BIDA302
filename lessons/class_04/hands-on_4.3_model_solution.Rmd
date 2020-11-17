@@ -285,13 +285,75 @@ As you get deeper into this, you'll quickly realize that the data created in mod
 
 To "tidy" the data, you can use the package {broom}.
 
-![broom hex](/static/img/broom_400.png)
+![broom hex](broom_400.png)
 
 * [_R for Data Science_, "25 Many models"](https://r4ds.had.co.nz/many-models.html)
 
 * [Introduction to broom: let's tidy up a bit](https://broom.tidyverse.org/articles/broom.html)
 
 * [{broom} reference site](https://broom.tidyverse.org/)
+
+
+### Plot example
+
+In this example, we will
+
+* run the `lm()` model
+
+* extract the predicted values 
+
+* plot those predicted values as a line on our scatter plot
+
+(These are the steps that the `geom_smooth(method = lm)` function in {ggplot2} is doing behind the scenes.)
+
+
+(Note that the data set `sim1` comes from the package {modelr}.)
+
+```{r mod_sim1_revisited}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+summary(mod_sim1)
+
+```
+
+Using the {broom} package, we use the `augment()` function to create a new dataframe with the fitted values (also known as the predicted values) and residuals for each of the original points in the data:
+
+```{r}
+
+mod_sim1_table <- broom::augment(mod_sim1)
+
+mod_sim1_table
+
+```
+
+
+The variable we want to plot as the line is ".fitted".
+
+The code to create our original scatterplot is as follows:
+
+```{r}
+pl_sim1 <- ggplot(sim1, aes(x = x, y = y)) +
+  geom_point()
+
+pl_sim1
+```
+
+To our object "pl_sim1" (for "plot_sim1") we can add the line using the `geom_line()` function. Note that in the first solution, the data is specified using the `df$var` syntax.
+
+```{r}
+
+pl_sim1 +
+  geom_line(aes(x = mod_sim1_table$x, y = mod_sim1_table$.fitted))
+
+# syntax that specifies the data
+pl_sim1 +
+  geom_line(data = mod_sim1_table, aes(x = x, y = .fitted))
+
+
+```
+
+
 
 
 -30-

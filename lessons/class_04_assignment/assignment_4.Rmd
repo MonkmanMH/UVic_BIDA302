@@ -83,10 +83,6 @@ Read in the three files, saving each as a separate object.
 # solution
 
 
-# alternate version, using a pipe
-
-
-
 
 
 ```
