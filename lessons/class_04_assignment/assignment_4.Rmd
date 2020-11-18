@@ -80,12 +80,11 @@ Read in the three files, saving each as a separate object.
 > Note: because some of the non-key variables exist in multiple tables, {dplyr} will rename variables as `name.x` and `name.y` -- watch out for this! Take a look at your variables after you've completed the join.
 
 ```{r}
-# solution
-
-
 
 
 ```
+
+
 
 
 

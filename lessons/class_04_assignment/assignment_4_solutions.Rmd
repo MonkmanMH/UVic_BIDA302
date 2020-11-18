@@ -123,38 +123,103 @@ A: Since all of the data in `Master` is constant (name, birthdate, etc) there is
 > Note: because some of the non-key variables exist in multiple tables, {dplyr} will rename variables as `name.x` and `name.y` -- watch out for this! Take a look at your variables after you've completed the join.
 
 ```{r}
-# solution
-MLB_HR_data1 <- 
-left_join(Batting_2016, Master_2000s, by = "playerID")
+# solutions
 
-MLB_HR_data <- 
-left_join(MLB_HR_data1, Salaries_2016, by = "playerID")
-
-
-# alternate version, using a pipe
-MLB_HR_data <- 
-Batting_2016 %>%
-  left_join(Master_2000s, by = "playerID") %>% 
-  left_join(Salaries_2016, by = "playerID")
-
-MLB_HR_data
-
-MLB_HR_data %>% 
-  group_by(teamID.x, birthCountry) %>% 
-  tally() 
+Batting_2016 %>% 
+  left_join(Master_2000s) %>% 
+  group_by(teamID, birthCountry) %>% 
+  tally()
 
 
-# NOTES
-#
-# * both tables have the variable "playerID"
-# 
-# * we want a `left_join`: all the observations from the active season, and adding the country of birth variable from "Master"
-#
-# * an `inner_join` will work for "Batting_2016", with added "Master_2000s" because all players are listed in both. Adding "Salaries_2016" using an inner join will drop the records of players for whom there is no salary data
+# if we come at it with Master_2000s first, we end up with all of the records in that table plus
+# matching records from Batting_2016 -- which means that all of the players in the master table who did not
+# play in 2016 also show up
+# Instead of 208 rows, there are 241--check the end of the table to see all the Team == NA rows
+Master_2000s %>% 
+  left_join(Batting_2016) %>% 
+  group_by(teamID, birthCountry) %>% 
+  tally()
+
+# two options: filter where year is 2016 or `drop_na()`
+
+Master_2000s %>% 
+  left_join(Batting_2016) %>% 
+  filter(yearID == 2016) %>% 
+  group_by(teamID, birthCountry) %>% 
+  tally()
+
+Master_2000s %>% 
+  left_join(Batting_2016) %>% 
+  group_by(teamID, birthCountry) %>% 
+  tally() %>% 
+  drop_na()
+
+# instead of `tally()` we can `summarise(n = n())`
+Batting_2016 %>% 
+  left_join(Master_2000s) %>% 
+  group_by(teamID, birthCountry) %>% 
+  summarise(n = n())
+
+# ... or `count()`
+Batting_2016 %>% 
+  left_join(Master_2000s) %>% 
+  count(teamID, birthCountry)
 
 
 ```
 
+
+```{r}
+
+
+Master_2000s %>% 
+  full_join(Batting_2016, by = "playerID") %>% 
+  count(yearID)
+
+
+Batting_2016 %>% 
+  full_join(Master_2000s, by = "playerID") %>% 
+  count(yearID)
+
+
+```
+
+```{r}
+
+mast <- tribble(
+  ~"pID", ~"name",
+  "x1", "name1", 
+  "x2", "name2",
+  "x3", "name3",
+  "x4", "name4"
+)
+
+bat <- tribble(
+  ~"pID", ~"teamID",
+  "x1", "t1",
+  "x1", "t2",
+  "x2", "t2",
+  "x3", "t3")
+
+
+
+mast %>% 
+  left_join(bat, by = "pID") 
+
+mast %>% 
+  left_join(bat, by = "pID") %>% 
+  group_by(teamID) %>% 
+  tally()
+
+bat %>% 
+  left_join(mast, by = "pID") 
+
+bat %>% 
+  left_join(mast, by = "pID") %>% 
+  group_by(teamID) %>% 
+  tally()
+
+```
 
 
 
