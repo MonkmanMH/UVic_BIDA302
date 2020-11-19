@@ -269,6 +269,60 @@ left_join(x, y, by = "key")
 
 
 
+### 2.c Non-key variables with the same names
+
+Here's another case—let's imagine we have two tables, called "orders" and "shipments". They have two variables with the same names, "order_number" and "dollar_value". The "order_number" is a unique ID (the key variable), but the dollars associated with the order might be different than the shipment—sometimes items are out of stock, so they can't be sent, so the value of the shipment is less than what was ordered.
+
+
+```{r}
+
+orders <- tribble(
+  ~order_number, ~dollar_value,
+  "x1", 11,
+  "x2", 12,
+  "x3", 13,
+  "x4", 14
+)
+
+shipments <- tribble(
+  ~order_number, ~dollar_value,
+  "x1", 11,
+  "x2", 11,
+  "x3", 13,
+  "x4", 4
+)
+
+
+```
+
+
+
+When we join the tables, we will use "order_number" to join them. There will be only one column in the resulting dataframe with this name. 
+
+A variable called "dollar_value" exists in both tables, but means different things. You and I know that one could be called "dollar_value_orders" and the other "dollar_value_shipments"--but R doesn't know that, so it renames them "dollar_value.x" and "dollar_value.y". The one with the ".x" at the end will be the left table, and ".y" will be the right table.
+
+```{r}
+
+orders_shipped <- orders %>% 
+  full_join(shipments, by = "order_number")
+
+orders_shipped
+
+```
+
+
+You could then rename "dollar_value.x" and "dollar_value.y" to make it clear which is which. In this example, we also then add a column showing the percentage of the original order that was shipped.
+
+```{r}
+
+orders_shipped %>% 
+  rename("dollar_value_order" = dollar_value.x,
+         "dollar_value_shipment" = dollar_value.y) %>% 
+  mutate(filled_pct = round((dollar_value_shipment / dollar_value_order) *100, 1))
+
+```
+
+
 
 
 ***
