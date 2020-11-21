@@ -28,6 +28,9 @@ library(scales)     # extending {ggplot2}
 ```
 
 
+It uses the plotting functions in the package {ggplot2}
+
+![ggplot2 hex](ggplot2_200.png)
 
 ---
 
@@ -409,3 +412,32 @@ dataplot +
 ```
 
 
+
+
+---
+
+
+## Some more {ggplot2} resources
+
+[_The R Cookbook_, 2nd edition, "10 Graphics"](https://rc2e.com/graphics)
+
+
+Kieran Healy, [_Data Visualization: A Practical Introduction_](https://kieranhealy.org/publications/dataviz/)
+
+* [socviz.co](http://socviz.co/) -- draft version of manuscript
+
+
+Martin Frigaard, [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) (2017-09-22)
+
+---
+
+## Other data visualization resources
+
+Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_
+
+* [companion website](http://www.storytellingwithdata.com/)
+
+* [quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
+
+
+Miriam Gilbert, [Data Stories workshop](https://www.slideshare.net/miriamgilbert08/data-stories-workshop-34390209) -- slides (2014-02-24)

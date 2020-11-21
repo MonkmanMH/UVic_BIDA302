@@ -86,6 +86,9 @@ dmy("10-11-12")
 ```
 
 
+What about `mdy()` and `ymd()`?
+
+
 
 
 ## 2. Date 
@@ -96,8 +99,8 @@ Here are three dates:
 
 ```{r}
 date1 <- ymd("2019-11-02")
-date2 <- ymd("2019-12-04")
-date3 <- ymd("2020-02-29")
+date2 <- ymd("2020-02-29")
+date3 <- ymd("2020-11-21")
 
 ```
 
@@ -355,11 +358,11 @@ lfs_BC_2000 %>%
 ---
 
 
-## Date-time
+## 5. Date-time
 
 
 
-## Your Turn 1.1
+## Your Turn 5.1
 
 What is the difference between `today()` and `now()`?
 
@@ -373,7 +376,7 @@ now()
 ```
 
 
-## Your Turn 1.2
+## Your Turn 5.2
 
 You can specify time zones by adding a time zone option to your call. For example, our time zone is often represented as "America/Los_Angeles" or "America/Vancouver".
 
