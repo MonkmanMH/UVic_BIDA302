@@ -77,14 +77,6 @@ _Reading and resources:_
 
 
 
-### 2. Introduction to modeling
-
-_Reading and resources:_
-
-* _R4DS_, ["Model"](https://r4ds.had.co.nz/model-intro.html)
-
-* JD Long and Paul Teetor, _R Cookbook, 2nd edition_, ["Linear Regression and ANOVA"](https://rc2e.com/linearregressionandanova) 
-
 
 
 ### 3. Work with dates and times

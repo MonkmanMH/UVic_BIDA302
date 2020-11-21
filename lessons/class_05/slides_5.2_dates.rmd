@@ -5,21 +5,42 @@ author: "Martin Monkman"
 #date: "2019/11/23"
 output:
   xaringan::moon_reader:
-    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Martin Monkman
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
 
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-
 library(tidyverse)
 library(lubridate)
+
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
 ```
 
 # The Data Science Process
@@ -46,29 +67,23 @@ Does every minute have 60 seconds?
 
 No!
 
-??? 
-
-- Wickham and Grolemund, _R4DS_
 
 ---
 
 
 #ISO 8601 and R
 
+Based on your computer settings:
 
 ```{r}
 now()
 ```
 
-"2019-11-29 10:45:12 PST"
+Specify a time zone:
 
 ```{r}
 now(tz = "UTC")
 ```
-
-
-UTC
-"2019-11-30 19:45:12 UTC"
 
 
 
@@ -79,7 +94,7 @@ class: inverse
 ![lubridate](E:/github/UVic_BIDA302/static/img/lubridate_400.png)
 
 
-**lubridate.tidyverse.org/**
+**lubridate.tidyverse.org**
 
 
 ---
@@ -118,6 +133,14 @@ Lubridate will store them as one of the three variable types
 dmy(121110)
 ```
 
+```{r}
+mdy(121110)
+```
+
+```{r}
+ymd(121110)
+```
+
 ---
 
 ## {lubridate} getting, setting, rounding
@@ -128,6 +151,16 @@ dmy(121110)
 | now() |  |
 | year(), month(), day() | get components of date|
 | _etc_ |  |
+
+
+```{r}
+
+month(now())
+
+year(now())
+
+```
+
 
 ---
 

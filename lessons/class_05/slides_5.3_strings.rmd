@@ -5,14 +5,23 @@ author: "Martin Monkman"
 #date: "2019/11/23"
 output:
   xaringan::moon_reader:
-    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Martin Monkman
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
 
 
 ```{r setup, include=FALSE}
@@ -37,12 +46,6 @@ library(stringr)
 
 
 > regexps are a concise language for describing patterns in strings
-
-
-??? 
-
-- Wickham and Grolemund, _R4DS_
-
 
 
 ---

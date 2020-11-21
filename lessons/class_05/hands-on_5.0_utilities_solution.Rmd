@@ -59,7 +59,7 @@ We can specify a character to separate the elements we are glueing, with `.sep =
 
 glue('_The Mandolorian_',
   'is a tv series on the Disney+ streaming service',
-  'that featured Baby Yoda.', .sep = " ")
+  'that features Baby Yoda.', .sep = " ")
 
 ```
 
