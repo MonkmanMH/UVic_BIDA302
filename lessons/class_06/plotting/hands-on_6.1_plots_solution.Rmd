@@ -18,7 +18,7 @@ The original source code, created by Martin Monkman with contributions by Julie 
 
 ### Setup
 
-```{r, setup, message=FALSE}
+```{r setup, message=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)
@@ -428,6 +428,9 @@ Kieran Healy, [_Data Visualization: A Practical Introduction_](https://kieranhea
 
 
 Martin Frigaard, [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) (2017-09-22)
+
+
+Julia Silge, [Reordering and facetting for ggplot2](https://juliasilge.com/blog/reorder-within/) (2019-07-01)
 
 ---
 

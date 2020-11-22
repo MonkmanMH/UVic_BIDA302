@@ -8,7 +8,7 @@ output:
     toc_float: true
 ---
 
-```{r, setup, message=FALSE}
+```{r setup, message=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)
