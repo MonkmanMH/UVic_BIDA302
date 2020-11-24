@@ -1,8 +1,8 @@
 ---
 title: "BIDA302: Lesson Plan, Week 6"
 #subtitle: "2020-04-04"
-#date: "`r Sys.Date()`"
-date: "2020-04-04"
+date: "update: `r Sys.Date()`"
+#date: "2020-04-04"
 author: "Martin Monkman"
 output: html_document
 
@@ -17,9 +17,9 @@ _subject to change_
 
 At the end of this lesson, learners will be able to:
 
-1. Understand the range of options for formatting {ggplot2} charts.
+1. Explain why iteration is a cornerstone of programming. 
 
-2. Explain why iteration is a cornerstone of programming. 
+2. Demonstrate an understanding of the basics of string manipulation in R.
 
 3. Understand the fundamental differences between the R and Python ecosystems, and
 
@@ -33,30 +33,34 @@ At the end of this lesson, learners will be able to:
 
 _(subject to change)_
 
-_(revised 2020-04-03; subject to change)_
+
+
 
 
 | Hour  | Block      | Time              | Topics  | &#8212; |
 |---    |:---        |:---               |:---:  |
-|**1**  |            | **9:00 to 10:00** |    |   |
-|       |1a          | 9:00 to 10:00     | Plots, charts and other data visualizations (1) | &#8212; |
+|**Saturday**     | &#8212;  | &#8212; | &#8212; |
+|**1**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
+|       |1a          | 9:00 to 9:30      | Working with strings | &#8212; |
+|       |1b          | 9:30 to 10:00     |  | &#8212; |
 |**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
-|       |2a          | 10:15 to 11:00    | Plots, charts and other data visualizations (2) | &#8212; |
+|       |2a          | 10:15 to 11:00    | Iteration | &#8212; |
 |**3**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
-|       |3a          | 11:15 to 12:00    | Iteration | &#8212; |
-|&#8212;|&#8212;     | 12:00 to 1:00     | _lunch_ | &#8212; |
-|**4**  |            | **1:00 to 2:00**  | &#8212;  | &#8212; |
-|       |4a          | 1:00 to 2:00      | Data analysis with Python | &#8212; |
-|**5**  |            | **2:00 to 3:00**  | &#8212;  | &#8212; |
-|       |&#8212;     | 2:00 to 2:15      | _break_ | &#8212; |
-|       |5a          | 2:15 to 3:00      | Capstone Project: code together | &#8212; |
-|**6**  |            | **3:00 to 4:00**  | &#8212;  | &#8212; |
-|       |&#8212;     | 3:00 to 3:15      | _break_ | &#8212; |
-|       |4a          | 3:15 to 3:30      | Capstone Project: code together | &#8212; |
-|       |4b          | 3:45 to 4:00      | Course Wrap-up | &#8212; |
-
+|       |3a          | 11:15 to 11:45    | TBD | &#8212; |
+|       |3b          | 11:45 to 12:00    | Questions? Comments? <br> Wrap up | &#8212; |
+|**Sunday**     | &#8212;  | &#8212; | &#8212; |
+|**4**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
+|       |4a          | 9:00 to 9:30      | Data analysis with Python  | &#8212; |
+|       |4b          | 9:30 to 10:00     | TBD | &#8212; |
+|**5**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
+|       |5a          | 10:15 to 11:00    | Capstone project: code together | &#8212; |
+|**6**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
+|       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
+|       |6a          | 11:15 to 11:45    | Capstone project: code together | &#8212; |
+|       |6b          | 11:45 to 12:00    | Course Wrap-up | &#8212; |
 
 
 
