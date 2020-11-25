@@ -30,6 +30,19 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 ```
 
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
 ![ggplot2 hex](E:/github/UVic_BIDA302/static/img/ggplot2_400.png)
 
 [{ggplot2}](https://ggplot2.tidyverse.org/) -- tidyverse reference pages
@@ -59,6 +72,20 @@ library(tidyverse)
 6. Practice makes perfect
 
 
+
+---
+
+
+## Gestalt principles
+
+![Gestalt principles](Gestalt_principles_large.jpg)
+
+---
+
+### Implementing Gestalt principles
+
+
+![Gestalt principles](design-for-delight-19-638.jpg)
 
 ---
 

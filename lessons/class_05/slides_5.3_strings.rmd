@@ -26,10 +26,24 @@ https://creativecommons.org/licenses/by/4.0/
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-
 library(tidyverse)
 library(stringr)
+
 ```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
 
 # The Data Science Process
 

@@ -16,13 +16,6 @@ Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US)
 
 -->
 
-```{r setup}
-
-library(tidyverse)
-#
-library(stringr)  # {stringr} is part of the tidyverse, but not a core package that loads with {tidyverse}
-
-```
 
 
 
@@ -37,7 +30,20 @@ library(stringr)  # {stringr} is part of the tidyverse, but not a core package t
 
 ## Strings
 
-Characters, numbers, etc
+For this exercise, we will be using the tidyverse package {stringr}. Note that {stringr} is part of the tidyverse, but not a core package that loads with {tidyverse} (like {lubridate}), so it has to be loaded separately.
+
+
+```{r setup}
+
+library(tidyverse)
+#
+library(stringr)
+library(lubridate)
+
+```
+
+
+Strings are characters, numbers, etc. that are enclosed inside quotation marks.
 
 ```{r}
 
@@ -49,12 +55,24 @@ string1
 
 ## 1. Regular expressions
 
-See https://stringr.tidyverse.org/articles/regular-expressions.html
+**reg**ular **ex**pressions becomes shortened to "regex"
+
+> regexps are a concise language for describing patterns in strings
+
+They are powerful ways to filter and manipulate strings based on those patterns.
+
+See: 
+
+* [_R for Data Science_, 14 Strings](https://r4ds.had.co.nz/strings.html)
+
+* [{stringr} reference: regular expressions](https://stringr.tidyverse.org/articles/regular-expressions.html)
 
 Also, as a handy tool: https://regex101.com/
 
 
-### matching functions
+### regex matching functions
+
+Here are some basic matching functions:
 
 | character | what it does |
 | ---- | ---- |
@@ -66,11 +84,17 @@ Also, as a handy tool: https://regex101.com/
 | "$" | match end of string |
 
 
+The {stringr} function `str_view()` shows where in our string the pattern appears. First we create an object "x" with three strings in it, then find two different patterns.
+
 ```{r}
 x <- c("apple", "banana", "pear")
 
 # which words start with "a"?
 str_view(x, "^a")
+```
+
+
+```{r}
 
 # which words have an "ea" combination?
 
@@ -86,7 +110,6 @@ Which words end with "a"?
 # solution
 str_view(x, "a$")
 
-
 ```
 
 
@@ -99,7 +122,7 @@ frequency of match
 | "*" | 0 or more |
 
 
-The question mark is useful for words with various spellings -- the British and American variations of words like "colour" and "neighbour".
+The question mark is useful for words with various spellings—the British and American variations of words like "colour" and "neighbour".
 
 | character | what it does |
 | ---- | ---- |
@@ -120,7 +143,7 @@ str_view(x, "p{2}")
 
 **quotes**
 
-Single and double quotes need to be "escaped" with a `\`
+To find single and double quotes in our string, they need to be "escaped" with a backslash `\`
 
 ```{r}
 
@@ -183,7 +206,7 @@ To make a shruggie, you need to escape the backslash
 
 ```{r}
 
-shruggie <- glue::glue("¯\\_(ツ)_/¯")
+shruggie <- "¯\\_(ツ)_/¯"
 shruggie
 
 shruggie <- glue::glue("¯\\", "_(ツ)_", "/¯")
@@ -198,14 +221,28 @@ shruggie
 ## 3. Basic functions in {stringr}.
  
 
-![stringr hex](..\img\stringr_300.png)
+![stringr hex](stringr_400.png)
+
+---
+
+{stringr} functions 
+
+| function | purpose |
+| ---- | ---- |
+| str_length(x)  | the number of characters in `x` |
+| str_c() | concatenates a list of strings |
+| str_sub(x, start = , end = ) | returns characters of `x` |
+| str_detect(x, pattern) | TRUE/FALSE if there is a pattern match |
+| str_replace(x, pattern, newtext | replace |
+
+
 
 
 ```{r string_length}
 
-x <- c("Sly", "Billie", "Thelonious", "Maroon", "Willie", "Led")
-x
-str_length(x) 
+musician_first <- c("Sly", "Billie", "Thelonious", "Maroon", "Willie", "Led")
+musician_first
+str_length(musician_first) 
 
 ```
 
@@ -214,7 +251,7 @@ use `str_c` to collapse list into one string
 
 ```{r str_c}
 
-str_c(x, collapse = ", ")
+str_c(musician_first, collapse = ", ")
 
 ```
 
@@ -229,20 +266,20 @@ Use `str_c` to join two character vectors, separated by a space
 ```{r str_c_2}
 
 
-y <- c("Stone", "Ellish", "Monk", "5", "Nelson", "Zeppelin")
+musician_last <- c("Stone", "Ellish", "Monk", "5", "Nelson", "Zeppelin")
 
-str_c(x, y, sep = " ")
+str_c(musician_first, musician_last, sep = " ")
 
 ```
 
 ## Your turn 4.1
 
-Now join `x` to `y` (the other way around!), separated by an apostrophe and a space
+Now join `musician_first` to `musician_last` (the other way around!), separated by an apostrophe and a space
 
 ```{r your_turn_1.1}
 
 #solution
-str_c(y, x, sep = ", ")
+str_c(musician_last, musician_first, sep = ", ")
 
 
 ```
@@ -253,35 +290,35 @@ str_c(y, x, sep = ", ")
 
 ## Your turn 5.1
 
-Are there any vowels in the string `x`? Use `str_detect()`
+Are there any vowels in the string `musician_first`? Use `str_detect()`
 
 And count them with `str_count()`:
 
 ```{r str_count}
 # solution
-str_detect(x, "[aeiou]")
+str_detect(musician_first, "[aeiou]")
 
-str_count(x, "[aeiou]")
+str_count(musician_first, "[aeiou]")
 
 ```
 
-Are there any digits in `y`? (Don't forget that you need to escape any backslashes you use!)
+Are there any digits in `musician_last`? (Don't forget that you need to escape any backslashes you use!)
 
 ```{r}
 # solution
-str_detect(y, "\\d")
+str_detect(musician_last, "\\d")
 
 ```
 
 
 
 
-Extract chunks of text by their location: `str_sub(x, start, end)`
+Extract chunks of text by their location: `str_sub(musician_first, start, end)`
 
 
 ```{r str_sub}
 # solution
-str_sub(x, 1, 2)  
+str_sub(musician_first, 1, 2)  
 
 
 ```
@@ -292,10 +329,10 @@ str_sub(x, 1, 2)
 ```{r}
 
 # look for pairs of vowels
-str_locate(x, "[aeiou][aeiou]")
+str_locate(musician_first, "[aeiou][aeiou]")
 
 # look for a specific match ...
-str_locate(x, "oo")
+str_locate(musician_first, "oo")
 
 ```
 
@@ -304,7 +341,7 @@ Extract the first case of a vowel:
 
 ```{r}
 
-str_extract(x, "[aeiou]")
+str_extract(musician_first, "[aeiou]")
 
 ```
 
@@ -314,14 +351,51 @@ Extract the pairs of vowels:
 
 ```{r}
 # solution
-str_extract(x, "[aeiou][aeiou]")
+str_extract(musician_first, "[aeiou][aeiou]")
 
 # alternate solution
-str_extract(x, "[aeiou]{2}")
+str_extract(musician_first, "[aeiou]{2}")
 
 
 ```
 
+
+### 5b. Filtering on patterns
+
+Filter by country that has "land" in the name
+
+```{r}
+
+gapminder <- gapminder::gapminder 
+
+gapminder %>% 
+  filter(str_detect(country, "land")) %>% 
+  distinct(country)
+
+```
+
+What about those countries where "land" is at the end of the name?
+
+```{r}
+
+gapminder %>% 
+  filter(str_detect(country, "land$")) %>% 
+  distinct(country)
+
+```
+
+Or those where "land" is at the end and is preceded by only three letters?
+
+```{r}
+
+pattern_string <- "^\\w{3}land$"
+
+gapminder %>% 
+  filter(str_detect(country, pattern_string)) %>% 
+  distinct(country)
+
+
+```
 
 
 ---
