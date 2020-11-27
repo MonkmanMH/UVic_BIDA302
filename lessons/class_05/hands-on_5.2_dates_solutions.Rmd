@@ -448,6 +448,42 @@ March 28, 2020
 Also, keep in mind that a written-out-month is spelled differently in different languages! For example, April in French is "Avril".
 
 
+
+## 6. Lead and lag
+
+```{r}
+
+df_dates <- tribble(~event, ~event_date,
+        "event_1", "2015-01-15",
+        "event_2", "2020-02-29",
+        "event_3", "2020-04-15"
+        )
+
+df_dates <- df_dates %>% 
+  mutate(event_date = ymd(event_date))
+
+df_dates
+
+df_summary <- df_dates %>% 
+  # create a new variable with the lag from the previous record
+  mutate(lag_date = lag(event_date)) %>% 
+  # calculate the different between the two dates
+  mutate(days_between = event_date - lag_date)
+
+df_summary
+
+# calculate the number of years (instead of days)
+# - note the need to convert "days_between" from Duration to integer
+#   before dividing by 365.25
+df_summary %>% 
+  mutate(years_between = as.integer(days_between)/365.25)
+
+df_summary %>% 
+  summarise(avg_days_between_events = mean(days_between, na.rm = TRUE))
+
+```
+
+
 ## REFERENCE
 
 ["Dates and times" in _R for Data Science_](https://r4ds.had.co.nz/dates-and-times.html) by Hadley Wickham and Garrett Grolemund
