@@ -1,5 +1,5 @@
 ---
-title: "Iteration"
+title: "Iteration: loops"
 author: "Martin Monkman"
 output:
   html_document:
@@ -11,7 +11,7 @@ output:
 
 library(tidyverse)
 #
-library(purrr)
+#library(purrr)
 #library(tidyr)
 #
 library(gapminder)
@@ -21,7 +21,7 @@ library(gapminder)
 
 ## 1. Iteration
 
-Like functions, iteration is a way to reduce repetion in your code, and repetition in copy-and-paste tasks.
+Like functions, iteration is a way to reduce repetition in your code, and repetition in copy-and-paste tasks.
 
 Iteration:  
 
@@ -59,9 +59,6 @@ Calculate the median of the other three variables:
 ```{r}
 # solution
 
-median(df$b)
-median(df$c)
-median(df$d)
 
 ```
 
@@ -96,7 +93,7 @@ Square brackets inside square brackets is old-school way of referencing a partic
 ```{r}
 
 # one square bracket: the first list in the object
-#  - think of this a subset of the object
+#  - think of this as a subset of the object
 df[1]
 
 # two square brackets: the contents of the first object

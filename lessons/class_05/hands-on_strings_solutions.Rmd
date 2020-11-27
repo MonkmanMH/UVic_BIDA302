@@ -398,6 +398,58 @@ gapminder %>%
 ```
 
 
+
+### 5c. Selecting by string  {dplyr::select} -
+
+Earlier, we covered the {dplyr} function to `select()` variables (columns) in a data frame.
+
+Here's some tools to make that selection process a bit more streamlined:
+
+
+| function | tool |
+| ---      | --- |
+| `starts_with()` | Starts with a prefix |
+| `ends_with()` | Ends with a suffix |
+| `contains()` |  Contains a literal string | 
+| `matches()` | Matches a regular expression |
+
+
+
+(Note: these functions are some of the "select_helpers" imported into {dplyr} from the [{tidyselect}](https://www.rdocumentation.org/packages/tidyselect/versions/1.0.0/topics/select_helpers) package. )
+
+Examples using the {iris} data:
+
+```{r}
+
+head(iris)
+
+```
+
+Here is a way to select the variables that have the length measurements:
+
+```{r}
+iris %>% 
+  select(contains("Length")) %>%
+  head()
+```
+
+And two ways to select those with the petal measurements:
+
+```{r}
+iris %>% 
+  select(starts_with("Pet")) %>%
+  head()
+```
+
+This second case incorporates regex into the selection code, with the "^" for the start of the string:
+
+```{r}
+iris %>% 
+  select(matches("^P")) %>%
+  head()
+```
+
+
 ---
 
 ## 6. Splitting strings
