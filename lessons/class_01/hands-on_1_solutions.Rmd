@@ -4,7 +4,7 @@ subtitle: "hands-on examples, with answers"
 output: html_notebook
 ---
 
-<!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio and https://github.com/cwickham/data-science-in-tidyverse-solutions. -->
+<!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the original work at https://github.com/rstudio/master-the-tidyverse by RStudio and https://github.com/cwickham/data-science-in-tidyverse-solutions. -->
 
 ```{r setup}
 library(tidyverse)
