@@ -8,19 +8,18 @@ output:
     toc_float: true
 ---
 
-<!-- 
-This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). 
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 
+International License (https://creativecommons.org/licenses/by/4.0/). 
 
 Some content is drawn from, with some adaptations, the following sources: 
 
-* _R for Data Science_ by Hadley Wickham and Garrett Grolemund
+_R for Data Science_ by Hadley Wickham and Garrett Grolemund
 -- (https://r4ds.had.co.nz/) -- which is licensed under the Creative Commons
-Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US) 
+Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US)  -->
 
 
 
-```{r}
-
+```{r setup}
 library(tidyverse)
 #
 #library(purrr)
