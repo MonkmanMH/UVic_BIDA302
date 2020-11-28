@@ -62,7 +62,64 @@ _(subject to change)_
 
 
 
-## Python as data analysis tool
+### 1. Plots, charts and other data visualizations
+
+
+_Reading:_
+
+* _R4DS_, ["Data visualisation"](https://r4ds.had.co.nz/data-visualisation.html)
+
+* _R4DS_, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](http://socviz.co/) (draft version of the manuscript)
+
+  - If I were teaching a 6-week course on data visualization, this book would be a required text. If you are making charts as part of your work or studies, I _strongly_ encourage you to read through Chapters 1-7! The book is very well laid-out, and includes great advice on good data visualization practice (see [Chapter 1, "Look at data"](http://socviz.co/lookatdata.html#lookatdata))  
+  
+  - For this class, we will focus on [8. "Refine your plots"](http://socviz.co/refineplots.html#refineplots)
+
+  
+Martin Frigaard, [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) (2017-09-22)
+
+
+_General data visualization resources_
+
+Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_
+
+* [companion website](http://www.storytellingwithdata.com/)
+
+* [quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
+
+
+Miriam Gilbert, [Data Stories workshop](https://www.slideshare.net/miriamgilbert08/data-stories-workshop-34390209) -- slides (2014-02-24)
+
+
+### 2. Modeling, forecasting & what-if scenario analysis
+
+
+_Reading:_
+
+* _R4DS_, section IV Model:
+
+  - ["Model - Introduction"](https://r4ds.had.co.nz/model-intro.html) 
+  - ["Model Basics"](https://r4ds.had.co.nz/model-basics.html), and 
+  - ["Model building"](https://r4ds.had.co.nz/model-building.html)
+
+* Stefano Rizzi, ["What-If Analysis"](http://www-db.deis.unibo.it/~srizzi/PDF/eds-WIA.pdf), 
+
+* [Introduction to What-If Analysis](https://support.office.com/en-us/article/introduction-to-what-if-analysis-22bffa5f-e891-4acc-bf7a-e4645c446fb4) -- for Microsoft Excel
+
+
+
+### 3. Iteration
+
+
+_Reading:_
+
+* _R4DS_, ["Iteration"](https://r4ds.had.co.nz/iteration.html) 
+
+
+
+### 4. Python as data analysis tool
 
 
 ### {reticulate} package -- calling Python from R
@@ -93,7 +150,7 @@ The core packages include:
 
 [**pandas**](https://pandas.pydata.org/) -- data structures and analysis
 
-* [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html) -- "a short introduction to pandas, geared mainly for new users."
+* [10 minutes to pandas¶](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) -- "a short introduction to pandas, geared mainly for new users."
 
 * [data wrangling with pandas cheat sheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
 
