@@ -184,6 +184,32 @@ Batting_2016 %>%
 
 ```
 
+
+Another table, slightly different than I originally envisioned:
+
+```{r}
+Batting_2016 %>% 
+  full_join(Master_2000s, by = "playerID") %>%
+  select(playerID, birthCountry, teamID) %>%
+  group_by(birthCountry) %>%
+  summarise(n_players = n_distinct(playerID), n_teams = n_distinct(teamID)) %>%
+  arrange(birthCountry)
+
+
+```
+
+```{r}
+
+Batting_2016 %>%
+  full_join(Master_2000s, by = "playerID") %>%
+  group_by(teamID, birthCountry) %>%
+  summarise(number_player = n_distinct(playerID)) %>%
+  pivot_wider(names_from = teamID, values_from = number_player)
+
+```
+
+
+
 ```{r}
 
 mast <- tribble(
