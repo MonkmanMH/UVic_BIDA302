@@ -43,7 +43,7 @@ library(lubridate)
 ```
 
 
-Strings are characters, numbers, etc. that are enclosed inside quotation marks.
+Strings are characters, numbers, etc. that are enclosed inside quotation marks. A character vector is made up of multiple strings.
 
 ```{r}
 
@@ -84,13 +84,13 @@ Here are some basic matching functions:
 | "$" | match end of string |
 
 
-The {stringr} function `str_view()` shows where in our string the pattern appears. First we create an object "x" with three strings in it, then find two different patterns.
+The {stringr} function `str_view()` shows where in our string the pattern appears. First we create an object "fruit_list" with three strings in it, then find two different patterns.
 
 ```{r}
-x <- c("apple", "banana", "pear")
+fruit_list <- c("apple", "banana", "pear")
 
 # which words start with "a"?
-str_view(x, "^a")
+str_view(fruit_list, "^a")
 ```
 
 
@@ -98,7 +98,7 @@ str_view(x, "^a")
 
 # which words have an "ea" combination?
 
-str_view(x, "ea")
+str_view(fruit_list, "ea")
 
 ```
 
@@ -108,7 +108,7 @@ Which words end with "a"?
 
 ```{r}
 # solution
-str_view(x, "a$")
+str_view(fruit_list, "a$")
 
 ```
 
@@ -134,7 +134,7 @@ The question mark is useful for words with various spellings—the British and A
 ```{r}
 # which words have a double "p"?
 
-str_view(x, "p{2}")
+str_view(fruit_list, "p{2}")
 
 ```
 
@@ -360,7 +360,7 @@ str_extract(musician_first, "[aeiou]{2}")
 ```
 
 
-### 5b. Filtering on patterns
+### 5b. Filtering on patterns {dplyr::filter} -
 
 Filter by country that has "land" in the name
 
@@ -399,7 +399,7 @@ gapminder %>%
 
 
 
-### 5c. Selecting by string  {dplyr::select} -
+### 5c. Selecting on patterns  {dplyr::select} -
 
 Earlier, we covered the {dplyr} function to `select()` variables (columns) in a data frame.
 
