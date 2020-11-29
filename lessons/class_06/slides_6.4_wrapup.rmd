@@ -2,10 +2,11 @@
 title: "BIDA 302"
 subtitle: "course wrap-up"
 author: "Martin Monkman"
-date: "2020/04/04"
+date: "2020/11/29"
 output:
   xaringan::moon_reader:
-    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -14,20 +15,38 @@ output:
 ---
 
 
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-
-library(tidyverse)
-library(lubridate)
 ```
 
-
-![BIDA302](E:/github/UVic_BIDA302/static/img/BIDA302_hex_400.jpg)
-
-
---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
 
 # BIDA 302: Data Analytics Coding Fundamentals
+
+
+![BIDA302](../../hex_sticker/BIDA302_hex_300.jpg)
+
+
+---
 
 The data science process
 
@@ -53,7 +72,6 @@ class: inverse
 
 
 ---
-class: inverse
 
 
 # Then...
@@ -62,14 +80,77 @@ class: inverse
 
 
 ---
-class: inverse
 
 
 # ...now
 
 ![VW Beetle on the road](E:/github/UVic_BIDA302/static/img/VW_ontheroad.jpg)
 
+---
+class: inverse
 
+## Where to from here?
+
+---
+
+## Online resources
+
+* [R-Bloggers](https://www.r-bloggers.com/)
+
+* [RStudio Community](https://community.rstudio.com/)
+
+---
+
+## R4DS Online Learning Community
+
+[R4DS learning community](https://www.rfordatasci.com/)
+
+* \#TidyTuesday
+
+* Slack channel - with Office Hours
+
+Slides: [_How can we help?_](https://docs.google.com/presentation/d/1jfo_CvTmLf-PtKq2uS5-biklXJRe5hVnhzUjtWTQI3Y/edit#slide=id.gc6f919934_0_0)
+
+---
+
+## TidyTuesday
+
+* part of the R4DS learning community
+
+[bit.ly/tidyreadme](https://github.com/rfordatascience/tidytuesday/blob/master/README.md) 
+
+* twitter: #TidyTuesday
+
+> Every week we post a raw dataset, a chart or article related to that dataset, and ask you to explore the data. While the dataset will be “tamed”, it will not always be tidy! 
+
+
+---
+
+
+> **Focus on improving your craft, even if you end up with something simple!**
+
+–from the TidyTuesday page
+
+
+---
+
+## In-person / virtual community
+
+* R User Groups, including [RLadies](https://rladies.org/about-us/)
+
+* conferences
+
+  - UseR (R Foundation)
+  
+  - RStudio
+  
+  - regional conferences (including Cascadia R)
+  
+  - EARL (London UK and occasional USA)
+
+* BC Government employees: 
+
+  - Data Science Community (R and Python users)
 
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: "Data analysis with Python"
-subtitle: "BIDA 302"
-author: "Martin Monkman"
-date: "2019/12/07"
+subtitle: "using RStudio"
+author: "BIDA 302"
+#date: "2019/12/07"
 output:
   xaringan::moon_reader:
-    css: ["E:/github/UVic_BIDA302/static/css_files/eigengrau.css", "E:/github/UVic_BIDA302/static/css_files/eigengrau-fonts.css"]    
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -14,11 +15,29 @@ output:
 ---
 
 
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+```
 
-library(tidyverse)
-library(lubridate)
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
 ```
 
 # The Data Science Process
@@ -78,7 +97,7 @@ Python is a general-purpose programming language.
 
 * When you load base R, you get the engine and the frame, steering wheel, and pedals.
 
-* To do data analysis in Python, you need to load the _modules_ or _packages_ that are the frame, steering wheel, etc.
+* To do data analysis in Python, you need to load the _libraries_ (also known as the _modules_ or _packages_) that are the frame, steering wheel, etc.
 
 
 ---
@@ -87,7 +106,7 @@ Python is a general-purpose programming language.
 
 ---
 
-# Run in rstudio.cloud
+# Run in RStudio
 
 {reticulate} -- R Interface to Python
 
@@ -120,9 +139,11 @@ Python is a general-purpose programming language.
 
 * [Matplotlib](https://matplotlib.org/) -- data visualization
 
+* [ggplot](http://ggplot.yhathq.com/) -- data visualization
 
+  - [Using ggplot in Python: Visualizing Data With plotnine](https://realpython.com/ggplot-python/)
 
-
+![python ggplot code](python_ggplot_example.JPG)
 
 ---
 
