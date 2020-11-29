@@ -1,0 +1,34 @@
+---
+title: "Python_in_RStudio"
+output: html_notebook
+---
+
+This builds on the base project for BIDA302.
+
+The installed R packages are:
+
+```
+# tidyverse
+install.packages("tidyverse")
+install.packages("readxl")
+
+# data
+install.packages("gapminder")
+install.packages("nycflights13")
+install.packages("palmerpenguins")
+
+```
+
+The project also contains the necessary elements to run Python and Pandas:
+
+```
+install.packages("reticulate")
+
+reticulate::py_config()
+reticulate::py_install("pandas")
+
+```
+
+That's it!
+
+
