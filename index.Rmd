@@ -17,14 +17,13 @@ description: "The course book for BIDA302"
 ---
 
 
-
 # Preface  {-}
 
 <img src="BIDA302_hex_400.jpg" width="350" height="350" alt="BIDA302 hex" />
 
 _Draft_
 
-This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's Continuing Studies Department.
+This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's [Continuing Studies Department](https://continuingstudies.uvic.ca/).
 
 
 ## Course description {-}
@@ -84,11 +83,11 @@ In addition to the material in this ebook, the text book for this course is Garr
 
 
 ```{r echo=FALSE}
-knitr::include_graphics(rep('../static/img/R4DS_400.png', 1))
+knitr::include_graphics(rep('static/img/R4DS_400.png', 1))
 #![R for Data Science(../img/R4DS_400.png)]
 ```
 
-Additional readings and reference material are noted in each section.
+Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
 
 
 ## Code of Conduct {-}
@@ -161,7 +160,7 @@ People who have previously taken this course were asked, mid-way through their s
 
 ## Structure {-}
 
-The book's layout is currently in 12 chapters, each corresponding to the 12 half-day lessons of the course:
+The book's layout is in 12 chapters, each corresponding to the 12 half-day lessons of the course:
 
 ### 1.   {-}
 
@@ -171,7 +170,7 @@ The book's layout is currently in 12 chapters, each corresponding to the 12 half
 
 ## Acknowledgements {-}
 
-The author would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within.
+The author would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within. And of course, all of the participants in BIDA302 who have asked great questions and helped me get better at explaining the why and what of data analysis using R.
 
 
 ## Some important details {-}
