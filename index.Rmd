@@ -16,8 +16,14 @@ cover-image: BIDA302_hex_400.jpg
 description: "The course book for BIDA302"
 ---
 
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
 
-# Preface  {-}
+
+# Course Outline  {-}
 
 <img src="BIDA302_hex_400.jpg" width="350" height="350" alt="BIDA302 hex" />
 
@@ -82,10 +88,12 @@ Concepts and practices that you can carry through to data analysis in other envi
 In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
 
-```{r echo=FALSE}
-knitr::include_graphics(rep('static/img/R4DS_400.png', 1))
-#![R for Data Science(../img/R4DS_400.png)]
-```
+![R for Data Science](static/img/R4DS_400.png)
+
+A useful reference book for this course is JD Long & Paul Teetor, _R Cookbook, 2nd edition_. It's also available both as a printed book and online at [rc2e.com/](https://rc2e.com/)
+
+![R Cookbook](static/img/rc2e_500.jpg)
+
 
 Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
 
@@ -163,6 +171,30 @@ People who have previously taken this course were asked, mid-way through their s
 The book's layout is in 12 chapters, each corresponding to the 12 half-day lessons of the course:
 
 ### 1.   {-}
+
+***
+
+## A bit about me
+
+
+* University: UVic Geography B.Sc. & M.A.
+
+* Day job: BC Stats: 1993 to present (with 5 year gap)
+
+* I have been writing code since 1979
+
+  - to do data analysis since 1993
+  
+  - using R since 2012
+
+* My coding started writing FORTRAN on punch cards
+
+  - I don't believe there is any benefit in learning things "the hard way"
+  
+  - In this course we use far better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
+
+![computer punch card](../../static/img/ibm-80-column-punched-card1.jpg)]
+
 
 
 ***

@@ -11,6 +11,16 @@ options(width = 100, dplyr.width = 100)
 
 Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
+### Data science
+
+Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
+
+
+![Drew Conway data science Venn diagram](static/img/Data_Science_VD.png)
+
+
+
+
 
 ### The data science process
 
@@ -61,13 +71,13 @@ So what is a "reproducible workflow"?
 
 Here's an insight into how the work on a data analysis project looks in real life. In this case, the author of the tweet has specified a "scientific project", but it applies to any type of data analysis, whether in the context of business intelligence, economics, history, ecology, or astrophysics:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every scientific project will be redone in its entirety about 10-20 times from start to publication. Plan your work flow accordingly, e.g. a piece of R code that takes a data file and produces the analysis and figure/s. Change the data? Just rerun the code.</p>&mdash; Trevor A. Branch (@TrevorABranch) <a href="https://twitter.com/TrevorABranch/status/1157006269292507136?ref_src=twsrc%5Etfw">August 1, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every scientific project will be redone in its entirety about 10-20 times from start to publication. Plan your work flow accordingly, e.g. a piece of R code that takes a data file and produces the analysis and figure/s. Change the data? Just rerun the code.</p>&mdash; Trevor A. Branch (\@TrevorABranch) <a href="https://twitter.com/TrevorABranch/status/1157006269292507136?ref_src=twsrc%5Etfw">August 1, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 In the work that I do in my day job, we are often producing monthly and quarterly reports. The reports look more or less like the previous edition—we update the data, create new summary tables and charts, and sometimes add new text elements. Every month, the steps are the same: a lot of point-and-click copy-and-paste drag-and-drop work to download the data, update the tables, calculate the new summary tables, change the charts, and then hit "print". We the humans had to do all of those steps before; now we have written some code, it streamlines our workflow.
 
 Here's an example:
 
-
+[NHPI]
 
 ## Why R?
 
@@ -96,4 +106,204 @@ knitr::include_graphics('static/img/code_hero_rstats_600.png')
 ```
 
 Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
+
+
+
+## Hex stickers!
+
+
+![Martin's laptop](static/img/Martin_laptop.jpg)
+
+
+
+
+
+## Workflow and functionality: 1
+
+For one of my projects, my workflow used to look something like this:
+
+![survey workflow 1](static/img/survey_workflow_720.png)
+
+Every time the data switches from one tool to another, there is a risk of unexpected transformations in the values.
+
+In GUI tools, there's also a risk of point-and-click errors which cannot be traced back.
+
+
+It now looks like this:
+
+![survey workflow 1](static/img/survey_workflow_2_720.png)
+
+
+
+## Collaboration
+
+Your code (and additional recordkeeping with your code) helps explain your work to others
+
+> In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you.
+—Hadley Wickham (source: [Roel M. Hogervorst](https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/)
+
+
+Further Reading:
+
+Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
+
+
+
+![R logo](static/img/R.jpg)
+
+# 1. Base R
+
+* a data science / statistics programming language
+
+* built-in analytic and statistical functions
+
+
+## An analogy
+
+Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
+
+![VW Beetle frame](static/img/VW_ad_1_crop_2.png)
+
+# 2. packages
+
+Packages extend the functionality of R
+
+* data wrangling & cleaning
+
+* data analysis and statistical modeling
+
+* data visualization
+
+* data
+
+
+...the packages are the other things that enhance the car's functions
+
+* the body, windshield, headlights, A/C, sound system, etc
+
+
+![VW Beetle transparent](static/img/vwlooking.jpg)
+
+
+## The Tidyverse
+
+![tidyverse hex](static/img/tidyverse_400.png)
+
+???
+
+Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
+
+
+## {tidyverse}
+
+"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+The [{tidyverse} site](https://tidyverse.org): tidyverse.org
+
+
+
+![RStudio logo](static/img/RStudio_400.png)
+
+
+
+# 3. RStudio
+
+IDE (interactive development environment)
+
+* we will be using the cloud (internet) version of the IDE
+
+* "RStudio" is also the company that developed and supports the IDE
+
+* and RStudio is active creating and supporting packages, including many of the tidyverse packages
+
+
+
+
+...and RStudio is the dashboard and controls
+
+![VW Beetle dashboard](static/img/VW_dashboard.jpg)
+
+
+(more like this)
+
+![VW Beetle dashboard](static/img/VW_dashboard_2019.jpg)
+
+
+(or dark mode!)
+
+![VW Beetle dashboard, black](static/img/2018_volkswagen_beetle_dashboard.jpg)
+
+
+## Who's ready for a road trip?!
+
+![VW Beetle](static/img/VW_ready_to_go.png)
+
+
+# Languages
+
+
+![](static/img/language_learning.jpg)
+
+...are difficult
+
+???
+image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
+
+
+
+## Your mind is flexible...
+
+
+> Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
+
+# ...but computers are literal
+
+Accuracy matters
+
+![Hadley Wickham tweet](static/img/Hadley_5minutes_2019-10-27.jpg)
+
+
+And spelling matters
+
+![Kara Woo tweet](static/img/Kara_5minutes_2019-10-27.jpg)
+
+...and in R, so does case
+
+
+
+
+## Getting help
+
+* RStudio: built-in help: `?<function_name>`
+
+* Cheatsheets: https://rstudio.com/resources/cheatsheets/
+
+* Package vignettes
+
+
+
+## And for future reference...
+
+* RStudio Community: https://community.rstudio.com/ 
+
+* Stack Overflow: https://stackoverflow.com/
+
+* Blogs
+
+
+
+
+
+## Exercise
+
+[Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
+
+
+
+## Reading ahead...
+
+* [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
+
 
