@@ -32,7 +32,7 @@ _Draft_
 This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's [Continuing Studies Department](https://continuingstudies.uvic.ca/).
 
 
-## Course description {-}
+### Course description {-}
 
 From [UVic Continuing Studies website](https://continuingstudies.uvic.ca/business-technology-and-public-relations/courses/data-analytics-coding-fundamentals)
 
@@ -67,15 +67,15 @@ BIDA302 learning objectives:
 >* Create what-if scenarios
 
 
-## Meta outcomes {-}
+### Meta outcomes {-}
 
-### 1: using **R** {-}
+#### 1: using **R** {-}
 
 Programming environment designed for statistical analysis / data science 
 
 * Focus on one tool, so you get good at that
 
-### 2: principles  {-}
+#### 2: principles  {-}
 
 Concepts and practices that you can carry through to data analysis in other environments
 
@@ -83,7 +83,7 @@ Concepts and practices that you can carry through to data analysis in other envi
 
 
 
-## Text books and other readings {-}
+### Text books and other readings {-}
 
 In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
@@ -98,7 +98,7 @@ A useful reference book for this course is JD Long & Paul Teetor, _R Cookbook, 2
 Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
 
 
-## Code of Conduct {-}
+### Code of Conduct {-}
 
 (From the [R Consortium and R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct))
 
@@ -125,7 +125,7 @@ Please
 
 
 
-## Pep Talk! {-}
+### Pep Talk! {-}
 
 "Smart people ask stupid questions." (Source unknown)
 
@@ -163,18 +163,15 @@ People who have previously taken this course were asked, mid-way through their s
 * Prepare to learn lots about R and RStudio. …And bring coffee!
 
 
-***
 
 
 ## Structure {-}
 
 The book's layout is in 12 chapters, each corresponding to the 12 half-day lessons of the course:
 
-### 1.   {-}
 
-***
 
-## A bit about me
+## A bit about me {-}
 
 
 * University: UVic Geography B.Sc. & M.A.
@@ -197,15 +194,12 @@ The book's layout is in 12 chapters, each corresponding to the 12 half-day lesso
 
 
 
-***
+## Some important details {-}
 
-
-## Acknowledgements {-}
+**Acknowledgements**
 
 The author would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within. And of course, all of the participants in BIDA302 who have asked great questions and helped me get better at explaining the why and what of data analysis using R.
 
-
-## Some important details {-}
 
 **License**
 

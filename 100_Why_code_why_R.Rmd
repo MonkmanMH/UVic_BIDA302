@@ -79,7 +79,7 @@ Here's an example:
 
 [NHPI]
 
-## Why R?
+### Why R?
 
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Python.
 
@@ -109,7 +109,7 @@ Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
 
 
 
-## Hex stickers!
+#### Hex stickers!
 
 
 ![Martin's laptop](static/img/Martin_laptop.jpg)
@@ -118,7 +118,7 @@ Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
 
 
 
-## Workflow and functionality: 1
+#### Workflow and functionality: 1
 
 For one of my projects, my workflow used to look something like this:
 
@@ -135,7 +135,7 @@ It now looks like this:
 
 
 
-## Collaboration
+#### Collaboration
 
 Your code (and additional recordkeeping with your code) helps explain your work to others
 
@@ -151,20 +151,20 @@ Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://
 
 ![R logo](static/img/R.jpg)
 
-# 1. Base R
+### 1. Base R
 
 * a data science / statistics programming language
 
 * built-in analytic and statistical functions
 
 
-## An analogy
+#### An analogy
 
 Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
 
 ![VW Beetle frame](static/img/VW_ad_1_crop_2.png)
 
-# 2. packages
+### 2. packages
 
 Packages extend the functionality of R
 
@@ -185,7 +185,7 @@ Packages extend the functionality of R
 ![VW Beetle transparent](static/img/vwlooking.jpg)
 
 
-## The Tidyverse
+#### The Tidyverse
 
 ![tidyverse hex](static/img/tidyverse_400.png)
 
@@ -194,7 +194,7 @@ Packages extend the functionality of R
 Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
 
 
-## {tidyverse}
+#### {tidyverse}
 
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
@@ -206,7 +206,7 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 
 
-# 3. RStudio
+### 3. RStudio
 
 IDE (interactive development environment)
 
@@ -234,12 +234,12 @@ IDE (interactive development environment)
 ![VW Beetle dashboard, black](static/img/2018_volkswagen_beetle_dashboard.jpg)
 
 
-## Who's ready for a road trip?!
+#### Who's ready for a road trip?!
 
 ![VW Beetle](static/img/VW_ready_to_go.png)
 
 
-# Languages
+### Languages
 
 
 ![](static/img/language_learning.jpg)
@@ -251,12 +251,12 @@ image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_1110863
 
 
 
-## Your mind is flexible...
+#### Your mind is flexible...
 
 
 > Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
 
-# ...but computers are literal
+#### ...but computers are literal
 
 Accuracy matters
 
@@ -272,7 +272,7 @@ And spelling matters
 
 
 
-## Getting help
+#### Getting help
 
 * RStudio: built-in help: `?<function_name>`
 
@@ -282,7 +282,7 @@ And spelling matters
 
 
 
-## And for future reference...
+#### And for future reference...
 
 * RStudio Community: https://community.rstudio.com/ 
 
@@ -294,13 +294,13 @@ And spelling matters
 
 
 
-## Exercise
+## Exercise: Introduction to R
 
 [Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
 
 
 
-## Reading ahead...
+### Reading ahead...
 
 * [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
 

@@ -1,0 +1,36 @@
+# Introduction to data wrangling {#data_wrangling}
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+
+## Data wrangling
+
+Data is abundant, it as data analysts, we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data. There are three broad categories of data transformation:
+
+- altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table.
+
+- summarizing the content of the source data tables. For example, if our data table has the population of all the countries in the world, we might want a summary table that has the table with the total for each continent.
+
+- with both our existing data or our summary tables, we may want it in a different layout, either for analysis purposes or to make it easier for human readers to absorb the information.
+
+In this section, we will begin to work with all three transformations.
+
+
+
+### Exercise
+
+[Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
+
+
+
+### Reading ahead...
+
+* [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
+
+
