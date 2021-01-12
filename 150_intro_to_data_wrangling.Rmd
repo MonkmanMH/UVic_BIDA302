@@ -11,7 +11,7 @@ options(width = 100, dplyr.width = 100)
 
 Data is abundant, it as data analysts, we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data. There are three broad categories of data transformation:
 
-- altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table.
+- altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table, including calculation or importation of new variables, or importation of additional rows (observations).
 
 - summarizing the content of the source data tables. For example, if our data table has the population of all the countries in the world, we might want a summary table that has the table with the total for each continent.
 
