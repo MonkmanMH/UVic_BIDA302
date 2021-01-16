@@ -176,12 +176,24 @@ But that duplicates the `aes(x, y)` text ... so we can move that into the `ggplo
 
 ```{r}
 
-ggplot(anscombe_tidy, aes(x, y)) + 
+p <- ggplot(anscombe_tidy, aes(x, y)) + 
   geom_point() + 
   geom_smooth(method = lm, se = FALSE) + 
   facet_wrap(~set)
 
+p
+
 ```
+
+Try #E5E5E3 as background colour:
+https://dataviztoday.com/blog/37
+
+```{r}
+p
+p + theme(panel.background = element_rect(fill = "#E5E5E3"))
+
+```
+
 
 
 ### References
