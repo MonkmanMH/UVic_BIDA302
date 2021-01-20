@@ -120,7 +120,7 @@ Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
 
 #### Workflow and functionality: 1
 
-For one of my projects, my workflow used to look something like this:
+For one of my projects, the workflow used to look something like this:
 
 ![survey workflow 1](static/img/survey_workflow_720.png)
 
@@ -187,6 +187,7 @@ Packages extend the functionality of R
 
 #### The Tidyverse
 
+
 ![tidyverse hex](static/img/tidyverse_400.png)
 
 ???
@@ -195,6 +196,8 @@ Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex ima
 
 
 #### {tidyverse}
+
+In this course, we will be relying heavily (but not exclusively) on a group of packages known as "the tidyverse". 
 
 "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
@@ -244,7 +247,7 @@ IDE (interactive development environment)
 
 ![](static/img/language_learning.jpg)
 
-...are difficult
+...are difficult. We use different words to mean the same thing. The grammar of different language varies. Languages also use different characters.
 
 ???
 image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636

@@ -75,7 +75,7 @@ Notice a couple of things:
 It's a big table ... over 300,000 rows.
 
 
-So let's trim it down to a bite size chunk, and create a new Python data frame, `flights_ORD`:
+So let's trim it down to a bite size chunk, and create a new Python data frame, `flights_SEA`:
 
 ```{python}
 
