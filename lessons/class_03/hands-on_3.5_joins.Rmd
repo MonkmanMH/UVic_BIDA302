@@ -317,3 +317,7 @@ This hands-on exercise draws heavily on the following sources:
 
 * ["Join two tables" at the STAT545 site](https://stat545.com/join-cheatsheet.html)
 
+### Other information about joins
+
+* Garrick Aden-Buie, [tidyexplain: Tidy Animated Verbs](https://www.garrickadenbuie.com/project/tidyexplain/)
+

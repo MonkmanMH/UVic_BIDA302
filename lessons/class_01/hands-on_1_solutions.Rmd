@@ -21,9 +21,9 @@ This hands-on exercise uses functions from the {dplyr} package:
 
 ## gapminder
 
-These exercises use a summary of data about the countries of the world, drawn from the gapminder.org tables. This table is stored in the R package {gapminder}.
+These exercises use a summary of data about the countries of the world, drawn from the gapminder.org tables. This table is stored in the R package {gapminder}, which is already loaded.
 
-To view the data in the console or in the R Markdown output, enter the name of the data table:
+To view the data in the console or in the R Markdown output, enter the name of the data table.
 
 ```{r}
 gapminder
