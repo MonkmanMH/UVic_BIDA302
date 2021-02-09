@@ -16,7 +16,7 @@ Analysis of data helps us make better decisions. And computers have accelerated 
 Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
 
 
-![Drew Conway data science Venn diagram](static/img/Data_Science_VD.png)
+![_Drew Conway data science Venn diagram_](static/img/Data_Science_VD.png)
 
 
 
@@ -36,13 +36,13 @@ knitr::include_graphics('static/img/data-science.png')
 
 We will be refering to this model frequently...get used to seeing it!
 
-We can do data analysis using GUI (Graphical User Interface) tools, such as Excel or Tableau. But using a programing language to write code that generates your analysis will make you more efficient and effective, open up a universe of additional functionality, and make your analysis workflow: 
+We can do data analysis using GUI (Graphical User Interface) tools, such as Excel or Tableau. But using a programming language to write code that generates your analysis will make you more efficient and effective, open up a universe of additional functionality, and make your analysis workflow 
 
 * reproducible and auditable, 
 
 * accurate, and 
 
-* collaborative.  
+* collaborative. [@Parker_2017]  
 
 The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you'll be using. 
 
@@ -112,7 +112,7 @@ Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
 #### Hex stickers!
 
 
-![Martin's laptop](static/img/Martin_laptop.jpg)
+![_Martin's laptop, October 2020_](static/img/Martin_laptop.jpg)
 
 
 
