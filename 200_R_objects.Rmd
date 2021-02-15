@@ -9,15 +9,14 @@ options(width = 100, dplyr.width = 100)
 
 ## Examining the data
 
-In spreadsheet programs, you _see_ the data. In Excel, the Gapminder dataset looks like this:
+When we import a dataframe into a spreadsheet or other data analysis tool, we immediately _see_ the data. In Excel, the Gapminder dataset looks like this:
 
 ![gapminder spreadsheet](static/img/excel_gapminder_2.JPG)
 
+Like the crew of the Enterprise, we get the data "On screen!" so we can visually investigate it.
 
-If Captain Kirk wanted to see it in Excel..."On screen!"
 
-
-![on screen](static/img/gapminder_STNG_onscreen_x.png)
+![_"On screen!"_](static/img/gapminder_STNG_onscreen_x.png)
 
 
 
@@ -25,12 +24,12 @@ If Captain Kirk wanted to see it in Excel..."On screen!"
 
 In R, when we load a dataframe:
 
-* it's an object
+* we assign it to an object
 
-* shows up in our Environment pane
+* and that object shows up in our Environment pane.
 
 
-![gapminder in RStudio](static/img/gapminder_RStudio_2.JPG)
+![_gapminder in RStudio_](static/img/gapminder_RStudio_2.JPG)
 
 This is a different view of the universe.
 
@@ -42,12 +41,15 @@ In R, there are a few options for visually scanning your data:
 | function | description |  
 |---|---|  
 |*Content: * | |
-|`head()` | shows the first 6 rows |
-|`tail()` | shows the last 6 rows | 
+|`head()` | shows the first rows; the default is 6 |
+|`tail()` | shows the last rows; the default is 6 | 
 |`view()` or `View()`| display in tab |
 
 
-There are also other functions to understand a dataframe:
+***
+
+
+In addition to visually inspecting the data, there are also other functions to understand a dataframe:
 
 | function | description |  
 |---|---|  
@@ -94,12 +96,14 @@ In R (as with other programming languages), data is stored as different variable
 `lgl` stands for logical, vectors that contain only TRUE or FALSE.
 
 
-#### Missing values `NA` 
+### Missing values `NA` 
 
 `NA` are explicitly missing values.
 
 * they can be included as any type: e.g. numeric or character
 
+
+> See [_R for Data Science_, "Data transformation: Missing values](https://r4ds.had.co.nz/transform.html#missing-values)
 
 
 Missing values are _contagious_

@@ -194,6 +194,7 @@ The book's layout is in 12 chapters, each corresponding to the 12 half-day lesso
 
 
 
+
 ## Some important details {-}
 
 **Acknowledgements**

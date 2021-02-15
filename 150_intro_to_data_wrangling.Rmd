@@ -12,7 +12,9 @@ library(gapminder)
 
 ## Data wrangling
 
-Data is abundant, it as data analysts, we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data. There are three broad categories of data transformation:
+Data is abundant, and as data analysts we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data.^["Data cleaning" is a whole other thing—we will encounter that later.] 
+
+There are three broad categories of data transformation:
 
 - altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table, including calculation of new variables, or importation of additional rows (observations) and joining two tables together.
 
