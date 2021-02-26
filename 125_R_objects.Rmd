@@ -207,7 +207,7 @@ Cleaning
 
 
 
-# Part 1: {dplyr} -
+## Part 1: `{dplyr}` -
 
 
 ![dplyr hex](../../static/img/dplyr_400.png)
@@ -532,7 +532,7 @@ summary(mpg$hwy)
 
 
 
-# Part 2 - {tidyr} -
+### Part 2 - `{tidyr}` -
 
 
 ![tidyr hex](../../static/img/tidyr_400.png)

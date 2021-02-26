@@ -4,16 +4,12 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 -->
 
+
 # (PART) Week 1 {-} 
 
 
 # Why Code? Why R? {#why_code}
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-```
 
 
 ## Lesson 1: Objectives
@@ -64,14 +60,14 @@ At the end of this lesson, learners will be able to:
 [R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
 
 
-#### {dplyr} .
+#### `{dplyr}` .
 
 [{dplyr} reference at tidyverse.org](https://dplyr.tidyverse.org/)
 
 [Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
 
 
-#### {tidyr} .
+#### `{tidyr}` .
 
 [{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
 
@@ -238,12 +234,11 @@ In this course, we will use the term "data science" to describe the use of a com
 The _process_ of data science has been defined like this [@Wickham_Grolemund2016]:
 
 
-```{r echo=FALSE}
-knitr::include_graphics('static/img/data-science.png')
-```
+![_The data science process_](static/img/data-science.png)
 
 
-We will be refering to this model frequently...get used to seeing it!
+
+We will be referring to this model frequently...get used to seeing it!
 
 We can do data analysis using GUI (Graphical User Interface) tools, such as Excel or Tableau. But using a programming language to write code that generates your analysis will make you more efficient and effective, open up a universe of additional functionality, and make your analysis workflow 
 
@@ -310,11 +305,8 @@ This is where the R community really shines. The spirit of the bazaar extends to
 
 
 
-```{r echo=FALSE}
-knitr::include_graphics('static/img/code_hero_rstats_600.png')
-```
+![_Code Hero: image by [Allison Horst_](https://github.com/allisonhorst/stats-illustrations)](static/img/code_hero_rstats_600.png)
 
-Image by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
 
 
 

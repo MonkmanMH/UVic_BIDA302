@@ -40,7 +40,7 @@ From [UVic Continuing Studies website](https://continuingstudies.uvic.ca/busines
 
 Note that the emphasis of the course will be learning R. The concepts learned in that programming language can be applied in others; we will explore similar functions in Python towards the end of the course.
 
-### Learning objectives {-}
+#### Learning objectives {-}
 
 BIDA302 learning objectives:
 
@@ -67,15 +67,13 @@ BIDA302 learning objectives:
 >* Create what-if scenarios
 
 
-### Meta outcomes {-}
-
-#### 1: using **R** {-}
+#### Meta outcome 1: using **R** {-}
 
 Programming environment designed for statistical analysis / data science 
 
 * Focus on one tool, so you get good at that
 
-#### 2: principles  {-}
+#### Meta outcome 2: principles  {-}
 
 Concepts and practices that you can carry through to data analysis in other environments
 
@@ -83,7 +81,7 @@ Concepts and practices that you can carry through to data analysis in other envi
 
 
 
-### Text books and other readings {-}
+## Text books and other readings {-}
 
 In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
@@ -167,7 +165,7 @@ People who have previously taken this course were asked, mid-way through their s
 
 ## Structure {-}
 
-The book's layout is in 12 chapters, each corresponding to the 12 half-day lessons of the course:
+The book's layout is in 6 sections, each corresponding to the 6 weeks of the course. Each week has multiple chapters, corresponding with the topics covered and (when appropriate) the assignment for that week.
 
 
 
@@ -176,7 +174,7 @@ The book's layout is in 12 chapters, each corresponding to the 12 half-day lesso
 
 * University: UVic Geography B.Sc. & M.A.
 
-* Day job: BC Stats: 1993 to present (with 5 year gap)
+* Day job: BC Stats: 1993 to present (with 5 year gap when I worked elsewhere in the B.C. public service)
 
 * I have been writing code since 1979
 
@@ -186,9 +184,9 @@ The book's layout is in 12 chapters, each corresponding to the 12 half-day lesso
 
 * My coding started writing FORTRAN on punch cards
 
-  - I don't believe there is any benefit in learning things "the hard way"
+  - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it"
   
-  - In this course we use far better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
+  - In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
 
 ![computer punch card](static/img/ibm-80-column-punched-card1.jpg)]
 
