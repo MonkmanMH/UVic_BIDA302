@@ -1,0 +1,26 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+# Write your own functions {#functions}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+library(tidyverse)
+library(gapminder)
+```
+
+
+
+
+### Reading
+
+
+
