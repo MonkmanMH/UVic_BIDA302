@@ -173,7 +173,6 @@ summary(model_mlb_pay_wl)
 
 
 -30-
--30-
 
 
 
