@@ -690,7 +690,7 @@ R has a built-in function to generate some summary statistics. The first is `sum
 
 ```{r}
 
-summary(exp_dem)
+summary(gapminder)
 
 ```
 
@@ -716,11 +716,11 @@ These statistics can all be generated individually, using the functions in the t
   
  
  
- This code calcuates the mean value.
+ This code calculates the mean of life expectancy
  
 ```{r}
 
-mean(exp_dem$Expense)
+mean(gapminder$lifeExp)
 
 ```
 
@@ -737,8 +737,8 @@ So this little chunk would be read as
 
 ```{r}
 
-exp_dem %>% 
-  summarise(mean_of_expense = mean(Expense))
+gapminder %>% 
+  summarise(mean_of_life_expectancy = mean(lifeExp))
 
 ```
 
@@ -751,7 +751,7 @@ The default setting of the `quantile()` function splits the distribution into fo
 
 ```{r}
 
-quantile(exp_dem$Demand)
+quantile(gapminder$lifeExp)
 
 ```
 
@@ -763,6 +763,6 @@ If you want other groupings, the function has arguments that allow you define th
 
 
 # deciles
-quantile(exp_dem$Demand, probs = seq(0, 1, 0.10))
+quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
 
 ```

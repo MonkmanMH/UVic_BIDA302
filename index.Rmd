@@ -190,7 +190,7 @@ The book's layout is in 12 chapters, each corresponding to the 12 half-day lesso
   
   - In this course we use far better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
 
-![computer punch card](../../static/img/ibm-80-column-punched-card1.jpg)]
+![computer punch card](static/img/ibm-80-column-punched-card1.jpg)]
 
 
 
