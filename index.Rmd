@@ -16,12 +16,18 @@ cover-image: BIDA302_hex_400.jpg
 description: "The course book for BIDA302"
 ---
 
-```{r setup, echo = FALSE}
+
+# Course Outline  {-}
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
 library(tidyverse)
+library(gapminder)
+
 ```
 
 
@@ -31,8 +37,6 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 -->
 
-
-# Course Outline  {-}
 
 <img src="BIDA302_hex_400.jpg" width="350" height="350" alt="BIDA302 hex" />
 
@@ -299,7 +303,7 @@ The source code for this ebook can be found at this github repository: https://g
 This book is written in **Markdown**, using the [**bookdown**](https://bookdown.org/yihui/bookdown/) package, and published to the web at [bookdown.org](https://bookdown.org/).
 
 
-```{r bookdown, eval=FALSE}
+```{r eval=FALSE}
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
@@ -313,4 +317,3 @@ install.packages("bookdown")
 The course hex image was created using the [{hexSticker} R package](https://github.com/GuangchuangYu/hexSticker) by Guangchuang Yu.
 
 
-***

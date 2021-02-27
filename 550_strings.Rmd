@@ -5,7 +5,7 @@ https://creativecommons.org/licenses/by/4.0/
 -->
 
 
-# Working with strings {#strings}
+# Strings {#strings}
 
 
 ```{r echo = FALSE}
@@ -13,14 +13,11 @@ library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
-library(tidyverse)
-library(gapminder)
 ```
 
 
+## Reading
 
-
-### Reading
 
 
 

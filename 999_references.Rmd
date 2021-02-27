@@ -6,5 +6,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 
 `r if (knitr:::is_html_output()) '
+
 # References {-}
+
 '`
