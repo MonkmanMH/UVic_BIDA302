@@ -16,6 +16,15 @@ cover-image: BIDA302_hex_400.jpg
 description: "The course book for BIDA302"
 ---
 
+```{r setup, echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+library(tidyverse)
+```
+
+
 <!-- 
 This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
@@ -155,7 +164,7 @@ author’s permission) I am including it here:
 
 > Over the last decade there has been a revolution in statistical and
 > scientific computing. Open source languages like R and Python have
-> overtaken older (and expensive\!) corporate software packages like SAS
+> overtaken older (and expensive!) corporate software packages like SAS
 > and SPSS, and there are now thousands of books and blog posts and
 > other online resources with excellent tutorials about how to analyze
 > pretty much any kind of data.
@@ -195,7 +204,7 @@ your past self about this course?” Here are some of their answers:
 
   - It won’t be as scary as you think it will be.
 
-  - It is fun\! Keep up\!
+  - It is fun! Keep up!
 
   - You’ll get better soon.
 
@@ -203,15 +212,15 @@ your past self about this course?” Here are some of their answers:
     1-2 hours a week outside class won’t be enough for a dinosaur like
     me.
 
-  - To do the homework on Saturday\* after class so you haven’t
-    forgotten everything\!
+  - To do the homework on Saturday* after class so you haven’t
+    forgotten everything!
 
   - **Reading the textbook will help you, use it.**
     
       - Review the data before starting to work with it. It helps to
         understand what the data is, how it might be used.
     
-      - Review the material in the Saturday\* lesson as you will need it
+      - Review the material in the Saturday* lesson as you will need it
         for the assignment.
     
       - If you start having to use functions you aren’t familiar with,
@@ -219,13 +228,13 @@ your past self about this course?” Here are some of their answers:
     
       - Keep it simple, and then add on as you go.
 
-  - Be confident in yourself and make sure you read the textbook\!
+  - Be confident in yourself and make sure you read the textbook!
 
-  - The learning curve is the steepest on day one\! Just because you’ve
+  - The learning curve is the steepest on day one! Just because you’ve
     never programmed before doesn’t mean you are a lost cause and won’t
     be able to succeed. Take a deep breath, experiment, and revel in the
     feeling of satisfaction and accomplishment when R finally executes
-    your code and doesn’t spit out another error message\!
+    your code and doesn’t spit out another error message!
     
       - P.S. Googling the Error Message may not be a real book, but
         Google will definitely offer up helpful message boards and
@@ -235,7 +244,7 @@ your past self about this course?” Here are some of their answers:
         for Data Science textbook as you read the relevant chapters.
         Practice is the best way to learn programming.
 
-  - Prepare to learn lots about R and RStudio. …And bring coffee\!
+  - Prepare to learn lots about R and RStudio. …And bring coffee!
 
 
 
@@ -290,7 +299,7 @@ The source code for this ebook can be found at this github repository: https://g
 This book is written in **Markdown**, using the [**bookdown**](https://bookdown.org/yihui/bookdown/) package, and published to the web at [bookdown.org](https://bookdown.org/).
 
 
-```{r eval=FALSE}
+```{r bookdown, eval=FALSE}
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
@@ -304,3 +313,4 @@ install.packages("bookdown")
 The course hex image was created using the [{hexSticker} R package](https://github.com/GuangchuangYu/hexSticker) by Guangchuang Yu.
 
 
+***

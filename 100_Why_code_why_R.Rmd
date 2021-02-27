@@ -4,11 +4,18 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 -->
 
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
 
 # (PART) Week 1 {-} 
 
 
 # Why Code? Why R? {#why_code}
+
 
 ## Objectives
 
@@ -66,7 +73,6 @@ At the end of this lesson, learners will be able to:
 
 
 
-
 ### Readings from _R4DS_
 
 Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
@@ -106,7 +112,7 @@ More about tidy data:
 ### Digging deeper into this week's topics
 
 
-#### Opinionated analysis development / reproducible analysis
+#### Opinionated analysis development & reproducible analysis
 
 Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
 
@@ -134,7 +140,6 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 #### R Markdown
 
 [Introduction to literate programming in R](https://remi-daigle.github.io/2017-CHONe-Data/Rmarkdown.nb.html) -- from Data Management Workshop à la CHONe
-
 
 
 
@@ -431,7 +436,6 @@ IDE (interactive development environment)
 
 ![VW Beetle](static/img/VW_ready_to_go.png)
 
-
 ### Languages
 
 
@@ -492,4 +496,4 @@ And spelling matters
 
 
 
--30-
+***
