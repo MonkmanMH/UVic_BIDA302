@@ -97,9 +97,11 @@ RStudio cloud:
 
 Texts:
 
-  - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/). (Free online text.)
+  - Martin Monkman, [_Data Analytics Coding Fundamentals: BIDA302 course book_]() (free online text)
 
-  - J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/). (Free online text.)
+  - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/) (free online text)
+
+  - J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/) (free online text)
 
   - Additional readings will be introduced with each lesson.
 
@@ -174,12 +176,13 @@ Andrew Heiss, Georgia State University)</small>
 
 | Week | Date                    | Topics                                                                                                                                                             | Lesson |
 | ---- | :---------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
-| 1    | 2020-10-24 & 25         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                     |   —    |
-| 2    | 2020-10-31 & 2020-11-01 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
-| 3    | 2020-11-07 & 08         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA                              |   —    |
-| 4    | 2020-11-14 & 15         | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2                                                              |   —    |
-| 5    | 2020-11-21 & 22         | Modeling, forecasting and what-if scenarios (R and Excel) <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks |   —    |
-| 6    | 2020-11-28 & 29         | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges            |   —    |
+| 1    | 2021-03-06 & 07         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                     |   —    |
+| 2    | 2021-03-13 & 14 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
+| 3    | 2021-03-20 & 21         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA                              |   —    |
+| 4    | 2021-03-27 & 28         | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 |   —    |
+| —    | 2021-04-03 & 04         | _NO CLASS_ |   —    |
+| 5    | 2021-04-10 & 11         | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks |   —    |
+| 6    | 2021-04-17 & 18         | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges            |   —    |
 
 #### Concordance: course objective to lesson topics
 
@@ -195,7 +198,7 @@ Andrew Heiss, Georgia State University)</small>
 
 ## Evaluation
 
-### Class participation (marks: 20)
+### Class participation (marks: 10)
 
   - attendance
 
@@ -234,7 +237,7 @@ Andrew Heiss, Georgia State University)</small>
 
   - They are optional.
 
-### Capstone Project (marks: 30)
+### Capstone Project (marks: 40)
 
   - A small project that will require the application of all of the
     concepts introduced
@@ -338,7 +341,7 @@ your past self about this course?” Here are some of their answers:
 
 Congratulations\! You read to the end of the Syllabus.
 
-For a single bonus mark, before 2020-10-28 11:59 PM PDT please email me
+For a single bonus mark, before 2021-03-09 11:59 PM PDT please email me
 the following:
 
   - a picture of a geographic location (a building, streetscape, city

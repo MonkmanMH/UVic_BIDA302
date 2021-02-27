@@ -86,11 +86,11 @@ Concepts and practices that you can carry through to data analysis in other envi
 In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
 
-![R for Data Science](static/img/R4DS_400.png)
+![_R for Data Science_](static/img/R4DS_400.png)
 
 A useful reference book for this course is JD Long & Paul Teetor, _R Cookbook, 2nd edition_. It's also available both as a printed book and online at [rc2e.com/](https://rc2e.com/)
 
-![R Cookbook](static/img/rc2e_500.jpg)
+![_R Cookbook_](static/img/rc2e_500.jpg)
 
 
 Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
@@ -98,9 +98,7 @@ Additional readings and reference material are noted in each section, and includ
 
 ### Code of Conduct {-}
 
-(From the [R Consortium and R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct))
-
-This class,
+The [R Consortium and R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct) serves well for us. This class,
 
 > like the R community as a whole, is made up of members from around the globe with a diverse set of skills, personalities, and experiences. It is through these differences that our community experiences great successes and continued growth.
 
@@ -123,10 +121,7 @@ Please
 
 
 
-### Pep Talk! {-}
-
-
-## Course Philosophy
+## Course Philosophy {-}
 
 Analysis of data helps us make better decisions. And computers have
 accelerated how much data we can analyze.
@@ -176,7 +171,7 @@ Service](https://evalf19.classes.andrewheiss.com/syllabus/#pep-talk),
 Andrew Heiss, Georgia State University)</small>
 
 
-#### On learning a new language
+### On learning a new language {-}
 
 "Smart people ask stupid questions." (Source unknown)
 
@@ -193,27 +188,54 @@ One of the most important developers of R packages (and co-author of our textboo
 
 ### Some advice from people who took BIDA302 before... {-}
 
-People who have previously taken this course were asked, mid-way through their studies, "Imagine that time travel is possible...You have just been transported back four weeks to the day before this course started. What is one thing you would tell your past self about this course?" Here's some of their answers:
+People who have previously taken this course were asked “Imagine that
+time travel is possible…You have just been transported back four weeks
+to the day before this course started. What is one thing you would tell
+your past self about this course?” Here are some of their answers:
 
-* It won’t be as scary as you think it will be.
+  - It won’t be as scary as you think it will be.
 
-* You’ll get better soon.
+  - It is fun\! Keep up\!
 
-* Need to spend more time studying since the class is 6 hours a week, 1-2 hours a week outside class won’t be enough for a dinosaur like me.
+  - You’ll get better soon.
 
-* To do the homework on Saturday after class so you haven’t forgotten everything!
+  - Need to spend more time studying since the class is 6 hours a week,
+    1-2 hours a week outside class won’t be enough for a dinosaur like
+    me.
 
-* **Reading the textbook will help you, use it.**
+  - To do the homework on Saturday\* after class so you haven’t
+    forgotten everything\!
 
-  - Review the data before starting to work with it. It helps to understand what the data is, how it might be used.
+  - **Reading the textbook will help you, use it.**
+    
+      - Review the data before starting to work with it. It helps to
+        understand what the data is, how it might be used.
+    
+      - Review the material in the Saturday\* lesson as you will need it
+        for the assignment.
+    
+      - If you start having to use functions you aren’t familiar with,
+        you’re on the wrong track.
+    
+      - Keep it simple, and then add on as you go.
 
-  - Review the material in the Saturday lesson as you will need it for the assignment.
+  - Be confident in yourself and make sure you read the textbook\!
 
-  - If you start having to use functions you aren’t familiar with, you’re on the wrong track.
+  - The learning curve is the steepest on day one\! Just because you’ve
+    never programmed before doesn’t mean you are a lost cause and won’t
+    be able to succeed. Take a deep breath, experiment, and revel in the
+    feeling of satisfaction and accomplishment when R finally executes
+    your code and doesn’t spit out another error message\!
+    
+      - P.S. Googling the Error Message may not be a real book, but
+        Google will definitely offer up helpful message boards and
+        YouTube tutorials from friendly members of the R community.
+    
+      - P.P.S. Start an R Notebook and work out the problems in the R
+        for Data Science textbook as you read the relevant chapters.
+        Practice is the best way to learn programming.
 
-  - Keep it simple, and then add on as you go.
-
-* Prepare to learn lots about R and RStudio. …And bring coffee!
+  - Prepare to learn lots about R and RStudio. …And bring coffee\!
 
 
 
@@ -237,13 +259,14 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
   
   - using R since 2012
 
-* My coding started writing FORTRAN on punch cards
+* My coding started writing [FORTRAN](https://en.wikipedia.org/wiki/Fortran) on [punch cards](https://en.wikipedia.org/wiki/Punched_card)
 
   - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it"
   
   - In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
 
-![computer punch card](static/img/ibm-80-column-punched-card1.jpg)]
+![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)]
+
 
 
 
