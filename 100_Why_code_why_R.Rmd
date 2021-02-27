@@ -1,20 +1,10 @@
-<!-- 
-This file by Martin Monkman 
-is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
--->
-
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-```
-
-
 # (PART) Week 1 {-} 
 
 
-# Why Code? Why R? {#why_code}
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/   -->
+
+
+# Why Code Why R {#why_code}
 
 
 ## Objectives
@@ -59,14 +49,14 @@ At the end of this lesson, learners will be able to:
 [R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
 
 
-##### `{dplyr}` .
+##### dplyr .
 
 [{dplyr} reference at tidyverse.org](https://dplyr.tidyverse.org/)
 
 [Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
 
 
-##### `{tidyr}` .
+##### tidyr .
 
 [{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
 
@@ -352,7 +342,7 @@ Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://
 ## An analogy
 
 
-### 1. Base R
+### Base R
 
 * a data science / statistics programming language
 
@@ -363,7 +353,7 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 ![VW Beetle frame](static/img/VW_ad_1_crop_2.png)
 
-### 2. packages
+### Packages
 
 Packages extend the functionality of R
 
@@ -400,7 +390,7 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 
 
-### 3. RStudio
+### RStudio
 
 
 ![RStudio logo](static/img/RStudio_400.png)
@@ -494,6 +484,6 @@ And spelling matters
 [Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
 
 
-
-
 ***
+
+
