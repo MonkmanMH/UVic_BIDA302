@@ -5,16 +5,20 @@ Martin Monkman
 
 # Data Analytics & Coding Fundamentals: BIDA302
 
-October 24–November 29, 2020
+March 6–April 18, 2021 (no class April 3 & 4)
 
-9:00 am–12:00 pm
+* Saturday and Sunday, 9:00 am–12:00 pm Pacific
 
-Classes will be held via Zoom meeting
+* NOTE: Daylight Savings Time will happen between the Saturday, March 13 and Sunday March 14 class!
 
-  - Sign in via [uvic.zoom.us](https://uvic.zoom.us/) using your UVic
+
+Classes will be held via Zoom meeting.
+
+  - Step 1: Sign in via [uvic.zoom.us](https://uvic.zoom.us/) using your UVic
     Netlink ID
 
-  - [Zoom meeting link](https://uvic.zoom.us/j/94775748954)
+  - Step 2: [Zoom meeting link](https://uvic.zoom.us/j/94775748954)
+
 
 ## Prerequisites
 
@@ -22,11 +26,7 @@ None.
 
 ## Course description
 
-In this course you will develop the ability to script and code for basic
-tasks in Data Analytics in common data analytic tools such as R, Python,
-and Excel. This will allow you to import and export data appropriately
-and perform fundamental data manipulations and to automate basic
-analysis elements.
+This course will explore the fundamentals of coding and scripting for Data Analytics. You will develop the ability to script and code for basic tasks in Data Analytics in common data analytic tools such as R, Python, and Excel. This will allow you to import and export data appropriately and perform fundamental data manipulations and to automate basic analysis elements.
 
 ### Learning objectives
 
@@ -52,6 +52,7 @@ By the end of this course, you should be able to:
 
   - Create what-if scenarios
 
+
 ## Instructor
 
 Martin Monkman
@@ -63,6 +64,7 @@ virtual (zoom) office hours:
   - Tuesday, 8:00 pm - 9:00 pm
 
   - or by appointment (send me an email)
+
 
 ## Course content
 
