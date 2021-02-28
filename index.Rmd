@@ -274,9 +274,7 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 
 * My coding started writing [FORTRAN](https://en.wikipedia.org/wiki/Fortran) on [punch cards](https://en.wikipedia.org/wiki/Punched_card)
 
-  - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it"
-  
-  - In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path
+  - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it". In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path.
 
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)]
 

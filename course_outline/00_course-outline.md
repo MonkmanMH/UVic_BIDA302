@@ -87,17 +87,18 @@ Moodle:
 
 RStudio cloud:
 
-  - This course uses rstudio.cloud
+  - This course uses rstudio.cloud, the web browser implementation of R and RStudio. You can access this through any current web browser. 
 
-  - To access the course site, please click this link: [rstudio.cloud:
-    BIDA302\_2020\_fall]() **TBD**
+  - The link to the class space will be provided separately.
 
   - You will need to create an account (if you don’t have one already)
-    when you initially log in
+    when you initially log in. Sign up for a free account here:  https://rstudio.cloud/plans/free
+    
+  - NOTE: you do not need to install R or RStudio on your computer for this course.
 
 Texts:
 
-  - Martin Monkman, [_Data Analytics Coding Fundamentals: BIDA302 course book_]() (free online text)
+  - Martin Monkman, [_Data Analytics Coding Fundamentals: BIDA302 course book_](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) (free online text)
 
   - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/) (free online text)
 

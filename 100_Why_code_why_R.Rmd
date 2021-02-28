@@ -94,7 +94,7 @@ Here's an insight into how the work on a data analysis project looks in real lif
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every scientific project will be redone in its entirety about 10-20 times from start to publication. Plan your work flow accordingly, e.g. a piece of R code that takes a data file and produces the analysis and figure/s. Change the data? Just rerun the code.</p>&mdash; Trevor A. Branch (\@TrevorABranch) <a href="https://twitter.com/TrevorABranch/status/1157006269292507136?ref_src=twsrc%5Etfw">August 1, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-In the work that I do in my day job, we are often producing monthly and quarterly reports. The reports look more or less like the previous edition—we update the data, create new summary tables and charts, and sometimes add new text elements. Every month, the steps are the same: a lot of point-and-click copy-and-paste drag-and-drop work to download the data, update the tables, calculate the new summary tables, change the charts, and then hit "print". We the humans had to do all of those steps before; now we have written some code, it streamlines our workflow.
+In many work places, someone (it might be a data analyst or financial analyst) is often producing monthly and quarterly reports. The reports look more or less like the previous edition—the data is updated, and the job is to create new summary tables and charts, and sometimes add new text elements. If you are using a GUI (Graphical User Interface) program like Microsoft Excel, every time the data is updated, the steps are the same: a lot of point-and-click copy-and-paste drag-and-drop work to download the data, update the tables, calculate the new summary tables, change the charts, and then hit "print". A human has to do all of those steps; but if we can write some code, it will streamline our workflow.
 
 Here's an example:
 
@@ -133,7 +133,7 @@ Another part of the R community is the proliferation of hexagonal laptop sticker
 
 
 
-#### Workflow and functionality: 1
+#### Workflow and functionality
 
 For one of my projects, the workflow used to look something like this:
 
@@ -152,39 +152,39 @@ It now looks like this:
 
 #### Collaboration
 
-Your code (and additional recordkeeping with your code) helps explain your work to others
+Your code (and additional recordkeeping with your code) helps explain your work to others.
 
 > In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you.
 —Hadley Wickham (source: [Roel M. Hogervorst](https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/)
 
+![_unfinished work_](static/img/unfinished_work_400.png)
 
-Further Reading:
+But you will also want or need to collaborate with other people. With more remote working, we have the ability to create working relationships with people around the world. A point-and-click approach to data analysis does not facilitate this...but the code you write will be a key element in having a successful collaboration.
 
-Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
-
-
-
-![R logo](static/img/R.jpg)
 
 ***
 
-## An analogy
 
+
+## R: An analogy
+
+![R logo](static/img/R.jpg)
 
 ### Base R
 
-* a data science / statistics programming language
+R is a data science / statistics programming language. Because it developed as a data analysis and statistical tool, unlike many other open-source programming languages, it has built-in analytic and statistical functions, and the data structures are designed for data analysis.
 
-* built-in analytic and statistical functions
+In this analogy, base R is like the engine and frame of a car & basic controls like the pedals and steering wheel.
 
+![_VW Beetle frame_](static/img/VW_ad_1_crop_2.png)
 
-Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
-
-![VW Beetle frame](static/img/VW_ad_1_crop_2.png)
+We can get from Point A to Point B, but it isn't going to be a very comfortable ride.
 
 ### Packages
 
-Packages extend the functionality of R
+Packages extend the functionality of R. Each package does a rather limited number of things, so we sometimes find ourselves using many packages for a data analysis project.
+
+R packages might focus on:
 
 * data wrangling & cleaning
 
@@ -192,21 +192,19 @@ Packages extend the functionality of R
 
 * data visualization
 
-* data
+* data (that is, they contain datasets, and make it easy to access the data)
 
 
-...the packages are the other things that enhance the car's functions
+In the car analogy, the packages are the other things that enhance the car's functions
 
 * the body, windshield, headlights, A/C, sound system, etc
 
 
-![VW Beetle transparent](static/img/vwlooking.jpg)
+![_VW Beetle transparent_](static/img/vwlooking.jpg)
 
+The ride will be much more comfortable, and we might even be able to go places that base R can't venture.
 
-#### The Tidyverse
-
-
-![tidyverse hex](static/img/tidyverse_400.png)
+![tidyverse hex](static/img_tidyverse/tidyverse_400.png)
 
 
 
@@ -222,38 +220,38 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 ### RStudio
 
 
-![RStudio logo](static/img/RStudio_400.png)
+![RStudio logo](static/img_tidyverse/RStudio_400.png)
 
 
-IDE (interactive development environment)
+RStudio is an IDE (interactive development environment).
 
 * we will be using the cloud (internet) version of the IDE
 
+
+Note:
+
 * "RStudio" is also the company that developed and supports the IDE
 
-* and RStudio is active creating and supporting packages, including many of the tidyverse packages
+* and RStudio the company is active creating and supporting packages, including many of the tidyverse packages
 
 
+In our car analogy, RStudio is the dashboard and controls
+
+![_VW Beetle dashboard, c.1960_](static/img/VW_dashboard.jpg)
+
+That's rather old-fashioned and rudimentary. In reality, RStudio is very modern, customizable, and has an _enormous_ number of features. So it's more like this:
+
+![_VW Beetle dashboard, c.2018_](static/img/VW_dashboard_2019.jpg)
 
 
-...and RStudio is the dashboard and controls
+And because it's customizable, you can opt for different colour schemes, including dark mode!
 
-![VW Beetle dashboard](static/img/VW_dashboard.jpg)
-
-
-(more like this)
-
-![VW Beetle dashboard](static/img/VW_dashboard_2019.jpg)
+![_VW Beetle dashboard, black, c.2018_](static/img/2018_volkswagen_beetle_dashboard.jpg)
 
 
-(or dark mode!)
+Who's ready for a road trip?!
 
-![VW Beetle dashboard, black](static/img/2018_volkswagen_beetle_dashboard.jpg)
-
-
-#### Who's ready for a road trip?!
-
-![VW Beetle](static/img/VW_ready_to_go.png)
+![_VW Beetle with family_](static/img/VW_ready_to_go.png)
 
 ### Languages
 
