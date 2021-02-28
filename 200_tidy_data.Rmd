@@ -25,5 +25,56 @@ options(width = 100, dplyr.width = 100)
 
 
 
+##### tidyr .
+
+[{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
+
+
+
+
+### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [4. Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [5. Data Transformation](https://r4ds.had.co.nz/transform.html)
+
+* [6. Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+
+* [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+
+* [12. Tidy data](https://r4ds.had.co.nz/tidy-data.html), sections 12.1 to 12.3
+
+
+
+
+#### Tidy data
+
+More about tidy data:
+
+["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+
+
+
+[Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
+
+* this article uses the old {tidyr} `gather()` and `spread()` functions instead of `pivot_longer()` and `pivot_wider()`, but it's got some good material on how to think about how and why data needs to be reshaped.
+
+
+
+Julia Lowndes and Allison Horst, [Tidy data for efficiency, reproducibility, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/)
+
+* in google slide version: ["Make friends with tidy data"](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
+
+Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
+
+Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
+
+[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
+
+[Data organization with spreadsheets](https://remi-daigle.github.io/2017-CHONe-Data/organization.nb.html) -- from Data Management Workshop à la CHONe
+
+
 
 

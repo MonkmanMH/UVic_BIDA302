@@ -41,8 +41,7 @@ In this section, we will begin to work with all three transformations.
 
 ### Reading
 
-* [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html)
-
+Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
 
 ## Part 1: `{dplyr}` -
@@ -51,12 +50,13 @@ In this section, we will begin to work with all three transformations.
 ![dplyr hex](static/img/dplyr_400.png)
 
 
-> The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
+> The [{dplyr} reference site](https://dplyr.tidyverse.org/index.html)
+
+> [Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
 
 
 ***
 
-> Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
 When working with data, particularly large data sets, you encounter a situation where you need to: 
 

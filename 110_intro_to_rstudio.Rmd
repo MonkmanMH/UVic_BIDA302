@@ -1,0 +1,57 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+-->
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+# Introduction to R and RStudio {#rstudio}
+
+
+```{r echo = FALSE}
+
+library(tidyverse)
+library(gapminder)
+```
+
+
+#### Installing R on your own computer
+
+For this course, we will be using the web browser implementation of R and RStudio, "rstudio.cloud". You can access this through any current web browser. Sign up for a free account here:  https://rstudio.cloud/plans/free
+
+The link to the class space will be provided separately.
+
+
+If you do decide to install R and RStudio on your own computer, follow the instructions provided here: [_R Cookbook, 2nd ed._](https://rc2e.com/gettingstarted#recipe-id001)
+
+* 1.1 Downloading and Installing R
+
+* 1.2 Installing RStudio
+
+* 1.3 Starting RStudio
+
+
+#### Packages
+
+##### R Markdown
+
+[R Markdown reference at RStudio](https://rmarkdown.rstudio.com/docs/)
+
+[R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
+
+
+#### R Markdown
+
+[Introduction to literate programming in R](https://remi-daigle.github.io/2017-CHONe-Data/Rmarkdown.nb.html) -- from Data Management Workshop à la CHONe
+
+
+
+

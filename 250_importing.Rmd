@@ -23,4 +23,14 @@ library(gapminder)
 ### Reading
 
 
+### Getting ready for next week
+
+
+#### Readings from _R4DS_
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [11. Data import](https://r4ds.had.co.nz/data-import.html)
+
+
 

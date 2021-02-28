@@ -4,7 +4,7 @@
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/   -->
 
 
-# Why Code Why R {#why_code}
+# Why Code? Why R? {#why_code}
 
 
 ## Objectives
@@ -29,153 +29,6 @@ At the end of this lesson, learners will be able to:
 * [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
 
 
-#### Installing R on your own computer
-
-[_R Cookbook, 2nd ed._](https://rc2e.com/gettingstarted#recipe-id001)
-
-* 1.1 Downloading and Installing R
-
-* 1.2 Installing RStudio
-
-* 1.3 Starting RStudio
-
-
-#### Packages
-
-##### R Markdown
-
-[R Markdown reference at RStudio](https://rmarkdown.rstudio.com/docs/)
-
-[R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) (PDF file)
-
-
-##### dplyr .
-
-[{dplyr} reference at tidyverse.org](https://dplyr.tidyverse.org/)
-
-[Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
-
-
-##### tidyr .
-
-[{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
-
-
-
-
-### Readings from _R4DS_
-
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* [4. Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
-
-* [5. Data Transformation](https://r4ds.had.co.nz/transform.html)
-
-* [6. Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
-
-* [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
-
-* [12. Tidy data](https://r4ds.had.co.nz/tidy-data.html), sections 12.1 to 12.3
-
-
-### Other required reading
-
-The BIDA302 [Course Outline](https://distance.moodle.uvcs.uvic.ca/pluginfile.php/224076/mod_resource/content/2/BIDA302_course-outline_2020-10-23.html)
-
-
-
-#### Tidy data
-
-More about tidy data:
-
-["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
-
-
-
-[Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
-
-* this article uses the old {tidyr} `gather()` and `spread()` functions instead of `pivot_longer()` and `pivot_wider()`, but it's got some good material on how to think about how and why data needs to be reshaped.
-
-
-
-
-### Digging deeper into this week's topics
-
-
-#### Opinionated analysis development & reproducible analysis
-
-Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
-
-[The reproducible workflow](https://remi-daigle.github.io/2017-CHONe-Data/cleaning.nb.html) -- from Data Management Workshop à la CHONe
-
-Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
-
-
-#### Why R?
-
-Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
-
-- [Chapter 1.3, "Why is R so great?"](https://bookdown.org/ndphillips/YaRrr/why-is-r-so-great.html)
-
-- [Chapter 2, "Getting Started"](https://bookdown.org/ndphillips/YaRrr/started.html) provides a good summary of R, RStudio, and packages
-
-"History and Overview of R", Chapter 2 in Roger Peng, 2019-12-22, [_R Programming for Data Science_](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html)
-
-Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichotomize.com/2017/09/28/r-release-names/)
-
-- [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
-
-
-
-#### R Markdown
-
-[Introduction to literate programming in R](https://remi-daigle.github.io/2017-CHONe-Data/Rmarkdown.nb.html) -- from Data Management Workshop à la CHONe
-
-
-
-### Getting ready for next week
-
-
-#### Readings from _R4DS_
-
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* [5. Data Transformation](https://r4ds.had.co.nz/transform.html) -- 5.2.3, Missing Values
-
-* [11. Data import](https://r4ds.had.co.nz/data-import.html)
-
-
-
-#### Tidy data
-
-Julia Lowndes and Allison Horst, [Tidy data for efficiency, reproducibility, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/)
-
-* in google slide version: ["Make friends with tidy data"](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
-
-Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
-
-Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989), _The American Statistician_ 72 (1): 2–10.
-
-[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
-
-[Data organization with spreadsheets](https://remi-daigle.github.io/2017-CHONe-Data/organization.nb.html) -- from Data Management Workshop à la CHONe
-
-
-#### Thinking about your capstone project
-
-Gapminder data -- Hans Rosling
-
-* [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en) -- this is the video we watched in class
-
-* [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/) -- recreating the chart in this video is one of the capstone project options
-
-
-Stephanie Hazlitt's fence, 2019-02-10 - [Weather with weathercan 🇨🇦](https://github.com/stephhazlitt/some-assembly-required/blob/master/R/fence/fence.md)
-
-* https://twitter.com/stephhazlitt/status/1099904166124605441?s=20
-
-* https://twitter.com/stephhazlitt/status/1101721399243112449?s=20
-
 
 
 ### Approaching data analysis
@@ -190,8 +43,15 @@ _R4DS_
 >
 > 3. Use what you learn to refine your questions and/or generate new questions.
 
+
 Cole Nussbaumer Knaflic, [_Storytelling with Data: A Data Visualization Guide for Business Professionals_](http://www.storytellingwithdata.com/books) (2015, Wiley)--this book is focussed on data visualization, but "the data visualization is always in the service of making a point about what the data tell us. In the context of business, this then translates into influencing decisions. The chapter “Lessons in storytelling” falls almost exactly in the middle of the book; after we’ve been introduced to the principles of making good data visualizations, Nussbaumer Knaflic gives us a way to think about the purpose of the visualization. With all of the pieces in place, the remainder of the book is focussed on the applications of storytelling with data."
 
+
+Gapminder data -- Hans Rosling
+
+* [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en) -- this is the video that introduced me to Hans Rosling.
+
+* [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/) -- recreating the chart in this video is one of the capstone project options
 
 
 
@@ -201,18 +61,12 @@ Cole Nussbaumer Knaflic, [_Storytelling with Data: A Data Visualization Guide fo
 
 Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
-### Data science
-
 Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
 
 
 ![_Drew Conway data science Venn diagram_](static/img/Data_Science_VD.png)
 
 
-
-
-
-### The data science process
 
 In this course, we will use the term "data science" to describe the use of a computer programming language to do data analysis. In this use, a data scientist is someone who applies subject matter expertise, foundational statistical knowledge, and some pragmatic programming skills to a data analysis problem. [@Monkman_bird_2019]
 
@@ -237,16 +91,6 @@ The emphasis in this course will be on analytic methods, coding concepts, and pr
 
 By the end of this course, you will see the relationship between the raw data that you will import and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation. 
 
-
-### Reproducible workflow
-
-In the paper “Opinionated Analysis Development” [@Parker_2017], Hilary Parker makes the case for coding your data analysis so that it is:
-
-* Reproducible and Auditable
-
-* Accurate
-
-* Collaborative 
 
 In his presentation "Reproducible Data Science with R" [@Smith_reproducible_2017], David Smith says that no matter what tool or language you are using, a reproducible process
 
@@ -282,9 +126,9 @@ It goes without saying that data science is an expansive subject area. A key too
 
 Proprietary tools (including statistical programs like SAS, SPSS, and Stata) have had a one-version-at-a-time approach to development and release. With each release, many new features are added, extending the functionality. These releases are scheduled big events; as one example, SAS has been releasing version updates roughly once a year since 2010.
 
-The open source nature of R and its package-centric ecosystem has encouraged the expansion of functionality, and like the universe as a whole, this expansion is in all directions simultaneously and non-stop. There are no annual updates with the latest bells and whistles—it sometimes seems that every day brings news that additional features are being applied to existing R packages, and new packages are being released.
+The open source nature of R and its package-centric ecosystem has encouraged the expansion of functionality, and like the expansion of the universe as a whole, the expansion of the R universe is in all directions simultaneously and non-stop. There isn't just one annual updates with the latest bells and whistles—it sometimes seems that every day brings news that additional features are being applied to existing R packages, and new packages are being released.
 
-This "bazaar"[@Raymond_CatB] of development makes it impossible to be an expert on all things R, and that paper-based text books may be out-of-date before they get to the presses. More importantly, it also means that somebody somewhere may have already found a creative solution to the problem you've just encountered.
+This "bazaar"[@Raymond_CatB] of development makes it impossible to be an expert on all things R, and that paper-based text books may be out-of-date before they get to the presses. More importantly, it also means that somebody somewhere may have already found a creative solution to the data analysis problem you've just encountered.
 
 This is where the R community really shines. The spirit of the bazaar extends to open data, open science, open research, and open development. Your friends in the R community around the world are making their tools and techniques available, and are using social media channels to tell one another about it, which spurs on collaboration and futher innovations, in a never-ending virtuous cycle.
 
@@ -293,10 +137,7 @@ This is where the R community really shines. The spirit of the bazaar extends to
 ![_Code Hero: image by [Allison Horst_](https://github.com/allisonhorst/stats-illustrations)](static/img/code_hero_rstats_600.png)
 
 
-
-
-#### Hex stickers!
-
+Another part of the R community is the proliferation of hexagonal laptop stickers, which fit neatly together and give a visual signal to other members of the R community.
 
 ![_Martin's laptop, October 2020_](static/img/Martin_laptop.jpg)
 
@@ -436,28 +277,33 @@ IDE (interactive development environment)
 
 
 
-#### Your mind is flexible...
+Your mind is flexible...
 
 
 > Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
 
-#### ...but computers are literal
+...but computers are literal. Accuracy matters.
 
-Accuracy matters
 
 ![Hadley Wickham tweet](static/img/Hadley_5minutes_2019-10-27.jpg)
 
 
-And spelling matters
+And spelling also matters.
 
 ![Kara Woo tweet](static/img/Kara_5minutes_2019-10-27.jpg)
 
-...and in R, so does case
+...and in R, so does upper and lower case. There are all different:
+
+* "word"
+
+* "Word"
+
+* "WORD".
 
 
 
 
-#### Getting help
+**Getting help**
 
 * RStudio: built-in help: `?<function_name>`
 
@@ -465,9 +311,7 @@ And spelling matters
 
 * Package vignettes
 
-
-
-#### And for future reference...
+**And for future reference...**
 
 * RStudio Community: https://community.rstudio.com/ 
 
@@ -482,6 +326,36 @@ And spelling matters
 ## Exercise: Introduction to R
 
 [Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
+
+
+***
+
+## Digging deeper into this week's topics
+
+
+#### Opinionated analysis development & reproducible analysis
+
+Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
+
+[The reproducible workflow](https://remi-daigle.github.io/2017-CHONe-Data/cleaning.nb.html) -- from Data Management Workshop à la CHONe
+
+Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
+
+
+#### Why R?
+
+Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
+
+- [Chapter 1.3, "Why is R so great?"](https://bookdown.org/ndphillips/YaRrr/why-is-r-so-great.html)
+
+- [Chapter 2, "Getting Started"](https://bookdown.org/ndphillips/YaRrr/started.html) provides a good summary of R, RStudio, and packages
+
+"History and Overview of R", Chapter 2 in Roger Peng, 2019-12-22, [_R Programming for Data Science_](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html)
+
+Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichotomize.com/2017/09/28/r-release-names/)
+
+- [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
+
 
 
 ***
