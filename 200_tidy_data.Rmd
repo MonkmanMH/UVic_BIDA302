@@ -77,4 +77,109 @@ Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/
 
 
 
+## Part 2 - `{tidyr}` -
+
+
+![tidyr hex](static/img/tidyr_400.png)
+
+The [{tidyr} site](https://tidyr.tidyverse.org/)
+
+
+
+Slide deck:
+
+Julie Lowndes & Allison Horst, [Make friends with tidy data](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
+
+
+
+
+A pivot table crosstab using the {mpg} data package of automobile fuel economy.
+
+First, a look at the source table.
+
+
+
+
+
+Using `group_by` and `summarise` to create a summary table of the average engine displacement:
+
+```{r}
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+
+
+Now do the same with vehicle class and number of cylinders:
+
+```{r}
+
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(mean = mean(displ)) %>%
+  arrange(desc(mean))
+
+class_by_cyl
+
+```
+
+
+
+
+What happens if you reverse the order of the grouping variables?
+
+
+
+Create a pivot (crosstab) table with class by number of cylinders:
+
+
+using `pivot_wider()`
+
+```{r}
+class_by_cyl_pivot <- class_by_cyl %>%
+  pivot_wider(names_from = cyl, values_from = mean)
+
+
+class_by_cyl_pivot
+```
+
+
+
+### and back to longer...
+
+```{r}
+
+class_by_cyl_pivot %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "mean")
+
+```
+
+
+
+
+Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
+
+The older {tidyr} functions that do the same thing: `spread()` and `gather()`.
+
+For example, `spread()` to replicate the `pivot_wider()` function:
+
+```{r}
+
+class_by_cyl %>%
+  spread(cyl, value = mean)
+
+```
+
+
+
+More about tidy data:
+
+* ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_.
+
+* ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+
+
+
 

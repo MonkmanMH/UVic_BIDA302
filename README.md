@@ -30,3 +30,11 @@ The [capstone projects for BIDA302 get their own repo](https://github.com/Monkma
 
 2019.1.x -- offered 2019, fall (2019-11-02 to 2019-12-07)
 
+
+## Course book
+
+[add link]
+
+```
+bookdown::publish_book(name = "DataAnalyticsCodingFundamentals", account = "martin_monkman")
+```

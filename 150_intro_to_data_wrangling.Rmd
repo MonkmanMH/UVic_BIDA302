@@ -3,7 +3,7 @@ This file by Martin Monkman
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 
-The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+The tables of functions are modified from originals by Gina Reynolds, [Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
 
 -->
 
@@ -44,18 +44,27 @@ In this section, we will begin to work with all three transformations.
 Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
 
-## Part 1: `{dplyr}` -
+For this section, and for other exercises throughout this course, we will be using a subset of the Gapminder data. These data tables contain information about the countries of the world, and were used by Hans Rosling to explain that there have been significant changes in the quality of people's lives around the world.
+
+* [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en)— this is the video that introduced me to Hans Rosling.
+
+* [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)—recreating the chart in this video is one of the capstone project options
+
+* It's outside the scope of this course, but I also recommend Rosling's book _Factfulness_[@Rosling_2018], which goes deeper into the changes in the world and how data explains those changes.
 
 
-![dplyr hex](static/img/dplyr_400.png)
+
+
+## `{dplyr}` -
+
+
+![dplyr hex](static/img_tidyverse/dplyr.png){width=250, height=250}
 
 
 > The [{dplyr} reference site](https://dplyr.tidyverse.org/index.html)
 
 > [Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) (PDF file)
 
-
-***
 
 
 When working with data, particularly large data sets, you encounter a situation where you need to: 
@@ -95,7 +104,7 @@ In addition to these functions, R has a number of operators that add significant
 | / | *division* |
 | ^ | *exponential* |
 
-<P>
+
 
 **Boolean operators** are a special type of operator that return TRUE or FALSE.  
 
@@ -107,7 +116,7 @@ In addition to these functions, R has a number of operators that add significant
 | <     | *less than, tests less than* (also <=) |
 | %in%  | *contains, tests inclusion* |
 
-<P>
+
 
 Boolean operators can be combined with *and* or *or*.  
 
@@ -122,7 +131,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-### Introducing the pipe operator ` %>% `
+## Introducing the pipe operator ` %>% `
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
@@ -143,7 +152,7 @@ If we want to do anything with the output from the first statement, we have to a
 As we get to increasingly complex statements, the power of this will become more evident.
 
 
-### Creating lists
+## Creating lists
 
 R allows us to create lists using the `c()` function.
 
@@ -192,7 +201,7 @@ gapminder %>%
 
 
 
-## {dplyr} functions are verbs
+### {dplyr} functions are verbs
 
 
 |function |action |
@@ -210,7 +219,7 @@ gapminder %>%
 
 
 
-## Arithmetic operators
+### Arithmetic operators
 
 | Operator | Description |
 | : -- | : |
@@ -220,14 +229,9 @@ gapminder %>%
 | / | *division* |
 | ^ | *exponential* |
 
-???
-
-Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
 
 
-
-
-## Boolean operators
+### Boolean operators
 
 Boolean operators are a special type of operator that return TRUE or FALSE.  
 
@@ -239,10 +243,6 @@ Boolean operators are a special type of operator that return TRUE or FALSE.
 | <     | *less than, tests less than* (also <=) |
 | %in%  | *contains, tests inclusion* |
 
-
-???
-
-Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
 
 
 
@@ -260,7 +260,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-## Useful functions
+### Useful functions
 
 Some basic statistical functions  
 
@@ -361,115 +361,9 @@ summary(mpg$hwy)
 
 
 
-## Part 2 - `{tidyr}` -
-
-
-![tidyr hex](static/img/tidyr_400.png)
-
-The [{tidyr} site](https://tidyr.tidyverse.org/)
-
-
-
-Slide deck:
-
-Julie Lowndes & Allison Horst, [Make friends with tidy data](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
-
-
-
-
-A pivot table crosstab using the {mpg} data package of automobile fuel economy.
-
-First, a look at the source table.
-
-
-
-
-
-Using `group_by` and `summarise` to create a summary table of the average engine displacement:
-
-```{r}
-mpg %>%                                
-  group_by(class) %>%                   
-  summarise(displ_mean = mean(displ)) 
-
-```
-
-
-
-Now do the same with vehicle class and number of cylinders:
-
-```{r}
-
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(mean = mean(displ)) %>%
-  arrange(desc(mean))
-
-class_by_cyl
-
-```
-
-
-
-
-What happens if you reverse the order of the grouping variables?
-
-
-
-Create a pivot (crosstab) table with class by number of cylinders:
-
-
-using `pivot_wider()`
-
-```{r}
-class_by_cyl_pivot <- class_by_cyl %>%
-  pivot_wider(names_from = cyl, values_from = mean)
-
-
-class_by_cyl_pivot
-```
-
-
-
-### and back to longer...
-
-```{r}
-
-class_by_cyl_pivot %>%
-  pivot_longer(-class, names_to = "cyl", values_to = "mean")
-
-```
-
-
-
-
-Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
-
-The older {tidyr} functions that do the same thing: `spread()` and `gather()`.
-
-For example, `spread()` to replicate the `pivot_wider()` function:
-
-```{r}
-
-class_by_cyl %>%
-  spread(cyl, value = mean)
-
-```
-
-
-
-More about tidy data:
-
-* ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_.
-
-* ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
-
-
-
 
 ## Manipulate variables 
 
-(back to {dplyr})
 
 You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
 
@@ -601,25 +495,3 @@ quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
 
 
 -30-
-
-## Data wrangling
-
-Data is abundant, and as data analysts we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data.^["Data cleaning" is a whole other thing—we will encounter that later.] 
-
-There are three broad categories of data transformation:
-
-- altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table, including calculation of new variables, or importation of additional rows (observations) and joining two tables together.
-
-- summarizing the content of the source data tables. For example, if our data table has the population of all the countries in the world, we might want a summary table that has the table with the total for each continent.
-
-- with both our existing data or our summary tables, we may want it in a different layout, either for analysis purposes or to make it easier for human readers to absorb the information.
-
-In this section, we will begin to work with all three transformations.
-
-
-### Reading
-
-* [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html)
-
-
-
