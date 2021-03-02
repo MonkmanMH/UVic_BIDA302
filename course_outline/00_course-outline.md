@@ -1,7 +1,16 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+
 BIDA302: Course Outline
 ================
 Martin Monkman
-`r Sys.Date()`
+
+Latest revision: 2021-03-01
+
+
 
 # Data Analytics & Coding Fundamentals: BIDA302
 
@@ -9,7 +18,7 @@ March 6–April 18, 2021 (no class April 3 & 4)
 
 * Saturday and Sunday, 9:00 am–12:00 pm Pacific
 
-* NOTE: Daylight Savings Time will happen between the Saturday, March 13 and Sunday March 14 class!
+* NOTE: Daylight Savings Time will happen between the Saturday, March 13 and Sunday March 14 class! Remember to set your clock one hour ahead.
 
 
 Classes will be held via Zoom meeting.
@@ -177,9 +186,9 @@ Andrew Heiss, Georgia State University)</small>
 
 | Week | Date                    | Topics                                                                                                                                                             | Lesson |
 | ---- | :---------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
-| 1    | 2021-03-06 & 07         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                     |   —    |
-| 2    | 2021-03-13 & 14 | Good coding habits <br> Tidy data <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
-| 3    | 2021-03-20 & 21         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data <br> Excel: macros and VBA                              |   —    |
+| 1    | 2021-03-06 & 07         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                      |   —    |
+| 2    | 2021-03-13 & 14 |  Tidy data <br> Good coding habits <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
+| 3    | 2021-03-20 & 21         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data                               |   —    |
 | 4    | 2021-03-27 & 28         | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 |   —    |
 | —    | 2021-04-03 & 04         | _NO CLASS_ |   —    |
 | 5    | 2021-04-10 & 11         | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks |   —    |

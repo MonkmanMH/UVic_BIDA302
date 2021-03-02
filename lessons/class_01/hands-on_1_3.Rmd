@@ -1,5 +1,5 @@
 ---
-title: "Transform Data 3: pivot"
+title: "Transform Data 3: pivot to reshape"
 output: html_notebook
 ---
 

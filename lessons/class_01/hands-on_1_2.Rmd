@@ -1,5 +1,5 @@
 ---
-title: "Transform Data 2: summarize"
+title: "Transform Data 2: summarize groups"
 output: html_notebook
 ---
 

@@ -80,7 +80,7 @@ Karl Broman and Kara Woo, ["Data organization in spreadsheets"](https://doi.org/
 ## Part 2 - `{tidyr}` -
 
 
-![tidyr hex](static/img/tidyr_400.png)
+![tidyr hex](static/tidyverse_400.png/tidyr_400.png)
 
 The [{tidyr} site](https://tidyr.tidyverse.org/)
 

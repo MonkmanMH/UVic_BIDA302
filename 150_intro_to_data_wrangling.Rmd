@@ -81,7 +81,7 @@ To achieve these three goals, we will be using functions from the tidyverse pack
 
 
 |function |action |
-| : | : |
+| :-- | :-- |
 | `filter()`    | *keep rows*|
 | `select()`    | *keep variables (or drop them -var)*|
 | `mutate()`    | *create a new variable*|
@@ -97,7 +97,7 @@ In addition to these functions, R has a number of operators that add significant
 **Arithmetic operators**
 
 | Operator | Description |
-| : | : |
+| :-- | :-- |
 | + | *plus* |
 | - | *minus* |
 | \* | *multiplication*  |
@@ -109,7 +109,7 @@ In addition to these functions, R has a number of operators that add significant
 **Boolean operators** are a special type of operator that return TRUE or FALSE.  
 
 | Operator | Description |
-| : | : |
+| :-- | :-- |
 | ==    | *equal, tests equality* |
 | !=    | *not equal, tests inequality* |
 | \>    | *greater than, tests greater than* (also >=) |
@@ -121,7 +121,7 @@ In addition to these functions, R has a number of operators that add significant
 Boolean operators can be combined with *and* or *or*.  
 
 | Operator | Description |
-| : | : |
+| :-- | :-- |
 | `&`     | *and, returns true if preceding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceding and following are true, else false* |
 
@@ -139,11 +139,11 @@ The pipe operator ` %>% ` allows us to name the data frame first, and then have 
 
 For example, we could write
 
-`function(data, arg)` 
+`function(data, argument)` 
 
 or, with a pipe
 
-`data %>% function(arg)` 
+`data %>% function(argument)` 
 
 Read the pipe symbol as "then".  We start with our data, _then_ we apply the function.
 
@@ -205,7 +205,7 @@ gapminder %>%
 
 
 |function |action |
-| : | : |
+| :-- | :-- |
 | `filter()`    | *keep rows*|
 | `mutate()`    | *create a new variable*|
 | `group_by()`  | *declare subsets in data*|
@@ -222,7 +222,7 @@ gapminder %>%
 ### Arithmetic operators
 
 | Operator | Description |
-| : -- | : |
+| :-- | :-- |
 | + | *plus* |
 | - | *minus* |
 | \* | *multiplication*  |
@@ -236,7 +236,7 @@ gapminder %>%
 Boolean operators are a special type of operator that return TRUE or FALSE.  
 
 | Operator | Description |
-| : -- | : |
+| :-- | :-- |
 | ==    | *equal, tests equality* |
 | !=    | *not equal, tests inequality* |
 | \>    | *greater than, tests greater than* (also >=) |
@@ -250,7 +250,7 @@ Boolean operators are a special type of operator that return TRUE or FALSE.
 Boolean operators can be combined with *and* or *or*.  
 
 | Operator | Description |
-| : -- | : |
+| :-- | :-- |
 | `&`     | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
@@ -265,7 +265,7 @@ Boolean operators can be combined with *and* or *or*.
 Some basic statistical functions  
 
 | Operator | Description |
-| : -- | : |
+| :-- | :-- |
 | `min()` <br> `max()` | *minimum and maximum values* |
 | `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
 | `sum()`  | *adds up the values* |
@@ -420,7 +420,7 @@ These statistics can all be generated individually, using the functions in the t
 
 
  | statistic | function |
- | ----       | ----      |
+ | :-- | :-- |
  | mean      | `mean()`   |
  | median   | `median()` |
  | mode | `mode()`  |

@@ -58,5 +58,7 @@ If you decide to install R and RStudio on your own computer, follow the instruct
 * 1.3 Starting RStudio
 
 
+Danielle Navarro, [slides](https://twitter.com/djnavarro/status/1366534788119621635?s=20)
+
 
 -30-
