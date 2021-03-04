@@ -49,7 +49,7 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 
 > Why does this code chunk not work?
 
-```{r}
+```
 stringlenght <- 10
 
 stringlength
