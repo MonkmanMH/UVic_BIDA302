@@ -437,6 +437,8 @@ These statistics can all be generated individually, using the functions in the t
   
  
  
+ ### The pipe `%>%` 
+ 
  This code calculates the mean of life expectancy
  
 ```{r}
@@ -489,9 +491,15 @@ quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
 ```
 
 
-## Exercise
 
-[Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
+## Take aways
+
+* Extract cases with `filter()`  
+* Filter using a list with `%in%`
+* Make new variables, with `mutate()`  
+* Connect operations with `%>%`  
+* Restructure data frames with `select()`  
+
 
 
 -30-
