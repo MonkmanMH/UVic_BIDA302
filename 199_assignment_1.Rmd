@@ -19,6 +19,8 @@ options(width = 100, dplyr.width = 100)
 Package load:
 ```{r echo=FALSE}
 library(tidyverse)
+library(stringr)
+
 # data files
 library(nycflights13)
 
