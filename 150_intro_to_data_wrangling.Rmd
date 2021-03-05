@@ -30,11 +30,11 @@ Data is abundant, and as data analysts we often have to spend time working with 
 
 There are three broad categories of data transformation:
 
-- altering the structure of the existing data tables. This could be through adding or removing rows or columns to our data table, including calculation of new variables, or importation of additional rows (observations) and joining two tables together.
+- **alter the structure** of the existing data tables. This could be through adding or removing rows or columns to our data table, including calculation of new variables, or importation of additional rows (observations) and joining two tables together.
 
-- summarizing the content of the source data tables. For example, if our data table has the population of all the countries in the world, we might want a summary table that has the table with the total for each continent.
+- **summarize the content** of the source data tables. For example, if our data table has the population of all the countries in the world, we might want a summary table that has the table with the total for each continent.
 
-- with both our existing data or our summary tables, we may want it in a different layout, either for analysis purposes or to make it easier for human readers to absorb the information.
+- with both our existing data or our summary tables, we may want **change the layout**, either for analysis purposes or to make it easier for human readers to absorb the information.
 
 In this section, we will begin to work with all three transformations.
 
@@ -55,10 +55,10 @@ For this section, and for other exercises throughout this course, we will be usi
 
 
 
-## `{dplyr}` -
+## Transform Data: 1a Alter the structure
 
 
-![dplyr hex](static/img_tidyverse/dplyr.png){width=250, height=250}
+![_dplyr hex_](static/img_tidyverse/dplyr.png){width=250, height=250}
 
 
 > The [{dplyr} reference site](https://dplyr.tidyverse.org/index.html)
@@ -131,11 +131,13 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-## Introducing the pipe operator ` %>% `
+## Tangent:
+
+### Introducing the pipe operator ` %>% `
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
-The pipe operator ` %>% ` allows us to name the data frame first, and then have other functions work with the outcome of the first line.
+The pipe operator ` %>% ` allows us to name the data frame first, and then have the next function work with the outcome of the first line.
 
 For example, we could write
 
@@ -147,12 +149,38 @@ or, with a pipe
 
 Read the pipe symbol as "then".  We start with our data, _then_ we apply the function.
 
-If we want to do anything with the output from the first statement, we have to assign it to an intermediate object, and then use that intermediate object in the second statement. With the pipe, we can simply add another pipe and the results of the first function are passed to the second statement.
+If we want to do anything with the output from the first statement, we have to assign it to an intermediate object, and then use that intermediate object in the second statement. With the pipe, we can add another pipe and the results of the first statement are passed to the second statement without the intermediate object.
 
 As we get to increasingly complex statements, the power of this will become more evident.
 
+This code calculates the mean of life expectancy (the `lifeExp` variable) in the gapminder data (note that we are accessing the `lifeExp` variable by adding the dollar sign to the dataframe name).
+ 
+```{r}
 
-## Creating lists
+mean(gapminder$lifeExp)
+
+```
+
+
+Another way to do this would be using the pipe operator. The symbol is `%>%` and links one line of script to the next. The way to read this is as meaning "and then..."
+
+At this point, we only have one step in our chain, but in future code, you might have multiple steps linked one after the other.
+
+So this little chunk would be read as
+
+* we start with the datafram "exp_dem", "and then..."
+
+* we calculate a variable called "mean_of_expense" by running the `mean()` function on the variable "Expense"
+
+```{r}
+
+gapminder %>% 
+  summarise(mean_of_life_expectancy = mean(lifeExp))
+
+```
+
+
+### Creating lists
 
 R allows us to create lists using the `c()` function.
 
@@ -197,175 +225,10 @@ gapminder %>%
 
 
 
+### Select columns 
 
 
-
-
-### {dplyr} functions are verbs
-
-
-|function |action |
-| :-- | :-- |
-| `filter()`    | *keep rows*|
-| `mutate()`    | *create a new variable*|
-| `group_by()`  | *declare subsets in data*|
-| `select()`    | *keep variables (or drop them -var)*|
-| `rename()`    | *renaming variables*|
-| `summarize()` | *summarize the data, by groups if they have been declared*|
-| `tally()`     | *counting (by groups if group_by() applied)*|
-| `distinct()`  | *returns only rows that are unique*| 
-| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
-
-
-
-
-### Arithmetic operators
-
-| Operator | Description |
-| :-- | :-- |
-| + | *plus* |
-| - | *minus* |
-| \* | *multiplication*  |
-| / | *division* |
-| ^ | *exponential* |
-
-
-
-### Boolean operators
-
-Boolean operators are a special type of operator that return TRUE or FALSE.  
-
-| Operator | Description |
-| :-- | :-- |
-| ==    | *equal, tests equality* |
-| !=    | *not equal, tests inequality* |
-| \>    | *greater than, tests greater than* (also >=) |
-| <     | *less than, tests less than* (also <=) |
-| %in%  | *contains, tests inclusion* |
-
-
-
-
-
-Boolean operators can be combined with *and* or *or*.  
-
-| Operator | Description |
-| :-- | :-- |
-| `&`     | *and, returns true if preceeding and following are both true, else false* |
-| &#124;  | *or, returns true if either preceeding and following are true, else false* |
-
-.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
-
-
-
-
-
-### Useful functions
-
-Some basic statistical functions  
-
-| Operator | Description |
-| :-- | :-- |
-| `min()` <br> `max()` | *minimum and maximum values* |
-| `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
-| `sum()`  | *adds up the values* |
-| `length` <br> `dplyr::count()`  | *number of cases* |
-| `summary()`  | *a list of measures of central tendency* |
-
-
-
-
-
-
-## `summarize`
-
-_or_ `summarise`!
-
-```{r}
-mpg %>%
-  summarise(minYear = min(year), maxYear = max(year))
-
-```
-
-
-
-
-#### a summary table
-
-`group_by()` to define the summary grouping
-
-`arrange()` to have things in ascending order
-
-* modify with `desc()` for descending order
-
-
-```{r eval=FALSE}
-mpg %>%                                       
-  group_by(class) %>%                         
-  summarise(displ_mean = mean(displ)) %>%     
-  arrange(desc(displ_mean))                   
-```
-
-
-
-
-```{r}
-mpg %>%                                       
-  group_by(class) %>%                         
-  summarise(displ_mean = mean(displ)) %>%     
-  arrange(desc(displ_mean))                   
-```
-
-
-
-## create new variables
-
-`mutate()`
-
-You can calculate new variables that may be useful in your analysis
-
-_vectors of the same length_
-
-```{r}
-
-mpg <- mpg %>%
-  mutate(mpg_per_cubic_litre = hwy / displ)
-
-```
-
-
-
-_vector of the length = 1_
-
-* convert miles per US gallon to litres per 100 kilometers
-
-```{r}
-# calculate conversion constant
-lp100km <- (100 * 3.785) / (1.61)
-lp100km
-# divide constant by hwy mpg to get hwy litres per 100 km
-mpg %>%
-  mutate(hwy_lp100km = lp100km / hwy)
-
-```
-
-
-
-the `summary()` function gives you a range of measures of central tendency
- 
-```{r}
-
-summary(mpg$hwy)
-
-```
-
-
-
-
-## Manipulate variables 
-
-
-You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
+You've already seen `filter()` to choose particular rows in your dataframe. What if you want to remove some columns (variables)?
 
 
 
@@ -404,9 +267,81 @@ gapminder %>%
 
 
 
-## Summary statistics
 
-R has a built-in function to generate some summary statistics. The first is `summary()` which gives a few key statistics about the distribution.
+
+
+### Reference: {dplyr} functions
+
+The functions in {dplyr} (and many other packages) are verbs that describe what they do.
+
+
+|function |action |
+| :-- | :-- |
+| `filter()`    | *keep rows*|
+| `mutate()`    | *create a new variable*|
+| `group_by()`  | *declare subsets in data*|
+| `select()`    | *keep variables (or drop them -var)*|
+| `rename()`    | *renaming variables*|
+| `summarize()` | *summarize the data, by groups if they have been declared*|
+| `tally()`     | *counting (by groups if group_by() applied)*|
+| `distinct()`  | *returns only rows that are unique*| 
+| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
+
+|function |action |
+| `length` <br> `dplyr::count()`  | *number of cases* |
+
+
+
+
+### Reference: Arithmetic operators
+
+R uses the same arithmetic operators that other programs use—you're probably familiar with all of them:
+
+| Operator | Description |
+| :-- | :-- |
+| + | *plus* |
+| - | *minus* |
+| \* | *multiplication*  |
+| / | *division* |
+| ^ | *exponential* |
+
+
+
+### Reference: Boolean operators
+
+Boolean operators are a special type of operator that return TRUE or FALSE.  They are used when we want to compare values.
+
+| Operator | Description |
+| :-- | :-- |
+| ==    | *equal, tests equality* |
+| !=    | *not equal, tests inequality* |
+| \>    | *greater than, tests greater than* (also >=) |
+| <     | *less than, tests less than* (also <=) |
+| %in%  | *contains, tests inclusion* |
+
+
+
+
+
+Boolean operators can be combined with *and* or *or*.  
+
+| Operator | Description |
+| :-- | :-- |
+| `&`     | *and, returns true if preceeding and following are both true, else false* |
+| &#124;  | *or, returns true if either preceeding and following are true, else false* |
+
+.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+
+
+
+
+
+
+
+
+### Descriptive statistics
+
+R has a built-in function to generate some descriptive (or summary) statistics. The first is `summary()` which gives a few key statistics about the distribution.
 
 
 ```{r}
@@ -426,51 +361,28 @@ These statistics can all be generated individually, using the functions in the t
  | mode | `mode()`  |
  | minimum and maximum | `min()`  `max()`  |
  | range | `range()`  |
+ | quantile | `quantile()` (default: quartiles) |
  |  &#8212;  | &#8212;  |
  | sum | `sum()` |
- | count (number of cases) | `length()`  |
  | standard deviation | `sd()` |
  | variance  | `var()` |
  | kurtosis | `kurtosis()` |
  | skewness | `skewness()` |
  | correlation coefficient | `cor()` |
-  
+ | correlation coefficient (two variables) | `cor()` |
+ |  &#8212;  | &#8212;  |
+ | count (number of cases) | `length()`  |
+ | number of unique cases | `n_distinct()` |
  
  
- ### The pipe `%>%` 
- 
- This code calculates the mean of life expectancy
- 
-```{r}
-
-mean(gapminder$lifeExp)
-
-```
 
 
-Another way to do this would be using the pipe operator. The symbol is `%>%` and links one line of script to the next. The way to read this is as meaning "and then..."
 
-At this point, we only have one step in our chain, but in future code, you might have multiple steps linked one after the other.
-
-So this little chunk would be read as
-
-* we start with the datafram "exp_dem", "and then..."
-
-* we calculate a variable called "mean_of_expense" by running the `mean()` function on the variable "Expense"
-
-```{r}
-
-gapminder %>% 
-  summarise(mean_of_life_expectancy = mean(lifeExp))
-
-```
-
-
-### Arguments within functions
+#### Tangent: Arguments within functions
 
 Virtually every function we use has default arguments, and options to change those. This allows us to use one function for a variety of circumstances. Instead of having separate functions to split a variable into its quartiles (four parts), quintiles (five parts), deciles (ten parts), and so on, there is one function that uses the generic name for this process: quantile. 
 
-The default setting of the `quantile()` function splits the distribution into four parts—_quartiles_. This is the most common quantile used to summarize a distribution.
+The default setting of the `quantile()` function splits the distribution into four parts, known as _quartiles_. This is the most common quantile used to summarize a distribution.
 
 ```{r}
 
@@ -492,13 +404,198 @@ quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
 
 
 
+
+## Transform Data: 1b Add new variables
+
+`mutate()`
+
+You can calculate new variables that may be useful in your analysis
+
+_vectors of the same length_
+
+For this example, we will use the "mpg" data set, which is a subset of the fuel economy data that the EPA makes available on http://fueleconomy.gov. For more information about the data set, see the reference page for the dataset: https://ggplot2.tidyverse.org/reference/mpg.html
+
+The first thing we want to do is to take a quick look at the data so we get a sense of its structure, using the `ls.str()` function:
+
+```{r}
+ls.str(mpg)
+```
+
+
+We can also view the data as a table:
+
+```{r}
+mpg
+```
+
+As part of our analysis, we want to understand the ratio of gas consumption to the size of the engine, measured as the variable `displ` (short for "displacement"). To calculate that ratio, we divide the highway consumption (`hwy`) by the displacement. 
+
+The {dplyr} function to create a new variable is `mutate()`. This is shown in the code below:
+
+```{r}
+
+mpg <- mpg %>%
+  mutate(mpg_per_cubic_litre = hwy / displ)
+
+```
+
+Notice that there's now a new variable added to the data called `mpg_per_cubic_litre`.
+
+In that example, the two columns are of the same length—for each car (each row in the data) there is a `hwy` value and a `displ` value.
+
+In other instances, we might want to have a calculation using a constant—we might want to multiply every one of our cases by 2, or add 10 to each.
+
+In the example below, we will add a new variable to our data set using `mutate()`.
+
+This will convert miles per US gallon to litres per 100 kilometers. The first step is to create a constant value, based on the number of gallons in a litre and the number of kilometers in a mile.
+
+Once we have that constant, we can use it in an equation to calculate the litres per 100 kilometers for every car in the data.
+
+```{r}
+# calculate conversion constant
+# a US gallon is 3.785 litres
+# a kilometer is 1.61 miles
+lp100km <- (100 * 3.785) / (1.61)
+lp100km
+
+# divide constant by hwy mpg to get hwy litres per 100 km
+mpg %>%
+  mutate(hwy_lp100km = lp100km / hwy)
+
+```
+
+
+
+
+
+
+## Transform Data 2: summarize
+
+<!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
+
+
+Everything we have done so far has been with to manipulate the entire data file (filtering and selecting), or calculating descriptive statistics for all the values in our data. Often we need to compare within our data:
+
+* What was the median life expectancy in African countries in 2007?
+
+* What was the median life expectancy by continent in 2007?
+
+* What was the median life expectancy by continent for each year in the data?
+
+To achieve the first of these things, we can filter the data to get only the African countries and 2007. 
+
+But for the second and third, we need to _group_ our data by continent and year, and then summarize those groups.
+
+The R package {dplyr} has a grouping function `group_by()`. Once the data is grouped, we apply a `summarize()` (or `summarise()` if you prefer!) function with our descriptive statistics. 
+
+
+
+
+
+## gapminder
+
+Take a quick look at the data in the {gapminder} package.
+
+```{r}
+gapminder
+```
+
+
+
+## Your Turn 2.1
+
+Use `summarize()` or `summarise()` to compute three statistics about the data:
+
+* The first (minimum) year in the dataset
+* The last (maximum) year in the dataset
+* The number of unique countries
+
+```{r}
+# answer
+gapminder %>%
+  summarize(year_min = min(year),
+            year_max = max(year),
+            n_countries = n_distinct(country))
+
+```
+
+## Your Turn 2.2
+
+Extract the rows for African countries in 2007.
+
+Then find:
+
+1. The number of unique countries
+2. The median life expectancy of African countries as a group
+
+```{r}
+# answer
+gapminder %>% 
+  filter(continent == "Africa" & year == 2007) %>% 
+  summarise(n_countries = n_distinct(country),
+            lifeExp_med = median(lifeExp))
+
+
+```
+
+
+## Your Turn 2.3
+
+Find the median life expectancy by continent in 2007.
+
+```{r}
+# answer
+library(gapminder)
+library(dplyr)
+
+gapminder %>%
+  filter(year == 2007) %>% 
+  group_by(continent) %>%
+  mutate(lifeExp_mean = mean(lifeExp)) %>%
+  ungroup() %>% 
+  mutate(lifeExp_diff = lifeExp - lifeExp_mean)
+
+```
+
+
+## Your Turn 2.4
+
+Find the median life expectancy by continent for each year in the dataframe.
+
+```{r}
+
+gapminder %>%
+  group_by(continent, year) %>%
+  summarize(lifeExp_med = median(lifeExp))
+
+```
+## Your Turn 2.5
+
+
+Create a summary table with the population and GDP by continent for the year 1952  
+
+```{r}
+# answer
+gapminder %>%
+  filter(year == 1952) %>%               # filter to get the records we need
+  mutate(totalGDP = pop * gdpPercap) %>% # note that we need to add the new variable calculated above!
+  group_by(continent) %>%                # this defines the grouping category
+  summarize(pop = sum(pop),              # 
+            totalGDP = sum(totalGDP))    #
+```
+
+
 ## Take aways
 
 * Extract cases with `filter()`  
-* Filter using a list with `%in%`
-* Make new variables, with `mutate()`  
-* Connect operations with `%>%`  
 * Restructure data frames with `select()`  
+* Make new variables, with `mutate()`  
+
+* Filter using a list with `%in%`
+* Connect operations with `%>%`  
+
+* Make tables of summaries with `summarise()`  
+* Do groupwise operations with `group_by()`
 
 
 
