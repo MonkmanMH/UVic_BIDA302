@@ -232,10 +232,9 @@ You've already seen `filter()` to choose particular rows in your dataframe. What
 
 
 
-Using `select()` to reduce the number of variables:
+Here we will use `select()` to reduce the number of variables in our gapminder table to "country", "year", and "lifeExp":
 
 ```{r}
-library(gapminder)
 
 gapminder %>%                                
   select(country, year, lifeExp) 
@@ -490,19 +489,12 @@ The R package {dplyr} has a grouping function `group_by()`. Once the data is gro
 
 
 
-
-
-## gapminder
-
 Take a quick look at the data in the {gapminder} package.
 
 ```{r}
 gapminder
 ```
 
-
-
-## Your Turn 2.1
 
 Use `summarize()` or `summarise()` to compute three statistics about the data:
 
@@ -519,7 +511,6 @@ gapminder %>%
 
 ```
 
-## Your Turn 2.2
 
 Extract the rows for African countries in 2007.
 
@@ -539,14 +530,16 @@ gapminder %>%
 ```
 
 
-## Your Turn 2.3
+
+### Grouping
+
+We can use the {dplyr} function `group_by()` to define our grouping variables. If we group all of the countries by the continent they are part of, we can calculate a statistic for the whole continent.
+
 
 Find the median life expectancy by continent in 2007.
 
 ```{r}
 # answer
-library(gapminder)
-library(dplyr)
 
 gapminder %>%
   filter(year == 2007) %>% 
@@ -558,7 +551,7 @@ gapminder %>%
 ```
 
 
-## Your Turn 2.4
+We can group by multiple variables.
 
 Find the median life expectancy by continent for each year in the dataframe.
 
@@ -569,7 +562,7 @@ gapminder %>%
   summarize(lifeExp_med = median(lifeExp))
 
 ```
-## Your Turn 2.5
+
 
 
 Create a summary table with the population and GDP by continent for the year 1952  

@@ -311,15 +311,17 @@ And spelling also matters.
 
 ## Exercise: Introduction to R
 
+In this exercise, you'll tackle the basics of the R language.
+
 [Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
 
 
 ***
 
-## Digging deeper into this week's topics
+## Digging deeper into these topics
 
 
-#### Opinionated analysis development & reproducible analysis
+### Opinionated analysis development & reproducible analysis
 
 Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
 
@@ -328,7 +330,7 @@ Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/
 Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
 
 
-#### Why R?
+### Why R?
 
 Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
 
