@@ -94,16 +94,18 @@ Concepts and practices that you can carry through to data analysis in other envi
 
 
 
+
+
 ## Text books and other readings {-}
 
 In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
 
-![_R for Data Science_](static/img/R4DS_400.png)
+![_R for Data Science_](static/img/R4DS_400.png){width=25%}
 
 A useful reference book for this course is JD Long & Paul Teetor, _R Cookbook, 2nd edition_. It's also available both as a printed book and online at [rc2e.com/](https://rc2e.com/)
 
-![_R Cookbook_](static/img/rc2e_500.jpg)
+![_R Cookbook_](static/img/rc2e_500.jpg){width=25%}
 
 
 Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
@@ -161,7 +163,7 @@ raw data and the table, plot, or model you want to create, and use a
 variety of functions to achieve that transformation.
 
 In this course we will be primarily using the open source programming
-language R, with tangents into data analysis coding in Excel and Python.
+language R, with a tangent into data analysis coding in Python.
 
 Here’s another course description, one that I really like, so (with the
 author’s permission) I am including it here:
@@ -182,6 +184,17 @@ author’s permission) I am including it here:
 <small>(from the Syllabus to [PMAP 8521: Program Evaluation for Public
 Service](https://evalf19.classes.andrewheiss.com/syllabus/#pep-talk),
 Andrew Heiss, Georgia State University)</small>
+
+
+One more thing: each person who takes this course comes from a different background. Some may have previous coding experience. Others may be working in data analysis. Some may have a bit of both, and others may have neither. 
+
+Here's some wisdom from Dr. Nicki Washington:
+
+![Run your race](static/img/Dr_Nicki_Washington_run_your_race.JPG)
+
+If you stop along the way to check your progress, don't look at where others are on their race—look at how you've moved forward. Compare yourself on the course scatter plot.  
+
+![data analytics coding fundamentals](static/img/dacf_1.png)
 
 
 ### On learning a new language {-}
@@ -277,6 +290,11 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
   - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it". In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path.
 
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)]
+
+
+I am fairly new to teaching, but I'm trying to be a good student and learn from good teachers I encounter!
+
+![I am not trained for this...and yet](static/img/I-am-not-trained-for-this_laptop_600.jpg)]
 
 
 

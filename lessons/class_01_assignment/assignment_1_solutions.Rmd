@@ -169,7 +169,7 @@ ggplot(data = mpg) +
 >
 > Pay close attention to how the variables are coded.
 >
-> Find all flights that:
+> Using the data in the `nycflights13::flights` table, find all flights that:
 >
 >a. Had an arrival delay of two or more hours
 
@@ -203,7 +203,7 @@ filter(flights, dest %in% houston)
 ```
 
 
->c. Were operated by United, American, or Delta
+>c. Were operated by United, American, or Delta (you may want to review the separate airlines table to check the codes for each airline)
 
 This one takes a bit of effort--you have to find the codes that match the values in the variable `carrier` with the airline names.
 

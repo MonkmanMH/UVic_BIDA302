@@ -143,14 +143,13 @@ ggplot(data = mpg) +
 >
 > Pay close attention to how the variables are coded.
 >
-> Find all flights that:
+> Using the data in the `nycflights13::flights` table, find all flights that:
 >
 >a. Had an arrival delay of two or more hours
 
-
 >b. Flew to Houston (there are two airports, with the codes IAH or HOU)
 
->c. Were operated by United, American, or Delta
+>c. Were operated by United, American, or Delta (you may want to review the separate airlines table to check the codes for each airline)
 
 >d. Departed in summer (July, August, and September)
 

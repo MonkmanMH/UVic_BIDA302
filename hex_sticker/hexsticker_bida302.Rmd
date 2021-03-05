@@ -271,11 +271,42 @@ ggplot2::ggsave("BIDA302_hex.png", width = 2, height = 2)
 
 p1 +
   geom_point(size = 3, colour = "#34558b") +
-  geom_smooth() +
+#  geom_smooth() +
+  geom_smooth(method = lm) +
+  coord_equal() +
+  xlim(0, 12.5) +
+  ylim(0, 12.5)
+
+
+```
+
+```{r}
+dacf_1 <- p1 +
+  geom_point(size = 3, colour = uvic_blue_dark) +
+#  geom_smooth() +
 #  geom_smooth(method = lm) +
   coord_equal() +
   xlim(0, 12.5) +
   ylim(0, 12.5)
+
+dacf_1
+
+# use `dev.size()` to determine dimensions of display
+ggplot2::ggsave("BIDA302_dacf_1.png", width = 4.666667, height = 3.520833)
+
+ggplot2::ggsave("BIDA302_dacf.png", width = 3.5, height = 3.5)
+
+
+# add an arrow
+
+dacf_1 +
+  geom_segment(aes(x = 1, y = 1, xend = 10, yend = 10),
+                  arrow = arrow(length = unit(0.5, "cm")),
+               colour = "red")
+
+
+
+
 
 ```
 
