@@ -1,0 +1,393 @@
+---
+title: "Data wrangling"
+subtitle: ""
+author: "BIDA302"
+#date: "2020/10/25"
+output:
+  xaringan::moon_reader:
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+# to knit:
+# see https://github.com/yihui/xaringan/issues/29
+
+# point up-directory to css and img folders
+
+#xaringan::inf_mr('lessons/class_01/slides_3_wrangling.Rmd')
+
+```
+
+
+```{r, include=FALSE}
+
+library(tidyverse)
+
+```
+
+class: inverse
+
+# Data wrangling
+
+### 1. Filtering and selecting
+
+### 2. Adding variables
+
+### 3. Reshaping
+
+### 4. Cleaning
+
+
+
+
+---
+
+
+# Part 1: {dplyr} -
+
+
+![dplyr hex](../../static/img_tidyverse/dplyr.png){width=10%}
+
+The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
+
+
+---
+
+
+## {dplyr} functions are verbs
+
+
+|function |action |
+| :--- | ---: |
+| `filter()`    | *keep rows*|
+| `mutate()`    | *create a new variable*|
+| `group_by()`  | *declare subsets in data*|
+| `select()`    | *keep variables (or drop them -var)*|
+| `rename()`    | *renaming variables*|
+| `summarize()` | *summarize the data, by groups if they have been declared*|
+| `tally()`     | *counting (by groups if group_by() applied)*|
+| `distinct()`  | *returns only rows that are unique*| 
+| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
+
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+* with modifications by Martin Monkman
+
+---
+
+## Arithmetic operators
+
+| Operator | Description |
+| : ----- | ---: |
+| + | *plus* |
+| - | *minus* |
+| \* | *multiplication*  |
+| / | *division* |
+| ^ | *exponential* |
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+
+---
+
+## Boolean operators
+
+Boolean operators are a special type of operator that return TRUE or FALSE.  
+
+| Operator | Description |
+| : ----- | ---: |
+| ==    | *equal, tests equality* |
+| !=    | *not equal, tests inequality* |
+| \>    | *greater than, tests greater than* (also >=) |
+| <     | *less than, tests less than* (also <=) |
+| %in%  | *contains, tests inclusion* |
+
+
+???
+
+Source: Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action)
+
+---
+
+
+Boolean operators can be combined with *and* or *or*.  
+
+| Operator | Description |
+| : ----- | ---: |
+| `&`     | *and, returns true if preceeding and following are both true, else false* |
+| &#124;  | *or, returns true if either preceeding and following are true, else false* |
+
+.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+
+
+
+---
+
+## Useful functions
+
+Some basic statistical functions  
+
+| Operator | Description |
+| : ----- | ---: |
+| `min()` <br> `max()` | *minimum and maximum values* |
+| `mean()` <br> `median()` <br> `mode()` | *measures of "average"* |
+| `sum()`  | *adds up the values* |
+| `length` <br> `dplyr::count()`  | *number of cases* |
+| `summary()`  | *a list of measures of central tendency* |
+
+
+---
+
+## create new variables
+
+`mutate()`
+
+You can calculate new variables that may be useful in your analysis
+
+### _vectors of the same length_
+
+```{r}
+
+mpg <- mpg %>%
+  mutate(mpg_per_cubic_litre = hwy / displ)
+
+```
+
+---
+
+### _vector of the length = 1_
+
+* convert miles per US gallon to litres per 100 kilometers
+
+```{r}
+# calculate conversion constant
+lp100km <- (100 * 3.785) / (1.61)
+lp100km
+# divide constant by hwy mpg to get hwy litres per 100 km
+mpg %>%
+  select(manufacturer, model, hwy) %>% 
+  mutate(hwy_lp100km = lp100km / hwy)
+
+```
+
+---
+
+the `summary()` function gives you a range of measures of central tendency
+ 
+```{r}
+
+summary(mpg$hwy)
+
+```
+
+
+
+---
+
+# `summarize`
+
+_or_ `summarise`!
+
+```{r}
+mpg %>%
+  summarise(minYear = min(year), 
+            maxYear = max(year))
+
+```
+
+
+---
+
+# a summary table
+
+`group_by()` to define the summary grouping
+
+`arrange()` to have things in ascending order
+
+* modify with `desc()` for descending order
+
+
+```{r eval=FALSE}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
+```
+
+---
+
+
+```{r}
+mpg %>%                                       
+  group_by(class) %>%                         
+  summarise(displ_mean = mean(displ)) %>%     
+  arrange(desc(displ_mean))                   
+```
+
+
+---
+
+# Part 2 - {tidyr} -
+
+
+![tidyr hex](../../static/img_tidyverse/tidyr.png){width=10%}
+
+The [{tidyr} site](https://tidyr.tidyverse.org/)
+
+---
+
+Slide deck:
+
+Julie Lowndes & Allison Horst, [Make friends with tidy data](https://docs.google.com/presentation/d/1N7hKepabvl9OrHjvGJWPjUsfzVdB5xzV5AsFndgSwms/edit#slide=id.p)
+
+
+---
+
+A pivot table crosstab using the {mpg} data package of automobile fuel economy.
+
+First, a look at the source table.
+
+
+
+---
+
+Using `group_by` and `summarise` to create a summary table of the average engine displacement:
+
+```{r}
+mpg %>%                                
+  group_by(class) %>%                   
+  summarise(displ_mean = mean(displ)) 
+
+```
+
+---
+
+Now do the same with vehicle class and number of cylinders:
+
+```{r}
+
+class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(mean = mean(displ)) %>%
+  arrange(desc(mean))
+
+class_by_cyl
+
+```
+
+---
+
+
+What happens if you reverse the order of the grouping variables?
+
+---
+
+Create a pivot (crosstab) table with class by number of cylinders:
+
+
+using `pivot_wider()`
+
+```{r}
+class_by_cyl_pivot <- class_by_cyl %>%
+  pivot_wider(names_from = cyl, values_from = mean)
+
+
+class_by_cyl_pivot
+```
+
+---
+
+# and back to longer...
+
+```{r}
+
+class_by_cyl_pivot %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "mean")
+
+```
+
+
+---
+
+Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
+
+The older {tidyr} functions that do the same thing: `spread()` and `gather()`.
+
+For example, `spread()` to replicate the `pivot_wider()` function:
+
+```{r}
+
+class_by_cyl %>%
+  spread(cyl, value = mean)
+
+```
+
+---
+
+More about tidy data:
+
+* ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_.
+
+* ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+
+
+---
+
+## Manipulate variables 
+##(back to {dplyr})
+
+You've already seen `mutate()` to calculate new variables for your dataframe. What if you want to remove some variables?
+
+---
+
+Using `select()` to reduce the number of variables:
+
+```{r}
+library(gapminder)
+
+gapminder %>%                                
+  select(country, year, lifeExp) 
+
+```
+
+---
+
+
+You can use the minus sign to drop variable--that is, to define ones to _not_ select. 
+
+In this example, note we have to use `c()` to create a list:
+
+```{r}
+gapminder %>%                                
+  select(-c(continent, pop, gdpPercap))
+
+```
+
+---
+
+
+You can define a range of columns to select:
+
+```{r}
+gapminder %>%
+  select(country, year:pop)
+```
+
+
+
+
+

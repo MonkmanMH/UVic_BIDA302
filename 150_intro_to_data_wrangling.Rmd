@@ -131,9 +131,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-## Tangent:
-
-### Introducing the pipe operator ` %>% `
+## Tangent: Introducing the pipe operator ` %>% `
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
@@ -180,7 +178,7 @@ gapminder %>%
 ```
 
 
-### Creating lists
+## Tangent: Creating lists
 
 R allows us to create lists using the `c()` function.
 
@@ -377,7 +375,7 @@ These statistics can all be generated individually, using the functions in the t
 
 
 
-#### Tangent: Arguments within functions
+## Tangent: Arguments within functions
 
 Virtually every function we use has default arguments, and options to change those. This allows us to use one function for a variety of circumstances. Instead of having separate functions to split a variable into its quartiles (four parts), quintiles (five parts), deciles (ten parts), and so on, there is one function that uses the generic name for this process: quantile. 
 
@@ -426,6 +424,8 @@ We can also view the data as a table:
 ```{r}
 mpg
 ```
+
+_Vector of the length = 1_
 
 As part of our analysis, we want to understand the ratio of gas consumption to the size of the engine, measured as the variable `displ` (short for "displacement"). To calculate that ratio, we divide the highway consumption (`hwy`) by the displacement. 
 
