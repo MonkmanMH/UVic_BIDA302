@@ -22,5 +22,5 @@ library(gapminder)
 
 ### Reading
 
-
+Tidy Animated Verbs[@AdenBuie_tidyanimated]
 
