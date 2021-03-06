@@ -153,20 +153,13 @@ workflow:
 
   - collaborative.
 
-The emphasis in this course will be on analytic methods, coding
-concepts, and programming practice that are universal; you will be able
-to apply them in whatever analytic setting you find yourself, and are
-independent of the tool you’ll be using.
+The emphasis in this course will be on analytic methods, coding concepts, and programming practice that are universal; you will be able to apply them in whatever analytic setting you find yourself, and are independent of the tool you’ll be using.
 
-By the end of this course, you will see the relationship between your
-raw data and the table, plot, or model you want to create, and use a
-variety of functions to achieve that transformation.
+By the end of this course, you will see the relationship between your raw data and the table, plot, or model you want to create, and use a variety of functions to achieve that transformation.
 
-In this course we will be primarily using the open source programming
-language R, with a tangent into data analysis coding in Python.
+In this course we will be primarily using the open source programming language R, with a tangent into data analysis coding in Python.
 
-Here’s another course description, one that I really like, so (with the
-author’s permission) I am including it here:
+Here’s another course description, one that I really like, so (with the author’s permission) I am including it here:
 
 > Over the last decade there has been a revolution in statistical and
 > scientific computing. Open source languages like R and Python have
@@ -185,6 +178,13 @@ author’s permission) I am including it here:
 Service](https://evalf19.classes.andrewheiss.com/syllabus/#pep-talk),
 Andrew Heiss, Georgia State University)</small>
 
+
+**Modern tools**
+
+I don't believe there is any benefit in learning things "the hard way" or "the way I learned it". In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path.
+
+
+**Run your race**
 
 One more thing: each person who takes this course comes from a different background. Some may have previous coding experience. Others may be working in data analysis. Some may have a bit of both, and others may have neither. 
 
@@ -287,12 +287,12 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 
 * My coding started writing [FORTRAN](https://en.wikipedia.org/wiki/Fortran) on [punch cards](https://en.wikipedia.org/wiki/Punched_card)
 
-  - I don't believe there is any benefit in learning things "the hard way" or "the way I learned it". In this course we use much better technology that will allow you to do better data analysis more quickly than was possible when I started down this path.
-
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)]
 
 
-I am fairly new to teaching, but I'm trying to be a good student and learn from good teachers I encounter!
+So wait...I have some substantive expertise, combined with some statistics knowledge, and I have been using my coding skills to be more efficient and effective with my work...
+
+I am an accidental data scientist!
 
 ![I am not trained for this...and yet](static/img/I-am-not-trained-for-this_laptop_600.jpg)]
 

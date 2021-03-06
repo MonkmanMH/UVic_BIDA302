@@ -24,6 +24,8 @@ The [capstone projects for BIDA302 get their own repo](https://github.com/Monkma
 
 ## Versions:
 
+2021.1.x -- offered 2021, spring (2021-03-06 to 2021-04-18)
+
 2020.2.x -- offered 2020, fall (2020-10-24 to 2020-11-29)
 
 2020.1.x -- offered 2020, spring (2020-02-29 to 2020-04-04) 
@@ -33,7 +35,9 @@ The [capstone projects for BIDA302 get their own repo](https://github.com/Monkma
 
 ## Course book
 
-[add link]
+The course book (for which this GitHub repo is the source) can be found here:
+https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/
+
 
 ```
 bookdown::publish_book(name = "DataAnalyticsCodingFundamentals", account = "martin_monkman")

@@ -1,0 +1,646 @@
+---
+title: "Welcome! BIDA 302"
+subtitle: "Data Analytics Coding Fundamentals"
+author: "Martin Monkman"
+#date: "2020/10/24"
+output:
+  xaringan::moon_reader:
+#    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#16161D",
+  secondary_color = "#6e6e91",
+  inverse_header_color = "#e2e2e9",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+# Learning outcomes
+
+* Perform basic data manipulations
+* Create variables
+* Apply key concepts of variables, constants and functions
+* Calculate descriptive statistics
+* Perform basic logical formula functions
+* Group and ungroup data
+* Data importing & exporting
+* Extract and combine data
+* Create _what-if_ scenarios
+
+
+
+---
+
+
+## Meta outcome 1: using R
+
+Programming environment designed for statistical analysis / data science 
+
+* Focus on one tool, so you get good at that
+
+
+---
+
+
+## Meta outcome 2: principles 
+
+Concepts and practices that you can carry through to data analysis in other environments
+
+* examples of coding to achieve the same result in Excel and Python
+
+
+
+
+---
+
+class: inverse
+
+
+# Course Stucture
+
+
+
+---
+
+# Martin Monkman
+
+email:  <a href="mailto:<mmonkman@uvic.ca>">mmonkman@uvic.ca</a>
+
+"office hours" via zoom
+
+* Tuesday, 8:00 pm to 9:00 pm
+
+
+
+---
+
+## Class
+
+Saturday, 9:00 am - 12:00 noon
+
+Sunday, 9:00 am - 12:00 noon
+
+* some lecture
+
+* some hands-on
+
+* some take-home exercises
+
+---
+
+## Assignments
+
+* time in class to get started
+
+* 4 of them, each worth 12% of the final grade
+
+* weeks 1, 2, 3 and 4 
+
+* due the following Friday at 23:59 (one minute before midnight)
+
+  - upload to Moodle
+
+---
+
+## Capstone project
+
+* time in class to get started (weeks 5 and 6)
+
+* worth 40% of the final grade
+
+---
+
+
+# The course moodle
+
+link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then login with NetLink 
+
+* course outline
+
+* lesson plans and slide decks
+
+* links to other reading material and data files
+
+* forum for Q&A
+ 
+
+---
+
+
+
+# RStudio Cloud
+
+Web-based version of R & RStudio
+
+Link will be provided at the start of Sunday's class
+
+* later in the course we'll run through the steps to install R on your own computer 
+
+  - this is not necessary for this class!
+  
+  - but it's a useful thing to know
+
+
+---
+
+
+# Course book
+
+.pull-left[
+
+_Data Analytics Coding Fundamentals_
+
+* website: [bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/)
+]
+
+
+.pull-right[
+
+![_BIDA302 hex_](BIDA302_hex_400.jpg)
+]
+
+---
+
+
+# Text book
+
+.pull-left[
+
+Hadley Wickham & Garrett Grolemund, _R for Data Science_
+
+* website: [r4ds.had.co.nz](https://r4ds.had.co.nz/)
+]
+
+
+.pull-right[
+
+![R for Data Science](../../static/img/R4DS_400.png)
+]
+
+---
+
+
+# Reference book
+
+.pull-left[
+
+JD Long & Paul Teetor, _R Cookbook, 2nd edition_
+
+* website: [rc2e.com/](https://rc2e.com/)
+]
+
+
+.pull-right[
+
+![R for Data Science](../../static/img/rc2e_500.jpg)
+]
+
+---
+
+## Supplementary resources and readings
+
+For each week:
+
+- specific material relevant to that topic
+
+- optional: supplementary deeper-dives
+
+
+_Look for the lesson plans on the course moodle_
+
+
+---
+class: inverse
+
+# "Data science"
+
+---
+
+![Drew Conway data science Venn diagram](../../static/img/Data_Science_VD.png)
+
+Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
+
+
+---
+class: inverse
+
+
+## Icebreaker ...
+
+
+
+
+
+---
+
+## Collaboration & community
+
+IRL we work together
+
+"To teach is to learn twice"
+
+The R user community:
+
+* welcoming & non-judgmental
+
+* twitter #rstats
+
+* in-person: conferences & user groups
+
+* RLadies
+
+---
+
+![R code hero](../../static/img_allison_horst/code_hero_rstats_600.png)
+
+<p><small><italic>Image: Allison Horst</italic></small></p>
+
+
+
+---
+
+
+## Code of Conduct
+
+_from the R Consortium_
+
+[R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct)
+
+* be open
+
+* be considerate
+
+* be respectful
+
+In other words:
+
+~ Be a decent human being
+
+
+
+---
+
+Hex stickers!
+
+
+![Martin's laptop](../../static/img/Martin_laptop.jpg)
+
+
+
+---
+
+## About me
+
+
+* UVic Geography B.Sc. & M.A.
+
+* BC Stats: 1993 to present (with 5 year gap)
+
+---
+
+
+* writing code since 1979
+
+  - to do data analysis since 1993
+  
+  - using R since 2012
+
+![computer punch card](../../static/img/ibm-80-column-punched-card1.jpg)]
+
+---
+
+![Drew Conway data science Venn diagram](../../static/img/Data_Science_VD.png)
+
+---
+
+![I am not trained for this...and yet](../../static/img/I-am-not-trained-for-this_laptop_600.jpg)]
+
+---
+class: inverse
+
+# Break!
+
+
+---
+
+# Why code?
+
+If we can do this work with other tools, why should we learn to undertake data analytics in a coding environment?
+
+
+---
+
+## Reproducible workflow
+
+>Saves time,
+
+>Produces better science,
+
+>Creates more trusted research,
+
+>Reduces the risk of errors, and
+
+>Encourages collaboration.
+
+>- David Smith, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+???
+
+David Smith, 2017-04-21, [Reproducible Data Science with R](https://blog.revolutionanalytics.com/2017/04/reproducible-data-science-with-r.html)
+
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
+
+* Reproducible and Auditable
+
+* Accurate
+
+* Collaborative
+
+
+---
+
+## Opinionated Analysis Development
+
+* Reproducible and Auditable
+
+* Accurate
+
+* Collaborative
+
+  - Hilary Parker
+
+???
+
+Hilary Parker, [“Opinionated Analysis Development”](https://peerj.com/preprints/3210/), 2017-08-31
+
+
+
+---
+
+## The data science process
+
+![The data science process](../../static/img/data-science.png)
+
+
+---
+
+# Workflow and functionality: 1
+
+![survey workflow 1](../../static/img/survey_workflow_720.png)
+
+---
+
+# Workflow and functionality: 2
+
+![survey workflow 1](../../static/img/survey_workflow_2_720.png)
+
+---
+
+
+# Collaboration
+
+Your code (and additional recordkeeping with your code) helps explain your work to others
+
+> In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you.
+—Hadley Wickham
+
+???
+
+Wickham quote source: Roel M. Hogervorst;   https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/
+
+Reading:
+
+Julia Stewart Lowndes, 2019-12-10, [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/), _Scientific American_ blog
+
+
+
+---
+
+
+![R logo](../../static/img/R.jpg)
+
+# 1. Base R
+
+* a data science / statistics programming language
+
+* built-in analytic and statistical functions
+
+---
+
+Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
+
+![VW Beetle frame](../../static/img/VW_ad_1_crop_2.png)
+
+
+---
+
+# 2. packages
+
+Packages extend the functionality of R
+
+* data wrangling & cleaning
+
+* data analysis and statistical modeling
+
+* data visualization
+
+* data
+
+
+
+---
+
+...the packages are the other things that enhance the car's functions
+
+* the body, windshield, headlights, A/C, sound system, etc
+
+
+![VW Beetle transparent](../../static/img/vwlooking.jpg)
+
+
+---
+
+## The Tidyverse
+
+![tidyverse hex](../../static/img/tidyverse_400.png)
+
+???
+
+Image source: https://github.com/rstudio/hex-stickers (for all tidyverse hex images)
+
+---
+
+
+## {tidyverse}
+
+"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+The [{tidyverse} site](https://tidyverse.org): tidyverse.org
+
+
+
+
+---
+
+![RStudio logo](../../static/img/RStudio_400.png)
+
+
+---
+
+
+# 3. RStudio
+
+IDE (interactive development environment)
+
+* we will be using the cloud (internet) version of the IDE
+
+* "RStudio" is also the company that developed and supports the IDE
+
+* and RStudio is active creating and supporting packages, including many of the tidyverse packages
+
+
+
+
+---
+
+...and RStudio is the dashboard and controls
+
+![VW Beetle dashboard](../../static/img/VW_dashboard.jpg)
+
+
+---
+
+(more like this)
+
+![VW Beetle dashboard](../../static/img/VW_dashboard_2019.jpg)
+
+---
+
+(or dark mode!)
+
+![VW Beetle dashboard, black](../../static/img/2018_volkswagen_beetle_dashboard.jpg)
+
+
+---
+
+## Who's ready for a road trip?!
+
+![VW Beetle dashboard](../../static/img/VW_ready_to_go.png)
+
+---
+
+
+
+class: inverse
+
+# Learning a new language
+
+poll questions!
+
+---
+
+# Languages
+
+
+![](../../static/img/language_learning.jpg)
+
+...are difficult
+
+???
+image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636
+
+---
+
+
+## Your mind is flexible...
+
+.fafaff[
+Yuor brian is so pfweroul, taht it can raed scntenees wtih mxied up wrods as lnog as teh fsrit and lsat letetrs are in the rgiht palce.
+]
+
+---
+
+# ...but computers are literal
+
+Accuracy matters
+
+![Hadley Wickham tweet](../../static/img/Hadley_5minutes_2019-10-27.jpg)
+
+---
+
+And spelling matters
+
+![Kara Woo tweet](../../static/img/Kara_5minutes_2019-10-27.jpg)
+
+...and in R, so does case
+
+
+
+
+---
+
+## Getting help
+
+* RStudio: built-in help: `?<function_name>`
+
+* Cheatsheets: https://rstudio.com/resources/cheatsheets/
+
+* Package vignettes
+
+
+---
+
+## And for future reference...
+
+* RStudio Community: https://community.rstudio.com/ 
+
+* Stack Overflow: https://stackoverflow.com/
+
+* Blogs
+
+
+
+
+---
+
+## Exercise
+
+[Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/?_ga=2.143188981.1105120215.1603418925-1358848496.1603418925#section-objectives)
+
+
+
+---
+
+## Reading ahead...
+
+* [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+
+* [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
+
+
