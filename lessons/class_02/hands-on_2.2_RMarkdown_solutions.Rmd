@@ -193,6 +193,7 @@ The solution is to use one of many code chunk options that are available. These 
 ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy))
 ```
+
 The solution is to put the option "echo = FALSE" after the "r" in the opening bit of the code.
 
 

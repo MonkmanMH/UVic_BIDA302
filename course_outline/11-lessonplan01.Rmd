@@ -52,6 +52,9 @@ At the end of this lesson, learners will be able to:
 |4b <br> 4c  | 11:30 to 12:00   | Assignment 1 <br> Wrap up | &#8212; |
 
 
+***
+
+Link to rstudio.cloud for BIDA302: https://rstudio.cloud/spaces/126174/join?access_code=yzwqTTbRwHWfk9y2J%2BcxhDU7S%2Bip3AKDVM%2F772w4
 
 
 -30-
