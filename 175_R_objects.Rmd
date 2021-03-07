@@ -4,7 +4,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# R objects {#Robjects}
+# R objects & variable types {#Robjects}
 
 <!-- 
 This file by Martin Monkman 
@@ -46,7 +46,7 @@ In R, there are a few options for visually scanning your data:
 
 
 | function | description |  
-|||  
+| :-- | :-- |
 |*Content: * | |
 |`head()` | shows the first rows; the default is 6 |
 |`tail()` | shows the last rows; the default is 6 | 
@@ -59,7 +59,7 @@ In R, there are a few options for visually scanning your data:
 In addition to visually inspecting the data, there are also other functions to understand a dataframe:
 
 | function | description |  
-|||  
+| :-- | :-- |
 |*Size:*  | |
 |`dim()` | returns a vector with the number of rows as the first element, and the number of columns as the second element (the dimensions of the object) |
 |`nrow()` | returns the number of rows |
@@ -69,7 +69,7 @@ In addition to visually inspecting the data, there are also other functions to u
 Functions to understand the contents of your dataframe:
 
 | function | description |  
-|||  
+| :-- | :-- |
 |*Names:* | |
 |`names()` | returns the column names (synonym of colnames() for data.frame objects) |
 |*Summary:* | |
@@ -176,13 +176,14 @@ mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
 Dealing with those pesky `NA` values  
 
 | function | action |
-| : --  | : |
+| :-- | :-- |
+| `na.rm = TRUE` | remove `NA` values when running function|
 | `is.na(x)` | returns TRUE or FALSE for each value in `x` |
 | `anyNA(x)` | returns a single TRUE or FALSE |
-| `na.rm = TRUE` | remove `NA` values when running function|
 
 
 
+Here's what is returned when we use `is.na()` on a short list of three values, one of which is `NA`:
 ```{r}
 x <- c(1, NA, 3)
 

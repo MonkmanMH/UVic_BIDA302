@@ -1,0 +1,77 @@
+# (PART) REFERENCE {-} 
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+# (PART) Week 5 {-} 
+
+
+# Utilities {#utilities}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+library(tidyverse)
+library(gapminder)
+```
+
+One of the many great things about the R ecosystem is that data scientists around the world are tackling the same types of things that you and I might encounter, creating solutions to those problems, and then sharing those solutions as packages that add new functionality to the ecosystem.
+
+This chapter introduces some of the packages that I have found useful.
+
+
+
+
+
+## {datapasta}  ·
+
+Reference page: https://milesmcbain.github.io/datapasta/
+
+> datapasta is about reducing resistance associated with copying and pasting data to and from R. It is a response to the realisation that I often found myself using intermediate programs like Sublime to munge text into suitable formats. Addins and functions in datapasta support a wide variety of input and output situations, so it (probably) “just works”. Hopefully tools in this package will remove such intermediate steps and associated frustrations from our data slinging workflows.
+
+We don't use {datapasta} in this course, but the chances are high that someday soon you'll need to copy-and-paste data.
+
+
+
+## `{here}`  ·
+
+Reference page: https://here.r-lib.org/
+
+> The goal of the here package is to enable easy file referencing in project-oriented workflows. In contrast to using setwd(), which is fragile and dependent on the way you organize your files, here uses the top-level directory of a project to easily build paths to files.
+
+The `here()` package is used as part of the Workflow chapter.
+
+
+
+## `{janitor}`  ·
+
+Reference page: https://garthtarr.github.io/meatR/janitor.html
+
+> The janitor package is a R package that has simple functions for examining and cleaning dirty data. It was built with beginning and intermediate R users in mind and is optimised for user-friendliness.
+
+> The main janitor functions:
+
+>* perfectly format data frame column names;
+>
+>* isolate partially-duplicate records; and
+>
+>* provide quick tabulations (i.e., frequency tables and crosstabs).
+
+
+| function | action |
+| :-- | :-- |
+| **cleaning** |  |
+| `clean_names()` | handles problematic variable names |
+| `remove_empty()` | removes any columns that are entirely empty and entire rows that are entirely empty |
+| `excel_numeric_to_date()` | converts Excel date serial numbers to class `Date` |
+| **data summaries** |  |
+| `tabyl()` |  takes a vector and returns a frequency table |
+| `adorn_()` | a family of functions for additional summary values |
+
+
