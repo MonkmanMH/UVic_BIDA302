@@ -11,8 +11,8 @@ biblio-style: apalike
 link-citations: yes
 links-as-notes: true
 colorlinks: true
-cover-image: BIDA302_hex_400.jpg
-#github-repo: MonkmanMH/DataScienceResources_book
+cover-image: "BIDA302_hex_400.jpg"
+github-repo: "MonkmanMH/UVic_BIDA302"
 description: "The course book for BIDA302"
 ---
 
