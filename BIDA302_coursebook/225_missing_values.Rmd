@@ -1,0 +1,194 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+-->
+
+
+# Missing values {#missing}
+
+
+```{r setup, echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+library(tidyverse)
+library(gapminder)
+```
+
+It is common that there are missing values in a dataset, and many reasons why this might occur. These missing values are usually represented in R as "NA" values (which is different than a zero or a blank cell.) 
+
+
+## Readings
+
+
+Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [5.2.3 Missing values](https://r4ds.had.co.nz/transform.html#missing-values)
+
+
+J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutput)
+
+* [5.24 Removing NAs from a Data Frame](https://rc2e.com/datastructures#recipe-id249)
+
+
+## A short example
+
+
+The functions `is.na` and `anyNA(x)` are logical—they will return a "TRUE" or "FALSE" value.
+
+
+What does `is.na(x)` return? What about `anyNA(x)`?
+
+```{r}
+# example
+x <- c(1, NA, 3)
+
+# answer
+is.na(x)
+
+```
+
+There are three values in `x`, so three tests—only the second one is `NA`.
+
+
+```{r}
+
+
+anyNA(x)
+
+```
+
+
+One of the three values in `x` is `NA`, so only one "TRUE" is returned.
+
+
+
+What if we put an exclamation mark—the "not" symbol—in front of `is.na()`? How does it differ from `is.na()`?
+
+```{r}
+!is.na(x)
+```
+
+
+
+Use `na.rm` within the `sum()` function to calculate the sum of `x`
+
+```{r}
+# example
+sum(x)
+
+# answer
+sum(x, na.rm = TRUE)
+
+
+```
+
+
+## A longer example
+
+First step: review the structure of the `mpg` data set:
+
+```{r}
+mpg
+```
+
+
+Run the chunk below to create the `displ_class_by_cyl` table:
+
+* group the cars by class and cylinder size, and 
+
+* show the mean displacement (engine size)
+
+```{r}
+# summary table - class by cylinder
+displ_class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(displ_mean = mean(displ)) %>%
+  arrange(desc(displ_mean)) %>%
+  pivot_wider(names_from = cyl, values_from = displ_mean) %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+
+displ_class_by_cyl
+
+```
+
+Calculate the mean of `displ_mean`:
+
+```{r}
+# example
+mean(displ_class_by_cyl$displ_mean)
+
+```
+
+The "NA" values get in the way of the calculation. If `na.rm = TRUE` is added to the `mean()` function, R will calculate the value for us by removing the "NA" values.
+
+```
+
+# solution
+mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
+
+```
+
+
+An alternative solution: use a filter with `!na` to remove the records with `NA` values:
+
+```{r}
+# example
+displ_class_by_cyl %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+# solution
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+```
+
+
+### Summarize with `group()` and `ungroup()`
+
+
+You'll notice in the example above that when we summarize `displ_class_by_cyl` it gives the mean values by class, even though we didn't use any grouping variable.
+
+This is because when we ran the code to create the `displ_class_by_cyl` table, we grouped by `class` and `cyl`. Running the `summarise()` function is applied, it removes one level of the grouping (in this case, `cyl`): 
+
+```{r}
+
+# example
+displ_class_by_cyl
+
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+
+```
+
+
+If you want the mean of _all_ the values, you have to use `ungroup()` before `summarise()`, to "peel off" `class`.
+
+
+```{r}
+
+# solution
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  ungroup() %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+
+```
+
+
+## Take aways
+
+* using functions to identify unknown values in a variable
+
+* removing and finding "NA" values
+
+* using `ungroup()` to remove the effect of a `group_by()` function
+
+

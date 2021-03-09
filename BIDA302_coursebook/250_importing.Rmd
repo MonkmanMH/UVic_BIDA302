@@ -31,10 +31,14 @@ library(gapminder)
 
 ## Reading
 
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
 
 * [11. Data import](https://r4ds.had.co.nz/data-import.html)
 
+
+J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutput)
+
+* [4. Input and Output](https://rc2e.com/inputandoutput)
 
 
 ## Getting started
@@ -45,7 +49,7 @@ We will also be loading the contents of an Excel file. While the {readxl} packag
 
 ```{r}
 library(tidyverse)  # we will be using the functions of {readr}
-library(readxl)
+library(readxl)     
 ```
 
 
@@ -211,8 +215,27 @@ read_excel(datasets, 4)
 
 ```
 
+***
+
+## Exercise
+
+### Discussion
+
+The Excel portion of this chapter relies on some common methods to deal with how spreadsheet files are often used (Excel isn't the only spreadsheet software, just very common.) Read the journal article by Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)[@Broman_Woo_2017] and come to class ready to discuss the following questions.
 
 
+**Discussion questions:**
+
+1. How many people in your discussion group have used spreadsheets, in their research, courses, or at home?
+
+2. How many people in your discussion group have accidentally done something that made them frustrated or sad? How many of them have done the sorts of things that Broman and Woo advise against?
+
+3. What are basic principles for using spreadsheets for good data organization?
+
+4. What are good approaches for handling dates in spreadsheets?
+
+
+***
 
 ## Reference Material
 

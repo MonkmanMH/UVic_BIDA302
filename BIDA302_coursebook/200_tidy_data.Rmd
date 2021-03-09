@@ -171,11 +171,15 @@ class_by_cyl %>%
 
 ***
 
-## Exercise
+## Exercises
+
+### Hands-on exercise
 
 [Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
 
 * This exercise gives you an opportunity to practice your {dplyr} and {tidyr} skills
+
+
 
 
 ***
