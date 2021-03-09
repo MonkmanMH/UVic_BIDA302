@@ -43,7 +43,7 @@ The next thing we'll do is read in the data file. For this we will use "mlb_pay_
 
 ```{r}
 
-mlb_pay_wl <- read_csv("data/mlb_pay_wl.csv")
+mlb_pay_wl <- read_csv("mlb_pay_wl.csv")
 
 ```
 
