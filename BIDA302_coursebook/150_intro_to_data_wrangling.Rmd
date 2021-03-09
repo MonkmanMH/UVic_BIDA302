@@ -599,8 +599,11 @@ gapminder %>%
 
 ### Counting the number of cases
 
-In this section, we will look at three different approaches to get to the same result. For these examples, we will use the `mpg` dataset, and produce a summary table that shows the number of vehicles by class (compact, suv, etc) and number of cylinders in the engine (the variable `cyl`).
+A common step in a data analysis project is to count the number of cases in our dataset, often by groups. 
 
+For these examples, we will use the `mpg` dataset, and produce a summary table that shows the number of vehicles by class (compact, suv, etc) and number of cylinders in the engine (the variable `cyl`).
+
+In this section, we will look at three different approaches to get to the same result.
 
 #### `n()` ·
 
