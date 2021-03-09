@@ -580,6 +580,86 @@ gapminder %>%
 ```
 
 
+### `count()` and `tally()`
+
+Any Star Wars fans? Here's a list of some of the characters in the movies Episodes 1 - 6 (the dataset is included in the {dplyr} package).
+
+```{r}
+
+starwars
+
+```
+
+#### `count()` ·
+
+In our example, we will create a summary table that counts the number of characters by sex and gender.
+
+The most streamlined way we could do this is by using the `count()` function, which allows us to put the categories we want to count by into the function.
+
+```{r}
+
+starwars %>% 
+  count(sex, gender)
+
+```
+
+#### `tally()` ·
+
+Another approach is to use the `tally()` function to count the number of rows in each group. Note that in this example we have to add a `group_by()` statement before the `tally()`.
+
+```{r}
+
+starwars %>% 
+  group_by(sex, gender) %>% 
+  tally()
+
+
+```
+If we want to sort in the `tally()` function, we can add a `sort = TRUE` argument. Note that this behaves differently than `arrange()` — `sort = TRUE` is largest to smallest.
+
+```{r}
+sw_by_sex_gender %>% tally(sort = TRUE)
+
+```
+
+
+#### `n()` ·
+
+There is a third, even more verbose approach to getting to the same table. Here we start with the original ungrouped dataset, applying the `group_by()`, then use the `n()` function inside a `summarise()` (in place of the `tally()`).
+
+```{r}
+
+starwars %>% 
+  group_by(sex, gender) %>% 
+  summarise(n()) 
+```
+
+To get a sorted result, we would need to add an `arrange(desc())` function to our pipe:
+
+```{r}
+
+starwars %>% 
+  group_by(sex, gender) %>% 
+  summarise(n = n()) %>% 
+  arrange(desc(n))
+
+```
+
+
+Without the grouping variables, these three statements produce the same result:
+
+```{r}
+starwars %>% count()
+
+starwars %>% tally()
+
+starwars %>% summarise(n())
+```
+
+
+
+
+
 ## Take aways
 
 * Extract cases with `filter()`  
