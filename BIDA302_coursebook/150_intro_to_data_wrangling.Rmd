@@ -677,7 +677,7 @@ mpg %>%
 ```
 
 
-#### final
+#### counting wrapup
 
 Without the grouping variables, these three statements produce the same result:
 
@@ -689,6 +689,7 @@ mpg %>% tally()
 mpg %>% count()
 
 ```
+
 
 There are other counting functions within {dplyr}, see the reference page https://dplyr.tidyverse.org/reference/count.html for more details.
 
