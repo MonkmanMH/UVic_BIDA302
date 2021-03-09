@@ -546,12 +546,29 @@ Find the median life expectancy by continent in 2007.
 gapminder %>%
   filter(year == 2007) %>% 
   group_by(continent) %>%
+  mutate(lifeExp_mean = mean(lifeExp))
+
+```
+
+
+We can also compare the life expectancy in each country to the continental average by ungrouping our table. The code below starts with the same pipe as above, then adds the `ungroup()` function and another `mutate()`:
+
+
+```{r}
+# answer
+
+gapminder %>%
+  filter(year == 2007) %>% 
+  group_by(continent) %>%
   mutate(lifeExp_mean = mean(lifeExp)) %>%
-  ungroup() %>% 
+  # add ungroup
+  ungroup() %>%
+  # then subtract the group mean from the individual value
   mutate(lifeExp_diff = lifeExp - lifeExp_mean)
 
 ```
 
+#### Grouping with multiple variables
 
 We can group by multiple variables.
 
@@ -580,83 +597,97 @@ gapminder %>%
 ```
 
 
-### `count()` and `tally()`
+### Counting the number of cases
 
-Any Star Wars fans? Here's a list of some of the characters in the movies Episodes 1 - 6 (the dataset is included in the {dplyr} package).
-
-```{r}
-
-starwars
-
-```
-
-#### `count()` ·
-
-In our example, we will create a summary table that counts the number of characters by sex and gender.
-
-The most streamlined way we could do this is by using the `count()` function, which allows us to put the categories we want to count by into the function.
-
-```{r}
-
-starwars %>% 
-  count(sex, gender)
-
-```
-
-#### `tally()` ·
-
-Another approach is to use the `tally()` function to count the number of rows in each group. Note that in this example we have to add a `group_by()` statement before the `tally()`.
-
-```{r}
-
-starwars %>% 
-  group_by(sex, gender) %>% 
-  tally()
-
-
-```
-If we want to sort in the `tally()` function, we can add a `sort = TRUE` argument. Note that this behaves differently than `arrange()` — `sort = TRUE` is largest to smallest.
-
-```{r}
-sw_by_sex_gender %>% tally(sort = TRUE)
-
-```
+In this section, we will look at three different approaches to get to the same result. For these examples, we will use the `mpg` dataset, and produce a summary table that shows the number of vehicles by class (compact, suv, etc) and number of cylinders in the engine (the variable `cyl`).
 
 
 #### `n()` ·
 
-There is a third, even more verbose approach to getting to the same table. Here we start with the original ungrouped dataset, applying the `group_by()`, then use the `n()` function inside a `summarise()` (in place of the `tally()`).
+Here we start with the original ungrouped dataset, applying the `group_by()`, then use the `n()` function inside a `summarise()` to count the number of cases (or observations).
+
 
 ```{r}
 
-starwars %>% 
-  group_by(sex, gender) %>% 
-  summarise(n()) 
+mpg %>% 
+  group_by(class, cyl) %>% 
+  summarise(n = n()) 
+
 ```
 
 To get a sorted result, we would need to add an `arrange(desc())` function to our pipe:
 
 ```{r}
 
-starwars %>% 
-  group_by(sex, gender) %>% 
+mpg %>% 
+  group_by(class, cyl) %>% 
   summarise(n = n()) %>% 
   arrange(desc(n))
 
 ```
 
+#### `tally()` ·
+
+Another approach to count the number of rows in each group is to use the `tally()` function, which takes the place of the `summarize(n = n())` function. 
+
+```{r}
+
+mpg %>% 
+  group_by(class, cyl) %>% 
+  tally()
+
+
+```
+If we want to sort in the `tally()` function, we can add a `sort = TRUE` argument. Note that this behaves differently than `arrange()`; `sort = TRUE` is largest to smallest.
+
+```{r}
+
+mpg %>% 
+  group_by(class, cyl) %>% 
+  tally(sort = TRUE)
+
+```
+
+
+
+
+#### `count()` ·
+
+The most streamlined way we could get to our grouped summary table with counts is by using the `count()` function. This function merges both the grouping and tallying functions.
+
+The categories we want to count become the arguments of the `count()` function.
+
+```{r}
+
+mpg %>% 
+  count(class, cyl)
+
+```
+
+Similar to tally, we can include a `sort = TRUE` argument.
+
+```{r}
+
+mpg %>% 
+  count(class, cyl, sort = TRUE)
+
+```
+
+
+#### final
 
 Without the grouping variables, these three statements produce the same result:
 
 ```{r}
-starwars %>% count()
+mpg %>% summarise(n = n())
 
-starwars %>% tally()
+mpg %>% tally()
 
-starwars %>% summarise(n())
+mpg %>% count()
+
 ```
 
-
+There are other counting functions within {dplyr}, see the reference page https://dplyr.tidyverse.org/reference/count.html for more details.
 
 
 
@@ -672,6 +703,7 @@ starwars %>% summarise(n())
 * Make tables of summaries with `summarise()`  
 * Do groupwise operations with `group_by()`
 
+* Count the number of cases with `tally()` and `count()`
 
 
 -30-
