@@ -377,7 +377,7 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 
 ### Installing R on your own computer
 
-For BIDA302, we will be using [rstudio.cloud](rstudio.cloud.com) and there is no need for you to install R and RStudio on your own computer.
+For BIDA302, we will be using [rstudio.cloud](https://rstudio.com/products/cloud/) and there is no need for you to install R and RStudio on your own computer.
 
 However, if you wish to do so, you are welcome to take that step. And of course, once BIDA302 is complete, my hope is that you see yourself using this powerful too, and want to continue your journey.
 

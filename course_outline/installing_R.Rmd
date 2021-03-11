@@ -1,0 +1,31 @@
+---
+title: "Installing R and RStudio on your own computer"
+subtitle: ""
+output: html_document
+---
+
+<!-- 
+This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License
+-->
+
+### Installing R on your own computer
+
+For BIDA302, we will be using [rstudio.cloud](https://rstudio.com/products/cloud/) and there is no need for you to install R and RStudio on your own computer.
+
+However, if you wish to do so, you are welcome to take that step. And of course, once BIDA302 is complete, my hope is that you see yourself using this powerful too, and want to continue your journey.
+
+Here are some resources for you to take the step of installing the software on your own computer:
+
+J.D. Long and Paul Teetor, _R Cookbook (2nd edition)_
+
+* ["Getting Started and Getting Help"](https://rc2e.com/gettingstarted)
+
+* See recipes 1.1 through 1.3
+
+
+Danielle Navarro, [_running R on your own computer_](https://youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd)
+
+* A series of videos on youtube, with installation instructions for different operating systems (Mac, Windows, and Ubuntu linux), as well as loading and installing packages from both CRAN and GitHub (where many in-development packages are available)
+
+
+-30-
