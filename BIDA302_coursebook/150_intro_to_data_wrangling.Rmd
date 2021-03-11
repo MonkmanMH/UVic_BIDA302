@@ -697,14 +697,18 @@ There are other counting functions within {dplyr}, see the reference page https:
 
 ## Take aways
 
-* Extract cases with `filter()`  
-* Restructure data frames with `select()`  
-* Make new variables, with `mutate()`  
+* Extract cases with `filter()`. For filtering, we have to specify the _values_ we want and the _variable_ that they are in.
+
+* Choose the rows we want from our dataframes with `select()`. To select the columns we want, we have to specify the _variable(s)_ that we want.  
+
+* Create new variables, with `mutate()`  
 
 * Filter using a list with `%in%`
-* Connect operations with `%>%`  
+
+* Connect operations with the pipe symbol `%>%`  
 
 * Make tables of summaries with `summarise()`  
+
 * Do groupwise operations with `group_by()`
 
 * Count the number of cases with `tally()` and `count()`
