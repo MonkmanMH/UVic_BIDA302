@@ -396,7 +396,7 @@ Garrett Grolemund, _Hands-On Programming with R_
 * [Appendix B: "R Packages"](https://rstudio-education.github.io/hopr/packages2.html)
 
 
-Danelle Navarro, [_running R on your own computer_](https://youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd)
+Danielle Navarro, [_running R on your own computer_](https://youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd)
 
 * A series of videos on youtube, with installation instructions for different operating systems (Mac, Windows, and Ubuntu linux), as well as loading and installing packages from both CRAN and GitHub (where many in-development packages are available)
 
