@@ -103,64 +103,8 @@ In R (as with other programming languages), data is stored as different variable
 `lgl` stands for logical, vectors that contain only TRUE or FALSE.
 
 
-### Missing values `NA` 
 
 
-Or a longer example...
-
-This data has multiple NAs in the "displ_mean" column.
-
-`displ_class_by_cyl`
-
-```{r echo=FALSE}
-# summary table - class by cylinder
-displ_class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(displ_mean = mean(displ)) %>%
-  arrange(desc(displ_mean)) %>%
-  pivot_wider(names_from = cyl, values_from = displ_mean) %>%
-  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
-
-displ_class_by_cyl
-
-```
-
-
-What happens when we calculate the mean of "displ_mean"?
-
-```{r}
-mean(displ_class_by_cyl$displ_mean)
-```
-
-
-The solution:
-
-`na.rm` removes `NA`s from the calculation
-
-```{r}
-mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
-```
-
-
-
-#### Functions for missing values
-
-Dealing with those pesky `NA` values  
-
-| function | action |
-| :-- | :-- |
-| `na.rm = TRUE` | remove `NA` values when running function|
-| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
-| `anyNA(x)` | returns a single TRUE or FALSE |
-
-
-
-Here's what is returned when we use `is.na()` on a short list of three values, one of which is `NA`:
-```{r}
-x <- c(1, NA, 3)
-
-is.na(x)
-```
 
 ## Missing values
 
@@ -185,6 +129,20 @@ It is common that there are missing values in a dataset, and many reasons why th
 Missing values are _contagious_
 
 * an `NA` in the input will return an `NA` in the output
+
+
+
+
+### Functions for missing values
+
+Dealing with those pesky `NA` values  
+
+| function | action |
+| :-- | :-- |
+| `na.rm = TRUE` | remove `NA` values when running function|
+| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
+| `anyNA(x)` | returns a single TRUE or FALSE |
+
 
 
 
@@ -266,7 +224,7 @@ sum(x, na.rm = TRUE)
 ```
 
 
-## A longer example
+### A longer example
 
 First step: review the structure of the `mpg` data set:
 
@@ -286,7 +244,7 @@ Run the chunk below to create the `displ_class_by_cyl` table:
 displ_class_by_cyl <- mpg %>%
   group_by(class, cyl) %>%
   summarise(displ_mean = mean(displ)) %>%
-  arrange(desc(displ_mean)) %>%
+  arrange(cyl, class) %>%
   pivot_wider(names_from = cyl, values_from = displ_mean) %>%
   pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
 
@@ -304,7 +262,7 @@ mean(displ_class_by_cyl$displ_mean)
 
 The "NA" values get in the way of the calculation. If `na.rm = TRUE` is added to the `mean()` function, R will calculate the value for us by removing the "NA" values.
 
-```
+```{r}
 
 # solution
 mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
@@ -364,7 +322,7 @@ displ_class_by_cyl %>%
 
 ## Take aways
 
-* using functions to identify unknown values in a variable
+* using functions to identify unknown ("NA") values in a variable
 
 * removing and finding "NA" values
 
