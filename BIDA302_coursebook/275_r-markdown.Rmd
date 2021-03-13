@@ -1,17 +1,25 @@
----
-title: "Hands-on excercises - class 2"
-subtitle: "R Markdown"
-output:
-  html_document
----
 
-<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License. -->
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
 
-## R Markdown
+-->
+
+
+# R Markdown {#r-markdown}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+```
 
 This document will introduce you to R Markdown notebooks, and give you some hands-on experience adding to the document.
 
-### Reference material
+## Reference material
 
 You can find more details in [_R for Data Science_, "R Markdown"](https://r4ds.had.co.nz/r-markdown.html)
 
@@ -26,7 +34,7 @@ Yihui Xie, J. J. Allaire, Garrett Grolemund, [*R Markdown: The Definitive Guide*
 * code chunk options described here: <https://bookdown.org/yihui/rmarkdown/r-code.html>
 
 
-### Getting started
+## Getting started
 
 You can create a new R Markdown document in RStudio by clicking the menu item:
 
@@ -38,6 +46,7 @@ You can create a new R Markdown document in RStudio by clicking the menu item:
 
 For this course, we will be using the Document option...for your project, you may wish to use another format.
 
+
 ### Typing, running, and knitting
 
 When you type in an R Markdown document, you just get what you type.
@@ -46,7 +55,7 @@ The magic starts to happen when you run R code chunks in the document...we will 
 
 And the real whiz-bang thing is that when you've finished, you can "knit" the document. At that point, the code chunks are run, and the markdown formatting is interpreted, and you get a beautiful document.
 
-------------------------------------------------------------------------
+
 
 ## 1. Markdown syntax
 
@@ -54,13 +63,13 @@ Markdown is a great way to write a report, slide deck, book, ... even hands-on e
 
 Formatting is simple. Check the cheatsheet for some details, or this section of [*R for Data Science*](https://r4ds.had.co.nz/r-markdown.html#text-formatting-with-markdown)
 
-### Your Turn 1.1
+#### Your Turn 1.1
 
 Write something that you want bolded:
 
 Now, make a bullet list with the names of three colours:
 
-### Your Turn 1.2
+#### Your Turn 1.2
 
 1.  Add a hypertext link to the text book's title: Hadley Wickham and Garrett Grolemund, *R for Data Science*, so that it creates a link to the online version of the book at r4ds.had.co.nz .
 
@@ -68,7 +77,7 @@ Now, make a bullet list with the names of three colours:
 
 `![The data science process]("data-science.png")`
 
-------------------------------------------------------------------------
+
 
 ## 2. The first chunk: "setup"
 
@@ -80,11 +89,12 @@ To run a chunk, press the green arrow at the far right of the chunk, or put your
 
 ### Your Turn 2.1
 
-Add the `library()` function to load the package {cowsay} to the setup chunk, and run the chunk.
+Add the package {cowsay} to the setup chunk, and run the chunk.
 
 ```{r setup}
 library(tidyverse)
-
+# solution
+library(cowsay)
 ```
 
 ### Your Turn 2.2
@@ -106,7 +116,9 @@ You could also type the three back ticks, the curly braces, the letter R, and th
 In the new chunk you have just created, type the function `say()` (which is from the {cowsay} package), inside the parentheses put a short quote (for example, "I like BIDA302"), and then run the chunk...
 
 ```{r}
+# solution
 
+say("I like BIDA302")
 
 ```
 
@@ -118,6 +130,7 @@ Try experimenting with other arguments. For example, instead of your quote (whic
 
 Now you have had a chance to experiement with that silliness...onward!
 
+------------------------------------------------------------------------
 
 ## 3. Chunk contents
 
@@ -155,6 +168,7 @@ ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy))
 ```
 
+------------------------------------------------------------------------
 
 ## 4. Inline R code
 
@@ -170,7 +184,7 @@ When this is rendered (as we will later) this code chunk will be evaluated, and 
 
 Now is your chance to get fancy: write a sentence that uses inline code and the function `sqrt` to calculate the square root of `my_total`, which you calculated before.
 
-
+------------------------------------------------------------------------
 
 ## 5. Rendering the HTML file
 
@@ -203,6 +217,8 @@ What happens when you replace the `output: html_document` with the following?
       html_document:
         theme: united
         highlight: tango
+
+
 
 ### Table of contents
 
