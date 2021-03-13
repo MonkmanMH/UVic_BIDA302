@@ -49,6 +49,8 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 ## Transform Data 3: changing the layout
 
+### Tidy and untidy data
+
 In the dataframes we have used so far, the data is in a format that adheres to the rules of tidy data, where
 
 - each column is a variable
@@ -72,6 +74,18 @@ The "wide" form doesn't adhere to the rules of tidy data, since each row has mul
 
 
 ![](static/img/tidyr-pivot_wider_longer.gif)
+
+> Untidy data most often look like this:
+> * Column headers are values, not variable names.
+> * Multiple variables are stored in one column.
+> * Variables are stored in both rows and columns.
+> * Multiple types of observational units are stored in the same table.
+> * A single observational unit is stored in multiple tables.
+
+(Source: John Spencer, ["Tidy Data and How to Get It"](https://www.measureevaluation.org/resources/newsroom/blogs/tidy-data-and-how-to-get-it))
+
+
+### An example
 
 Let's create a pivot table crosstab using the {mpg} data package of automobile fuel economy.
 
@@ -174,6 +188,63 @@ class_by_cyl %>%
 ## Exercises
 
 ### Hands-on exercise
+
+
+Create a table that shows:
+
+* GDP per capita for
+* the countries Canada, United States, and Mexico are the columns, and 
+* the years after 1980 are the rows
+
+```{r}
+# solution #1
+gapminder %>% 
+  filter(country %in% c("Canada", "United States", "Germany") &
+           year > 1980) %>%
+  select(country, year, gdpPercap) %>% 
+  pivot_wider(names_from = country, values_from = gdpPercap)
+
+# a similar solution that uses "or" for the countries
+# and two separate filter statements
+gapminder %>% 
+  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
+  filter(year > 1980) %>%
+  select(country, year, gdpPercap) %>% 
+  pivot_wider(names_from = country, values_from = gdpPercap)
+
+```
+
+Here's an alternative approach that avoids the use of the `select()` function.
+
+Note that by adding `year` to the `pivot_wider()` all the variables in the final table are explicitly named in the function.
+
+```{r}
+gapminder %>% 
+  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
+  filter(year > 1980) %>% 
+  pivot_wider(year, 
+              names_from = "country", 
+              values_from = "gdpPercap")
+
+```
+
+In this version, the three variables `continent`, `lifeExp`, and `pop` are dropped with the minus sign—the remaining variables are then reshaped.
+
+```{r}
+gapminder %>% 
+  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
+  filter(year > 1980) %>% 
+  pivot_wider(c(-continent, -lifeExp, -pop), 
+              names_from = "country", 
+              values_from = "gdpPercap")
+
+```
+
+(Thanks to the students of BIDA302 fall 2021 for teaching me this!)
+
+
+
+### Online exercise
 
 [Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
 
