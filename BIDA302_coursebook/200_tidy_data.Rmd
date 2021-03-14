@@ -37,11 +37,13 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 * [6. Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 
-* [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
-
 
 
 * Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)[@Broman_Woo_2017]
+
+* Julie Lowndes and Allison Horst, ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))[@Lowndes_Horst_tidy_data2020]
+
+
 
 * [{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
 

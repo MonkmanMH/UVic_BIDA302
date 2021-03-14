@@ -19,9 +19,12 @@ options(width = 100, dplyr.width = 100)
 
 This document will introduce you to R Markdown notebooks, and give you some hands-on experience adding to the document.
 
-## Reference material
+## Reading & reference
 
-You can find more details in [_R for Data Science_, "R Markdown"](https://r4ds.had.co.nz/r-markdown.html)
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+
 
 
 There's also a short listing of them in the R Markdown cheatsheet and reference guide, available online and through the "Help / Cheatsheets \>" menu item in RStudio
@@ -29,7 +32,7 @@ There's also a short listing of them in the R Markdown cheatsheet and reference 
 
 [R Markdown cheat sheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
-Yihui Xie, J. J. Allaire, Garrett Grolemund, [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/)
+Yihui Xie, J. J. Allaire, Garrett Grolemund, [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/)[@Xie_etal_markdown]
 
 * code chunk options described here: <https://bookdown.org/yihui/rmarkdown/r-code.html>
 
