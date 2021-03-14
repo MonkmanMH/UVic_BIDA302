@@ -58,6 +58,8 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 ## Transform Data 3: changing the layout
 
+### Tidy and untidy data
+
 In the dataframes we have used so far, the data is in a format that adheres to the rules of tidy data, where
 
 - each column is a variable
@@ -81,6 +83,17 @@ The "wide" form doesn't adhere to the rules of tidy data, since each row has mul
 
 
 ![](tidyr-pivot_wider_longer.gif)
+
+> Untidy data most often look like this:
+> * Column headers are values, not variable names.
+> * Multiple variables are stored in one column.
+> * Variables are stored in both rows and columns.
+> * Multiple types of observational units are stored in the same table.
+> * A single observational unit is stored in multiple tables.
+
+(Source: John Spencer, ["Tidy Data and How to Get It"](https://www.measureevaluation.org/resources/newsroom/blogs/tidy-data-and-how-to-get-it))
+
+### An example
 
 Let's create a pivot table crosstab using the {mpg} data package of automobile fuel economy.
 

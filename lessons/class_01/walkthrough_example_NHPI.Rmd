@@ -14,7 +14,6 @@ output:
 
 This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
 
-![The data science process](../../static/img/data-science.png)
 
 ***
 

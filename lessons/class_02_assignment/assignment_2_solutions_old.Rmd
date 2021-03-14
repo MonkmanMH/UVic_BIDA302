@@ -10,8 +10,8 @@ subtitle: "solutions"
 
 Package load:
 ```{r setup}
-library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
-library(readxl)    # to read Excel files
+library(tidyverse)
+library(readxl)
 ```
 
 
@@ -29,53 +29,37 @@ library(readxl)    # to read Excel files
 ## Questions
 
 
-### 1. Religion and income data (USA)
+### 1. R Markdown
 > (2 marks)
-
-> The table `relig_income` is in {tidyr}.
 >
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+> Using the R Markdown quick reference, figure out how to:
 >
-
-```{r}
-tidyr::relig_income
-```
-It violates Principle #1, each variable must have its own column. In this example, the "income" variable is spread across 10 columns.
-
-
+> a. Add a footnote.
 >
->b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer untidy.
+> b. Add a horizontal rule.
+>
+> c. Add a block quote.
 
 
-```{r}
+**Answer:**
 
-relig_income_long <- relig_income %>%
-  pivot_longer(-religion, names_to = "income_cat", values_to = "count")
+a:  Add a footnote^[This is a footnote.]
 
-relig_income_long
-```
+b: A horizontal rule is three hyphens
 
-And to pivot it back to wide layout:
+****
 
+c. A blockquote line starts with a greater than sign
 
-```{r}
-
-relig_income_long %>%
-  pivot_wider(names_from = "income_cat", values_from = "count")
-
-```
+> This is my blockquote
 
 
-***
+
 
 
 
 ### 2. Importing data: csv
 > (5 marks)
->
-> **NOTE:**
-> Variable names with spaces and special symbols are a challenge to work with. They require
-> that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
 >
 > Comma delimited files are one of the most common formats used for flat files. The tidyverse has a package, {readr}, which will automatically load with the function `library(tidyverse)`.
 >
@@ -99,14 +83,14 @@ court_cases <- read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-
 
 ```{r}
 # solution
-court_cases <-
-  read_csv(
-    "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
-    col_types = cols(`Court Region Code` = col_character())
-  )
+court_cases <- 
+  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
+                        col_types = cols(
+                          `Court Region Code` = col_character()
+                        ))
 
 # if we wanted to also specifiy that "Year" be in date format:
-#court_cases <-
+#court_cases <- 
 #  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
 #                        col_types = cols(
 #                          `Court Region Code` = col_character(),
@@ -148,8 +132,7 @@ read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
   arrange(desc(Count)) %>%
  
   pivot_wider(names_from = `Court Region`, values_from = Count) %>%
-  pivot_longer(c(Fraser, `Vancouver Coastal`, `Vancouver Island`, Interior, North),
-               names_to = "Court Region", values_to = "Count")
+  pivot_longer(names_to = `Court Region`, values_to = Count)
 ```
 
 
@@ -201,7 +184,7 @@ read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019"
 ```
 
 > 
-> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign involvement. (There are many variables; the one you're looking for is `FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`)
+> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign > involvement.
 > 
 > **Note:** Depending on what you did in 3.d, you may need to go back and read the data in again, adding more options.
 

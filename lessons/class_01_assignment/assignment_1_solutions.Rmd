@@ -100,33 +100,7 @@ gapminder %>%
 >a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 >
 
-```{r}
-tidyr::relig_income
-```
-
-It violates Principle #1, each variable must have its own column. In this example, the "income" variable is spread across 10 columns.
-
->
->b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
-
-
-```{r}
-
-relig_income_long <- relig_income %>%
-  pivot_longer(-religion, names_to = "income_cat", values_to = "count")
-
-relig_income_long
-```
-
-And to pivot it back to wide layout:
-
-
-```{r}
-
-relig_income_long %>%
-  pivot_wider(names_from = "income_cat", values_from = "count")
-
-```
+Coming in week 2!
 
 ***
 
@@ -300,27 +274,9 @@ displ_class_by_cyl
 
 > a. What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `displ_class_by_cyl`?
 
-```{r}
-
-displ_class_by_cyl %>%
-  group_by(class) %>%
-  summarise(mean = mean(displ_mean))
-
-```
-
-You get "NA" for all but one of the class variables! 
-
-This is because the `mean()` function requires valid values.
 
 > b. Solve this problem so that the table looks like the first one in this question. Use any and all of the reference materials at your disposal!
 
-The way to solve this is to use the option `na.rm = TRUE` (`rm` means "remove") in the function call.
 
+Coming in Week 2!
 
-```{r}
-
-displ_class_by_cyl %>%
-  group_by(class) %>%
-  summarise(mean = mean(displ_mean, na.rm = TRUE))
-
-```

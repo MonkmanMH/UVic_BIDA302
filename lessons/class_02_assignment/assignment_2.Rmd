@@ -1,8 +1,7 @@
 ---
-title: 'BIDA302 - assignment #2'
-output:
-  html_document:
-    df_print: paged
+title: "BIDA302 - assignment #2"
+subtitle: ""
+output: html_document
 ---
 
 ## YOUR NAME HERE
@@ -10,8 +9,8 @@ output:
 
 Package load:
 ```{r setup}
-library(tidyverse)
-library(readxl)
+library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
+library(readxl)    # to read Excel files
 ```
 
 
@@ -29,25 +28,33 @@ library(readxl)
 ## Questions
 
 
-### 1. R Markdown
+### 1. Religion and income data (USA)
 > (2 marks)
+
+> The table `relig_income` is in {tidyr}.
 >
-> Using the R Markdown quick reference, figure out how to:
+>a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 >
-> a. Add a footnote.
+
+```{r}
+tidyr::relig_income
+```
+
 >
-> b. Add a horizontal rule.
->
-> c. Add a block quote.
+>b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer untidy.
 
 
-**Answer:**
 
+***
 
 
 
 ### 2. Importing data: csv
 > (5 marks)
+>
+> **NOTE:**
+> Variable names with spaces and special symbols are a challenge to work with. They require
+> that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
 >
 > Comma delimited files are one of the most common formats used for flat files. The tidyverse has a package, {readr}, which will automatically load with the function `library(tidyverse)`.
 >
@@ -55,45 +62,22 @@ library(readxl)
 >
 >
 > a. Read in the file "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv", which has the number of concluded court cases in B.C. by a variety of dimensions.
+>
+> b. Assign the contents of the file to a named object (remember, name things in a descriptive way!)
 > 
 
-<!--
-The file is sourced from here: 
-> https://catalogue.data.gov.bc.ca/dataset/courts-concluded-cases-5-yr-regional-report-dashboard-2014-2018
--->
 
 **Answer:**
 
-```{r}
-
-
-```
 
 > b. Read the file again, but specify that the region code should be a character.
-
-```{r}
-
-
-
-```
 
 
 >c. Now you've read it in, use your data manipulation skills to find out how many cases were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
 
 
-```{r}
-
-
-
-```
-
 > d. Create a pivot table showing the total number of cases completed in each region during 2018, with the region as the rows and the court class as the columns. 
 
-```{r}
-
-
-
-```
 
 
 ### 3. Importing data: Excel
@@ -102,43 +86,33 @@ The file is sourced from here:
 > Use the {readxl} package to read in the file "regional_district_monthly_2019_mod.xlsx" 
 >
 > This data is published by the Ministry of Finance, and shows a variety of statistics associated with the Property Transfer Tax.
-
-<!-- The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019 -->
-
-
-
+>
+> The original file has been modified:
+> 
+> * filter for the Capital Regional District (CRD) and
+>
+> * the resulting table is transposed, so the rows now become the columns.
+>
+> The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019
 >
 > The reference page for {readxl} is here: https://readxl.tidyverse.org/
 >
 >
 >a. What are the names of the sheets in this file?
 
-```{r}
-
-```
 
 > b. Read in the contents of the sheet with the shortest name.
 
-```{r}
 
+>* c. What issues are there with the rows? What is the header row, and in what row does the data begin? How does this structure impact how the values in the columns are being represented? 
 
-```
+>d. Change the options for your read function to address the issues you identified in 3.c
 
-c. What issues are there with the rows? How is this impacting how the values in the columns are being represented?
-
-d. Change the options for your read function to address this.
-
-```{r}
-
-```
 
 > 
-> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign involvement.
+> e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign involvement. (There are many variables; the one you're looking for is `FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`)
 > 
 > **Note:** Depending on what you did in 3.d, you may need to go back and read the data in again, adding more options.
 
 
-```{r}
-
-```
-
+-30-
