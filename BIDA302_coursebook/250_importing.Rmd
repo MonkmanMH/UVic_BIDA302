@@ -77,11 +77,9 @@ Adding the `cols()` argument allows us to alter what {readr} has decided for us.
 
 ```{r}
 # example
-read_csv("mtcars.csv", 
-         col_types = 
-           cols(cyl = col_integer())
-)
-
+mtcars <- read_csv("mtcars.csv",
+                   col_types =
+                     cols(cyl = col_integer()))
 ```
 
 
