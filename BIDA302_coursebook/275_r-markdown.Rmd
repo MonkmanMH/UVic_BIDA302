@@ -86,7 +86,7 @@ Now, make a bullet list with the names of three colours:
 
 It's good practice to load all of the packages you'll require at the top of your script. When a package is loaded, all of the functions and data in the package are available.
 
-Loading an installed package is done with the `library()` function. The R chunk below, called "setup", will load the {tidyverse} package (which in turn will load other packages, such as the data manipulation package {dplyr} and the plotting package {ggplot2}).
+Loading an installed package is done with the `library()` function. The R chunk named "setup" will load the {tidyverse} package (which in turn will load other packages, such as the data manipulation package {dplyr} and the plotting package {ggplot2}).
 
 To run a chunk, press the green arrow at the far right of the chunk, or put your cursor in the chunk and press `Ctrl + Shift + Enter` (on macOS, `Cmd + Shift + Enter`)
 
@@ -94,7 +94,7 @@ To run a chunk, press the green arrow at the far right of the chunk, or put your
 
 Add the package {cowsay} to the setup chunk, and run the chunk.
 
-```{r setup}
+```{r}
 library(tidyverse)
 # solution
 library(cowsay)
@@ -133,7 +133,6 @@ Try experimenting with other arguments. For example, instead of your quote (whic
 
 Now you have had a chance to experiement with that silliness...onward!
 
-------------------------------------------------------------------------
 
 ## 3. Chunk contents
 

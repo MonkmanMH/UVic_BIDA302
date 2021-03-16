@@ -61,12 +61,11 @@ Read the quartet data in a tidy form^[Source: David Robinson, ["Anscombe’s Qua
 #  arrange(set)
 #anscombe_tidy
 #write_csv(anscombe_tidy, "anscombe_tidy.csv")
-
+#
 ```
 
 
 ```{r anscombe_tidy}
-
 anscombe_tidy <- read_csv("anscombe_tidy.csv")
 
 anscombe_tidy

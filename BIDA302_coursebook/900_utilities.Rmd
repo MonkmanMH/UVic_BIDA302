@@ -16,7 +16,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
 library(tidyverse)
-library(gapminder)
+library(janitor)
 ```
 
 One of the many great things about the R ecosystem is that data scientists around the world are tackling the same types of things that you and I might encounter, creating solutions to those problems, and then sharing those solutions as packages that add new functionality to the ecosystem.
@@ -73,11 +73,49 @@ Reference page: https://garthtarr.github.io/meatR/janitor.html
 | `adorn_()` | a family of functions for additional summary values |
 
 
+```{r, evaluate=FALSE}
+library(janitor)
+```
+
+This is going to demonstrate {janitor} `clean_names()` function
+
+First we read in the valid rows from the "deaths.xlsx" file (part of the [{readxl} package] https://readxl.tidyverse.org/).
+
+```{r}
+deaths <- read_excel("deaths.xlsx", skip = 4, n_max = 10)
+
+deaths
+```
+
+If we wanted to filter the cases where the individual had children, we have to surround the variable name in backticks, since there is a space. We also have to remember to capitalize the "H" (although this is less of an issue, as RStudio's autofill is not sensitive to case).
+
+```{r}
+deaths %>% 
+  filter(`Has kids` == TRUE)
+```
+
+Using the `clean_names()` function from {janitor} gives us a solution, in that it makes the variable names consistently lower-case, and with the spaces replaced by an underscore ("_"). 
+
+```{r}
+deaths <- deaths %>% 
+  janitor::clean_names()
+
+deaths
+```
+
+This then means that our filter statement does not need backticks around the variable name.
+
+```{r}
+deaths %>% 
+  filter(has_kids == TRUE)
+```
+
+{janitor} has a range of other useful functions, including removing empty columns and rows, and creating summary cross-tab tables.
+
+
 
 ## But wait, there's more!
 
 Here's a twitter thread on packages that people nominated as deserving more attention:
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Everyone talks about <a href="https://twitter.com/hashtag/RMarkdown?src=hash&amp;ref_src=twsrc%5Etfw">#RMarkdown</a> ggplot2 and their extensions. But we all have some pkgs that we use all the time and that get less credit! What are the pkgs/tools that you love and that you feel they are under-appreciated? Here there are some of mine! <a href="https://t.co/lnqxIBHEN7">pic.twitter.com/lnqxIBHEN7</a></p>&mdash; We are R-Ladies (@WeAreRLadies) <a href="https://twitter.com/WeAreRLadies/status/1369984394836910084?ref_src=twsrc%5Etfw">March 11, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 https://twitter.com/WeAreRLadies/status/1369984394836910084
