@@ -22,4 +22,4 @@ library(gapminder)
 
 Danielle Navarro, [_Learning statistics with R_, Chapter 15 Linear regression](https://learningstatisticswithr.com/book/regression.html)[@Navarro_learning_statistics]
 
-
+Chester Ismay & Albert Y. Kim, [_Modern Dive: Statistical Inference via Data Science_, Chapter 5 Basic Regression](https://moderndive.com/5-regression.html)[@Ismay_Kim_2018]

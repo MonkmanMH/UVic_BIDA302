@@ -27,9 +27,9 @@ What's covered in this short exercise barely scratches the surface of what's pos
 In addition to the content in [_R for Data Science_, Data Visualization](https://r4ds.had.co.nz/data-visualisation.html)
  and [_R Cookbook, 2nd ed._: Graphics](https://rc2e.com/graphics), see the following resources:
 
-* Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for.
+* Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for.[@Chang_2018]
 
-* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R (primarily using {ggplot2}). If I was teaching a longer course dedicated to data visualization using R, this would be the text book. 
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R (primarily using {ggplot2}). If I was teaching a longer course dedicated to data visualization using R, this would be the text book. ][@Healy_2019]
 
 * [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)—the BBC uses R and {ggplot2} to make publication-ready data visualizations. This cookbook gives examples and the code behind some different chart types.
 
