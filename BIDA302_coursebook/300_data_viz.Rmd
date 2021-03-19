@@ -28,12 +28,6 @@ library(gapminder)
 
 
 
-### Reading
-
-
-Cole Nussbaumer Knaflic's book [_Storytelling with Data: A Data Visualization Guide for Business Professionals_](http://www.storytellingwithdata.com/books) (2015, Wiley) is a good introduction to the principles of data visualization, which is a key part of data analytics. In the book, the point is made that data visualization is always in the service of making a point about what the data tell us. In the context of business, this then translates into influencing decisions. The chapter “Lessons in storytelling” falls almost exactly in the middle of the book; after we’ve been introduced to the principles of making good data visualizations, Nussbaumer Knaflic gives us a way to think about the purpose of the visualization. With all of the pieces in place, the remainder of the book is focussed on the applications of storytelling with data.
-
-
 ## Anscombe's Quartet
 
 

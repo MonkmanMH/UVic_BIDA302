@@ -20,6 +20,6 @@ library(gapminder)
 
 ## Reading
 
-
+Danielle Navarro, [_Learning statistics with R_, Chapter 15 Linear regression](https://learningstatisticswithr.com/book/regression.html)[@Navarro_learning_statistics]
 
 
