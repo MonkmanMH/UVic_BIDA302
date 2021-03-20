@@ -19,6 +19,11 @@ library(gapminder)
 ```
 
 
+> Graphs and charts let you explore and learn about the structure of the information you collect. Good data visualizations also make it easier to communicate your ideas and findings to other people.
+> - Kieran Healy, _Data Visualization: A Practical Introduction_ (2019)
+
+
+
 What's covered in this short exercise barely scratches the surface of what's possible in the {ggplot2} package. 
 
 
@@ -360,6 +365,15 @@ pl_lifeexp +
   theme(legend.position = "bottom")
   
 ```
+
+
+## Exercise
+
+
+[BIDA302: Plotting with {ggplot2}](https://monkmanmh.shinyapps.io/BIDA302_3_2_plot/#section-plotting-with-ggplot2)
+
+* an introduction to plotting
+
 
 
 

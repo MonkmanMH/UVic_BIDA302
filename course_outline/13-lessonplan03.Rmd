@@ -7,7 +7,7 @@ output: html_document
 #description: "The syllabus for Data Analytics Coding Fundamentals, UVic BIDA302"
 ---
 
-# Week 3 (2020-11-07 and 2020-11-08)
+# Week 3 
 
 
 
@@ -46,7 +46,7 @@ _(subject to change)_
 
 
 
-## Saturday 2020-11-08
+## Saturday 
 
 
 ### 1a. Review Homework #2
@@ -106,7 +106,7 @@ Time allocation: 60 minutes (11:00 to 12:00)
 
 ***
 
-## Sunday 2020-11-09
+## Sunday 
 
 
 ### 3. Relational data with {dplyr}
