@@ -280,3 +280,8 @@ displ_class_by_cyl
 
 Coming in Week 2!
 
+```{r}
+nycflights13::flights %>% filter(carrier == “AA” | carrier == “DL” | carrier == “UA”)
+nycflights13::flights %>% filter(carrier == 'AA' | carrier == 'DL' | carrier == 'UA')
+```
+
