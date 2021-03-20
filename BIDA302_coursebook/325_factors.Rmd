@@ -383,7 +383,7 @@ h_gap %>%
 ```
 
 
-## Exercise
+## Exercise - factors and plotting
 
 
 [BIDA302: Factors and Plotting](https://monkmanmh.shinyapps.io/BIDA_3_3_factor_plot/#section-factors)
