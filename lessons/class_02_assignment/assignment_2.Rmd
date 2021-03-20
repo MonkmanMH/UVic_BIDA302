@@ -43,6 +43,22 @@ tidyr::relig_income
 >
 >b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer untidy.
 
+```{r}
+
+relig_income_long <-
+relig_income %>% 
+  pivot_longer(-religion, names_to = "income_category", values_to = "resp_count")
+
+relig_income_long
+```
+
+```{r}
+# another wide format
+relig_income_long %>% 
+  pivot_wider(names_from = religion, values_from = resp_count)
+
+```
+
 
 
 ***

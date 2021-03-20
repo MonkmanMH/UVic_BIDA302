@@ -118,14 +118,16 @@ court_cases <-
 
 >c. Now you've read it in, use your data manipulation skills to find out how many cases were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
 
+<ctrl><shift>a
 
 ```{r}
 # solution
 court_cases %>%
   filter(Year == 2018) %>%
-  group_by(`Court Region`) %>%
+  group_by(`Court Region Code`) %>%
   summarise(total_cases = sum(Count)) %>%
   arrange(desc(total_cases))
+
 ```
 
 > d. Create a pivot table showing the total number of cases completed in each region during 2018, with the region as the rows and the court class as the columns. 

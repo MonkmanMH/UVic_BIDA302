@@ -36,7 +36,7 @@ Run this chunk to create an object called `mtcars`, from a CSV file of the same 
 
 ```{r}
 # example
-mtcars <- read_csv("mtcars.csv")
+mtcars <- read_csv("mtcars_2.csv")
 
 ```
 
@@ -44,10 +44,9 @@ Adding the `cols()` allows us to alter what {readr} has decided for us. For exam
 
 ```{r}
 # example
-read_csv("mtcars.csv", 
-         col_types = 
-           cols(cyl = col_integer())
-)
+mtcars <- read_csv("mtcars.csv",
+                   col_types =
+                     cols(cyl = col_integer()))
 
 ```
 
