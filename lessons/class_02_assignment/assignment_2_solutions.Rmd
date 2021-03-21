@@ -34,7 +34,8 @@ library(readxl)    # to read Excel files
 
 > The table `relig_income` is in {tidyr}.
 >
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+>a. Load this table, and take a look at it. 
+> What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 >
 
 ```{r}
@@ -60,8 +61,20 @@ And to pivot it back to wide layout:
 
 ```{r}
 
-relig_income_long %>%
-  pivot_wider(names_from = "income_cat", values_from = "count")
+# explicitly name the columns to pivot
+relig_income_long <-
+relig_income %>% 
+  pivot_longer(cols = c("<$10k":"Don't know/refused"), names_to = "income_category", values_to = "resp_count")
+
+relig_income_long
+atidyr
+# name (with minus sign) the columns NOT to pivot
+relig_income_long <-
+relig_income %>% 
+  pivot_longer(cols = -religion, names_to = "income_category", values_to = "resp_count")
+
+
+relig_income_long
 
 ```
 

@@ -31,9 +31,9 @@ library(readxl)    # to read Excel files
 ### 1. Religion and income data (USA)
 > (2 marks)
 
-> The table `relig_income` is in {tidyr}.
+> The table `relig_income` is in {tidyr}. Load this table, and take a look at it. You can use `View(relig_income)` to see the table, and to understand the contents of the table you can use the Help function `?tidyr::relig_income` (enter that code in the console).
 >
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
+>a. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
 >
 
 ```{r}
@@ -42,30 +42,6 @@ tidyr::relig_income
 
 >
 >b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer untidy.
-
-```{r}
-
-# explicitly name the columns to pivot
-relig_income_long <-
-relig_income %>% 
-  pivot_longer(c("<$10k":"Don't know/refused"), names_to = "income_category", values_to = "resp_count")
-
-# name (with minus sign) the columns NOT to pivot
-relig_income_long <-
-relig_income %>% 
-  pivot_longer(-religion, names_to = "income_category", values_to = "resp_count")
-
-
-relig_income_long
-```
-
-```{r}
-# another wide format
-relig_income_long %>% 
-  pivot_wider(names_from = religion, values_from = resp_count)
-
-```
-
 
 
 ***
@@ -78,8 +54,8 @@ relig_income_long %>%
 > **NOTE:**
 > Variable names with spaces and special symbols are a challenge to work with. They require
 > that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
->
-> Comma delimited files are one of the most common formats used for flat files. The tidyverse has a package, {readr}, which will automatically load with the function `library(tidyverse)`.
+> 
+> Remember that you have the option to use the functions in the {janitor} package to resolve this!
 >
 > The reference page for {readr} is here: https://readr.tidyverse.org/index.html
 >
