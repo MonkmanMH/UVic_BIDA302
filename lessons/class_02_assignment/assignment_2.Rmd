@@ -45,9 +45,16 @@ tidyr::relig_income
 
 ```{r}
 
+# explicitly name the columns to pivot
+relig_income_long <-
+relig_income %>% 
+  pivot_longer(c("<$10k":"Don't know/refused"), names_to = "income_category", values_to = "resp_count")
+
+# name (with minus sign) the columns NOT to pivot
 relig_income_long <-
 relig_income %>% 
   pivot_longer(-religion, names_to = "income_category", values_to = "resp_count")
+
 
 relig_income_long
 ```

@@ -102,10 +102,10 @@ court_cases <- read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-
 court_cases <-
   read_csv(
     "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
-    col_types = cols(`Court Region Code` = col_character())
+    col_types = cols('Court Region Code' = col_character())
   )
 
-# if we wanted to also specifiy that "Year" be in date format:
+# if we wanted to also specify that "Year" be in date format:
 #court_cases <-
 #  read_csv("cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv",
 #                        col_types = cols(
@@ -122,10 +122,10 @@ court_cases <-
 
 ```{r}
 # solution
-court_cases %>%
+court_cases %>%  
   filter(Year == 2018) %>%
-  group_by(`Court Region Code`) %>%
-  summarise(total_cases = sum(Count)) %>%
+  group_by(`Court Region Code`) %>% 
+  summarise(total_cases = sum(Count)) %>% 
   arrange(desc(total_cases))
 
 ```
@@ -197,9 +197,9 @@ d. Change the options for your read function to address the issues you identifie
 ```{r}
 # solution
 
-read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019", 
+crd <- read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019", 
            skip = 2)
-
+crd
 ```
 
 > 
@@ -215,6 +215,15 @@ read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019"
            skip = 2,
            na = "nr") %>% 
   summarise(foreign_inv_res = sum(`FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`, na.rm = TRUE))
+
+# filter out the rows with NA values in the variable we're interested in
+read_excel("regional_district_monthly_2019_mod.xlsx", sheet = "CRD_MONTHLY_2019", 
+           skip = 2, na = "nr") %>% 
+  filter(!is.na(`FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`)) %>% 
+  select(Statistics, `FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`) %>% 
+  summarise(foreign_inv_res = sum(`FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`))
+
+
 
 ```
 
