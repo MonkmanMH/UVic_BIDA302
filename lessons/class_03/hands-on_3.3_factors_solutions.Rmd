@@ -53,10 +53,10 @@ Base R functions for working with factors
 
 | function | purpose |
 | ---- | ---- |
-| str | display structure of object |
-| class | returns the class of an object |
-| levels | returns the values of the levels |
-| nlevels | return the number of levels |
+| `str` | display structure of object |
+| `class` | returns the class of an object |
+| `levels` | returns the values of the levels |
+| `nlevels` | return the number of levels |
 
 
 
@@ -171,6 +171,8 @@ h_gap$country %>%
 What if we want to sort by the number of countries in each continent, that is, the number of times each factor occurs?
 
 `fct_infreq()` is what we need, or `fct_infreq() %>% fct_rev()` for backwards.
+
+
 
 ### Your turn 3.2
 
