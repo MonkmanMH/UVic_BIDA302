@@ -1,12 +1,12 @@
 ---
 title: "BIDA 302 - week 3"
 subtitle: "homework assignment"
-author: "Your name here"
+author: "Martin Monkman"
 date: ""
 output: html_document
 ---
 
-## Your name can go here or in the YAML
+## Your Name Here
 
 
 
@@ -41,10 +41,10 @@ library(readxl)
 ```
 
 
-### 1. Explore the file
-(marks: 1)
+### 1a. Explore the file
 
 > List the sheet names in the file. 
+(marks: 1)
 
 ```{r}
 # create an object with the file name so we can repeat it
@@ -55,9 +55,8 @@ excel_sheets(data_source)
 ```
 
 
-### 2. Importing a sheet
-(marks: 2)
-
+### 1b. Importing a sheet
+ 
 > Here's a screenshot of the top rows of the sheet with single detached housing:
 > 
 > ![single detached](newhomes_single_excel.JPG)
@@ -69,7 +68,8 @@ excel_sheets(data_source)
 > * Check the data types of each column.
 > 
 > Read in the sheet, using no options. What is notable about the content of the R data table, compared to the Excel source?
->
+
+
 > Read the contents of the file again, so that the header rows are in the right place, and with the "Note:" column omitted.
 > 
 > (See [this page on the {readxl} reference material](https://readxl.tidyverse.org/reference/cell-specification.html) for some tips.)
@@ -78,16 +78,14 @@ excel_sheets(data_source)
 
 
 
-### 3. Tidy data
-(marks: 2)
+### 1c. Tidy data
 
 > Does this data frame violate any of the principles of tidy data?
 > 
 > If so, use the pivot functions from {tidyr} to turn it into a tidy structure.
 
 
-### 4. EDA: plotting, 1
-(marks: 3)
+### 1d. EDA: plotting, 1
 
 > Now you've got a tidy structure, it's time for some exploratory data analysis!
 > 
@@ -105,8 +103,7 @@ excel_sheets(data_source)
 
 
 
-### 5. EDA: plotting, 2
-(marks: 3)
+### 1e. EDA: plotting, 2
 
 > Plot the total number of single detached homes built in B.C. by municipality, but only the 10 municipalities with the greatest number of homes built, sorted from most to least. (I will leave it up to you to decide if you want to do that by a single year or by the total of all three years in the data.)
 > 

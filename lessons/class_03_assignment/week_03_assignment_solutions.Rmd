@@ -2,8 +2,8 @@
 title: "BIDA 302 - week 3"
 subtitle: "homework exercise #1: solutions"
 author: "Martin Monkman"
-date: "17/11/2019"
-output: html_notebook
+date: ""
+output: html_document
 ---
 
 ```{r setup}
@@ -36,8 +36,10 @@ library(readxl)
 > List the sheet names in the file. 
 
 ```{r}
+# create an object with the file name so we can repeat it
+data_source <- "bc-stats_2018-new-homes-data_tosend.xlsx"
 
-excel_sheets("bc-stats_2018-new-homes-data_tosend.xlsx")
+excel_sheets(data_source)
 
 ```
 
@@ -59,7 +61,7 @@ excel_sheets("bc-stats_2018-new-homes-data_tosend.xlsx")
 
 ```{r}
 
-read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Single Detached")
+read_excel(data_source, sheet = "Single Detached")
 
 ```
 
@@ -70,13 +72,16 @@ read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Single Detached"
 > Note: some solutions to this problem would involve some of the {dplyr} data manipulations, once you've created an object that you can manipulate in the R environment.
 
 
-Some solutions:
+There are many ways to solve this problem.
+
+Solution 1
 
 ```{r}
 
-housing <- read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Single Detached", 
-                       na = "*",
-                       skip = 3)
+housing <- read_excel(data_source,
+                      sheet = "Single Detached",
+                      na = "*",
+                      skip = 3)
 
 # Because this has columns F and G included, we can then use "select" to pick the ones we want
 
@@ -104,10 +109,12 @@ housing %>%
 ```
 
 
+Solution, version 2
 
 ```{r}
 
-housing2 <- read_excel("bc-stats_2018-new-homes-data_tosend.xlsx", sheet = "Single Detached", 
+housing2 <- read_excel(data_source, 
+                       sheet = "Single Detached", 
                        na = "*",
                        range = cell_limits(c(4, NA), c(NA, 5)))
 
@@ -118,6 +125,7 @@ housing2 %>%
 ```
 
 
+Solution, version 3
 
 ```{r}
 
@@ -144,19 +152,25 @@ housing3 <- housing3 %>%
 housing1
 
 housing1_long <- housing1 %>%
-  pivot_longer(-community, names_to = "year", values_to = "units")
+  pivot_longer(-community, 
+               names_to = "year", 
+               values_to = "units")
 
 housing1_long
 
-# another solution: drop NA values in pivot
+# another solution: drop NA values in pivot (rather than later)
 housing1 %>%
-  pivot_longer(-community, names_to = "year", values_to = "units", values_drop_na = TRUE)
+  pivot_longer(-community, 
+               names_to = "year", 
+               values_to = "units", 
+               values_drop_na = TRUE)
 ```
 
 
 ```{r}
 
-
+# here's the behaviour of `drop_na()`
+# first we make a simple table with 2 variables and 4 rows
 testtable <- tribble(~var1, ~var2,
         1, 1,
         2, NA,
@@ -192,7 +206,7 @@ housing1_long %>%
   group_by(year) %>%
   summarise(units = sum(units, na.rm = TRUE)) %>% 
 ggplot(aes(x = year, y = units)) +
-         geom_point()
+         geom_col()
 ```
 
 
