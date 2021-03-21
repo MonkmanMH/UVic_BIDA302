@@ -20,9 +20,9 @@ The book [_Moneyball: The Art of Winning an Unfair Game_](https://en.wikipedia.o
 
 Oakland had a payroll of $40 million (only Tampa Bay and Montreal, at $34.4 and $38.7 million, were lower). The Yankees, by contrast, had the highest payroll at $125.9 million, with a roster full of star players.
 
-Another way to think of the team payroll is relative to the Major League Baseball average. The Yankees payroll was 186% of the league average—for every 100 dollars the average team spent, the Yankees spent $186. The next closest team in spending was the Boston Red Sox, whose salary bill was 160% of the league average at $108 million. Oakland, by contrast, spent 59% of the league average—while the average team spent $100 dollars, the Athletics were constrained to spending $60.
+Another way to compare an individual team's payroll is relative to the Major League Baseball average. The Yankees payroll was 186% of the league average—for every 100 dollars the average team spent, the Yankees spent $186. The next closest team in spending was the Boston Red Sox, whose salary bill was 160% of the league average at $108 million. Oakland, by contrast, spent 59% of the league average—while the average team spent $100 dollars, the Athletics were constrained to spending $60.
 
-And yet these two teams—one packed with expensive star players, and the other staffed with players that other teams had cast off—managed to have very similar and enormously successful seasons. 
+And yet these two teams—one packed with highly-paid star players, and the other staffed with players that other teams had cast off—managed to have very similar and enormously successful seasons. 
 
 It's a great story. Part of the drama is about using data analysis to identify those players who were undervalued in the market.
 
@@ -31,13 +31,7 @@ It's a great story. Part of the drama is about using data analysis to identify t
 
 Let's use the tidyverse packages and some elements in base R to explore the relationship between payroll spending and team success.
 
-```{r library, message=FALSE}
-
-library(tidyverse)
-
-```
-
-The next thing we'll do is read in the data file. For this we will use "mlb_pay_wl.csv".
+The first thing we'll do is read in the data file. For this we will use "mlb_pay_wl.csv".
 
 (This data was compiled from [baseball-reference.com](https://www.baseball-reference.com/leagues/MLB/2019.shtml), one of the leading sites on the internet for historical professional baseball data.)
 
@@ -68,7 +62,9 @@ mlb_pay_wl
 
 ### Visualizing the data
 
-For our exercise, we will explore the relationship between payroll and wins. Does paying star players always lead to success? Or phrased another way, can we predict team success based on the team payroll?
+For our exercise, we will explore the relationship between payroll and wins. Does paying star players always lead to success? 
+
+Or phrased another way, can we predict team success based on the team payroll? In this case, the win-loss percentage is the _dependent_ variable, while team payroll (as a percent of the league average) is the _independent_ variable.
 
 First, let's create a scatterplot to visualize the relationship. We will put payroll on the X axis, and win-loss percent on the Y.
 
@@ -161,11 +157,13 @@ summary(model_mlb_pay_wl)
 
 2. What is the R-squared value? What does it tell us about the strength of the relationship between these two variables?
 
-3. What is the relationship between the R-squared value and the P value?  (Further reading: ["How to Interpret Regression Models that have Significant Variables but a Low R-squared", by Jim Frost](https://statisticsbyjim.com/regression/low-r-squared-regression/))
+3. What is the relationship between the R-squared value and the P value?  (Further reading: Anderson, Faye. (2016). [Re: What is the relationship between R-squared and p-value in a regression?](https://www.researchgate.net/post/What_is_the_relationship_between_R-squared_and_p-value_in_a_regression/57612faddc332d362552c5f1/citation/download.))
 
 4. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field?
 
-5. a. Using R, visualize the relationship between team wins and attendance.
+5. In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
+
+  a. Using R, visualize the relationship between team wins or winning percentage and attendance.
 
    b. Using R, create a regression model that evaluates the relationship between team wins and attendance. Display the results in your output.
 

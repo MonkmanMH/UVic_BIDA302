@@ -35,7 +35,7 @@ Cole Nussbaumer Knaflic's book [_Storytelling with Data: A Data Visualization Gu
 
 
 
-## Plot types
+### Plot types
 
 When we seek to visualize our data, we are confronted with the realization that there are many different ways to do that—there are many different plot types. How can we go about deciding what sort of plot to choose?
 
