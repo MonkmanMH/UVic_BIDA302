@@ -67,7 +67,7 @@ anscombe_tidy
 
 
 
-### 1. Summary statistics
+### Summary statistics
 
 Each of the four sets in Anscombe's Quartet has the same summary statistics. Let's calculate the mean of _x_ for each of the four sets:
 
@@ -79,7 +79,7 @@ anscombe_tidy %>%
   summarize(mean.x = mean(x))
 ```
 
-### Your turn 1.1
+### Your turn
 
 Using the following functions, calculate the summary statistics of _x_ and _y_, and the correlation coefficient between _x_ and _y_, for all four of the sets in the quartet:
 
@@ -103,7 +103,7 @@ anscombe_tidy %>%
 ```
 
 
-## 2. Visualizing the quartet
+## Visualizing the quartet
 
 Using the R visualization package {ggplot2}.
 
@@ -122,11 +122,10 @@ ggplot(anscombe_tidy) +
 ```
 
 
-### Your turn 2.1
+### Your turn
 
 
-
-With `colour` to differentiate each set
+Now we will add another variable to those in our `aes` list. We will add the variable "set", and use `colour` to differentiate each value within "set".
 
 ```{r}
 # example
@@ -135,9 +134,7 @@ ggplot(anscombe_tidy) +
 ```
 
 
-## Your turn 1.3
-
-Filter by set
+For this example, we plot only set "I". We start with our dataframe, and then using the pipe symbol, first `filter()` and then pass the results of the filter to our `ggplot()` function. Note that because the filtered dataframe is being passed, there is no specified `data =` in the `ggplot()` function.
 
 ```{r}
 # solution
@@ -148,11 +145,7 @@ ggplot() +
 ```
 
 
-
-
-## Your turn 1.4
-
-Facet plot
+Another way to differentiate the sets is to use a facet plot. In this example, we use the function `facet_wrap`. 
 
 ```{r}
 ggplot(anscombe_tidy) + 
@@ -161,10 +154,7 @@ ggplot(anscombe_tidy) +
 ```
 
 
-
-## Your turn 1.5
-
-Add a trend line using the `geom_smooth` function.
+Now we will add a trend line using the `geom_smooth` function.
 
 * the `method = lm` indicates a "linear model", i.e. a standard regression line. {ggplot2} provides access to other smoothing algorithms.
 
@@ -188,15 +178,6 @@ p <- ggplot(anscombe_tidy, aes(x, y)) +
   facet_wrap(~set)
 p
 ```
-
-Try #E5E5E3 as background colour:
-https://dataviztoday.com/blog/37
-
-```{r}
-p
-p + theme(panel.background = element_rect(fill = "#E5E5E3"))
-```
-
 
 
 -30-
