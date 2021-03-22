@@ -207,7 +207,7 @@ gapminder %>%
 
 ```
 
-Another option would be to create a named object that contains our list, and then use the named object in our `filter()`
+Another option would be to create a named object that contains our list, and then use the named object in our `filter()`.
 
 
 ```{r}
@@ -220,6 +220,10 @@ gapminder %>%
   
 
 ```
+
+This final option has a significant benefit. Now if we need to use that list of countries in another part of our analysis, we can just summon the object, rather than typing the entire list again.
+
+This also reduces the risk of inadvertent error if we want to change the countries we are analyzing. If we have a named list object, we only need to change it in the one place, and that change will be incorporated throughout. Contrast that with a find-and-replace approach, where you might accidentally miss one of the places it appears, or you might have a typo in one place. 
 
 
 

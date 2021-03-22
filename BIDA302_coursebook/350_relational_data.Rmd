@@ -38,6 +38,7 @@ This hands-on exercise draws heavily on the following sources:
 Another resource with a good explanation of the types of joins can be found at [Tidy Animated Verbs}(https://www.garrickadenbuie.com/project/tidyexplain/)[@AdenBuie_tidyanimated]
 
 
+For some additional examples of table joins, see William Surles, [Joining Data in R with dplyr](https://rpubs.com/williamsurles/293454)
 
 
 ## Joining two data tables
