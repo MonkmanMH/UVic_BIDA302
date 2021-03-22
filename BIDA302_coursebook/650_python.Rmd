@@ -20,9 +20,30 @@ library(gapminder)
 
 
 
-### Reading
+### Resources
 
-https://twitter.com/kareem_carr/status/1374027467829227520?s=20
+
+There are a number of good introductory resources for using Python in data science. Here's a short list; unfortunately, there's not as much freely available content in the Python ecosystem:^[And if you're looking for a longer list, [this twitter thread](https://twitter.com/kareem_carr/status/1374027467829227520?s=20) is a good start!]
+
+Jake VanderPlas, [Python Data Science Handbook: Essential Tools for Working with Data](https://www.oreilly.com/library/view/python-data-science/9781491912126/), 2016
+
+* online version: https://jakevdp.github.io/PythonDataScienceHandbook/
+
 
 Allen B. Downey, [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/), 2020
+
+#### books
+
+Wes McKinney, [Python for Data Analysis, 2nd Edition](https://www.oreilly.com/library/view/python-for-data/9781491957653/), 2017 — by the creator of the pandas package
+
+* website: https://wesmckinney.com/pages/book.html
+
+Joel Grus, [Data Science from Scratch: First Principles with Python (2nd edition)](https://www.oreilly.com/library/view/data-science-from/9781492041122/), 2019
+
+
+#### other resources
+
+I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials are outdated. I'll leave them here, should you wish to review them:
+
+[Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
 
