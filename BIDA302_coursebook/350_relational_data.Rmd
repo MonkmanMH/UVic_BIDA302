@@ -157,11 +157,28 @@ y <- tribble(
 
 **inner joins**
 
-An inner join keeps only the observations where there is a match on both sides:
+An inner join keeps only the observations where there is a match on both sides. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
 
 ```{r}
 
 inner_join(x, y, key = "key")
+
+```
+
+More commonly, you will see the key variables coded as `by =`:
+
+```{r}
+
+inner_join(x, y, by = "key")
+
+```
+
+
+Note that in the circumstances where we are confident that the key variables are named the same in both tables, we can use a bit of coding short-hand and omit the `by =` argument. This the arrangement of arguments in the `left_join` function (and the other joins, too)—`by =` is third, after `x` and `y`.
+
+```{r}
+
+inner_join(x, y)
 
 ```
 
@@ -175,7 +192,7 @@ Join the two tables using a left join: ... all of the observations from the firs
 The {dplyr} function for this is `left_join()`
 
 ```{r}
-left_join(x, y, key = "key")
+left_join(x, y, by = "key")
 ```
 
 Note that all 3 of the `x` values are there; because there is no `y` observation with the key value of "3", the `val_y` value is `NA`.
@@ -195,17 +212,18 @@ See what happens when you join the tables with a `right_join()`, followed by a `
 
 ```{r}
 # solution
-full_join(x, y, key = "key")
+full_join(x, y, by = "key")
 ```
 
 
 ### Your turn
 
-In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables.
+In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables, and taking the first 100 rows with the `slice()` function (see https://dplyr.tidyverse.org/reference/slice.html).
 
 ```{r}
 flights2 <- flights %>% 
-  select(year:day, hour, origin, dest, tailnum, carrier)
+  select(year:day, hour, origin, dest, tailnum, carrier) %>% 
+  slice(1:100)
 flights2
 ```
 
@@ -224,7 +242,12 @@ left_join(flights2, airlines, by = "carrier")
 flights2 %>%
   left_join(airlines, by = "carrier")
 
-# example of pipe utility
+```
+
+Here's an example of where the utility of the pipe operator can be seen. If we want to count the number of flights be each airline, we could use the "carrier" variable, which is the short code. But a more useful table would have the airline name. In this code, the join is followed by a `group_by` and then `tally()`, which produces a table with the airline name.
+
+```{r}
+
 flights2 %>%
   left_join(airlines, by = "carrier") %>% 
   group_by(name) %>% 
@@ -239,10 +262,10 @@ flights2 %>%
 
 In real life, tables start to get more complex. It's often the case that you will have tables that have duplicate keys in one or both of the tables.
 
-The chunk below creates new versions of `x` and `y` tables, where there are duplicate keys in one.
+The chunk below creates new tables of `a` and `b` tables, where there are duplicate keys in one.
 
 ```{r}
-x <- tribble(
+a <- tribble(
   ~key, ~val_x,
      1, "x1",
      2, "x2",
@@ -250,7 +273,7 @@ x <- tribble(
      1, "x4"
 )
 
-y <- tribble(
+b <- tribble(
   ~key, ~val_y,
      1, "y1",
      2, "y2"
@@ -260,12 +283,12 @@ y <- tribble(
 
 ### Your turn
 
-Join the tables with `left_join()`, with `x` as the table on the left.
+Join the tables with `left_join()`, with `a` as the table on the left.
 
 ```{r}
 # solution
 
-left_join(x, y, key = "key")
+left_join(a, b, key = "key")
 
 ```
 
@@ -275,17 +298,17 @@ A situation where there are duplicate keys in both tables is usually an error--t
 
 ### Your turn
 
-Here's different versions of `x` and `y` tables, where the key "2" is duplicated in both.
+Here's different tables, where the key "2" is duplicated in both.
 
 ```{r}
-x <- tribble(
+m <- tribble(
   ~key, ~val_x,
      1, "x1",
      2, "x2",
      2, "x3",
      3, "x4"
 )
-y <- tribble(
+n <- tribble(
   ~key, ~val_y,
      1, "y1",
      2, "y2",
@@ -301,9 +324,172 @@ What does a left join do? How many rows does the resulting table have?
 ```{r}
 # solution
 
-left_join(x, y, by = "key")
+left_join(m, n, by = "key")
 
 ```
+
+
+
+
+
+
+***
+
+## Filtering joins
+
+The other sort of joins filter observations from one data frame based on whether or not they match an observation in the other table.
+
+There are two sorts: 
+
+* `semi_join(x, y)` keeps all observations in `x` that have a match in `y`.
+
+* `anti_join(x, y)` drops all observations in `x` that have a match in `y`.
+
+
+Let's go back to our original test tables again:
+
+
+```{r}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     3, "x3"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2",
+     4, "y3"
+)
+```
+
+Semi-join: only the observations in `x` that have a match in `y`.
+
+Note that no variables from `y` appear in the result.
+
+```{r}
+semi_join(x, y, by = "key")
+```
+
+
+Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
+
+```{r}
+anti_join(x, y, by = "key")
+```
+
+
+
+## More complex scenarios
+
+
+### Keys with different names
+
+In some circumstances, you will encounter a situation where your key variables are named one thing in one table, and something quite different in another. 
+
+Here is a solution. In this example, the key variable in one table is named `key_x` and in the other it is `key_y`.
+
+
+```{r}
+left_tbl <- tribble(
+  ~key_x, ~val_x,
+     1, "x1",
+     2, "x2",
+     3, "x3"
+)
+
+right_tbl <- tribble(
+  ~key_y, ~val_y, ~val_y2,
+     1, "y1", "Monday",
+     2, "y2", "Tuesday",
+     4, "y3", "Wednesday"
+)
+
+```
+
+
+Here are two different ways of writing the same code:
+
+```{r}
+# to specify key variables with different names:
+left_join(left_tbl, right_tbl, by = c("key_x" = "key_y"))
+
+left_tbl %>% 
+  left_join(right_tbl, by = c("key_x" = "key_y"))
+
+```
+
+### Join on multiple keys 
+
+In the {nycflights13} database (that is, the multiple related tables), we see that the "flights" table is linked to the "weather" table on five different variables. The "weather" table holds the primary key, where there is a unique row by the five variables "year", "month", "day", "hour", and "origin" (with the airport code).
+
+```{r}
+head(weather)
+```
+
+
+If we were analyzing the relationship between flight departure delays (in the "flights" table) and weather conditions, we would need to link these tables.
+
+The first solution is to name all of the variables inside a `by = c()` argument.
+
+```{r}
+# solution
+
+left_join(flights, weather, by = c("year", "month", "day", "hour", "origin"))
+
+```
+
+In this second approach, the range of variables is specified with the `:` operator. Note that this is now inside a pipe, and the left table ("flights") is named at the top of the pipe sequence. 
+
+
+```{r}
+
+left_join(flights, weather)
+
+```
+
+
+```{r}
+flights %>% 
+  left_join(select(weather, origin:temp))
+```
+
+### Select specific columns
+
+Using our `left_tbl` and `right_tbl` from above, here is a solution that embeds a pipe and select function inside the `right_tbl` call. Note that the comma follows the `select()`, not the name of the table.
+
+```{r}
+# to specify variables to add to new table
+# one solution: put select in the table naming 
+full_join(left_tbl, 
+          right_tbl %>% select(key_y, val_y2), 
+          by = c("key_x" = "key_y"))
+
+```
+
+In the {nycflights13} case, where we are joining on multiple keys _and_ then wanting just the temperature variable from the right ("weather") table, here are three different  `left_join()` solutions:
+
+```{r}
+# solution
+
+flights %>% 
+  left_join(weather %>% select("year", "month", "day", "hour", "origin", "temp"),
+            by = c("year", "month", "day", "hour", "origin"))
+
+# slightly different syntax:
+flights %>% 
+  left_join(select(weather, "year", "month", "day", "hour", "origin", "temp"),
+            by = c("year", "month", "day", "hour", "origin"))
+
+
+
+# let {dplyr} decide the variables on which to join
+flights %>% 
+  left_join(select(weather, origin:temp))
+
+```
+
 
 
 
@@ -337,7 +523,7 @@ shipments <- tribble(
 
 When we join the tables, we will use "order_number" to join them. There will be only one column in the resulting dataframe with this name. 
 
-A variable called "dollar_value" exists in both tables, but means different things. You and I know that one could be called "dollar_value_orders" and the other "dollar_value_shipments"--but R doesn't know that, so it renames them "dollar_value.x" and "dollar_value.y". The one with the ".x" at the end will be the left table, and ".y" will be the right table.
+A variable called "dollar_value" exists in both tables, but means different things. You and I know that one could be called "dollar_value_orders" and the other "dollar_value_shipments"—but R doesn't know that, so it renames them "dollar_value.x" and "dollar_value.y". The one with the ".x" at the end will be the left table, and ".y" will be the right table.
 
 ```{r}
 
@@ -360,87 +546,6 @@ orders_shipped %>%
 
 ```
 
-
-
-
-***
-
-## Filtering joins
-
-The other sort of joins filter observations from one data frame based on whether or not they match an observation in the other table.
-
-There are two sorts: 
-
-* `semi_join(x, y)` keeps all observations in `x` that have a match in `y`.
-
-* `anti_join(x, y)` drops all observations in `x` that have a match in `y`.
-
-
-Let's make some test tables again:
-
-
-```{r}
-x <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     3, "x3"
-)
-y <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2",
-     4, "y3"
-)
-```
-
-Semi-join: only the observations in `x` that have a match in `y`.
-
-Note that no variables from `y` appear in the result.
-
-```{r}
-semi_join(x, y, key = "key")
-```
-
-
-Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
-
-```{r}
-anti_join(x, y, by = "key")
-```
-
-### Keys with different names
-
-```{r}
-left_tbl <- tribble(
-  ~key_x, ~val_x,
-     1, "x1",
-     2, "x2",
-     3, "x3"
-)
-
-right_tbl <- tribble(
-  ~key_y, ~val_y, ~val_y2,
-     1, "y1", "Monday",
-     2, "y2", "Tuesday",
-     4, "y3", "Wednesday"
-)
-
-
-# to specify key variables with different names:
-left_join(left_tbl, right_tbl, by = c("key_x" = "key_y"))
-
-left_tbl %>% 
-  left_join(right_tbl, by = c("key_x" = "key_y"))
-
-
-# to specify variables to add to new table
-# one solution: put select in the table naming 
-full_join(left_tbl, 
-          right_tbl %>% select(key_y, val_y2), 
-          by = c("key_x" = "key_y"))
-
-```
 
 
 -30-

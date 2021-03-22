@@ -22,5 +22,7 @@ library(gapminder)
 
 ### Reading
 
+https://twitter.com/kareem_carr/status/1374027467829227520?s=20
 
+Allen B. Downey, [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/), 2020
 
