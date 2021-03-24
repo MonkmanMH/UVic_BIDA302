@@ -178,6 +178,9 @@ deaths
 ```
 
 
+For more information on reading areas of an Excel sheet, see this article at the {readxl} site: https://readxl.tidyverse.org/articles/sheet-geometry.html
+
+
 
 Excel files often (almost always?) have multiple sheets in them. It's possible to specify which one you want to use with the `sheets = ""` option. You can also use the position number (if you happen to know it). 
 
