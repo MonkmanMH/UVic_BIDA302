@@ -8,18 +8,410 @@ https://creativecommons.org/licenses/by/4.0/
 # Modeling {#modeling}
 
 
-```{r echo = FALSE}
+```{r echo=FALSE, message=FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
 library(tidyverse)
 library(gapminder)
+library(modelr)
+library(datarium)
+
+```
+
+## Objectives: Modeling
+
+* Understand the utility of a regression model
+
+* Demonstrate an understanding of the input and output components of a regression model 
+
+* Demonstrate the ability to write the code to create a regression model in R
+
+
+## Reading & resources: Modeling
+
+Please refer to 
+
+* [_R for Data Science_, "Model Basics"](https://r4ds.had.co.nz/model-basics.html) for more information about this section. The chapters that follow this go deeper into modeling than we will in this course.
+
+* The chapter [_R Cookbook_, 2nd ed., "Linear Regression and ANOVA"](https://rc2e.com/linearregressionandanova) gives additional background on linear regression functions in R.
+
+
+For information on the statistics of regression models, see the following:
+
+* Danielle Navarro, [_Learning statistics with R_, Chapter 15 Linear regression](https://learningstatisticswithr.com/book/regression.html)[@Navarro_learning_statistics]
+
+* Chester Ismay & Albert Y. Kim, [_Modern Dive: Statistical Inference via Data Science_, Chapter 5 Basic Regression](https://moderndive.com/5-regression.html)[@Ismay_Kim_2018]
+
+
+
+## Relationship between variables
+
+When we talk about a "model" in the context of data analysis, we usually mean that we are summarizing the relationship between two or more variables. The question we are asking is "What's the pattern in the data?"
+
+In this example, we will be using linear regression to predict one value based on one or more values. 
+
+As it gets colder outside, we use more energy to heat our homes—can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature plus relative humidity is a better predictor.
+
+
+## A simple example
+
+This pair of plots shows how a simple linear model works: first we have the X-Y scatter plot.
+
+In this example, the trend is fairly clear: as the value of "x" increases, so does "y". 
+
+(Note that the data set `sim1` comes from the package [{modelr}](https://modelr.tidyverse.org/), and is slightly altered^[`set.seed(42)`<br>
+`sim1 <- modelr::sim1 %>% `<br>`mutate(x = jitter(x))`]
+
+
+```{r echo=FALSE}
+set.seed(42)
+sim1 <- modelr::sim1 %>% 
+  mutate(x = jitter(x))
+
+```
+
+```{r}
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point()
 ```
 
 
-## Reading
+Then we can add the line of best fit that shows the trend, using the `geom_smooth()` function, where `method = lm`:
 
-Danielle Navarro, [_Learning statistics with R_, Chapter 15 Linear regression](https://learningstatisticswithr.com/book/regression.html)[@Navarro_learning_statistics]
+```{r plot_sim1}
+ggplot(sim1, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = lm)
 
-Chester Ismay & Albert Y. Kim, [_Modern Dive: Statistical Inference via Data Science_, Chapter 5 Basic Regression](https://moderndive.com/5-regression.html)[@Ismay_Kim_2018]
+```
+
+
+The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase the total distance. The plot below shows the distance between the measured points and the prediction line. (Note that there is some overlap.) 
+
+
+```{r plot_sim1_lines}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+mod_sim1_aug <- broom::augment(mod_sim1)
+
+ggplot(mod_sim1_aug, aes(x = x, y = y)) +
+  geom_point() +
+  geom_line(aes(x = x, y = .fitted), colour = "blue") +
+  geom_segment(aes(x = x, y = y,
+                   xend = x, yend = .fitted), colour = "red")
+
+```
+
+
+Being a statistics-based program), linear regression is a function in base R ... it's `lm()`, for "linear model". 
+
+The syntax of the `lm()` function is a bit different than what we're used to.
+
+`lm(y ~ x, data)`
+
+This code creates a regression model, which we will assign to the object `mod_sim1`
+
+```{r mod_sim1}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+mod_sim1
+
+```
+
+The regression equation is the same as an equation for defining a line in geometry:
+
+$y = b_{0} + b_{1}x_{1} + e$
+
+How to read this:
+
+* the value of `y` (i.e. the point on the `y` axis) can be predicted by
+
+* the intercept value `b_{0}`, plus
+
+* the coefficient `b_{1}` times the value of `x`
+
+The distance between that predicted point and the actual point is the error term.
+
+
+
+The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, a point on the line) is equal to 4.124 + 2.052 * the value of `x`.
+
+If `x` = 2.5, then `y` = 4.124 + (2.052 * 2.5), which is 9.254. Look back at the line of best fit--if `x` = 2.5, the `y` point on the line is just below 10. 
+
+
+We can also see how well the data predicts the line, by examining the summary statistics of the model with the `summary()` function:
+
+```{r summary_sim1_mod}
+
+summary(mod_sim1)
+
+```
+
+This isn't a statistics class, so we won't go into the details ... 
+
+Can you find the coefficients for the equation?
+
+The Multiple R-squared statistics tells us how well the line fits the points ... this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line)--if the relationship is negative (as one goes up the other goes down), it will be in the range from -1 to 0. In this case, it's 0.8846, which is a very good fit.
+
+
+**The equation predicts a value of Y, based on what we know about X.**
+
+This has enormous practical applications.
+
+
+---
+
+## A deeper dive
+
+In the following example, we will use some data from another package, {datarium}. In this example, there are three types of advertising: youtube, facebook, and newspaper. What we are interested in predicting is sales—how much do they go up for each dollar spent on each of the three media?
+
+Here's what the first 6 rows of the 200 rows in the `marketing` table look like:
+
+* note that `sales` is 1000 units
+
+```{r}
+df_marketing <- datarium::marketing 
+
+head(df_marketing)
+```
+
+
+Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp:
+
+```{r}
+# solution
+ggplot(df_marketing, aes(x = youtube, y = sales)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+
+```
+
+Then, run the regression model to create a new model object, and use `summary()` to get the model statistics:
+
+```{r}
+# solution
+mod_youtube <- lm(sales ~ youtube, df_marketing)
+
+summary(mod_youtube)
+```
+
+Y = 8.44 + (0.048 * X)
+
+The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
+
+(For interpreting the regression model summary, see [_The R Cookbook_, 2nd edition, "11.4 Understanding the Regression Summary"](https://rc2e.com/linearregressionandanova#recipe-id240))
+
+
+
+We can use our skills in writing functions. We can write one called `ad_impact` that takes a value called `youtube` that represents the amount spent on youtube advertising, and then calculates the predicted sales, using the values from the model.
+
+
+```{r model_function}
+
+# solution
+
+ad_impact <- function(youtube) {
+  8.439 + (0.048 * youtube)
+}
+
+
+```
+
+Let's test our function, seeing the sales impact of spending $1000 on youtube advertising.
+
+
+```{r}
+
+ad_impact(1000)
+
+```
+
+
+
+
+
+## Multiple predictors
+
+Regression equations also allow us to use multiple variables to predict our outcome. In this sales example, there's not just youtube, but facebook and newspaper advertising happening at the same time.
+
+A full regression equation looks like this:
+
+$y = b_{0} + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{n}x_{n} + e$
+
+
+In R syntax, it is quite simple:
+
+
+```{r}
+# solution
+mod_all <- lm(sales ~ youtube + facebook + newspaper, df_marketing)
+
+summary(mod_all)
+```
+
+Note that the value for newspaper is very small (and less important, negative). With such a small number, it's time to introduce the statistical significance measure, shown on the right with the handy asterix column. The "P value" is the probability that the estimate is _not_ significant, so the smaller the better. There's no asterix associated with the newspaper line, so it's not signficant, but the other two variables get the full 3-star rating.
+
+
+This means that we can re-run the model, but without newspaper as a predictive variable:
+
+
+```{r}
+# solution
+mod_all <- lm(sales ~ youtube + facebook, df_marketing)
+
+summary(mod_all)
+```
+
+
+Interpretation:
+
+Y = 3.52 + 0.046 (youtube) + 0.188 (facebook) 
+
+For a given predictor (youtube or facebook), the coefficient is the effect on Y of a one unit increase in that predictor, holding the other predictors constant.
+
+So to see the impact of a $1,000 increase in facebook advertising, we'd evaluate the equation as
+
+`3.52 + (0.046 * 1) + (0.188 * 1000) = 191.57`
+
+We would expect to see an increase of sales of 191.57 units, for each additional expenditure of $1000 of facebook adverstising.
+
+
+
+Rather than calculating this long-hand, we can write a short function to calculate this for us:
+
+```{r model_function2}
+
+# solution
+
+ad_impact2 <- function(youtube, facebook) {
+  3.52 + (0.046 * youtube) + (0.188 * facebook)
+}
+
+
+```
+
+
+Let's test: calculate the impact of a $1000 spend on facebook
+
+```{r}
+# solution
+
+ad_impact2(1, 1000)
+
+```
+
+
+
+What if we split our spending? What's the impact of a \$500 spend on youtube and a \$500 spend on facebook?
+
+```{r}
+# solution
+
+ad_impact2(500, 500)
+
+```
+
+
+
+---
+
+## Working with model data
+
+As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract--we have just been reading the numbers on the screen and typing them in.
+
+To "tidy" the data, you can use the package {broom}.
+
+![broom hex](broom_400.png)
+
+* [_R for Data Science_, "25 Many models"](https://r4ds.had.co.nz/many-models.html)
+
+* [Introduction to broom: let's tidy up a bit](https://broom.tidyverse.org/articles/broom.html)
+
+* [{broom} reference site](https://broom.tidyverse.org/)
+
+
+### Plot example
+
+In this example, we will
+
+* run the `lm()` model
+
+* extract the predicted values 
+
+* plot those predicted values as a line on our scatter plot
+
+(These are the steps that the `geom_smooth(method = lm)` function in {ggplot2} is doing behind the scenes.)
+
+
+(Note that the data set `sim1` comes from the package {modelr}.)
+
+```{r mod_sim1_revisited}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+summary(mod_sim1)
+
+```
+
+Using the {broom} package, we use the `augment()` function to create a new dataframe with the fitted values (also known as the predicted values) and residuals for each of the original points in the data:
+
+```{r}
+
+mod_sim1_table <- broom::augment(mod_sim1)
+
+mod_sim1_table
+
+```
+
+
+The variable we want to plot as the line is ".fitted".
+
+The code to create our original scatterplot is as follows:
+
+```{r}
+pl_sim1 <- ggplot(sim1, aes(x = x, y = y)) +
+  geom_point()
+
+pl_sim1
+```
+
+To our object "pl_sim1" (for "plot_sim1") we can add the line using the `geom_line()` function. This is pulling data from a second dataframe—{ggplot2} gives you the power to plot data points from multiple data frames.
+
+Note that in the first solution, the data is specified using the `df$var` syntax.
+
+```{r}
+
+pl_sim1 +
+  geom_line(aes(x = mod_sim1_table$x, y = mod_sim1_table$.fitted))
+
+# syntax that specifies the data
+pl_sim1 +
+  geom_line(data = mod_sim1_table, aes(x = x, y = .fitted))
+
+
+```
+
+Another version of the syntax that skips the creation of an object.
+
+```{r}
+# embedding the data and aes in the `geom_` functions
+# note that `data = ` has to be specified`
+ggplot() +
+  geom_point(data = sim1, aes(x = x, y = y)) +
+  geom_line(data = mod_sim1_table, aes(x = x, y = .fitted))
+  
+
+```
+
+
+
+
+-30-
+
+
+

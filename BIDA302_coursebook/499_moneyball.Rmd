@@ -26,7 +26,7 @@ And yet these two teams—one packed with highly-paid star players, and the othe
 
 It's a great story. Part of the drama is about using data analysis to identify those players who were undervalued in the market.
 
-![_Moneyball poster_](static\img\moneyball_pitt.jpg){width=25%}
+![_Moneyball poster_](static\img\moneyball-poster.jpg){width=25%}
 
 
 Let's use the tidyverse packages and some elements in base R to explore the relationship between payroll spending and team success.
@@ -60,7 +60,7 @@ For each team season, the file has
 mlb_pay_wl
 ```
 
-### Visualizing the data
+## Visualizing the data
 
 For our exercise, we will explore the relationship between payroll and wins. Does paying star players always lead to success? 
 
@@ -106,7 +106,7 @@ ggplot(mlb_pay_wl, aes(x = pay_pct_league, y = w_l_percent)) +
 
 ```
 
-### The regression model
+## The regression model
 
 We can use the `lm()` method to create our regression statistics.
 

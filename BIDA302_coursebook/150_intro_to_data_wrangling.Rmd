@@ -39,7 +39,7 @@ There are three broad categories of data transformation:
 In this section, we will begin to work with all three transformations.
 
 
-### Reading
+### Reading: Data wrangling
 
 Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
