@@ -24,7 +24,7 @@ library(datarium)
 
 * Understand the utility of a regression model
 
-* Demonstrate an understanding of the input and output components of a regression model 
+* Demonstrate a basic understanding of the input components and model outputs of a regression model 
 
 * Demonstrate the ability to write the code to create a regression model in R
 
@@ -59,7 +59,7 @@ As it gets colder outside, we use more energy to heat our homes—can we predict
 
 This pair of plots shows how a simple linear model works: first we have the X-Y scatter plot.
 
-In this example, the trend is fairly clear: as the value of "x" increases, so does "y". 
+In this example, the trend is fairly clear: as the value of "x" increases, so does "y". We say that "x" is the independent variable, and "y" is the dependent variable. In a predictive model, we are estimating (or predicting) a value of "y" based on a known value of "x". In the earlier home heating example, energy consumption _depends_ on temperature; we are trying to predict energy consumption based on the temperature outside. 
 
 (Note that the data set `sim1` comes from the package [{modelr}](https://modelr.tidyverse.org/), and is slightly altered^[`set.seed(42)`<br>
 `sim1 <- modelr::sim1 %>% `<br>`mutate(x = jitter(x))`]
@@ -78,7 +78,7 @@ ggplot(sim1, aes(x = x, y = y)) +
 ```
 
 
-Then we can add the line of best fit that shows the trend, using the `geom_smooth()` function, where `method = lm`:
+Then we can add the line of best fit that shows the trend, using the `geom_smooth()` function, where `method = lm`. This line shows the predicted values of "y", based on the value of "x".
 
 ```{r plot_sim1}
 ggplot(sim1, aes(x = x, y = y)) +
@@ -88,10 +88,10 @@ ggplot(sim1, aes(x = x, y = y)) +
 ```
 
 
-The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase the total distance. The plot below shows the distance between the measured points and the prediction line. (Note that there is some overlap.) 
+The line minimizes the distance between all of the points (more precisely, it's the minimum _squared_ distance). If we were to change the angle of the line in any way, it would increase the total distance. The plot below shows the distance between the measured points and the prediction line. 
 
 
-```{r plot_sim1_lines}
+```{r plot_sim1_lines, echo=FALSE}
 
 mod_sim1 <- lm(y ~ x, data = sim1)
 
@@ -106,9 +106,9 @@ ggplot(mod_sim1_aug, aes(x = x, y = y)) +
 ```
 
 
-Being a statistics-based program), linear regression is a function in base R ... it's `lm()`, for "linear model". 
+Being a statistics-based program, linear regression is a function in base R...it's `lm()`, for "linear model". 
 
-The syntax of the `lm()` function is a bit different than what we're used to.
+The syntax of the `lm()` function may look a bit different than what we're used to.
 
 `lm(y ~ x, data)`
 
@@ -153,9 +153,13 @@ summary(mod_sim1)
 
 This isn't a statistics class, so we won't go into the details ... 
 
+(For interpreting the regression model summary, see [_The R Cookbook_, 2nd edition, "11.4 Understanding the Regression Summary"](https://rc2e.com/linearregressionandanova#recipe-id240))
+
+
+
 Can you find the coefficients for the equation?
 
-The Multiple R-squared statistics tells us how well the line fits the points ... this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line)--if the relationship is negative (as one goes up the other goes down), it will be in the range from -1 to 0. In this case, it's 0.8846, which is a very good fit.
+The Multiple and Adjusted R-squared statistics tells us how well the line fits the points...this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line). If the relationship is negative (as X goes up Y goes down), it will be in the range from -1 to 0. In this case, it's 0.88, which is a very good fit.
 
 
 **The equation predicts a value of Y, based on what we know about X.**
@@ -167,11 +171,11 @@ This has enormous practical applications.
 
 ## A deeper dive
 
-In the following example, we will use some data from another package, {datarium}. In this example, there are three types of advertising: youtube, facebook, and newspaper. What we are interested in predicting is sales—how much do they go up for each dollar spent on each of the three media?
+In the following example, we will use some data from another package, [{datarium}](https://CRAN.R-project.org/package=datarium). In this example, there are three types of advertising: youtube, facebook, and newspaper. What we are interested in predicting is sales—how much do they go up for each dollar spent on each of the three media?
 
 Here's what the first 6 rows of the 200 rows in the `marketing` table look like:
 
-* note that `sales` is 1000 units
+* note that `sales` is measured in units of 1000 (a 5 means 5,000)
 
 ```{r}
 df_marketing <- datarium::marketing 
@@ -180,7 +184,7 @@ head(df_marketing)
 ```
 
 
-Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationshp:
+Let's start with just the youtube and see how well it predicts sales. First, we will plot the relationship:
 
 ```{r}
 # solution
@@ -203,8 +207,6 @@ summary(mod_youtube)
 Y = 8.44 + (0.048 * X)
 
 The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
-
-(For interpreting the regression model summary, see [_The R Cookbook_, 2nd edition, "11.4 Understanding the Regression Summary"](https://rc2e.com/linearregressionandanova#recipe-id240))
 
 
 
@@ -322,11 +324,11 @@ ad_impact2(500, 500)
 
 ## Working with model data
 
-As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract--we have just been reading the numbers on the screen and typing them in.
+As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract—we have just been reading the numbers on the screen and typing them in.
 
 To "tidy" the data, you can use the package {broom}.
 
-![broom hex](broom_400.png)
+![broom hex](static/img_tidyverse/broom_400.png)
 
 * [_R for Data Science_, "25 Many models"](https://r4ds.had.co.nz/many-models.html)
 
@@ -396,7 +398,7 @@ pl_sim1 +
 
 ```
 
-Another version of the syntax that skips the creation of an object.
+Here's another version of the syntax that skips the creation of an object.
 
 ```{r}
 # embedding the data and aes in the `geom_` functions
