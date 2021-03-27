@@ -5,7 +5,7 @@ https://creativecommons.org/licenses/by/4.0/
 -->
 
 
-# Gapminder: 200 Countries, 200 Years {#gapminder-europe}
+# Gapminder: Aging Europe {#gapminder-europe}
 
 
 ```{r echo = FALSE}
@@ -15,7 +15,7 @@ options(width = 100, dplyr.width = 100)
 
 ```
 
-## Introduction
+## Introduction {#gapminder-europe-intro}
 
 
 In this project, you will recreate an approximation of the chart Hans Rosling shows in the video here:
@@ -29,7 +29,7 @@ This image captures the 1961 version of the plot:
 Make three versions of the chart, each showing a different year.
 
 
-## Data files
+## Data files {#gapminder-europe-data}
 
 There are four files from https://www.gapminder.org/data/ that you will need; these are in the "data" folder
 
@@ -48,8 +48,8 @@ In addition, there is an Excel file that you'll need to use to get the region th
 
 
 
-## references
+## references {#gapminder-europe-references}
 
-For additional references, including examples of using {gganimate}, see the page for [@gapminder200]
+For additional references, including examples of using {gganimate}, see the page for the capstone project [Gapminder:  200 Countries, 200 Years](#gapminder200)
 
 

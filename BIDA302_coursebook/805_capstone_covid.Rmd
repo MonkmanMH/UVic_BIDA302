@@ -1,0 +1,58 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+# COVID-19 case numbers in British Columbia {#covid-bc}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+```
+
+## Introduction {#covid-bc-intro}
+
+
+As the COVID-19 pandemic enters its next phase, the number of cases in British Columbia is increasing.
+
+Here are two charts by Jens von Bergmann:
+
+
+
+![BC weekly cases by age group](bc_covid_cases_age_2020-08-25.jpg)
+
+* https://twitter.com/vb_jens/status/1298407214189690880?s=20
+
+
+
+![BC daily cases per 100k population](bc_dailycases_per_100k.jpg)
+
+* https://twitter.com/vb_jens/status/1325965304925577218?s=20
+
+
+### Other visualizations of data from the same source
+
+https://twitter.com/vb_jens/status/1323423179390418944?s=20
+
+Animations:
+
+https://twitter.com/vb_jens/status/1323649252770291713?s=20
+
+
+
+
+## Data source {#covid-bc-data}
+
+Source: COVID-19 Canada Open Data Working Group
+
+[opencovid.ca GitHub repository](https://github.com/jeanpaulrsoucy/covid-19-canada-gov-data)
+
+
+
+
+-30-
