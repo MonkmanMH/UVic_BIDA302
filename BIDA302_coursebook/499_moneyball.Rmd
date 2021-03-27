@@ -26,7 +26,7 @@ And yet these two teams—one packed with highly-paid star players, and the othe
 
 It's a great story. Part of the drama is about using data analysis to identify those players who were undervalued in the market.
 
-![_Moneyball poster_](static\img\moneyball-poster.jpg){width=25%}
+![_Moneyball poster_](static\img\moneyball_pitt.jpg){width=25%}
 
 
 Let's use the tidyverse packages and some elements in base R to explore the relationship between payroll spending and team success.
@@ -60,7 +60,7 @@ For each team season, the file has
 mlb_pay_wl
 ```
 
-## Visualizing the data
+### Visualizing the data
 
 For our exercise, we will explore the relationship between payroll and wins. Does paying star players always lead to success? 
 
@@ -106,7 +106,7 @@ ggplot(mlb_pay_wl, aes(x = pay_pct_league, y = w_l_percent)) +
 
 ```
 
-## The regression model
+### The regression model
 
 We can use the `lm()` method to create our regression statistics.
 
@@ -150,24 +150,62 @@ summary(model_mlb_pay_wl)
 ```
 
 
+## Questions {moneyball-questions}
 
-## Questions
+### Moneyball {moneyball-q1}
+(3 marks)
 
-1. Is this model statistically significant? What is the P value?
+**Question 1**
 
-2. What is the R-squared value? What does it tell us about the strength of the relationship between these two variables?
+Review the outputs from the model summary above. 
 
-3. What is the relationship between the R-squared value and the P value?  (Further reading: Anderson, Faye. (2016). [Re: What is the relationship between R-squared and p-value in a regression?](https://www.researchgate.net/post/What_is_the_relationship_between_R-squared_and_p-value_in_a_regression/57612faddc332d362552c5f1/citation/download.))
+  a. Is this model statistically significant? What is the P value?
 
-4. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field?
+  b. What is the R-squared value? What does it tell us about the strength of the relationship between these two variables?
 
-5. In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
+  c. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field?
 
-  a. Using R, visualize the relationship between team wins or winning percentage and attendance.
+### Does winning lead to bigger crowds? {moneyball-q2}
 
-   b. Using R, create a regression model that evaluates the relationship between team wins and attendance. Display the results in your output.
+**Question 2**
+
+In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
+(6 marks)
+
+  a. Use the data in the "mlb_pay_wl.csv" file to visualize the relationship between team wins or winning percentage and attendance.
+
+   b. Use the data in the "mlb_pay_wl.csv" file to create a regression model that evaluates the relationship between team wins and attendance. Display the results in your output.
 
    c. Analyze the coefficients, the R-squared value, and the P value. Can we say that a successful team draw bigger crowds?
+
+
+
+### Data organization in spreadsheets {moneyball-q3}
+(3 marks)
+
+**Question 3**
+
+Read the following article: 
+
+Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science, 2018
+
+* it is available on the moodle site or from this link: https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+
+
+ a.  What are basic principles for using spreadsheets for good data organization?
+
+ b.  What are good approaches for handling dates in spreadsheets?
+
+
+
+### Bonus Marks! {moneyball-q-bonus}
+(2 marks)
+
+Imagine that time travel is possible...
+ 
+You have just been transported back four weeks to the day before the course started. What is one thing you would tell your past self about this course?
+
+
 
 
 -30-
