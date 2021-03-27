@@ -26,7 +26,7 @@ And yet these two teams—one packed with highly-paid star players, and the othe
 
 It's a great story. Part of the drama is about using data analysis to identify those players who were undervalued in the market.
 
-![_Moneyball poster_](static\img\moneyball_pitt.jpg){width=25%}
+![_Moneyball movie poster_](static\img\moneyball_poster.jpg){width=25%}
 
 
 Let's use the tidyverse packages and some elements in base R to explore the relationship between payroll spending and team success.
@@ -51,7 +51,7 @@ For each team season, the file has
 
 * the pay as a percent of the league ("pay_pct_league"), where 1.0 is the league average for that year. A value of 1.10 would be 10 percent higher than the league average for the season; a value of 0.90 would be 10 percent lower.
 
-* wins and losses ("w" and "l")
+* wins and losses ("w" and "l"); counts of the number of games won and lost in that season. Note that the Major League Baseball season is 162 games long, but the sum of wins and losses isn't always 162. Sometimes teams play fewer because of cancellations due to weather, and they might play an extra game at the end of the season to determine which team will advance to the playoffs.
 
 * and the winning percentage ("w_l_percent") where 0.500 represents winning as many games as losing. The highest value in this period was the Seattle Mariners, whose win-loss "percentage" was 0.716 (71.6%) in 2001 (116 of 162 games). The worst team in the data was the Detroit Tigers in 2003, who _lost_ 119 of their 162 games (a percentage of 0.265).
 
@@ -150,12 +150,12 @@ summary(model_mlb_pay_wl)
 ```
 
 
-## Questions {moneyball-questions}
+## Questions {#moneyball-questions}
 
-### Moneyball {moneyball-q1}
-(3 marks)
+### Moneyball {#moneyball-q1}
 
 **Question 1**
+(3 marks)
 
 Review the outputs from the model summary above. 
 
@@ -165,12 +165,12 @@ Review the outputs from the model summary above.
 
   c. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field?
 
-### Does winning lead to bigger crowds? {moneyball-q2}
+### Does winning lead to bigger crowds? {#moneyball-q2}
 
 **Question 2**
+(6 marks)
 
 In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
-(6 marks)
 
   a. Use the data in the "mlb_pay_wl.csv" file to visualize the relationship between team wins or winning percentage and attendance.
 
@@ -180,10 +180,10 @@ In any sport, successful teams draw bigger crowds. If we were to model this rela
 
 
 
-### Data organization in spreadsheets {moneyball-q3}
-(3 marks)
+### Data organization in spreadsheets {#moneyball-q3}
 
 **Question 3**
+(3 marks)
 
 Read the following article: 
 
