@@ -1,5 +1,5 @@
 ---
-title: "Model"
+title: "Modeling"
 author: "Martin Monkman"
 output:
   html_document:
@@ -15,6 +15,18 @@ library(datarium)
 ```
 
 
+## Objectives: Modeling
+
+* Understand the utility of a regression model
+
+* Demonstrate an understanding of the input and output components of a regression model 
+
+* Demonstrate the ability to write the code to create a regression model in R
+
+
+## Reading & resources: Modeling
+
+
 
 
 ## Relationship between variables
@@ -26,7 +38,7 @@ In this example, we will be using linear regression to predict one value based o
 As it gets colder outside, we use more energy to heat our homes—can we predict energy consumption based on temperature? And in a more complex model, we could see if temperature plus relative humidity is a better predictor.
 
 
-## 1. A simple example
+## A simple example
 
 This pair of plots shows how a simple linear model works: first we have the X-Y scatter plot.
 

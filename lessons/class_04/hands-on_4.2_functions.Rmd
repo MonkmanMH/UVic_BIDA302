@@ -83,7 +83,7 @@ sum(dice)
 ```
 
 
-To do this more than once, you would need to write the last two lines of code in again and again:
+To do this more than once, you would need to write the last two lines of code in again and again. What if you wanted 100 random rolls?
 
 ```{r}
 
@@ -96,7 +96,7 @@ sum(dice)
 dice <- sample(die, size = 2, replace = TRUE)
 sum(dice)
 
-
+# 3 down, 97 to go!
 ```
 
 

@@ -9,8 +9,6 @@ output: html_document
 
 # Week 4 
 
-## November 14 & 15, 2020
-
 
 ## Objective
 
@@ -243,5 +241,17 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 * [Model: 22. Introduction and 23. Model Basics](https://r4ds.had.co.nz/model-intro.html)
 
 
+## Capstone projects
+
+Some resources:
+
+[_Maclean's_: Charts to watch in 2021: The most important Canadian economic graphs for the year ahead](https://www.macleans.ca/economy/charts-to-watch-in-2021-the-most-important-canadian-economic-charts-for-the-year-ahead/)
+
+
+[_Maclean's_: The most important Canadian economic charts to watch in 2020](https://www.macleans.ca/economy/the-most-important-canadian-economic-charts-to-watch-in-2020/) (2019-12-04)
+
+[_Maclean's_: The most important charts to watch in 2019](https://www.macleans.ca/economy/economicanalysis/the-most-important-charts-to-watch-in-2019/)
+
+* Alberta Recovery
 
 -30-

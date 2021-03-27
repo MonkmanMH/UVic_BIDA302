@@ -22,9 +22,16 @@ This project asks you to recreate the chart below, which was featured in the 201
 
 
 ![Change in employment rates](static/img_capstone/Trevor-Tombe-Alberta-employment.png)
-The full _Macleans_ story, by Trevor Tombe, is here: 
-[Alberta's uneven economic recovery](https://www.macleans.ca/economy/economicanalysis/the-most-important-charts-to-watch-in-2019/)
 
+>“Economic recoveries take time. But for Alberta’s young men, it hasn’t even started. After two years of job losses, the economic recovery finally began in late 2016 and employment rates for most Albertans have gradually improved ever since. Prime-age men (25-54 year olds), for example, have recovered nearly three quarters of their recessionary losses. But for young men (24 and under) the situation is no better today than it was two years ago. This group was hardest hit by job losses in oil and gas, construction, and manufacturing — especially those with lower levels of education — and adjustment is proving difficult. Will economic recovery finally reach all Albertans in 2019? This is the chart to watch.”
+> —Trevor Tombe, assistant professor of economics, University of Calgary^[Source: Alberta's uneven economic recovery", _Maclean's_](https://www.macleans.ca/economy/economicanalysis/the-most-important-charts-to-watch-in-2019/)
+
+
+The COVID-19 pandemic of 2020-21 has provided an additional shock to the labour market.
+
+* What does the line look like if it's extended to include the latest data?
+
+* What does the labour market in British Columbia look like by comparison?
 
 
 ## Data source {#lfs-ab-data}
@@ -45,6 +52,8 @@ Frequency: Monthly
 Table: 14-10-0287-01 (formerly CANSIM 282-0087)
 
 Geography: Canada, Province or territory
+
+DOI: https://doi.org/10.25318/1410028701-eng
 
 
 [Statistics Canada Open License Agreement](http://www.statcan.gc.ca/eng/reference/licence)
