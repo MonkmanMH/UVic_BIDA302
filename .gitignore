@@ -10,8 +10,8 @@
 *.png
 *.jpg
 
-*.csv
-*.xls*
+#*.csv
+#*.xls*
 
 *.zip
 *.rar
