@@ -51,3 +51,10 @@ Some projects will be available for you to choose, but you may also bring your o
 | 10 | documentation throughout, explaining what the following R code chunk is doing
 | **40** | **TOTAL** |
 
+
+## Capstone GitHub page
+
+The chapters that follow have a list of the most popular capstone projects. You can find a longer list of the capstone projects, including some that are still in develoment, at this website:
+
+https://github.com/MonkmanMH/UVic_BIDA302_capstone
+
