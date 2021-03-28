@@ -131,8 +131,10 @@ If anything, Excel files are more common than CSV and other plain-text data file
 And as we see in the article by Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989), the features of Excel files can encourage some ways of storing information that makes it hard for us to analyze. Excel files can also contain a wide variety of data format types. {readxl} tries to figure out what's going on, but like {readr}, it allows you to override some of those automatic decisions.
 
 
+In this example, our Excel file is in a different directory, one below our current directory, called "data". Working with file paths like this, we can import the contents of data files and worksheets that are anywhere on our computer, the local network, or the internet.
+
 ```{r}
-deaths <- read_excel("deaths.xlsx")
+deaths <- read_excel("data/deaths.xlsx")
 deaths
 ```
 
@@ -145,14 +147,14 @@ Read in the "deaths" file, but use the `range = ` option to specify when to star
 
 ```{r}
 # Example
-deaths <- read_excel("deaths.xlsx", 
+deaths <- read_excel("data/deaths.xlsx", 
                      range = "A1:B3")
 
 deaths
 
 # solution
 deaths <- read_excel(
-  "deaths.xlsx",
+  "data/deaths.xlsx",
   range = "A5:F15"
 )
 
@@ -167,7 +169,7 @@ Use the `skip =` and `n_max =` options to achieve the same thing:
 
 # solution
 deaths <- read_excel(
-  readxl_example("deaths.xlsx"),
+  "data/deaths.xlsx",
   skip = 4,
   n_max = 10
 )

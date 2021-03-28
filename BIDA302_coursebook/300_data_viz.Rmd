@@ -60,7 +60,7 @@ Read the quartet data in a tidy form^[Source: David Robinson, ["Anscombe’s Qua
 
 
 ```{r anscombe_tidy}
-anscombe_tidy <- read_csv("anscombe_tidy.csv")
+anscombe_tidy <- read_csv("data/anscombe_tidy.csv")
 
 anscombe_tidy
 ```
