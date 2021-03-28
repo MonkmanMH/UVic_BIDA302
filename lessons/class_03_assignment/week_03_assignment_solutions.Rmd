@@ -265,6 +265,25 @@ ggplot(housing1_long %>%
 ```
 
 
+Another slicing solution using `slice_max()`
+
+* specify the variable to be evaluated for the maximum values (`3 Year Total`) and how many (10)
+
+* there's also a `slice_min()`
+
+* see https://dplyr.tidyverse.org/reference/slice.html
+
+```{r}
+
+data_source_long %>% 
+  filter(years == "2018") %>% 
+  rename("municipality" = `...1`) %>% 
+  slice_max(`3 Year Total`, n = 10)
+
+
+```
+
+
 
 ---
 

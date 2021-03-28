@@ -80,7 +80,6 @@ glue('_The Mandolorian_',
 
 ```
 
-### Your turn {#util-glue-yourturn}
 
 Glue together separate year (as a variable), month, and day values, separated by a hyphen "-", to create a single date string.
 
@@ -149,7 +148,8 @@ Create a new variable in the data frame by glueing the variables `species` and `
 # solution
 
 starwars %>% 
-  mutate(species_gender = glue("{species} - {gender}"))
+  mutate(species_gender = glue("{species} - {gender}")) %>% 
+  select(name, species, gender, species_gender)
 
 ```
 
@@ -200,7 +200,7 @@ This is going to demonstrate {janitor} `clean_names()` function
 First we read in the valid rows from the "deaths.xlsx" file (part of the [{readxl} package] https://readxl.tidyverse.org/).
 
 ```{r}
-deaths <- read_excel("deaths.xlsx", skip = 4, n_max = 10)
+deaths <- read_excel("data/deaths.xlsx", skip = 4, n_max = 10)
 
 deaths
 ```
@@ -238,7 +238,7 @@ First, we'll read in an Excel file called "dirty_data.xlsx"
 
 ```{r}
 
-roster_raw <- readxl::read_excel("data\dirty_data.xlsx") # available at http://github.com/sfirke/janitor
+roster_raw <- readxl::read_excel("data/dirty_data.xlsx") # available at http://github.com/sfirke/janitor
 glimpse(roster_raw)
 
 roster_raw
