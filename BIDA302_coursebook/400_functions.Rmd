@@ -37,7 +37,7 @@ library(tidyverse)
 * Understand the components of a function
 
 
-![_Function function, what's your function?_](static/img/shr_function.jpg)
+![_`function()` function, what's your function?_](static/img/shr_function.jpg)
 
 
 Functions are an important part of programming in R. You have already used many functions—now it's time to write your own.

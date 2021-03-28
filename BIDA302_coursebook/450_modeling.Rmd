@@ -159,7 +159,16 @@ This isn't a statistics class, so we won't go into the details ...
 
 Can you find the coefficients for the equation?
 
+![model coefficients](static/img/mod_sim1_coeff_hilite.png)
+
+
+**The P value** (the measure of statistical significance) is found in the column marked "Pr(>|t|)".
+
+![The P values](static/img/mod_sim1_coeff_hilite_P.png)
+
 The Multiple and Adjusted R-squared statistics tells us how well the line fits the points...this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line). If the relationship is negative (as X goes up Y goes down), it will be in the range from -1 to 0. In this case, it's 0.88, which is a very good fit.
+
+![R-squared value](static/img/mod_sim1_R2.png)
 
 
 **The equation predicts a value of Y, based on what we know about X.**
