@@ -24,8 +24,6 @@ library(gapminder)
 
 
 
-## Data wrangling
-
 Data is abundant, and as data analysts we often have to spend time working with our data tables to get it ready for whatever analysis we need to do. "Data wrangling" and "data transformation" are two terms that are used to describe the process of altering the structure of our data.^["Data cleaning" is a whole other thing—we will encounter that later.] 
 
 There are three broad categories of data transformation:
@@ -39,7 +37,7 @@ There are three broad categories of data transformation:
 In this section, we will begin to work with all three transformations.
 
 
-### Reading: Data wrangling
+### Reading: Data wrangling {#data_wrangle-reading}
 
 Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
@@ -55,7 +53,7 @@ For this section, and for other exercises throughout this course, we will be usi
 
 
 
-## Transform Data: 1a Alter the structure
+## Transform Data: 1a Alter the structure  {#data_wrangle-transform1}
 
 
 ![_dplyr hex_](static/img_tidyverse/dplyr.png){width=250, height=250}
@@ -90,7 +88,7 @@ To achieve these three goals, we will be using functions from the tidyverse pack
 
 
 
-### other operators
+**Other operators**
 
 In addition to these functions, R has a number of operators that add significantly to your code.
 
@@ -131,7 +129,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-## Tangent: Introducing the pipe operator ` %>% `
+## Introducing the pipe operator ` %>% `  {#data_wrangle-pipe}
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
@@ -178,7 +176,7 @@ gapminder %>%
 ```
 
 
-## Tangent: Creating lists
+## Creating lists  {#data_wrangle-lists}
 
 R allows us to create lists using the `c()` function.
 
@@ -227,7 +225,7 @@ This also reduces the risk of inadvertent error if we want to change the countri
 
 
 
-### Select columns 
+### Select columns  {#data_wrangle-select}
 
 
 You've already seen `filter()` to choose particular rows in your dataframe. What if you want to remove some columns (variables)?

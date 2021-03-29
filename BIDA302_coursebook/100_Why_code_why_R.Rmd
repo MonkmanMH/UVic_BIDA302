@@ -7,7 +7,7 @@
 # Why Code? Why R? {#why_code}
 
 
-## Objectives
+## Objectives {#why_code-objectives}
 
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
 > - Grolemund & Wickham, _R for Data Science_
@@ -20,9 +20,8 @@ At the end of this lesson, learners will be able to:
 
 
 
-### Readings
+### Readings {#why_code-readings}
 
-#### Core
 
 * [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
 
@@ -30,8 +29,9 @@ At the end of this lesson, learners will be able to:
 
 
 
+## Using a programming language to do data analysis  {#why_code-pgm}
 
-### Approaching data analysis
+Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
 Here's a structured way to approach any analysis:
 
@@ -43,11 +43,6 @@ Here's a structured way to approach any analysis:
 
 
 
-
-
-## Using a programming language to do data analysis
-
-Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
 Data science is where **data analytics** (applying math & statistics to a subject area) is done in a **coding** environment...
 
@@ -100,7 +95,7 @@ Here's an example:
 
 [NHPI]
 
-### Why R?
+### Why R?  {#why_code-why-r}
 
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Python.
 
@@ -131,10 +126,6 @@ Another part of the R community is the proliferation of hexagonal laptop sticker
 
 
 
-
-
-#### Workflow and functionality
-
 For one of my projects, the workflow used to look something like this:
 
 ![survey workflow 1](static/img/survey_workflow_720.png)
@@ -149,8 +140,6 @@ It now looks like this:
 ![survey workflow 1](static/img/survey_workflow_2_720.png)
 
 
-
-#### Collaboration
 
 Your code (and additional recordkeeping with your code) helps explain your work to others.
 
@@ -170,11 +159,12 @@ But you will also want or need to collaborate with other people. With more remot
 
 
 
-## R: An analogy
+## R: An analogy  {#why_code-r-analogy}
 
 ![R logo](static/img/R.jpg)
 
-### Base R
+### Base R {#why_code-r-analogy-base}
+
 
 R is a data science / statistics programming language. Because it developed as a data analysis and statistical tool, unlike many other open-source programming languages, it has built-in analytic and statistical functions, and the data structures are designed for data analysis.
 
@@ -184,7 +174,7 @@ In this analogy, base R is like the engine and frame of a car & basic controls l
 
 We can get from Point A to Point B, but it isn't going to be a very comfortable ride.
 
-### Packages
+### Packages  {#why_code-r-analogy-packages}
 
 Packages extend the functionality of R. Each package does a rather limited number of things, so we sometimes find ourselves using many packages for a data analysis project.
 
@@ -221,7 +211,7 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 
 
-### RStudio
+### RStudio  {#why_code-r-analogy-rstudio}
 
 
 ![RStudio logo](static/img_tidyverse/RStudio_400.png)
@@ -257,7 +247,7 @@ Who's ready for a road trip?!
 
 ![_VW Beetle with family_](static/img/VW_ready_to_go.png)
 
-### Languages
+### Languages  {#why_code-languages}
 
 
 ![image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636](static/img/language_learning.jpg)
@@ -291,7 +281,7 @@ And spelling also matters.
 * "WORD".
 
 
-### What data scientists do
+### What data scientists do  {#why_code-work}
 
 
 > Data scientists spend 60% of their time on cleaning and organizing data. Collecting data sets comes second at 19% of their time, meaning data scientists spend around 80% of their time on preparing and managing data for analysis.
@@ -339,7 +329,7 @@ We might say that reading about how to do something, and copying the code and ch
 
 
 
-## Exercise: Introduction to R
+## Exercise: Introduction to R  {#why_code-exercise}
 
 In this exercise, you'll tackle the basics of the R language.
 
@@ -348,10 +338,10 @@ In this exercise, you'll tackle the basics of the R language.
 
 ***
 
-## Digging deeper into these topics
+## Digging deeper into these topics 
 
 
-### Opinionated analysis development & reproducible analysis
+**Opinionated analysis development & reproducible analysis**
 
 Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/preprints/3210/), PeerJ Preprints 5:e3210v1 https://doi.org/10.7287/peerj.preprints.3210v1
 
@@ -360,7 +350,7 @@ Hilary Parker, 2017-08-31, [Opinionated analysis development](https://peerj.com/
 Munafò, M., Nosek, B., Bishop, D. et al. [A manifesto for reproducible science](https://www.nature.com/articles/s41562-016-0021). Nat Hum Behav 1, 0021 (2017) doi:10.1038/s41562-016-0021
 
 
-### Why R?
+**Why R?**
 
 Nathaniel D. Phillips, [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/) 
 
@@ -375,7 +365,7 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
 
 
-### Installing R on your own computer
+## Installing R on your own computer  {#why_code-r-install}
 
 For BIDA302, we will be using [rstudio.cloud](https://rstudio.com/products/cloud/) and there is no need for you to install R and RStudio on your own computer.
 

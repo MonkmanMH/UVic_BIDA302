@@ -15,7 +15,7 @@ options(width = 100, dplyr.width = 100)
 
 ```
 
-## Introduction
+## Introduction {#gapminder200-intro}
 
 
 In this project, you will recreate  single year versions of the chart Hans Rosling shows in the video here:
@@ -25,7 +25,7 @@ In this project, you will recreate  single year versions of the chart Hans Rosli
 
 
 
-## Data files
+## Data files {#gapminder200-data}
 
 The four files that you will need, downloaded from https://www.gapminder.org/data/, can be found in the "data" folder of this project.
 
@@ -46,7 +46,7 @@ In addition, there is an Excel file that you'll need to use to get the region (c
 
 
 
-## References
+## References {#gapminder200-ref}
 
 https://towardsdatascience.com/how-to-build-animated-charts-like-hans-rosling-doing-it-all-in-r-570efc6ba382
 
