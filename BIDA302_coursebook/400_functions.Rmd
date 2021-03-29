@@ -40,9 +40,11 @@ library(tidyverse)
 ![_`function()` function, what's your function?_](static/img/shr_function.jpg)
 
 
+## Introduction to functions
+
 Functions are an important part of programming in R. You have already used many functions—now it's time to write your own.
 
-Functions have particular value in making your code DRY (don't repeat yourself). If you need to do the same thing over and over again (whether in a single script, or create the same report with the same calculations next month), you can either copy-and-paste with some find-and-replace, or take the time to write a generalized function. 
+Functions have particular value in making your code DRY (don't repeat yourself).^[The opposite is WET (we enjoy typing).] If you need to do the same thing over and over again, whether in a single script or to create the a report with the same calculations when next month's data arrives, you can either copy-and-paste with some find-and-replace, or take the time to write a generalized function. 
 
 Using functions has the following benefits: 
 
@@ -59,6 +61,7 @@ There are three parts to any function:
 
 * code statement(s) that do something with/to the argument(s)  
 
+In R, the function to create a function is `function()`.
 
 
 The code looks like this:
@@ -184,7 +187,7 @@ circle_area(r = 2.5)
 ```
 
 
-Now we can use that function to calculate any number of circle areas. Let's make a tibble with 26 circles, where `circle_r` is the radius of each circle.
+Now we can use that function to calculate any number of circle areas. Let's make a tibble with 10 circles, where `circle_r` is the radius of each circle.
 
 ```{r}
 # the `set.seed()` function ensures that our pseudo-random number generation
@@ -192,8 +195,8 @@ Now we can use that function to calculate any number of circle areas. Let's make
 set.seed(42)
 
 my_circles <- tibble(
-  circle_name = letters[1:10], 
-  circle_r = seq(1, 19, 2))
+  circle_name = letters[1:10],   # the letters from a to j
+  circle_r = seq(1, 19, 2))      # a sequence of numbers from 1 to 19, by 2s
 
 my_circles
 
@@ -386,7 +389,7 @@ my_triangles %>%
 
 ["Writing simple functions"](http://environmentalcomputing.net/writing-simple-functions/) at Environmental Computing
 
-["Mathematics in R Markdown"](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html) by R Pruim (2016-10-19)
+["Mathematics in R Markdown"](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html) by R Pruim (2016-10-19)
 
 
 
