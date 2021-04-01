@@ -1,0 +1,143 @@
+---
+title: "create correlated values"
+author: "Martin Monkman"
+date: "31/03/2021"
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Initial source
+
+https://stat.ethz.ch/pipermail/r-help/2007-April/128925.html
+
+https://stats.stackexchange.com/questions/83172/generate-two-variables-with-precise-pre-specified-correlation
+>With one variable we could subtract the data mean and divide by the standard deviation to get a variable with mean 0 and sd 1, then multiply by the target sd and add the target mean. Here we do the same thing, but use the "square root" of the covariance/correlation matrix, first to make sure the covariance matrix is the identity, then to force the target correlations. – Greg Snow Nov 27 '18 at 17:41
+
+
+```{r setup}
+library('MASS')
+# tidyverse
+library(tidyverse)
+library(glue)
+```
+
+
+```{r}
+samples = 200
+#r = 0.95
+r = sqrt(0.5)
+r
+
+data = mvrnorm(n=samples, mu=c(0, 0), Sigma=matrix(c(1, r, r, 1), nrow=2), empirical=TRUE)
+X = data[, 1]  # standard normal (mu=0, sd=1)
+Y = data[, 2]  # standard normal (mu=0, sd=1)
+
+cor(X, Y)  # yay!
+cor(X*0.01 + 42, Y*3 - 1)  # Linear transformations of X and Y won't change r.
+```
+
+
+```{r}
+
+df_data <- as_tibble(cbind(X, Y))
+
+summary(lm(Y ~ X, df_data))
+
+ggplot(df_data, aes(x = X, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+
+```{r}
+# create the initial x variable
+x1 <- rnorm(100, 15, 5)
+
+# x2, x3, and x4 in a matrix, these will be modified to meet thecriteria
+x234 <- scale(matrix( rnorm(300), ncol=3 ))
+
+# put all into 1 matrix for simplicity
+x1234 <- cbind(scale(x1),x234)
+
+# find the current correlation matrix
+c1 <- var(x1234)
+
+# cholesky decomposition to get independence
+chol1 <- solve(chol(c1))
+
+newx <-  x1234 %*% chol1 
+
+# check that we have independence and x1 unchanged
+zapsmall(cor(newx))
+all.equal( x1234[,1], newx[,1] )
+
+# create new correlation structure (zeros can be replaced with other rvals)
+newc <- matrix( 
+c(1  , 0.4, 0.5, 0.6, 
+  0.4, 1  , 0  , 0  ,
+  0.5, 0  , 1  , 0  ,
+  0.6, 0  , 0  , 1  ), ncol=4 )
+
+# check that it is positive definite
+eigen(newc)
+
+chol2 <- chol(newc)
+
+finalx <- newx %*% chol2 * sd(x1) + mean(x1)
+
+# verify success
+mean(x1)
+colMeans(finalx)
+
+sd(x1)
+apply(finalx, 2, sd)
+
+zapsmall(cor(finalx))
+pairs(finalx)
+
+all.equal(x1, finalx[,1])
+
+
+```
+
+```{r}
+# function
+
+samples <- 10
+r_square <- 0.9
+
+correlated <- function(samples, r_square){
+  r = sqrt(r_square)
+  data <- mvrnorm(n=samples, 
+                 mu=c(0, 0), 
+                 Sigma=matrix(c(1, r, r, 1), nrow=2), 
+                 empirical=TRUE)
+  data <- as_tibble(data) %>% 
+    rename(X = V1,
+           Y = V2)
+  
+}
+
+
+```
+
+
+```{r}
+
+sample <- 200
+r_squared <- 0.9
+
+df_data <- correlated(sample, r_squared)
+
+summary(lm(Y ~ X, df_data))
+
+ggplot(df_data, aes(x = X, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = glue('n = {sample}, R-squared = {r_squared}'))
+
+```
+
