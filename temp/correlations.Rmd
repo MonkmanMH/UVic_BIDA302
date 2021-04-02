@@ -9,6 +9,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Shiny app
+
+https://shiny.rit.albany.edu/stat/rectangles/
+
+
 ## Initial source
 
 https://stat.ethz.ch/pipermail/r-help/2007-April/128925.html
@@ -127,8 +132,8 @@ correlated <- function(samples, r_square){
 
 ```{r}
 
-sample <- 200
-r_squared <- 0.9
+sample <- 1000
+r_squared <- 0.18
 
 df_data <- correlated(sample, r_squared)
 
@@ -140,4 +145,6 @@ ggplot(df_data, aes(x = X, y = Y)) +
   labs(title = glue('n = {sample}, R-squared = {r_squared}'))
 
 ```
+
+
 

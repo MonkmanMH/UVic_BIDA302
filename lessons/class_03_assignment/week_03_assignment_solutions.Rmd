@@ -140,6 +140,15 @@ housing3 <- housing3 %>%
 ```
 
 
+Solution, version 4
+
+```{r}
+Single_Detached <- read_excel(data_source, sheet = "Single Detached", range = "B5:E164", col_names = c("Community", "2016", "2017", "2018"), col_types = c("guess", "numeric", "numeric", "numeric"), na = "*")
+
+Single_Detached
+```
+
+
 
 ### 1c. Tidy data
 
