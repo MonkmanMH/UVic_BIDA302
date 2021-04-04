@@ -50,7 +50,16 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 
 [{lubridate}](https://lubridate.tidyverse.org/index.html) package reference
 
+["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
+
 [Working with dates and time in R using the lubridate package](https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/), University of Virginia Library Research Data Services + Sciences
+
+
+**going beyond**
+
+[{clock}: a brand-new package for working with date-times](https://clock.r-lib.org/)
+
+* [Comprehensive Date-Time Handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/).  "lubridate will never go away, and is not being deprecated or superseded. As of now, we consider clock to be an alternative to lubridate. "
 
 
 

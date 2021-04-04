@@ -38,10 +38,18 @@ options(width = 100, dplyr.width = 100)
 
 ["Strings" in _R for Data Science_](https://r4ds.had.co.nz/strings.html) by Hadley Wickham and Garrett Grolemund
 
+["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
+
 [{stringr}](https://stringr.tidyverse.org/)
 
-[regex101](https://regex101.com/)
 
+**Regular expressions**
+
+* [{stringr} reference: regular expressions](https://stringr.tidyverse.org/articles/regular-expressions.html)
+
+* a handy tool: [regex101.com](https://regex101.com/)
+
+* Jeff Atwood, [Regular Expressions: Now You Have Two Problems](https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/)
 
 
 ## Strings: introduction {#strings-intro}
@@ -75,15 +83,12 @@ string1
 
 > regexps are a concise language for describing patterns in strings
 
-They are powerful ways to filter and manipulate strings based on those patterns.
+They are powerful ways to filter and manipulate strings based on those patterns. But they have a certain reputation:
 
-See: 
+> Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems. 
+– Jamie Zawinski
 
-* [_R for Data Science_, 14 Strings](https://r4ds.had.co.nz/strings.html)
 
-* [{stringr} reference: regular expressions](https://stringr.tidyverse.org/articles/regular-expressions.html)
-
-Also, as a handy tool: https://regex101.com/
 
 
 ### regex matching functions
