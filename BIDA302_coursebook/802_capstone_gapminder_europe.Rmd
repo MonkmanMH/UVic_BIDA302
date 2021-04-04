@@ -23,7 +23,7 @@ In this project, you will recreate an approximation of the chart Hans Rosling sh
 * Presentation Zen, [Hans Rosling: the zen master of presenting data](https://www.presentationzen.com/presentationzen/2010/07/hans-rosling-tips-on-presenting-data.html), 2010-07-11
 
 This image captures the 1961 version of the plot:
-![Hans Rosling, aging Europe 1961](static/img_capstone/Hans_Rosling_aging_europe.JPG)
+![Hans Rosling, aging Europe 1961](static/img_capstone/Hans_Rosling_aging_europe_small.png)
 
 
 Make three versions of the chart, each showing a different year.
