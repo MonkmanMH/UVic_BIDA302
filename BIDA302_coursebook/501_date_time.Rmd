@@ -21,9 +21,6 @@ Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US)
 
 
 ```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
 
 library(tidyverse)
 library(gapminder)

@@ -44,7 +44,7 @@ For some additional examples of table joins, see William Surles, [Joining Data i
 ## Joining two data tables
 
 
-```{r setup}
+```{r}
 library(tidyverse)
 #
 library(nycflights13)

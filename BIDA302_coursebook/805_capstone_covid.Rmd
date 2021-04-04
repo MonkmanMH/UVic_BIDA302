@@ -8,13 +8,6 @@ https://creativecommons.org/licenses/by/4.0/
 # COVID-19 case numbers in British Columbia {#covid-bc}
 
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-
-```
-
 ## Introduction {#covid-bc-intro}
 
 
