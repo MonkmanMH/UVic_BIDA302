@@ -29,7 +29,7 @@ library(gapminder)
 # Tidy data {#tidy_data}
 
 
-## Reading
+## Reading  {#tidy_data-reading}
 
 Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
 
@@ -180,16 +180,16 @@ class_by_cyl %>%
 
 ***
 
-## Take aways
+## Take aways {#tidy_data-takeaway}
 
 * Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
 
 
 ***
 
-## Exercises
+## Exercises {#tidy_data-exercise}
 
-### Hands-on exercise
+### Hands-on exercise {#tidy_data-handson}
 
 
 Create a table that shows:
@@ -246,7 +246,7 @@ gapminder %>%
 
 
 
-### Online exercise
+### Online exercise {#tidy_data-online}
 
 [Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
 
@@ -259,7 +259,7 @@ gapminder %>%
 
 
 
-## Further reading
+## Further reading {#tidy_data-further-reading}
 
 More about tidy data:
 
