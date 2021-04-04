@@ -10,10 +10,16 @@ https://creativecommons.org/licenses/by/4.0/
 
 ## Introduction {#bat-echolocation-intro}
 
-
 Echolocation call data for 4 species of Vancouver Island bats (https://www.bcbats.ca/index.php/bat-basics/bc-bat-species). Call data comprises 30 unique records for 4 echolocation call parameters for each of the bat species. Call data was recorded using an ultrasonic bat detector (Anabat; Titley Scientific https://www.titley-scientific.com/) with call parameters downloaded and extracted using AnaLook.
 
-### Species {#bat-echolocation-species}
+For this project, explore the data using the inspiration provided by the penguin analysis (below).
+
+
+### Data source {#bat-echolocation-data}
+
+Variables:
+
+**Species**
 
 EPFU - Eptesicus fuscus; Big Brown Bat
 
@@ -23,24 +29,20 @@ MYLU - Myotis lucifugus; Little Brown Bat
 
 MYVO - Myotis volans; Long-legged Myotis
 
-### Filename:
+**Filename** - Unique ID for each bat call
 
-Unique ID for each bat call
+_**Echolocation Call Paramters:**_
 
-### Echolocation Call Paramters:
+**Time_Btw_Calls** - Time between calls (milliseconds)
 
-Time_Btw_Calls - Time between calls (milliseconds)
+**Duration** - Duration of the body of call (milliseconds)
 
-Duration - Duration of the body of call (milliseconds)
+**Frequency** - Characteristic frequency (kHz)
 
-Frequency - Characteristic frequency (kHz)
-
-Slope - Characteristic slope
+**Slope** - Characteristic slope
 
 
-### Data source {#bat-echolocation-source}
-
-Dr. Joanna Burgar; https://github.com/joburgar/Bat_Data 
+Source: Dr. Joanna Burgar; https://github.com/joburgar/Bat_Data 
 
 
 ### Additional Inspiration {#bat-echolocation-palmerpenguins}
