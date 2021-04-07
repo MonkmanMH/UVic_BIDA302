@@ -338,12 +338,14 @@ One way we often communicate the data is through a summary table.
 
 The tables above have the data we are interested in, but are not appealing to the eye. Using the {flextable} package, we can apply formatting to the tables above. We can also add things like headers and footnotes.
 
-```{r}
+```{r nhpi-flextable}
 
 # print table with {flextable} formatting  
 NHPI_table4 %>%
   flextable() %>% 
-  add_footer(glue("Source: Statistics Canada, Table {table_id}"))
+#  add_footer(glue::glue("Source: Statistics Canada, Table {table_id}"))
+  add_footer_row(values = glue::glue("Source: Statistics Canada, Table {table_id}"),
+                 colwidths = 14)
 
 
 ```
