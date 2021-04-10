@@ -269,11 +269,36 @@ oakland_99 <- mlb_pay_wl %>%
 oakland_99
 ```
 
-There are a few R packages that allow us to format a table like this, ready for publication. Here we will take a look at two of them.
+There are a few R packages that allow us to format a table like this, ready for publication. Here we will take a quick look at two of them. Both have many, many more options for formatting; see the reference materials at the top of this chapter for those details.
 
 First, {kableExtra} is an extension to the {kable} tool that is part of "knitting" our R Markdown files.
 
+```{r}
+library(kableExtra)
 
+# print table with {kableExtra} formatting  
+oakland_99 %>%
+  # create table, add title
+  kable(caption = "Oakland Athletics, 1999-2008") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 10) %>%
+  # make variable names bold and large
+  row_spec(0, bold = T, font_size = 14) %>%
+  # make 2002 season (row 4) bold
+  row_spec(4, bold = T) 
+```  
+
+
+Another table formating package is {flextable}. 
+
+
+```{r}
+library(flextable)
+
+oakland_99 %>% 
+  flextable() %>% 
+  add_footer_row(values = "Source: baseball-reference.com", colwidths = 8)
+
+```
 
 
 -30-
