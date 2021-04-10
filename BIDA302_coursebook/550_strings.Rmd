@@ -55,6 +55,8 @@ library(tidyverse)
 #
 library(stringr)
 library(lubridate)
+# to use `str_view()` 
+library(htmlwidgets)
 
 ```
 
