@@ -108,7 +108,6 @@ ymd("2020-03-28")
 ```
 
 
-### Your turn
 
 Parse "10-11-12" using `dmy()` ... what do you get back?
 
@@ -146,7 +145,6 @@ year(date1)
 ```
 
 
-### Your turn
 
 Get the month from `date2`
 
@@ -236,7 +234,6 @@ start_date + dyears(1)
 start_date + years(1)
 ```
 
-### Your turn
 
 2020 was a leap year... what happens if you use the same three equations that add a year but change the date to "2020-01-01"?
 
@@ -258,10 +255,8 @@ start_date + years(1)
 
 ## Working with dates {#date_time-working}
 
-### Your turn
 
-
-Read in this extract of a file downloaded from Statistics Canada, which has monthly data.
+Read in this extract of a file downloaded from Statistics Canada, which has monthly data showing the British Columbia labour force (both sexes, 15 years and over, unadjusted) from January 2000 to October 2019.
 
 ```{r}
 
@@ -269,9 +264,9 @@ lfs_BC_2000 <- read_csv("data/lfs_BC_2000.csv")
 lfs_BC_2000
 ```
 
-The date is shown in the variable `REF_DATE`; since it's monthly data, the character representation contains the year and the month, but not the day.
+The date is shown in the variable `REF_DATE` (short for "reference date"); since it's monthly data, the character representation contains the year and the month, but not the day.
 
-What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` function?
+What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` function from {lubridate}?
 
 
 
@@ -285,9 +280,13 @@ lfs_BC_2000
 ```
 
 
-Oh no! 94 of the 238 failed to parse--the program was unable to convert them due to ambiguity in the numbers. Back to the drawing board...
+Oh no! 94 of the 238 failed to parse—the program was unable to convert them due to ambiguity in the numbers. These show up as "NA" values, such as "2000-01". {lubridate} is trying to find a year, a month, and a day in this string, and the "00" value doesn't make sense in this context.
 
-Since the variable `REF_DATE` is a character string, I am going to force them to all be the first day of the month. I'll do this by adding "-01" to the end of the string, using the `glue()` function (which is in the {glue} package.
+And some of the months that did parse ended up with completely wrong interpretations. The "20" in "2001-01" is interpreted as the year, and the "01"s become the month and day, so it shows up as "2020-01-01".
+
+Back to the drawing board...
+
+Since the variable `REF_DATE` is a character string, a solution is to force them to all be the first day of the month. I'll do this by adding "-01" to the end of the string, using the `glue()` function (which is in the {glue} package.
 
 * https://glue.tidyverse.org/
 
@@ -321,17 +320,26 @@ lfs_BC_2000 <- lfs_BC_2000 %>%
 lfs_BC_2000
 ```
 
+With the reference date turned into a date format, we can create a line plot, and {ggplot2} will make some decisions for us on the format of the labels on the x-axis.
 
-And now a summary table...the annual average of the number of people in the B.C. labour force:
+```{r}
+
+ggplot(lfs_BC_2000, aes(x = ref_date_2, y = VALUE)) +
+  geom_line()
+
+```
+
+
+
+And now we will create a summary table...the annual average of the number of people in the B.C. labour force.
+
+In this code chunk, the variable "ref_date_2" is inside the `year()` function. This means that the year becomes the grouping variable.
 
 ```{r}
 
 lfs_BC_2000 %>%
   group_by(year(ref_date_2)) %>% 
   summarise(annual_average = mean(VALUE))
-
-lfs_BC_2000 %>%
-  filter(year(ref_date_2) >= 2015)
 
 ```
 
@@ -340,7 +348,8 @@ Looks like the B.C. labour force is growing!
 
 
 
-Is there any seaonality in the size of the labour force? Calculate the **monthly** average over the 20 years in our data:
+Is there any seaonality in the size of the labour force? To calculate the **monthly** average over the 20 years in our data, we can use the `month()` function to use the 12 months of the year as our grouping variable.
+
 
 ```{r}
 
@@ -348,12 +357,18 @@ Is there any seaonality in the size of the labour force? Calculate the **monthly
 lfs_BC_2000 %>%
   group_by(month(ref_date_2)) %>% 
   summarise(monthly_average = mean(VALUE))
+```
 
+In this second solution, the `mutate()` function is used to create a stand-alone variable "ref_month", which becomes the grouping variable.
+
+The `month()` function also includes the argument `label = TRUE`, which adds the abbreviations for the month names.
+
+```{r}
 
 # solution 2
 lfs_BC_2000 %>%
-  mutate(month = month(ref_date_2)) %>% 
-  group_by(month) %>% 
+  mutate(ref_month = month(ref_date_2, label = TRUE)) %>% 
+  group_by(ref_month) %>% 
   summarise(monthly_average = mean(VALUE))
 
 ```
@@ -364,30 +379,43 @@ Would a simple data visualization (a plot) help you see if there is a pattern?
 
 Of course the answer is "Yes!" Visualization is an important tool in exploratory data analysis. But you knew that already.
 
-(Note that if you haven't already, you will have to create a separate variable with the month value.)
+(Note that if you haven't already, you will have to create a separate variable with the month value. As of this writing, {ggplot2} doesn't allow you to run a function inside the `aes()`.)
 
 ```{r}
 
 lfs_BC_2000 %>%
-  mutate(month = month(ref_date_2)) %>% 
-  group_by(month) %>% 
+  mutate(ref_month = month(ref_date_2)) %>% 
+  group_by(ref_month) %>% 
   summarise(monthly_average = mean(VALUE)) %>% 
-  ggplot(aes(x = month, y = monthly_average)) +
+  ggplot(aes(x = ref_month, y = monthly_average)) +
   geom_line()
 
 
 ```
 
 
+Our plot is a bit off, though, with the x-axis labels showing decimal place months. This is because the "ref_month" variable is a numeric value. 
+An effective solution is specify the type of scale in the x-axis, using `scale_x_discrete()`.
 
 
+```{r}
+
+lfs_BC_2000 %>%
+  mutate(ref_month = month(ref_date_2)) %>% 
+  group_by(ref_month) %>% 
+  summarise(monthly_average = mean(VALUE)) %>% 
+  ggplot(aes(x = ref_month, y = monthly_average)) +
+  geom_line() +
+  # add x-axis scale
+  scale_x_discrete(limits = month.abb)
+
+```
+
+
+Important note: leaving the `labels = TRUE` will not work with this plot! That's because it becomes a factor, which can't be plotted as a line. One solution would be to plot the values using `geom_col()`.
 
 
 ## Date-time {#date_time-date-time}
-
-
-
-### Your Turn
 
 What is the difference between `today()` and `now()`?
 
@@ -413,11 +441,13 @@ Sys.timezone()
 
 
 
-What time is it right now?
+What time is it right now? Specify the time zone in the `now()` function with the argument `tzone =` or `tz =`
 
 * here in Victoria -- or maybe Vancouver
 
 * in Seoul, South Korea
+
+* in Lima, Peru
 
 * and Universal Time Coordinated (the time zone is represented as "UTC")
 
@@ -426,9 +456,11 @@ What time is it right now?
 
 now(tzone = "America/Vancouver")
 
-now(tzone = "Asia/Seoul")
+now(tzone = "America/Lima")
 
-now(tzone = "UTC")
+now(tz = "Asia/Seoul")
+
+now(tz = "UTC")
 
 ```
 

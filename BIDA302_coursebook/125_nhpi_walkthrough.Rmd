@@ -353,12 +353,12 @@ NHPI_table4 %>%
 
 ### table: monthly summary
 
-One way we often communicate the data is through a summary table. 
+This code produces a monthly summary table with the most recent 13 months of B.C. data, which allows for year-over-year comparisons with the same month in the previous year.
 
-This code produces a table with the B.C. data, and then formats it ready for publication.
+The second part of the code then formats the table ready for publication.
 
 ```{r}
-
+# create summary table
 tbl_month_BC <-
 thedata_BC_Can %>%
   filter(geo == "British Columbia") %>%

@@ -259,6 +259,20 @@ For more information about the `viridis` palettes, see [_R Graphics Cookbook_, 2
 
 ## Table formatting {#communication-table}
 
+The look of the default table in R markdown is not all that attractive. Here's a summary table of the Oakland Athletics' seasons from 1999-2008.
+
+```{r}
+
+oakland_99 <- mlb_pay_wl %>% 
+  filter(tm == "OAK" & year_num < 2009)
+
+oakland_99
+```
+
+There are a few R packages that allow us to format a table like this, ready for publication. Here we will take a look at two of them.
+
+First, {kableExtra} is an extension to the {kable} tool that is part of "knitting" our R Markdown files.
+
 
 
 
