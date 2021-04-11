@@ -22,20 +22,23 @@ library(gapminder)
 > Graphs and charts let you explore and learn about the structure of the information you collect. Good data visualizations also make it easier to communicate your ideas and findings to other people.
 > - Kieran Healy, _Data Visualization: A Practical Introduction_ (2019)
 
-
-
-What's covered in this short exercise barely scratches the surface of what's possible in the {ggplot2} package. 
-
-
-
-## Introduction
-
-
-Cole Nussbaumer Knaflic's book [_Storytelling with Data: A Data Visualization Guide for Business Professionals_](http://www.storytellingwithdata.com/books) (2015, Wiley) is a good introduction to the principles of data visualization, which is a key part of data analytics. In the book, the point is made that data visualization is always in the service of making a point about what the data tell us. In the context of business, this then translates into influencing decisions. The chapter “Lessons in storytelling” falls almost exactly in the middle of the book; after we’ve been introduced to the principles of making good data visualizations, Nussbaumer Knaflic gives us a way to think about the purpose of the visualization. With all of the pieces in place, the remainder of the book is focussed on the applications of storytelling with data.
+What's covered in this short exercise barely scratches the surface of what's possible in the {ggplot2} package. We will delve deeper into plotting in [communication-plot].
 
 
 
-### Plot types
+## Reading and reference {#data_viz_2-reading}
+
+
+[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
+
+
+
+* Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
+
+![_shark dance flipbook_](static/img/shark_dance.gif)
+
+
+## Plot types {#data_viz_2-plot-types}
 
 When we seek to visualize our data, we are confronted with the realization that there are many different ways to do that—there are many different plot types. How can we go about deciding what sort of plot to choose?
 
@@ -360,38 +363,6 @@ pl_lifeexp +
 
 * an introduction to plotting
 
-
----
-
-## References
-
-In addition to the content in [_R for Data Science_, Data Visualization](https://r4ds.had.co.nz/data-visualisation.html)
- and [_R Cookbook, 2nd ed._: Graphics](https://rc2e.com/graphics), see the following resources:
-
-* Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for.[@Chang_2018]
-
-* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R (primarily using {ggplot2}). If I was teaching a longer course dedicated to data visualization using R, this would be the text book. ][@Healy_2019]
-
-* Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
-
-![_shark dance flipbook_](static/img/shark_dance.gif)
-
-* [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)—the BBC uses R and {ggplot2} to make publication-ready data visualizations. This cookbook gives examples and the code behind some different chart types.
-
-  - Many other organizations are using R and {ggplot2} to create plots for their publications, including [the _Financial Times_](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html).
-
-
-Note: this exercise does not delve into the question of how to _design_ your plot. The structure, use of colour, annotations, and other plot elements can significantly improve the impact of a plot. See Kieran Healy's book above, as well as 
-
-* Stephanie Evergreen, _Presenting Data Effectively: Communicating Your Findings for Maximum Impact_
-
-* Jim Stikeleather's series of three articles in the _Harvard Business Review_ make a good summary of effective data visualizations:
-
-  - ["When Data Visualization Works — And When It Doesn’t"](https://hbr.org/2013/03/when-data-visualization-works-and), _Harvard Business Review_, 2013-03-27
-
-  - ["The Three Elements of Successful Data Visualizations"](https://hbr.org/2013/04/the-three-elements-of-successf), _Harvard Business Review_, 2013-04-19
-
-  - ["How to Tell a Story with Data"](https://hbr.org/2013/04/how-to-tell-a-story-with-data), _Harvard Business Review_, 2013-04-24
 
 
 

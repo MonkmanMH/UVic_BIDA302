@@ -1,0 +1,107 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+-->
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+# Communication: table formatting {#communication-table}
+
+
+
+## Reading & reference  {#communication-table-reading}
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
+
+
+
+
+**R Markdown**
+
+Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+
+
+
+Packages:
+
+**kableExtra**
+
+* Hao Zhu, [Create Awesome HTML Table with knitr::kable and kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
+
+* Hao Zhu, [Using kableExtra in Bookdown](https://haozhu233.github.io/kableExtra/bookdown/index.html)
+
+* Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+
+* [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
+
+
+
+
+**flextable**
+
+* {flextable} - [flextable R package reference](https://davidgohel.github.io/flextable/index.html)
+
+* David Gohel, [flextable book](https://ardata-fr.github.io/flextable-book/)
+
+
+## Introduction {#communication-table-intro}
+
+The look of the default table in R markdown is not all that attractive. Here's a summary table of the Oakland Athletics' seasons from 1999-2008.
+
+```{r}
+
+oakland_99 <- mlb_pay_wl %>% 
+  filter(tm == "OAK" & year_num < 2009)
+
+oakland_99
+```
+
+There are a few R packages that allow us to format a table like this, ready for publication. Here we will take a quick look at two of them. Both have many, many more options for formatting; see the reference materials at the top of this chapter for those details.
+
+
+## The kable package {#communication-table-kable}
+
+
+First, {kableExtra} is an extension to the {kable} tool that is part of "knitting" our R Markdown files.
+
+```{r}
+library(kableExtra)
+
+# print table with {kableExtra} formatting  
+oakland_99 %>%
+  # create table, add title
+  kable(caption = "Oakland Athletics, 1999-2008") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 10) %>%
+  # make variable names bold and large
+  row_spec(0, bold = T, font_size = 14) %>%
+  # make 2002 season (row 4) bold
+  row_spec(4, bold = T) 
+```  
+
+
+
+## The flextable package {#communication-table-flextable}
+
+
+Another table formating package is {flextable}. 
+
+
+```{r}
+library(flextable)
+
+oakland_99 %>% 
+  flextable() %>% 
+  add_footer_row(values = "Source: baseball-reference.com", colwidths = 8)
+
+```
+
+
+-30-
