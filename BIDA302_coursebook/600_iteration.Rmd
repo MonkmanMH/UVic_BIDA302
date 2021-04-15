@@ -22,7 +22,234 @@ library(gapminder)
 
 
 
-### Reading
+### Reading & Resources {#iteration-reading}
 
+[_R4DS_, "21 Iteration"](https://r4ds.had.co.nz/iteration.html)
+
+JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
+
+
+
+## Iteration {#iteration-intro}
+
+Like functions, iteration is a way to reduce 
+
+* repetition in your code, and 
+
+* repetition in copy-and-paste tasks.
+
+
+Iteration:  
+
+> helps you when you need to do the same thing to multiple inputs: repeating the same operation on different columns, or on different datasets. ([_R4DS_, "21 Iteration"](https://r4ds.had.co.nz/iteration.html))
+
+A rule to follow:
+
+**Never copy and paste more than twice.**
+
+
+A simple example, with 4 columns of 50 records each, with a normal distribution centred on 100. (This is a variation on what's in the "Iteration" chapter of _R4DS_.)
+
+
+```{r}
+set.seed(8675309)
+
+df <- tibble(
+  a = rnorm(50, mean = 100, sd = 10),
+  b = rnorm(50, mean = 100, sd = 10),
+  c = rnorm(50, mean = 100, sd = 10),
+  d = rnorm(50, mean = 100, sd = 10)
+)
+  
+df
+
+```
+
+Calculate the median of variable `a`:
+
+```{r}
+median(df$a)
+
+```
+
+Calculate the median of the other three variables:
+
+```{r}
+# solution
+
+
+```
+
+## Loop {#iteration-loop}
+
+Or rather than repeat the same function three times, you can write a for loop:
+
+```{r}
+# define the output object before you start the loop --
+#   this makes your loop more efficient
+# notice that it uses `ncol()` to count the number of columns in our dataframe "df"
+output <- vector("double", ncol(df))  # 1. output
+
+# the loop
+# - "i" is the counter that 
+for (i in seq_along(df)) {            # 2. sequence
+  output[[i]] <- median(df[[i]])      # 3. body
+}
+
+# print the output object
+output
+
+```
+
+
+
+## Detour: square brackets! {#iteration-squarebrackets}
+
+These are _accessors_ -- a method of accessing data by defining the location of that data in the object.
+
+Square brackets inside square brackets is old-school way of referencing a particular location in a list.
+
+```{r}
+
+# one square bracket: the first list in the object
+#  - think of this as a subset of the object
+df[1]
+
+# two square brackets: the contents of the first object
+df[[1]]
+
+# two values inside two square brackets: this is a single value, [[row, column]]
+df[[50, 1]]
+
+
+
+```
+
+For a good explanation of R's accessors and the application in selecting vector and matrix elements, see 
+
+* ["\[, \[\[, $: R accessors explained"](https://www.r-bloggers.com/r-accessors-explained/)) by Christopher Brown
+
+* [_R Cookbook_, 2nd ed., "2.9 Selecting Vector Elements"](https://rc2e.com/somebasics#recipe-id039) by JD Long and Paul Teetor
+
+
+## Data frame iteration {#iteration-dataframe}
+
+Let's calculate the mean of every column in the `mtcars` data frame:
+
+```{r}
+
+mtcars
+
+```
+
+
+
+**Advice from _R4DS_:**
+
+> Think about the output, sequence, and body **before** you start writing the loop.
+
+
+* Note that we can use the `names()` function to pull the variable names (column names) from the data table.
+
+```{r}
+# create the output vector
+output <- vector("double", ncol(mtcars))
+
+# the names() function 
+names(output)
+# assign the names to the `output` vector
+names(output) <- names(mtcars)
+
+# the loop
+for (i in names(mtcars)) {
+  output[i] <- mean(mtcars[[i]])
+}
+
+# print the output
+output
+
+```
+
+
+## A very practical case {#iteration-practical}
+
+(This is modified from ["21.3.5 Exercises"](https://r4ds.had.co.nz/iteration.html#exercises-56) in _R for Data Science_, which uses CSV files.)
+
+
+Imagine you have a directory full of Excel files that you want to read in. You have their paths in a vector, files <- dir("data/", pattern = "\\.xls*$", full.names = TRUE), and now want to read each one with `read_excel()`. Write the for loop that will load them into a single data frame.
+
+
+First, let's get the names of those files that are in the sub-folder "data". 
+
+Note the use of a regular expression "\\.xls*" to define the pattern for any Excel file, including the wild card "*" which identifes both the older ".xls" extension or the newer ".xlsx".
+
+```{r}
+
+files <- dir("data_monthly/", pattern = "\\.xls*", full.names = TRUE)
+files
+
+```
+
+We now know the `length()` function, we can find out how many files there are, and can use that to assign our object:
+
+```{r}
+
+df_list <- vector("list", length(files))
+
+df_list
+```
+
+The `files` object is used in our loop:
+
+```{r}
+for (i in seq_along(files)) {
+  df_list[[i]] <- readxl::read_excel(files[[i]])
+}
+```
+
+This creates an interesting R object—it's a list of data frames! Let's take a look:
+
+```{r}
+df_list
+```
+
+The last step is to use the function `bind_rows()` (from {dplyr}) to combine the list of data frames into a single data frame.
+
+```{r}
+
+df <- bind_rows(df_list)
+
+df 
+
+```
+
+
+### an alternative
+
+In this approach, we create the output object to be a list with the file names:
+
+```{r}
+# this is the same
+df2_list <- vector("list", length(files))
+# assign the file names
+names(df2_list) <- files
+
+# the loop
+for (fname in files) {
+  df2_list[[fname]] <- readxl::read_excel(fname)
+}
+
+
+df2 <- bind_rows(df2_list)
+df2
+```
+
+
+
+
+
+Another strategy for creating a merged file, using the `lapply` function:
+
+https://twitter.com/GrantHumphries/status/1260184782090252294?s=20
 
 
