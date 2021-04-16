@@ -4,8 +4,6 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 -->
 
-# (PART) Week 6 {-} 
-
 
 # Where to from here? {#where-to}
 
@@ -94,6 +92,29 @@ Some other texts dealing with modeling methodologies using R include:
 * Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, _An Introduction to Statistical Learning_ [@James_Witten_Hastie_Tibshirani_2014]
 
   - [pdf version of _An Introduction to Statistical Learning_](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6062a083acbfe82c7195b27d/1617076404560/ISLR%2BSeventh%2BPrinting.pdf)
+
+
+## Keep up with the latest changes
+
+The R ecosystem is continuously changing. The core of R changes slowly and steadily, but the package universe continues to expand. 
+
+There are packages to 
+
+* compare the contents of Excel files ([{waldo}](https://waldo.r-lib.org/)), 
+
+* pull data from the BC Government's data catalogue ([{bcdata}](https://bcgov.github.io/bcdata/)), 
+
+
+Here's a list of some of the most useful: Garrett Grolemund,  ["Quick list of useful R packages"](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) (2021-03-18)
+
+But how can you keep up with all of this? The answer is "you can't". But the most effective strategy is to become part of the R user community. Connecting to the R user community will help you learn more, and one day, you'll be one of the people contributing.
+
+
+1. The twitter hashtag #rstats 
+
+2. Conferences, meet-ups, and other events. There are various events targeted to particular disciplines, regions, or industries that are either all-R or include R as part of their mix.
+
+3. Blog articles. [R-bloggers](https://www.r-bloggers.com/) is an aggregator of people writing blog articles about R. 
 
 
 -30-
