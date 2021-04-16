@@ -48,7 +48,7 @@ A rule to follow:
 **Never copy and paste more than twice.**
 
 
-A simple example, with 4 columns of 50 records each, with a normal distribution centred on 100. (This is a variation on what's in the "Iteration" chapter of _R4DS_.)
+A simple example, where we create a dataframe (tibble) named "df" with 4 columns of 50 records each, each one with a normal distribution centred on 100. (This is a variation on what's in the "Iteration" chapter of _R4DS_.)
 
 
 ```{r}
@@ -76,19 +76,26 @@ Calculate the median of the other three variables:
 
 ```{r}
 # solution
-
+median(df$b)
+median(df$c)
+median(df$d)
 
 ```
 
-## Loop {#iteration-loop}
+## For-Loop {#iteration-loop}
 
-Or rather than repeat the same function three times, you can write a for loop:
+Or rather than repeat the same function four times, you can write a "for-loop", which executes the code within the loop for as many times as is specified.
+
+There are three parts in a for-loop:
+
+1. Define the output object before you start the loop—this makes your loop more efficient. Notice that the code below uses `ncol()` to count the number of columns in our dataframe "df"
+
+2. The sequence, which defines the number of times the loop iterates
+
+3. The body of the code.
 
 ```{r}
-# define the output object before you start the loop --
-#   this makes your loop more efficient
-# notice that it uses `ncol()` to count the number of columns in our dataframe "df"
-output <- vector("double", ncol(df))  # 1. output
+output <- vector(mode = "double", length = ncol(df))  # 1. output
 
 # the loop
 # - "i" is the counter that 
@@ -105,23 +112,32 @@ output
 
 ## Detour: square brackets! {#iteration-squarebrackets}
 
-These are _accessors_ -- a method of accessing data by defining the location of that data in the object.
+These are _accessors_: a method of accessing data by defining the location of that data in the object.
 
-Square brackets inside square brackets is old-school way of referencing a particular location in a list.
+Square brackets inside square brackets is the base R method of referencing a particular location in a list.
+
+
+One square bracket: the first list in the object
+
+*  think of this as a subset of the object
 
 ```{r}
 
-# one square bracket: the first list in the object
-#  - think of this as a subset of the object
 df[1]
+```
 
-# two square brackets: the contents of the first object
+Two square brackets: the contents of the first object
+
+```{r}
 df[[1]]
+```
 
-# two values inside two square brackets: this is a single value, [[row, column]]
+Two values inside two square brackets: this is a single value
+
+* [[row, column]]
+
+```{r}
 df[[50, 1]]
-
-
 
 ```
 
@@ -129,7 +145,7 @@ For a good explanation of R's accessors and the application in selecting vector 
 
 * ["\[, \[\[, $: R accessors explained"](https://www.r-bloggers.com/r-accessors-explained/)) by Christopher Brown
 
-* [_R Cookbook_, 2nd ed., "2.9 Selecting Vector Elements"](https://rc2e.com/somebasics#recipe-id039) by JD Long and Paul Teetor
+* [_R Cookbook_, 2nd ed., "2.9 Selecting Vector Elements"](https://rc2e.com/somebasics#recipe-id039) 
 
 
 ## Data frame iteration {#iteration-dataframe}
@@ -176,38 +192,39 @@ output
 (This is modified from ["21.3.5 Exercises"](https://r4ds.had.co.nz/iteration.html#exercises-56) in _R for Data Science_, which uses CSV files.)
 
 
-Imagine you have a directory full of Excel files that you want to read in. You have their paths in a vector, files <- dir("data/", pattern = "\\.xls*$", full.names = TRUE), and now want to read each one with `read_excel()`. Write the for loop that will load them into a single data frame.
+Imagine you have a directory full of Excel files that you want to read and then combine into a single dataframe. 
 
+The steps are 
 
-First, let's get the names of those files that are in the sub-folder "data". 
+1. Create a list with the names of the files of interest (that is, the Excel files) in the sub-folder "data_monthly". 
 
-Note the use of a regular expression "\\.xls*" to define the pattern for any Excel file, including the wild card "*" which identifes both the older ".xls" extension or the newer ".xlsx".
+Note the use of a regular expression `"\\.xls*"` to define the pattern for any Excel file, including the wild card "*" which identifes both the older ".xls" extension or the newer ".xlsx".
 
 ```{r}
 
-files <- dir("data_monthly/", pattern = "\\.xls*", full.names = TRUE)
-files
+all_files <- dir("data_monthly/", pattern = "\\.xls*", full.names = TRUE)
+all_files
 
 ```
 
-We now know the `length()` function, we can find out how many files there are, and can use that to assign our object:
+2. With the `length()` function, we can find out how many files there are, and can use that to assign our object:
 
 ```{r}
 
-df_list <- vector("list", length(files))
+df_list <- vector("list", length(all_files))
 
-df_list
 ```
 
-The `files` object is used in our loop:
+The `all_files` and `df_list` objects are used in our loop:
 
 ```{r}
-for (i in seq_along(files)) {
+for (i in seq_along(all_files)) {
   df_list[[i]] <- readxl::read_excel(files[[i]])
 }
 ```
 
-This creates an interesting R object—it's a list of data frames! Let's take a look:
+This creates an interesting R object—it's a list, but a list of tibbles, each one with the contents of a single Excel file. This structure is sometimes referred to as "nested"—the tibbles are _nested_ inside the list.
+Let's take a look:
 
 ```{r}
 df_list
@@ -217,25 +234,25 @@ The last step is to use the function `bind_rows()` (from {dplyr}) to combine the
 
 ```{r}
 
-df <- bind_rows(df_list)
+df <- dplyr::bind_rows(df_list)
 
 df 
 
 ```
 
 
-### an alternative
+#### An alternative
 
 In this approach, we create the output object to be a list with the file names:
 
 ```{r}
 # this is the same
-df2_list <- vector("list", length(files))
+df2_list <- vector("list", length(all_files))
 # assign the file names
-names(df2_list) <- files
+names(df2_list) <- all_files
 
 # the loop
-for (fname in files) {
+for (fname in all_files) {
   df2_list[[fname]] <- readxl::read_excel(fname)
 }
 
@@ -245,11 +262,4 @@ df2
 ```
 
 
-
-
-
-Another strategy for creating a merged file, using the `lapply` function:
-
-https://twitter.com/GrantHumphries/status/1260184782090252294?s=20
-
-
+-30-
