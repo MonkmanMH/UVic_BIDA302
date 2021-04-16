@@ -51,7 +51,7 @@ A rule to follow:
 A simple example, where we create a dataframe (tibble) named "df" with 4 columns of 50 records each, each one with a normal distribution centred on 100. (This is a variation on what's in the "Iteration" chapter of _R4DS_.)
 
 
-```{r}
+```{r iteration_df}
 set.seed(8675309)
 
 df <- tibble(
@@ -219,7 +219,7 @@ The `all_files` and `df_list` objects are used in our loop:
 
 ```{r}
 for (i in seq_along(all_files)) {
-  df_list[[i]] <- readxl::read_excel(files[[i]])
+  df_list[[i]] <- readxl::read_excel(all_files[[i]])
 }
 ```
 

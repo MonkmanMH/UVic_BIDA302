@@ -94,7 +94,7 @@ library(reticulate)
 
 The {reticulate} function `py_config()` can be used to see what version of Python is running, and other configuration details
 
-```{r}
+```{r py_config}
 py_config()
 
 ```
@@ -111,11 +111,13 @@ In this chunk, we have Python code that
 * reads the CSV file "flights.csv" (the `flights` table from {nycflights13})
 
 ```{python}
+# python chunk
+
 # import the `pandas` module so that it's available for use
 import pandas as pd
 
 # read the csv file "flights.csv" and assign it to the object "flights"
-flights = pd.read_csv("data\flights.csv")
+flights = pd.read_csv("data/flights.csv")
 
 # print the head (first 5 rows)
 print(flights.head())
@@ -137,6 +139,7 @@ It's a big table...over 300,000 rows.
 So let's trim it down to a bite size chunk, and create a new Python data frame, `flights_SEA`:
 
 ```{python}
+# python chunk
 
 # filter so that flights contains just those that are going to the 
 # Seattle-Tacoma airport SEA
@@ -159,6 +162,7 @@ print(flights_SEA)
 Run the same code inside an R chunk, by running a Python script ".py" file
 
 ```{r}
+# r chunk that calls a python script file
 
 source_python("py_code.py")
 
@@ -175,6 +179,8 @@ source_python("py_code.py")
 Count the number of flights by airline: uses `size()`
 
 ```{python}
+# python chunk
+
 flights_SEA.groupby("carrier").size()
 
 ```
@@ -185,6 +191,7 @@ Mean of departure delay, median of arrival delay.
 
 
 ```{python}
+# python chunk
 
 flights_SEA['dep_delay'].mean()
 
@@ -197,6 +204,7 @@ flights_SEA['arr_delay'].median()
 Another way to go about it would be to select the column as a new object, then calculate.
 
 ```{python}
+# python chunk
 
 departure_delay = flights_SEA['dep_delay']
 
@@ -210,6 +218,7 @@ departure_delay.mean()
 pandas also has a `describe` function that produces many summary stats:
 
 ```{python}
+# python chunk
 
 flights_SEA.describe()
 
@@ -223,6 +232,7 @@ It's possible to calculate summary statistics by a variable through the `groupby
 Here we calculate the mean delays for each airline.
 
 ```{python}
+# python chunk
 
 flights_SEA.groupby("carrier").mean()
 
@@ -233,6 +243,7 @@ The same, but with median.
 
 
 ```{python}
+# python chunk
 
 flights_SEA.groupby("carrier").median()
 
@@ -252,6 +263,7 @@ In pandas, the functions to pivot are:
 
 
 ```{python}
+# python chunk
 
 df_melted = pd.melt(flights_SEA, id_vars=["carrier"], value_vars=["dep_delay", "arr_delay"], value_name="delay.time")
 
@@ -267,6 +279,7 @@ print(df_melted)
 The `pivot_table` function gives another way to calculate grouped statistics. The `index` variable works in the same way as `groupby`.
 
 ```{python}
+# python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], columns =["variable"], values =["delay.time"])
 
@@ -279,6 +292,7 @@ print(df_pivot)
 Note that the default statistic here is the mean. We can also specify a different one using the `aggfunc` function:
 
 ```{python}
+# python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], values =["delay.time"], columns =["variable"], aggfunc='median')
 
@@ -290,6 +304,7 @@ print(df_pivot)
 Or we can get carried away and have multiple measures:
 
 ```{python}
+# python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], values =["delay.time"], columns =["variable"], aggfunc=['mean', 'median'])
 
@@ -306,12 +321,15 @@ print(df_pivot)
 
 ## Using Python objects in R
 
-Assign the python data frame "flights" to an R object
+Assign the python data frame "flights" created above to an R object
 
 ```{r}
+# r chunk
 
 flights_SEA <- py$flights_SEA
-flights_SEA
+
+# display 
+head(flights_SEA)
 ```
 
 

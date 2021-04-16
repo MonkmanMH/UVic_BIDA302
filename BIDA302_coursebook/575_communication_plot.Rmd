@@ -121,7 +121,7 @@ One way to do that is to add lines to a plot that create sections to the plot. I
 As you will recall, the red line runs vertically at the "1" point on the X axis. The teams to the left of the line spent below the league average for that season; the teams to the right spent more. As you can see, there have been cases when some teams spent twice as much as the league average. The blue line runs horizontally at the "0.5" point on the Y axis. Above this line, the teams won more games than they lost. Below the line, they lost more games than they won.
 
 
-```{r}
+```{r moneyball_mlb_pay_wl}
 
 mlb_pay_wl <- read_csv("data/mlb_pay_wl.csv", 
                        col_types = 
@@ -175,12 +175,12 @@ In this version, the plot has a number of variations:
 
 * pale gray points for all of the team points
 
-* green points for Oakland, using a named colour (see )
+* green points for Oakland, using a named colour ("seagreen")
 
 * adding the vertical and horizontal lines, but gray and lighter than the default
 
 
-```{r}
+```{r 575_oakland_plot}
 
 # create new version of plot with 
 # gray points on white background
@@ -189,7 +189,7 @@ ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) +
   theme_bw() +
   # Oakland points
   geom_point(data = oakland, aes(x = pay_index, y = w_l_percent),
-             colour = "#seagreen", size = 2) +
+             colour = "seagreen", size = 2) +
   geom_vline(xintercept  = 100, colour = "grey50", size = 0.75) +
   geom_hline(yintercept = 0.5, colour = "grey50", size = 0.75)
   
