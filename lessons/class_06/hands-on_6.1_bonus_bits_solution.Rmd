@@ -1,0 +1,215 @@
+---
+title: "Bonus Bits"
+subtitle: "some things that came up"
+author: "Martin Monkman"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+
+```{r, setup, message=FALSE}
+# tidyverse
+library(tidyverse)
+
+
+```
+
+
+## Plotting: colour gradients
+
+In [Week 5's "More data visualization"]((https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/data-viz-2.html#bar-chart)), we covered making a bar chart showing the difference in highway fuel economy based on differences in vehicle class.
+
+The original version was:
+
+```{r}
+mpg_class <- mpg %>% 
+  group_by(class) %>% 
+  summarise(n = n(),
+            hwy_mean = mean(hwy)) 
+
+ggplot(mpg_class, aes(x = class, y = hwy_mean)) +
+    geom_col()
+```
+
+
+We might want to colour the bars so that the better fuel economy is darker than the higher average. To do this, we can add a "fill" aesthetic which shows the shading based on hwy_mean:
+
+```{r}
+ggplot(mpg_class, aes(x = class, y = hwy_mean, fill = hwy_mean)) +
+  geom_col()
+```
+
+That uses the default palette. To switch to a "Color Brewer", we need to use the "distiller" option:
+
+```{r}
+ggplot(mpg_class, aes(x = class, y = hwy_mean)) +
+  geom_col(aes(fill = hwy_mean)) +
+  scale_fill_distiller(palette = "Greens")
+```
+
+
+## Plotting: text labels
+
+In the Moneyball plotting, we saw how to add a few key labels to a plot:
+
+```{r moneyball_data}
+mlb_pay_wl <- read_csv("data/mlb_pay_wl.csv", 
+                       col_types = 
+                         cols(year_num = col_character()))
+
+mlb_2002 <- mlb_pay_wl %>% 
+  filter(year_num == 2002) %>%  
+  mutate(salary_grp = case_when(
+    pay_index >= 100 ~ "above",
+    pay_index < 100 ~ "below"
+  ))
+
+
+team_for_label <- mlb_2002 %>% 
+  group_by(salary_grp) %>% 
+  filter(w_l_percent == max(w_l_percent) |
+         w_l_percent == min(w_l_percent))
+
+```
+
+Now plot:
+
+```{r}
+# the same plot as before, but with just the 2002 teams
+ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) + 
+  geom_point() +
+  # add the names from the "team_for_label" table
+  geom_text(data = team_for_label, aes(label = tm))
+
+```
+
+Another option would be to plot the team abbreviations _instead_ of the points:
+
+```{r}
+
+ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) + 
+  # plot the team names 
+  geom_text(aes(label = tm))
+
+```
+
+## Plotting: text annotations
+
+We might want to add some text to our plots. Here we have the plot with the shaded quadrant, with a description of that quadrant.
+
+```{r}
+moneyball_plot <- ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
+  geom_point() 
+
+# as previously plotted
+moneyball_plot +
+  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
+           alpha = .3, fill = "#003831") +
+  # text annotation
+  annotate("text",             # annotation type
+           label = "Teams with\nbelow-average payroll\n& winning records", # "\n" for line break
+           x = 5, y = 0.75,    # location of annotation
+           hjust = 0,
+           fontface = "bold",
+           colour = "#ffffff") # white lettering
+
+```
+
+
+
+## {dplyr}'s `ungroup()` function
+
+
+When we use a `group_by()` and `summarize()` pairing, we can calculate summary statistics for each group in our data.
+
+```{r}
+# packages
+library(gapminder)
+library(dplyr)
+```
+
+In this example, we calculate the difference in a country's life expectancy from the continent's mean life expectancy
+ - for example, the difference in 2007 between life expectancy in Canada and the mean life expectancy of countries in the Americas
+
+What we had seen before was the use of `group_by() %>% summarize()` to create summary statistics by a group:
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>% 
+  group_by(continent) %>%
+  summarize(lifeExp_mean = mean(lifeExp))
+```
+
+But how can we compare the Canada value to the Americas mean shown here? One strategy would be to join this table to the original, using "continent" as the key value.
+
+But there is another solution: `group_by() %>% mutate()`
+
+Step 1:
+
+* Filter for 2007
+
+* Then group by continent and 
+
+* _Mutate_ to get the mean continental life expectancy
+
+ 
+By adding the `ungroup()` function, we revert to the country-level data frame but now with the continent mean as a variable
+
+And then we can append another mutate to calculate the difference between the individual country and the continent.
+
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>% 
+  group_by(continent) %>%
+  mutate(lifeExp_con_mean = mean(lifeExp)) %>%
+  # 
+  ungroup() %>% 
+  mutate(lifeExp_diff = lifeExp - lifeExp_con_mean) %>% 
+  # select and filter for just the Americas
+  select(country, continent, year, lifeExp, lifeExp_con_mean, lifeExp_diff) %>% 
+  filter(continent == "Americas")
+```
+
+In the version below, we use both year and continent as the grouping variables, and get the same result (but for the entire table):
+
+```{r}
+gm_life <- gapminder %>%
+  # continent life expectancy
+  group_by(year, continent) %>%
+  mutate(lifeExp_con_mean = mean(lifeExp)) %>%
+  ungroup() %>% 
+  mutate(lifeExp_con_diff = lifeExp - lifeExp_con_mean) %>% 
+  # world life expectancy
+  group_by(year) %>%
+  mutate(lifeExp_earth_mean = mean(lifeExp)) %>%
+  ungroup() %>% 
+  mutate(lifeExp_earth_diff = lifeExp - lifeExp_earth_mean) %>% 
+  # select 
+  select(country, continent, year, lifeExp, 
+         lifeExp_con_mean, lifeExp_con_diff, 
+         lifeExp_earth_mean, lifeExp_earth_diff) 
+
+gm_life %>% 
+  filter(year == 2007 & continent == "Americas")
+
+```
+
+Now we can create a plot to compare Canada to the average of the continent over time:
+
+```{r}
+gm_life %>% 
+  filter(country == "Canada") %>% 
+ggplot(aes(x = year, y = lifeExp_con_diff)) +
+  geom_col() +
+  geom_line(aes(y = lifeExp_earth_diff))
+
+```
+
+This isn't a story about Canada's life expectancy getting worse—it's about the substantial improvements in the quality of life for people elsewhere around the world (the line) and in the Americas (the columns).
+
+
+-30-

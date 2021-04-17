@@ -15,17 +15,18 @@ output:
 This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
 
 
+![_The data science process_](static/img/data-science.png)
+
 ***
 
 ## New Housing Price Index
 
 This set of scripts creates summary tables and graphs plotting the New Housing Price Index (NHPI) data collected and reported by Statistics Canada.
 
-Our end point will be this chart:
+Our end point will be this chart^[The original source code, created by Martin Monkman with contributions by Julie Hawkins and Stephanie Yurchak, can be found here:  https://github.com/bcgov/CANSIM-dataviewer/blob/master/scr/NHPI_cansim.Rmd]
+
 
 ![New Housing Price Index, B.C. and Canada](NHPI_plot_800.png)
-
-The original source code, created by Martin Monkman with contributions by Julie Hawkins and Stephanie Yurchak, can be found here:  https://github.com/bcgov/CANSIM-dataviewer/blob/master/scr/NHPI_cansim.Rmd
 
 ***
 
@@ -33,7 +34,7 @@ The original source code, created by Martin Monkman with contributions by Julie 
 
 This chunk of R code loads the packages that we will be using
 
-```{r setup, message=FALSE, warning=FALSE}
+```{r setup-walkthrough, message=FALSE, warning=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)  # date functions

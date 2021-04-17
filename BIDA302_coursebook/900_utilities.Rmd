@@ -373,9 +373,23 @@ See the [{janitor} reference page](http://sfirke.github.io/janitor/) for additio
 
 
 
+## `{waldo}`  ·
+
+Have you ever needed to compare the contents of two Excel files? The original and the one that you maybe accidentally changed? The [{waldo}](https://waldo.r-lib.org/) has functions to help with that comparison.
+
+
+
 
 ## But wait, there's more!
 
 Here's a twitter thread on packages that people nominated as deserving more attention:
 
-https://twitter.com/WeAreRLadies/status/1369984394836910084
+* https://twitter.com/WeAreRLadies/status/1369984394836910084
+
+
+And a list of some other useful packages: 
+
+* Garrett Grolemund,  ["Quick list of useful R packages"](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) (2021-03-18)
+
+
+-30-

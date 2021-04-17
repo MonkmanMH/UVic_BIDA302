@@ -148,6 +148,27 @@ moneyball_plot +
 ```
 
 
+To that plot we might want to add a description of the quadrant that is shaded.
+
+Note that in the label, the "\n" is used to force a line break in the text string.
+
+```{r}
+# as previously plotted
+moneyball_plot +
+  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
+           alpha = .3, fill = "#003831") +
+  # text annotation
+  annotate("text",             # annotation type
+           label = "Teams with\nbelow-average payroll\n& winning records", 
+           x = 5, y = 0.75,    # location of annotation
+           hjust = 0,
+           fontface = "bold",  # text formatting
+           colour = "#ffffff") 
+
+```
+
+
+
 ### Colour
 
 Another way to tell the "Moneyball" story would be to identify the Oakland Athletics in the mass of dots shown, by using color. The code is in two steps:
@@ -267,6 +288,21 @@ ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) +
              nudge_x = -6)
 
 ```
+
+Another approach would be to omit the points altogether, and have the team abbreviations represent the location of each team on the plot:
+
+```{r}
+
+ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) + 
+  # add horizontal and vertical lines
+  geom_vline(xintercept  = 100, colour = "grey") +
+  geom_hline(yintercept = 0.5, colour = "grey") +
+  # plot the team names 
+  geom_text(aes(label = tm))
+
+```
+
+
 
 For another example of this sort of labeling, see [_R for Data Science_, "Graphics for Communication: Annotations"](https://r4ds.had.co.nz/graphics-for-communication.html#annotations).
 

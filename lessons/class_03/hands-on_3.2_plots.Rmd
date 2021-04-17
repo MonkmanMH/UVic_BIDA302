@@ -148,8 +148,12 @@ To show the `hwy_mean` value as the height, we use the `geom_col()` function:
 
 ```{r}
 
+ggplot(mpg_class, aes(x = class, y = hwy_mean, fill = hwy_mean)) +
+  geom_col()
+
 ggplot(mpg_class, aes(x = class, y = hwy_mean)) +
-    geom_col()
+  geom_col(aes(fill = hwy_mean)) +
+  scale_fill_distiller(palette = "Oranges")
 
 ```
 
