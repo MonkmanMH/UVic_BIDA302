@@ -39,6 +39,8 @@ We didn't cover everything in _R for Data Science_. Here's a short summary of th
 
 R, and specifically the package {purrr}, supports a concept called "functional programming". This means that things like for-loops can be turned into functions; the {purrr} package has functions that do just that.
 
+> Of course, someone has to write loops. It doesn’t have to be you. — Jenny Bryan
+
 See ["Iteration" in _R for Data Science_, starting at 21.4 "For loops vs. functionals"](https://r4ds.had.co.nz/iteration.html)
 
 When we learned the concept of a for-loop earlier, we combined three Excel files. Here's how we would do that using the `map_()` functions within the {purrr} package, with the added twists of: 
