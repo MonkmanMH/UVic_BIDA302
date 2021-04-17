@@ -20,52 +20,9 @@ library(gapminder)
 
 
 
-## Resources
 
 
-There are a number of good introductory resources for using Python in data science. Here's a short list; unfortunately, there's not as much freely available content in the Python ecosystem:^[And if you're looking for a longer list, [this twitter thread](https://twitter.com/kareem_carr/status/1374027467829227520?s=20) is a good start!]
-
-
-### data science with Python: text books
-
-Wes McKinney, [_Python for Data Analysis_, 2nd ed.](https://wesmckinney.com/pages/book.html), 2017—McKinney is the lead developer behind the pandas library
-
-* website: https://wesmckinney.com/pages/book.html
-
-
-Jake VanderPlas, [Python Data Science Handbook: Essential Tools for Working with Data](https://www.oreilly.com/library/view/python-data-science/9781491912126/), 2016
-
-* online version: https://jakevdp.github.io/PythonDataScienceHandbook/
-
-
-Allen B. Downey, [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/), 2020
-
-
-Joel Grus, [Data Science from Scratch: First Principles with Python (2nd edition)](https://www.oreilly.com/library/view/data-science-from/9781492041122/), 2019
-
-
-
-### other resources
-
-I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials are outdated. I'll leave them here, should you wish to review them:
-
-[Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
-
-
-
-
-## {reticulate} package
-
-[{reticulate}: R Interface to Python](https://rstudio.github.io/reticulate/)
-
-* [Calling Python from R](https://rstudio.github.io/reticulate/articles/calling_python.html)
-
-* [reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
-
-
-
-
-## Introduction
+## Introduction {#python-intro}
 
 
 ![reticulate hex](static/img_tidyverse/reticulate-735.jpg)
@@ -100,7 +57,6 @@ py_config()
 ```
 
 
-## Python!
 
 It's possible to run Python code chunks inside your R Markdown document. 
 
@@ -131,7 +87,7 @@ Notice a couple of things:
 * that index numbering starts at 0 ... watch for that if you start using row references 
 
 
-## Filter and select
+## Filter and select {#python-filter}
 
 It's a big table...over 300,000 rows.
 
@@ -157,7 +113,7 @@ print(flights_SEA)
 ```
 
 
-## Detour: running a Python script inside your RStudio
+## Detour: running a Python script inside your RStudio {#python-script}
 
 Run the same code inside an R chunk, by running a Python script ".py" file
 
@@ -174,7 +130,7 @@ source_python("py_code.py")
 
 
 
-## Calculating summary statistics
+## Calculating summary statistics {#python-summarystats}
 
 Count the number of flights by airline: uses `size()`
 
@@ -213,7 +169,6 @@ departure_delay.mean()
 ```
 
 
-### summary stats table
 
 pandas also has a `describe` function that produces many summary stats:
 
@@ -225,7 +180,7 @@ flights_SEA.describe()
 ```
 
 
-## Grouping
+## Grouping {#python-grouping}
 
 It's possible to calculate summary statistics by a variable through the `groupby` function.
 
@@ -250,17 +205,16 @@ flights_SEA.groupby("carrier").median()
 ```
 
 
-## Pivoting
+## Pivoting {#python-pivoting}
 
-In pandas, the functions to pivot are:
+In pandas, the reshaping functions to pivot are:
 
 * longer is `melt`
 
 * wider is `pivot_table`
 
 
-### melt
-
+To create a longer shape:
 
 ```{python}
 # python chunk
@@ -273,8 +227,6 @@ print(df_melted)
 
 
 
-
-### pivot_table
 
 The `pivot_table` function gives another way to calculate grouped statistics. The `index` variable works in the same way as `groupby`.
 
@@ -319,7 +271,7 @@ print(df_pivot)
 * [3 Examples Using Pivot Table in Pandas](https://cmdlinetips.com/2018/12/pivot-table-in-python-pandas/) (uses the gapminder table as the example)
 
 
-## Using Python objects in R
+## Using Python objects in R {#python-R-interface}
 
 Assign the python data frame "flights" created above to an R object
 
@@ -334,7 +286,7 @@ head(flights_SEA)
 
 
 
-### Using a Python data frame in an R {ggplot2} 
+### Using a Python data frame in an R {ggplot2} {#python-R-ggplot}
 
 
 
@@ -346,6 +298,100 @@ ggplot(py$flights_SEA, aes(carrier, arr_delay)) +
   geom_point()
 
 ```
+
+---
+
+## Resources & reference {#python-resources}
+
+
+### Python as data analysis tool
+
+There are a number of good introductory resources for using Python in data science. Here's a short list; unfortunately, there's not as much freely available content in the Python ecosystem:^[And if you're looking for a longer list, [this twitter thread](https://twitter.com/kareem_carr/status/1374027467829227520?s=20) is a good start!]
+
+
+#### text books
+
+Wes McKinney, [_Python for Data Analysis_, 2nd ed.](https://wesmckinney.com/pages/book.html), 2017—McKinney is the lead developer behind the pandas library
+
+* website: https://wesmckinney.com/pages/book.html
+
+
+Jake VanderPlas, [Python Data Science Handbook: Essential Tools for Working with Data](https://www.oreilly.com/library/view/python-data-science/9781491912126/), 2016
+
+* online version: https://jakevdp.github.io/PythonDataScienceHandbook/
+
+
+Allen B. Downey, [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/), 2020
+
+
+Joel Grus, [Data Science from Scratch: First Principles with Python (2nd edition)](https://www.oreilly.com/library/view/data-science-from/9781492041122/), 2019
+
+
+
+### other resources
+
+I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials are outdated. I'll leave them here, should you wish to review them:
+
+[Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
+
+
+
+
+### {reticulate} package 
+
+[{reticulate}: R Interface to Python](https://rstudio.github.io/reticulate/)
+
+* [Calling Python from R](https://rstudio.github.io/reticulate/articles/calling_python.html)
+
+* [reticulate: running Python within RStudio](https://teachdatascience.com/reticulate/)
+
+
+* [{reticulate} cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/reticulate.pdf)
+
+
+### SciPy
+
+(https://www.scipy.org/) -- [SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.]
+
+The core packages include:
+
+[**pandas**](https://pandas.pydata.org/) -- data structures and analysis
+
+* [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html) -- "a short introduction to pandas, geared mainly for new users."
+
+* [data wrangling with pandas cheat sheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
+
+* [Pandas Pivot Table Explained](https://pbpython.com/pandas-pivot-table-explained.html), Chris Moffitt
+
+* [3 Examples Using Pivot Table in Pandas](https://cmdlinetips.com/2018/12/pivot-table-in-python-pandas/) (uses the gapminder table as the example)
+
+
+* ["A Quick Introduction to the “Pandas” Python Library"](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673) -- Adi Bronshtein, 2017-04-17
+
+* ["Pandas basics"](https://www.learnpython.org/en/Pandas_Basics)
+
+* [Beginner's Tutorial on the Pandas Python Library](https://stackabuse.com/beginners-tutorial-on-the-pandas-python-library/)
+
+* [pandas: Python data analysis library](https://teachdatascience.com/pandas/)
+
+
+
+[**Matplotlib**: Visualization with Python](https://matplotlib.org/)
+
+
+[**NumPy**](https://numpy.org/) -- Base N-dimensional array package
+
+
+### Other python tools of note
+
+#### ggplot
+
+* [ggplot from ŷhat](http://ggplot.yhathq.com/) -- "ggplot is a plotting system for Python based on R's ggplot2 and the Grammar of Graphics. It is built for making profressional looking, plots quickly with minimal code."
+
+
+#### Jupyter notebook
+
+[First Python Notebook](http://www.firstpythonnotebook.org/) -- a step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 
 

@@ -41,7 +41,7 @@ _(subject to change)_
 |---    |:---        |:---               |:---:  |
 |**Saturday**     | &#8212;  | &#8212; | &#8212; |
 |**1**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
-|       |1a          | 9:00 to 10:00      | Working with strings | &#8212; |
+|       |1a          | 9:00 to 10:00      | Bonus bits | &#8212; |
 |**2**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
 |       |2a          | 10:15 to 11:00    | Iteration | &#8212; |
@@ -51,13 +51,13 @@ _(subject to change)_
 |       |3b          | 11:45 to 12:00    | Questions? Comments? <br> Wrap up | &#8212; |
 |**Sunday**     | &#8212;  | &#8212; | &#8212; |
 |**4**  |            | **9:00 to 10:00**| &#8212;  | &#8212; |
-|       |4a          | 9:00 to 10:00      | Data analysis with Python  | &#8212; |
+|       |4a          | 9:00 to 10:00      | Capstone project: code together | &#8212; |
 |**5**  |            | **10:00 to 11:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 10:00 to 10:15    | _break_ | &#8212; |
-|       |5a          | 10:15 to 11:00    | Installing R on your own computer | &#8212; |
+|       |5a          | 10:15 to 11:00    | Data analysis with Python | &#8212; |
 |**6**  |            | **11:00 to 12:00**| &#8212;  | &#8212; |
 |       |&#8212;     | 11:00 to 11:15    | _break_ | &#8212; |
-|       |6a          | 11:15 to 11:45    | Capstone project: code together | &#8212; |
+|       |6a          | 11:15 to 11:45    |  Where to from here? <br> Installing R on your own computer  | &#8212; |
 |       |6b          | 11:45 to 12:00    | Course Wrap-up | &#8212; |
 
 
