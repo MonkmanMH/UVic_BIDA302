@@ -115,7 +115,25 @@ print(flights_SEA)
 
 ## Detour: running a Python script inside your RStudio {#python-script}
 
-Run the same code inside an R chunk, by running a Python script ".py" file
+The chunks above are defined {python} chunks. 
+
+If we have that code in a Python script ".py" file, we can run the same code inside an R chunk.
+
+The original .py file "py_code.py" has the following:
+
+```
+# this wrangles the nyc13flights data using pandas
+
+import pandas as pd
+flights = pd.read_csv("data/flights.csv")
+flights_SEA = flights[flights['dest'] == "SEA"]
+flights_SEA = flights_SEA[['carrier', 'dep_delay', 'arr_delay']]
+flights_SEA = flights_SEA.dropna()
+print(flights_SEA.head())
+
+```
+
+This R chunk uses the {reticulate} function `source_python()` to call that file:
 
 ```{r}
 # r chunk that calls a python script file
