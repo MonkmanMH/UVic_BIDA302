@@ -2,7 +2,7 @@
 title: "BIDA 302"
 subtitle: "course wrap-up"
 author: "Martin Monkman"
-date: "2020/11/29"
+date: "2021/04/18"
 output:
   xaringan::moon_reader:
 #    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
@@ -50,7 +50,8 @@ style_duo_accent(
 
 The data science process
 
-![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
+![_the data science process_](../../BIDA302_coursebook/static/img/data-science.png)
+
 
 - Wickham and Grolemund, _R4DS_
 
@@ -58,17 +59,17 @@ The data science process
 
 ---
 
-![R](E:/github/UVic_BIDA302/static/img/R.jpg)
+![R](../../BIDA302_coursebook/static/img/R.jpg)
 
 ---
 class: inverse
 
-![RStudio](E:/github/UVic_BIDA302/static/img/RStudio_400.png)
+![RStudio](../../BIDA302_coursebook/static/img_tidyverse/RStudio_400.png)
 
 ---
 class: inverse
 
-![the tidyverse](E:/github/UVic_BIDA302/static/img/tidyverse_400.png)
+![the tidyverse](../../BIDA302_coursebook/static/img_tidyverse/tidyverse_400.png)
 
 
 ---
@@ -76,7 +77,7 @@ class: inverse
 
 # Then...
 
-![pushing a VW Beetle](E:/github/UVic_BIDA302/static/img/main-bugpush-1810151019.jpg)
+![pushing a VW Beetle](../../BIDA302_coursebook/static/img/main-bugpush-1810151019.jpg)
 
 
 ---
@@ -84,12 +85,63 @@ class: inverse
 
 # ...now
 
-![VW Beetle on the road](E:/github/UVic_BIDA302/static/img/VW_ontheroad.jpg)
+![VW Beetle on the road](../../BIDA302_coursebook/static/img/VW_ontheroad.jpg)
 
 ---
 class: inverse
 
 ## Where to from here?
+
+---
+
+## Workflow
+
+* R projects
+
+* naming things
+
+* version control
+
+
+
+---
+
+## Data visualization
+
+* more formatting options
+
+* more chart types
+
+* mapping
+
+---
+
+## Modeling
+
+* more advanced regression tools
+
+* machine learning
+
+* text analytics
+
+---
+
+## Functional programming
+
+* turning for-loops into functions
+
+* streamlining your code even more
+
+---
+
+## Data cleaning
+
+>"Data scientists spend 80% of their time cleaning data rather than creating insights" 
+>–unknown
+
+* no research to back it up
+
+* Martin's opinion: may be an underestimate
 
 ---
 
@@ -131,6 +183,22 @@ Slides: [_How can we help?_](https://docs.google.com/presentation/d/1jfo_CvTmLf-
 
 –from the TidyTuesday page
 
+---
+
+## More courses...
+
+### BIDA
+
+* BIDA405 "Data Analytics Provisioning, Importing, Extracting and Manipulation"
+
+  - a deep dive into the "import", "tidy", and "transform" steps (including data cleaning)
+  
+  - focus on using R for those steps
+  
+* BIDA404 "Data Visualization and Reporting"
+
+* BIDA406 "Predictive Data Analytics and Modelling"
+
 
 ---
 
@@ -161,7 +229,7 @@ class: inverse
 
 --
 
-![achievement unlocked](E:/github/UVic_BIDA302/static/img/achievement_unlocked.jpg)
+![achievement unlocked](../../BIDA302_coursebook/static/img/achievement_unlocked.jpg)
 
 
 
