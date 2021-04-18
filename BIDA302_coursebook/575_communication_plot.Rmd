@@ -111,116 +111,7 @@ The [Storytelling with Data: quick reference guide](http://storage.cloversites.c
 
 One of the great things about the {ggplot2} package is that it provides virtually infinite ways to make our already-good plots even better. Here are some ways to start to incorporate formatting and design elements that improve our plots.
 
-
-### Annotations
-
-The scatterplot we made in [moneyball] is interesting in and of itself. But with some annotations, some of the details can be made explicit.
-
-One way to do that is to add lines to a plot that create sections to the plot. In the example in the previous chapter, vertical line and horizontal lines were added by using `geom_vline()` and `geom_hline()`. 
-
-As you will recall, the red line runs vertically at the "1" point on the X axis. The teams to the left of the line spent below the league average for that season; the teams to the right spent more. As you can see, there have been cases when some teams spent twice as much as the league average. The blue line runs horizontally at the "0.5" point on the Y axis. Above this line, the teams won more games than they lost. Below the line, they lost more games than they won.
-
-
-```{r moneyball_mlb_pay_wl}
-
-mlb_pay_wl <- read_csv("data/mlb_pay_wl.csv", 
-                       col_types = 
-                         cols(year_num = col_character()))
-
-# create plot object for repeated use
-moneyball_plot <- ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
-  geom_point() 
-
-moneyball_plot +
-  geom_vline(xintercept  = 100, colour = "red", size = 2) +
-  geom_hline(yintercept = 0.5, colour = "blue", size = 2)
-
-```
-
-Another option would have been to add a block of shading for the "Moneyball" teams that spent below the league average, but had winning seasons. For this, the `annotate("rect")` is used. The fill colour is hex code for the specific shade of green used by the Oakland Athletics, as found at [usteamcolors.com](https://usteamcolors.com/oakland-athletics-team-colors/). (See [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/recipe-annotate-rect) for applications of this in a line plot.)
-
-
-```{r}
-moneyball_plot +
-  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
-           alpha = .3, fill = "#003831")
-
-```
-
-
-To that plot we might want to add a description of the quadrant that is shaded.
-
-Note that in the label, the "\n" is used to force a line break in the text string.
-
-```{r}
-# as previously plotted
-moneyball_plot +
-  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
-           alpha = .3, fill = "#003831") +
-  # text annotation
-  annotate("text",             # annotation type
-           label = "Teams with\nbelow-average payroll\n& winning records", 
-           x = 5, y = 0.75,    # location of annotation
-           hjust = 0,
-           fontface = "bold",  # text formatting
-           colour = "#ffffff") 
-
-```
-
-
-
-### Colour
-
-Another way to tell the "Moneyball" story would be to identify the Oakland Athletics in the mass of dots shown, by using color. The code is in two steps:
-
-* first, create a subset of the main table that is only the Oakland data points
-
-* redraw the plot, adding a new `geom_point()` layer. Note that the colour used is now the yellow-gold in the Athletic's colour scheme, and the size of the points is specified to be slightly larger than the others.
-
-```{r}
-
-oakland <- mlb_pay_wl %>% 
-  filter(tm == "OAK")
-
-moneyball_plot +
-  geom_point(data = oakland, aes(x = pay_index, y = w_l_percent),
-             colour = "#efb21e", size = 2)
-
-```
-
-We might want to make other changes in this plot before including it in our publication.
-
-In this version, the plot has a number of variations:
-
-* a light theme, using `theme_bw()`
-
-* pale gray points for all of the team points
-
-* green points for Oakland, using a named colour ("seagreen")
-
-* adding the vertical and horizontal lines, but gray and lighter than the default
-
-
-```{r 575_oakland_plot}
-
-# create new version of plot with 
-# gray points on white background
-ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
-  geom_point(colour = "gray75") +
-  theme_bw() +
-  # Oakland points
-  geom_point(data = oakland, aes(x = pay_index, y = w_l_percent),
-             colour = "seagreen", size = 2) +
-  geom_vline(xintercept  = 100, colour = "grey50", size = 0.75) +
-  geom_hline(yintercept = 0.5, colour = "grey50", size = 0.75)
-  
-
-```
-
-
-
-
-### Text labels
+## Text labels
 
 Another type of annotation is to use text. For the example below, the names of the top teams are added to the 2002 season data (the year in which the _Moneyball_ story is set). First, filter for 2002.
 
@@ -307,7 +198,116 @@ ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) +
 For another example of this sort of labeling, see [_R for Data Science_, "Graphics for Communication: Annotations"](https://r4ds.had.co.nz/graphics-for-communication.html#annotations).
 
 
-### Colour palettes
+## Annotations
+
+The scatterplot we made in [moneyball] is interesting in and of itself. But with some annotations, some of the details can be made explicit.
+
+One way to do that is to add lines to a plot that create sections to the plot. In the example in the previous chapter, vertical line and horizontal lines were added by using `geom_vline()` and `geom_hline()`. 
+
+As you will recall, the red line runs vertically at the "1" point on the X axis. The teams to the left of the line spent below the league average for that season; the teams to the right spent more. As you can see, there have been cases when some teams spent twice as much as the league average. The blue line runs horizontally at the "0.5" point on the Y axis. Above this line, the teams won more games than they lost. Below the line, they lost more games than they won.
+
+
+```{r moneyball_mlb_pay_wl}
+
+mlb_pay_wl <- read_csv("data/mlb_pay_wl.csv", 
+                       col_types = 
+                         cols(year_num = col_character()))
+
+# create plot object for repeated use
+moneyball_plot <- ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
+  geom_point() 
+
+moneyball_plot +
+  geom_vline(xintercept  = 100, colour = "red", size = 2) +
+  geom_hline(yintercept = 0.5, colour = "blue", size = 2)
+
+```
+
+Another option would have been to add a block of shading for the "Moneyball" teams that spent below the league average, but had winning seasons. For this, the `annotate("rect")` is used. The fill colour is hex code for the specific shade of green used by the Oakland Athletics, as found at [usteamcolors.com](https://usteamcolors.com/oakland-athletics-team-colors/). (See [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/recipe-annotate-rect) for applications of this in a line plot.)
+
+
+```{r}
+moneyball_plot +
+  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
+           alpha = .3, fill = "#003831")
+
+```
+
+
+To that plot we might want to add a description of the quadrant that is shaded.
+
+Note that in the label, the "\n" is used to force a line break in the text string.
+
+```{r}
+# as previously plotted
+moneyball_plot +
+  annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
+           alpha = .3, fill = "#003831") +
+  # text annotation
+  annotate("text",             # annotation type
+           label = "Teams with\nbelow-average payroll\n& winning records", 
+           x = 5, y = 0.75,    # location of annotation
+           hjust = 0,
+           fontface = "bold",  # text formatting
+           colour = "#ffffff") 
+
+```
+
+
+
+## Colour
+
+Another way to tell the "Moneyball" story would be to identify the Oakland Athletics in the mass of dots shown, by using color. The code is in two steps:
+
+* first, create a subset of the main table that is only the Oakland data points
+
+* redraw the plot, adding a new `geom_point()` layer. Note that the colour used is now the yellow-gold in the Athletic's colour scheme, and the size of the points is specified to be slightly larger than the others.
+
+```{r}
+
+oakland <- mlb_pay_wl %>% 
+  filter(tm == "OAK")
+
+moneyball_plot +
+  geom_point(data = oakland, aes(x = pay_index, y = w_l_percent),
+             colour = "#efb21e", size = 2)
+
+```
+
+We might want to make other changes in this plot before including it in our publication.
+
+In this version, the plot has a number of variations:
+
+* a light theme, using `theme_bw()`
+
+* pale gray points for all of the team points
+
+* green points for Oakland, using a named colour ("seagreen")
+
+* adding the vertical and horizontal lines, but gray and lighter than the default
+
+
+```{r 575_oakland_plot}
+
+# create new version of plot with 
+# gray points on white background
+ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
+  geom_point(colour = "gray75") +
+  theme_bw() +
+  # Oakland points
+  geom_point(data = oakland, aes(x = pay_index, y = w_l_percent),
+             colour = "seagreen", size = 2) +
+  geom_vline(xintercept  = 100, colour = "grey50", size = 0.75) +
+  geom_hline(yintercept = 0.5, colour = "grey50", size = 0.75)
+  
+
+```
+
+
+
+
+
+## Colour palettes
 
 There are many pre-defined colour palettes available when plotting in {ggplot2}. 
 
@@ -377,5 +377,21 @@ ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent, color = attend_g)) +
 For more information about the `viridis` palettes, see [_R Graphics Cookbook_, 2nd ed, "Using Colors in Plots: Using a Colorblind-Friendly Palette"](https://r-graphics.org/chapter-colors)
 
 
+
+## Animated plots
+
+If you are interested in exploring animated plots (similar to Hans Rosling's _gapminder_ visualizations), here are some resources for using the {gganimate} package:
+
+* [{gganimate}](https://gganimate.com/) reference page
+
+  - ["Getting Started" vignette](https://gganimate.com/articles/gganimate.html)
+
+* Gina Reynolds, ["Racing Barchart with gganimate"](https://evamaerey.github.io/little_flipbooks_library/racing_bars/racing_barcharts.html#1)
+
+* Emily E. Kuehler, ["Barchart Races With gganimate"](https://www.emilykuehler.com/portfolio/barchart-race/)
+
+* [Animated line chart transition with R](https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html) at the R Graph Gallery
+
+* Alboukadel, ["gganimate: How to Create Plots With Beautiful Animation in R"](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
 
 -30-

@@ -25,7 +25,48 @@ library(gapminder)
 ## Introduction {#python-intro}
 
 
-![reticulate hex](static/img_tidyverse/reticulate-735.jpg)
+![_the data science process_](static/img/data-science.png)
+
+We have spent 5.5 weeks talking about this process^[From [@Wickham_Grolemund2016]] with **R**...but it's not the only tool set available.
+
+One other data science programming environment that is popular is the programming language Python^[[python.org](https://www.python.org/).]
+
+![_Python logo_](static/img/python-logo-master-v3-TM-flattened.png)
+
+
+In our first chapter, you saw the analogy of base R being like the engine and frame of a car & basic controls like the pedals and steering wheel
+
+![VW Beetle frame](static/img/VW_ad_1_crop.png)
+
+...the packages are the other things that enhance the car's functions
+
+* the body, windshield, headlights, A/C, sound system, etc
+
+![_VW Beetle transparent_](static/img/vwlooking.jpg)
+
+...and RStudio is the dashboard and controls
+
+![_VW Beetle dashboard_](static/img/VW_dashboard.jpg)
+
+Python is a general purpose programming language, so it is like an engine.
+
+It can power a car...or a boat, or a water pump, or ...
+
+![VW Beetle engine](static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
+
+Because Python is a general-purpose programming language, there are some key differences.
+
+* Unlike R, Python _doesn't_ have data analysis functions built-in.
+
+* To do data analysis in Python, you need to load the _libraries_ (also known as the _modules_ or _packages_) that are the frame, steering wheel, etc.
+
+The libraries for this are listed below in the [@python-resources] section.
+
+---
+
+For those of us who are familiar with R and RStudio, the {reticulate} package gives us an interface to add Python to our toolkit.
+
+![_{reticulate} hex_](static/img_tidyverse/reticulate-735.jpg)
 
 > 
 > The reticulate package provides a comprehensive set of tools for interoperability between Python and R. The package includes facilities for:
@@ -373,11 +414,18 @@ I've been compiling a list of other resources that I used to understand how to t
 
 The core packages include:
 
+#### Pandas
+
 [**pandas**](https://pandas.pydata.org/) -- data structures and analysis
+
 
 * [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html) -- "a short introduction to pandas, geared mainly for new users."
 
 * [data wrangling with pandas cheat sheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
+
+* [data wrangling with pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) -- cheat sheet
+
+
 
 * [Pandas Pivot Table Explained](https://pbpython.com/pandas-pivot-table-explained.html), Chris Moffitt
 
@@ -394,17 +442,25 @@ The core packages include:
 
 
 
+
+#### Matplotlib
+
 [**Matplotlib**: Visualization with Python](https://matplotlib.org/)
 
 
-[**NumPy**](https://numpy.org/) -- Base N-dimensional array package
+#### NumPy
 
 
-### Other python tools of note
+[**NumPy**](https://numpy.org/) -- "the fundamental package for scientific computing with Python"
 
-#### ggplot
 
-* [ggplot from ŷhat](http://ggplot.yhathq.com/) -- "ggplot is a plotting system for Python based on R's ggplot2 and the Grammar of Graphics. It is built for making profressional looking, plots quickly with minimal code."
+#### other Python data analysis modules
+
+
+* * [ggplot from ŷhat](http://ggplot.yhathq.com/) -- "ggplot is a plotting system for Python based on R's ggplot2 and the Grammar of Graphics. It is built for making profressional looking, plots quickly with minimal code."
+
+  - [Using ggplot in Python: Visualizing Data With plotnine](https://realpython.com/ggplot-python/)
+
 
 
 #### Jupyter notebook
