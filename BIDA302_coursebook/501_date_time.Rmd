@@ -130,7 +130,7 @@ The three functions `year()`, `month()`, and `day()` allow you to pull that comp
 Here are three dates:
 
 ```{r}
-date1 <- ymd("2019-11-02")
+date1 <- ymd("2019-01-02")
 date2 <- ymd("2020-02-29")
 date3 <- ymd("2020-11-21")
 
@@ -195,6 +195,25 @@ class(month(date2, label = TRUE, abbr = FALSE))
 ```
 
 Bonus: what class of variable is `wday` returning?
+
+
+Another useful function is `week()`, which returns the week number. More precisely, 
+
+> `week()` returns the number of complete seven day periods that have occurred between the date and January 1st, plus one.
+
+We often say that "there are 52 weeks in a year", but 365 / 7 = 52.1. This means that the last few days of the year are in the 53rd week.
+
+```{r}
+library(lubridate)
+
+# January 2nd, 2019
+week(ymd("2019-01-02"))
+
+# December 30, 2020
+week(ymd("2020-12-30"))
+
+```
+
 
 
 ## Time span {#date_time-span}
