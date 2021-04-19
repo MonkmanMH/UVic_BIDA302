@@ -1,0 +1,282 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+# Data wrangling—continued {#wrangling2}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+library(tidyverse)
+library(gapminder)
+```
+
+
+
+
+### Reading & Resources  {#wrangling2-reading}
+
+
+
+
+## Introduction  {#wrangling2-intro}
+
+### `ungroup()` 
+
+
+When we use a `group_by()` and `summarize()` pairing, we can calculate summary statistics for each group in our data.
+
+In this example, we calculate the difference in a country's life expectancy from the continent's mean life expectancy
+ - for example, the difference in 2007 between life expectancy in Canada and the mean life expectancy of countries in the Americas
+
+What we had seen before was the use of `group_by() %>% summarize()` to create summary statistics by a group:
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>% 
+  group_by(continent) %>%
+  summarize(lifeExp_mean = mean(lifeExp))
+```
+
+But how can we compare the Canada value to the Americas mean shown here? One strategy would be to join this table to the original, using "continent" as the key value.
+
+But there is another solution: `group_by() %>% mutate()`
+
+Step 1:
+
+* Filter for 2007
+
+* Then group by continent and 
+
+* _Mutate_ to get the mean continental life expectancy
+
+**Note:** the tibble that results from this retains the "Groups:". It is important to be aware of this, since any future manipulations of this table will be based on that grouping.  
+
+```{r}
+gm_life_2007 <- 
+gapminder %>%
+  # select and filter
+  select(country, continent, year, lifeExp) %>% 
+  filter(year == 2007) %>% 
+  # group_by %>% mutate
+  group_by(continent) %>%
+  mutate(lifeExp_con_mean = mean(lifeExp)) 
+
+gm_life_2007
+```
+
+To that data frame, we can append another mutate to calculate the difference between the individual country and the continent.
+
+Note that addition of the the `ungroup()` function, which removes the grouping.
+
+In the resulting table, we see the observations for 2007, with all the countries in the Americas. Note that they all have the same value of "lifeExp_con_mean", which is subtracted from "lifeExp" to get the "lifeExp_diff" variable. Countries which have a life expectancy above the continental mean show positive values, while those where the life expectancy is below, have negative values.
+
+```{r}
+gm_life_2007 %>%
+  ungroup() %>% 
+  # subtract continent mean from individual country
+  mutate(lifeExp_diff = lifeExp - lifeExp_con_mean) %>% 
+  # select and filter for just the Americas
+  filter(continent == "Americas")
+
+```
+
+In the version below, it's a single pipe that uses both year and continent as the grouping variables. This gets the same result with the added comparison of the individual country to the world average for that year, for every year in the data:
+
+```{r}
+gm_life <- gapminder %>%
+  # select
+  select(country, continent, year, lifeExp) %>% 
+  # continent life expectancy
+  group_by(year, continent) %>%
+  mutate(lifeExp_con_mean = mean(lifeExp)) %>%
+  ungroup() %>% 
+  mutate(lifeExp_con_diff = lifeExp - lifeExp_con_mean) %>% 
+  # world life expectancy
+  group_by(year) %>%
+  mutate(lifeExp_earth_mean = mean(lifeExp)) %>%
+  ungroup() %>% 
+  mutate(lifeExp_earth_diff = lifeExp - lifeExp_earth_mean)
+
+gm_life %>% 
+  filter(year == 2007 & continent == "Americas")
+
+```
+
+Now we can create a plot to compare Canada to the averages of the continent and the world over time:
+
+```{r}
+gm_life %>% 
+  filter(country == "Canada") %>% 
+ggplot() +
+  geom_line(aes(x = year, y = lifeExp_con_diff), colour = "red") +
+  geom_line(aes(x = year, y = lifeExp_earth_diff), colour = "blue")
+
+```
+
+This isn't a story about Canada's life expectancy getting worse—life expectancy in Canada improved from 68.8 in 1952 to 80.7 in 2007.
+
+What the chart shows are the substantial improvements in the life expectancy for people elsewhere around the world (the blue line) and in the Americas (the red line). While life expectancy in Canada improved and remains well above average, for many countries of the world, life expectancy is much, much longer than it was 70 years ago.
+
+
+
+### `across()` 
+
+The `across()` function: 
+
+>makes it easy to apply the same transformation to multiple columns, allowing you to use select() semantics inside in "data-masking" functions like summarise() and mutate(). See 
+
+These examples are variations of the ones from the [{dplyr} reference "Apply a function (or functions) across multiple columns"](https://dplyr.tidyverse.org/reference/across.html). That resource, and the related vignette  ["colwise"](https://dplyr.tidyverse.org/articles/colwise.html) have more examples and details.
+
+For our examples, we will use the `penguins` data table from the [{palmerpenguins} package](https://allisonhorst.github.io/palmerpenguins/).
+
+
+```{r}
+library(palmerpenguins)
+
+penguins
+```
+
+In this example, the rounding function is applied to the two bill measurements: 
+
+```{r}
+penguins %>%
+  mutate(across(c(bill_length_mm, bill_depth_mm), round))
+```
+
+Since those measures are of type "double" and the other two numeric measures are integer, we could identify the variables we want to round using the type, via the `is.double` argument:
+
+```{r}
+penguins %>%
+  mutate(across(where(is.double), round))
+```
+
+It's also possible to use the `across()` function to apply the same function(s) to multiple variables. Here we will use the `group-by() %>% summarize()` functions to calculate the mean of the bill measurements. 
+
+* Note also the `starts_with()` function that is used to identify the columns of interest.
+
+* The `mean()` function has a tilde in front. In R, the "~" is used to indicate a function, so 
+
+`~mean(.x, na.rm = TRUE)`
+
+is a shortcut for
+
+`function(.x){mean(x, na.rm = TRUE)}` where ".x" is a placeholder for every variable we have defined in our `across()` function.
+
+(It might help to think of this like a looping function—for every variable, the `summarise()` loops through the `mean()` function.)
+
+```{r}
+
+penguins %>% 
+  group_by(species) %>% 
+  summarise(across(starts_with("bill_"), 
+                   ~mean(.x, na.rm = TRUE)))
+
+```
+
+
+In this example, the `list` argument defines a list of functions to be applied. By putting the name of the function ahead of the function (e.g. `mean = mean`), that term gets appended to the name of the variables created by the `summarise()` function. (You may want to see what happens when you change this to `mean, sd` or `cat = mean, dog = sd`!)
+
+```{r}
+
+penguins %>% 
+  group_by(species) %>% 
+  summarise(across(starts_with("bill_"), 
+                   list(mean = mean, sd = sd), 
+                   na.rm = TRUE))
+
+```
+
+
+### Calculations across rows 
+
+Another common data manipulation outcome we seek is the average _across_ our variables...so far everything we've done has been _down_ the variables. R is really good at the latter. Here's some techniques to apply a function across a row.
+
+(This is drawn from the {dplyr} vignette ["Row-wise operations"](https://dplyr.tidyverse.org/articles/rowwise.html))
+
+First we create a little tibble:
+
+```{r}
+df <- tibble(x = 1:2, y = 3:4, z = 5:6)
+df
+```
+Then we apply the `rowwise()` function:
+
+```{r}
+df %>% rowwise()
+```
+
+It looks just the same, but you will note the "Rowwise:" indicator above the table. This means that any functions that are applied will run across the rows instead of the usual columnwise direction.
+
+
+```{r}
+df %>% 
+  rowwise() %>% 
+  mutate(m = mean(c(x, y, z)))
+```
+
+Without the `rowwise()` function we get 3.5 for both rows. This the mean of "x" and "y" and "z" (that is, the mean of the integers 1 through 6):
+
+```{r}
+df %>% 
+  mutate(m = mean(c(x, y, z)))
+```
+
+
+In the examples below, we will use a bigger tibble:
+
+```{r}
+
+df2 <- tibble(id = letters[1:6], w = 10:15, x = 20:25, y = 30:35, z = 40:45)
+df2
+```
+
+To calculate the sum of the columns, we could `mutate()` to get a new column, or `summarize()` for just the total.
+
+By putting the "id" in the `rowwise()` function, it acts as a grouping variable _across_ the rows.
+
+```{r}
+# mutate for full table
+df2 %>% 
+  rowwise(id) %>% 
+  mutate(total = sum(c(w, x, y, z))) 
+```
+
+```{r}
+# summarize for the total only
+df2 %>% 
+  rowwise(id) %>% 
+  summarize(total = sum(c(w, x, y, z))) 
+
+```
+
+To streamline the specification of the variables we use, the `c_across()` function can be applied, indicating the range of the variables we want to sum and average:
+
+```{r}
+
+df2 %>% 
+  rowwise(id) %>% 
+  summarize(total = sum(c_across(w:z)),
+            average = mean(c_across(w:z))) 
+
+
+```
+
+There are two other functions that streamline this syntax still further: `rowSums` and `rowMeans`.
+
+**Note:** this function has the `rowwise()` built in!
+
+```{r}
+df2 %>% 
+  mutate(total = rowSums(across(where(is.numeric))))
+```
+
+
+
+-30-
