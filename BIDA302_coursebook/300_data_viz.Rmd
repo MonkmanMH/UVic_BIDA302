@@ -103,6 +103,7 @@ anscombe_tidy %>%
 ```
 
 
+
 ## Visualizing the quartet
 
 Using the R visualization package {ggplot2}.
@@ -156,7 +157,7 @@ ggplot(anscombe_tidy) +
 
 Now we will add a trend line using the `geom_smooth` function.
 
-* the `method = lm` indicates a "linear model", i.e. a standard regression line. {ggplot2} provides access to other smoothing algorithms.
+* the `method = lm` indicates a "linear model", i.e. a standard regression line. (We will come back to the statistics that underlie this function in [Modeling].) {ggplot2} provides access to other smoothing algorithms.
 
 * the `se = FALSE` turns off the "standard error" (a measure of uncertainty in the data)
 

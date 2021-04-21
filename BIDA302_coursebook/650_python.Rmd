@@ -60,7 +60,7 @@ Because Python is a general-purpose programming language, there are some key dif
 
 * To do data analysis in Python, you need to load the _libraries_ (also known as the _modules_ or _packages_) that are the frame, steering wheel, etc.
 
-The libraries for this are listed below in the [@python-resources] section.
+The libraries for this are listed below in the [Resources & reference](#python-resources) section.
 
 ---
 

@@ -41,9 +41,9 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 * Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R (primarily using {ggplot2}). If I was teaching a longer course dedicated to data visualization using R, this would be the text book. ] [@Healy_2019]
 
 
+* [R-charts](https://r-charts.com/)—"code examples of R graphs made with base R graphics, ggplot2 and other packages."
 
-
-* [R Graph Gallery](https://www.r-graph-gallery.com/) -- "a collection of charts made with the R programming language. Hundreds of charts are displayed in several sections, always with their reproducible code available. The gallery makes a focus on the tidyverse and ggplot2."
+* [R Graph Gallery](https://www.r-graph-gallery.com/)—"a collection of charts made with the R programming language. Hundreds of charts are displayed in several sections, always with their reproducible code available. The gallery makes a focus on the tidyverse and ggplot2."
 
 
 
