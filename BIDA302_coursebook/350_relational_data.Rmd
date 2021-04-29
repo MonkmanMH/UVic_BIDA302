@@ -123,12 +123,12 @@ flights %>%
 ```
 
 
-Sometimes tables don't have a primary key! When that happens, it can be useful to create one -- `mutate()` and `row_number()` is one approach. This is a _surrogate key_.
+Sometimes tables don't have a primary key! When that happens, it can be useful to create one: `mutate()` and `row_number()` is one approach. This is a _surrogate key_.
 
 
 ## Mutating joins
 
-The first kind of joins are "mutating joins" -- new variables are added to one data frame from matching observations in another.
+The first kind of joins are "mutating joins"—new variables are added to one data frame from matching observations in another.
 
 ### Understanding keys 
 
@@ -174,7 +174,7 @@ inner_join(x, y, by = "key")
 ```
 
 
-Note that in the circumstances where we are confident that the key variables are named the same in both tables, we can use a bit of coding short-hand and omit the `by =` argument. This the arrangement of arguments in the `left_join` function (and the other joins, too)—`by =` is third, after `x` and `y`.
+Note that in the circumstances where we are confident that the key variables are named the same in both tables, we can use a bit of coding short-hand and omit the `by =` argument. This the arrangement of arguments in the `left_join` function (and the other joins, too): `by =` is third, after `x` and `y`.
 
 ```{r}
 
@@ -205,15 +205,17 @@ Is the same as a left join, but keeps all of the observations in `y`
 
 Keeps all of the observations in both `x` and `y`
 
-### Your turn
 
 See what happens when you join the tables with a `right_join()`, followed by a `full_join()`
 
 
 ```{r}
 # solution
+right_join(x, y, by = "key")
+
 full_join(x, y, by = "key")
 ```
+
 
 
 ### Your turn

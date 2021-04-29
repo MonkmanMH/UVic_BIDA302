@@ -60,7 +60,7 @@ For each team season, the file has
 mlb_pay_wl
 ```
 
-### Visualizing the data
+## Visualizing the data {#moneyball-viz}
 
 For our exercise, we will explore the relationship between payroll and wins. Does paying star players always lead to success? 
 
@@ -106,7 +106,7 @@ ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) +
 
 ```
 
-### The regression model
+## The regression model {#moneyball-regression}
 
 We can use the `lm()` method to create our regression statistics.
 
