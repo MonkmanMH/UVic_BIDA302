@@ -2,7 +2,7 @@ bookdown::bs4_book:
   theme:
     primary: "#16161D"
     fg: "#404048"
-    bg: "#EEEDFF"
+    bg: "#EEEEEE"
   repo: https://github.com/MonkmanMH/UVic_BIDA302/tree/main/BIDA302_coursebook
 
 bookdown::gitbook:
