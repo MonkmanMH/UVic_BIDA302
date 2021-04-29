@@ -6,7 +6,7 @@ https://creativecommons.org/licenses/by/4.0/
 -->
 
 
-# More data visualization {#data_viz_2}
+# More data visualization {#data-viz-2}
 
 
 ```{r echo = FALSE}
@@ -26,7 +26,7 @@ What's covered in this short exercise barely scratches the surface of what's pos
 
 
 
-## Reading and reference {#data_viz_2-reading}
+## Reading and reference {#data-viz-2-reading}
 
 
 [{ggplot2} reference site](https://ggplot2.tidyverse.org/)
@@ -38,7 +38,7 @@ What's covered in this short exercise barely scratches the surface of what's pos
 ![_shark dance flipbook_](static/img/shark_dance.gif)
 
 
-## Plot types {#data_viz_2-plot-types}
+## Plot types {#data-viz-2-plot-types}
 
 When we seek to visualize our data, we are confronted with the realization that there are many different ways to do that—there are many different plot types. How can we go about deciding what sort of plot to choose?
 

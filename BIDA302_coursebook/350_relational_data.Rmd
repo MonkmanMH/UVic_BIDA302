@@ -6,7 +6,7 @@ https://creativecommons.org/licenses/by/4.0/
 -->
 
 
-# Relational data {#relational_data}
+# Relational data {#relational-data}
 
 
 ```{r echo = FALSE}

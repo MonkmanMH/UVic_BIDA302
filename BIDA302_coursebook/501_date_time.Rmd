@@ -17,7 +17,7 @@ Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US)
 -->
 
 
-# Dates and times {#date_time}
+# Dates and times {#date-time}
 
 
 ```{r echo = FALSE}
@@ -29,7 +29,7 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 ```
 
 
-## Objectives {#date_time-objective}
+## Objectives {#date-time-objective}
 
 * Understand the basics of date and time formats
 
@@ -39,7 +39,7 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 
 
 
-## Reading and reference {#date_time-reading}
+## Reading and reference {#date-time-reading}
 
 ["Dates and times" in _R for Data Science_](https://r4ds.had.co.nz/dates-and-times.html) by Hadley Wickham and Garrett Grolemund
 
@@ -59,7 +59,7 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 * [Comprehensive Date-Time Handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/).  "lubridate will never go away, and is not being deprecated or superseded. As of now, we consider clock to be an alternative to lubridate. "
 
 
-## Introduction: Dates and Times {#date_time-intro}
+## Introduction: Dates and Times {#date-time-intro}
 
 Units of time:
 
@@ -95,7 +95,7 @@ See https://lubridate.tidyverse.org/reference/index.html
 | ceiling_date() | rounds _up_ to nearest boundary of specified time unit |
 
 
-## Parsing {#date_time-parsing}
+## Parsing {#date-time-parsing}
 
 {lubridate} will happily work with numbers and strings, including strings with separators
 
@@ -123,7 +123,7 @@ What about `mdy()` and `ymd()`?
 
 
 
-## Date {#date_time-date}
+## Date {#date-time-date}
 
 The three functions `year()`, `month()`, and `day()` allow you to pull that component from a ymd value.
 
@@ -216,7 +216,7 @@ week(ymd("2020-12-30"))
 
 
 
-## Time span {#date_time-span}
+## Time span {#date-time-span}
 
 There are three classes that we can use:
 
@@ -272,7 +272,7 @@ start_date + years(1)
 
 
 
-## Working with dates {#date_time-working}
+## Working with dates {#date-time-working}
 
 
 Read in this extract of a file downloaded from Statistics Canada, which has monthly data showing the British Columbia labour force (both sexes, 15 years and over, unadjusted) from January 2000 to October 2019.
@@ -434,7 +434,7 @@ lfs_BC_2000 %>%
 Important note: leaving the `labels = TRUE` will not work with this plot! That's because it becomes a factor, which can't be plotted as a line. One solution would be to plot the values using `geom_col()`.
 
 
-## Date-time {#date_time-date-time}
+## Date-time {#date-time-date-time}
 
 What is the difference between `today()` and `now()`?
 
@@ -524,7 +524,7 @@ Also, keep in mind that a written-out-month is spelled differently in different 
 
 
 
-## Lead and lag {#date_time-lead-lag}
+## Lead and lag {#date-time-lead-lag}
 
 ```{r}
 

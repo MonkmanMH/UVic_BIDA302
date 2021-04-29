@@ -26,10 +26,10 @@ library(gapminder)
 
 
 
-# Tidy data {#tidy_data}
+# Tidy data {#tidy-data}
 
 
-## Reading  {#tidy_data-reading}
+## Reading  {#tidy-data-reading}
 
 Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
 
@@ -41,7 +41,7 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 Karl Broman & Kara Woo, ["Data Organization in Spreadsheets"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)[@Broman_Woo_2017]
 
-Julie Lowndes and Allison Horst, ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))[@Lowndes_Horst_tidy_data2020]
+Julie Lowndes and Allison Horst, ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))[@Lowndes_Horst_tidy-data2020]
 
 
 
@@ -180,16 +180,16 @@ class_by_cyl %>%
 
 ***
 
-## Take aways {#tidy_data-takeaway}
+## Take aways {#tidy-data-takeaway}
 
 * Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
 
 
 ***
 
-## Exercises {#tidy_data-exercise}
+## Exercises {#tidy-data-exercise}
 
-### Hands-on exercise {#tidy_data-handson}
+### Hands-on exercise {#tidy-data-handson}
 
 
 Create a table that shows:
@@ -246,7 +246,7 @@ gapminder %>%
 
 
 
-### Online exercise {#tidy_data-online}
+### Online exercise {#tidy-data-online}
 
 [Transform data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/#section-transform-data-1a-manipulate-cases)
 
@@ -259,7 +259,7 @@ gapminder %>%
 
 
 
-## Further reading {#tidy_data-further-reading}
+## Further reading {#tidy-data-further-reading}
 
 More about tidy data:
 

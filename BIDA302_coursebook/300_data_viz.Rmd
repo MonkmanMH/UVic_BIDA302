@@ -13,7 +13,7 @@ This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0
 
 
 
-# Introduction to data visualization {#data_viz}
+# Introduction to data visualization {#data-viz}
 
 
 ```{r echo = FALSE}

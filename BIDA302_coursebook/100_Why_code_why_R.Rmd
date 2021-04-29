@@ -4,10 +4,10 @@
 <!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/   -->
 
 
-# Why Code? Why R? {#why_code}
+# Why Code? Why R? {#why-code}
 
 
-## Objectives {#why_code-objectives}
+## Objectives {#why-code-objectives}
 
 > The important thing is that you solve the problem that you’re working on, not write the most concise and elegant code (although that’s definitely something you want to strive towards!)
 > - Grolemund & Wickham, _R for Data Science_
@@ -20,7 +20,7 @@ At the end of this lesson, learners will be able to:
 
 
 
-### Readings {#why_code-readings}
+### Readings {#why-code-readings}
 
 
 * [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
@@ -29,7 +29,7 @@ At the end of this lesson, learners will be able to:
 
 
 
-## Using a programming language to do data analysis  {#why_code-pgm}
+## Using a programming language to do data analysis  {#why-code-pgm}
 
 Analysis of data helps us make better decisions. And computers have accelerated how much data we can analyze.
 
@@ -95,7 +95,7 @@ Here's an example:
 
 [NHPI]
 
-### Why R?  {#why_code-why-r}
+### Why R?  {#why-code-why-r}
 
 In this course we will be primarily using the open source programming language R, with tangents into data analysis coding in Python.
 
@@ -159,11 +159,11 @@ But you will also want or need to collaborate with other people. With more remot
 
 
 
-## R: An analogy  {#why_code-r-analogy}
+## R: An analogy  {#why-code-r-analogy}
 
 ![R logo](static/img/R.jpg)
 
-### Base R {#why_code-r-analogy-base}
+### Base R {#why-code-r-analogy-base}
 
 
 R is a data science / statistics programming language. Because it developed as a data analysis and statistical tool, unlike many other open-source programming languages, it has built-in analytic and statistical functions, and the data structures are designed for data analysis.
@@ -174,7 +174,7 @@ In this analogy, base R is like the engine and frame of a car & basic controls l
 
 We can get from Point A to Point B, but it isn't going to be a very comfortable ride.
 
-### Packages  {#why_code-r-analogy-packages}
+### Packages  {#why-code-r-analogy-packages}
 
 Packages extend the functionality of R. Each package does a rather limited number of things, so we sometimes find ourselves using many packages for a data analysis project.
 
@@ -211,7 +211,7 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 
 
-### RStudio  {#why_code-r-analogy-rstudio}
+### RStudio  {#why-code-r-analogy-rstudio}
 
 
 ![RStudio logo](static/img_tidyverse/RStudio_400.png)
@@ -247,7 +247,7 @@ Who's ready for a road trip?!
 
 ![_VW Beetle with family_](static/img/VW_ready_to_go.png)
 
-### Languages  {#why_code-languages}
+### Languages  {#why-code-languages}
 
 
 ![image source: https://www.huffpost.com/entry/multilingual-prowess-6-ti_b_11108636](static/img/language_learning.jpg)
@@ -281,7 +281,7 @@ And spelling also matters.
 * "WORD".
 
 
-### What data scientists do  {#why_code-work}
+### What data scientists do  {#why-code-work}
 
 
 > Data scientists spend 60% of their time on cleaning and organizing data. Collecting data sets comes second at 19% of their time, meaning data scientists spend around 80% of their time on preparing and managing data for analysis.
@@ -329,7 +329,7 @@ We might say that reading about how to do something, and copying the code and ch
 
 
 
-## Exercise: Introduction to R  {#why_code-exercise}
+## Exercise: Introduction to R  {#why-code-exercise}
 
 In this exercise, you'll tackle the basics of the R language.
 
@@ -365,7 +365,7 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
 
 
-## Installing R on your own computer  {#why_code-r-install}
+## Installing R on your own computer  {#why-code-r-install}
 
 For BIDA302, we will be using [rstudio.cloud](https://rstudio.com/products/cloud/) and there is no need for you to install R and RStudio on your own computer.
 

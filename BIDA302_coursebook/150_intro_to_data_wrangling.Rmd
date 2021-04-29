@@ -13,7 +13,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Introduction to data wrangling {#data_wrangle}
+# Introduction to data wrangling {#data-wrangle}
 
 
 ```{r echo = FALSE}
@@ -37,7 +37,7 @@ There are three broad categories of data transformation:
 In this section, we will begin to work with all three transformations.
 
 
-### Reading: Data wrangling {#data_wrangle-reading}
+### Reading: Data wrangling {#data-wrangle-reading}
 
 Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
 
@@ -53,7 +53,7 @@ For this section, and for other exercises throughout this course, we will be usi
 
 
 
-## Transform Data: 1a Alter the structure  {#data_wrangle-transform1}
+## Transform Data: 1a Alter the structure  {#data-wrangle-transform1}
 
 
 ![_dplyr hex_](static/img_tidyverse/dplyr.png){width=250, height=250}
@@ -129,7 +129,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-## Introducing the pipe operator ` %>% `  {#data_wrangle-pipe}
+## Introducing the pipe operator ` %>% `  {#data-wrangle-pipe}
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
@@ -176,7 +176,7 @@ gapminder %>%
 ```
 
 
-## Creating lists  {#data_wrangle-lists}
+## Creating lists  {#data-wrangle-lists}
 
 R allows us to create lists using the `c()` function.
 
@@ -225,7 +225,7 @@ This also reduces the risk of inadvertent error if we want to change the countri
 
 
 
-### Select columns  {#data_wrangle-select}
+### Select columns  {#data-wrangle-select}
 
 
 You've already seen `filter()` to choose particular rows in your dataframe. What if you want to remove some columns (variables)?
