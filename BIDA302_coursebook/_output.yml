@@ -1,7 +1,7 @@
 bookdown::bs4_book:
   theme:
-    primary: "#16161D"
-    fg: "#404048"
+    primary: "#432371"
+    fg: "#16161D"
     bg: "#EEEEEE"
   repo: https://github.com/MonkmanMH/UVic_BIDA302/tree/main/BIDA302_coursebook
 
@@ -15,7 +15,7 @@ bookdown::gitbook:
         <li><a href="./">BIDA302: Data Analytics Coding Fundamentals</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/MonkmanMH/UVic_BIDA302/tree/main/BIDA302_coursebook
+    edit: https://github.com/MonkmanMH/UVic_BIDA302/BIDA302_coursebook
     download: ["pdf", "epub"]
 
 bookdown::pdf_book:

@@ -11,7 +11,7 @@ biblio-style: apalike
 link-citations: yes
 links-as-notes: true
 colorlinks: true
-cover-image: "BIDA302_hex_400.jpg"
+cover-image: "BIDA302_hex_400_sq.png"
 github-repo: "MonkmanMH/UVic_BIDA302"
 description: "The course book for BIDA302"
 ---
@@ -38,7 +38,7 @@ https://creativecommons.org/licenses/by/4.0/
 -->
 
 
-<img src="BIDA302_hex_400.jpg" width="350" height="350" alt="BIDA302 hex" />
+<img src="BIDA302_hex_400_sq.png" width="350" height="350" alt="BIDA302 hex" />
 
 _Draft_
 
