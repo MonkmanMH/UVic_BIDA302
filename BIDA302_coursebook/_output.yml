@@ -3,7 +3,7 @@ bookdown::bs4_book:
     primary: "#432371"
     fg: "#16161D"
     bg: "#EEEEEE"
-  repo: https://github.com/MonkmanMH/UVic_BIDA302/tree/main/BIDA302_coursebook
+  repo: https://github.com/MonkmanMH/UVic_BIDA302/BIDA302_coursebook
 
 bookdown::gitbook:
   css: style.css
