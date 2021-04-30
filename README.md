@@ -1,4 +1,4 @@
-BIDA302 <img src="hex_sticker/BIDA302_hex.png" align="right" width="300"/>
+BIDA302 <img src="hex_sticker/BIDA302_hex_400_sq.png" align="right" width="300"/>
 ==========================================================
 
 
