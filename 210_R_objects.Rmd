@@ -1,0 +1,334 @@
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+# R objects & variable types {#Robjects}
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+
+## Examining the data
+
+When we import a dataframe into a spreadsheet or other data analysis tool, we immediately _see_ the data. In Excel, the Gapminder dataset looks like this:
+
+![gapminder spreadsheet](static/img/excel_gapminder_2.JPG)
+
+Like the crew of the Enterprise, we get the data "On screen!" so we can visually investigate it.
+
+
+![_"On screen!"_](static/img/gapminder_STNG_onscreen_x.png)
+
+
+
+#### _Looking_ at data
+
+In R, when we load a dataframe:
+
+* we assign it to an object
+
+* and that object shows up in our Environment pane.
+
+
+![_gapminder in RStudio_](static/img/gapminder_RStudio_2.JPG)
+
+This is a different view of the universe.
+
+
+
+In R, there are a few options for visually scanning your data:
+
+
+| function | description |  
+| :-- | :-- |
+|*Content: * | |
+|`head()` | shows the first rows; the default is 6 |
+|`tail()` | shows the last rows; the default is 6 | 
+|`view()` or `View()`| display in tab |
+
+
+***
+
+
+In addition to visually inspecting the data, there are also other functions to understand a dataframe:
+
+| function | description |  
+| :-- | :-- |
+|*Size:*  | |
+|`dim()` | returns a vector with the number of rows as the first element, and the number of columns as the second element (the dimensions of the object) |
+|`nrow()` | returns the number of rows |
+|`ncol()` | returns the number of columns |
+
+
+Functions to understand the contents of your dataframe:
+
+| function | description |  
+| :-- | :-- |
+|*Names:* | |
+|`names()` | returns the column names (synonym of colnames() for data.frame objects) |
+|*Summary:* | |
+|`ls()` | returns the names in a specified environment or object  |
+|`str()` | structure of the object and information about the class, length and content of each column |
+| `ls.str()` | combines `ls()` and `str()`| 
+|`summary()` | summary statistics for each column |
+|`glimpse()` | returns the number of columns and rows of the tibble, the names and class of each column, and previews as many values will fit on the screen. Unlike the other inspecting functions listed above, glimpse() is not a “base R” function so you need to have the dplyr or tibble packages loaded to be able to execute it. |
+
+Note: most of these functions are “generic.” They can be used on other types of objects besides dataframes or tibbles.  
+
+
+
+## Variable types 
+
+In R (as with other programming languages), data is stored as different variable types. In a spreadsheet program like Excel this is obscured from the user, but in R it's explicit, and in many contexts, it matters.
+
+`int` stands for integers.
+
+`dbl` stands for doubles, or real numbers.
+
+`chr` stands for character vectors, or strings.
+
+`date` stands for dates.
+
+`dttm` stands for date-times (a date + a time).
+
+`fctr` stands for factors, which R uses to represent categorical variables with fixed possible values.
+
+
+`lgl` stands for logical, vectors that contain only TRUE or FALSE.
+
+
+
+
+
+## Missing values
+
+### Readings
+
+Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
+
+* [5.2.3 Missing values](https://r4ds.had.co.nz/transform.html#missing-values)
+
+
+J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutput)
+
+* [5.24 Removing NAs from a Data Frame](https://rc2e.com/datastructures#recipe-id249)
+
+
+
+
+It is common that there are missing values in a dataset, and many reasons why this might occur. These missing values are usually represented in R as `NA` values (which is different than a zero or a blank cell)—these are  explicitly missing values.
+
+* they can be included as any type: e.g. numeric or character
+
+Missing values are _contagious_
+
+* an `NA` in the input will return an `NA` in the output
+
+
+
+
+### Functions for missing values
+
+Dealing with those pesky `NA` values  
+
+| function | action |
+| :-- | :-- |
+| `na.rm = TRUE` | remove `NA` values when running function|
+| `is.na(x)` | returns TRUE or FALSE for each value in `x` |
+| `anyNA(x)` | returns a single TRUE or FALSE |
+
+
+
+
+
+
+### A short example
+
+Here are three examples of what happens when `NA` values are part of your calculation.
+
+Add a numeric value to an `NA`:
+
+```{r}
+1 + NA
+```
+
+Adding 1 to every item in a numeric list that includes an `NA`:
+
+```{r}
+num_list <- c(1, 2, NA, 4, 5)
+1 + num_list
+```
+
+Calculating the mean of a numeric list that includes an `NA`:
+
+```{r}
+mean(num_list)
+```
+
+
+### Functions for dealing with NA values
+
+The functions `is.na` and `anyNA(x)` are logical—they will return a "TRUE" or "FALSE" value.
+
+
+What does `is.na(x)` return? What about `anyNA(x)`?
+
+```{r}
+# example
+num_list <- c(1, NA, 3)
+
+# answer
+is.na(num_list)
+
+```
+
+There are three values in `num_list`, so three tests—only the second one is `NA`.
+
+
+```{r}
+
+
+anyNA(num_list)
+
+```
+
+
+One of the three values in `num_list` is `NA`, so only one "TRUE" is returned.
+
+
+
+What if we put an exclamation mark—the "not" symbol—in front of `is.na()`? How does it differ from `is.na()`?
+
+```{r}
+!is.na(num_list)
+```
+
+
+
+Use `na.rm` within the `sum()` function to calculate the sum of `num_list`
+
+```{r}
+# example
+sum(num_list)
+
+# answer
+sum(num_list, na.rm = TRUE)
+
+
+```
+
+
+### A longer example
+
+First step: review the structure of the `mpg` data set:
+
+```{r}
+mpg
+```
+
+
+Run the chunk below to create the `displ_class_by_cyl` table:
+
+* group the cars by class and cylinder size, and 
+
+* show the mean displacement (engine size)
+
+```{r}
+# summary table - class by cylinder
+displ_class_by_cyl <- mpg %>%
+  group_by(class, cyl) %>%
+  summarise(displ_mean = mean(displ)) %>%
+  arrange(cyl, class) %>%
+  pivot_wider(names_from = cyl, values_from = displ_mean) %>%
+  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+
+displ_class_by_cyl
+
+```
+
+Calculate the mean of `displ_mean`:
+
+```{r}
+# example
+mean(displ_class_by_cyl$displ_mean)
+
+```
+
+The "NA" values get in the way of the calculation. If `na.rm = TRUE` is added to the `mean()` function, R will calculate the value for us by removing the "NA" values.
+
+```{r}
+
+# solution
+mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
+
+```
+
+
+An alternative solution: use a filter with `!na` to remove the records with `NA` values:
+
+```{r}
+# example
+displ_class_by_cyl %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+# solution
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+```
+
+
+### Summarize with `group()` and `ungroup()`
+
+
+You'll notice in the example above that when we summarize `displ_class_by_cyl` it gives the mean values by class, even though we didn't use any grouping variable.
+
+This is because when we ran the code to create the `displ_class_by_cyl` table, we grouped by `class` and `cyl`. Running the `summarise()` function is applied, it removes one level of the grouping (in this case, `cyl`): 
+
+```{r}
+
+# example
+displ_class_by_cyl
+
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+
+```
+
+
+If you want the mean of _all_ the values, you have to use `ungroup()` before `summarise()`, to "peel off" `class`.
+
+
+```{r}
+
+# solution
+displ_class_by_cyl %>%
+  filter(!is.na(displ_mean)) %>%
+  ungroup() %>%
+  summarise(displ_mean_all = mean(displ_mean))
+
+
+```
+
+
+## Take aways
+
+* using functions to identify unknown ("NA") values in a variable
+
+* removing and finding "NA" values
+
+* using `ungroup()` to remove the effect of a `group_by()` function
+
+
+
+
+-30-
