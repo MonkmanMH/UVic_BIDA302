@@ -161,9 +161,10 @@ Review the outputs from the model summary above.
 
   a. Is this model statistically significant? What is the P value?
 
-  b. What is the R-squared value? What does it tell us about the strength of the relationship between these two variables?
+  b. What is the R-squared value of this model? What does it tell us about the strength of the relationship between these two variables?
 
-  c. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field?
+  c. If you were managing the budget of a MLB team, would you feel confident telling the shareholders that spending money on star players would turn into success on the field? Explain your answer.
+
 
 ### Does winning lead to bigger crowds? {#moneyball-q2}
 
@@ -172,11 +173,11 @@ Review the outputs from the model summary above.
 
 In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
 
-  a. Use the data in the "mlb_pay_wl.csv" file to visualize the relationship between team wins or winning percentage and attendance.
+  a. Use the data in the "mlb_pay_wl.csv" file to visualize the relationship between team wins (or winning percentage) and attendance.
 
-   b. Use the data in the "mlb_pay_wl.csv" file to create a regression model that evaluates the relationship between team wins and attendance. Display the results in your output.
+   b. Use the data in the "mlb_pay_wl.csv" file to create a regression model that evaluates the relationship between team success on the field and attendance. Display the results in your output.
 
-   c. Analyze the coefficients, the R-squared value, and the P value. Can we say that a successful team draw bigger crowds?
+   c. Describe and analyze the coefficients, the R-squared value, and the P value. Can we say that a successful team draw bigger crowds?
 
 
 

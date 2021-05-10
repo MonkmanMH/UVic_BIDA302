@@ -305,26 +305,18 @@ And some of the months that did parse ended up with completely wrong interpretat
 
 Back to the drawing board...
 
-Since the variable `REF_DATE` is a character string, a solution is to force them to all be the first day of the month. I'll do this by adding "-01" to the end of the string, using the `glue()` function (which is in the {glue} package.
-
-* https://glue.tidyverse.org/
-
-**NOTE:** 
-
-* As with pretty much everything else, there is more than one way to solve this problem!
-
-**NOTE:** 
-
-* You can use a function that you have installed but not loaded through the `library()` function, by putting the name of the package followed by the function you want to use. In this case, we are using the `glue()` function from the {glue} package, so our code looks like `glue::glue()`. The variable from our data frame gets put in braces, and the string returned is all within quotation marks.
+Fortunately, {lubridate} has an argument in the `ymd()` function that allows us to deal with this. By adding the `truncated = 2` argument to the function, the strings are interpreted as missing the last characters. The first day of each month is now added to our new variable.
 
 
 ```{r}
-
-lfs_BC_2000 <-lfs_BC_2000 %>% 
-  mutate(ref_date_2 = glue::glue("{REF_DATE}-01"))
+# solution
+lfs_BC_2000 <-
+  lfs_BC_2000 %>% 
+  mutate(ref_date_2 = ymd(REF_DATE, truncated = 2))
 
 lfs_BC_2000
 ```
+
 
 
 

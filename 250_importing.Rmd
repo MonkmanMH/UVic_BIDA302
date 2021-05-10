@@ -191,7 +191,7 @@ Note that if you don't specify the sheet, {readxl} will default to the first one
 The `excel_sheets()` function will tell you the name of the sheets in an Excel file.
 
 ```{r}
-datasets <- "datasets.xlsx"
+datasets <- "data/datasets.xlsx"
 
 excel_sheets(datasets)
 

@@ -17,9 +17,6 @@ description: "The course book for BIDA302"
 ---
 
 
-# Course Outline  {-}
-
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
@@ -44,6 +41,7 @@ _Draft_
 
 This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's [Continuing Studies Department](https://continuingstudies.uvic.ca/).
 
+# Course Outline {-}
 
 ### Course description {-}
 
