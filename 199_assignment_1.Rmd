@@ -46,7 +46,7 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 ## Questions
 
 
-### 1. Assign a variable
+### 1. Assign a variable {#q1-1}
 > (1 mark)
 
 > Why does this code chunk not work?
@@ -62,7 +62,7 @@ stringlength
 
 
 
-### 2. Reducing the size of your data set
+### 2. Reducing the size of your data set {#q1-2}
 > (1 mark)
 
 > Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
@@ -82,7 +82,7 @@ mpg
 
 ***
 
-### 3. Selecting variables
+### 3. Selecting variables {#q1-3}
 > (1 mark)
 
 > What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
@@ -99,7 +99,7 @@ library(gapminder)
 
 ***
 
-### 4. Religion and income data (USA)
+### 4. Religion and income data (USA) {#q1-4}
 > (2 marks)
 
 > The table `relig_income` is in {tidyr}.
@@ -116,7 +116,7 @@ library(gapminder)
 ***
 
 
-### 5. R Markdown
+### 5. R Markdown {#q1-5}
 > (1 mark)
 
 > The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
@@ -136,7 +136,7 @@ ggplot(data = mpg) +
 
 ***
 
-### 6. Flight data
+### 6. Flight data {#q1-6}
 > (4 marks)
 
 > For Q3a-3d, use the data `nycflights13::flights`
@@ -156,7 +156,7 @@ ggplot(data = mpg) +
 
 ***
 
-### 7. Car mileage - pivot table
+### 7. Car mileage - pivot table {#q1-7}
 > (2 marks)
 
 > In Lesson 1, we used the {mpg} package to calculate the average displacement by class of car:
