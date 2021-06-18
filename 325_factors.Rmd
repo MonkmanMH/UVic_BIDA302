@@ -344,6 +344,11 @@ gapminder %>%
 
 ```
 
+A generic version of the sorting using `fct_rev()` to put them in reverse order is here:
+
+`df %>% mutate(my_fct = fct_rev(my_fct) %>% ggplot(…)`
+
+
 
 ### Your turn
 
