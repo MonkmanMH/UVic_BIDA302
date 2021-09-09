@@ -166,7 +166,7 @@ But you will also want or need to collaborate with other people. With more remot
 ### Base R {#why-code-r-analogy-base}
 
 
-R is a data science / statistics programming language. Because it developed as a data analysis and statistical tool, unlike many other open-source programming languages, it has built-in analytic and statistical functions, and the data structures are designed for data analysis.
+R is a data science / statistics programming language. Because it developed as a domain-specific data analysis and statistical tool it has built-in analytic and statistical functions, and the data structures are designed for data analysis. This means that R, unlike many other open-source programming languages, is designed from the ground up to do data science...which in turn provides some significant advantages.
 
 In this analogy, base R is like the engine and frame of a car & basic controls like the pedals and steering wheel.
 
