@@ -1,0 +1,11 @@
+---
+title: "Penguins in python"
+output: html_notebook
+---
+
+The Palmer Penguins data is included in the scikit
+
+https://inria.github.io/scikit-learn-mooc/python_scripts/trees_dataset.html
+
+
+
