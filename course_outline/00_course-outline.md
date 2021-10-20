@@ -8,17 +8,15 @@ BIDA302: Course Outline
 ================
 Martin Monkman
 
-Latest revision: 2021-03-01
+Latest revision: 2021-10-20
 
 
 
 # Data Analytics & Coding Fundamentals: BIDA302
 
-March 6–April 18, 2021 (no class April 3 & 4)
+Januar 8–February 13, 2022
 
 * Saturday and Sunday, 9:00 am–12:00 pm Pacific
-
-* NOTE: Daylight Savings Time will happen between the Saturday, March 13 and Sunday March 14 class! Remember to set your clock one hour ahead.
 
 
 Classes will be held via Zoom meeting.
@@ -85,8 +83,10 @@ Zoom:
     then join the meeting
 
   - The meeting number is 947 7574 8954
+  
+  - The link is here: https://uvic.zoom.us/j/94775748954
 
-Moodle:
+Brightspace:
 
   - This course uses Moodle—an online learning management system—as a
     supplementary resource for the class.
