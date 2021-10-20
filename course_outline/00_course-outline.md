@@ -14,7 +14,7 @@ Latest revision: 2021-10-20
 
 # Data Analytics & Coding Fundamentals: BIDA302
 
-Januar 8–February 13, 2022
+November 6–December 12, 2021
 
 * Saturday and Sunday, 9:00 am–12:00 pm Pacific
 
@@ -88,10 +88,10 @@ Zoom:
 
 Brightspace:
 
-  - This course uses Moodle—an online learning management system—as a
+  - This course uses Brightspace—an online learning management system—as a
     supplementary resource for the class.
 
-  - To access, login to <https://distance.moodle.uvcs.uvic.ca/> with
+  - To access, login to <https://bright.uvic.ca/d2l/home> with
     your Netlink ID.
 
 RStudio cloud:
@@ -107,11 +107,11 @@ RStudio cloud:
 
 Texts:
 
-  - Martin Monkman, [_Data Analytics Coding Fundamentals: BIDA302 course book_](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) (free online text)
+  - Martin Monkman, [_Data Analytics Coding Fundamentals: BIDA302 course book_](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) (online course material)
 
-  - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/) (free online text)
+  - Garrett Grolemund and Hadley Wickham, [_R for Data Science_](https://r4ds.had.co.nz/) (free online book)
 
-  - J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/) (free online text)
+  - J.D. Long and Paul Teetor, [_R Cookbook_, 2nd edition](https://rc2e.com/) (free online book)
 
   - Additional readings will be introduced with each lesson.
 
@@ -186,13 +186,12 @@ Andrew Heiss, Georgia State University)</small>
 
 | Week | Date                    | Topics                                                                                                                                                             | Lesson |
 | ---- | :---------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
-| 1    | 2021-03-06 & 07         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                      |   —    |
-| 2    | 2021-03-13 & 14 |  Tidy data <br> Good coding habits <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
-| 3    | 2021-03-20 & 21         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data                               |   —    |
-| 4    | 2021-03-27 & 28         | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 |   —    |
-| —    | 2021-04-03 & 04         | _NO CLASS_ |   —    |
-| 5    | 2021-04-10 & 11         | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks |   —    |
-| 6    | 2021-04-17 & 18         | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges            |   —    |
+| 1    | 2021-11-06 & 07         | Why code? Why R? <br> Introduction to R, RStudio, and R Markdown <br> Programming foundations <br> The data science process and data wrangling                      |   —    |
+| 2    | 2021-11-13 & 14 |  Tidy data <br> Good coding habits <br> Importing and exporting data: part 1 <br> R Markdown: the next level                                                        |   —    |
+| 3    | 2021-11-20 & 21         | Exploratory data analysis: data visualization <br> Data wrangling: categorical variables & relational data                               |   —    |
+| 4    | 2021-11-27 & 28         | Writing your own functions <br> An introduction to modeling <br> Importing and exporting data: part 2 |   —    |
+| 5    | 2021-12-04 & 05         | Modeling, forecasting and what-if scenarios <br> Working with strings <br> Working with dates <br> R Markdown: moving beyond documents and notebooks |   —    |
+| 6    | 2021-12-11 & 12         | Plots, charts and other data visualization <br> Python: the other data science language <br> Where to from here? Other data analytics coding challenges            |   —    |
 
 #### Concordance: course objective to lesson topics
 
@@ -240,9 +239,9 @@ Andrew Heiss, Georgia State University)</small>
     than that will not be accepted, as we will review the assignment
     during Saturday’s class.
 
-### Additional optional stretch assignments (marks: 0)
+### Additional optional stretch exercises (marks: 0)
 
-  - These *optional* assignments will give you the opportunity for
+  - These *optional* exercises will give you the opportunity for
     additional practice and to flex your developing coding muscles.
 
   - They are optional.
@@ -351,11 +350,8 @@ your past self about this course?” Here are some of their answers:
 
 Congratulations\! You read to the end of the Syllabus.
 
-For a single bonus mark, before 2021-03-09 11:59 PM PDT please email me
-the following:
+For a single bonus mark, before 2021-11-12 11:59 PM PDT please email me the following:
 
-  - a picture of a geographic location (a building, streetscape, city
-    skyline, natural landscape, etc., real or imaginary) with a bit of
-    information as to what the picture shows, and why you chose it.
+  - a picture of a geographic location (a built place such as a building, streetscape, city skyline, or a natural landscape like a mountain or a beach, and it could be real or imaginary) with a bit of information as to what the picture shows, and why you chose it.
 
 \-30-
