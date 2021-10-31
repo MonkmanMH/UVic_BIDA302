@@ -91,9 +91,7 @@ Here's an insight into how the work on a data analysis project looks in real lif
 
 In many work places, someone (it might be a data analyst or financial analyst) is often producing monthly and quarterly reports. The reports look more or less like the previous edition—the data is updated, and the job is to create new summary tables and charts, and sometimes add new text elements. If you are using a GUI (Graphical User Interface) program like Microsoft Excel, every time the data is updated, the steps are the same: a lot of point-and-click copy-and-paste drag-and-drop work to download the data, update the tables, calculate the new summary tables, change the charts, and then hit "print". A human has to do all of those steps; but if we can write some code, it will streamline our workflow.
 
-Here's an example:
-
-[NHPI]
+An [example of a data analytics project](#walkthrough) is coming up in the next chapter. 
 
 ### Why R?  {#why-code-why-r}
 
