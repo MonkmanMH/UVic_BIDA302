@@ -24,6 +24,8 @@ The [capstone projects for BIDA302 get their own repo](https://github.com/Monkma
 
 ## Versions:
 
+2021.2.x -- offered 2021, fall (2021-11-06 to 2021-12-12)
+
 2021.1.x -- offered 2021, spring (2021-03-06 to 2021-04-18)
 
 2020.2.x -- offered 2020, fall (2020-10-24 to 2020-11-29)
