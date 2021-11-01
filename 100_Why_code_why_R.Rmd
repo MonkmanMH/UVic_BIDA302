@@ -120,13 +120,15 @@ This is where the R community really shines. The spirit of the bazaar extends to
 
 Another part of the R community is the proliferation of hexagonal laptop stickers, which fit neatly together and give a visual signal to other members of the R community.
 
-![_Martin's laptop, October 2020_](static/img/Martin_laptop.jpg)
+Here's Martin's laptop (October 2020)
 
-
+```{r, echo=FALSE, out.width = "50%", out.height="50%"}
+knitr::include_graphics("static/img/Martin_laptop.jpg")
+```
 
 For one of my projects, the workflow used to look something like this:
 
-![survey workflow 1](static/img/survey_workflow_720.png)
+![_workflow, before_](static/img/survey_workflow_720.png)
 
 Every time the data switches from one tool to another, there is a risk of unexpected transformations in the values.
 
@@ -135,7 +137,9 @@ In GUI tools, there's also a risk of point-and-click errors which cannot be trac
 
 It now looks like this:
 
-![survey workflow 1](static/img/survey_workflow_2_720.png)
+
+![_workflow, after_](static/img/survey_workflow_2_720.png)
+
 
 
 
@@ -143,6 +147,7 @@ Your code (and additional recordkeeping with your code) helps explain your work 
 
 > In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you.
 —Hadley Wickham (source: [Roel M. Hogervorst](https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/)
+
 
 ![_unfinished work_](static/img/unfinished_work_400.png)
 
