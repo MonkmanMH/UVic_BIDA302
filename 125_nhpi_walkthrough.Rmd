@@ -31,7 +31,7 @@ This set of scripts creates summary tables and graphs plotting the New Housing P
 
 Our end point will be this chart:
 
-![New Housing Price Index, B.C. and Canada](static/img/NHPI_plot.png)
+![New Housing Price Index, B.C. and Canada](static/img/NHPI_plot.png){width=75%}
 
 This plot was created in early 2020, when the most recent data available was for the month of November 2019.
 

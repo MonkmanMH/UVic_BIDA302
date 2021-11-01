@@ -4,6 +4,8 @@ bookdown::bs4_book:
     fg: "#16161D"
     bg: "#EEEEEE"
   repo: https://github.com/MonkmanMH/UVic_BIDA302
+  cover-image: "BIDA302_hex_400_sq.png"
+
 
 bookdown::gitbook:
   css: style.css
@@ -17,11 +19,12 @@ bookdown::gitbook:
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/MonkmanMH/UVic_BIDA302
     download: ["pdf", "epub"]
-
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+#
+#bookdown::pdf_book:
+#  includes:
+#    in_header: preamble.tex
+#  latex_engine: xelatex
+#  citation_package: natbib
+#  keep_tex: yes
+#bookdown::epub_book: default
+#

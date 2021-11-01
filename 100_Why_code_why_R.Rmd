@@ -120,15 +120,15 @@ This is where the R community really shines. The spirit of the bazaar extends to
 
 Another part of the R community is the proliferation of hexagonal laptop stickers, which fit neatly together and give a visual signal to other members of the R community.
 
-Here's Martin's laptop (October 2020)
+Here's Martin's laptop (October 2020):
 
-```{r, echo=FALSE, out.width = "50%", out.height="50%"}
+```{r, echo=FALSE, out.width = "67%", out.height="67%"}
 knitr::include_graphics("static/img/Martin_laptop.jpg")
 ```
 
 For one of my projects, the workflow used to look something like this:
 
-![_workflow, before_](static/img/survey_workflow_720.png)
+![_workflow, before_](static/img/survey_workflow_720.png){width=75%}
 
 Every time the data switches from one tool to another, there is a risk of unexpected transformations in the values.
 
@@ -138,7 +138,7 @@ In GUI tools, there's also a risk of point-and-click errors which cannot be trac
 It now looks like this:
 
 
-![_workflow, after_](static/img/survey_workflow_2_720.png)
+![_workflow, after_](static/img/survey_workflow_2_720.png){width=75%}
 
 
 
@@ -173,7 +173,7 @@ R is a data science / statistics programming language. Because it developed as a
 
 In this analogy, base R is like the engine and frame of a car & basic controls like the pedals and steering wheel.
 
-![_VW Beetle frame_](static/img/VW_ad_1_crop_2.png)
+![_VW Beetle frame_](static/img/VW_ad_1_crop_2.png){width=75%}
 
 We can get from Point A to Point B, but it isn't going to be a very comfortable ride.
 
@@ -197,7 +197,7 @@ In the car analogy, the packages are the other things that enhance the car's fun
 * the body, windshield, headlights, A/C, sound system, etc
 
 
-![_VW Beetle transparent_](static/img/vwlooking.jpg)
+![_VW Beetle transparent_](static/img/vwlooking.jpg){width=75%}
 
 The ride will be much more comfortable, and we might even be able to go places that base R can't venture.
 
@@ -234,21 +234,21 @@ Note:
 
 In our car analogy, RStudio is the dashboard and controls
 
-![_VW Beetle dashboard, c.1960_](static/img/VW_dashboard.jpg)
+![_VW Beetle dashboard, c.1960_](static/img/VW_dashboard.jpg){width=75%}
 
 That's rather old-fashioned and rudimentary. In reality, RStudio is very modern, customizable, and has an _enormous_ number of features. So it's more like this:
 
-![_VW Beetle dashboard, c.2018_](static/img/VW_dashboard_2019.jpg)
+![_VW Beetle dashboard, c.2018_](static/img/VW_dashboard_2019.jpg){width=75%}
 
 
 And because it's customizable, you can opt for different colour schemes, including dark mode!
 
-![_VW Beetle dashboard, black, c.2018_](static/img/2018_volkswagen_beetle_dashboard.jpg)
+![_VW Beetle dashboard, black, c.2018_](static/img/2018_volkswagen_beetle_dashboard.jpg){width=75%}
 
 
 Who's ready for a road trip?!
 
-![_VW Beetle with family_](static/img/VW_ready_to_go.png)
+![_VW Beetle with family_](static/img/VW_ready_to_go.png){width=75%}
 
 ### Languages  {#why-code-languages}
 

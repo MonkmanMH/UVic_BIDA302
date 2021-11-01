@@ -12,11 +12,19 @@ link-citations: yes
 links-as-notes: true
 colorlinks: true
 cover-image: "BIDA302_hex_400_sq.png"
+url: "https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/"
 github-repo: "MonkmanMH/UVic_BIDA302"
 description: "The course book for BIDA302"
-fig_width: 75%
-fig_height: 75%
 ---
+
+
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -30,20 +38,17 @@ library(gapminder)
 ```
 
 
-<!-- 
-This file by Martin Monkman 
-is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
--->
-
+# Data Analytics Coding Fundamentals (BIDA302) {-}
 
 <img src="BIDA302_hex_400_sq.png" width="350" height="350" alt="BIDA302 hex" />
 
-_Draft_
+_Latest update: `r Sys.Date()`_
+
 
 This book is based on the lessons for BIDA302, "Data Analytics Coding Fundamentals", offered at the University of Victoria's [Continuing Studies Department](https://continuingstudies.uvic.ca/).
 
-# Course Outline {-}
+
+## Course Outline {-}
 
 ### Course description {-}
 
@@ -190,11 +195,11 @@ One more thing: each person who takes this course comes from a different backgro
 
 Here's some wisdom from Dr. Nicki Washington:
 
-![Run your race](static/img/Dr_Nicki_Washington_run_your_race.JPG)
+![_Run your race_](static/img/Dr_Nicki_Washington_run_your_race.png)
 
-If you stop along the way to check your progress, don't look at where others are on their race—look at how you've moved forward. Compare yourself on the course scatter plot.  
+If you stop along the way to check your progress, don't look at where others are on their race—look at how you've moved forward. Wherever you are on the course scatter plot now, you are going to move up on the "data analytics" axis, and right on the "coding fundamentals" axis.  
 
-![data analytics coding fundamentals](static/img/dacf_1.png)
+![_data analytics coding fundamentals_](static/img/dacf_1.png)
 
 
 ### On learning a new language {-}
@@ -287,14 +292,14 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 
 * My coding started writing [FORTRAN](https://en.wikipedia.org/wiki/Fortran) on [punch cards](https://en.wikipedia.org/wiki/Punched_card)
 
-![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)]
+![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)
 
 
 So wait...I have some substantive expertise, combined with some statistics knowledge, and I have been using my coding skills to be more efficient and effective with my work...
 
 I am an accidental data scientist!
 
-![I am not trained for this...and yet](static/img/I-am-not-trained-for-this_laptop_600.jpg)]
+![I am not trained for this...and yet](static/img/I-am-not-trained-for-this_laptop_600.jpg)
 
 
 
