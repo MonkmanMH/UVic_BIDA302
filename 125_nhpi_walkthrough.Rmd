@@ -225,6 +225,25 @@ The `clean_names()` function changes the names of the three variables that are s
 
 
 
+
+### filtering: BC & Canada data
+
+For our chart, we don't need all the geographic regions—just B.C. and Canada. And for our purposes, we need the total value and want the chart to start in 2007, not 1981.
+
+To do that, we use two functions from the {dplyr} package: `filter` (to pick the rows we want, based on the values of interest) and `select` (to pick the columns).
+
+```{r filter}
+startdate <- as.Date("2007-01-01")
+# filter to have BC and Canada
+thedata_BC_Can <- thedata %>%
+  filter(ref_date >= startdate) %>%
+  filter(geo %in% c("British Columbia", "Canada"), 
+         new_housing_price_indexes == "Total (house and land)") %>%
+  select(ref_date, geo, new_housing_price_indexes, value)
+head(thedata_BC_Can)
+```
+
+
 ---
 
 
