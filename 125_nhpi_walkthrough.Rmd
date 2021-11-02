@@ -31,7 +31,7 @@ This set of scripts creates summary tables and graphs plotting the New Housing P
 
 Our end point will be this chart:
 
-![New Housing Price Index, B.C. and Canada](static/img/NHPI_plot.png){width=75%}
+![New Housing Price Index, B.C. and Canada](static/img/NHPI_plot.png){width=100%}
 
 This plot was created in early 2020, when the most recent data available was for the month of November 2019.
 
@@ -135,20 +135,70 @@ thedata
 
 ```
 
-Now we can review other aspects of the data object:
-
-```{r}
-
-ls.str(thedata)
-
-```
-
 
 ***
 
 ## TIDY
 
-### cleaning & understanding
+### understanding the data
+
+
+It's a good practice before starting any data analysis to understand the structure of your data, by interrogating the variables and the values in those variables.
+
+{cansim} (like many other data-focused packages) provides some utility functions that let us quickly understand the data frame. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
+
+```{r interogate1}
+# from the {cansim} package
+get_cansim_table_overview(table_id)
+
+```
+
+
+We can also create some summaries with the names of the variables. One way to do this is with the `ls.str()` function:
+
+
+```{r}
+# list the variables in the data
+ls.str(thedata)
+
+```
+
+
+
+We can explore the individual variables as well—let's generate a small table counting the instances of the `GEO` and `GeoUID` variables:
+
+```{r interogate2}
+
+thedata %>%
+  group_by(GEO, GeoUID) %>%
+  tally()
+```
+
+
+
+The `max()` function returns the biggest value in a series. Below, it is used to return the largest value in the "REF_DATE" variable; in other words, the most recent month that has been published. (Remember that when the chart at the beginning of this chapter was created, )
+
+```{r}
+
+max(thedata$REF_DATE)
+
+```
+
+
+Based on this interrogation, we can see that the chart is made up of the following variables:
+
+* "REF_DATE", starting in January 2007
+
+* "GEO", with British Columbia & Canada 
+
+* "New housing price indexes", but total (not house and land separately)
+
+
+
+
+
+
+### cleaning
 
 Cleaning up our data table before we start working is often the next step. In this case, we use the [{janitor}](http://sfirke.github.io/janitor/) package to clean the variable names. 
 
@@ -163,81 +213,15 @@ thedata <- thedata %>%
 head(thedata)
 ```
 
+**Important Note** 
 
-It's a good practice before starting any data analysis to understand the structure of your data, by interrogating the variables and the values in those variables.
+The `clean_names()` function changes the names of the three variables that are shown in the chart:
 
-{cansim} (like many other data-focused packages) provides some utility functions that let us quickly understand the data frame. Here we use the function `get_cansim_table_overview` to generate an overview of the table we downloaded.
-
-```{r interogate1}
-# from the {cansim} package
-get_cansim_table_overview(table_id)
-
-```
-
-
-We can explore the individual variables as well—let's generate a small table showing all of the instances of the `geo` and `geo_uid` variables:
-
-```{r interogate2}
-
-thedata %>%
-  group_by(geo, geo_uid) %>%
-  tally()
-```
-
-
-Based on this interrogation, we can see that the chart is made up of the following variables:
-
-* "ref_date", starting in January 2007
-
-* "geo", with British Columbia & Canada 
-
-* "new_housing_price_indexes", but total (not house and land separately)
-
-### data manipulation
-
-In this next step, we will:
-
-* select our variables of interest to make the dataframe more manageable (we don't need all 18 in the original data frame)
-
-* add month-over-month and year-over-year values
-
-
-```{r manipulation}
-
-thedata <- thedata %>%
-  select(ref_date, geo, new_housing_price_indexes,
-         value) %>%
-  # add mom and yoy - group first, then run functions
-  group_by(geo, new_housing_price_indexes) %>%
-  get_mom_stats() %>%
-  get_yoy_stats %>%
-  ungroup() %>%
-  # sort
-  arrange(geo, ref_date)
-
-head(thedata)
-
-```
-
-
-**filtering: BC & Canada data**
-
-For our chart, we don't need all the geographic regions—just B.C. and Canada. And for our purposes, we need the total value and want the chart to start in 2007, not 1981.
-
-To do that, we use two functions from the {dplyr} package: `filter` (to pick the rows we want, based on the values of interest) and `select` (to pick the columns).
-
-```{r filter}
-startdate <- as.Date("2007-01-01")
-
-# filter to have BC and Canada
-thedata_BC_Can <- thedata %>%
-  filter(ref_date >= startdate) %>%
-  filter(geo %in% c("British Columbia", "Canada"), 
-         new_housing_price_indexes == "Total (house and land)") %>%
-  select(ref_date, geo, new_housing_price_indexes, value)
-
-head(thedata_BC_Can)
-```
+| Variable: Old Name | New Name |
+| --- | --- |
+| REF_DATE | ref_date |
+| GEO | geo |
+| \`New housing price indexes\` | new_housing_price_indexes |
 
 
 
