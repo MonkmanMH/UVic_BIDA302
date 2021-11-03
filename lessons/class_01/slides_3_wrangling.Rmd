@@ -69,14 +69,14 @@ The [{dplyr} site](https://dplyr.tidyverse.org/index.html)
 |function |action |
 | :--- | ---: |
 | `filter()`    | *keep rows*|
-| `mutate()`    | *create a new variable*|
-| `group_by()`  | *declare subsets in data*|
-| `select()`    | *keep variables (or drop them -var)*|
+| `select()`    | *keep variables (or drop them `-var`)*|
 | `rename()`    | *renaming variables*|
+| `mutate()`    | *create a new variable*|
+| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
+| `group_by()`  | *declare subsets in data*|
 | `summarize()` | *summarize the data, by groups if they have been declared*|
 | `tally()`     | *counting (by groups if group_by() applied)*|
 | `distinct()`  | *returns only rows that are unique*| 
-| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
 
 
 ???
