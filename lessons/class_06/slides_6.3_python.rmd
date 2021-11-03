@@ -42,7 +42,7 @@ style_duo_accent(
 
 # The Data Science Process
 
-![the data science process](E:/github/UVic_BIDA302/static/img/data-science.png)
+![the data science process](../../BIDA302_coursebook/static/img/data-science.png)
 
 - Wickham and Grolemund, _R4DS_
 
@@ -51,7 +51,7 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 
 ---
 
-![Python](E:/github/UVic_BIDA302/static/img/python-logo-master-v3-TM-flattened.png)
+![Python](../../BIDA302_coursebook/static/img/python-logo-master-v3-TM-flattened.png)
 
 [python.org](https://www.python.org/)
 
@@ -61,7 +61,7 @@ We have spent 5.5 weeks talking about this process with **R** ... but it's not t
 Base R is like the engine and frame of a car & basic controls like the pedals and steering wheel
 
 
-![VW Beetle frame](E:/github/UVic_BIDA302/static/img/VW_ad_1_crop.png)
+![VW Beetle frame](../../BIDA302_coursebook/static/img/VW_ad_1_crop.png)
 
 ---
 
@@ -69,7 +69,7 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 * the body, windshield, headlights, A/C, sound system, etc
 
-![VW Beetle transparent](E:/github/UVic_BIDA302/static/img/vwlooking.jpg)
+![VW Beetle transparent](../../BIDA302_coursebook/static/img/vwlooking.jpg)
 
 
 
@@ -77,7 +77,7 @@ Base R is like the engine and frame of a car & basic controls like the pedals an
 
 ...and RStudio is the dashboard and controls
 
-![VW Beetle dashboard](E:/github/UVic_BIDA302/static/img/VW_dashboard.jpg)
+![VW Beetle dashboard](../../BIDA302_coursebook/static/img/VW_dashboard.jpg)
 
 
 ---
@@ -86,7 +86,7 @@ Python is like an engine.
 
 It can power a car...or a boat, or a water pump, or ...
 
-![VW Beetle engine](E:/github/UVic_BIDA302/static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
+![VW Beetle engine](../../BIDA302_coursebook/static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
 
 
 ---
@@ -102,7 +102,7 @@ Python is a general-purpose programming language.
 
 ---
 
-![reticulate](E:/github/UVic_BIDA302/static/img/reticulate-735.jpg)
+![reticulate](../../BIDA302_coursebook/rtreticulate-735.jpg/reticulate-735.jpg)
 
 ---
 

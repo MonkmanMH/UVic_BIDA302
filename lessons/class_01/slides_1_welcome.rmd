@@ -2,7 +2,7 @@
 title: "Welcome! BIDA 302"
 subtitle: "Data Analytics Coding Fundamentals"
 author: "Martin Monkman"
-#date: "2020/10/24"
+#date: "2021/11/03"
 output:
   xaringan::moon_reader:
 #    css: ["default", "css_files/eigengrau.css", "css_files/eigengrau-fonts.css"]    
@@ -19,6 +19,8 @@ output:
 This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
+
+Latest update: 2021-11-03
 -->
 
 
@@ -118,13 +120,15 @@ Sunday, 9:00 am - 12:00 noon
 
 * time in class to get started
 
-* 4 of them, each worth 12% of the final grade
+* 48% of the final grade
+
+* 4 assignments, each worth 12% of the final grade
 
 * weeks 1, 2, 3 and 4 
 
 * due the following Friday at 23:59 (one minute before midnight)
 
-  - upload to Moodle
+  - upload to Brightspace
 
 ---
 
@@ -137,9 +141,11 @@ Sunday, 9:00 am - 12:00 noon
 ---
 
 
-# The course moodle
+# The course Brightspace
 
-link: [continuingstudies.uvic.ca/](https://continuingstudies.uvic.ca/), then login with NetLink 
+link: [BIDA 302 | 202109 D01](https://bright.uvic.ca/d2l/home/165360)
+
+* login with NetLink ID
 
 * course outline
 
