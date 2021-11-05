@@ -60,9 +60,9 @@ Go to [rstudio.cloud](https://rstudio.cloud/) and create an account
 
 # The BIDA302 rstudio.cloud space
 
-Join [the BIDA302 space](https://rstudio.cloud/spaces/126174/projects):
+Join [the BIDA302 space](https://rstudio.cloud/spaces/189167/projects):
 
-https://rstudio.cloud/spaces/126174/projects 
+https://rstudio.cloud/spaces/189167/join?access_code=Ht9cqHMMiV5XbqdGtFkE6PBFI5bml0zHff0wsf9a 
 
 This link will only work until the end of today's class--after that, an invitation will be required.
 

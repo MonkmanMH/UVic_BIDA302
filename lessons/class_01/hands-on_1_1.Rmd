@@ -1,6 +1,6 @@
 ---
 title: "Transform Data 1: manipulate cases"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the original work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
@@ -137,10 +137,8 @@ Return records for all continents except Europe
 
 
 
-## Your Turn 2: multiple criteria
 
-
-### Introducing the pipe operator ` %>% `
+## Introducing the pipe operator ` %>% `
 
 (see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
 
@@ -160,7 +158,9 @@ If we want to do anything with the output from the first statement, we have to a
 
 As we get to increasingly complex statements, the power of this will become more evident.
 
-***
+
+## Your Turn 2: multiple criteria
+
 
 Use Boolean operators to alter the code below to return only the rows that contain:
 
