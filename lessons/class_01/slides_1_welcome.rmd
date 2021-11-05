@@ -494,7 +494,7 @@ Packages extend the functionality of R
 
 ## The Tidyverse
 
-![tidyverse hex](../../static/img/tidyverse_400.png)
+![tidyverse hex](../../static/img_tidyverse/tidyverse_400.png)
 
 ???
 
@@ -514,7 +514,7 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 ---
 
-![RStudio logo](../../static/img/RStudio_400.png)
+![RStudio logo](../../static/img_tidyverse/RStudio_400.png)
 
 
 ---

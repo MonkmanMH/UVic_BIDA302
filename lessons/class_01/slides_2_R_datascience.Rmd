@@ -52,13 +52,23 @@ style_duo_accent(
 
 # RStudio cloud
 
+Step 1: go to [rstudio.cloud](https://rstudio.cloud/) and select "Sign Up"
 
-Go to [rstudio.cloud](https://rstudio.cloud/) and create an account
+Step 2: select "Cloud Free" (your usage for this course is covered by UVic) and "Sign Up"
+
+Step 3: to create your account, chose one of the three options:
+
+* option 1 - create an account unique to rstudio.cloud. Use any email account you prefer.
+
+* options 2 & 3 - use your existing Google or GitHub account to authenticate your rstudio.cloud account
+
 
 
 ---
 
 # The BIDA302 rstudio.cloud space
+
+Step 4: 
 
 Join [the BIDA302 space](https://rstudio.cloud/spaces/189167/projects):
 
