@@ -30,23 +30,6 @@ At the end of this lesson, learners will be able to:
 
 3. Use the RStudio IDE.
 
-***
-
-## Setting up rstudio.cloud
-
-Step 1: go to rstudio.cloud and select "Sign Up"
-
-Step 2: select "Cloud Free" (your usage for this course is covered by UVic) and "Sign Up"
-
-Step 3: to create your account, chose one of the three options:
-
-* option 1 - create an account unique to rstudio.cloud. Use any email account you prefer.
-
-* options 2 & 3 - use your existing Google or GitHub account to authenticate your rstudio.cloud account
-
-Step 4: once you've created your own account, go to the BIDA302 rstudio.cloud space at this link: https://rstudio.cloud/spaces/189167/join?access_code=Ht9cqHMMiV5XbqdGtFkE6PBFI5bml0zHff0wsf9a
-
-
 
 
 ***
@@ -67,6 +50,31 @@ Step 4: once you've created your own account, go to the BIDA302 rstudio.cloud sp
 |4a          | 10:45 to 11:30   | Data wrangling (part 2) | &#8212; |
 |4b <br> 4c  | 11:30 to 12:00   | Assignment 1 <br> Wrap up | &#8212; |
 
+***
+
+## Setting up rstudio.cloud
+
+Step 1: go to rstudio.cloud and select "Sign Up"
+
+Step 2: select "Cloud Free" (your usage for this course is covered by UVic) and "Sign Up"
+
+Step 3: to create your account, chose one of the three options:
+
+* option 1 - create an account unique to rstudio.cloud. Use any email account you prefer.
+
+* options 2 & 3 - use your existing Google or GitHub account to authenticate your rstudio.cloud account
+
+Step 4: once you've created your own account, go to the BIDA302 rstudio.cloud space at this link: https://rstudio.cloud/spaces/189167/join?access_code=Ht9cqHMMiV5XbqdGtFkE6PBFI5bml0zHff0wsf9a
+
+
+
+***
+
+## Tutorials for further practice
+
+1. [Introduction to R](https://monkmanmh.shinyapps.io/BIDA302_1-1_intro/)
+
+2. [Transform Data](https://monkmanmh.shinyapps.io/BIDA302_1-2_transform_data/)
 
 
 -30-
