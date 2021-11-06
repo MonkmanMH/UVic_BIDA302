@@ -2,6 +2,7 @@
 title: "R in data analysis - an example"
 author: "Martin Monkman"
 subtitle: New Housing Price Index
+date: 'update: `r Sys.Date()`'
 output:
   html_document:
     toc: true
@@ -15,7 +16,7 @@ output:
 This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
 
 
-![_The data science process_](static/img/data-science.png)
+![_The data science process_](data-science.png)
 
 ***
 
@@ -74,9 +75,9 @@ get_yoy_stats <- function(df) {
 We then create a chart theme that will also be called later. Like functions, this streamlines our code and helps reduce the chance of error. For this chart theme, more than 10 lines of code gets reduced to a simple, memorable name.
 
 
-```{r bcstats_chart_theme}
+```{r bida_chart_theme}
 
-bcstats_chart_theme <-
+bida_chart_theme <-
   theme_bw() +
   theme(
     panel.border = element_rect(colour="white"),
@@ -284,8 +285,38 @@ head(NHPI_table3)
 ```
 
 
+This is also a good example of how R is continuously evolving. When this course was first taught in autumn 2019, this is where the section on adding the annual average column ended.
 
-using `dplyr::rowwise()`
+But that ongoing evolution has given us a new {dplyr} function, `rowwise()`. This function allow us to calculate the average of the specified rows as above. What is required is telling R to treat the functions `rowwise()`, and then specify what we want using the same sort of functions and syntax that would be required for a column:
+
+
+```{r table4a}
+
+NHPI_table4 <- NHPI_table %>%
+  rowwise() %>% 
+  mutate(annual_avg = mean(c(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec), na.rm = TRUE))
+
+head(NHPI_table4)
+
+```
+
+In the revised example below, the range of the month variables can be specified using the `c_across()` function.
+
+```{r table4b}
+
+NHPI_table4 <- NHPI_table %>%
+  rowwise() %>% 
+#  use `c_across()` to specify the range of columns
+  mutate(annual_avg = mean(c_across(Jan:Dec), na.rm = TRUE))
+
+head(NHPI_table4)
+
+```
+
+
+For more information about row-wise operations with {dplyr}, see the following resources:
+
+* https://dplyr.tidyverse.org/articles/rowwise.html
 
 * https://community.rstudio.com/t/dplyr-alternatives-to-rowwise/8071/45
 
@@ -296,18 +327,6 @@ using `dplyr::rowwise()`
   - https://github.com/jennybc/row-oriented-workflows/blob/master/ex09_row-summaries.md
 
 * https://github.com/tidyverse/dplyr/issues/4767 
-
-
-
-```{r table4}
-
-NHPI_table4 <- NHPI_table %>%
-  rowwise() %>% 
-  mutate(annual_avg = mean(c(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec), na.rm = TRUE))
-
-head(NHPI_table4)
-
-```
 
 
 ***
@@ -423,21 +442,21 @@ And with even more formatting it's starting to look like something we could publ
 ```{r}
 dataplot2 <- dataplot +
   scale_x_date(date_breaks = "2 years", labels = year) +
-  scale_y_continuous(labels = comma, limits = c(80, 120)) +
+  scale_y_continuous(labels = comma, limits = c(80, 125)) +
   scale_colour_manual(name=NULL,
                       breaks=c("Canada", "British Columbia"),
                       labels=c("Canada", "British Columbia"), 
                       values=c("#325A80", "#CCB550")) +
-  bcstats_chart_theme
+  bida_chart_theme
 
 ```
 
 
-Just a reminder: all of the code below is what's in the `bcstats_chart_theme`--the last line in the code chunk above. 
+Just a reminder: all of the code below is what's in the `bida_chart_theme`--the last line in the code chunk above. 
 
 If we were to make more than one copy of the plot, we would have to repeat this every time. And if we made more than one copy of the plot, we would have to make the same change in every place. 
 
-By assigning all of this code to the object `bcstats_chart_theme`, we can make a change in one place, and it will carry through all of the times we need it.
+By assigning all of this code to the object `bida_chart_theme`, we can make a change in one place, and it will carry through all of the times we need it.
 
 
 ```{r}
@@ -515,12 +534,12 @@ NHPI_Vancouver_plot <-
   geom_line(size=1.5) +
   #
   scale_x_date(date_breaks = "2 years", labels = year) +
-  scale_y_continuous(labels = comma, limits = c(80, 120)) +
+  scale_y_continuous(labels = comma, limits = c(80, 125)) +
   scale_colour_manual(name=NULL,
                       breaks=c("House only", "Land only"),
                       labels=c("House only", "Land only"), 
                       values=c("#325A80", "#CCB550")) +
-  bcstats_chart_theme +
+  bida_chart_theme +
   # set chart titles and labels
   labs(title = NHPI_title,
        subtitle = NHPI_subtitle,
