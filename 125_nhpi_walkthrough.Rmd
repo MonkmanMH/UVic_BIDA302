@@ -123,15 +123,14 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 **Note:** "The index base period, for which the New Housing Price Index (NHPI) equals 100, is December 2016." 
 
 
-This version (updated 2018-12-13) uses the `cansim` package to pull the data from CANSIM.
+This version (updated `r Sys.Date()`) uses the `cansim` package to pull the data from CANSIM, and assign it to an object named "thedata".
+
 
 ```{r data_import}
 
 table_id = "18-10-0205-01"
 
 thedata <- get_cansim(table_id)
-
-thedata
 
 ```
 
@@ -163,8 +162,6 @@ ls.str(thedata)
 
 ```
 
-
-
 We can explore the individual variables as well—let's generate a small table counting the instances of the `GEO` and `GeoUID` variables:
 
 ```{r interogate2}
@@ -176,11 +173,11 @@ thedata %>%
 
 
 
-The `max()` function returns the biggest value in a series. Below, it is used to return the largest value in the "REF_DATE" variable; in other words, the most recent month that has been published. (Remember that when the chart at the beginning of this chapter was created, )
+The `tail()` function shows the last 6 rows of a data table.
 
 ```{r}
 
-max(thedata$REF_DATE)
+tail(thedata)
 
 ```
 
@@ -307,7 +304,39 @@ head(NHPI_table3)
 
 
 
-using `dplyr::rowwise()`
+
+This is also a good example of how R is continuously evolving. When this course was first taught in autumn 2019, this is where the section on adding the annual average column ended.
+
+But that ongoing evolution has given us a new {dplyr} function, `rowwise()`. This function allow us to calculate the average of the specified rows as above. What is required is telling R to treat the functions `rowwise()`, and then specify what we want using the same sort of functions and syntax that would be required for a column:
+
+
+```{r table4a}
+
+NHPI_table4 <- NHPI_table %>%
+  rowwise() %>% 
+  mutate(annual_avg = mean(c(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec), na.rm = TRUE))
+
+head(NHPI_table4)
+
+```
+
+In the revised example below, the range of the month variables can be specified using the `c_across()` function.
+
+```{r table4b}
+
+NHPI_table4 <- NHPI_table %>%
+  rowwise() %>% 
+#  use `c_across()` to specify the range of columns
+  mutate(annual_avg = mean(c_across(Jan:Dec), na.rm = TRUE))
+
+head(NHPI_table4)
+
+```
+
+
+For more information about row-wise operations with {dplyr}, see the following resources:
+
+* https://dplyr.tidyverse.org/articles/rowwise.html
 
 * https://community.rstudio.com/t/dplyr-alternatives-to-rowwise/8071/45
 
@@ -318,19 +347,6 @@ using `dplyr::rowwise()`
   - https://github.com/jennybc/row-oriented-workflows/blob/master/ex09_row-summaries.md
 
 * https://github.com/tidyverse/dplyr/issues/4767 
-
-
-
-```{r table4}
-
-NHPI_table4 <- NHPI_table %>%
-  rowwise() %>% 
-  mutate(annual_avg = mean(c(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec), na.rm = TRUE)) %>% 
-  mutate(annual_avg = round(annual_avg, 1))
-
-head(NHPI_table4)
-
-```
 
 
 ***
@@ -463,7 +479,7 @@ And with even more formatting it's starting to look like something we could publ
 ```{r}
 dataplot2 <- dataplot +
   scale_x_date(date_breaks = "2 years", labels = year) +
-  scale_y_continuous(labels = comma, limits = c(80, 120)) +
+  scale_y_continuous(labels = comma, limits = c(80, 125)) +
   scale_colour_manual(name=NULL,
                       breaks=c("Canada", "British Columbia"),
                       labels=c("Canada", "British Columbia"), 
@@ -555,7 +571,7 @@ NHPI_Vancouver_plot <-
   geom_line(size=1.5) +
   #
   scale_x_date(date_breaks = "2 years", labels = year) +
-  scale_y_continuous(labels = comma, limits = c(80, 120)) +
+  scale_y_continuous(labels = comma, limits = c(80, 125)) +
   scale_colour_manual(name=NULL,
                       breaks=c("House only", "Land only"),
                       labels=c("House only", "Land only"), 

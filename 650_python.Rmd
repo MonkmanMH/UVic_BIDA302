@@ -92,7 +92,7 @@ library(reticulate)
 
 The {reticulate} function `py_config()` can be used to see what version of Python is running, and other configuration details
 
-```{r py_config}
+```{r, py_config_chunk}
 py_config()
 
 ```
