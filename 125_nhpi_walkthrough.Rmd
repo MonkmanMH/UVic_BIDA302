@@ -1,9 +1,6 @@
-<!-- 
-This file by Martin Monkman 
+<!-- This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
-
--->
+https://creativecommons.org/licenses/by/4.0/  -->
 
 ```{r echo = FALSE}
 library(knitr)
@@ -128,7 +125,7 @@ This version (updated `r Sys.Date()`) uses the `cansim` package to pull the data
 
 ```{r data_import}
 
-table_id = "18-10-0205-01"
+table_id <- "18-10-0205-01"
 
 thedata <- get_cansim(table_id)
 
