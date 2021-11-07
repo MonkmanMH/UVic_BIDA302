@@ -1,9 +1,6 @@
-<!-- 
-This file by Martin Monkman 
+<!-- This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
-
--->
+https://creativecommons.org/licenses/by/4.0/  -->
 
 ```{r echo = FALSE}
 library(knitr)
@@ -14,6 +11,7 @@ library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
 library(readxl)    # to read Excel files
 
 ```
+
 
 # Assignment 3 - exploratory data analysis {#assignment3}
 

@@ -1,23 +1,19 @@
-# (PART) Week 5 {-} 
-
-
-
 <!-- 
 This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
-
-Some content is drawn from 
-
-A. _R for Data Science_ by Hadley Wickham and Garrett Grolemund
--- (https://r4ds.had.co.nz/) -- which is licensed under the Creative Commons
-Attribution-NonCommercial-NoDerivs 3.0 (CC BY-NC-ND 3.0 US) 
-
-
 -->
+
+# (PART) Week 5 {-} 
 
 
 # Dates and times {#date-time}
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
 
 
 ```{r echo = FALSE}

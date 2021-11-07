@@ -4,16 +4,14 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 -->
 
-
-# Assignment: Moneyball {#moneyball}
-
-
 ```{r echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
-
 ```
+
+# Assignment: Moneyball {#moneyball}
+
 
 
 The book [_Moneyball: The Art of Winning an Unfair Game_](https://en.wikipedia.org/wiki/Moneyball) (and the movie of the same name) tells the story of the 2002 Oakland Athletics baseball team. That year, the team won 103 of its 162 games (a win-loss percentage^[Yes, I know this isn't a percentage but that's the term used!] of 0.636). Only the New York Yankees had a better record that Major League Baseball (MLB) season; the Yankees also won 103 but played one fewer due to a rain-out, so finished with a win-loss percentage of 0.640. 

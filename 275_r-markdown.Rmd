@@ -1,10 +1,7 @@
 
-<!-- 
-This file by Martin Monkman 
+<!-- This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
-
--->
+https://creativecommons.org/licenses/by/4.0/ -->
 
 
 # R Markdown {#r-markdown}
