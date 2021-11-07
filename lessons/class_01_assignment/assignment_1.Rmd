@@ -1,8 +1,11 @@
 ---
 title: 'BIDA302 - assignment #1'
-subtitle: 'solutions'
 output: html_document
 ---
+
+<!-- This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/ -->
 
 
 Package load:
@@ -19,13 +22,13 @@ library(nycflights13)
 
 ## Introduction
 
-> For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
+For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
 
-> In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
+In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
 
-> Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
+Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
 
-> Once you have submitted your assignment, I will be hitting the "Knit" button—please ensure that the output renders correctly.
+Once you have submitted your assignment, I will be hitting the "Knit" button—please ensure that the output renders correctly.
 
 
 
@@ -33,12 +36,12 @@ library(nycflights13)
 ## Questions
 
 
-### 1. Assign a variable
+### 1. Assign a variable {#q1-1}
 > (1 mark)
 
 > Why does this code chunk not work?
 
-```{r}
+```
 stringlenght <- 10
 
 stringlength
@@ -49,8 +52,8 @@ stringlength
 
 
 
-### 2. Reducing the size of your data set
-> (1 mark)
+### 2. Reducing the size of your data set {#q1-2}
+> (3 marks)
 
 > Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
 >
@@ -64,22 +67,12 @@ mpg
 ```
 
 
-```{r}
-
-audi <- filter(mpg$manufacturer == "audi")
-select(audi$model)
-
-mpg %>% 
-  filter(manufacturer == "audi") %>% 
-  select(model)
-
-```
 
 
 
 ***
 
-### 3. Selecting variables
+### 3. Selecting variables {#q1-3}
 > (1 mark)
 
 > What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
@@ -94,26 +87,11 @@ library(gapminder)
 
 
 
-***
-
-### 4. Religion and income data (USA)
-> (2 marks)
-
-> The table `relig_income` is in {tidyr}.
->
->a. Load this table, and take a look at it. What tidy principle(s) does this table violate? (See the ["Tidy Data" chapter](https://r4ds.had.co.nz/tidy-data.html) in _R4DS_., and ["Tidy Data for Efficiency, Reproducibility, and Collaboration"](https://www.openscapes.org/blog/2020/10/12/tidy-data/))
->
-
->
->b. Using the functions in {tidyr}, arrange this table in such a way that it is no longer messy.
-
-
-
 
 ***
 
 
-### 5. R Markdown
+### 4. R Markdown {#q1-5}
 > (1 mark)
 
 > The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
@@ -133,8 +111,8 @@ ggplot(data = mpg) +
 
 ***
 
-### 6. Flight data
-> (4 marks)
+### 5. Flight data {#q1-6}
+> (6 marks)
 
 > For Q3a-3d, use the data `nycflights13::flights`
 >
@@ -150,57 +128,6 @@ ggplot(data = mpg) +
 
 >d. Departed in summer (July, August, and September)
 
-
-
-***
-
-### 7. Car mileage - pivot table
-> (2 marks)
-
-> In Lesson 1, we used the {mpg} package to calculate the average displacement by class of car:
-
-```{r}
-mpg %>%                                
-  group_by(class) %>%                   
-  summarise(displ_mean = mean(displ)) 
-
-```
-> We then created a pivot (crosstab) table with class by number of cylinders, and then unpivoted that table:
-
-```{r}
-# summary table - class by cylinder
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(displ_mean = mean(displ)) %>%
-  arrange(desc(displ_mean))
-
-# pivot table (wide)
-
-class_by_cyl_pivot <- class_by_cyl %>%
-  pivot_wider(names_from = cyl, values_from = displ_mean)
-
-class_by_cyl_pivot
-
-# and back to longer...
-
-displ_class_by_cyl <- class_by_cyl_pivot %>%
-  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
-
-displ_class_by_cyl
-
-```
-
-> a. What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `displ_class_by_cyl`?
-
-```{r}
-
-displ_class_by_cyl %>%
-  group_by(class) %>%
-  summarise(mean = mean(displ_mean))
-
-```
-
-> b. Solve this problem so that the table looks like the first one in this question. Use any and all of the reference materials at your disposal!
 
 
 
