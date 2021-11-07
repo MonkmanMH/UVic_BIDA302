@@ -2,15 +2,13 @@
 
 
 
-<!-- 
-This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/  
+<!-- This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/  
 
 Some material is adapted from the Data Carpentry "R for Social Science" lessons, to which is applied the following license: 
 "All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is
 made available under the Creative Commons Attribution license." 
 The associated link specifies the CC BY 4.0 license.
-https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md
--->
+https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 
 
