@@ -317,8 +317,27 @@ gapminder %>%
   group_by(country) %>%
   mutate(prev_lifeExp = lag(lifeExp),
          jump = lifeExp - prev_lifeExp) %>%
+  arrange(desc(jump), continent)
+
+# Another solution
+gapminder %>%
+  group_by(country) %>%
+  mutate(prev_lifeExp = lag(lifeExp),
+         jump = lifeExp - prev_lifeExp) %>%
+  ungroup() %>% 
+  group_by(continent) %>% 
+  slice(which.max(jump)) %>% 
   arrange(desc(jump))
 
+# Another solution
+gapminder %>%
+  group_by(country) %>%
+  mutate(prev_lifeExp = lag(lifeExp),
+         jump = lifeExp - prev_lifeExp) %>%
+  ungroup() %>% 
+  group_by(continent) %>% 
+  slice_max(jump) %>% 
+  arrange(desc(jump))
 
 ```
 
