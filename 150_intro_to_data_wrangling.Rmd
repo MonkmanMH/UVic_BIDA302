@@ -545,27 +545,11 @@ Find the median life expectancy by continent in 2007.
 gapminder %>%
   filter(year == 2007) %>% 
   group_by(continent) %>%
-  mutate(lifeExp_mean = mean(lifeExp))
+  summarize(lifeExp_mean = mean(lifeExp))
 
 ```
 
 
-We can also compare the life expectancy in each country to the continental average by ungrouping our table. The code below starts with the same pipe as above, then adds the `ungroup()` function and another `mutate()`:
-
-
-```{r}
-# answer
-
-gapminder %>%
-  filter(year == 2007) %>% 
-  group_by(continent) %>%
-  mutate(lifeExp_mean = mean(lifeExp)) %>%
-  # add ungroup
-  ungroup() %>%
-  # then subtract the group mean from the individual value
-  mutate(lifeExp_diff = lifeExp - lifeExp_mean)
-
-```
 
 #### Grouping with multiple variables
 
@@ -692,6 +676,8 @@ mpg %>% count()
 
 There are other counting functions within {dplyr}, see the reference page https://dplyr.tidyverse.org/reference/count.html for more details.
 
+
+We will return to data wrangling [later in the course](#wrangling2), and explore more complex calculations.
 
 
 ## Take aways
