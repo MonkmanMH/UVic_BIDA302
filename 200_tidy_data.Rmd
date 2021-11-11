@@ -107,7 +107,7 @@ mpg %>%
 
 
 
-Now do the same with vehicle class and number of cylinders:
+Now if we do the same with vehicle class and number of cylinders, we end up with a much longer table. Since we are going to restructure this table, it will be assigned to a new object `class_by_cyl`.
 
 ```{r}
 
@@ -120,10 +120,14 @@ class_by_cyl
 
 ```
 
+While this long tabular structure is useful for coding, it's harder for you and I to compare across both the "class" and "cyl" dimensions. This is a situation where a wide structure is desirable.
+
 
 ### `pivot_wider()`
 
-Let's take that table and arrange it so that the number of cylinders is the column:
+Let's take the `class_by_cyl` table and arrange it so that there is a separate variable for each number of cylinders. Instead of a single "cyl" column, there will be multiple columns, one for each category of cylinder count.
+
+You will note that this is **NOT** a tidy format! But is it one that is human-readable, and is often how data tables are published in reports.
 
 
 ```{r}
@@ -138,10 +142,30 @@ class_by_cyl_pivot
 
 ```
 
+Note that the table is sorted by the order in which the variables are encountered in the data; "class" is not alphabetical, and the cylinder numbers are also not ordered. Below are two solutions that result in the table variables being sorted.
+
+```{r}
+
+# sort with `arrange()`
+class_by_cyl %>%
+  # sort before pivot
+  arrange(cyl, class) %>% 
+  pivot_wider(names_from = cyl, values_from = displ_mean)
+
+# sort with `names_sort =` argument in `pivot_wider()` function
+class_by_cyl %>%
+  arrange(cyl, class) %>% 
+  # sort within the `pivot_wider()`
+  pivot_wider(names_from = cyl, values_from = displ_mean,
+              names_sort = TRUE)
+
+
+```
+
 
 ### `pivot_longer()`
 
-Now, unpivot it back to the original structure:
+Now, unpivot it back to the original structure. Note that the names of the new variables "cyl" and "displ_mean" need to be inside quotation marks!
 
 ```{r}
 # and back to longer...
@@ -155,11 +179,13 @@ displ_class_by_cyl
 
 What do you notice about the structure of the unpivoted table?
 
+The creation of the wider table introduced "NA" values where there was not a "cyl" category to match the "class" of vehicle. In our new long table, those "NA" values have been retained.
+
 
 
 ### `spread()` and `gather()` 
 
-Note that `pivot_wider()` and `pivot_longer()` are new functions, introduced in 2019.
+Note that `pivot_wider()` and `pivot_longer()` are relatively new functions, introduced in 2019.
 
 The older {tidyr} functions that do the same thing: `spread()` and `gather()`. You may find older articles that use these functions...but the new ones are much better!
 
@@ -221,7 +247,7 @@ Note that by adding `year` to the `pivot_wider()` all the variables in the final
 gapminder %>% 
   filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
   filter(year > 1980) %>% 
-  pivot_wider(year, 
+  pivot_wider(id_cols = year, 
               names_from = "country", 
               values_from = "gdpPercap")
 
@@ -231,15 +257,15 @@ In this version, the three variables `continent`, `lifeExp`, and `pop` are dropp
 
 ```{r}
 gapminder %>% 
-  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
+  filter(country %in% c("Canada", "United States", "Mexico") %>% 
   filter(year > 1980) %>% 
-  pivot_wider(c(-continent, -lifeExp, -pop), 
+  pivot_wider(id_cols = c(-continent, -lifeExp, -pop), 
               names_from = "country", 
               values_from = "gdpPercap")
 
 ```
 
-(Thanks to the students of BIDA302 fall 2021 for teaching me this!)
+(Thanks to the students of BIDA302 spring 2021 for teaching me this one!)
 
 
 
@@ -264,6 +290,12 @@ More about tidy data:
 
 
 
+
+[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- this DataCarpentry lesson has some good visuals that may help with understanding "names_from" and "names_to" etc.
+
+
+
+
 [Reshaping Your Data with tidyr](https://uc-r.github.io/tidyr), UC Business Analytics R Programming Guide
 
 * this article uses the old {tidyr} `gather()` and `spread()` functions instead of `pivot_longer()` and `pivot_wider()`, but it's got some good material on how to think about how and why data needs to be reshaped.
@@ -276,10 +308,6 @@ Julia Lowndes and Allison Horst, [Tidy data for efficiency, reproducibility, and
 
 Hadley Wickham. ["Tidy data"](https://vita.had.co.nz/papers/tidy-data.html), _The Journal of Statistical Software_, vol. 59, 2014.
 
-
-
-
-[Data Organization in Spreadsheets for Social Scientists: Formatting problems](https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html) -- DataCarpentry lesson
 
 [Data organization with spreadsheets](https://remi-daigle.github.io/2017-CHONe-Data/organization.nb.html) -- from Data Management Workshop à la CHONe
 
