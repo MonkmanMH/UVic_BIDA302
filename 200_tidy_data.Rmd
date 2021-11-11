@@ -66,13 +66,13 @@ In the dataframes we have used so far, the data is in a format that adheres to t
 
 The image below shows the relationship between the two versions of the same data:[@AdenBuie_tidyanimated]
 
-![](static/img/original-dfs-tidy.png)
+![](static/img/original-dfs-tidy.png){width=100%}
 
 The "wide" form doesn't adhere to the rules of tidy data, since each row has multiple observations.
 
 
 
-![](static/img/tidyr-pivot_wider_longer.gif)
+![](static/img/tidyr-pivot_wider_longer.gif){width=100%}
 
 > Untidy data most often look like this:
 > * Column headers are values, not variable names.
