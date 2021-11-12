@@ -4,7 +4,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
 
-```{r echo = FALSE}
+```{r setup_199, echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)

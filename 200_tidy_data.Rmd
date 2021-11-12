@@ -12,7 +12,7 @@ https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 
 
-```{r echo = FALSE}
+```{r setup_200, echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
@@ -257,7 +257,7 @@ In this version, the three variables `continent`, `lifeExp`, and `pop` are dropp
 
 ```{r}
 gapminder %>% 
-  filter(country %in% c("Canada", "United States", "Mexico") %>% 
+  filter(country %in% c("Canada", "United States", "Mexico")) %>% 
   filter(year > 1980) %>% 
   pivot_wider(id_cols = c(-continent, -lifeExp, -pop), 
               names_from = "country", 

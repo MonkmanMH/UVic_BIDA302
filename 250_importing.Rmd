@@ -14,7 +14,7 @@ https://readxl.tidyverse.org/index.html -->
 # Importing {#importing}
 
 
-```{r echo = FALSE}
+```{r setup_250, echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
