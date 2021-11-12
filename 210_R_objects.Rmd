@@ -14,27 +14,40 @@ https://creativecommons.org/licenses/by/4.0/  -->
 
 ## Examining the data
 
-When we import a dataframe into a spreadsheet or other data analysis tool, we immediately _see_ the data. In Excel, the Gapminder dataset looks like this:
+R and other programming tools handle data files differently than other data analysis tools you may be familiar with, such as Excel or Google Sheets. There are two important differences:
 
-![gapminder spreadsheet](static/img/excel_gapminder_2.JPG)
+**1. How the data are accessed**
+
+The first vital difference is that in a tool like Excel, when we open the file, any changes that are made (by us or automatically by Excel) will be preserved when we save the file. This might be changes in the values, any formulas we enter into the cells, or formatting changes we make.
+
+When we read a data file into R, we are _not_ opening the file, and the original file is unchanged. Instead, R captures the values of the data that is stored in the file, and those values are then in the R environment—saved temporarily in the computer's memory.
+
+Let's think about the words used: we _open_ a file in Excel, but we _read_ a file into our R environment.
+
+
+
+**2. How the data are displayed**
+
+The second difference is that when we open a dataframe using a spreadsheet or other data analysis tool, we immediately _see_ the data. In Excel, the Gapminder dataset looks like this:
+
+![gapminder spreadsheet](static/img/excel_gapminder_2.JPG){width=100%}
 
 Like the crew of the Enterprise, we get the data "On screen!" so we can visually investigate it.
 
 
-![_"On screen!"_](static/img/gapminder_STNG_onscreen_x.png)
+![_"On screen!"_](static/img/gapminder_STNG_onscreen_x.png){width=100%}
 
 
-
-#### _Looking_ at data
+### _Looking_ at data
 
 In R, when we load a dataframe:
 
 * we assign it to an object
 
-* and that object shows up in our Environment pane.
+* and that object shows up in our environment pane.
 
 
-![_gapminder in RStudio_](static/img/gapminder_RStudio_2.JPG)
+![_gapminder in RStudio_](static/img/gapminder_RStudio_2.JPG){width=100%}
 
 This is a different view of the universe.
 
@@ -175,7 +188,7 @@ mean(num_list)
 The functions `is.na` and `anyNA(x)` are logical—they will return a "TRUE" or "FALSE" value.
 
 
-What does `is.na(x)` return? What about `anyNA(x)`?
+What does `is.na(x)` return?
 
 ```{r}
 # example
@@ -186,7 +199,11 @@ is.na(num_list)
 
 ```
 
+
 There are three values in `num_list`, so three tests—only the second one is `NA`.
+
+
+What about `anyNA(x)`?
 
 
 ```{r}
@@ -209,7 +226,7 @@ What if we put an exclamation mark—the "not" symbol—in front of `is.na()`? H
 
 
 
-Use `na.rm` within the `sum()` function to calculate the sum of `num_list`
+The "NA" value in our list of numbers will cause a function like `sum()` to return an "NA" result. Use `na.rm` as an argument within the `sum()` function to calculate the sum of `num_list`:
 
 ```{r}
 # example

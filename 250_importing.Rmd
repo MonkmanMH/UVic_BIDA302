@@ -42,7 +42,7 @@ J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutpu
 
 For this hands-on exercise, we will be loading the data contained in a CSV file. Base R has the ability to read CSV files with the `read.csv()` function, but we'll be using the `read_csv()` function, which is in the {readr} package. This package loads when we run `library(tidyverse)`.  
 
-We will also be loading the contents of an Excel file. While the {readxl} package is part of the tidyverse, it is not part of the core that loads with `library(tidyverse)`: we have to run it separately.
+We will also be loading the contents of an Excel file. While the {readxl} package is part of the tidyverse, it is not part of the core that loads with `library(tidyverse)`: we have to run the `library()` function separately.
 
 ```{r}
 library(tidyverse)  # we will be using the functions of {readr}
@@ -81,7 +81,7 @@ mtcars <- read_csv("mtcars.csv",
 
 
 
-Insert an R chunk and rerun the example above, but with the `am` and `gear` variables also set to integer.
+Insert an R chunk and rerun the example above, but with the `am` variable also set to integer and `gear` set to character.
 
 ```{r}
 # solution
@@ -89,7 +89,7 @@ read_csv("mtcars.csv",
          col_types = 
            cols(cyl = col_integer(),
                 am = col_integer(),
-                gear = col_integer())
+                gear = col_character())
 )
 
 ```
