@@ -541,7 +541,6 @@ Find the median life expectancy by continent in 2007.
 
 ```{r}
 # answer
-
 gapminder %>%
   filter(year == 2007) %>% 
   group_by(continent) %>%

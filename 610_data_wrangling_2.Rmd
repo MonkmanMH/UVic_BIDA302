@@ -279,4 +279,45 @@ df2 %>%
 
 
 
+### Comparing values between rows
+
+It is common in time series analysis to compare values that are in different rows. For example, in a data table with quarterly revenue data, you might want to report on the change from one quarter to the next. Or with monthly data where there is a strong seasonal trend comparing one month to the next might not be all that useful (think of the difference in retail sales in January compared to December), so a comparison to the same month of the previous year would reveal more insight. The [New Housing Price Index example](#walkthrough) we saw earlier incorporates both month-over-month and year-over-year comparisions.
+
+The {dplyr} package has two functions, `lag()` and `lead()`, that allow us access to the value in a different row.
+
+
+#### Exercies: 
+
+Using the {gapminder} data, find the country with biggest jump in life expectancy (between any two consecutive records) for each continent.
+
+```{r}
+# One of many solutions
+gapminder %>%
+  group_by(country) %>%
+  mutate(prev_lifeExp = lag(lifeExp),
+         jump = lifeExp - prev_lifeExp) %>%
+  arrange(desc(jump), continent)
+
+# Another solution
+gapminder %>%
+  group_by(country) %>%
+  mutate(prev_lifeExp = lag(lifeExp),
+         jump = lifeExp - prev_lifeExp) %>%
+  ungroup() %>% 
+  group_by(continent) %>% 
+  slice(which.max(jump)) %>% 
+  arrange(desc(jump))
+
+# Another solution
+gapminder %>%
+  group_by(country) %>%
+  mutate(prev_lifeExp = lag(lifeExp),
+         jump = lifeExp - prev_lifeExp) %>%
+  ungroup() %>% 
+  group_by(continent) %>% 
+  slice_max(jump) %>% 
+  arrange(desc(jump))
+
+```
+
 -30-
