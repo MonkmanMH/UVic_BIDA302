@@ -1,0 +1,53 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+# Exporting data & graphics {#exporting}
+
+
+```{r echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+
+```
+
+## Saving data
+
+R provides a variety of options for saving dataframes that have been created. For these examples, we will look at CSV and Excel files, but there are many other options.
+
+### Writing a CSV file
+
+Write the Canada records from gapminder as a CSV file. This example uses the `write_csv()` function that is within the {readr} package.
+
+* ["Write a data frame to a delimited file"](https://readr.tidyverse.org/reference/write_delim.html), from the {readr} package site
+
+```{r setup_571}
+library(readr)
+library(gapminder)
+
+```
+
+Filter so that only the records for Canada are included; assign to new object "gapminder_canada"
+
+```{r}
+gapminder_canada <- gapminder %>% 
+  filter(country == "Canada")
+  
+```
+
+Write the dataframe object as a csv file.
+
+```{r}
+
+write_csv(gapminder_canada, "gm_canada.csv")
+
+```
+
+
+## Saving graphs
+
+

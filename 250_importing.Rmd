@@ -215,6 +215,10 @@ read_excel(datasets, 4)
 
 ***
 
+Methods for saving dataframes will be introduced [later in the course, in the "Exporting data & graphics" chapter](#exporting).
+
+***
+
 ## Exercise
 
 ### Discussion

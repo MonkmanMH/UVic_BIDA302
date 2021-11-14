@@ -18,7 +18,7 @@ options(width = 100, dplyr.width = 100)
 
 You've just started your journey into the world of data analysis in a coding environment, and now know some methods for working in the programming language R (and even a bit of Python).
 
-![_"R rollercoaster" by Allison Horst_](static/img_allison_horst/r_rollercoaster.png)
+![_"R rollercoaster" by Allison Horst_](static/img_allison_horst/r_rollercoaster.png){width=100%}
 
 So...where to from here? 
 
