@@ -26,6 +26,10 @@ library(gapminder)
 
 # Tidy data {#tidy-data}
 
+## Objectives {#tidy-data-takeaway}
+
+* Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
+
 
 ## Reading  {#tidy-data-reading}
 
@@ -201,21 +205,60 @@ class_by_cyl %>%
 
 
 
-***
-
-## Take aways {#tidy-data-takeaway}
-
-* Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
 
 
 ***
 
 ## Exercises {#tidy-data-exercise}
 
-### Hands-on exercise {#tidy-data-handson}
+
+### Hands-on: Canadian election
+
+This table shows the national-level results of the Federal Election held in Canada on October 10, 2019. This is structure as the table was published by Elections Canada.
+
+```{r echo=FALSE}
+# Elections Canada 2019-10-21 Federal Election Results
+# https://enr.elections.ca/National.aspx?lang=e
+# sourced 2019-11-06
+CDN_elec_2019 <- tibble(party = c("Liberal", "Conservative", "Bloc Québécois", "New Democratic", "Green", "Independent"),
+                        seats = c(157, 121, 32, 24, 3, 1),
+                        votes = c(5915950, 6155662, 1376135, 2849214, 1162361, 75836))
+# hahaha! It's easier to make a tidy tibble and untidy it than make a messy one to start with
+CDN_elec_2019 <- CDN_elec_2019 %>%
+  pivot_longer(-party, names_to = "category", values_to = "number")
+
+CDN_elec_2019
+
+```
+
+_What tidy data principles does this table violate?_
+
+It violiates Principles #1 & #2<br>
+
+* There are two variables (seats and votes) combined into one column
+* There are two rows (seats and rows) for each observation (in this case, party)
+
+Sometimes untidy data can be too long!
 
 
-Create a table that shows:
+_Tidy this table's structure_
+
+To tidy the table, we need to `pivot_wider()`
+
+```{r}
+# solution
+
+CDN_elec_2019 %>%
+  pivot_wider(names_from = category, values_from = number)
+
+```
+
+
+
+### Hands-on: gapminder
+
+
+When we publish our tables, we might want a structure that violiates the tidy principles—sometimes an untidy table is better for human consumption. The {gapminder} data, in its raw form, is tidy. For this exercise, create a table that shows:
 
 * GDP per capita for
 * the countries Canada, United States, and Mexico are the columns, and 
@@ -224,7 +267,7 @@ Create a table that shows:
 ```{r}
 # solution #1
 gapminder %>% 
-  filter(country %in% c("Canada", "United States", "Germany") &
+  filter(country %in% c("Canada", "United States", "Mexico") &
            year > 1980) %>%
   select(country, year, gdpPercap) %>% 
   pivot_wider(names_from = country, values_from = gdpPercap)
@@ -241,7 +284,7 @@ gapminder %>%
 
 Here's an alternative approach that avoids the use of the `select()` function.
 
-Note that by adding `year` to the `pivot_wider()` all the variables in the final table are explicitly named in the function.
+Note that by adding `year` to the `pivot_wider()` all the variables in the final table are explicitly named in the function, and all the other variables in the source table are dropped.
 
 ```{r}
 gapminder %>% 
@@ -266,6 +309,8 @@ gapminder %>%
 ```
 
 (Thanks to the students of BIDA302 spring 2021 for teaching me this one!)
+
+
 
 
 

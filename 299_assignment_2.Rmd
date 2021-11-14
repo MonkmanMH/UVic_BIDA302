@@ -15,6 +15,7 @@ Package load:
 ```{r packages}
 library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
 library(readxl)    # to read Excel files
+library(janitor)   # for data cleaning
 
 ```
 
@@ -83,26 +84,32 @@ d. Create a pivot table showing the total number of cases completed in each regi
 ### 3. Importing data: Excel
 (5 marks)
 
-Use the {readxl} package to read in the file "regional_district_monthly_2019_mod.xlsx".^[Data source: British Columbia Data Catalogue, [Property Transfer Tax Data 2019](https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data-2019). The original file has been modified: a) filtered for the Capital Regional District (CRD) and
-b) the resulting table is transposed, so the rows now become the columns.
-Licensed under Open Government Licence - British Columbia.]  
+Use the {readxl} package to read in the file "bcmetal.xlsx" 
 
-This data is published by the Ministry of Finance, and shows a variety of statistics associated with the Property Transfer Tax.
+This data is published by the Province of British Columbia, and shows the production of metals from mines in British Columbia from 1888 to 1988.
+
+The website source for the data is here: https://catalogue.data.gov.bc.ca/dataset/bc-metal-historical-metal-production-1888-1988/resource/69344bab-359e-4cfe-a040-253ae96288ca
+
+There are three sheets in the file. The sheet we are interested in is BCMETAL_PROD, metal production table for 1452 metal mines operating within the province between 1888 and 1988.
 
 The reference page for {readxl} is here: https://readxl.tidyverse.org/
 
 a. What are the names of the sheets in this file?
 
+b. Read in the contents of the "BCMETAL_PROD" sheet. 
 
-b. Read in the contents of the sheet with the shortest name.
+c. This will generate some warnings. What issues are there with the rows? 
 
+d. Change the options for your read function to address any issues you identified in 3.c
 
-c. What issues are there with the rows? What is the header row, and in what row does the data begin? How does this structure impact how the values in the columns are being represented? 
+e. Use your data manipulation skills to answer the following questions:
 
-d. Change the options for your read function to address the issues you identified in 3.c
+  * Based on the data here, what year was the most gold mined in British Columbia?
 
+  * Based on the data here, at what mine holds the record for the most silver extracted in B.C.?
 
-e. Use your data manipulation skills to calculate the number of residential property transfers where there was foreign involvement. (There are many variables; the one you're looking for is `FOREIGN INVOLVEMENT TRANSACTIONS - RESIDENTIAL (count)`). **Note:** Depending on what you did in 3.d, you may need to go back and read the data in again, adding more options.
+  * Does that mine hold the record for the most silver mined during a single year in B.C.?
+
 
 
 -30-
