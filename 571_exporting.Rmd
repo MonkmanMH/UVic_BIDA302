@@ -48,6 +48,28 @@ write_csv(gapminder_canada, "gm_canada.csv")
 ```
 
 
+## Writing an Excel file
+
+
+{openxlsx}: Read, Write and Edit xlsx Files
+
+* CRAN https://cran.r-project.org/web/packages/openxlsx/index.html
+
+* package reference page: https://ycphs.github.io/openxlsx/
+
+
+From the Introduction article at the package reference: https://ycphs.github.io/openxlsx/articles/Introduction.html
+
+
+
+
+
 ## Saving graphs
+
+`ggsave()` (one of the functions in {ggplot2})
+
+https://ggplot2.tidyverse.org/reference/ggsave.html
+
+
 
 
