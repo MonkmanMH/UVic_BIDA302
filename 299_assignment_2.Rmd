@@ -110,7 +110,7 @@ e. Use your data manipulation skills to answer the following questions:
 
   * Based on the data here, at what mine holds the record for the most silver extracted in B.C.?
 
-  * Does that mine hold the record for the most silver mined during a single year in B.C.?
+  * Does that mine hold the record for the total amount of silver mined during a single year in B.C.?
 
 
 

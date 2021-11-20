@@ -131,3 +131,17 @@ ggplot(data = mpg) +
 
 
 
+# Watch your quotation marks! In many cases double and single quotes are interchangable, but fancy "smart" quotes to start and end are not valid
+
+```{r, eval=FALSE}
+
+nycflights13::flights %>% filter(carrier == “AA” | carrier == “DL” | carrier == “UA”)
+
+nycflights13::flights %>% filter(carrier == "AA" | carrier == "DL" | carrier == "UA")
+
+nycflights13::flights %>% filter(carrier == 'AA' | carrier == 'DL' | carrier == 'UA')
+
+```
+
+
+

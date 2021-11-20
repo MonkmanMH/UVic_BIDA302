@@ -145,6 +145,9 @@ ggplot() +
 ```
 
 
+### Facet plot
+
+
 Another way to differentiate the sets is to use a facet plot. In this example, we use the function `facet_wrap`. 
 
 ```{r}

@@ -67,6 +67,24 @@ mpg %>%
          year == 1999) %>%
   select(manufacturer, model, cty, hwy)
 
+# variant: use of "&" instead of commas in filter
+mpg %>%
+  filter(manufacturer == "volkswagen" &
+         class %in% c("compact", "subcompact") &
+         year == 1999) %>%
+  select(manufacturer, model, cty, hwy)
+
+
+# another solution: 
+#  - separate filters for each variable
+#  - use of "OR" | instead of "%in%"
+mpg %>%
+  filter(manufacturer == "volkswagen")  %>% 
+  filter(class == "compact" | class == "subcompact")  %>% 
+  filter(year == 1999) %>%
+  select(manufacturer, model, cty, hwy)
+
+
 ```
 
 ***
@@ -234,53 +252,14 @@ filter(flights, between(month, 7, 9))
 
 ```
 
-***
-
-### 7. Car mileage - pivot table
-> (2 marks)
-
-> In Lesson 1, we used the {mpg} package to calculate the average displacement by class of car:
-
-```{r}
-mpg %>%                                
-  group_by(class) %>%                   
-  summarise(displ_mean = mean(displ)) 
-
-```
-> We then created a pivot (crosstab) table with class by number of cylinders, and then unpivoted that table:
-
-```{r}
-# summary table - class by cylinder
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(displ_mean = mean(displ)) %>%
-  arrange(desc(displ_mean))
-
-# pivot table (wide)
-
-class_by_cyl_pivot <- class_by_cyl %>%
-  pivot_wider(names_from = cyl, values_from = displ_mean)
-
-class_by_cyl_pivot
-
-# and back to longer...
-
-displ_class_by_cyl <- class_by_cyl_pivot %>%
-  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
-
-displ_class_by_cyl
-
-```
-
-> a. What happens when you repeat the first chunk of code to calculate the average displacement of each class of cars but with the new object `displ_class_by_cyl`?
 
 
-> b. Solve this problem so that the table looks like the first one in this question. Use any and all of the reference materials at your disposal!
+### Watch your quotation marks! 
 
+In many cases double and single quotes are interchangable, but fancy "smart" quotes to start and end are not valid
 
-Coming in Week 2!
+```{r, eval=FALSE}
 
-```{r}
 nycflights13::flights %>% filter(carrier == “AA” | carrier == “DL” | carrier == “UA”)
 
 nycflights13::flights %>% filter(carrier == "AA" | carrier == "DL" | carrier == "UA")
