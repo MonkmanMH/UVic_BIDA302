@@ -14,8 +14,6 @@ library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
-library(tidyverse)
-library(gapminder)
 ```
 
 
@@ -138,17 +136,17 @@ First, we will make two small tables, `x` and `y`
 
 ```{r}
 x <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     3, "x3"
+  ~key, ~colour_x,
+     "key1", "red",
+     "key2", "blue",
+     "key3", "yellow"
 )
 
 y <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2",
-     4, "y3"
+  ~key, ~fruit_y,
+     "key1", "apple",
+     "key2", "blueberry",
+     "key4", "banana"
 )
 
 
@@ -213,9 +211,13 @@ See what happens when you join the tables with a `right_join()`, followed by a `
 # solution
 right_join(x, y, by = "key")
 
-full_join(x, y, by = "key")
 ```
 
+```{r}
+
+full_join(x, y, by = "key")
+
+```
 
 
 ### Your turn
@@ -267,19 +269,17 @@ In real life, tables start to get more complex. It's often the case that you wil
 The chunk below creates new tables of `a` and `b` tables, where there are duplicate keys in one.
 
 ```{r}
-a <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     2, "x3",
-     1, "x4"
-)
 
-b <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2"
-)
+
+a <- tribble(~ key, ~ day_x,
+             "key1", "Mon",
+             "key1", "Tue",
+             "key2", "Wed",
+             "key2", "Thu")
+
+b <- tribble(~ key, ~ veg_y,
+             "key1", "carrot",
+             "key2", "tomato")
 ```
 
 
@@ -303,20 +303,15 @@ A situation where there are duplicate keys in both tables is usually an error--t
 Here's different tables, where the key "2" is duplicated in both.
 
 ```{r}
-m <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     2, "x3",
-     3, "x4"
-)
-n <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2",
-     2, "y3",
-     3, "y4"
-)
+m <- tribble(~ key, ~ month_x,
+             "key1", "Jan",
+             "key2", "Feb",
+             "key2", "Mar")
+
+n <- tribble(~ key, ~ ball_y,
+             "key1", "foot",
+             "key2", "basket",
+             "key2", "base")
 
 ```
 
@@ -352,18 +347,22 @@ Let's go back to our original test tables again:
 
 
 ```{r}
+
 x <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     3, "x3"
+  ~key, ~colour_x,
+     "key1", "red",
+     "key2", "blue",
+     "key3", "yellow"
 )
+
 y <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2",
-     4, "y3"
+  ~key, ~fruit_y,
+     "key1", "apple",
+     "key2", "blueberry",
+     "key4", "banana"
 )
+
+
 ```
 
 Semi-join: only the observations in `x` that have a match in `y`.

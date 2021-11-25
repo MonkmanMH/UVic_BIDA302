@@ -17,7 +17,7 @@ Here are two charts by Jens von Bergmann
 
 From August 25, 2020 showing cases by age group:
 
-![BC weekly cases by age group](static/img_capstone/bc_covid_cases_age_2020-08-25.jpg)
+![BC weekly cases by age group](static/img_capstone/bc_covid_cases_age_2020-08-25.jpg){width=100%}
 
 
 * https://twitter.com/vb_jens/status/1298407214189690880?s=20
@@ -25,7 +25,7 @@ From August 25, 2020 showing cases by age group:
 
 From November 9, 2020 showing new cases by Health Authority region, on a "per 100K population" basis:
 
-![BC daily cases per 100k population](static/img_capstone/bc_dailycases_per_100k.jpg)
+![BC daily cases per 100k population](static/img_capstone/bc_dailycases_per_100k.jpg){width=100%}
 
 * https://twitter.com/vb_jens/status/1325965304925577218?s=20
 
