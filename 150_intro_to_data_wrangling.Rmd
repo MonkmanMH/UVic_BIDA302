@@ -161,7 +161,7 @@ At this point, we only have one step in our chain, but in future code, you might
 
 So this little chunk would be read as
 
-* we start with the datafram "exp_dem", "and then..."
+* we start with the dataframe "exp_dem", "and then..."
 
 * we calculate a variable called "mean_of_expense" by running the `mean()` function on the variable "Expense"
 
