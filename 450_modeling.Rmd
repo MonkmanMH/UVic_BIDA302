@@ -67,7 +67,7 @@ This pair of plots shows how a simple linear model works: first we have the X-Y 
 In this example, the trend is fairly clear: as the value of "x" increases, so does "y". We say that "x" is the independent variable, and "y" is the dependent variable. In a predictive model, we are estimating (or predicting) a value of "y" based on a known value of "x". In the earlier home heating example, energy consumption _depends_ on temperature; we are trying to predict energy consumption based on the temperature outside. 
 
 (Note that the data set `sim1` comes from the package [{modelr}](https://modelr.tidyverse.org/), and is slightly altered^[`set.seed(42)`<br>
-`sim1 <- modelr::sim1 %>% `<br>`mutate(x = jitter(x))`]
+`sim1 <- modelr::sim1 %>% `<br>`mutate(x = jitter(x))`].)
 
 
 ```{r echo=FALSE}
@@ -171,12 +171,15 @@ Can you find the coefficients for the equation?
 
 ![The P values](static/img/mod_sim1_coeff_hilite_P.png)
 
-The Multiple and Adjusted R-squared statistics tells us how well the line fits the points...this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line). If the relationship is negative (as X goes up Y goes down), it will be in the range from -1 to 0. In this case, it's 0.88, which is a very good fit.
+The Multiple and Adjusted R-squared statistics tells us how well the line fits the points...this number ranges between 0 (no fit at all) and 1 (where all the X and Y values fall on the line). In this case, it's 0.88, which is a very good fit.
 
 ![R-squared value](static/img/mod_sim1_R2.png)
 
 
 **The equation predicts a value of Y, based on what we know about X.**
+
+
+<!-- Correlation coefficient: If the relationship is negative (as X goes up Y goes down), it will be in the range from -1 to 0. -->
 
 This has enormous practical applications.
 

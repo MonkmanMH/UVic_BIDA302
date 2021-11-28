@@ -345,7 +345,7 @@ my_triangles
 
 ```
 
-And calculate the area of the triangles in the tibble:
+And use the function to calculate the area of all the triangles in the tibble:
 
 
 ```{r}
