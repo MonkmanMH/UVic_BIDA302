@@ -132,7 +132,35 @@ And having the skills to clean data is enormously valuable. Some of the things w
 
 This article explains that data cleaning is a project-specific challenge. But there are techniques that can be generalized (to some degree) to help you tackle the data cleaning challenges you confront.
 
-I have started to write a book that introduces these techniques; you can find [_Data Preparation: Essential Steps Before & After Analysis_](https://bookdown.org/martin_monkman/DataPreparation_EssentialSteps/) online.
+I have started to write a book that introduces these techniques; _The Data Preparation Journey: Finding Your Way with R_ will be published by CRC Press as part of "The R Series". I am hoping to get this completed by mid-2022.
+
+## R Programming
+
+If you are looking to move deeper into using R as a programming tool, I recommend two very different books:
+
+* Hadley Wickham, _Advanced R_. This is my first recommendation for anyone taking the step into programming R...moving beyond using it for data analysis. 
+
+  - The second edition is available online here: https://adv-r.hadley.nz/
+  
+  - It is published by CRC Press  https://www.routledge.com/Advanced-R-Second-Edition/Wickham/p/book/9780815384571
+
+* Colin Gillespie & Robin Lovelace, _Efficient R Programming: A Practical Guide to Smarter Programming_. This book is aimed squarely at people who are writing R packages and putting R into production, where handling large volumes of data as efficiently as possible. Some of the specifics are now out-of-date (such as the speed benchmarks for different packages), but the principles remain useful.
+
+  - Available online at https://csgillespie.github.io/efficientR/
+  
+  - Published by O'Reilly: https://www.oreilly.com/library/view/efficient-r-programming/9781491950777/
+
+
+### Writing R Packages
+
+For some people, their way of contributing to the R open source community is to develop extensions to R's functionality. There is a small team working on the core of base R, but there is a large and dynamic community that develops, extends, and maintains packages. As of right now, there are over 15,000 different packages on CRAN, and more available through Github repositories.
+
+One of the first steps down this path is to create your own package, with your own functions. The single best resource for writing R packages is this book:
+
+* Hadley Wickham & Jenny Bryan, _R Packages: Organize, Test, Document and Share Your Code_
+
+  - The 2nd edition has not yet gone to print (another O'Reilly book), but the work-in-progress is available online: https://r-pkgs.org/index.html
+
 
 
 
