@@ -233,20 +233,23 @@ shruggie
 ## Basic functions {#strings-basic}
  
 
-![stringr hex](static/img_tidyverse/stringr_400.png)
+![stringr hex](static/img_tidyverse/stringr_400.png){width=25%}
 
 
-{stringr} functions 
+Some {stringr} functions 
 
 | function | purpose |
 | ---- | ---- |
 | str_length(x)  | the number of characters in `x` |
 | str_c() | concatenates a list of strings |
 | str_sub(x, start = , end = ) | returns characters of `x` |
-| str_detect(x, pattern) | TRUE/FALSE if there is a pattern match |
-| str_replace(x, pattern, newtext | replace |
+| str_detect(string, pattern) | TRUE/FALSE if there is a pattern match |
+| str_replace(string, pattern, newtext) | replace |
+| str_remove(string, pattern) | removes the first instance of `pattern` |
+| str_remove_all (string, pattern) | removes all instances of `pattern` |
 
 
+The full list of {stringr} functions can be found at https://stringr.tidyverse.org/reference/index.html
 
 
 ```{r string_length}
@@ -476,6 +479,8 @@ our_date <- "Jan 2019"
 
 lubridate::ymd(our_date)
 
+# this works...the whole thing is now suspect
+lubridate::my(our_date)
 
 ```
 

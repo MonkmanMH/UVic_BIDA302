@@ -2,19 +2,25 @@
 This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
-
 -->
+
+
+# Communication: plot formatting {#communicationplot}
+
 
 ```{r echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
-library(tidyverse)
 ```
 
-# Communication: plot formatting {#communication-plot}
 
+```{r echo = FALSE, message = FALSE}
+
+mlb_pay_wl <- read_csv(here::here("data", "mlb_pay_wl.csv"))
+
+```
 
 
 ## Reading & reference  {#communication-plot-reading}
@@ -30,7 +36,8 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 
 
-### More {ggplot} plotting resources 
+
+### More ggplot2 plotting resources 
 
 * [R color cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
 
@@ -38,8 +45,7 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 * Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for. [@Chang_2018]
 
-* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R (primarily using {ggplot2}). If I was teaching a longer course dedicated to data visualization using R, this would be the text book. ] [@Healy_2019]
-
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R, primarily using {ggplot2}. If I was teaching a longer course dedicated to data visualization using R, this would be the text book. [@Healy_2019]
 
 * [R-charts](https://r-charts.com/)—"code examples of R graphs made with base R graphics, ggplot2 and other packages."
 
@@ -394,4 +400,6 @@ If you are interested in exploring animated plots (similar to Hans Rosling's _ga
 
 * Alboukadel, ["gganimate: How to Create Plots With Beautiful Animation in R"](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
 
+
 -30-
+
