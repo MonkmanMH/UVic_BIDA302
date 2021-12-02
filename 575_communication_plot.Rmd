@@ -229,6 +229,35 @@ moneyball_plot +
 
 ```
 
+In the chart above, the vertical and horizontal lines are plotted on top of the points, obscuring some from view. Here are a couple of approaches that resolve that.
+
+First, it's useful to understand that the layers are plotted in order...so if we plot the lines first and then the points, the points will be in front of the lines.
+
+```{r}
+
+ggplot(mlb_pay_wl, aes(x = pay_index, y = w_l_percent)) + 
+  # plot the lines first
+  geom_vline(xintercept  = 100, colour = "red", size = 2) +
+  geom_hline(yintercept = 0.5, colour = "blue", size = 2) +
+  # then the points
+  geom_point() 
+
+```
+
+A second approach is to use the `alpha` parameter when describing the lines. "Alpha refers to the opacity of a geom. Values of alpha range from 0 to 1, with lower values corresponding to more transparent colors." (From the {ggplot2} reference on ["Colour related aesthetics: colour, fill, and alpha"](https://ggplot2.tidyverse.org/reference/aes_colour_fill_alpha.html)) 
+
+For our plot, we will set `alpha = 0.5` for both lines.
+
+```{r}
+moneyball_plot +
+  geom_vline(xintercept  = 100, colour = "red", size = 2, alpha = 0.5) +
+  geom_hline(yintercept = 0.5, colour = "blue", size = 2, alpha = 0.5)
+
+```
+
+
+
+
 Another option would have been to add a block of shading for the "Moneyball" teams that spent below the league average, but had winning seasons. For this, the `annotate("rect")` is used. The fill colour is hex code for the specific shade of green used by the Oakland Athletics, as found at [usteamcolors.com](https://usteamcolors.com/oakland-athletics-team-colors/). (See [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/recipe-annotate-rect) for applications of this in a line plot.)
 
 
