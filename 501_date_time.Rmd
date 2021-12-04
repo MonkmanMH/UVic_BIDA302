@@ -45,36 +45,84 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 
 ["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
 
-[Working with dates and time in R using the lubridate package](https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/), University of Virginia Library Research Data Services + Sciences
-
-
-**going beyond**
-
-[{clock}: a brand-new package for working with date-times](https://clock.r-lib.org/)
-
-* [Comprehensive Date-Time Handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/).  "lubridate will never go away, and is not being deprecated or superseded. As of now, we consider clock to be an alternative to lubridate. "
-
 
 ## Introduction: Dates and Times {#date-time-intro}
 
-Units of time:
+Working with dates and times is an important "tidy" skill, but it also comes into play for the "Understand" phase.
 
-Financial calendars
+> To warm up, try these three seemingly simple questions:
+> 
+> * Does every year have 365 days?
+> * Does every day have 24 hours?
+> * Does every minute have 60 seconds?
 
-* [4-4-5 calendar](https://en.wikipedia.org/wiki/4%E2%80%934%E2%80%935_calendar): each quarter is divided into three "months", of 4 or 5 weeks length
+The answer to all of these is "no". (See the introduction to the ["Dates and Times"](https://r4ds.had.co.nz/dates-and-times.html#introduction-10) chapter of _R for Data Science for explanations.)
 
+To add to the challenge, there are different ways to represent a date. Here's some ways that March 28, 2020 might be written:
+
+March 28, 2020
+2020-03-28
+28 Mar 2020
+28-3-20
+3/28/2020
+Saturday, March 28, 2020
+
+Also, keep in mind that a written-out-month is spelled differently in different languages! For example, April in French is "Avril".
+
+
+
+### ISO 8601 and R {#date-time-iso8601}
+
+The ISO 8601 standard is widely recognized as the best way to store dates and times. It removes ambiguity as to which is the day and which is the month (and sometimes the year, if the year is also stored as a two-digit entry). It also sorts in order, with the biggest element (the year) first, followed by the second most important, and so on.
+
+
+![_XKCD: ISO8601 date-time standard_](https://imgs.xkcd.com/comics/iso_8601.png){width=25%}
+
+
+### How R stores dates
+
+There are three variable types in tibbles for storing dates:
+
+* date: `<date>`
+
+* time: `<time>`
+
+* date-time: `<dttm>` 
+
+
+POSIXct is another variable type that will appear in your data!
 
 
 ## {lubridate} functions
 
+While dates and times can be complex, the {lubridate} package gives us some tools to work with them.
+
 See https://lubridate.tidyverse.org/reference/index.html 
 
+First, `now()` can be handy. It's based on your computer settings—so whatever time your machine says, this is what will be returned when you run the following code chunk:
+
+```{r}
+now()
+```
+
+You can also specify a time zone:
+
+```{r}
+now(tz = "UTC")
+```
+
+
+
+
 ### parsing functions 
+
+One of the most important pieces of working with dates is turning a character or numeric string into a date.
 
 | function | purpose |
 | ---- | ---- |
 | ymd()  | returns yyyy-mm-dd |
 | dmy() | returns yyyy-mm-dd from day-month-year |
+| my() | returns yyyy-mm-01 from month-year |
 | _etc_ |  |
 | ymd_hms() | returns date and time |
 
@@ -117,26 +165,39 @@ dmy("10-11-12")
 What about `mdy()` and `ymd()`?
 
 
+### Partials
+
+We sometimes see a partial date. For example, a table showing monthly data might have the dates written as "Jan 2020", "Feb 2020", and so on.
+
+{lubridate} parses these by assuming that the date refers to the first day of that month. This then allows us to use the functions below.
+
+```{r}
+
+my("Jan 2020")
+
+```
+
+
 
 
 ## Date {#date-time-date}
 
-The three functions `year()`, `month()`, and `day()` allow you to pull that component from a ymd value.
+The three functions `year()`, `month()`, and `day()` allow you to extract that component from a ymd value.
 
 Here are three dates:
 
 ```{r}
 date1 <- ymd("2019-01-02")
 date2 <- ymd("2020-02-29")
-date3 <- ymd("2020-11-21")
+date3 <- my("Jan 2020")
 
 ```
 
-Here's how we would get the year from `date1`:
+Here's how we would get the day from `date1`:
 
 ```{r}
 
-year(date1)
+day(date1)
 
 ```
 
@@ -151,11 +212,11 @@ month(date2)
 
 ```
 
-Get the day from `date3`
+Get the year from `date3`
 
 ```{r}
 
-day(date3)
+year(date3)
 
 ```
 
@@ -179,9 +240,9 @@ What does `wday()` do?
 ```{r}
 # solution
 
-wday(date3)
+wday(date1)
 
-my_wday <- wday(date3, label = TRUE, abbr = FALSE)
+my_wday <- wday(date1, label = TRUE, abbr = FALSE)
 my_wday
 
 class(my_wday)
@@ -200,7 +261,6 @@ Another useful function is `week()`, which returns the week number. More precise
 We often say that "there are 52 weeks in a year", but 365 / 7 = 52.1. This means that the last few days of the year are in the 53rd week.
 
 ```{r}
-library(lubridate)
 
 # January 2nd, 2019
 week(ymd("2019-01-02"))
@@ -287,11 +347,11 @@ What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` f
 
 ```{r}
 # solution
-lfs_BC_2000 <-
-  lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(REF_DATE))
+lfs_BC_2000 %>% 
+  mutate(ref_date_2 = ymd(REF_DATE)) %>% 
+  select(REF_DATE, ref_date_2) %>% 
+  slice(10:15)
 
-lfs_BC_2000
 ```
 
 
@@ -306,28 +366,30 @@ Fortunately, {lubridate} has an argument in the `ymd()` function that allows us 
 
 ```{r}
 # solution
-lfs_BC_2000 <-
-  lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(REF_DATE, truncated = 2))
+lfs_BC_2000 %>% 
+  mutate(ref_date_2 = ymd(REF_DATE, truncated = 2)) %>% 
+  select(REF_DATE, ref_date_2)
 
-lfs_BC_2000
 ```
 
 
-
-
-Now convert `ref_date_2` using `ymd` ...
+Another approach is to use the `ym()` function, which yields the same result.
 
 ```{r}
-# solution
 
-lfs_BC_2000 <- lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(ref_date_2))
+lfs_BC_2000 <-
+  lfs_BC_2000 %>% 
+  mutate(ref_date_2 = ym(REF_DATE))
 
 lfs_BC_2000
+
 ```
 
-With the reference date turned into a date format, we can create a line plot, and {ggplot2} will make some decisions for us on the format of the labels on the x-axis.
+
+
+
+
+With the reference date now turned into a date format, we can create a line plot, and {ggplot2} will make some decisions for us on the format of the labels on the x-axis.
 
 ```{r}
 
@@ -437,7 +499,7 @@ now()
 
 
 
-You can specify time zones by adding a time zone option to your call. For example, our time zone is often represented as "America/Los_Angeles" or "America/Vancouver".
+You can specify time zones by adding a time zone option to your call. For example, the time zone in the west coast of North America is often represented as "America/Los_Angeles" or "America/Vancouver".
 
 ```{r}
 
@@ -450,7 +512,7 @@ Sys.timezone()
 
 What time is it right now? Specify the time zone in the `now()` function with the argument `tzone =` or `tz =`
 
-* here in Victoria -- or maybe Vancouver
+* at the University of Victoria campus—or maybe Vancouver
 
 * in Seoul, South Korea
 
@@ -472,11 +534,12 @@ now(tz = "UTC")
 ```
 
 
-You can use the function `OlsonNames()` to print a list of all 425 time zones around the world!
+You can use the function `OlsonNames()` to print a list of all `r length(OlsonNames())` time zones around the world!
 
 ```{r}
 # solution -- beware the length!
 head(OlsonNames())
+
 ```
 
 
@@ -499,16 +562,6 @@ Subtract date-time from each other
 x2 - x3
 
 ```
-
-Different ways to represent March 28, 2020:
-
-March 28, 2020
-2020-03-28
-28 Mar 2020
-28-3-20
-3/28/2020
-
-Also, keep in mind that a written-out-month is spelled differently in different languages! For example, April in French is "Avril".
 
 
 
@@ -535,9 +588,14 @@ df_summary <- df_dates %>%
 
 df_summary
 
-# calculate the number of years (instead of days)
-# - note the need to convert "days_between" from Duration to integer
-#   before dividing by 365.25
+```
+
+
+To calculate the number of years (instead of days), we the need to convert "days_between" from Duration to integer before dividing by 365.25.
+
+
+```{r}
+
 df_summary %>% 
   mutate(years_between = as.integer(days_between)/365.25)
 
@@ -545,6 +603,30 @@ df_summary %>%
   summarise(avg_days_between_events = mean(days_between, na.rm = TRUE))
 
 ```
+
+
+## Additional references {#date-reference2}
+
+
+### Other units of time
+
+
+Financial calendars
+
+* [4-4-5 calendar](https://en.wikipedia.org/wiki/4%E2%80%934%E2%80%935_calendar): each quarter is divided into three "months", of 4 or 5 weeks length
+
+
+### More {lubridate} 
+
+[Working with dates and time in R using the lubridate package](https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/), University of Virginia Library Research Data Services + Sciences
+
+
+### Other R packages
+
+[{clock}: a brand-new package for working with date-times](https://clock.r-lib.org/)
+
+* [Comprehensive Date-Time Handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/).  "lubridate will never go away, and is not being deprecated or superseded. As of now, we consider clock to be an alternative to lubridate. "
+
 
 
 
