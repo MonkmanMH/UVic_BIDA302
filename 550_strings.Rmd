@@ -200,6 +200,7 @@ These also need to be escaped:
 | "\n" | newline (line break) |
 | "\s" | any whitespace (space, tab, newline)
 | "\t" | tab |
+| "\*" | asterisk |
 | "\u..." | unicode characters* |
 
 
@@ -247,7 +248,7 @@ Some {stringr} functions
 | str_replace(string, pattern, newtext) | replace |
 | str_remove(string, pattern) | removes the first instance of `pattern` |
 | str_remove_all (string, pattern) | removes all instances of `pattern` |
-
+| str_trim (string) | removes whitespace at the beginning and end |
 
 The full list of {stringr} functions can be found at https://stringr.tidyverse.org/reference/index.html
 
@@ -460,8 +461,123 @@ iris %>%
 ```
 
 
+## Cleaning strings {#strings-cleaning}
 
-## Splitting strings {#strings-splitting}
+### Removing characters {#strings-removing}
+
+In the Week 3 assignment, you probably noticed that some of the community names have a pair of asterisks at the end, indicating that the community includes more than one municipality. For example, "North Vancouver" includes both the City of North Vancouver and the District of North Vancouver (two distinct towns, with the same name...) 
+
+Here's a long form of the "Purpose Built Rental" sheet ("pbr" for short) from that Excel file:
+
+```{r}
+
+housing1_long <- read_csv("data/bc-stats_2018-new-homes-data_PBR.csv")
+housing1_long
+
+```
+
+If we plot the top 10 municipalities (remember the `slice()` function!), we see that North Vancouver shows up...complete with the two asterisks.
+
+
+
+```{r}
+
+ggplot(housing1_long %>% 
+  group_by(community) %>% 
+  tally(units, sort = TRUE, name = "3 Year Total") %>% 
+  slice(1:10), aes(x = reorder(community, `3 Year Total`), y = `3 Year Total`))+
+  geom_col() +
+  coord_flip()
+
+```
+
+We can use our knowledge of regular expressions and the functions in {stringr} to remove these. The first thing we need to recall is that an asterisk is one of those [Special characters]{strings-special}, and we need to "escape" it with a backslash, and we need to escape the first backslash too. Here's an example:
+
+```{r}
+
+city_name <- "North Vancouver**"
+
+# detect the presence of an asterisk
+str_detect(city_name, "\\*")
+
+
+# detect the presence of an asterisk
+str_count(city_name, "\\*")
+
+```
+
+
+{stringr} provides us functions for this very task: 
+
+* `str_remove()` removes the first instance it finds, and 
+
+* `str_remove_all()` removes all of them.
+
+* https://stringr.tidyverse.org/reference/str_remove.html
+
+
+In a pipe with our dataframe, it would look like this:
+
+```{r}
+housing1_long <- housing1_long %>% 
+  mutate(community = str_remove_all(community, "\\*"))
+
+```
+
+Let's filter for North Vancouver to check the success of our efforts:
+
+
+```{r}
+housing1_long %>% 
+  filter(community == "North Vancouver")
+```
+
+What? Where are those rows? If we do a visual inspection, they are there. It turns out that there is a blank space between the community name and the asterisks. 
+
+There's another {stringr} function for this: `str_trim()`.
+
+* https://stringr.tidyverse.org/reference/str_trim.html
+
+```{r}
+housing1_long <- housing1_long %>% 
+  mutate(community = str_trim(community))
+
+housing1_long %>% 
+  filter(community == "North Vancouver")
+
+```
+
+* `str_trim()` has an argument `side =` if you need to specify left, right, or (the default) both
+
+* there is also a function `str_squish()` that also takes out excess whitespace (it still does leading and trailing, like `str_trim()`)
+
+* and if you need to _add_ whitespace, there's `str_pad()`
+
+* 
+
+
+Now our plot will have clean names:
+
+```{r}
+
+ggplot(housing1_long %>% 
+  group_by(community) %>% 
+  tally(units, sort = TRUE, name = "3 Year Total") %>% 
+  slice(1:10), aes(x = reorder(community, `3 Year Total`), y = `3 Year Total`))+
+  geom_col() +
+  coord_flip()
+
+
+```
+
+
+
+
+
+
+
+
+### Splitting strings {#strings-splitting}
 
 https://stringr.tidyverse.org/reference/str_split.html
 
@@ -475,7 +591,7 @@ bced
 
 ```
 
-You'll notice that in this file the three letter abbreviation is separated by "\t". This is the regular expression for a tab.
+You'll notice that in this file the three letter abbreviation is separated by "\\t". This is the regular expression for a tab.
 
 From {stringr}, we can use the `str_split()` function:
 
