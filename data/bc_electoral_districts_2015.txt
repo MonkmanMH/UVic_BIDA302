@@ -1,0 +1,87 @@
+ABM	Abbotsford-Mission	
+ABS	Abbotsford South	
+ABW	Abbotsford West	
+BDS	Boundary-Similkameen	
+BND	Burnaby-Deer Lake	
+BNE	Burnaby-Edmonds	
+BNL	Burnaby-Lougheed	
+BNN	Burnaby North	
+CBC	Cariboo-Chilcotin	
+CBN	Cariboo North	
+CHC	Chilliwack	
+CHK	Chilliwack-Kent	
+CLR	Columbia River-Revelstoke	
+CQB	Coquitlam-Burke Mountain	
+CQM	Coquitlam-Maillardville	
+CRC	Courtenay-Comox	
+CWV	Cowichan Valley	
+DLN	Delta North	
+DLS	Delta South	
+ESM	Esquimalt-Metchosin	
+FRN	Fraser-Nicola	
+KAN	Kamloops-North Thompson	
+KAS	Kamloops-South Thompson	
+KLA	Kelowna-Lake Country	
+KLM	Kelowna-Mission	
+KLW	Kelowna West	
+KOE	Kootenay East	
+KOW	Kootenay West	
+LJF	Langford-Juan de Fuca	
+LLY	Langley	
+LYE	Langley East	
+MAM	Maple Ridge-Mission	
+MAP	Maple Ridge-Pitt Meadows	
+MPR	Mid Island-Pacific Rim	
+NAN	Nanaimo	
+NCW	Nanaimo-North Cowichan	
+NEC	Nechako Lakes	
+NEL	Nelson-Creston	
+NEW	New Westminster	
+NOC	North Coast	
+NOI	North Island	
+NVL	North Vancouver-Lonsdale	
+NVS	North Vancouver-Seymour	
+OBG	Oak Bay-Gordon Head		
+PAQ	Parksville-Qualicum
+PCN	Peace River North
+PCS	Peace River South
+PEN	Penticton
+POC	Port Coquitlam
+POM	Port Moody-Coquitlam
+POR	Powell River-Sunshine Coast
+PRM	Prince George-Mackenzie
+PRV	Prince George-Valemount
+RNC	Richmond North Centre
+RQE	Richmond-Queensborough
+RSC	Richmond South Centre
+RST	Richmond-Steveston
+SAN	Saanich North and the Islands
+SAS	Saanich South
+SHU	Shuswap
+SKE	Skeena
+SKN	Stikine
+SRC	Surrey-Cloverdale
+SRF	Surrey-Fleetwood
+SRG	Surrey-Green Timbers
+SUG	Surrey-Guildford
+SUN	Surrey-Newton
+SUP	Surrey-Panorama
+SUS	Surrey South
+SWH	Surrey-Whalley
+SWR	Surrey-White Rock
+VFA	Vancouver-Fairview
+VFC	Vancouver-False Creek
+VFV	Vancouver-Fraserview
+VHA	Vancouver-Hastings
+VKE	Vancouver-Kensington
+VKI	Vancouver-Kingsway
+VLA	Vancouver-Langara
+VMP	Vancouver-Mount Pleasant
+VNP	Vancouver-Point Grey
+VNQ	Vancouver-Quilchena
+VNW	Vancouver-West End
+VRM	Vernon-Monashee
+VTB	Victoria-Beacon Hill
+VTS	Victoria-Swan Lake
+WVC	West Vancouver-Capilano
+WVS	West Vancouver-Sea to Sky

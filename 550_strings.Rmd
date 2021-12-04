@@ -468,120 +468,75 @@ https://stringr.tidyverse.org/reference/str_split.html
 function: `str_split()`
 
 
-Back to the various ways dates are represented: if it's a character string with the month and year.
-
-"Jan 2019"
-
 ```{r}
 
-our_date <- "Jan 2019"
-
-
-lubridate::ymd(our_date)
-
-# this works...the whole thing is now suspect
-lubridate::my(our_date)
+bced <- read_csv("data/bc_electoral_districts_2015.txt", col_names = FALSE)
+bced
 
 ```
 
-So that doesn't work.
+You'll notice that in this file the three letter abbreviation is separated by "\t". This is the regular expression for a tab.
 
-We can split the string into two parts using `str_split()`, where we specify the space as the splitting element:
+From {stringr}, we can use the `str_split()` function:
 
-```{r}
-
-str_split(our_date, " ")
-
-```
-
-Here we have four month-years, arranged alphabetically:
 
 ```{r}
 
-four_dates <- tribble(~ref_date, "Dec 2019", "Feb 2020", "Jan 2018", "Mar 2021")
-
-four_dates <- four_dates %>% 
-  mutate(value = 1:4)
-
-four_dates
+head(str_split(bced$X1, "\t"))
 
 ```
 
-Inside a tibble, we use `separate()` from the {tidyr} package:
+But there's a solution designed for tabular data, in the {tidyr} package: `separate()`
 
 * https://tidyr.tidyverse.org/reference/separate.html
 
+
 ```{r}
-
-four_dates2 <- four_dates %>% 
-  separate(ref_date, into = c("ref_mon", "ref_year"), sep = " ")
-
-four_dates2
+bced %>% 
+  separate(X1, "\t", into = c("ed_tla", "ed_name"))
 
 ```
 
-https://stackoverflow.com/questions/6549239/convert-months-mmm-to-numeric
-
-
-Back to factors!
+If we add the `remove = ` argument set to `FALSE`, the original variable remains:
 
 ```{r}
-
-# create a list that will be the month levels:
-
-month_levels <- c(
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-)
-
-
-four_dates3 <- four_dates2 %>% 
-  mutate(ref_mon2 = factor(ref_mon, levels = month_levels)) %>%
-  arrange(ref_mon2)
-
-four_dates3
+bced %>% 
+  separate(X1, "\t", into = c("ed_tla", "ed_name"), remove = FALSE)
 
 ```
 
+
+In the above example, the tab symbol is the separator, and there's only one per line. But what if it were spaces, and we wanted to separate on only the first space?
 
 ```{r}
 
-four_dates_list <- four_dates3 %>% 
-  glue::glue_data("{ref_year}-{ref_mon2}-01")
-
-four_dates_list
-
+bced_space <- read_csv("data/bc_electoral_districts_2015_space.txt", col_names = FALSE)
+bced_space
 ```
-
-
-Now it's in a format that {lubridate} can understand, and convert to a <date> class:
 
 ```{r}
 
+bced_space %>% 
+  separate(X1, " ", into = c("ed_tla", "ed_name"))
 
-ymd(four_dates_list)
 
 ```
 
+For the electoral districts with only a single word or a hyphen, it works fine. But notice that the two Abbotsford ridings are now just "Abbotsford", since everything after the second space has been dropped.
 
-And here's three different ways to add our new list back onto the data table:
+The solution is to use the `extra = "merge"` argument. (Note that the default is `extra = "drop"`.)
 
-```{r list_into_table}
-# in a pipe:
-four_dates3 %>% 
-  mutate(ref_date_x = ymd(four_dates_list))
 
-# for fans of the <table>$<variable> structure:
-four_dates3$ref_date_y <- ymd(four_dates_list)
 
-# and a new function, `cbind()`:
-cbind(four_dates3, ymd(four_dates_list))
+```{r}
+
+bced_space %>% 
+  separate(X1, " ", into = c("ed_tla", "ed_name"), extra = "merge")
+
 
 ```
 
-
-For more on `cbind()` (for column bind) and its parallel `rbind()` (for row bind), see:
-https://www.dummies.com/programming/r/how-to-add-variables-to-a-data-frame-in-r/
+Nice!
 
 
 
