@@ -38,7 +38,7 @@ There are CSV files for the following:
 
 * Population: "population_total.csv"
 
-In addition, there is an Excel file that you'll need to use to get the region (continent) that each country is in. 
+In addition, there is an Excel file that you'll need to use to get the region (continent) that each country is in. Use the variable "four_regions" for the continents.
 
 * "Data Geographies - v1 - by Gapminder.xlsx", sheet = "list-of-countries-etc"
 

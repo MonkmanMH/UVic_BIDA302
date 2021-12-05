@@ -30,6 +30,14 @@ From November 9, 2020 showing new cases by Health Authority region, on a "per 10
 * https://twitter.com/vb_jens/status/1325965304925577218?s=20
 
 
+For this chart, you do not have to add the vertical lines (showing).
+
+As well, you'll need to group the three health authority regions into one. A tool for doing that is the `case_when()` function in {dplyr}: 
+
+* ["A general vectorised if"](https://dplyr.tidyverse.org/reference/case_when.html)
+
+
+
 ### Other visualizations of data from the same source
 
 https://twitter.com/vb_jens/status/1323423179390418944?s=20
@@ -39,6 +47,14 @@ Animations:
 https://twitter.com/vb_jens/status/1323649252770291713?s=20
 
 
+
+## Going beyond
+
+An idea for going beyond the two charts above would be to use the facet functionality of {ggplot2} to draw a separate case rate plot (similar to the data in the second chart) for each of the five health authority regions. (The plot above combines three of them into the "Other BC" line, but after the original plot was made, the case rates in some of the other regions were also high.)
+
+* [{ggplot2} reference](https://ggplot2.tidyverse.org/reference/facet_grid.html)
+
+* [_R Graphics Cookbook_](https://r-graphics.org/chapter-facet)
 
 
 ## Data source {#covid-bc-data}

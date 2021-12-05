@@ -10,7 +10,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 ## Introduction {#bat-echolocation-intro}
 
-Echolocation call data for 4 species of Vancouver Island bats (https://www.bcbats.ca/index.php/bat-basics/bc-bat-species). Call data comprises 30 unique records for 4 echolocation call parameters for each of the bat species. Call data was recorded using an ultrasonic bat detector (Anabat; Titley Scientific https://www.titley-scientific.com/) with call parameters downloaded and extracted using AnaLook.
+Echolocation call data for 4 species of Vancouver Island bats (https://bcbats.ca/bat-basics/bat-species-in-bc/). Call data comprises 30 unique records for 4 echolocation call parameters for each of the bat species. Call data was recorded using an ultrasonic bat detector (Anabat; Titley Scientific https://www.titley-scientific.com/) with call parameters downloaded and extracted using AnaLook.
 
 For this project, explore the data using the inspiration provided by the penguin analysis (below).
 
@@ -39,7 +39,7 @@ _**Echolocation Call Paramters:**_
 
 **Frequency** - Characteristic frequency (kHz)
 
-**Slope** - Characteristic slope
+**Slope** - Characteristic slope (the change in frequency, divided by the duration of the call)
 
 
 Source: Dr. Joanna Burgar; https://github.com/joburgar/Bat_Data 
@@ -57,6 +57,13 @@ The R package {palmerpenguins} reference page has some tabulations and visualiza
 
 
 ## Other resources {#bat-echolocation-other}
+
+**Information on recording bat calls**
+
+[Montana Bat Call Identification](https://mtnhp.org/animal/presentations/Montana_Bat_Call_Identification_Training_20150416.pdf)—this slide deck goes a lot deeper into bat calls.
+
+* slide 10 has details about the elements that are recorded
+
 
 **Statistical analysis of bat calls**
 

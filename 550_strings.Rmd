@@ -579,10 +579,7 @@ ggplot(housing1_long %>%
 
 ### Splitting strings {#strings-splitting}
 
-https://stringr.tidyverse.org/reference/str_split.html
-
-function: `str_split()`
-
+This file has a single column, with both the name of every electoral district in British Columbia, preceded by a three-letter abbreviation (TLA).
 
 ```{r}
 
@@ -594,6 +591,9 @@ bced
 You'll notice that in this file the three letter abbreviation is separated by "\\t". This is the regular expression for a tab.
 
 From {stringr}, we can use the `str_split()` function:
+
+* https://stringr.tidyverse.org/reference/str_split.html
+
 
 
 ```{r}
@@ -622,7 +622,7 @@ bced %>%
 ```
 
 
-In the above example, the tab symbol is the separator, and there's only one per line. But what if it were spaces, and we wanted to separate on only the first space?
+In the above example, the tab symbol is the separator, and there's only one per line. But what if the abbreviation and the name were separated by spaces? In that case, we would want to separate on only the first space.
 
 ```{r}
 
