@@ -325,7 +325,7 @@ We sometimes find ourselves in a situation where we want to recode our existing 
 We can do this with a function in {dplyr}, `case_when()`.
 
 ```{r}
-canpop <- read_csv("canpop.csv")
+canpop <- read_csv("data/canpop.csv")
 canpop
 ```
 
@@ -335,8 +335,9 @@ In this first solution, we name the largest provinces separately:
 
 canpop %>% 
   mutate(pt_grp = case_when(
+    # evaluation ~ new value
     province_territory == "Ontario" ~ "Ontario",
-    province_territory == "Quebec" ~ "Quebed",
+    province_territory == "Quebec" ~ "Quebec",
     province_territory == "British Columbia" ~ "British Columbia",
     province_territory == "Alberta" ~ "Alberta",
     # all others get recoded as "other"
