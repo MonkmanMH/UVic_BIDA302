@@ -19,13 +19,10 @@ library(gapminder)
 
 
 
-
-### Reading & Resources  {#wrangling2-reading}
-
-
-
-
 ## Introduction  {#wrangling2-intro}
+
+This chapter revisits the process of data wrangling with some additional techniques.
+
 
 ### `ungroup()` 
 
