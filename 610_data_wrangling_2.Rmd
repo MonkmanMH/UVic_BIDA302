@@ -317,4 +317,94 @@ gapminder %>%
 
 ```
 
+
+## Recode variables with `case_when()`
+
+We sometimes find ourselves in a situation where we want to recode our existing variables into other categories. For example, sometimes you have a handful of categories that make up the bulk of the total, and summarizing the smaller categories into an "all other" makes the table or plot easier to read. Think of the populations of the 13 Canadian provinces and territories: the four most populous provinces (Ontario, Quebec, British Columbia, and Alberta) account for roughly 85% of the country's population...the other 15% are spread across nine provinces and territories. We might want to show a table with only five rows, with the smallest nine provinces and territories grouped into a single row.
+
+We can do this with a function in {dplyr}, `case_when()`.
+
+```{r}
+canpop <- read_csv("canpop.csv")
+canpop
+```
+
+In this first solution, we name the largest provinces separately:
+
+```{r}
+
+canpop %>% 
+  mutate(pt_grp = case_when(
+    province_territory == "Ontario" ~ "Ontario",
+    province_territory == "Quebec" ~ "Quebed",
+    province_territory == "British Columbia" ~ "British Columbia",
+    province_territory == "Alberta" ~ "Alberta",
+    # all others get recoded as "other"
+    TRUE ~ "other"
+  ))
+
+```
+
+But that's a lot of typing. A more streamlined approach is to put the name of our provinces in a list, and then recode our new variable with the value from the original variable:
+
+```{r}
+
+canpop %>% 
+  mutate(pt_grp = case_when(
+    province_territory %in% c("Ontario", "Quebec", "British Columbia", "Alberta") ~ province_territory,
+    TRUE ~ "other"
+  ))
+
+```
+
+But we can do even better, by using a comparison to create a population threshold:
+
+```{r}
+
+canpop <- canpop %>% 
+  mutate(pt_grp = case_when(
+    population > 4000000 ~ province_territory,
+    TRUE ~ "other"
+  ))
+
+canpop
+
+```
+
+Now we can use that new variable to group a table:
+
+```{r}
+
+canpop %>% 
+  group_by(pt_grp) %>% 
+  summarise(pt_pop = sum(population)) %>% 
+  arrange(desc(pt_pop))
+
+```
+
+### Multiple comparisons
+
+In this example from the [`case_when()` reference page:](https://dplyr.tidyverse.org/reference/case_when.html), it uses different combinations of three variables to create a single fourth variable.
+
+```{r}
+# case_when is particularly useful inside mutate when you want to
+# create a new variable that relies on a complex combination of existing
+# variables
+starwars
+
+starwars %>%
+  select(name:mass, gender, species) %>%
+  mutate(
+    type = case_when(
+      species == "Droid"        ~ "robot",
+      height > 150 | mass > 200 ~ "large",
+      TRUE                      ~ "other"
+    )
+  )
+
+```
+
+
+
+
 -30-
