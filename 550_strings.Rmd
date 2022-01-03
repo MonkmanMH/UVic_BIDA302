@@ -428,35 +428,35 @@ Here's some tools to make that selection process a bit more streamlined:
 
 (Note: these functions are some of the "select_helpers" imported into {dplyr} from the [{tidyselect}](https://www.rdocumentation.org/packages/tidyselect/versions/1.0.0/topics/select_helpers) package. )
 
-Examples using the {iris} data:
+Examples using the {palmerpenguins} data:
 
 ```{r}
-
-head(iris)
+library(palmerpenguins)
+head(penguins)
 
 ```
 
 Here is a way to select the variables that have the length measurements:
 
 ```{r}
-iris %>% 
-  select(contains("Length")) %>%
+penguins %>% 
+  select(contains("length")) %>%
   head()
 ```
 
-And two ways to select those with the petal measurements:
+And two ways to select those with the bill measurements:
 
 ```{r}
-iris %>% 
-  select(starts_with("Pet")) %>%
+penguins %>% 
+  select(starts_with("bill_")) %>%
   head()
 ```
 
 This second case incorporates regex into the selection code, with the "^" for the start of the string:
 
 ```{r}
-iris %>% 
-  select(matches("^P")) %>%
+penguins %>% 
+  select(matches("^b")) %>%
   head()
 ```
 

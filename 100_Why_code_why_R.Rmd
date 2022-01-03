@@ -115,7 +115,7 @@ This is where the R community really shines. The spirit of the bazaar extends to
 
 
 
-![_Code Hero: image by [Allison Horst_](https://github.com/allisonhorst/stats-illustrations)](static/img/code_hero_rstats_600.png)
+![_Code Hero: [Artwork by @allison_horst](https://github.com/allisonhorst/stats-illustrations)](static/img/code_hero_rstats_600.png)
 
 
 Another part of the R community is the proliferation of hexagonal laptop stickers, which fit neatly together and give a visual signal to other members of the R community.

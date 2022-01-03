@@ -197,9 +197,17 @@ Here's some wisdom from Dr. Nicki Washington:
 
 ![_Run your race_](static/img/Dr_Nicki_Washington_run_your_race.png)
 
-If you stop along the way to check your progress, don't look at where others are on their race—look at how you've moved forward. Wherever you are on the course scatter plot now, you are going to move up on the "data analytics" axis, and right on the "coding fundamentals" axis.  
+If you stop along the way to check your progress, don't look at where others are on their race—look at how you've moved forward. 
+
+Below is the course scatter plot, which has "data analytics" on the Y axis, and "coding fundamentals" on the X axis. Think about where you are today. Wherever you are on the course scatter plot now, you are going to move up on the "data analytics" axis, and right on the "coding fundamentals" axis.  
 
 ![_data analytics coding fundamentals_](static/img/dacf_1.png)
+
+As well, even if both of these topics are new to you, you already know things that are going to help you along the way.
+
+![_You know some stuff_ Artwork by @allison_horst](static/img_allison_horst/you_know_some_stuff.jpg){width = 50%}
+
+And you are not taking this journey alone! In this course, we collaborate and share things we have worked out—this helps our colleagues, and also helps us remember and solidify what we have learned.
 
 
 ### On learning a new language {-}
