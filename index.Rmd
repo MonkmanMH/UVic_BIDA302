@@ -205,7 +205,7 @@ Below is the course scatter plot, which has "data analytics" on the Y axis, and 
 
 As well, even if both of these topics are new to you, you already know things that are going to help you along the way.
 
-![_You know some stuff_ Artwork by @allison_horst](static/img_allison_horst/you_know_some_stuff.jpg){width = 50%}
+![_"You know some stuff": artwork by Allison Horst_](static/img_allison_horst/you_know_some_stuff.jpg){width=50%}
 
 And you are not taking this journey alone! In this course, we collaborate and share things we have worked out—this helps our colleagues, and also helps us remember and solidify what we have learned.
 

@@ -19,7 +19,7 @@ library(datarium)
 
 ```
 
-# Modeling {#Modeling}
+# Modeling {#modeling}
 
 
 ## Objectives: Modeling
