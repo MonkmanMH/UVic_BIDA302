@@ -173,6 +173,7 @@ gapminder %>%
 ```
 
 
+
 ## Creating lists  {#data-wrangle-lists}
 
 R allows us to create lists using the `c()` function.
@@ -222,7 +223,7 @@ This also reduces the risk of inadvertent error if we want to change the countri
 
 
 
-### Select columns  {#data-wrangle-select}
+## Select columns  {#data-wrangle-select}
 
 
 You've already seen `filter()` to choose particular rows in your dataframe. What if you want to remove some columns (variables)?
@@ -264,7 +265,7 @@ gapminder %>%
 
 
 
-
+## Functions for data wrangling
 
 ### Reference: {dplyr} functions
 
@@ -289,19 +290,6 @@ The functions in {dplyr} (and many other packages) are verbs that describe what 
 
 
 The full list of {dplyr} functions is here: https://dplyr.tidyverse.org/reference/index.html
-
-
-### Reference: Arithmetic operators
-
-R uses the same arithmetic operators that other programs use—you're probably familiar with all of them:
-
-| Operator | Description |
-| :-- | :-- |
-| + | *plus* |
-| - | *minus* |
-| \* | *multiplication*  |
-| / | *division* |
-| ^ | *exponential* |
 
 
 
@@ -336,8 +324,7 @@ Boolean operators can be combined with *and* or *or*.
 
 
 
-
-### Descriptive statistics
+## Descriptive statistics
 
 R has a built-in function to generate some descriptive (or summary) statistics. The first is `summary()` which gives a few key statistics about the distribution.
 
