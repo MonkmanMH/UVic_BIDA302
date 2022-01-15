@@ -28,7 +28,7 @@ library(gapminder)
 
 ## Objectives {#tidy-data-takeaway}
 
-* Restructure data tabulations with `pivot_wider()` and `pivot_longer`  
+* Restructure data tabulations with `pivot_wider()` and `pivot_longer()`  
 
 
 ## Reading  {#tidy-data-reading}

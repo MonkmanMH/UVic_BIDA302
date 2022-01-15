@@ -10,7 +10,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Assignment 1 - data wrangling {#assignment1}
+# Take-home exercise - data wrangling {#assignment1}
 
 
 Package load:
@@ -41,9 +41,9 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 
 
 ### 1. Assign a variable {#q1-1}
-> (1 mark)
+(1 mark)
 
-> Why does this code chunk not work?
+Why does this code chunk not work?
 
 ```
 stringlenght <- 10
@@ -51,19 +51,19 @@ stringlenght <- 10
 stringlength
 ```
 
-> Look carefully! (This may seem like an exercise in pointlessness, but training your brain to notice even the tiniest difference will pay off when programming.)
+Look carefully! (This may seem like an exercise in pointlessness, but training your brain to notice even the tiniest difference will pay off when programming.)
 
 
 
 
 ### 2. Reducing the size of your data set {#q1-2}
-> (3 marks)
+(3 marks)
 
-> Starting with the {mpg} data frame, use `filter()` and `select()` to create a shorter form of this table that contains the following records and variables:
->
->* compact and subcompact Volkswagens from the model year 1999
->
->* manufacturer, model, mileage in both city and highway 
+Starting with the {mpg} data frame, use `filter()` and `select()` to create a single table that contains the following records and variables:
+
+* compact and subcompact Volkswagens from the model year 1999
+
+* manufacturer, model, mileage in both city and highway 
 
 ```{r}
 mpg
@@ -77,9 +77,9 @@ mpg
 ***
 
 ### 3. Selecting variables {#q1-3}
-> (1 mark)
+(1 mark)
 
-> What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
+What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
 
 ```{r}
 library(gapminder)
@@ -95,14 +95,14 @@ library(gapminder)
 ***
 
 
-### 4. R Markdown {#q1-5}
-> (1 mark)
+### 4. R Markdown {#q1-4}
+(1 mark)
 
-> The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
->
-> Enter a chunk option so that the chart shows in the output, but the code does not.
->
-> (Hint: use the RMarkdown cheatsheet to find the solution!)
+The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
+
+Enter a chunk option so that the chart shows in the output, but the code does not.
+
+(Hint: use the RMarkdown cheatsheet to find the solution!)
 
 
 ```{r}
@@ -115,23 +115,21 @@ ggplot(data = mpg) +
 
 ***
 
-### 5. Flight data {#q1-6}
-> (6 marks)
+### 5. Flight data {#q1-5}
+(6 marks)
 
-> For Q3a-3d, use the data `nycflights13::flights`
->
-> Pay close attention to how the variables are coded.
->
-> Using the data in the `nycflights13::flights` table, find all flights that:
->
->a. Had an arrival delay of two or more hours
+For Q3a-3d, use the data `nycflights13::flights`
+Pay close attention to how the variables are coded.
+Using the data in the `nycflights13::flights` table, find all flights that:
 
->b. Flew to Houston (there are two airports, with the codes IAH or HOU)
+a. Had an arrival delay of two or more hours
 
->c. Were operated by United, American, or Delta (you may want to review the separate airlines table to check the codes for each airline)
+b. Flew to Houston (there are two airports, with the codes IAH or HOU)
 
->d. Departed in summer (July, August, and September)
+c. Were operated by United, American, or Delta (you may want to review the separate airlines table to check the codes for each airline)
+
+d. Departed in summer (July, August, and September)
 
 
 
-
+-30-
