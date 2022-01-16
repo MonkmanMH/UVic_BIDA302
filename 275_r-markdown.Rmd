@@ -126,7 +126,7 @@ Now, type `?say` in the console to activate the Help menu for this function. Try
 
 Try experimenting with other arguments. For example, instead of your quote (which is the `what =` argument), you could put `what = "time"`.
 
-Now you have had a chance to experiement with that silliness...onward!
+Now you have had a chance to experiment with that silliness...onward!
 
 
 ## Chunk contents
