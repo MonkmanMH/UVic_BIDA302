@@ -410,7 +410,19 @@ gapminder %>%
 (Thanks to the students of BIDA302 spring 2021 for teaching me this one!)
 
 
+It's also possible to have multiple columns selected using the `id_cols =` argument:
 
+
+```{r}
+# Three countries from three different continents
+gapminder %>% 
+  filter(country %in% c("Canada", "China", "Croatia")) %>% 
+  filter(year > 1980) %>% 
+  pivot_wider(id_cols = c(country, continent), 
+              names_from = "year", 
+              values_from = "gdpPercap")
+
+```
 
 
 ### Online exercise {#tidy-data-online}

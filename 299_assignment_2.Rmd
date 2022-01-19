@@ -75,10 +75,9 @@ Assign the contents of the file to a named object (remember, name things in a de
 b. Read the file again, but specify that the region code should be a character.
 
 
-c. Now you've read it in, use your data manipulation skills to find out how many cases were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
+c. Now you've read the contents of the file, use your data manipulation skills to create a table that shows the total number of cases that were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
 
-
-d. Create a pivot table showing the total number of cases completed in each region during 2018, with the region as the rows and the court class as the columns. 
+d. Create a table showing the number of cases by court class completed in each region during 2018, with the region as the rows and the court class as the columns. 
 
 
 
