@@ -39,7 +39,7 @@ anscombe
 ```
 
 
-Read the quartet data in a tidy form^[Source: David Robinson, ["Anscombe’s Quartet with Tidy Tools"](https://rpubs.com/dgrtwo/tidy-anscombe)]
+Read the quartet data in a tidy form.^[Source: David Robinson, ["Anscombe’s Quartet with Tidy Tools"](https://rpubs.com/dgrtwo/tidy-anscombe)] Note that the variables have been renamed "ex" and "why".
 
 
 
@@ -68,19 +68,19 @@ anscombe_tidy
 
 ### Summary statistics
 
-Each of the four sets in Anscombe's Quartet has the same summary statistics. Let's calculate the mean of _x_ for each of the four sets:
+Each of the four sets in Anscombe's Quartet has the same summary statistics. Let's calculate the mean of _ex_ for each of the four sets:
 
 
 ```{r}
 # example
 anscombe_tidy %>%
   group_by(set) %>%
-  summarize(mean.x = mean(x))
+  summarize(mean.x = mean(ex))
 ```
 
 ### Your turn
 
-Using the following functions, calculate the summary statistics of _x_ and _y_, and the correlation coefficient between _x_ and _y_, for all four of the sets in the quartet:
+Using the following functions, calculate the summary statistics of _ex_ and _why_, and the correlation coefficient between _ex_ and _why_, for all four of the sets in the quartet:
 
  | statistic | function |
  | ----       | ----      |
@@ -94,11 +94,11 @@ Using the following functions, calculate the summary statistics of _x_ and _y_, 
 # solution
 anscombe_tidy %>% 
   group_by(set) %>% 
-  summarize(mean(x), 
-            sd(x), 
-            mean(y), 
-            sd(y), 
-            cor(x, y))
+  summarize(mean(ex), 
+            sd(ex), 
+            mean(why), 
+            sd(why), 
+            cor(ex, why))
 ```
 
 
@@ -118,7 +118,7 @@ With this example, the dataframe we're using is `anscombe_tidy` and we are plott
 ```{r}
 # example
 ggplot(anscombe_tidy) + 
-  geom_point(aes(x = x, y = y)) 
+  geom_point(aes(x = ex, y = why)) 
 ```
 
 
@@ -130,7 +130,7 @@ Now we will add another variable to those in our `aes` list. We will add the var
 ```{r}
 # example
 ggplot(anscombe_tidy) + 
-  geom_point(aes(x = x, y = y, colour = set)) 
+  geom_point(aes(x = ex, y = why, colour = set)) 
 ```
 
 
@@ -141,7 +141,7 @@ For this example, we plot only set "I". We start with our dataframe, and then us
 anscombe_tidy %>%
   filter(set == "I") %>%
 ggplot() + 
-  geom_point(aes(x, y), size = 3, colour = "purple")
+  geom_point(aes(ex, why), size = 3, colour = "purple")
 ```
 
 
@@ -152,7 +152,7 @@ Another way to differentiate the sets is to use a facet plot. In this example, w
 
 ```{r}
 ggplot(anscombe_tidy) + 
-  geom_point(aes(x, y)) + 
+  geom_point(aes(ex, why)) + 
   facet_wrap(~set)
 ```
 
@@ -165,17 +165,17 @@ Now we will add a trend line using the `geom_smooth` function.
 
 ```{r}
 ggplot(anscombe_tidy) + 
-  geom_point(aes(x, y)) + 
-  geom_smooth(aes(x, y), method = lm) +
+  geom_point(aes(ex, why)) + 
+  geom_smooth(aes(ex, why), method = lm) +
   facet_wrap(~set)
 ```
 
 
-But that duplicates the `aes(x, y)` text ... so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
+But that duplicates the `aes(ex, why)` text ... so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
 
 
 ```{r}
-p <- ggplot(anscombe_tidy, aes(x, y)) + 
+p <- ggplot(anscombe_tidy, aes(ex, why)) + 
   geom_point() + 
   geom_smooth(method = lm, se = FALSE) + 
   facet_wrap(~set)
