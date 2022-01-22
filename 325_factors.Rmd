@@ -120,6 +120,11 @@ h_gap <- gapminder %>%
   filter(country %in% h_countries) %>% 
   droplevels()
 
+```
+
+We can then use `levels()` and `nlevels()` to check the results.
+
+```{r}
 levels(h_gap$country)
 
 nlevels(h_gap$country)
@@ -172,12 +177,10 @@ Give them a try on `continent` in gapminder.
 gapminder$continent %>%
   fct_infreq() %>%
   levels()
-
 gapminder$continent %>%
   fct_infreq() %>%
   fct_rev() %>%
   levels()
-
 
 ```
 
@@ -262,6 +265,7 @@ Bar plots are often used to visualize the distribution of a discrete variable. I
 # solution
 ggplot(gapminder_2007, aes(x = continent)) +
   geom_bar()
+
 ```
 
 
@@ -273,9 +277,9 @@ Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'l
 
 ```{r}
 # solution
+
 ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
   geom_bar()
-
 
 ```
 
@@ -298,11 +302,8 @@ Followed by
 
 ```{r}
 # solution
-
-
 mybar <- ggplot(gapminder_2007, aes(x = continent, fill = `continent`)) +
   geom_bar()
-
 
 ```
 
@@ -317,7 +318,6 @@ To do this, add the `coord_flip()` function to the chart object you assigned abo
 
 ```{r}
 # solution
-
 mybar + coord_flip()
 
 ```
@@ -372,7 +372,7 @@ h_gap %>%
 Now it's your turn: sort by life expectancy:
 
 ```{r}
-
+# solution
 h_gap %>%
   filter(year == 2007) %>%
   mutate(country = country %>% 

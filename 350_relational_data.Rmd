@@ -132,18 +132,18 @@ The first kind of joins are "mutating joins"—new variables are added to one da
 
 * from [_R for Data Science, "Understanding joins"]("https://r4ds.had.co.nz/relational-data.html#mutating-joins")
 
-First, we will make two small tables, `x` and `y`
+First, we will make two small tables, `table_one` and `table_two`
 
 ```{r}
-x <- tribble(
-  ~key, ~colour_x,
+table_one <- tribble(
+  ~key_var, ~colour_t1,
      "key1", "red",
      "key2", "blue",
      "key3", "yellow"
 )
 
-y <- tribble(
-  ~key, ~fruit_y,
+table_two <- tribble(
+  ~key_var, ~fruit_t2,
      "key1", "apple",
      "key2", "blueberry",
      "key4", "banana"
@@ -153,13 +153,13 @@ y <- tribble(
 ```
 
 
-**inner joins**
+###inner joins
 
-An inner join keeps only the observations where there is a match on both sides. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
+An inner join keeps only the observations where there is a **match on both sides**. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
 
 ```{r}
 
-inner_join(x, y, key = "key")
+inner_join(x = table_one, y = table_two, key = "key_var")
 
 ```
 
@@ -167,7 +167,7 @@ More commonly, you will see the key variables coded as `by =`:
 
 ```{r}
 
-inner_join(x, y, by = "key")
+inner_join(table_one, table_two, by = "key_var")
 
 ```
 
@@ -176,12 +176,12 @@ Note that in the circumstances where we are confident that the key variables are
 
 ```{r}
 
-inner_join(x, y)
+inner_join(table_one, table_two)
 
 ```
 
 
-**left join**
+### left join
 
 Left, right, and full joins are varieties of "outer joins".
 
@@ -190,14 +190,14 @@ Join the two tables using a left join: ... all of the observations from the firs
 The {dplyr} function for this is `left_join()`
 
 ```{r}
-left_join(x, y, by = "key")
+left_join(table_one, table_two, by = "key_var")
 ```
 
-Note that all 3 of the `x` values are there; because there is no `y` observation with the key value of "3", the `val_y` value is `NA`.
+Note that all 3 of the `table_one` values are there; because there is no `table_two` observation with the key value of "key3", the `fruit_t2` value is `NA`.
 
 **right join**
 
-Is the same as a left join, but keeps all of the observations in `y`
+Is the same as a left join, but keeps all of the observations in the right-hand table `y`
 
 **full join**
 
@@ -209,13 +209,13 @@ See what happens when you join the tables with a `right_join()`, followed by a `
 
 ```{r}
 # solution
-right_join(x, y, by = "key")
+right_join(table_one, table_two, by = "key_var")
 
 ```
 
 ```{r}
 
-full_join(x, y, by = "key")
+full_join(table_one, table_two, by = "key_var")
 
 ```
 
@@ -266,18 +266,18 @@ flights2 %>%
 
 In real life, tables start to get more complex. It's often the case that you will have tables that have duplicate keys in one or both of the tables.
 
-The chunk below creates new tables of `a` and `b` tables, where there are duplicate keys in one.
+The chunk below creates new tables `table_a` and `table_b`, where there are duplicate keys in one.
 
 ```{r}
 
 
-a <- tribble(~ key, ~ day_x,
+table_a <- tribble(~ key_var, ~ day_a,
              "key1", "Mon",
              "key1", "Tue",
              "key2", "Wed",
              "key2", "Thu")
 
-b <- tribble(~ key, ~ veg_y,
+table_b <- tribble(~ key_var, ~ veg_b,
              "key1", "carrot",
              "key2", "tomato")
 ```
@@ -290,12 +290,12 @@ Join the tables with `left_join()`, with `a` as the table on the left.
 ```{r}
 # solution
 
-left_join(a, b, key = "key")
+left_join(table_a, table_b, key = "key_var")
 
 ```
 
 
-A situation where there are duplicate keys in both tables is usually an error--there is no unique identifier of a single observation. (A question to ask yourself is "Is there are third table?")
+A situation where there are duplicate keys in both tables is usually an error—there is no unique identifier of a single observation. (A question to ask yourself is "Is there are third table?")
 
 
 ### Your turn
@@ -303,12 +303,12 @@ A situation where there are duplicate keys in both tables is usually an error--t
 Here's different tables, where the key "2" is duplicated in both.
 
 ```{r}
-m <- tribble(~ key, ~ month_x,
+table_m <- tribble(~ key_var, ~ month_m,
              "key1", "Jan",
              "key2", "Feb",
              "key2", "Mar")
 
-n <- tribble(~ key, ~ ball_y,
+table_n <- tribble(~ key_var, ~ ball_n,
              "key1", "foot",
              "key2", "basket",
              "key2", "base")
@@ -321,7 +321,7 @@ What does a left join do? How many rows does the resulting table have?
 ```{r}
 # solution
 
-left_join(m, n, by = "key")
+left_join(table_m, table_n, by = "key_var")
 
 ```
 
@@ -348,15 +348,15 @@ Let's go back to our original test tables again:
 
 ```{r}
 
-x <- tribble(
-  ~key, ~colour_x,
+table_one <- tribble(
+  ~key_var, ~colour_t1,
      "key1", "red",
      "key2", "blue",
      "key3", "yellow"
 )
 
-y <- tribble(
-  ~key, ~fruit_y,
+table_two <- tribble(
+  ~key_var, ~fruit_t2,
      "key1", "apple",
      "key2", "blueberry",
      "key4", "banana"
@@ -365,19 +365,19 @@ y <- tribble(
 
 ```
 
-Semi-join: only the observations in `x` that have a match in `y`.
+**Semi-join**: only the observations in `x` that have a match in `y`.
 
 Note that no variables from `y` appear in the result.
 
 ```{r}
-semi_join(x, y, by = "key")
+semi_join(table_one, table_two, by = "key_var")
 ```
 
 
-Anti-join: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
+**Anti-join**: returns the observations in `x` that _don't_ have a key match in `y`. Again, no values from `y` appear in the result.
 
 ```{r}
-anti_join(x, y, by = "key")
+anti_join(table_one, table_two, by = "key_var")
 ```
 
 

@@ -37,7 +37,7 @@ What's covered in this short exercise barely scratches the surface of what's pos
 
 * Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
 
-![_shark dance flipbook_](static/img/shark_dance.gif)
+
 
 
 ## Plot types {#data-viz-2-plot-types}
@@ -94,7 +94,6 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 ```
 
 This plot show that birds with longer flippers do indeed weigh more.
-
 
 
 ## Bar chart
