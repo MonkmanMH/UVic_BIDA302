@@ -15,6 +15,8 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 
 library(tidyverse)
+# data packages
+library(palmerpenguins)
 library(gapminder)
 ```
 
@@ -66,32 +68,32 @@ After we have explored how to build those, we move on to some basic plot formatt
 
 
 
-We've seen scatterplots in Anscombe's Quartet, but here's another example using the {mpg} data, which has the technical details and fuel consumption of a variety of automobile models.
+We've seen scatterplots in Anscombe's Quartet, but here's another example using the {palmerpenguin} data, which has a variety of measurements from some penguins near the Palmer Research Station in Antartica.
 
 ```{r}
-mpg
+penguins
 ```
 
-The question we are asking is "Does a larger engine mean higher fuel consumption?" In our data, engine size is measured in the variable `displ`. For fuel consumption, we can use `hwy`, which shows the miles per gallon used in highway conditions.
+The question we are asking might be "Is there a relationship between the length of a bird's flipper and their weight?" In our data, flipper length (in millimeters) is reported in the variable `flipper_length_mm`. For weight, we use `body_mass_g`, which is measured in grams.
 
 A visualization of the relationship (the correlation) between these two variables would be shown using a scatterplot. 
 
 The {ggplot2} code for this is below:
 
 ```{r}
-ggplot(mpg, aes(x = displ, y = hwy)) +
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point()
 ```
 
 With this plot, we can overlay a straight line (the line of best fit calculated through a regression equation).
 
 ```{r}
-ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point() + 
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
   geom_smooth(method = "lm")
 ```
 
-This plot show that drop in fuel efficiency (highway gas consumption) that comes with a larger engine.
+This plot show that birds with longer flippers do indeed weigh more.
 
 
 
@@ -103,11 +105,11 @@ This plot show that drop in fuel efficiency (highway gas consumption) that comes
 
 Bar charts are good for showing the difference between categories.
 
-The first bar will show the number of models (that is, rows) in each class of vehicle. Note that there is only an `x =` variable: the value shown on the y axis, "count", is calculated for us.
+The first bar will show the number of birds (that is, rows) of each species. Note that there is only an `x =` variable: the value shown on the y axis, "count", is calculated for us.
 
 ```{r}
 
-ggplot(mpg, aes(x = class)) +
+ggplot(penguins, aes(x = species)) +
   geom_bar()
 
 ```
@@ -118,45 +120,52 @@ ggplot(mpg, aes(x = class)) +
 
 In bar plots, we sometimes want to show a value other than the count of cases. 
 
-In this example, we first calculate the average fuel consumption by class of vehicle (compact, suv, etc) and then plot those values. The `n` value calculated in the `summarise()` function is the count of the number of cases in each class, which is to say, the same values shown in the bar chart above.
+In this example, we first calculate the average length of the bird's bill by species and then plot those values. The `n` value calculated in the `summarise()` function is the count of the number of cases in each class, which is to say, the same values shown in the bar chart above.
+
+(Note that we have to use `na.rm = TRUE` in the calculation of mean bill length, in order to remove the NA values that appear in the variable `bill_length_mm`.)
 
 ```{r}
 # the summary data table
-mpg_class <- mpg %>% 
-  group_by(class) %>% 
+penguin_species_bill <- penguins %>% 
+  group_by(species) %>% 
   summarise(n = n(),
-            hwy_mean = mean(hwy)) 
+            bill_length_mean = mean(bill_length_mm, na.rm = TRUE)) 
 
-mpg_class
+penguin_species_bill
 
 ```
 
-To show the `hwy_mean` value as the height, we use the `geom_col()` function:
+To show the `bill_length_mean` value as the height of the bars, we use the `geom_col()` function:
 
 ```{r}
 
-ggplot(mpg_class, aes(x = class, y = hwy_mean)) +
+ggplot(penguin_species_bill, aes(x = species, y = bill_length_mean)) +
     geom_col()
 
 ```
 
-Sorting categorical visualizations is often a useful way to demonstrate the differences between the categories. Here we add a `reorder()` argument to the x variable. You could read this as "reorder the variable "class" by the values in "hwy_mean".
+Note that the bars are arranged alphabetically, starting with Adelie.
+
+Sorting categorical visualizations is often a useful way to demonstrate the differences between the categories. Here we add a `reorder()` argument to the x variable. You could read this as "reorder the variable "species" by the values in "bill length".
 
 ```{r}
 
-ggplot(mpg_class, aes(x = reorder(class, hwy_mean), y = hwy_mean)) +
+ggplot(penguin_species_bill, aes(x = reorder(species, bill_length_mean), y = bill_length_mean)) +
     geom_col()
 
 ```
 
-What happens if you were to add a minus sign (hyphen) in front of the `hwy_mean` of the `reorder()` function? The full code would look like this:
+What happens if you were to add a minus sign (hyphen) in front of the `bill_length_mean` of the `reorder()` function? The full code would look like this:
 
 ```{r}
 
-ggplot(mpg_class, aes(x = reorder(class, -hwy_mean), y = hwy_mean)) +
+ggplot(penguin_species_bill, aes(x = reorder(species, -bill_length_mean), y = bill_length_mean)) +
     geom_col()
 
 ```
+
+Using the hyphen reverses the order, from longest bill to shortest.
+
 
 
 ### Cleveland dot plot
@@ -172,12 +181,12 @@ In {ggplot2}, the code to visualize the same data would be:
 
 ```{r}
 
-ggplot(mpg_class, aes(x = reorder(class, -hwy_mean), y = hwy_mean)) +
+ggplot(penguin_species_bill, aes(x = reorder(species, -bill_length_mean), y = bill_length_mean)) +
   geom_point() +
   # add the line
-  geom_segment(aes(xend = class), yend = 0) +
-  # extend the limits of the Y axis from zero to 30
-  ylim(0, 30)
+  geom_segment(aes(xend = species), yend = 0) +
+  # extend the limits of the Y axis from zero to 50
+  ylim(0, 50)
 
 ```
 
@@ -195,10 +204,10 @@ A variation on the Cleveland dotplot is the dumbell chart, which can be an effec
 Histograms show the distribution of cases that are measured on a continuous scale and are categorized by _bins_ of the same size
 
 
-In this example, we want to see the number of cars by their fuel consumption. 
+In this example, we want to see the number of penguins by their weight. 
 
 ```{r}
-ggplot(mpg, aes(x = hwy)) +
+ggplot(penguins, aes(x = body_mass_g)) +
   geom_histogram()
 
 ```
@@ -208,11 +217,11 @@ In that version, we end with 30 thin categories—what are called "bins".
 > When you create a histogram without specifying the bin width, ggplot() prints out a message telling you that it’s defaulting to 30 bins, and to pick a better bin width. This is because it’s important to explore your data using different bin widths; the default of 30 may or may not show you something useful about your data.
 (_R)
 
-We can specify the width of the bins in the `geom_histogram()` function. Let's check the appearance of bins that are 5 units (in this case, miles per gallon) wide.
+We can specify the width of the bins in the `geom_histogram()` function. Let's check the appearance of bins that are 500 units (in this case, 500 grams) wide.
 
 ```{r}
-ggplot(mpg, aes(x = hwy)) +
-  geom_histogram(binwidth = 5)
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 500)
 
 ```
 

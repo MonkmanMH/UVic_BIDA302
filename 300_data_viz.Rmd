@@ -15,7 +15,7 @@ This file by Martin Monkman is licensed under a Creative Commons Attribution 4.0
 # Introduction to data visualization {#data-viz}
 
 
-```{r echo = FALSE}
+```{r, setup_300, echo = FALSE}
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
@@ -71,11 +71,11 @@ anscombe_tidy
 Each of the four sets in Anscombe's Quartet has the same summary statistics. Let's calculate the mean of _ex_ for each of the four sets:
 
 
-```{r}
+```{r, anscombe_summary_stats1}
 # example
 anscombe_tidy %>%
   group_by(set) %>%
-  summarize(mean.x = mean(ex))
+  summarize(mean_ex = mean(ex))
 ```
 
 ### Your turn
@@ -90,7 +90,7 @@ Using the following functions, calculate the summary statistics of _ex_ and _why
  
  
 
-```{r}
+```{r, anscombe_summary_stats2}
 # solution
 anscombe_tidy %>% 
   group_by(set) %>% 
@@ -113,7 +113,7 @@ The template of a `ggplot()` function call looks like this:
 `  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))`  
 
 
-With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `x` and `y` as points.
+With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `ex` and `why` as points.
 
 ```{r}
 # example
@@ -150,7 +150,7 @@ ggplot() +
 
 Another way to differentiate the sets is to use a facet plot. In this example, we use the function `facet_wrap`. 
 
-```{r}
+```{r, anscombe_facet1}
 ggplot(anscombe_tidy) + 
   geom_point(aes(ex, why)) + 
   facet_wrap(~set)
@@ -163,7 +163,7 @@ Now we will add a trend line using the `geom_smooth` function.
 
 * the `se = FALSE` turns off the "standard error" (a measure of uncertainty in the data)
 
-```{r}
+```{r, anscombe_facet2}
 ggplot(anscombe_tidy) + 
   geom_point(aes(ex, why)) + 
   geom_smooth(aes(ex, why), method = lm) +
@@ -174,7 +174,7 @@ ggplot(anscombe_tidy) +
 But that duplicates the `aes(ex, why)` text ... so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
 
 
-```{r}
+```{r, anscombe_facet3}
 p <- ggplot(anscombe_tidy, aes(ex, why)) + 
   geom_point() + 
   geom_smooth(method = lm, se = FALSE) + 
