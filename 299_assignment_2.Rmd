@@ -37,7 +37,7 @@ Once you have finished your assignment, create an HTML document by "knitting" th
 ## Questions
 
 
-### 1. Religion and income data (USA)
+### 1. Religion and income data (USA)  {-}
 (2 marks)
 
 The table `relig_income` is in {tidyr}. Load this table, and take a look at it. You can use `View(relig_income)` to see the table, and to understand the contents of the table you can use the Help function `?tidyr::relig_income` (enter that code in the console).
@@ -53,7 +53,7 @@ b. Using the functions in {tidyr}, arrange this table in such a way that it is n
 
 
 
-### 2. Importing data: csv
+### 2. Importing data: csv  {-}
 (5 marks)
 
 >**NOTE:** Variable names with spaces and special symbols are a challenge to work with. >They require that you put the name inside a pair of back-ticks. For example, in the >dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
@@ -81,7 +81,7 @@ d. Create a table showing the number of cases by court class completed in each r
 
 
 
-### 3. Importing data: Excel
+### 3. Importing data: Excel  {-}
 (5 marks)
 
 Use the {readxl} package to read in the file "bcmetal.xlsx" 

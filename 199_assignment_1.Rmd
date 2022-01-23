@@ -40,7 +40,7 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 ## Questions
 
 
-### 1. Assign a variable {#q1-1}
+### 1. Assign a variable  {-}
 (1 mark)
 
 Why does this code chunk not work?
@@ -56,7 +56,7 @@ Look carefully! (This may seem like an exercise in pointlessness, but training y
 
 
 
-### 2. Reducing the size of your data set {#q1-2}
+### 2. Reducing the size of your data set  {-}
 (3 marks)
 
 Starting with the {mpg} data frame, use `filter()` and `select()` to create a single table that contains the following records and variables:
@@ -76,7 +76,7 @@ mpg
 
 ***
 
-### 3. Selecting variables {#q1-3}
+### 3. Selecting variables  {-}
 (1 mark)
 
 What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
@@ -95,7 +95,7 @@ library(gapminder)
 ***
 
 
-### 4. R Markdown {#q1-4}
+### 4. R Markdown  {-}
 (1 mark)
 
 The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
@@ -115,7 +115,7 @@ ggplot(data = mpg) +
 
 ***
 
-### 5. Flight data {#q1-5}
+### 5. Flight data {-}
 (6 marks)
 
 For Q3a-3d, use the data `nycflights13::flights`
