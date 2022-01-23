@@ -18,6 +18,7 @@ library(readxl)    # to read Excel files
 
 ## Introduction
 
+
 For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
 
 In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
@@ -34,14 +35,14 @@ The B.C. Ministry of Municipal Affairs and Housing publishes data from BC Housin
 The name of the file is "bc-stats_2018-new-homes-data_tosend.xlsx"
 
 
-### 1. Explore the file
+### 1. Explore the file {-}
 (marks: 1)
 
 List the sheet names in the file. (You may wish to assign the long and cumbersome name of the source file to a character string object with a shorter, more concise name.)
 
 
 
-### 2. Importing a sheet
+### 2. Importing a sheet {-}
 (marks: 2)
 
 Here's a screenshot of the top rows of the sheet with single detached housing:
@@ -64,7 +65,7 @@ Note: there are many possible solutions to this problem. Once you've created an 
 
 
 
-### 3. Tidy data
+### 3. Tidy data {-}
 (marks: 2)
 
 Does this data frame violate any of the principles of tidy data?
@@ -72,12 +73,22 @@ Does this data frame violate any of the principles of tidy data?
 If so, use the pivot functions from {tidyr} to turn it into a tidy structure.
 
 
-### 4. EDA: plotting, 1
+### 4. Joining tables {-}
+(marks: 3)
+
+Because the structure of the data in the Excel file is consistent, we can copy-and-paste and edit our code above, and assemble the contents of the three sheets into a single data table.
+
+Repeat the import and tidy steps for the sheets containing the data for multi-unit homes and purpose built rental, and assign each to a unique object. At the end of this step you will have three tidy data frame objects in your environment, one each for single detached, multi-unit homes, and purpose built rentals.
+
+Now join the three tables, creating a single table that contains all of the information that was previously stored in three separate sheets.
+
+
+### 5. EDA: plotting {-}
 (marks: 3)
 
 Now you've got a tidy structure, it's time for some exploratory data analysis!
  
-Plot the total number of single detached homes built in B.C. by year.
+Plot the total number of housing units built in B.C. by municipality, but only the 10 municipalities with the greatest number of homes built, sorted from most to least. (I will leave it up to you to decide if you want to do that by a single year or by the total of all three years in the data.)
 
 **Hints and resources:**
 
@@ -85,24 +96,14 @@ Plot the total number of single detached homes built in B.C. by year.
 
 * The [{ggplot2} reference pages](https://ggplot2.tidyverse.org/)
 
-* You might need to do further data manipulation before you can plot what you want
- 
-* Sometimes I find it _very_ helpful to make a sketch of the plot I envision, and then writing down which variables are associated with the bits on the plot
-
-
-
-### 5. EDA: plotting, 2
-(marks: 3)
-
-Plot the total number of single detached homes built in B.C. by municipality, but only the 10 municipalities with the greatest number of homes built, sorted from most to least. (I will leave it up to you to decide if you want to do that by a single year or by the total of all three years in the data.)
- 
-**Hints and resources:**
- 
 * The [Factors](https://r4ds.had.co.nz/factors.html) chapter of _R for Data Science_ 
  
 * The [{forcats} reference pages](https://forcats.tidyverse.org/)
  
-* Again, you might need to do further data manipulation before you can plot what you want
+* You might need to do further data manipulation before you can plot what you want
+ 
+* Sometimes I find it _very_ helpful to make a sketch of the plot I envision, and then writing down which variables are associated with the bits on the plot
+
 
 
 
