@@ -8,6 +8,9 @@ https://creativecommons.org/licenses/by/4.0/
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
+options(scipen=999)
+
+
 ```
 
 # Assignment: Moneyball {#moneyball}
@@ -122,16 +125,30 @@ How to read this:
 
 * the value of `y` (i.e. the point on the `y` axis) can be predicted by
 
-* the intercept value `b_{0}`, plus
+* the intercept value $b_{0}$, plus
 
-* the coefficient `b_{1}` times the value of `x`
+* the coefficient $b_{1}$ times the value of `x`
 
 The distance between that predicted point and the actual point is the error term.
 
 
-The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, a point on the line) is equal to 0.422110 + 0.077875 * the value of `x`.
+The equation calculated by the `lm()` function, to create the model `model_mlb_pay_wl`, is:
 
-If `x` = 1.5, then `y` = 0.4221096 + (0.0007787 * 150), which is 0.5389146. Look back at the line of best fit—if `x` = 150, the `y` point on the line is just above the 0.5. 
+```{r, echo=FALSE}
+equatiomatic::extract_eq(model_mlb_pay_wl, 
+                         use_coefs = TRUE,
+                         coef_digits = 4)
+```
+
+
+This means that any predicted value of `y` (that is, the y-axis value of any point on the line) is equal to 
+
+`r round(summary(model_mlb_pay_wl)$coefficients[1, 1], 2)` + 
+`r round(summary(model_mlb_pay_wl)$coefficients[2, 1], 4)` * the value of `x`.
+
+If `x` = 150, then `y` = `r round(summary(model_mlb_pay_wl)$coefficients[1, 1], 2)` + (`r round(summary(model_mlb_pay_wl)$coefficients[2, 1], 4)` * 150), which is `r round(summary(model_mlb_pay_wl)$coefficients[1, 1], 2) + (round(summary(model_mlb_pay_wl)$coefficients[2, 1], 4) * 150)`. 
+
+Look back at the line of best fit—if `x` = 150, the `y` point on the line is just above the 0.5 mark. 
 
 Or another way to think about it: in a 162 game season, a team spending 50% more on payroll than the league average can expect to win 87 games (where 81 is 0.500).
 
