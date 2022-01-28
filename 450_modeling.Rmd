@@ -135,17 +135,33 @@ How to read this:
 
 * the value of `y` (i.e. the point on the `y` axis) can be predicted by
 
-* the intercept value `b_{0}`, plus
+* the intercept value $b_{0}$, plus
 
-* the coefficient `b_{1}` times the value of `x`
+* the coefficient $b_{1}$ times the value of `x`
 
 The distance between that predicted point and the actual point is the error term.
 
 
 
+The equation calculated by the `lm()` function, to create the model `model_mlb_pay_wl`, is:
+
+```{r, echo=FALSE}
+equatiomatic::extract_eq(mod_sim1, 
+                         use_coefs = TRUE,
+                         coef_digits = 4)
+```
+
 The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, a point on the line) is equal to 4.124 + 2.052 * the value of `x`.
 
-If `x` = 2.5, then `y` = 4.124 + (2.052 * 2.5), which is 9.254. Look back at the line of best fit--if `x` = 2.5, the `y` point on the line is just below 10. 
+The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, the y-axis value of any point on the line) is equal to 
+
+`r round(summary(mod_sim1)$coefficients[1, 1], 2)` + 
+`r round(summary(mod_sim1)$coefficients[2, 1], 4)` * the value of `x`.
+
+If `x` = 150, then `y` = `r round(summary(mod_sim1)$coefficients[1, 1], 2)` + (`r round(summary(mod_sim1)$coefficients[2, 1], 4)` * 2.5), which is `r round(summary(mod_sim1)$coefficients[1, 1], 2) + (round(summary(mod_sim1)$coefficients[2, 1], 4) * 2.5)`. 
+
+
+Look back at the line of best fit in our plot—if `x` = 2.5, the `y` point on the line is just below 10. 
 
 
 We can also see how well the data predicts the line, by examining the summary statistics of the model with the `summary()` function:
