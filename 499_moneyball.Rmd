@@ -200,7 +200,7 @@ Read the following article:
 
 Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The American Statistician_, Vol 72, Issue 1: Special Issue on Data Science, 2018
 
-* it is available on the moodle site or from this link: https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+* it is available from this link: https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
 
 
  a.  What are basic principles for using spreadsheets for good data organization?
@@ -220,6 +220,5 @@ You have just been transported back four weeks to the day before the course star
 
 
 -30-
-
 
 
