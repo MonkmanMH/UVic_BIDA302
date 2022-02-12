@@ -437,13 +437,19 @@ canpop %>%
 
 ### Multiple comparisons
 
-In this example from the [`case_when()` reference page:](https://dplyr.tidyverse.org/reference/case_when.html), it uses different combinations of three variables to create a single fourth variable.
+In this example from the [`case_when()` reference page:](https://dplyr.tidyverse.org/reference/case_when.html), it uses different combinations of three variables to create a single fourth variable. It uses the built-in data set "starwars", a list of characters from the movies.
 
 ```{r}
 # case_when is particularly useful inside mutate when you want to
 # create a new variable that relies on a complex combination of existing
 # variables
 starwars
+
+```
+
+For this example, we mutate a new variable based on whether a character is a robot, or whether they are large (defined by height or mass).
+
+```{r}
 
 starwars %>%
   select(name:mass, gender, species) %>%
@@ -458,6 +464,22 @@ starwars %>%
 ```
 
 
+And order matters! The function `case_when()` finds all of the cases that meet the first criteria, and then applies the second criteria to the remaining observations. If we switch the order and move "robot" below "large", we find (as one example) that C-3PO is now in the large category, as they are over 150 cm in height.
+
+```{r}
+# create "type" variable
+starwars %>%
+  select(name:mass, species) %>%
+  mutate(
+    type = case_when(
+      # large first, then robot
+      height > 150 | mass > 200 ~ "large",
+      species == "Droid"        ~ "robot",
+      TRUE                      ~ "other"
+    )
+  )
+
+```
 
 
 -30-

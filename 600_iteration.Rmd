@@ -196,9 +196,9 @@ Imagine you have a directory full of Excel files that you want to read and then 
 
 The steps are 
 
-1. Create a list with the names of the files of interest (that is, the Excel files) in the sub-folder "data_monthly". 
+1. Create a list with the names of the files of interest (that is, the Excel files) in the sub-folder "data_monthly". The function `dir()` returns a character vector of the names of the files (or directories) in the named directory.
 
-Note the use of a regular expression `"\\.xls*"` to define the pattern for any Excel file, including the wild card "*" which identifes both the older ".xls" extension or the newer ".xlsx".
+In the code below, note the use of a regular expression `"\\.xls*"` to define the pattern for any Excel file, including the wild card "*" which identifies both the older ".xls" extension or the newer ".xlsx".
 
 ```{r}
 
@@ -224,6 +224,7 @@ for (i in seq_along(all_files)) {
 ```
 
 This creates an interesting R object—it's a list, but a list of tibbles, each one with the contents of a single Excel file. This structure is sometimes referred to as "nested"—the tibbles are _nested_ inside the list.
+
 Let's take a look:
 
 ```{r}
