@@ -41,7 +41,7 @@ gapminder_canada <- gapminder %>%
 
 Write the dataframe object as a csv file.
 
-```{r}
+```
 
 write_csv(gapminder_canada, "gm_canada.csv")
 
@@ -71,5 +71,38 @@ From the Introduction article at the package reference: https://ycphs.github.io/
 https://ggplot2.tidyverse.org/reference/ggsave.html
 
 
+Let's make a plot of life expectancy changes in Canada, using the dataframe we made above:
 
+```{r}
+
+plot_gm_canada <- ggplot(gapminder_canada, aes(x = year, y = lifeExp)) +
+  geom_line()
+
+plot_gm_canada
+
+```
+
+To save this plot as a separate file, we can use the `ggsave()` function. Note that in this example, the image hasn't been saved into our environment as a plot object--the `ggsave()` function will save the last object that was created. In this version, we save the previously created plot as a png file.
+
+```
+
+ggsave("gapminder_canada_lifeexp.png")
+
+```
+
+The function has arguments that you might find useful: 
+
+* specify the file type, 
+
+* specify an object, and
+
+* the change the dimensions to suit your purpose and data:
+
+```
+
+ggsave("gapminder_canada_lifeexp.jpg", 
+  plot_gm_canada, 
+  width = 9, height = 6)
+
+```
 

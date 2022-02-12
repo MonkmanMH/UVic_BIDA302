@@ -31,28 +31,28 @@ We have spent 5.5 weeks talking about this process^[From [@Wickham_Grolemund2016
 
 One other data science programming environment that is popular is the programming language Python^[[python.org](https://www.python.org/).]
 
-![_Python logo_](static/img/python-logo-master-v3-TM-flattened.png)
+![_Python logo_](static/img/python-logo-master-v3-TM-flattened.png){width=33%}
 
 
 In our first chapter, you saw the analogy of base R being like the engine and frame of a car & basic controls like the pedals and steering wheel
 
-![VW Beetle frame](static/img/VW_ad_1_crop.png)
+![VW Beetle frame](static/img/VW_ad_1_crop.png){width=40%}
 
 ...the packages are the other things that enhance the car's functions
 
 * the body, windshield, headlights, A/C, sound system, etc
 
-![_VW Beetle transparent_](static/img/vwlooking.jpg)
+![_VW Beetle transparent_](static/img/vwlooking.jpg){width=40%}
 
 ...and RStudio is the dashboard and controls
 
-![_VW Beetle dashboard_](static/img/VW_dashboard.jpg)
+![_VW Beetle dashboard_](static/img/VW_dashboard.jpg){width=40%}
 
 Python is a general purpose programming language, so it is like an engine.
 
 It can power a car...or a boat, or a water pump, or ...
 
-![VW Beetle engine](static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg)
+![VW Beetle engine](static/img/1965_Volkswagen-Bug-Which-Came-First-Engine_List-L_crop.jpg){width=40%}
 
 Because Python is a general-purpose programming language, there are some key differences.
 
@@ -66,7 +66,7 @@ The libraries for this are listed below in the [Resources & reference](#python-r
 
 For those of us who are familiar with R and RStudio, the {reticulate} package gives us an interface to add Python to our toolkit.
 
-![_{reticulate} hex_](static/img_tidyverse/reticulate-735.jpg)
+![_{reticulate} hex_](static/img_tidyverse/reticulate-735.jpg){width=25%}
 
 > 
 > The reticulate package provides a comprehensive set of tools for interoperability between Python and R. The package includes facilities for:
@@ -101,25 +101,36 @@ py_config()
 
 It's possible to run Python code chunks inside your R Markdown document. 
 
-In this chunk, we have Python code that 
+In this chunk, we have Python code that loads the `pandas` module (for data wrangling) and changes the reference to `pd`.
 
-* first loads the `pandas` module (for data wrangling) and changes the reference to `pd`
-
-* reads the CSV file "flights.csv" (the `flights` table from {nycflights13})
 
 ```{python}
-# python chunk
-
 # import the `pandas` module so that it's available for use
 import pandas as pd
 
+```
+
+At this point, you may get a warning that pandas is not installed. If that's the case, switch to the "Terminal" tab (next to the Console) and enter the following:
+
+```
+python -m pip install pandas
+
+```
+
+This next chunk reads the CSV file "flights.csv" (the `flights` table from {nycflights13})
+
+
+```{python}
+
+
 # read the csv file "flights.csv" and assign it to the object "flights"
-flights = pd.read_csv("data/flights.csv")
+flights = pd.read_csv("flights.csv")
 
 # print the head (first 5 rows)
 print(flights.head())
 
 ```
+
 
 Notice a couple of things:
 
@@ -389,9 +400,11 @@ Joel Grus, [Data Science from Scratch: First Principles with Python (2nd edition
 
 ### other resources
 
-I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials are outdated. I'll leave them here, should you wish to review them:
+I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials may be outdated. I'll leave them here, should you wish to review them:
 
-[Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
+* [Using Python with RStudio](https://solutions.rstudio.com/python/)
+
+* [Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
 
 
 
@@ -469,6 +482,6 @@ The core packages include:
 
 
 
-![reticulated Python](static/img/reticulated_python.png)
+![reticulated Python](static/img/reticulated_python.png){width=40%}
 
 -30-
