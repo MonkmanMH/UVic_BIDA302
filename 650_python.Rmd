@@ -124,7 +124,7 @@ This next chunk reads the CSV file "flights.csv" (the `flights` table from {nycf
 
 
 # read the csv file "flights.csv" and assign it to the object "flights"
-flights = pd.read_csv("flights.csv")
+flights = pd.read_csv("data/flights.csv")
 
 # print the head (first 5 rows)
 print(flights.head())
