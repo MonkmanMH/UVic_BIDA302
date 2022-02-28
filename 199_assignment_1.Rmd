@@ -10,7 +10,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Take-home exercise - data wrangling {#assignment1}
+# Assignment 1 - data wrangling {#assignment1}
 
 
 Package load:

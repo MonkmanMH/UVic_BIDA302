@@ -79,9 +79,15 @@ We spent quite a bit of time working with {ggplot2}, adding more features to our
 
 The [R Graph Gallery](https://www.r-graph-gallery.com/index.html) is another resource that can inspire and help you make the specific chart you want.
 
+#### Mapping
 
-There are also tools for creating maps and working with GIS files in R...but that is well beyond the scope of this course!
+There are also tools for working with spatial data, creating maps and working with GIS files in R...but that is well beyond the scope of this course! If you are interested in exploring this topic, here are some resources:
 
+* Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, [_Geocomputation with R_ (1st ed.)](https://bookdown.org/robinlovelace/geocompr/)   
+
+* [r-spatial](https://r-spatial.org/), a collection of blog posts on using R to work with spatial data
+
+* [Using Spatial Data with R](https://cengel.github.io/R-spatial/), a workshop for working with spatial data
 
 ### Functional programming
 
