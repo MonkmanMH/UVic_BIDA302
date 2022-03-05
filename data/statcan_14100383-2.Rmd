@@ -27,12 +27,8 @@ Geography: Census metropolitan area
 
 most recent download: 2022-03-05
 
-```{r}
 
-read_csv("14100383.csv")
-
-
-```
+## data download
 
 use cansim package
 
@@ -46,12 +42,7 @@ tbl_1410038302
 ```
 
 
-```{r}
-
-get_cansim_vector(c("Vancouver CMA labour force - seasonally adjusted" = "v1235049773", 
-                    "Vancouver CMA labour force - unadjusted" = "v1235049774"))
-```
-
+Next chunk: create summary table with Vancouver unemployment (seasonally adjusted) with both the estimate of the number of unemployed people (in thousands—see the variable "SCALAR_FACTOR").
 
 
 ```{r}
@@ -69,6 +60,10 @@ unemployment_vancouver %>%
 write_csv(unemployment_vancouver, "unemployment_vancouver.csv")
 
 ```
+
+Because the "UOM" (Unit Of Measure) are Persons and Percentage, this is untidy—we have two variables in a single column, and two rows for a single observation.
+
+
 
 ```{r}
 
