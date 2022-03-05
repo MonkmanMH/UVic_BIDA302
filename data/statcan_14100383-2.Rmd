@@ -1,0 +1,82 @@
+---
+title: "statcan_14100383-2"
+author: "Martin Monkman"
+date: "05/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(cansim)
+```
+
+data source
+
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410038302
+
+Labour force characteristics, seasonally adjusted and unadjusted, last 5 months1, 2, 3
+Frequency: Monthly
+
+Table: 14-10-0383-02
+
+Release date: 2022-02-04
+
+Geography: Census metropolitan area
+
+most recent download: 2022-03-05
+
+```{r}
+
+read_csv("14100383.csv")
+
+
+```
+
+use cansim package
+
+```{r}
+
+get_cansim_table_overview("14-10-0383-02")
+
+tbl_1410038302 <- get_cansim("14-10-0383-02")
+tbl_1410038302
+
+```
+
+
+```{r}
+
+get_cansim_vector(c("Vancouver CMA labour force - seasonally adjusted" = "v1235049773", 
+                    "Vancouver CMA labour force - unadjusted" = "v1235049774"))
+```
+
+
+
+```{r}
+
+# Vancouver CMA unemployment - estimate and rate, seasonally adjusted
+
+unemployment_vancouver <- tbl_1410038302 %>% 
+  filter(VECTOR == "v1235049783" | 
+        VECTOR == "v1235049788")
+
+
+unemployment_vancouver %>% 
+  select(REF_DATE, GEO, UOM, SCALAR_FACTOR, VALUE, `Labour force characteristics`, `Data type`)
+
+write_csv(unemployment_vancouver, "unemployment_vancouver.csv")
+
+```
+
+```{r}
+
+unemployment_vancouver %>% 
+  select(REF_DATE, VALUE, `Labour force characteristics`) %>% 
+  pivot_wider(names_from = "Labour force characteristics",
+              values_from = "VALUE")
+
+
+```
+
