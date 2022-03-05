@@ -12,7 +12,7 @@ library(tidyverse)
 library(cansim)
 ```
 
-data source
+## data source
 
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410038302
 
@@ -25,7 +25,10 @@ Release date: 2022-02-04
 
 Geography: Census metropolitan area
 
-most recent download: 2022-03-05
+### license 
+
+Statistics Canada Open License
+https://www.statcan.gc.ca/en/reference/licence
 
 
 ## data download
