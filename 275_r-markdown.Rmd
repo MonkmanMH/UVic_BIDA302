@@ -28,7 +28,7 @@ Yihui Xie, Christophe Dervieux, Emily Riederer, [*R Markdown Cookbook*](https://
 
 The R Markdown cheatsheet and reference guide, available online and through the "Help / Cheatsheets \>" menu item in RStudio
 
-* [R Markdown cheat sheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+* [R Markdown cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
 
 Yihui Xie, J. J. Allaire, Garrett Grolemund, [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/)[@Xie_etal_markdown]
 

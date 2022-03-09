@@ -223,6 +223,25 @@ This also reduces the risk of inadvertent error if we want to change the countri
 
 
 
+**NOTE:** Watch your quotation marks! In many cases double and single quotes are interchangable, but fancy "smart" quotes to start and end are not valid.
+
+This example uses the `flights` table from the {nycflights13} package, and filters for Alaska Airlines Inc., which has the value "AS" in the variable "carrier".
+
+```{r, eval=FALSE}
+# will not work due to "smart" quotes
+nycflights13::flights %>% filter(carrier == “AS”)
+
+# will work...double quotes
+nycflights13::flights %>% filter(carrier == "AS")
+
+# will work...single quotes
+nycflights13::flights %>% filter(carrier == 'AS')
+
+```
+
+
+
+
 ## Select columns  {#data-wrangle-select}
 
 
