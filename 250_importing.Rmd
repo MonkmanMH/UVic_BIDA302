@@ -117,6 +117,21 @@ read_csv("mtcars.csv",
 ```
 
 
+In some instances, we may wish to read a sub-set of rows in the middle of our file, and retain the headers. In this code below, we do just that.
+
+The first line uses the `names()` function to read the variable names, and assign them to an object that we can use in the subsequent `read_csv()` function.
+
+```{r}
+# set the column names
+mtcars_col_names <- names(read_csv("mtcars.csv", n_max = 0))
+
+# read file starting at 5th row, adding column names
+read_csv("mtcars.csv", 
+         col_names = mtcars_col_names, 
+         skip = 5, 
+         n_max = 10)
+```
+
 
 
 ## Reading an Excel file
@@ -174,6 +189,26 @@ deaths
 
 ```
 
+
+
+If we know how many rows to skip at the top, and how many to omit at the bottom, we can insert a calculation as to what our `n_max()` value needs to be. This would be useful in the circumstance where we have multiple sheets we need to read, each having the same structure with a fixed number of header and footer rows that do not contain relevant data, but the number of rows in between varies.
+
+In the case of the "deaths.xlsx" file, we have four rows of junk data at the top (prior to the variable names), and another four rows at the bottom. By subtracting those numbers from the total count of rows in the file, we have the object `valid_rows` that we can apply as the value for the `n_max = ` in our `read_excel()` function.
+
+```{r}
+# first, read the data file
+deaths <- read_excel("data/deaths.xlsx")
+# determine the total number of rows in the sheet
+rowcount <- nrow(deaths)
+
+# calculate the number of rows with relevant data "rowcount2"
+valid_rows <- rowcount - 4 - 4   # 4 rows of junk data at the top after the header, 4 rows of junk data at the bottom
+
+read_excel("data/deaths.xlsx",
+           skip = 4,
+           n_max = valid_rows)
+
+```
 
 For more information on reading areas of an Excel sheet, see this article at the {readxl} site: https://readxl.tidyverse.org/articles/sheet-geometry.html
 
