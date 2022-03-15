@@ -78,6 +78,7 @@ anscombe_tidy %>%
   summarize(mean_ex = mean(ex))
 ```
 
+::: {.rmdtip}
 ### Your turn
 
 Using the following functions, calculate the summary statistics of _ex_ and _why_, and the correlation coefficient between _ex_ and _why_, for all four of the sets in the quartet:
@@ -101,6 +102,7 @@ anscombe_tidy %>%
             cor(ex, why))
 ```
 
+:::
 
 
 ## Visualizing the quartet
