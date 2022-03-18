@@ -154,7 +154,21 @@ ggplot(penguin_species_bill, aes(x = reorder(species, bill_length_mean), y = bil
 
 ```
 
-What happens if you were to add a minus sign (hyphen) in front of the `bill_length_mean` of the `reorder()` function? The full code would look like this:
+::: {.rmdtip}
+#### Your turn
+
+
+What happens if you were to add a minus sign (hyphen) in front of the `bill_length_mean` of the `reorder()` function? 
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
+The full code would look like this:
 
 ```{r}
 
@@ -164,6 +178,9 @@ ggplot(penguin_species_bill, aes(x = reorder(species, -bill_length_mean), y = bi
 ```
 
 Using the hyphen reverses the order, from longest bill to shortest.
+
+</details>
+:::
 
 
 
@@ -331,10 +348,28 @@ pl_lifeexp +
 ```
 
 
-You may want to investigate some of the other complete themes:  https://ggplot2.tidyverse.org/reference/index.html#section-themes
+::: {.rmdtip}
+#### Your turn
+
+What does your chart look like with `theme_classic()`?
+
+<details>
+
+<summary>
+Solution
+</summary>
 
 
-#### Theme elements
+
+</details>
+:::
+
+
+
+You may want to investigate some of the other complete themes:  https://ggplot2.tidyverse.org/reference/index.html#themes
+
+
+### Theme elements
 
 Individual theme elements can be changed with the `theme()` function. Below is a single example. For a full list of all of the elements that can be changed and the terms used to change them, see the {ggplot2} reference page [Modify components of a theme](https://ggplot2.tidyverse.org/reference/theme.html). The [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/) is another valuable resource for understanding how to alter individual elements of your plot.
 

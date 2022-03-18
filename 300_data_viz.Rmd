@@ -79,7 +79,7 @@ anscombe_tidy %>%
 ```
 
 ::: {.rmdtip}
-### Your turn
+#### Your turn
 
 Using the following functions, calculate the summary statistics of _ex_ and _why_, and the correlation coefficient between _ex_ and _why_, for all four of the sets in the quartet:
 
@@ -90,6 +90,13 @@ Using the following functions, calculate the summary statistics of _ex_ and _why
  | correlation coefficient | cor() |
  
  
+<details>
+
+<summary>
+Solution
+</summary>
+
+To create a table with these statistics by the four sets, we first `group_by()` and then `summarize()` (or `summarise()`). Notice that we include all of the calculations within a single `summarize()` function.
 
 ```{r, anscombe_summary_stats2}
 # solution
@@ -102,6 +109,7 @@ anscombe_tidy %>%
             cor(ex, why))
 ```
 
+</details>
 :::
 
 
@@ -115,7 +123,9 @@ The template of a `ggplot()` function call looks like this:
 `  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))`  
 
 
-With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `ex` and `why` as points.
+### Scatter plot
+
+With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `ex` and `why` as points in a scatter plot.
 
 ```{r}
 # example
@@ -124,10 +134,8 @@ ggplot(anscombe_tidy) +
 ```
 
 
-### Your turn
 
-
-Now we will add another variable to those in our `aes` list. We will add the variable "set", and use `colour` to differentiate each value within "set".
+Now we will add another variable to those in our `aes` list. We will add the variable "set", and use `colour = ` to differentiate each value within "set".
 
 ```{r}
 # example
@@ -136,7 +144,7 @@ ggplot(anscombe_tidy) +
 ```
 
 
-For this example, we plot only set "I". We start with our dataframe, and then using the pipe symbol, first `filter()` and then pass the results of the filter to our `ggplot()` function. Note that because the filtered dataframe is being passed, there is no specified `data =` in the `ggplot()` function.
+For the example below, we plot only set "I". We start with our `anscombe_tidy` dataframe, and then using the pipe symbol, first `filter()` and then pass the results of the filter to our `ggplot()` function. Note that because the filtered dataframe is being passed, there is no specified `data =` in the `ggplot()` function: the data to be plotted is what is passed after the previous step in the pipe.
 
 ```{r}
 # solution
@@ -173,7 +181,7 @@ ggplot(anscombe_tidy) +
 ```
 
 
-But that duplicates the `aes(ex, why)` text ... so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
+But that duplicates the `aes(ex, why)` text...so we can move that into the `ggplot()` function. That way, the aesthetics apply to each of the `geom_` calls.
 
 
 ```{r, anscombe_facet3}
