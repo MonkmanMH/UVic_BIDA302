@@ -44,7 +44,7 @@ But there are some traps that you might fall into, if you're not careful.
 The package {forcats} is _very_ helpful. 
 
 
-### Your turn
+### Factor functions
 
 Base R functions for working with factors
 
@@ -55,6 +55,18 @@ Base R functions for working with factors
 | `levels` | returns the values of the levels |
 | `nlevels` | return the number of levels |
 
+
+
+::: {.rmdtip}
+#### Your turn
+
+Use the functions in the table above to examine the `continent` variable in the gapminder dataset.
+
+<details>
+
+<summary>
+Solution
+</summary>
 
 
 
@@ -74,7 +86,27 @@ nlevels(gapminder$continent)
 ```
 
 
+
+</details>
+:::
+
+
+
+::: {.rmdtip}
+#### Your turn
+
+
+
 Use the `count()` function in a pipe to get a frequency table of each level in the factors in the `continent` variable
+
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution
@@ -82,6 +114,11 @@ gapminder %>%
   count(continent)
 
 ```
+
+
+
+</details>
+:::
 
 
 ### Dropping levels
@@ -107,11 +144,22 @@ nlevels(h_gap$country)
 ```
 
 
-### Your turn
 
 The function we need here is `droplevels()`.
 
-This function will delete the levels that are unused. After you filter the gapminder data table to include just the 4 countries in the `h_countries` list, the `droplevels()` function can be run next in the pipe--the other 138 levels are dropped. 
+
+::: {.rmdtip}
+#### Your turn
+
+
+Use the `droplevels()` function to delete the levels that are unused. 
+
+
+<details>
+
+<summary>
+Solution
+</summary>
 
 
 ```{r}
@@ -122,6 +170,8 @@ h_gap <- gapminder %>%
 
 ```
 
+After you filter the gapminder data table to include just the 4 countries in the `h_countries` list, the `droplevels()` function can be run next in the pipe--the other 138 levels are dropped. 
+
 We can then use `levels()` and `nlevels()` to check the results.
 
 ```{r}
@@ -131,13 +181,21 @@ nlevels(h_gap$country)
 
 ```
 
+
+
+</details>
+:::
+
+
+
+
 ### Changing the order of the factors
 
 As you can see with our country names above, the default arrangement is alphabetical. This is fine in some applications, but as we will see when we plot the data, we might want to sort them by another variable.
 
 
 
-### Your turn
+#### Arranging levels 
 
 We might want to sort levels in an arbitrary way. 
 
@@ -151,6 +209,7 @@ h_gap$country %>%
   levels()
 
 ```
+
 
 We can use `fct_relevel()` to change some or all of the levels.
 
@@ -170,13 +229,28 @@ What if we want to sort by the number of countries in each continent, that is, t
 `fct_infreq()` is what we need, or `fct_infreq() %>% fct_rev()` for backwards.
 
 
-Give them a try on `continent` in gapminder.
+
+::: {.rmdtip}
+#### Your turn
+
+
+Give `fct_infreq()` a try on `continent` in gapminder.
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solutions
 gapminder$continent %>%
   fct_infreq() %>%
   levels()
+
+
 gapminder$continent %>%
   fct_infreq() %>%
   fct_rev() %>%
@@ -197,6 +271,13 @@ gmind <- gapminder %>%
 levels(gmind$continent)
 
 ```
+
+
+
+</details>
+:::
+
+
 
 
 You can also sort by another variable in the data frame. In this example, the countries are sorted by minimum life expectancy.
@@ -258,7 +339,6 @@ Bar plots are often used to visualize the distribution of a discrete variable. I
 * there is no `y` variable! {ggplot} will count the number of observations in each category
 
 
-### Your Turn
 
 
 ```{r}
@@ -273,7 +353,7 @@ Note that `colour` (or `color`) won't work on a bar! That's for points and lines
 
 For something that occupies a block of space--such as a bar or pie chart--you need to use `fill`.
 
-Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'll be specifing continent twice!)
+Add the `fill` attribute to `continent` to the code you wrote above. (Yes, you'll be specifying continent twice!)
 
 ```{r}
 # solution
@@ -348,7 +428,7 @@ A generic version of the sorting using `fct_rev()` to put them in reverse order 
 
 
 
-### Your turn
+
 
 
 In this example, we will plot the four countries in our BIDA group by life expectancy.
@@ -369,7 +449,18 @@ h_gap %>%
 ```
 
 
-Now it's your turn: sort by life expectancy:
+::: {.rmdtip}
+#### Your turn
+
+
+Now it's your turn: sort by life expectancy.
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution
@@ -384,6 +475,12 @@ h_gap %>%
 
 
 ```
+
+
+
+</details>
+:::
+
 
 
 ## Exercise - factors and plotting

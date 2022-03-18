@@ -81,14 +81,16 @@ A visualization of the relationship (the correlation) between these two variable
 The {ggplot2} code for this is below:
 
 ```{r}
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(data = penguins, 
+       aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point()
 ```
 
 With this plot, we can overlay a straight line (the line of best fit calculated through a regression equation).
 
 ```{r}
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(data = penguins, 
+       aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point() +
   geom_smooth(method = "lm")
 ```
@@ -138,7 +140,9 @@ To show the `bill_length_mean` value as the height of the bars, we use the `geom
 
 ```{r}
 
-ggplot(penguin_species_bill, aes(x = species, y = bill_length_mean)) +
+ggplot(penguin_species_bill, 
+       aes(x = species, 
+           y = bill_length_mean)) +
     geom_col()
 
 ```
@@ -149,7 +153,9 @@ Sorting categorical visualizations is often a useful way to demonstrate the diff
 
 ```{r}
 
-ggplot(penguin_species_bill, aes(x = reorder(species, bill_length_mean), y = bill_length_mean)) +
+ggplot(penguin_species_bill, 
+       aes(x = reorder(species, bill_length_mean), 
+           y = bill_length_mean)) +
     geom_col()
 
 ```
@@ -172,7 +178,9 @@ The full code would look like this:
 
 ```{r}
 
-ggplot(penguin_species_bill, aes(x = reorder(species, -bill_length_mean), y = bill_length_mean)) +
+ggplot(penguin_species_bill, 
+       aes(x = reorder(species, -bill_length_mean), 
+           y = bill_length_mean)) +
     geom_col()
 
 ```
@@ -197,7 +205,9 @@ In {ggplot2}, the code to visualize the same data would be:
 
 ```{r}
 
-ggplot(penguin_species_bill, aes(x = reorder(species, -bill_length_mean), y = bill_length_mean)) +
+ggplot(penguin_species_bill, 
+       aes(x = reorder(species, -bill_length_mean), 
+           y = bill_length_mean)) +
   geom_point() +
   # add the line
   geom_segment(aes(xend = species), yend = 0) +
@@ -297,7 +307,9 @@ pl_lifeexp <-
 gapminder %>% 
   filter(country %in% c("Canada", "Japan", "China")) %>% 
   # now plot
-  ggplot(aes(x = year, y = lifeExp, colour = country)) +
+  ggplot(aes(x = year, 
+             y = lifeExp, 
+             colour = country)) +
     geom_line(size = 1.5)
 
 ```
@@ -359,6 +371,11 @@ What does your chart look like with `theme_classic()`?
 Solution
 </summary>
 
+
+```{r}
+pl_lifeexp +
+  theme_classic()
+```
 
 
 </details>

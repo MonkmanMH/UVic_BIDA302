@@ -99,9 +99,20 @@ An example: `tailnum`
 Having the same key in two tables forms the "relation" -- hence "relational database".
 
 
-### Your turn
+
+::: {.rmdtip}
+#### Your turn
+
 
 Use `count` to check that `planes$tailnum` is a primary key
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution (in _R4DS_)
@@ -119,6 +130,11 @@ flights %>%
   tally()
 
 ```
+
+
+</details>
+:::
+
 
 
 Sometimes tables don't have a primary key! When that happens, it can be useful to create one: `mutate()` and `row_number()` is one approach. This is a _surrogate key_.
@@ -220,7 +236,9 @@ full_join(table_one, table_two, by = "key_var")
 ```
 
 
-### Your turn
+::: {.rmdtip}
+#### Your turn
+
 
 In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables, and taking the first 100 rows with the `slice()` function (see https://dplyr.tidyverse.org/reference/slice.html).
 
@@ -238,15 +256,34 @@ To this table we will add the name of the airline, which we can find in the tabl
 * we want a `left_join`: all the `flight` observations, and adding the "name" variable from `airlines`
 
 
+<details>
+
+<summary>
+Solution
+</summary>
+
+
 ```{r}
 # solution
 left_join(flights2, airlines, by = "carrier")
 
+```
+
+Using a pipe, the same result can be achieved with the following:
+
+```{r}
 # alternate version, using a pipe
 flights2 %>%
   left_join(airlines, by = "carrier")
 
 ```
+
+
+
+</details>
+:::
+
+
 
 Here's an example of where the utility of the pipe operator can be seen. If we want to count the number of flights be each airline, we could use the "carrier" variable, which is the short code. But a more useful table would have the airline name. In this code, the join is followed by a `group_by` and then `tally()`, which produces a table with the airline name.
 
@@ -283,9 +320,19 @@ table_b <- tribble(~ key_var, ~ veg_b,
 ```
 
 
-### Your turn
+::: {.rmdtip}
+#### Your turn
+
 
 Join the tables with `left_join()`, with `a` as the table on the left.
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution
@@ -295,10 +342,17 @@ left_join(table_a, table_b, key = "key_var")
 ```
 
 
+</details>
+:::
+
+
 A situation where there are duplicate keys in both tables is usually an error—there is no unique identifier of a single observation. (A question to ask yourself is "Is there are third table?")
 
 
-### Your turn
+::: {.rmdtip}
+#### Your turn
+
+
 
 Here's different tables, where the key "2" is duplicated in both.
 
@@ -316,7 +370,15 @@ table_n <- tribble(~ key_var, ~ ball_n,
 ```
 
 
+
 What does a left join do? How many rows does the resulting table have?
+
+
+<details>
+
+<summary>
+Solution
+</summary>
 
 ```{r}
 # solution
@@ -325,6 +387,10 @@ left_join(table_m, table_n, by = "key_var")
 
 ```
 
+
+
+</details>
+:::
 
 
 
