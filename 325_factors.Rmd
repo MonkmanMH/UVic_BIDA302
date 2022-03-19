@@ -453,7 +453,7 @@ h_gap %>%
 #### Your turn
 
 
-Now it's your turn: sort by life expectancy.
+Now it's your turn: plot the four countries in our BIDA group by life expectancy.
 
 <details>
 
