@@ -114,7 +114,19 @@ str_view(fruit_list, "ea")
 
 ```
 
-### Your turn {#strings-yourturn_1}
+
+::: {.rmdtip}
+#### Your turn {#strings-yourturn_1}
+
+
+Use `count` to check that `planes$tailnum` is a primary key
+
+
+<details>
+
+<summary>
+Solution
+</summary>
 
 Which words end with "a"?
 
@@ -123,6 +135,10 @@ Which words end with "a"?
 str_view(fruit_list, "a$")
 
 ```
+
+
+</details>
+:::
 
 
 frequency of match
@@ -285,9 +301,21 @@ str_c(musician_first, musician_last, sep = " ")
 
 ```
 
-### Your turn {#strings-yourturn2}
+::: {.rmdtip}
+#### Your turn  {#strings-yourturn2}
+
+
 
 Now join `musician_first` to `musician_last` (the other way around!), separated by an apostrophe and a space
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
 
 ```{r your_turn_2.1}
 
@@ -298,13 +326,30 @@ str_c(musician_last, musician_first, sep = ", ")
 ```
 
 
+
+</details>
+:::
+
+
 ## Pattern matching {#strings-pattern}
 
-### Your turn {#strings-yourturn3}
 
-Are there any vowels in the string `musician_first`? Use `str_detect()`
+::: {.rmdtip}
+#### Your turn  {#strings-yourturn3}
 
-And count them with `str_count()`:
+
+
+Are there any vowels in the string `musician_first`? 
+
+Use `str_detect()` to find them, and count them with `str_count()`.
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r str_count}
 # solution
@@ -314,7 +359,28 @@ str_count(musician_first, "[aeiou]")
 
 ```
 
-Are there any digits in `musician_last`? (Don't forget that you need to escape any backslashes you use!)
+
+</details>
+:::
+
+
+
+::: {.rmdtip}
+#### Your turn  {#strings-yourturn4}
+
+
+
+
+Are there any digits in `musician_last`?
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+Don't forget that you need to escape any backslashes you use!
+
 
 ```{r}
 # solution
@@ -325,7 +391,11 @@ str_detect(musician_last, "\\d")
 
 
 
-Extract chunks of text by their location: `str_sub(musician_first, start, end)`
+</details>
+:::
+
+
+We can extract chunks of text by their location using the following function: `str_sub(musician_first, start, end)`
 
 
 ```{r str_sub}

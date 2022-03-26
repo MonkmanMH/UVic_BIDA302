@@ -295,7 +295,10 @@ my_circles %>%
 
 
 
-## Your turn
+
+::: {.rmdtip}
+#### Your turn
+
 
 Write a function that calculates the area of a triangle, using the formula 
 
@@ -303,6 +306,14 @@ $$\ A = hb/2$$
 where "h" is the height of the triangle, and "b" is the base.
 
 Now, write and test a function to calculate the area of a triangle, where it is automatically rounded to 1 decimal place. 
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 The function for a circle is pasted below:
 
@@ -362,6 +373,9 @@ my_triangles %>%
   mutate(tri_a = tri_area(tri_h, tri_b, rnd = 2))
 
 ```
+
+</details>
+:::
 
 
 

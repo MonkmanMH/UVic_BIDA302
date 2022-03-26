@@ -34,6 +34,23 @@ The B.C. Ministry of Municipal Affairs and Housing publishes data from BC Housin
 
 The name of the file is "bc-stats_2018-new-homes-data_tosend.xlsx"
 
+#### Packages used
+
+This exercise relies on the following packages:
+
+**{readxl}** 
+
+* [documentation for {readxl}](https://readxl.tidyverse.org/)
+
+ - in particular, review the "Overview" page and the "Articles"
+ 
+**{ggplot2}**
+
+* [documentation for {ggplot2}](https://ggplot2.tidyverse.org/)
+
+You will also require functions from {dplyr}, {tidyr}, and (potentially) {forcats}.
+
+
 
 ### 1. Explore the file {-}
 (marks: 1)
@@ -84,7 +101,7 @@ Now join the three tables, creating a single table that contains all of the info
 
 
 ### 5. EDA: plotting {-}
-(marks: 3)
+(marks: 4)
 
 Now you've got a tidy structure, it's time for some exploratory data analysis!
  

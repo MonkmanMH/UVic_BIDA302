@@ -220,10 +220,21 @@ year(date3)
 
 ```
 
+::: {.rmdtip}
+#### Your turn
+
 
 What happens when you add the options `label` and `abbr` to the function you used to get the day?
 
 * experiment with setting the options to TRUE or FALSE
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution
@@ -232,10 +243,24 @@ month(date2, label = TRUE, abbr = FALSE)
 ```
 
 
+</details>
+:::
+
+
+
 
 What does `wday()` do? 
 
 * again, experiment with `label` and `abbr` 
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
 
 ```{r}
 # solution
@@ -252,6 +277,12 @@ class(month(date2, label = TRUE, abbr = FALSE))
 ```
 
 Bonus: what class of variable is `wday` returning?
+
+
+
+</details>
+:::
+
 
 
 Another useful function is `week()`, which returns the week number. More precisely, 
@@ -309,8 +340,18 @@ start_date + dyears(1)
 start_date + years(1)
 ```
 
+::: {.rmdtip}
+#### Your turn
 
 2020 was a leap year... what happens if you use the same three equations that add a year but change the date to "2020-01-01"?
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
 
 ```{r}
 # solution
@@ -325,6 +366,10 @@ start_date + years(1)
 
 ```
 
+
+
+</details>
+:::
 
 
 
@@ -402,7 +447,7 @@ ggplot(lfs_BC_2000, aes(x = ref_date_2, y = VALUE)) +
 
 And now we will create a summary table...the annual average of the number of people in the B.C. labour force.
 
-In this code chunk, the variable "ref_date_2" is inside the `year()` function. This means that the year becomes the grouping variable.
+In this code chunk, the variable "ref_date_2" is inside the `year()` function. This means that the year component of the full date becomes the grouping variable.
 
 ```{r}
 
@@ -415,9 +460,21 @@ lfs_BC_2000 %>%
 
 Looks like the B.C. labour force is growing!
 
+::: {.rmdtip}
+#### Your turn
 
 
-Is there any seaonality in the size of the labour force? To calculate the **monthly** average over the 20 years in our data, we can use the `month()` function to use the 12 months of the year as our grouping variable.
+
+Is there any seasonality in the size of the labour force? That is, is there a regular and predictable pattern that repeats each year?
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
+To calculate the **monthly** average over the 20 years in our data, we can use the `month()` function to use the 12 months of the year as our grouping variable.
 
 
 ```{r}
@@ -441,6 +498,10 @@ lfs_BC_2000 %>%
   summarise(monthly_average = mean(VALUE))
 
 ```
+
+
+</details>
+:::
 
 
 
@@ -482,6 +543,8 @@ lfs_BC_2000 %>%
 
 
 Important note: leaving the `labels = TRUE` will not work with this plot! That's because it becomes a factor, which can't be plotted as a line. One solution would be to plot the values using `geom_col()`.
+
+
 
 
 ## Date-time {#date-time-date-time}

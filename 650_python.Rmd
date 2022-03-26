@@ -381,9 +381,12 @@ There are a number of good introductory resources for using Python in data scien
 
 #### text books
 
-Wes McKinney, [_Python for Data Analysis_, 2nd ed.](https://wesmckinney.com/pages/book.html), 2017—McKinney is the lead developer behind the pandas library
+Wes McKinney, [_Python for Data Analysis_]—McKinney is the lead developer behind the pandas library
 
-* website: https://wesmckinney.com/pages/book.html
+* the [open version of the 3rd edition](https://wesmckinney.com/book/) (currently a work in progress)
+
+* the [main website for the book (including links to additional resources)](https://wesmckinney.com/pages/book.html)
+
 
 
 Jake VanderPlas, [Python Data Science Handbook: Essential Tools for Working with Data](https://www.oreilly.com/library/view/python-data-science/9781491912126/), 2016
