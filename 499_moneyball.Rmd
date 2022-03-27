@@ -150,7 +150,7 @@ If `x` = 150, then `y` = `r round(summary(model_mlb_pay_wl)$coefficients[1, 1], 
 
 Look back at the line of best fit—if `x` = 150, the `y` point on the line is just above the 0.5 mark. 
 
-Or another way to think about it: in a 162 game season, a team spending 50% more on payroll than the league average can expect to win 87 games (where 81 is 0.500).
+Or another way to think about it: in a 162 game season, a team spending 50% more on payroll than the league average can expect to win 54% (0.54) of their games. This works out to 87 games (162 * 0.54).
 
 
 
@@ -209,8 +209,8 @@ Karl W. Broman and Kara H. Woo, "Data Organization in Spreadsheets", _The Americ
 
 
 
-## Bonus Marks!  {-}
-(2 marks)
+## Bonus Mark!  {-}
+(1 mark)
 
 Imagine that time travel is possible...
  
