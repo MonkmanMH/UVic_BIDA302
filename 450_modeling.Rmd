@@ -155,10 +155,10 @@ The equation calculated by the `lm()` function above means that any predicted va
 
 The equation calculated by the `lm()` function above means that any predicted value of `y` (that is, the y-axis value of any point on the line) is equal to 
 
-`r round(summary(mod_sim1)$coefficients[1, 1], 2)` + 
-`r round(summary(mod_sim1)$coefficients[2, 1], 4)` * the value of `x`.
+`r round(mod_sim1$coefficients[1], 2)` + 
+`r round(mod_sim1$coefficients[2], 4)` * the value of `x`.
 
-If `x` = 150, then `y` = `r round(summary(mod_sim1)$coefficients[1, 1], 2)` + (`r round(summary(mod_sim1)$coefficients[2, 1], 4)` * 2.5), which is `r round(summary(mod_sim1)$coefficients[1, 1], 2) + (round(summary(mod_sim1)$coefficients[2, 1], 4) * 2.5)`. 
+If `x` = 2.5, then `y` = `r round(mod_sim1$coefficients[1], 2)` + (`r round(mod_sim1$coefficients[2], 4)` * 2.5), which is `r round(mod_sim1$coefficients[1], 2) + (round(mod_sim1$coefficients[2], 4) * 2.5)`. 
 
 
 Look back at the line of best fit in our plot—if `x` = 2.5, the `y` point on the line is just below 10. 
@@ -355,9 +355,80 @@ ad_impact2(500, 500)
 
 ---
 
-## Working with model data
+## Supplement: Working with model data
 
-As you get deeper into this, you'll quickly realize that the data created in model objects is not in a tidy format, and can be a bit of a challenge to extract—we have just been reading the numbers on the screen and typing them in.
+As you get deeper into this, you'll quickly realize that you may want to extract the various model values programmatically, rather than reading the numbers on the screen and typing them in to our code.
+
+For these examples, we will use the data set `sim1` (from the package {modelr}) that we saw earlier in this chapter.
+
+
+```{r mod_sim1_revisited}
+
+mod_sim1 <- lm(y ~ x, data = sim1)
+
+summary(mod_sim1)
+
+```
+
+
+### Extracting the coefficients
+
+The first thing we might want to do is extract the coefficients that are calculated by the `lm()` function.
+
+Earlier, we used the `summary()` function to show the coefficients and other aspects of the model:
+
+```{r}
+
+summary(mod_sim1)
+
+```
+
+We can also see the values by accessing the `coefficients` that are within the `mod_sim1` object.
+
+```{r}
+mod_sim1$coefficients
+```
+
+
+To access them, we need our square brackets:
+
+```{r}
+# the Y intercept
+mod_sim1$coefficients[1]
+
+# the X coefficient
+mod_sim1$coefficients[2]
+
+```
+
+These can be included in an equation, if we want to estimate a specific predicted Y value. In this code, our value of X is set to 7.5, and the regression equation evaluated to return the estimated value of Y.
+
+```{r}
+our_value_of_x <- 7.5
+
+estimated_y <- mod_sim1$coefficients[1] + # the Y intercept
+  mod_sim1$coefficients[2] * our_value_of_x
+
+estimated_y
+
+```
+
+
+We can also use inline R code to write a sentence with these values. For this purpose, I've rounded the values; here is the example of what the code looks like for the Y intercept, rounded to 2 decimal places.
+
+`round(mod_sim1$coefficients[1], 2)` 
+
+
+
+> The regression equation from the sim1 data is Y = 
+`r round(mod_sim1$coefficients[1], 2)` + 
+`r round(mod_sim1$coefficients[2], 4)` * the value of `x`.
+
+
+
+
+### Using {broom} to tidy (and then plot) the predicted values
+
 
 To "tidy" the data, you can use the package {broom}.
 
@@ -370,8 +441,6 @@ To "tidy" the data, you can use the package {broom}.
 * [{broom} reference site](https://broom.tidyverse.org/)
 
 
-### Plot example
-
 In this example, we will
 
 * run the `lm()` model
@@ -382,16 +451,6 @@ In this example, we will
 
 (These are the steps that the `geom_smooth(method = lm)` function in {ggplot2} is doing behind the scenes.)
 
-
-(Note that the data set `sim1` comes from the package {modelr}.)
-
-```{r mod_sim1_revisited}
-
-mod_sim1 <- lm(y ~ x, data = sim1)
-
-summary(mod_sim1)
-
-```
 
 Using the {broom} package, we use the `augment()` function to create a new dataframe with the fitted values (also known as the predicted values) and residuals for each of the original points in the data:
 
