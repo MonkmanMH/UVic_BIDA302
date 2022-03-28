@@ -248,10 +248,17 @@ month(date2, label = TRUE, abbr = FALSE)
 
 
 
+::: {.rmdtip}
+#### Your turn
+
+
 
 What does `wday()` do? 
 
-* again, experiment with `label` and `abbr` 
+* Again, experiment with `label` and `abbr` 
+
+* Bonus: what class of variable is `wday` returning?
+
 
 
 <details>
@@ -276,8 +283,7 @@ class(month(date2, label = TRUE, abbr = FALSE))
 
 ```
 
-Bonus: what class of variable is `wday` returning?
-
+These variables are ordered factors—the days of the week are arranged in a particular order, and using a factor allows that order to be pre-defined.
 
 
 </details>
@@ -561,6 +567,10 @@ now()
 ```
 
 
+`today()` is a date, while `now()` includes the time.
+
+
+### Time zones
 
 You can specify time zones by adding a time zone option to your call. For example, the time zone in the west coast of North America is often represented as "America/Los_Angeles" or "America/Vancouver".
 
@@ -577,24 +587,40 @@ What time is it right now? Specify the time zone in the `now()` function with th
 
 * at the University of Victoria campus—or maybe Vancouver
 
-* in Seoul, South Korea
+* in St. John's, Newfoundland
 
 * in Lima, Peru
+
+* in Seoul, South Korea
 
 * and Universal Time Coordinated (the time zone is represented as "UTC")
 
 
 ```{r}
-
+# Victoria, British Columbia, Canada
 now(tzone = "America/Vancouver")
 
+# St. John's, Newfoundland & Labrador, Canada
+now(tzone = "America/St_Johns")
+
+# Lima, Peru
 now(tzone = "America/Lima")
 
+# Seoul, South Korea
 now(tz = "Asia/Seoul")
 
+# Universal Time Coordinated (UTC)
 now(tz = "UTC")
 
 ```
+
+Some things to notice:
+
+* St. John's is 30 minutes off-set from the other time zones
+
+* Lima doesn't appear with a named "time" unlike the others, but is -05 hours relative to UTC
+
+* For those of us in the western hemisphere, it's almost always tomorrow in Korea!
 
 
 You can use the function `OlsonNames()` to print a list of all `r length(OlsonNames())` time zones around the world!
@@ -691,6 +717,10 @@ Financial calendars
 * [Comprehensive Date-Time Handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/).  "lubridate will never go away, and is not being deprecated or superseded. As of now, we consider clock to be an alternative to lubridate. "
 
 
+
+### Time zones
+
+Randy Au, ["Hidden treasure in the timezone database: It's lie a storybook"](https://counting.substack.com/p/hidden-treasure-in-the-timezone-database), 2022-03-22
 
 
 -30-

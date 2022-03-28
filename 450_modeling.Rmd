@@ -366,8 +366,6 @@ For these examples, we will use the data set `sim1` (from the package {modelr}) 
 
 mod_sim1 <- lm(y ~ x, data = sim1)
 
-summary(mod_sim1)
-
 ```
 
 
