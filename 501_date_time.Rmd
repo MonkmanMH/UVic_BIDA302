@@ -39,11 +39,12 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 
 ["Dates and times" in _R for Data Science_](https://r4ds.had.co.nz/dates-and-times.html) by Hadley Wickham and Garrett Grolemund
 
-[Dates and Times Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf) (PDF file)
+["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
 
 [{lubridate}](https://lubridate.tidyverse.org/index.html) package reference
 
-["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
+* [cheat sheet: Dates and times with {lubridate}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/lubridate.pdf) (PDF)
+
 
 
 ## Introduction: Dates and Times {#date-time-intro}

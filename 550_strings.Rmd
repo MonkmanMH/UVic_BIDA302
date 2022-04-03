@@ -29,12 +29,17 @@ options(width = 100, dplyr.width = 100)
 
 ["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
 
-[{stringr}](https://stringr.tidyverse.org/)
+[{stringr} package reference](https://stringr.tidyverse.org/)
+
+* [cheat sheet: String manipulation with {stringr}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/strings.pdf)
+
 
 
 **Regular expressions**
 
 * [{stringr} reference: regular expressions](https://stringr.tidyverse.org/articles/regular-expressions.html)
+
+* [cheat sheet: Basic regular expressions (regex) in R](https://raw.githubusercontent.com/rstudio/cheatsheets/main/regex.pdf)
 
 * a handy tool: [regex101.com](https://regex101.com/)
 
