@@ -51,6 +51,13 @@ Packages:
 * David Gohel, [flextable book](https://ardata-fr.github.io/flextable-book/)
 
 
+**gt**
+
+* [{gt} package site](https://gt.rstudio.com/index.html)
+
+* [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
+
+
 ## Introduction {#communication-table-intro}
 
 The look of the default table in R markdown is not all that attractive. Here's a summary table of the Oakland Athletics' seasons from 1999-2008.

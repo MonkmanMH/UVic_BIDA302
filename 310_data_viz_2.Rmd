@@ -405,13 +405,15 @@ pl_lifeexp +
 
 
 
-Based on the article ["A background color that works with black and white elements"](https://dataviztoday.com/blog/37), I decided to try #E5E5E3 as background colour. I'm not sure it's all that different from the default {ggplot2} colour!
+Based on the article ["A background color that works with black and white elements"](https://dataviztoday.com/blog/37), I decided to try #E5E5E3 as background colour. The idea behind the very neutral grey is that it provides contrast for both black and white elements. 
 
 
 ```{r}
 pl_lifeexp + 
   theme(panel.background = element_rect(fill = "#E5E5E3"))
 ```
+
+I'm not sure it's all that different from the default {ggplot2} colour!
 
 
 ---
