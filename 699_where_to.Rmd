@@ -229,6 +229,7 @@ Some more information about the R4DS learning community hosts can be found in th
   - Data Science Community (R and Python users)
 
 
+
 ## Keep up with the latest changes
 
 The R ecosystem is continuously changing. The core of R changes slowly and steadily, but the package universe continues to expand. 
@@ -243,6 +244,25 @@ But how can you keep up with all of this? The answer is "you can't". But the mos
 
 3. Blog articles. [R-bloggers](https://www.r-bloggers.com/) is an aggregator of blog articles written about R. 
 
+
+## Other courses & training
+
+### BIDA at UVic
+
+Of course, [the other courses in the BIDA series at UVic](https://continuingstudies.uvic.ca/business-technology-and-public-relations/programs/business-intelligence-and-data-analytics)!
+
+* BIDA 301 Business Intelligence and Data Analytics Fundamentals
+
+* BIDA 404 Data Visualization and Reporting
+
+* BIDA 405 Data Analytics Provisioning, Importing, Extracting and Manipulation 
+
+* BIDA 406 Predictive Data Analytics and Modelling
+
+
+### Other sources
+
+I started to list a variety of places that I have heard about, but since I have no first-hand experience with them, I don't think it's appropriate that I endorse them here. With that said, if you ask about a specific course or programme, I'll tell you what I have heard.
 
 
 -30-
