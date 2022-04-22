@@ -16,7 +16,9 @@ For this project, you will analyze trends in motor vehicle sales in Canada, by f
 Statistics Canada publishes these data; the most recent release with some analysis can be found here:
 [New motor vehicle registrations, second quarter 2021](https://www150.statcan.gc.ca/n1/daily-quotidien/211019/dq211019a-eng.htm)
 
-Part of your project will create two tables: one is the Canadian totals, and it will look something like this table that was published in 2019: (Note that the multi-row header is possible in R, but don't worry if you can't get it perfectly):
+Part of your project will create two tables: one is the Canadian totals, and it will look something like this table that was published in 2019.
+
+* Note that the multi-row header is possible in R, but don't worry if you can't get it perfectly. For example, the "Units" row seems redundant, and the hypertext links are beyond the scope of the project.
 
 ![_New motor vehicle registrations, Canada_](static/img_capstone/new_motor_vehicle_registrations.jpg){width=100%}
 
