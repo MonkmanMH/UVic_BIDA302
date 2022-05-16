@@ -65,7 +65,11 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 
 Note: this exercise does not delve into the question of how to _design_ your plot. The structure, use of colour, annotations, and other plot elements can significantly improve the impact of a plot. See Kieran Healy's book above, as well as 
 
-* Cole Nussbaumer Knaflic _Storytelling with Data: A Data Visualization Guide for Business Professionals_ [@NussbaumerKnaflic_2015]
+* Claus O. Wilke, (_Fundamentals of Data Visualization_)[@Wilke_dataviz]
+
+- [online version of _Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+* Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_ [@NussbaumerKnaflic_2015]
 
   - [Storytelling with Data: quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
 
