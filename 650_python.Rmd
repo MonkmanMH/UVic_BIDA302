@@ -383,7 +383,7 @@ There are a number of good introductory resources for using Python in data scien
 
 Wes McKinney, [_Python for Data Analysis_]—McKinney is the lead developer behind the pandas library
 
-* the [open version of the 3rd edition](https://wesmckinney.com/book/) (currently a work in progress)
+* the [open version of the 3rd edition](https://wesmckinney.com/book/) 
 
 * the [main website for the book (including links to additional resources)](https://wesmckinney.com/pages/book.html)
 
