@@ -343,7 +343,15 @@ print(df_pivot)
 
 ## Using Python objects in R {#python-R-interface}
 
-Assign the python data frame "flights" created above to an R object
+Assign the python data frame "flights" created above to an R object. Some things to note: 
+
+* the syntax for this is to put `py$` ahead of the python object name
+
+* this is inside an R chunk
+
+* we will now have identical data frame objects in both our python and R environments
+
+
 
 ```{r}
 # r chunk
@@ -400,15 +408,13 @@ Allen B. Downey, [Elements of Data Science](https://allendowney.github.io/Elemen
 Joel Grus, [Data Science from Scratch: First Principles with Python (2nd edition)](https://www.oreilly.com/library/view/data-science-from/9781492041122/), 2019
 
 
-
-### other resources
+### Other resources
 
 I've been compiling a list of other resources that I used to understand how to tackle data science problems in Python. While the basic "this is how Python works / is different than R" things remain relevant, some of the other materials may be outdated. I'll leave them here, should you wish to review them:
 
 * [Using Python with RStudio](https://solutions.rstudio.com/python/)
 
 * [Data Analysis in Python](http://www.data-analysis-in-python.org/), 2015
-
 
 
 
@@ -482,6 +488,17 @@ The core packages include:
 #### Jupyter notebook
 
 [First Python Notebook](http://www.firstpythonnotebook.org/) -- a step-by-step guide to analyzing data with Python and the Jupyter notebook.
+
+
+
+### Calling R from python
+
+In our examples above, we used python inside RStudio. An interesting recent development is that if you are working strictly in python, you can now call all of your favourite R packages. This means that "Pythonistas can take advantage of the great work already done by the R community."
+
+This article walks though some examples of how Python users can access R packages:
+
+* Isabella Velásquez, ["Calling R From Python with rpy2"](https://rviews.rstudio.com/2022/05/25/calling-r-from-python-with-rpy2/) (2022-05-25)
+
 
 
 

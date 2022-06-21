@@ -84,6 +84,11 @@ Note: this exercise does not delve into the question of how to _design_ your plo
   - ["How to Tell a Story with Data"](https://hbr.org/2013/04/how-to-tell-a-story-with-data), _Harvard Business Review_, 2013-04-24
 
 
+* For a deeper dive, you might want to read Matthew Ström's blog post ["How to pick the least wrong colors: An algorithm for creating color palettes for data visualization"](https://matthewstrom.com/writing/how-to-pick-the-least-wrong-colors/) (2022-05-31) 
+
+  - "The problem boiled down to this: how do I pick nice-looking colors that cover a broad set of use cases for categorical data while meeting accessibility goals?"
+
+
 
 
 ## Introduction {#communication-plot-intro}
