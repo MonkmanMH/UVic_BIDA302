@@ -188,7 +188,7 @@ print(flights_SEA.head())
 This R chunk uses the {reticulate} function `source_python()` to call that file:
 
 ```{r}
-# r chunk that calls a python script file
+# r chunk that calls a Python script file
 
 source_python("py_code.py")
 
@@ -205,7 +205,7 @@ source_python("py_code.py")
 Count the number of flights by airline: uses `size()`
 
 ```{python}
-# python chunk
+# Python chunk
 
 flights_SEA.groupby("carrier").size()
 
@@ -217,7 +217,7 @@ Mean of departure delay, median of arrival delay.
 
 
 ```{python}
-# python chunk
+# Python chunk
 
 flights_SEA['dep_delay'].mean()
 
@@ -230,7 +230,7 @@ flights_SEA['arr_delay'].median()
 Another way to go about it would be to select the column as a new object, then calculate.
 
 ```{python}
-# python chunk
+# Python chunk
 
 departure_delay = flights_SEA['dep_delay']
 
@@ -243,7 +243,7 @@ departure_delay.mean()
 pandas also has a `describe` function that produces many summary stats:
 
 ```{python}
-# python chunk
+# Python chunk
 
 flights_SEA.describe()
 
@@ -257,7 +257,7 @@ It's possible to calculate summary statistics by a variable through the `groupby
 Here we calculate the mean delays for each airline.
 
 ```{python}
-# python chunk
+# Python chunk
 
 flights_SEA.groupby("carrier").mean()
 
@@ -268,7 +268,7 @@ The same, but with median.
 
 
 ```{python}
-# python chunk
+# Python chunk
 
 flights_SEA.groupby("carrier").median()
 
@@ -287,7 +287,7 @@ In pandas, the reshaping functions to pivot are:
 To create a longer shape:
 
 ```{python}
-# python chunk
+# Python chunk
 
 df_melted = pd.melt(flights_SEA, id_vars=["carrier"], value_vars=["dep_delay", "arr_delay"], value_name="delay.time")
 
@@ -301,7 +301,7 @@ print(df_melted)
 The `pivot_table` function gives another way to calculate grouped statistics. The `index` variable works in the same way as `groupby`.
 
 ```{python}
-# python chunk
+# Python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], columns =["variable"], values =["delay.time"])
 
@@ -314,7 +314,7 @@ print(df_pivot)
 Note that the default statistic here is the mean. We can also specify a different one using the `aggfunc` function:
 
 ```{python}
-# python chunk
+# Python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], values =["delay.time"], columns =["variable"], aggfunc='median')
 
@@ -326,7 +326,7 @@ print(df_pivot)
 Or we can get carried away and have multiple measures:
 
 ```{python}
-# python chunk
+# Python chunk
 
 df_pivot = df_melted.pivot_table(index=["carrier"], values =["delay.time"], columns =["variable"], aggfunc=['mean', 'median'])
 
@@ -343,13 +343,13 @@ print(df_pivot)
 
 ## Using Python objects in R {#python-R-interface}
 
-Assign the python data frame "flights" created above to an R object. Some things to note: 
+Assign the Python data frame "flights" created above to an R object. Some things to note: 
 
-* the syntax for this is to put `py$` ahead of the python object name
+* the syntax for this is to put `py$` ahead of the Python object name
 
 * this is inside an R chunk
 
-* we will now have identical data frame objects in both our python and R environments
+* we will now have identical data frame objects in both our Python and R environments
 
 
 
@@ -491,9 +491,9 @@ The core packages include:
 
 
 
-### Calling R from python
+### Calling R from Python
 
-In our examples above, we used python inside RStudio. An interesting recent development is that if you are working strictly in python, you can now call all of your favourite R packages. This means that "Pythonistas can take advantage of the great work already done by the R community."
+In our examples above, we used Python inside RStudio. An interesting recent development is that if you are working strictly in Python, you can now call all of your favourite R packages. This means that "Pythonistas can take advantage of the great work already done by the R community."
 
 This article walks though some examples of how Python users can access R packages:
 
