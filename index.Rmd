@@ -285,12 +285,18 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 
 
 
-## A bit about me {-}
+## A bit about your instructors {-}
 
+
+### Martin
 
 * University: UVic Geography B.Sc. & M.A.
 
-* Day job: BC Stats: 1993 to present (with 5 year gap when I worked elsewhere in the B.C. public service)
+* Day job: 
+
+  - BC Stats: 1993 to 2022 (with 5 year gap when I worked elsewhere in the B.C. public service)
+  
+  - now Senior Manager, Consulting at MNP
 
 * I have been writing code since 1979
 
@@ -303,9 +309,9 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)
 
 
-So wait...I have some substantive expertise, combined with some statistics knowledge, and I have been using my coding skills to be more efficient and effective with my work...
+So wait...we each have some substantive expertise, combined with some statistics knowledge, and we have been using our coding skills to be more efficient and effective with our work...
 
-I am an accidental data scientist!
+We are accidental data scientists!
 
 ![I am not trained for this...and yet](static/img/I-am-not-trained-for-this_laptop_600.jpg)
 
@@ -317,12 +323,12 @@ I am an accidental data scientist!
 
 **Acknowledgements**
 
-The author would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within. And of course, all of the participants in BIDA302 who have asked great questions and helped me get better at explaining the why and what of data analysis using R.
+The authors would like to acknowledge everyone who has contributed to the books, articles, blog posts, and R packages cited within. And of course, all of the participants in BIDA302 who have asked great questions and helped me get better at explaining the why and what of data analysis using R.
 
 
 **License**
 
-<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a><br />This work by [Martin Monkman](https://github.com/MonkmanMH) is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a><br />This work by [Martin Monkman](https://github.com/MonkmanMH) & [Julie Hawkins](https://github.com/JulieHawkins) is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License</a>.
 
 
 **Source code**
