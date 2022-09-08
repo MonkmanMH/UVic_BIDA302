@@ -309,6 +309,22 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)
 
 
+#### Julie
+
+* University: UVic Psychology B.Sc.
+
+* Day job: Data Scientist at BC Stats, 2001 to present
+
+* I have been playing with data since 1997:
+
+  - started using SPSS and MiniTab to do data analysis
+  
+  - expanded data analysis tools with Excel
+  
+  - using R since 2016
+
+
+
 So wait...we each have some substantive expertise, combined with some statistics knowledge, and we have been using our coding skills to be more efficient and effective with our work...
 
 We are accidental data scientists!
