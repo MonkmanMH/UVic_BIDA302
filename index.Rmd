@@ -288,7 +288,7 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 ## A bit about your instructors {-}
 
 
-### Martin
+**Martin**
 
 * University: UVic Geography B.Sc. & M.A.
 
@@ -309,7 +309,7 @@ The book's layout is in 6 sections, each corresponding to the 6 weeks of the cou
 ![_computer punch card_](static/img/ibm-80-column-punched-card1.jpg)
 
 
-#### Julie
+**Julie**
 
 * University: UVic Psychology B.Sc.
 
