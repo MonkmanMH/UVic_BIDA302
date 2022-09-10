@@ -14,7 +14,7 @@ For this project, you will analyze trends in motor vehicle sales in Canada, by f
 
 
 Statistics Canada publishes these data; the most recent release with some analysis can be found here:
-[New motor vehicle registrations, second quarter 2021](https://www150.statcan.gc.ca/n1/daily-quotidien/211019/dq211019a-eng.htm)
+[New motor vehicle registrations, second quarter 2021](https://www150.statcan.gc.ca/n1/daily-quotidien/211019/dq211019a-eng.htm).
 
 Part of your project will create two tables: one is the Canadian totals, and it will look something like this table that was published in 2019.
 
@@ -27,7 +27,7 @@ For this project, you will also create a second table that is identical to the o
 Note that the table above shows the years from 2014–2018. The data in the folder covers a larger range than what is shown in the table; Statistics Canada's publications tend to summarize the available data to save space. For many applications (including this course) you will want to review as much data as is available! More data points will give you a clearer sense of what the trends might be.
 
 
-The second part is to create a plot or plots that demonstrate an interesting aspect of the data. This could be 
+The second part is to create a plot or plots that demonstrate an interesting aspect of the data. This could be: 
 
 * change over time, including using the quarterly data series (the table in the file "20100024.csv"). Does the quarterly data show the impact of the COVID-19 pandemic on vehicle sales?
 

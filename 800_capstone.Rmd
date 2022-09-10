@@ -49,7 +49,7 @@ Some projects will be available for you to choose, but you may also bring your o
 | 5 | data import, including defining the variable types |
 | 10 | tidying and manipulation |
 | 10 | visualization—tables and plots |
-| 5 | going beyond—this might included adding an additional table, plot, or statistical model, or using functions so that your code isn't as WET |
+| 5 | going beyond—this might include adding an additional table, plot, or statistical model, or using functions so that your code isn't as WET |
 | 10 | documentation throughout, explaining what the following R code chunk is doing
 | **40** | **TOTAL** |
 
