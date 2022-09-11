@@ -4,7 +4,7 @@ https://creativecommons.org/licenses/by/4.0/  -->
 
 ```{r setup_125, echo = FALSE}
 library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = FALSE)
 options(width = 100, dplyr.width = 100)
 ```
 
@@ -123,7 +123,7 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 This version (updated `r Sys.Date()`) uses the `cansim` package to pull the data from CANSIM, and assign it to an object named "thedata".
 
 
-```{r data_import}
+```{r data_import_cansim}
 
 table_id <- "18-10-0205-01"
 
@@ -215,7 +215,7 @@ The `clean_names()` function changes the names of the three variables that are s
 | --- | --- |
 | REF_DATE | ref_date |
 | GEO | geo |
-| \`New housing price indexes\` | new_housing_price_indexes |
+| New housing price indexes | new_housing_price_indexes |
 
 
 
