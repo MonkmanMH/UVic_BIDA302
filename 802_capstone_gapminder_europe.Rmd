@@ -31,7 +31,7 @@ Make three versions of the chart, each showing a different year.
 
 ## Data files {#gapminder-europe-data}
 
-There are four files from https://www.gapminder.org/data/ that you will need; these are in the "data" folder
+There are four files from https://www.gapminder.org/data/ that you will need; these are in the "data" folder.
 
 There are CSV files for the following:
 
@@ -48,8 +48,8 @@ In addition, there is an Excel file that you'll need to use to get the region th
 
 
 
-## references {#gapminder-europe-references}
+## References {#gapminder-europe-references}
 
-For additional references, including examples of using {gganimate}, see the page for the capstone project [Gapminder:  200 Countries, 200 Years](#gapminder200)
+For additional references, including examples of using {gganimate}, see the page for the capstone project [Gapminder:  200 Countries, 200 Years](#gapminder200).
 
 

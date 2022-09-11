@@ -40,7 +40,7 @@ Data file: "data_14100287_trunc.csv"
 
 **NOTE:** 
 
-The data available for this project is a truncated of the source file listed below. A number of variables have been removed, and any non-estimate values have been filtered out. See the file data_truncate.Rmd for details.
+The data available for this project is a truncated version of the source file listed below. A number of variables have been removed, and any non-estimate values have been filtered out. See the file data_truncate.Rmd for details.
 
 
 

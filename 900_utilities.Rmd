@@ -142,7 +142,7 @@ head(starwars)
 ```
 
 
-Create a new variable in the data frame by glueing the variables `species` and `gender`.
+Create a new variable in the data frame by gluing the variables `species` and `gender`.
 
 ```{r}
 # solution
@@ -171,7 +171,7 @@ The `here()` package is used as part of the Workflow chapter.
 
 Reference page: https://garthtarr.github.io/meatR/janitor.html
 
-> The janitor package is a R package that has simple functions for examining and cleaning dirty data. It was built with beginning and intermediate R users in mind and is optimised for user-friendliness.
+> The janitor package is an R package that has simple functions for examining and cleaning dirty data. It was built with beginning and intermediate R users in mind and is optimised for user-friendliness.
 
 > The main janitor functions:
 
@@ -195,7 +195,7 @@ Reference page: https://garthtarr.github.io/meatR/janitor.html
 
 ### `clean_names()`
 
-This is going to demonstrate {janitor} `clean_names()` function
+This is going to demonstrate {janitor} `clean_names()` function.
 
 First we read in the valid rows from the "deaths.xlsx" file (part of the [{readxl} package] https://readxl.tidyverse.org/).
 
@@ -233,7 +233,7 @@ deaths %>%
 
 The {janitor} package also has functions to clean up dataframes that have empty rows and columns.
 
-First, we'll read in an Excel file called "dirty_data.xlsx"
+First, we'll read in an Excel file called "dirty_data.xlsx".
 
 
 ```{r}
@@ -245,7 +245,7 @@ roster_raw
 
 ```
 
-As we can see, this table has messy names and a messy structure. In the code below, we'll use the `clean_names()` and `remove_empty()` functions from {janitor}
+As we can see, this table has messy names and a messy structure. In the code below, we'll use the `clean_names()` and `remove_empty()` functions from {janitor}.
 
 ```{r}
 roster <- roster_raw %>%
@@ -294,7 +294,7 @@ coalesce(y, x)
 ```
 
 
-### duplicate records with `get_dupes()` 
+### Duplicate records with `get_dupes()` 
 
 We can find the cases where there are duplicates in the data records. In this case, we are looking for duplicate names:
 
@@ -311,7 +311,7 @@ roster %>% get_dupes(subject)
 ```
 
 
-### simple tables with `tabyl`
+### Simple tables with `tabyl`
 
 The {janitor} package also offers some simple tabulations with the `tabyl()` function.
 
