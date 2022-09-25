@@ -28,16 +28,6 @@ What's covered in this short exercise barely scratches the surface of what's pos
 
 
 
-## Reading and reference {#data-viz-2-reading}
-
-
-[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
-
-
-
-* Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
-
-
 
 
 ## Plot types {#data-viz-2-plot-types}
@@ -418,12 +408,36 @@ I'm not sure it's all that different from the default {ggplot2} colour!
 
 ---
 
-## Exercise - plotting
+## Exercises - plotting
 
+This short interactive tutorials will provide some additional practice in using {ggplot2} functions.
 
 [BIDA302: Plotting with {ggplot2}](https://monkmanmh.shinyapps.io/BIDA302_3_2_plot/#section-plotting-with-ggplot2)
 
 * an introduction to plotting
+
+---
+
+
+## Reading and reference {#data-viz-2-reading}
+
+
+[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
+
+
+
+Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
+
+
+Winston Chang, [_R Graphics Cookbook, 2nd edition_](https://r-graphics.org/) (2020-11-06)
+
+
+Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/index.html#preface) (2018-04-25)
+
+
+David Smith, [The Financial Times and BBC use R for publication graphics](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html) - _Revolutions_, 2018/06-27
+
+[Why The Urban Institute Visualizes Data with ggplot2](https://medium.com/@urban_institute/why-the-urban-institute-visualizes-data-with-ggplot2-46d8cfc7ee67), 2018-05-01
 
 
 

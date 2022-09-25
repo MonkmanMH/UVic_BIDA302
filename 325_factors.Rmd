@@ -481,7 +481,7 @@ h_gap %>%
 </details>
 :::
 
-
+---
 
 ## Exercise - factors and plotting
 
@@ -490,6 +490,8 @@ h_gap %>%
 
 * an introduction to factor variables in the context of making plots
 
+
+---
 
 
 
