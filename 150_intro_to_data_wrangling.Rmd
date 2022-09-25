@@ -78,7 +78,7 @@ To achieve these three goals, we will be using functions from the tidyverse pack
 |function |action |
 | :-- | :-- |
 | `filter()`    | *keep rows*|
-| `select()`    | *keep variables (or drop them -var)*|
+| `select()`    | *keep variables (or drop them -var or re-order them)*|
 | `mutate()`    | *create a new variable*|
 | `arrange()`    | *sort from smallest to largest*|
 | `arrange(desc())`    | *sort from largest to smallest*|
@@ -296,7 +296,7 @@ The functions in {dplyr} (and many other packages) are verbs that describe what 
 | `filter()`    | *keep rows*|
 | `mutate()`    | *create a new variable*|
 | `group_by()`  | *declare subsets in data*|
-| `select()`    | *keep variables (or drop them -var)*|
+| `select()`    | *keep variables (or drop them -var or re-order them)*|
 | `rename()`    | *renaming variables*|
 | `summarize()` | *summarize the data, by groups if they have been declared*|
 | `distinct()`  | *returns only rows that are unique*| 
