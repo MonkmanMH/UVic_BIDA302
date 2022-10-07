@@ -70,6 +70,14 @@ Some other texts dealing with modeling methodologies using R include:
 
   - [pdf version of _An Introduction to Statistical Learning_](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6062a083acbfe82c7195b27d/1617076404560/ISLR%2BSeventh%2BPrinting.pdf)
 
+  - There is a free (!) online course, given by the textbook authors, [offered through Stanford University](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning)—but be warned, this is a pretty heavy course! It covers similar material as BIDA406 "Predictive Data Analytics and Modelling" & BIDA407 "Machine Learning Fundamentals"
+  
+### Forecasting
+
+One specialized form of modeling is forecasting. The textbook _Forecasting: Principles and Practice (2nd ed.)_ by Rob J Hyndman and George Athanasopoulos is an excellent introduction, with examples in R that use the same tidyverse principles as we have seen in BIDA302.
+
+- [online edition of _Forecasting: Principles and Practice (2nd ed.)_](_Forecasting: Principles and Practice (2nd ed.)_)
+
 
 ### Data visualization
 
