@@ -48,16 +48,14 @@ options(width = 100, dplyr.width = 100)
 
 ## Strings: introduction {#strings-intro}
 
-For this exercise, we will be using the tidyverse package {stringr}. Note that {stringr} is part of the tidyverse, but not a core package that loads with {tidyverse} (like {lubridate}), so it has to be loaded separately.
+For this exercise, we will be using the tidyverse package {stringr}.
 
 
 ```{r}
 
 library(tidyverse)
-#
-library(stringr)
 library(lubridate)
-# to use `str_view()` 
+
 library(htmlwidgets)
 
 ```
@@ -108,13 +106,13 @@ fruit_list <- c("apple", "banana", "pear")
 
 # which words start with "a"?
 str_view(fruit_list, "^a")
+
 ```
 
 
 ```{r}
 
 # which words have an "ea" combination?
-
 str_view(fruit_list, "ea")
 
 ```
@@ -124,8 +122,9 @@ str_view(fruit_list, "ea")
 #### Your turn {#strings-yourturn_1}
 
 
-Use `count` to check that `planes$tailnum` is a primary key
+Which words end with "a"?
 
+Use `str_view()` to find out.
 
 <details>
 
@@ -133,7 +132,6 @@ Use `count` to check that `planes$tailnum` is a primary key
 Solution
 </summary>
 
-Which words end with "a"?
 
 ```{r}
 # solution
@@ -176,7 +174,7 @@ str_view(fruit_list, "p{2}")
 
 **quotes**
 
-To find single and double quotes in our string, they need to be "escaped" with a backslash `\`
+To find single and double quotes in our string, they need to be "escaped" with a backslash `\`.
 
 ```{r}
 
@@ -236,7 +234,7 @@ interrobang
 ```
 
 
-To make a shruggie, you need to escape the backslash
+To make a shruggie, you need to escape the backslash.
 
 ```{r}
 
@@ -294,11 +292,10 @@ str_c(musician_first, collapse = ", ")
 
 ## Combining strings {#strings-combining}
 
-Use `str_c` to join two character vectors, separated by a space
+Use `str_c` to join two character vectors, separated by a space.
 
 
 ```{r str_c_2}
-
 
 musician_last <- c("Stone", "Ellish", "Monk", "5", "Nelson", "Zeppelin")
 
@@ -311,7 +308,7 @@ str_c(musician_first, musician_last, sep = " ")
 
 
 
-Now join `musician_first` to `musician_last` (the other way around!), separated by an apostrophe and a space
+Now join `musician_first` to `musician_last` (the other way around!), separated by an apostrophe and a space.
 
 
 <details>
@@ -400,7 +397,7 @@ str_detect(musician_last, "\\d")
 :::
 
 
-We can extract chunks of text by their location using the following function: `str_sub(musician_first, start, end)`
+We can extract chunks of text by their location using the following function: `str_sub(musician_first, start, end)`.
 
 
 ```{r str_sub}
@@ -442,7 +439,6 @@ str_extract(musician_first, "[aeiou][aeiou]")
 # alternate solution
 str_extract(musician_first, "[aeiou]{2}")
 
-
 ```
 
 
@@ -479,7 +475,6 @@ pattern_string <- "^\\w{3}land$"
 gapminder %>% 
   filter(str_detect(country, pattern_string)) %>% 
   distinct(country)
-
 
 ```
 
@@ -628,7 +623,6 @@ housing1_long %>%
 
 * and if you need to _add_ whitespace, there's `str_pad()`
 
-* 
 
 
 Now our plot will have clean names:
@@ -641,7 +635,6 @@ ggplot(housing1_long %>%
   slice(1:10), aes(x = reorder(community, `3 Year Total`), y = `3 Year Total`))+
   geom_col() +
   coord_flip()
-
 
 ```
 
@@ -683,6 +676,7 @@ But there's a solution designed for tabular data, in the {tidyr} package: `separ
 
 
 ```{r}
+
 bced %>% 
   separate(X1, "\t", into = c("ed_tla", "ed_name"))
 
@@ -691,6 +685,7 @@ bced %>%
 If we add the `remove = ` argument set to `FALSE`, the original variable remains:
 
 ```{r}
+
 bced %>% 
   separate(X1, "\t", into = c("ed_tla", "ed_name"), remove = FALSE)
 
@@ -703,13 +698,13 @@ In the above example, the tab symbol is the separator, and there's only one per 
 
 bced_space <- read_csv("data/bc_electoral_districts_2015_space.txt", col_names = FALSE)
 bced_space
+
 ```
 
 ```{r}
 
 bced_space %>% 
   separate(X1, " ", into = c("ed_tla", "ed_name"))
-
 
 ```
 
@@ -723,7 +718,6 @@ The solution is to use the `extra = "merge"` argument. (Note that the default is
 
 bced_space %>% 
   separate(X1, " ", into = c("ed_tla", "ed_name"), extra = "merge")
-
 
 ```
 
