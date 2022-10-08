@@ -1,8 +1,6 @@
-<!-- 
-This file by Martin Monkman 
+<!-- This file by Martin Monkman 
 is licensed under a Creative Commons Attribution 4.0 International License
-https://creativecommons.org/licenses/by/4.0/  
--->
+https://creativecommons.org/licenses/by/4.0/  -->
 
 
 # Classic Rock 25: fictional wholesale orders {#cr25}
@@ -18,7 +16,7 @@ You work in the marketing department, and you have been asked to make a summary 
 
 To get you started, the database team at the warehouse has just run an extract for you, with the detailed orders from every store CR25 deals with. A snapshot looks like this:
 
-![order_multi table](order_multi.JPG)
+![order_multi table](static/img/order_multi.JPG)
 
 You also have a list of the stores that are buying from CR25, with details about things like their location and which chain they are part of.
 

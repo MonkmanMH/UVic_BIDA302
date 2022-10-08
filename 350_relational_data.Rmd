@@ -173,7 +173,7 @@ table_two <- tribble(
 
 An inner join keeps only the observations where there is a **match on both sides**. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
 
-```{r}
+```{r 350_inner_join_1}
 
 inner_join(x = table_one, y = table_two, key = "key_var")
 
