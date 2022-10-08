@@ -1,0 +1,50 @@
+<!-- 
+This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+-->
+
+
+# Classic Rock 25: fictional wholesale orders {#cr25}
+
+
+## Introduction {#cr25-intro}
+
+The fictional wholesale company, CR25 (for "Classic Rock 25") only sells 25 album titles. They are the biggest selling / most famous albums by the 25 most-played artists on "Classic Rock" radio stations in the U.S.A.^[Walt Hickey, [Why Classic Rock Isn’t What It Used To Be](https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/) (FiveThirtyEight, 2014-07-07).]
+
+Your company, being completely nostalgic, hasn't added those new-fangled CDs yet ... all you sell is LPs and, for the hip kids to play in their Sony Walkmans and boomboxes, cassettes.
+
+You work in the marketing department, and you have been asked to make a summary for the company's annual meeting, showing purchases by chain and region.
+
+To get you started, the database team at the warehouse has just run an extract for you, with the detailed orders from every store CR25 deals with. A snapshot looks like this:
+
+![order_multi table](order_multi.JPG)
+
+You also have a list of the stores that are buying from CR25, with details about things like their location and which chain they are part of.
+
+Both files are in the "data" folder.
+
+Typically at this sort of meeting, a one-page summary of your presentation materials (sometimes called a handout) will be distributed to the people in attendance. This document will contain tables and charts, along with some text analysis.
+
+For this capstone, create the plots and tables that would be included in the handout.
+
+Other topics to explore would be sales by store, chain, by month or quarter, or by artist. 
+
+## Going beyond
+
+Explore the RMarkdown functionality, and create a separate file that
+
+* uses the same code chunks that you used to generate the charts
+
+* knits as a slide deck
+
+
+## Data source {#cr25-data}
+
+The data for this project are in the "data" folder.
+
+Details on how the contents of the files were generated can be found here: https://monkmanmh.github.io/dpjr/articles/data_generate_cr25.html
+
+
+
+-30-

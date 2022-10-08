@@ -51,7 +51,7 @@ In addition, there is an Excel file that you'll need to use to get the region (c
 
 ### Animation of plots 
 
-It is possible to program animation of plots, using the package {gganimate}.
+Part of what makes Hans Rosling's presentations so compelling is the animation of the data visualization. Here are some links to resources for you to create an animated plot in R, using the package {gganimate}. 
 
 * [{gganimate} package reference page](https://gganimate.com/index.html) -- note that the "Getting Started" page has a good guide to the basics of the package
 
