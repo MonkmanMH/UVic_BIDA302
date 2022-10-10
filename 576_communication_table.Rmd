@@ -14,49 +14,6 @@ options(width = 100, dplyr.width = 100)
 
 
 
-## Reading & reference  {#communication-table-reading}
-
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
-
-
-
-
-**R Markdown**
-
-Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
-
-
-
-Packages:
-
-**kableExtra**
-
-* Hao Zhu, [Create Awesome HTML Table with knitr::kable and kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
-
-* Hao Zhu, [Using kableExtra in Bookdown](https://haozhu233.github.io/kableExtra/bookdown/index.html)
-
-* Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
-
-* [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
-
-
-
-
-**flextable**
-
-* {flextable} - [flextable R package reference](https://davidgohel.github.io/flextable/index.html)
-
-* David Gohel, [flextable book](https://ardata-fr.github.io/flextable-book/)
-
-
-**gt**
-
-* [{gt} package site](https://gt.rstudio.com/index.html)
-
-* [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
-
 
 ## Introduction {#communication-table-intro}
 
@@ -108,6 +65,57 @@ oakland_99 %>%
   add_footer_row(values = "Source: baseball-reference.com", colwidths = 8)
 
 ```
+
+
+## Another example
+
+Earlier in this course, covered in the chapter An example of a data analytics project, we saw some other examples of data tables that were made publication-ready through {kableExtra} and {flextable} formatting. You are encouraged to review that code to see some other options that these packages make available.
+
+
+
+## Reading & reference  {#communication-table-reading}
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
+
+
+
+
+**R Markdown**
+
+Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+
+
+
+Packages:
+
+**kableExtra**
+
+* Hao Zhu, [Create Awesome HTML Table with knitr::kable and kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
+
+* Hao Zhu, [Using kableExtra in Bookdown](https://haozhu233.github.io/kableExtra/bookdown/index.html)
+
+* Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+
+* [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
+
+
+
+
+**flextable**
+
+* {flextable} - [flextable R package reference](https://davidgohel.github.io/flextable/index.html)
+
+* David Gohel, [flextable book](https://ardata-fr.github.io/flextable-book/)
+
+
+**gt**
+
+* [{gt} package site](https://gt.rstudio.com/index.html)
+
+* [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
+
 
 
 -30-

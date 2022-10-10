@@ -23,77 +23,10 @@ mlb_pay_wl <- read_csv(here::here("data", "mlb_pay_wl.csv"))
 ```
 
 
-## Reading & reference  {#communication-plot-reading}
-
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
-
-* ["Data Visualization"](https://r4ds.had.co.nz/data-visualisation.html)
-
-
-[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
-
-
-
-
-### More ggplot2 plotting resources 
-
-* [R color cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
-
-* Paul Teetor & JD Long, [_R Cookbook, 2nd ed._: Graphics](https://rc2e.com/graphics)
-
-* Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for. [@Chang_2018]
-
-* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R, primarily using {ggplot2}. If I was teaching a longer course dedicated to data visualization using R, this would be the text book. [@Healy_2019]
-
-* Isabella Benabaye, [ggplot2 Theme Elements Reference Sheet](https://isabella-b.com/blog/ggplot2-theme-elements-reference/) (2020-05-19)—note that there's a PDF version of the annotated plot.
-
-* [R-charts](https://r-charts.com/)—"code examples of R graphs made with base R graphics, ggplot2 and other packages."
-
-* [R Graph Gallery](https://www.r-graph-gallery.com/)—"a collection of charts made with the R programming language. Hundreds of charts are displayed in several sections, always with their reproducible code available. The gallery makes a focus on the tidyverse and ggplot2."
-
-
-
-* [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)—the BBC uses R and {ggplot2} to make publication-ready data visualizations. This cookbook gives examples and the code behind some different chart types.
-
-  - Many other organizations are using R and {ggplot2} to create plots for their publications, including [the _Financial Times_](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html).
-
-
-
-### More general plotting resources 
-
-Note: this exercise does not delve into the question of how to _design_ your plot. The structure, use of colour, annotations, and other plot elements can significantly improve the impact of a plot. See Kieran Healy's book above, as well as 
-
-* Claus O. Wilke, (_Fundamentals of Data Visualization_)[@Wilke_dataviz]
-
-- [online version of _Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
-
-* Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_ [@NussbaumerKnaflic_2015]
-
-  - [Storytelling with Data: quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
-
-* Stephanie Evergreen, _Presenting Data Effectively: Communicating Your Findings for Maximum Impact_ [@Evergreen_2014]
-
-* Jim Stikeleather's series of three articles in the _Harvard Business Review_ make a good summary of effective data visualizations:
-
-  - ["When Data Visualization Works — And When It Doesn’t"](https://hbr.org/2013/03/when-data-visualization-works-and), _Harvard Business Review_, 2013-03-27
-
-  - ["The Three Elements of Successful Data Visualizations"](https://hbr.org/2013/04/the-three-elements-of-successf), _Harvard Business Review_, 2013-04-19
-
-  - ["How to Tell a Story with Data"](https://hbr.org/2013/04/how-to-tell-a-story-with-data), _Harvard Business Review_, 2013-04-24
-
-
-* For a deeper dive, you might want to read Matthew Ström's blog post ["How to pick the least wrong colors: An algorithm for creating color palettes for data visualization"](https://matthewstrom.com/writing/how-to-pick-the-least-wrong-colors/) (2022-05-31) 
-
-  - "The problem boiled down to this: how do I pick nice-looking colors that cover a broad set of use cases for categorical data while meeting accessibility goals?"
-
-
-
 
 ## Introduction {#communication-plot-intro}
 
-In the chapters [data_viz] and [data_viz_2], we started to explore some ways to format our plots. 
+In the chapters [Introduction to data visualization] and [More data visualization], we started to explore some ways to format our plots. 
 
 
 Cole Nussbaumer Knaflic's book [_Storytelling with Data: A Data Visualization Guide for Business Professionals_](http://www.storytellingwithdata.com/books)  is a good introduction to the principles of data visualization, which is a key part of data analytics. In the book, the point is made that data visualization is always in the service of making a point about what the data tell us. In the context of business, this then translates into influencing decisions. 
@@ -439,6 +372,75 @@ If you are interested in exploring animated plots (similar to Hans Rosling's _ga
 * [Animated line chart transition with R](https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html) at the R Graph Gallery
 
 * Alboukadel, ["gganimate: How to Create Plots With Beautiful Animation in R"](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
+
+
+
+## Reading & reference  {#communication-plot-reading}
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
+
+* ["Data Visualization"](https://r4ds.had.co.nz/data-visualisation.html)
+
+
+[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
+
+
+
+
+### More ggplot2 plotting resources 
+
+* [R color cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
+
+* Paul Teetor & JD Long, [_R Cookbook, 2nd ed._: Graphics](https://rc2e.com/graphics)
+
+* Winston Chang, [_R Graphics Cookbook_, 2nd ed.](https://r-graphics.org/), 2021 is a great resource with examples and explanations as to how to get the result you're looking for. [@Chang_2018]
+
+* Kieran Healy, [_Data Visualization: A Practical Introduction_](https://socviz.co/) combines both the "why" of good data visualization with the "how" in R, primarily using {ggplot2}. If I was teaching a longer course dedicated to data visualization using R, this would be the text book. [@Healy_2019]
+
+* Isabella Benabaye, [ggplot2 Theme Elements Reference Sheet](https://isabella-b.com/blog/ggplot2-theme-elements-reference/) (2020-05-19)—note that there's a PDF version of the annotated plot.
+
+* [R-charts](https://r-charts.com/)—"code examples of R graphs made with base R graphics, ggplot2 and other packages."
+
+* [R Graph Gallery](https://www.r-graph-gallery.com/)—"a collection of charts made with the R programming language. Hundreds of charts are displayed in several sections, always with their reproducible code available. The gallery makes a focus on the tidyverse and ggplot2."
+
+
+
+* [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)—the BBC uses R and {ggplot2} to make publication-ready data visualizations. This cookbook gives examples and the code behind some different chart types.
+
+  - Many other organizations are using R and {ggplot2} to create plots for their publications, including [the _Financial Times_](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html).
+
+
+
+### More general plotting resources 
+
+Note: this exercise does not delve into the question of how to _design_ your plot. The structure, use of colour, annotations, and other plot elements can significantly improve the impact of a plot. See Kieran Healy's book above, as well as 
+
+* Claus O. Wilke, (_Fundamentals of Data Visualization_)[@Wilke_dataviz]
+
+  - [online version of _Fundamentals of Data Visualization_](https://clauswilke.com/dataviz/)
+
+* Cole Nussbaumer Knaflic, _Storytelling with Data: A Data Visualization Guide for Business Professionals_ [@NussbaumerKnaflic_2015]
+
+  - [Storytelling with Data: quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
+
+* Stephanie Evergreen, _Presenting Data Effectively: Communicating Your Findings for Maximum Impact_ [@Evergreen_2014]
+
+* Jim Stikeleather's series of three articles in the _Harvard Business Review_ make a good summary of effective data visualizations:
+
+  - ["When Data Visualization Works — And When It Doesn’t"](https://hbr.org/2013/03/when-data-visualization-works-and), _Harvard Business Review_, 2013-03-27
+
+  - ["The Three Elements of Successful Data Visualizations"](https://hbr.org/2013/04/the-three-elements-of-successf), _Harvard Business Review_, 2013-04-19
+
+  - ["How to Tell a Story with Data"](https://hbr.org/2013/04/how-to-tell-a-story-with-data), _Harvard Business Review_, 2013-04-24
+
+
+* For a deeper dive, you might want to read Matthew Ström's blog post ["How to pick the least wrong colors: An algorithm for creating color palettes for data visualization"](https://matthewstrom.com/writing/how-to-pick-the-least-wrong-colors/) (2022-05-31) 
+
+  - "The problem boiled down to this: how do I pick nice-looking colors that cover a broad set of use cases for categorical data while meeting accessibility goals?"
+
+
 
 
 -30-
