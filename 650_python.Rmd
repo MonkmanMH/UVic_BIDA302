@@ -144,7 +144,7 @@ Notice a couple of things:
 It's a big table...over 300,000 rows.
 
 
-So let's trim it down to a bite size chunk, and create a new Python data frame, `flights_SEA`:
+So let's trim it down to a bite-size chunk, and create a new Python data frame, `flights_SEA`:
 
 ```{python}
 # python chunk
@@ -202,7 +202,7 @@ source_python("py_code.py")
 
 ## Calculating summary statistics {#python-summarystats}
 
-Count the number of flights by airline: uses `size()`
+Count the number of flights to Seattle by airline: uses `groupby()` and `size()`
 
 ```{python}
 # Python chunk
@@ -213,7 +213,7 @@ flights_SEA.groupby("carrier").size()
 * the "dtype" indicates the data type, and "int64" is a 64-bit integer
 
 
-Mean of departure delay, median of arrival delay.
+Calculate the mean of departure delay, and the median of arrival delay.
 
 
 ```{python}
