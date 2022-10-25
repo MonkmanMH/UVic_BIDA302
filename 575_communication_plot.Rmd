@@ -306,13 +306,15 @@ mlb_pay_wl %>%
 
 ```
 
-We can change the default palette in a number of ways. Below, we use one of the "ColorBrewer" palettes. These palettes are designed for discrete scales on maps, but they translate well to data plotting. There are palettes for sequential, diverging, and qualitative colour scales.
+We can change the default palette in a number of ways. Below, we use one of the "ColorBrewer" palettes. These palettes are designed for discrete scales on maps^[Here's a profile of Dr. Cynthia Brewer, the cartographer who created the palettes: https://www.wired.com/2014/10/cindy-brewer-map-design/], but they translate well to data plotting. There are palettes for sequential, diverging, and qualitative colour scales.
 
 A valuable reference is at [_R Graphics  Cookbook_, 2nd ed., "Using a Different Palette for a Discrete Variable"](https://r-graphics.org/recipe-colors-palette-discrete), which includes the names and images of a variety of palettes.
 
 (See also http://colorbrewer2.org.)
 
 And for even more information about the use of colorbrewer.org scales, see this page at the {ggplot} reference: https://ggplot2.tidyverse.org/reference/scale_brewer.html 
+
+
 
 
 
