@@ -658,6 +658,34 @@ The functions in {dplyr} (and many other packages) are verbs that describe what 
 
 The full list of {dplyr} functions is here: https://dplyr.tidyverse.org/reference/index.html
 
+## Reference: Descriptive statistics
+
+
+These statistics can all be generated individually, using the functions in the table below. Other statistical measures about a variable can be calculated with the appropriate function. Note that these are just a few of the functions that are included in base R; there are also other statistical measures available through various packages.
+
+
+ | statistic | function |
+ | :-- | :-- |
+ | mean      | `mean()`   |
+ | median   | `median()` |
+ | mode | `mode()`  |
+ | minimum and maximum | `min()`  `max()`  |
+ | range | `range()`  |
+ | quantile | `quantile()` (default: quartiles) |
+ |  &#8212;  | &#8212;  |
+ | sum | `sum()` |
+ | standard deviation | `sd()` |
+ | variance  | `var()` |
+ | kurtosis | `kurtosis()` |
+ | skewness | `skewness()` |
+ | correlation coefficient | `cor()` |
+ | correlation coefficient (two variables) | `cor()` |
+ |  &#8212;  | &#8212;  |
+ | count (number of cases) | `length()`  |
+ | number of unique cases | `n_distinct()` |
+ 
+ 
+
 
 
 ## Reference: Boolean operators

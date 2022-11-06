@@ -10,7 +10,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Assignment 1 - data wrangling {#assignment1}
+# Exercise 1 - data wrangling {#exercise1}
 
 
 Package load:
@@ -119,7 +119,9 @@ ggplot(data = mpg) +
 (6 marks)
 
 For Q3a-3d, use the data `nycflights13::flights`
-Pay close attention to how the variables are coded.
+
+Pay close attention to how the variables are coded. Type `?flights` into the console to access the details about this data in the "Help" pane.
+
 Using the data in the `nycflights13::flights` table, find all flights that:
 
 a. Had an arrival delay of two or more hours

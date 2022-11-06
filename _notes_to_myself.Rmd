@@ -1,0 +1,65 @@
+---
+title: "_notes_to_myself"
+author: "Martin Monkman"
+date: "02/01/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## publishing
+
+a two-step process:
+
+1. render
+
+```{r}
+bookdown::render_book()
+```
+
+2. publish to bookdown.org
+
+```{r}
+
+bookdown::publish_book(name = "DataAnalyticsCodingFundamentals", account = "martin_monkman")
+
+```
+
+
+## data cleaning resources
+
+https://twitter.com/CDelawalla/status/1516026363484033027
+
+
+Simultaneous use of multiple imputation for missing data and disclosure limitation
+https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X20040027755
+
+
+
+
+## Tangent: Arguments within functions
+
+Virtually every function we use has default arguments, and options to change those. This allows us to use one function for a variety of circumstances. Instead of having separate functions to split a variable into its quartiles (four parts), quintiles (five parts), deciles (ten parts), and so on, there is one function that uses the generic name for this process: quantile. 
+
+The default setting of the `quantile()` function splits the distribution into four parts, known as _quartiles_. This is the most common quantile used to summarize a distribution.
+
+```{r}
+
+quantile(gapminder$lifeExp)
+
+```
+
+
+If you want other groupings, the function has arguments that allow you define those. For example, if you want deciles—10 groups, each with 10% of the cases—the second example shows how to do that.
+
+
+```{r}
+
+
+# deciles
+quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
+
+```
+
