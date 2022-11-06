@@ -161,9 +161,9 @@ At this point, we only have one step in our chain, but in future code, you might
 
 So this little chunk would be read as
 
-* we start with the dataframe "exp_dem", "and then..."
+* we start with the dataframe "gapminder", "and then..."
 
-* we calculate a variable called "mean_of_expense" by running the `mean()` function on the variable "Expense"
+* we calculate a variable called "mean_of_life_expectancy" by running the `mean()` function on the variable "lifeExp"
 
 ```{r}
 
@@ -173,12 +173,38 @@ gapminder %>%
 ```
 
 
+## Filter for rows
+
+The calculations above are for the entire dataframe. Often in data analysis, we want to analyze a single group. We might want to examine life expectancy changes in a single country, or for calculate the average across the world for a single year. For this type of analysis, we can use the `filter()` function.
+
+In the code chunk below, we use the `filter()` function to get the rows for Canada. This will return the 12 rows that have the records for Canada.
+
+```{r}
+gapminder %>% 
+  filter(country == "Canada")
+```
+
+In our next code chunk, we use filter to get the rows for every country, for the single year 2002. Note that because the "year" variable is a numeric type (specifically, an integer) we do not put the year value (2002) inside quotation marks.
+
+```{r}
+
+gapminder %>% 
+  filter(year == 2002)
+
+```
+
+We can use this filter as the first step in a pipe that allows us to calculate the average life expectancy for all of the countries in 2002.
+
+```{r}
+
+gapminder %>% 
+  filter(year == 2002) %>% 
+  summarise(global_life_expectancy = mean(lifeExp))
+
+```
+
 
 ## Creating lists  {#data-wrangle-lists}
-
-R allows us to create lists using the `c()` function.
-
-A list can be referenced in a `filter()` statement using the `%in%` as the evaluator.
 
 In this example, we filter to get three countries, "New Zealand", "Canada", and "United States".
 
@@ -193,7 +219,12 @@ gapminder %>%
 
 ```
 
+Note as well that the order of the values in the `filter()` function does not matter—the table that results is in the same order as the source table.
+
 Instead of this rather verbose syntax, we can achieve the same result by creating a list. 
+
+To create a list in R, we use the `c()` function. 
+
 
 
 ```{r filter6_example-solution}
@@ -203,7 +234,7 @@ gapminder %>%
 
 ```
 
-Another option would be to create a named object that contains our list, and then use the named object in our `filter()`.
+Another option would be to create a named object that contains our list. That list can then be referenced in a `filter()` statement using the `%in%` operator as the evaluator.
 
 
 ```{r}
@@ -219,7 +250,7 @@ gapminder %>%
 
 This final option has a significant benefit. Now if we need to use that list of countries in another part of our analysis, we can just summon the object, rather than typing the entire list again.
 
-This also reduces the risk of inadvertent error if we want to change the countries we are analyzing. If we have a named list object, we only need to change it in the one place, and that change will be incorporated throughout. Contrast that with a find-and-replace approach, where you might accidentally miss one of the places it appears, or you might have a typo in one place. 
+This also reduces the risk of inadvertent error if we want to change the countries we are analyzing. If we have a named list object, we only need to change it in the one place, and that change will be incorporated throughout our code. Contrast that with a find-and-replace approach, where you might accidentally miss one of the places it appears, or you might have a typo in one place. 
 
 
 
@@ -228,14 +259,14 @@ This also reduces the risk of inadvertent error if we want to change the countri
 This example uses the `flights` table from the {nycflights13} package, and filters for Alaska Airlines Inc., which has the value "AS" in the variable "carrier".
 
 ```{r, eval=FALSE}
-# will not work due to "smart" quotes
-nycflights13::flights %>% filter(carrier == “AS”)
-
 # will work...double quotes
 nycflights13::flights %>% filter(carrier == "AS")
 
 # will work...single quotes
 nycflights13::flights %>% filter(carrier == 'AS')
+
+# will not work due to "smart" quotes
+nycflights13::flights %>% filter(carrier == “AS”)
 
 ```
 
@@ -246,7 +277,6 @@ nycflights13::flights %>% filter(carrier == 'AS')
 
 
 You've already seen `filter()` to choose particular rows in your dataframe. What if you want to remove some columns (variables)?
-
 
 
 Here we will use `select()` to reduce the number of variables in our gapminder table to "country", "year", and "lifeExp":
@@ -274,7 +304,7 @@ gapminder %>%
 
 
 
-You can define a range of columns to select:
+You can also define a range of columns to select:
 
 ```{r}
 gapminder %>%
@@ -284,132 +314,13 @@ gapminder %>%
 
 
 
-## Functions for data wrangling
-
-### Reference: {dplyr} functions
-
-The functions in {dplyr} (and many other packages) are verbs that describe what they do.
-
-
-|function |action |
-| :-- | :-- |
-| `filter()`    | *keep rows*|
-| `mutate()`    | *create a new variable*|
-| `group_by()`  | *declare subsets in data*|
-| `select()`    | *keep variables (or drop them -var or re-order them)*|
-| `rename()`    | *renaming variables*|
-| `summarize()` | *summarize the data, by groups if they have been declared*|
-| `distinct()`  | *returns only rows that are unique*| 
-| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
-
-|function |action |
-| :-- | :-- |
-| `length` <br> `dplyr::count()`  | *number of cases* |
-| `tally()`     | *counting (by groups if group_by() applied)*|
-
-
-The full list of {dplyr} functions is here: https://dplyr.tidyverse.org/reference/index.html
-
-
-
-### Reference: Boolean operators
-
-Boolean operators are a special type of operator that return TRUE or FALSE.  They are used when we want to compare values.
-
-| Operator | Description |
-| :-- | :-- |
-| ==    | *equal, tests equality* |
-| !=    | *not equal, tests inequality* |
-| \>    | *greater than, tests greater than* (also >=) |
-| <     | *less than, tests less than* (also <=) |
-| %in%  | *contains, tests inclusion* |
-
-
-
-
-
-Boolean operators can be combined with *and* or *or*.  
-
-| Operator | Description |
-| :-- | :-- |
-| `&`     | *and, returns true if preceeding and following are both true, else false* |
-| &#124;  | *or, returns true if either preceeding and following are true, else false* |
-
-.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
 
 
 
 
 
 
-
-## Descriptive statistics
-
-R has a built-in function to generate some descriptive (or summary) statistics. The first is `summary()` which gives a few key statistics about the distribution.
-
-
-```{r}
-
-summary(gapminder)
-
-```
-
-
-These statistics can all be generated individually, using the functions in the table below. Other statistical measures about a variable can be calculated with the appropriate function. Note that these are just a few of the functions that are included in base R; there are also other statistical measures available through various packages.
-
-
- | statistic | function |
- | :-- | :-- |
- | mean      | `mean()`   |
- | median   | `median()` |
- | mode | `mode()`  |
- | minimum and maximum | `min()`  `max()`  |
- | range | `range()`  |
- | quantile | `quantile()` (default: quartiles) |
- |  &#8212;  | &#8212;  |
- | sum | `sum()` |
- | standard deviation | `sd()` |
- | variance  | `var()` |
- | kurtosis | `kurtosis()` |
- | skewness | `skewness()` |
- | correlation coefficient | `cor()` |
- | correlation coefficient (two variables) | `cor()` |
- |  &#8212;  | &#8212;  |
- | count (number of cases) | `length()`  |
- | number of unique cases | `n_distinct()` |
- 
- 
-
-
-
-## Tangent: Arguments within functions
-
-Virtually every function we use has default arguments, and options to change those. This allows us to use one function for a variety of circumstances. Instead of having separate functions to split a variable into its quartiles (four parts), quintiles (five parts), deciles (ten parts), and so on, there is one function that uses the generic name for this process: quantile. 
-
-The default setting of the `quantile()` function splits the distribution into four parts, known as _quartiles_. This is the most common quantile used to summarize a distribution.
-
-```{r}
-
-quantile(gapminder$lifeExp)
-
-```
-
-
-If you want other groupings, the function has arguments that allow you define those. For example, if you want deciles—10 groups, each with 10% of the cases—the second example shows how to do that.
-
-
-```{r}
-
-
-# deciles
-quantile(gapminder$lifeExp, probs = seq(0, 1, 0.10))
-
-```
-
-
-
-
-## Transform Data: 1b Add new variables
+## Add new variables
 
 `mutate()`
 
@@ -475,24 +386,9 @@ mpg %>%
 
 
 
-## Transform Data 2: summarize
+## Summarize (or Summarise)
 
 <!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
-
-
-Everything we have done so far has been with to manipulate the entire data file (filtering and selecting), or calculating descriptive statistics for all the values in our data. Often we need to compare within our data:
-
-* What was the median life expectancy in African countries in 2007?
-
-* What was the median life expectancy by continent in 2007?
-
-* What was the median life expectancy by continent for each year in the data?
-
-To achieve the first of these things, we can filter the data to get only the African countries and 2007. 
-
-But for the second and third, we need to _group_ our data by continent and year, and then summarize those groups.
-
-The R package {dplyr} has a grouping function `group_by()`. Once the data is grouped, we apply a `summarize()` (or `summarise()` if you prefer!) function with our descriptive statistics. 
 
 
 
@@ -503,7 +399,18 @@ gapminder
 ```
 
 
-Use `summarize()` or `summarise()` to compute three statistics about the data:
+R has a built-in function to generate some descriptive (or summary) statistics. The first is `summary()` which gives a few key statistics about the distribution.
+
+
+```{r}
+
+summary(gapminder)
+
+```
+
+
+
+The `summarize()` (or `summarise()`) functions allows us to use a pipe sequence to compute statistics about the data. In the example below, we will calculate three statistics:
 
 * The first (minimum) year in the dataset
 * The last (maximum) year in the dataset
@@ -519,6 +426,23 @@ gapminder %>%
 ```
 
 
+Everything we have done so far has been with to manipulate the entire data file (filtering and selecting), or calculating descriptive statistics for all the values in our data. Often in our data analysis we need to compare _within_ our data. Here are some questions we can answer through the gapminder data:
+
+1. What was the median life expectancy in African countries in 2007?
+
+2. What was the median life expectancy by continent in 2007?
+
+3. What was the median life expectancy by continent for each year in the data?
+
+To answer the first of these, we can filter the data to get only the African countries and 2007. 
+
+But for the second and third, we need to _group_ our data by continent and year, and then _summarize_ those groups.
+
+The R package {dplyr} has a grouping function `group_by()`. Once the data is grouped, we apply a `summarize()` (or `summarise()` if you prefer!) function with our descriptive statistics. 
+
+
+Let's walk through the steps for the first question:
+
 Extract the rows for African countries in 2007.
 
 Then find:
@@ -529,7 +453,9 @@ Then find:
 ```{r}
 # answer
 gapminder %>% 
+  # filter for the continent and the year
   filter(continent == "Africa" & year == 2007) %>% 
+  # calculate the summary statistics
   summarise(n_countries = n_distinct(country),
             lifeExp_med = median(lifeExp))
 
@@ -543,12 +469,14 @@ gapminder %>%
 We can use the {dplyr} function `group_by()` to define our grouping variables. If we group all of the countries by the continent they are part of, we can calculate a statistic for the whole continent.
 
 
-Find the median life expectancy by continent in 2007.
+The second question was to find the median life expectancy by continent in 2007.
 
 ```{r}
 # answer
 gapminder %>%
+  # filter for the year
   filter(year == 2007) %>% 
+  # apply the grouping variable, and then summarize
   group_by(continent) %>%
   summarize(lifeExp_mean = mean(lifeExp))
 
@@ -572,7 +500,7 @@ gapminder %>%
 
 
 
-Create a summary table with the population and GDP by continent for the year 1952  
+Create a summary table with the population and total GDP by continent for the year 1952  
 
 ```{r}
 # answer
@@ -593,7 +521,7 @@ For these examples, we will use the `mpg` dataset, and produce a summary table t
 
 In this section, we will look at three different approaches to get to the same result.
 
-#### `n()` ·
+**`n()`**
 
 Here we start with the original ungrouped dataset, applying the `group_by()`, then use the `n()` function inside a `summarise()` to count the number of cases (or observations).
 
@@ -617,7 +545,7 @@ mpg %>%
 
 ```
 
-#### `tally()` ·
+**`tally()`**
 
 Another approach to count the number of rows in each group is to use the `tally()` function, which takes the place of the `summarize(n = n())` function. 
 
@@ -642,7 +570,7 @@ mpg %>%
 
 
 
-#### `count()` ·
+**`count()`**
 
 The most streamlined way we could get to our grouped summary table with counts is by using the `count()` function. This function merges both the grouping and tallying functions.
 
@@ -665,7 +593,6 @@ mpg %>%
 ```
 
 
-#### counting wrapup
 
 Without the grouping variables, these three statements produce the same result:
 
@@ -685,7 +612,7 @@ There are other counting functions within {dplyr}, see the reference page https:
 We will return to data wrangling [later in the course](#wrangling2), and explore more complex calculations.
 
 
-## Take aways
+# Take aways
 
 * Extract cases with `filter()`. For filtering, we have to specify the _values_ we want and the _variable_ that they are in.
 
@@ -702,6 +629,64 @@ We will return to data wrangling [later in the course](#wrangling2), and explore
 * Do groupwise operations with `group_by()`
 
 * Count the number of cases with `tally()` and `count()`
+
+
+
+# Functions for data wrangling
+
+## Reference: {dplyr} functions
+
+The functions in {dplyr} (and many other packages) are verbs that describe what they do.
+
+
+|function |action |
+| :-- | :-- |
+| `filter()`    | *keep rows*|
+| `mutate()`    | *create a new variable*|
+| `group_by()`  | *declare subsets in data*|
+| `select()`    | *keep variables (or drop them -var or re-order them)*|
+| `rename()`    | *renaming variables*|
+| `summarize()` | *summarize the data, by groups if they have been declared*|
+| `distinct()`  | *returns only rows that are unique*| 
+| `case_when()` | *is used for "recoding" variable, often used with mutate()*|
+
+|function |action |
+| :-- | :-- |
+| `length` <br> `dplyr::count()`  | *number of cases* |
+| `tally()`     | *counting (by groups if group_by() applied)*|
+
+
+The full list of {dplyr} functions is here: https://dplyr.tidyverse.org/reference/index.html
+
+
+
+## Reference: Boolean operators
+
+Boolean operators are a special type of operator that return TRUE or FALSE.  They are used when we want to compare values.
+
+| Operator | Description |
+| :-- | :-- |
+| ==    | *equal, tests equality* |
+| !=    | *not equal, tests inequality* |
+| \>    | *greater than, tests greater than* (also >=) |
+| <     | *less than, tests less than* (also <=) |
+| %in%  | *contains, tests inclusion* |
+
+
+
+
+
+Boolean operators can be combined with *and* or *or*.  
+
+| Operator | Description |
+| :-- | :-- |
+| `&`     | *and, returns true if preceeding and following are both true, else false* |
+| &#124;  | *or, returns true if either preceeding and following are true, else false* |
+
+.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+
+
+
 
 
 -30-
