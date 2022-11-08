@@ -54,7 +54,7 @@ b. Using the functions in {tidyr}, arrange this table in such a way that it is n
 
 
 ### 2. Importing data: csv  {-}
-(5 marks)
+(6 marks)
 
 >**NOTE:** Variable names with spaces and special symbols are a challenge to work with. >They require that you put the name inside a pair of back-ticks. For example, in the >dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
 >
@@ -82,7 +82,7 @@ d. Create a table showing the number of cases by court class completed in each r
 
 
 ### 3. Importing data: Excel  {-}
-(5 marks)
+(8 marks)
 
 Use the {readxl} package to read in the file "bcmetal.xlsx" 
 
@@ -96,7 +96,15 @@ a. What are the names of the sheets in this file?
 
 b. Read in the contents of the "BCMETAL_PROD" sheet. 
 
-c. This will generate some warnings. What issues are there with the rows? 
+c. This will generate some warnings. 
+
+  * The first warning is
+
+> _Warning: Expecting numeric in G8425 / R8425C7: got 'TOTALS:_
+
+The way to interpret this (and all the other warnings) is that R was busy reading the file, and got some unexpected values. Specifically in this case, what is cell G8425 in the Excel sheet (another way to express this location is row (R) 8425 and column (C) 7 is not of the type that was expected. R was busy reading the 7th column, and for 8424 rows found numbers--but in row 8425 it found a character, "TOTAL:"
+
+The problem to solve: read only those rows that have valid data in them.
 
 d. Change the options for your read function to address any issues you identified in 3.c
 
@@ -104,7 +112,7 @@ e. Use your data manipulation skills to answer the following, as separate calcul
 
 * Based on the data here, in what year was the most gold mined in British Columbia?
 
-* What mine holds the record for the total amount of silver extracted in B.C.?
+* What B.C. mine holds the record for the most silver extracted in B.C. through the entire life of the mine?
 
 * Does that mine hold the record for the total silver mined during a single year in B.C.?
 
