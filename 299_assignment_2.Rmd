@@ -106,9 +106,9 @@ The way to interpret this (and all the other warnings) is that R was busy readin
 
 The problem to solve: read only those rows that have valid data in them.
 
-d. Change the options for your read function to address any issues you identified in 3.c
+Change the options for your read function to address any issues you identified in 3.c
 
-e. Use your data manipulation skills to answer the following, as separate calculations: 
+d. Use your data manipulation skills to answer the following, as separate calculations: 
 
 * Based on the data here, in what year was the most gold mined in British Columbia?
 
