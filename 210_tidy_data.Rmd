@@ -308,7 +308,10 @@ displ_class_by_cyl %>%
 ## Exercises {#tidy-data-exercise}
 
 
-### Hands-on: Canadian election
+::: {.rmdtip}
+### Canadian election results
+
+
 
 This table shows the national-level results of the Federal Election held in Canada on October 10, 2019. This is structure as the table was published by Elections Canada.
 
@@ -327,7 +330,20 @@ CDN_elec_2019
 
 ```
 
-_What tidy data principles does this table violate?_
+_1. What tidy data principles does this table violate?_
+
+
+_2. Tidy this table's structure_
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
+**1. What tidy data principles does this table violate?**
 
 It violiates Principles #1 & #2<br>
 
@@ -337,7 +353,8 @@ It violiates Principles #1 & #2<br>
 Sometimes untidy data can be too long!
 
 
-_Tidy this table's structure_
+**2. Tidy this table's structure**
+
 
 To tidy the table, we need to `pivot_wider()`
 
@@ -351,14 +368,32 @@ CDN_elec_2019 %>%
 
 
 
-### Hands-on: gapminder
+</details>
+:::
 
 
-When we publish our tables, we might want a structure that violiates the tidy principles—sometimes an untidy table is better for human consumption. The {gapminder} data, in its raw form, is tidy. For this exercise, create a table that shows:
+
+::: {.rmdtip}
+### gapminder
+
+
+
+When we publish our tables, we might want a structure that violates the tidy principles—sometimes an untidy table is better for human consumption. The {gapminder} data, in its raw form, is tidy. For this exercise, create a table that shows:
 
 * GDP per capita for
 * the countries Canada, United States, and Mexico are the columns, and 
 * the years after 1980 are the rows
+
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
+
 
 ```{r}
 # solution #1
@@ -404,7 +439,6 @@ gapminder %>%
 
 ```
 
-(Thanks to the students of BIDA302 spring 2021 for teaching me this one!)
 
 
 It's also possible to have multiple columns selected using the `id_cols =` argument:
@@ -420,6 +454,36 @@ gapminder %>%
               values_from = "gdpPercap")
 
 ```
+
+In the examples above, the steps from the source gapminder dataframe to the three country table are completed in a single pipe. But what if we want to create two separate tables with the same three countries, but one with GDP per capita as the values and the second with life expectancy? 
+
+To do this, we create an intermediate object that filters for the year range and the countries we are interested in. 
+
+After that object is created, we can use it to first select for the variables we want, and then to pivot. 
+
+```{r}
+# create intermediate dataframe "gapminder1"
+gapminder1 <- gapminder %>% 
+  filter(year > 1980) %>% 
+  filter(country == "Canada" | country == "Mexico" | country == "Brazil")
+
+# now using the `id_cols = year`, pull the values from gdpPercap 
+gapminder1 %>% 
+  pivot_wider(id_cols = year, 
+              names_from = country, 
+              values_from = gdpPercap)
+
+# and now a 2nd version with life expectancy, pull the values from lifeExp
+gapminder1 %>% 
+  pivot_wider(id_cols = year, 
+              names_from = country, 
+              values_from = lifeExp)
+
+```
+
+
+</details>
+:::
 
 
 ### Online exercise {#tidy-data-online}
