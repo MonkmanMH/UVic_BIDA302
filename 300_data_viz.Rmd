@@ -79,7 +79,7 @@ anscombe_tidy %>%
 ```
 
 ::: {.rmdtip}
-#### Your turn
+#### Exercise
 
 Using the following functions, calculate the summary statistics of _ex_ and _why_, and the correlation coefficient between _ex_ and _why_, for all four of the sets in the quartet:
 
@@ -107,6 +107,7 @@ anscombe_tidy %>%
             mean(why), 
             sd(why), 
             cor(ex, why))
+
 ```
 
 </details>
@@ -122,20 +123,32 @@ The template of a `ggplot()` function call looks like this:
 `ggplot(data = <DATA>) + ` <BR>
 `  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))`  
 
+We use:
+
+* the `data =` argument to name the dataframe we are using.
+
+* the `<GEOM_FUNCTION>` to define how we want the data represented (as points, or lines, or bars, or...).
+
+* the `mapping =` is where we define which variables we want plotted, and 
+
+* the `aes()` (for "aesthetic") includes _how_ we want those plotted.
+
 
 ### Scatter plot
+
+
 
 With this example, the dataframe we're using is `anscombe_tidy` and we are plotting `ex` and `why` as points in a scatter plot.
 
 ```{r}
 # example
 ggplot(anscombe_tidy) + 
-  geom_point(aes(x = ex, y = why)) 
+  geom_point(mapping = aes(x = ex, y = why)) 
 ```
 
 
 
-Now we will add another variable to those in our `aes` list. We will add the variable "set", and use `colour = ` to differentiate each value within "set".
+Now we will add another variable to those in our `aes` list. We will add the variable "set", and use `colour` to differentiate each value within "set". You will notice that the `colour =` specification goes _inside_ the `aes()`—we are using colour to represent the variable "set".
 
 ```{r}
 # example
@@ -145,6 +158,10 @@ ggplot(anscombe_tidy) +
 
 
 For the example below, we plot only set "I". We start with our `anscombe_tidy` dataframe, and then using the pipe symbol, first `filter()` and then pass the results of the filter to our `ggplot()` function. Note that because the filtered dataframe is being passed, there is no specified `data =` in the `ggplot()` function: the data to be plotted is what is passed after the previous step in the pipe.
+
+You will notice that the arguments `aes()` and `x =` etc are not specified. As we saw in earlier examples, if the arguments are in the order that the function expects, they are interpreted correctly.
+
+In this example, the code increases the size of the points and colours them purple. These arguments are _outside_ the `aes()` argument, so they apply to all of the points.
 
 ```{r}
 # solution

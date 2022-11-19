@@ -151,7 +151,7 @@ ggplot(penguin_species_bill,
 ```
 
 ::: {.rmdtip}
-#### Your turn
+#### Exercise
 
 
 What happens if you were to add a minus sign (hyphen) in front of the `bill_length_mean` of the `reorder()` function? 
@@ -190,7 +190,7 @@ Using the hyphen reverses the order, from longest bill to shortest.
 
 Another way to show the same values as above is the "Cleveland dot plot", which uses a point for the top of the column and a line to show its length. These plots are less cluttered, and particularly when there are many variables are easier to read.
 
-In {ggplot2}, the code to visualize the same data would be:
+In {ggplot2}, the code to visualize the same data with a point as the geom would be:
 
 
 ```{r}
@@ -233,13 +233,24 @@ In that version, we end with 30 thin categories—what are called "bins".
 > When you create a histogram without specifying the bin width, ggplot() prints out a message telling you that it’s defaulting to 30 bins, and to pick a better bin width. This is because it’s important to explore your data using different bin widths; the default of 30 may or may not show you something useful about your data.
 (_R)
 
-We can specify the width of the bins in the `geom_histogram()` function. Let's check the appearance of bins that are 500 units (in this case, 500 grams) wide.
+We might adjust the number of bins, using the `bins =` argument within the `geom_histogram()` function:
+
+```{r}
+
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(bins = 16)
+
+```
+
+
+We can also specify the width of the bins in the `geom_histogram()` function, using the units of the variable to be plotted. Let's check the appearance of bins that are 500 units (in this case, 500 grams from `body_mass_g`) wide.
 
 ```{r}
 ggplot(penguins, aes(x = body_mass_g)) +
   geom_histogram(binwidth = 500)
 
 ```
+
 
 
 

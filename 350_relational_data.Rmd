@@ -146,7 +146,10 @@ The first kind of joins are "mutating joins"—new variables are added to one da
 
 ### Understanding keys 
 
-* from [_R for Data Science, "Understanding joins"]("https://r4ds.had.co.nz/relational-data.html#mutating-joins")
+* adapted from from [_R for Data Science, "Understanding joins"]("https://r4ds.had.co.nz/relational-data.html#mutating-joins")
+
+  - In particular, you may wish to review the visual representations at ["Understanding joins"](https://r4ds.had.co.nz/relational-data.html#understanding-joins)
+
 
 First, we will make two small tables, `table_one` and `table_two`
 
