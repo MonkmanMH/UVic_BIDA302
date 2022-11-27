@@ -294,11 +294,11 @@ my_circles %>%
 
 
 
+## Exercises
 
 
 ::: {.rmdtip}
-#### Your turn
-
+### Area of a triangle
 
 Write a function that calculates the area of a triangle, using the formula 
 
@@ -320,7 +320,7 @@ The function for a circle is pasted below:
 
 ```{r}
 # example
-circle_area <- function(r, rnd = 2) {
+circle_area <- function(r, rnd = 1) {
   ca <- pi * r ^ 2
   ca <- round(ca, rnd)
   return(ca)
@@ -378,6 +378,54 @@ my_triangles %>%
 :::
 
 
+::: {.rmdtip}
+### Multiple dice rolls
+
+
+
+The dice rolling function we wrote above assumes we are always rolling 2 dice. Modify the function so that the default is 2, but that the number of dice can be varied. 
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+In this solution, an argument `number_of_dice` is added to the `function()`, and specified as "2". Then within the `sample()` function, the `size = ` is specified as `number_of_dice`.
+
+```{r}
+
+roll2 <- function(number_of_dice = 2) {
+  die <- 1:6
+  dice <- sample(die, size = number_of_dice, replace = TRUE)
+  sum(dice)
+}
+ 
+```
+
+Testing our function, first relying on the default of 2:
+
+```{r}
+
+roll2()
+
+```
+
+
+Then specifying 3 dice:
+
+```{r}
+
+roll2(number_of_dice = 3)
+
+```
+
+
+
+
+</details>
+:::
 
 
 ## Readings and reference

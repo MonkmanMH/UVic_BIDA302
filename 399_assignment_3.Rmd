@@ -13,7 +13,7 @@ library(readxl)    # to read Excel files
 ```
 
 
-# Assignment 3 - exploratory data analysis {#assignment3}
+# Assignment week 3 - exploratory data analysis {#assignment3}
 
 
 ## Introduction
@@ -60,7 +60,7 @@ List the sheet names in the file. (You may wish to assign the long and cumbersom
 
 
 ### 2. Importing a sheet {-}
-(marks: 2)
+(marks: 3)
 
 Here's a screenshot of the top rows of the sheet with single detached housing:
 
@@ -91,7 +91,7 @@ If so, use the pivot functions from {tidyr} to turn it into a tidy structure.
 
 
 ### 4. Joining tables {-}
-(marks: 3)
+(marks: 4)
 
 Because the structure of the data in the Excel file is consistent, we can copy-and-paste and edit our code above, and assemble the contents of the three sheets into a single data table.
 
@@ -101,7 +101,7 @@ Now join the three tables, creating a single table that contains all of the info
 
 
 ### 5. EDA: plotting {-}
-(marks: 4)
+(marks: 6)
 
 Now you've got a tidy structure, it's time for some exploratory data analysis!
  

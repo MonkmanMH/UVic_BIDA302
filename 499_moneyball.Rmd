@@ -13,7 +13,7 @@ options(scipen=999)
 
 ```
 
-# Assignment: Moneyball {#moneyball}
+# Assignment week 4 - Moneyball {#moneyball}
 
 
 
@@ -167,7 +167,7 @@ summary(model_mlb_pay_wl)
 
 ### 1. Moneyball  {-}
 
-(3 marks)
+(4 marks)
 
 Review the outputs from the model summary above. 
 
@@ -180,7 +180,7 @@ Review the outputs from the model summary above.
 
 ### 2. Does winning lead to bigger crowds?  {-}
 
-(6 marks)
+(8 marks)
 
 In any sport, successful teams draw bigger crowds. If we were to model this relationship, we would say attendance is the _dependent_ variable, while winning is the _independent_ variable.
 
@@ -194,7 +194,7 @@ In any sport, successful teams draw bigger crowds. If we were to model this rela
 
 ### 3. Data organization in spreadsheets  {-}
 
-(3 marks)
+(4 marks)
 
 Read the following article: 
 

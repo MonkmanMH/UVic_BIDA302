@@ -8,7 +8,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Assignment 2 - data wrangling & import {#assignment2}
+# Assignment week 2 - data wrangling & import {#assignment2}
 
 
 Package load:
@@ -54,11 +54,13 @@ b. Using the functions in {tidyr}, arrange this table in such a way that it is n
 
 
 ### 2. Importing data: csv  {-}
+
+#### 2.a Read the data
 (6 marks)
 
 >**NOTE:** Variable names with spaces and special symbols are a challenge to work with. >They require that you put the name inside a pair of back-ticks. For example, in the >dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
 >
->Remember that you have the option to use the `clean_names()` function in the {janitor} >package to resolve this!
+>You have the option to use the `clean_names()` function in the {janitor} >package to resolve this. You can find more information about the package in the course book ["Utilities" chapter](#utilities).
 >
 >* The reference page for {janitor} is here: https://garthtarr.github.io/meatR/janitor.html
 
@@ -66,14 +68,17 @@ Comma delimited files are one of the most common formats used for flat files. Th
 
 * The reference page for {readr} is here: https://readr.tidyverse.org/index.html
 
-a. Read in the file "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv", which has the number of concluded court cases in B.C. by a variety of dimensions.^[Data source: British Columbia Data Catalogue, [Courts - Concluded Court Cases - 5 Yr Location Report - Dashboard - 2014 to 2018](https://catalogue.data.gov.bc.ca/dataset/courts-concluded-court-cases-5-yr-location-report-dashboard-2014-to-2018). Licensed under Open Government Licence - British Columbia.] 
+i. Read in the file "cy-concluded-cases-5-yr-regional-report-dashboard-2014-to-2018.csv", which has the number of concluded court cases in B.C. by a variety of dimensions.^[Data source: British Columbia Data Catalogue, [Courts - Concluded Court Cases - 5 Yr Location Report - Dashboard - 2014 to 2018](https://catalogue.data.gov.bc.ca/dataset/courts-concluded-court-cases-5-yr-location-report-dashboard-2014-to-2018). Licensed under Open Government Licence - British Columbia.] 
 
 Assign the contents of the file to a named object (remember, name things in a descriptive way!)
 
 
 
-b. Read the file again, but specify that the region code should be a character.
+ii. Read the file again, but specify that the region code should be a character.
 
+
+
+#### 2.b Analysis
 
 c. Now you've read the contents of the file, use your data manipulation skills to create a table that shows the total number of cases that were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
 
@@ -82,7 +87,10 @@ d. Create a table showing the number of cases by court class completed in each r
 
 
 ### 3. Importing data: Excel  {-}
-(8 marks)
+
+#### 3.a Read the data
+
+(2 marks)
 
 Use the {readxl} package to read in the file "bcmetal.xlsx" 
 
@@ -92,11 +100,12 @@ There are three sheets in the file. The sheet we are interested in is BCMETAL_PR
 
 * The reference page for {readxl} is here: https://readxl.tidyverse.org/
 
-a. What are the names of the sheets in this file?
+i. What are the names of the sheets in this file?
 
-b. Read in the contents of the "BCMETAL_PROD" sheet. 
+ii. Read in the contents of the "BCMETAL_PROD" sheet. 
 
-c. This will generate some warnings. 
+
+iii. Reading the file without any additional arguments will generate some warnings. 
 
   * The first warning is
 
@@ -106,15 +115,19 @@ The way to interpret this (and all the other warnings) is that R was busy readin
 
 The problem to solve: read only those rows that have valid data in them.
 
-Change the options for your read function to address any issues you identified in 3.c
+Change the options for your read function to address any issues you identified in 3.a.ii
 
-d. Use your data manipulation skills to answer the following, as separate calculations: 
 
-* Based on the data here, in what year was the most gold mined in British Columbia?
+#### 3.b Analysis
+(6 marks)
 
-* What B.C. mine holds the record for the most silver extracted in B.C. through the entire life of the mine?
+Use your data manipulation skills to answer the following, as separate calculations: 
 
-* Does that mine hold the record for the total silver mined during a single year in B.C.?
+i. Based on the data here, in what year was the most gold mined in British Columbia?
+
+ii. What B.C. mine holds the record for the most silver extracted in B.C. through the entire life of the mine?
+
+iii. Does that mine hold the record for the total silver mined during a single year in B.C.?
 
 
 
