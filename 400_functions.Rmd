@@ -40,7 +40,7 @@ Functions have particular value in making your code DRY (don't repeat yourself).
 
 Using functions has the following benefits: 
 
-* there's fewer opportunities for error (say, you miss a replacement)
+* there's fewer opportunities for error (say you miss a replacement)
 
 * your code will be better organized and easier to read
 
@@ -72,10 +72,13 @@ my.function.name <- function(my_argument_1, my_argument_2, ...) {
 Let's say you want to simulate rolling 2 six-sided dice. Here's some code that does that:
 
 ```{r}
+
 # define the possible outcomes
 die <- 1:6
+
 # a random pair of numbers from the `die` object
 dice <- sample(die, size = 2, replace = TRUE)
+
 # then add them up
 sum(dice)
 
@@ -122,7 +125,6 @@ To run the function we just need the following:
 
 roll()
 
-
 # and if we want to assign the result of the function to an object:
 my_roll <- roll()
 
@@ -132,74 +134,76 @@ my_roll <- roll()
 And then if we want to get the distribution of values from rolling a pair of dice 100 times, we can use the `replicate()` function:
 
 ```{r}
+
 replicate(100, roll())
-```
-
-
-
-## A more complex example
-
-Let's write an equation that calculates the area of a circle that has a radius of 2.5 units.
-
-You'll remember that the formula is "pi r squared" where r is the radius of the circle.
-
-$$\ A = \pi r ^{2} $$
-
-When we translate that formula into code, it looks like this, where `ca` is "circle area":
-
-```{r}
-
-ca <- pi * 2.5 ^ 2
-
-ca
 
 ```
 
 
-But what if we want to calculate the area of many circles of different size? Time for a function.
 
-We call the function with `circle_area()`, and pass the radius value `r`. The function returns the value of `ca` after calculating the value.
+## Another example
+
+Let's write an equation that converts 50 pounds to the equivalent in kilograms.
+
+1 kilogram (kg) is equal to 2.2046226218488 pounds (lb) (and conversely, 1 pound is equal to 0.45359237 kilograms).
+
+$$ 1 kg = 2.2046226218488 lb $$
+
+When we translate that formula into code, it looks like this, where `kg` is "kilograms" and `lb` is "pounds":
+
+```{r}
+lb <- 50
+
+kg <- lb * 2.2046226218488
+
+kg
+
+```
+
+But what if we want to convert the weight of many items of different size? Time for a function.
+
+We call the function with `lb_to_kg_conversion()`, and pass the value of pounds `lb`. The function returns the value of `kg` after calculating the value.
 
 ```{r}
 
-circle_area <- function(r) {
-  ca <- pi * r ^ 2
-  return(ca)
+lb_to_kg_conversion <- function(lb) {
+  kg <- lb * 2.2046226218488
+  return(kg)
 }
 
 ```
 
 
-Let's test it with our circle of radius 2.5:
+Let's test it with our weight of 50 pounds:
 
 ```{r}
 
-circle_area(r = 2.5)
+lb_to_kg_conversion(lb = 50)
 
 ```
 
 
-Now we can use that function to calculate any number of circle areas. Let's make a tibble with 10 circles, where `circle_r` is the radius of each circle.
+Now we can use that function to convert any number of weights. Let's make a tibble with 10 weights, where `weight_lb` is each weight in pounds.
 
 ```{r}
 # the `set.seed()` function ensures that our pseudo-random number generation
 # always returns the same values
 set.seed(42)
 
-my_circles <- tibble(
-  circle_name = letters[1:10],   # the letters from a to j
-  circle_r = seq(1, 19, 2))      # a sequence of numbers from 1 to 19, by 2s
+my_weights <- tibble(
+  weight_name = letters[1:10],    # the letters from a to j
+  weight_lb = seq(1, 19, 2))      # a sequence of numbers from 1 to 19, by 2s
 
-my_circles
+my_weights
 
 ```
 
-What is the area of those circles? I can apply my function...
+What is the weight of those items in kilograms? I can apply my function...
 
 ```{r}
 
-my_circles %>%
-  mutate(circle_a = circle_area(r = circle_r))
+my_weights %>%
+  mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb))
 
 ```
 
@@ -207,15 +211,15 @@ That's good. But what if we want our result to be rounded to 2 decimal places?
 
 We could rewrite our function to add that:
 
-* note that in the 2nd line of the function's code, we are rounding `ca` before returning it.
+* note that in the 2nd line of the function's code, we are rounding `kg` before returning it.
 
 
 ```{r}
 
-circle_area <- function(r) {
-  ca <- pi * r ^ 2
-  ca <- round(ca, 2)
-  return(ca)
+lb_to_kg_conversion <- function(lb) {
+  kg <- lb * 2.2046226218488
+  kg <- round(kg, 2)
+  return(kg)
 }
 
 ```
@@ -225,8 +229,8 @@ Now re-run the `mutate()`:
 
 ```{r}
 
-my_circles %>%
-  mutate(circle_a = circle_area(r = circle_r))
+my_weights %>%
+  mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb))
 
 ```
 
@@ -236,21 +240,21 @@ What if we want want to have some flexibility in our rounding? We can add a 2nd 
 
 ```{r}
 
-circle_area <- function(r, rnd) {
-  ca <- pi * r ^ 2
-  ca <- round(ca, rnd)
-  return(ca)
+lb_to_kg_conversion <- function(lb, rnd) {
+  kg <- lb * 2.2046226218488
+  kg <- round(kg, rnd)
+  return(kg)
 }
 
 ```
 
 
-And rerun with the area to 4 decimals:
+And rerun with the area to 3 decimals:
 
 ```{r}
 
-my_circles %>%
-  mutate(circle_a = circle_area(r = circle_r, rnd = 4))
+my_weights %>%
+  mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb, rnd = 3))
 
 ```
 
@@ -261,10 +265,10 @@ What if we usually want to round to 2, but to have some flexibility? We can assi
 
 ```{r}
 
-circle_area <- function(r, rnd = 2) {
-  ca <- pi * r ^ 2
-  ca <- round(ca, rnd)
-  return(ca)
+lb_to_kg_conversion <- function(lb, rnd = 2) {
+  kg <- lb * 2.2046226218488
+  kg <- round(kg, rnd)
+  return(kg)
 }
 
 ```
@@ -272,12 +276,12 @@ circle_area <- function(r, rnd = 2) {
 
 With no specification:
 
-* note that we don't have to be explicit in telling the function how to use the variable `circle_r`—it assumes that since it is the first argument passed, it is `r`. And because we don't pass a second argument, the function will use the default value we've specified, in this case "2".
+* note that we don't have to be explicit in telling the function how to use the variable `weight_lb` — it assumes that since it is the first argument passed, it is `lb`. And because we don't pass a second argument, the function will use the default value we've specified, in this case "2".
 
 ```{r}
 
-my_circles %>%
-  mutate(circle_a = circle_area(circle_r))
+my_weights %>%
+  mutate(weight_kg = lb_to_kg_conversion(weight_lb))
 
 ```
 
@@ -287,8 +291,8 @@ Or override with rounding to 3 decimals:
 
 ```{r}
 
-my_circles %>%
-  mutate(circle_a = circle_area(circle_r, 3))
+my_weights %>%
+  mutate(weight_kg = lb_to_kg_conversion(weight_lb, 3))
 
 ```
 
@@ -298,14 +302,13 @@ my_circles %>%
 
 
 ::: {.rmdtip}
-### Area of a triangle
+### Temperature
 
-Write a function that calculates the area of a triangle, using the formula 
+Write a function that converts temperature from degrees Celsius (C) to Fahrenheit (F), using the formula 
 
-$$\ A = hb/2$$
-where "h" is the height of the triangle, and "b" is the base.
+$$\ F = (C * 9/5) + 32 $$
 
-Now, write and test a function to calculate the area of a triangle, where it is automatically rounded to 1 decimal place. 
+Now, write and test a function to calculate the temperature in Fahrenheit, where it is automatically rounded to 1 decimal place. 
 
 
 <details>
@@ -315,62 +318,65 @@ Solution
 </summary>
 
 
-The function for a circle is pasted below:
+The function for conversion from pounds to kilograms is pasted below:
 
 
 ```{r}
+
 # example
-circle_area <- function(r, rnd = 1) {
-  ca <- pi * r ^ 2
-  ca <- round(ca, rnd)
-  return(ca)
+lb_to_kg_conversion <- function(lb, rnd = 2) {
+  kg <- lb * 2.2046226218488
+  kg <- round(kg, rnd)
+  return(kg)
 }
 
 ```
 
-Now let's edit the code above, but to work with the formula for a triangle:
+Now let's edit the code above, but to work with the formula for temperature:
 
 ```{r}
+
 # solution
-tri_area <- function(h, b, rnd = 1) {
-  ta <- (h * b) / 2
-  ta <- round(ta, rnd)
-  return(ta)
+Cel_to_Fah_conversion <- function(Cel, rnd = 2) {
+  Fah <- (Cel * 9/5) + 32
+  Fah <- round(Fah, rnd)
+  return(Fah)
 }
 
 ```
 
 
-Now, generate a tibble with the name `my_triangles`:
+Now, generate a tibble with the name `my_temperatures`:
 
 ```{r}
+
 set.seed(42)
 
-my_triangles <- tibble(
-  tri_name = letters[1:10], 
-  tri_h = round(runif(10, min = 1, max = 20), 2),
-  tri_b = round(runif(10, min = 1, max = 20), 2))
+my_temperatures <- tibble(
+  temp_name = letters[1:10], 
+  temp_Cel = round(runif(10, min = 1, max = 20), 2))
 
-my_triangles
-
+my_temperatures
 
 ```
 
-And use the function to calculate the area of all the triangles in the tibble:
+And use the function to convert each temperature to Fahrenheit in the tibble:
 
 
 ```{r}
-my_triangles %>% 
-  mutate(tri_a = tri_area(tri_h, tri_b))
+
+my_temperatures %>% 
+  mutate(temp_Fah = Cel_to_Fah_conversion(temp_Cel))
+
 ```
 
 
-Now round to the nearest integer (zero decimals)
+Now round to the nearest integer (zero decimals).
 
 ```{r}
 
-my_triangles %>% 
-  mutate(tri_a = tri_area(tri_h, tri_b, rnd = 2))
+my_temperatures %>% 
+  mutate(temp_Fah = Cel_to_Fah_conversion(temp_Cel, rnd = 0))
 
 ```
 
@@ -432,6 +438,7 @@ roll2(number_of_dice = 3)
 
 ["Functions" in _R for Data Science_](https://r4ds.had.co.nz/functions.html) by Hadley Wickham and Garrett Grolemund
 
+
 ["Writing your own Functions" in _Hands-on Programming with R_](https://rstudio-education.github.io/hopr/basics.html#write-functions), by Garrett Grolemund
 
 
@@ -443,25 +450,9 @@ roll2(number_of_dice = 3)
 
 ["Writing simple functions"](http://environmentalcomputing.net/writing-simple-functions/) at Environmental Computing
 
+
 ["Mathematics in R Markdown"](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html) by R Pruim (2016-10-19)
 
 
 
-```{r evaluate = FALSE}
-
-set.seed(42)
-
-my_triangles <- tibble(
-  tri_name = letters[1:10], 
-  tri_h = round(runif(10, min = 1, max = 20), 2),
-  tri_b = round(runif(10, min = 1, max = 20), 2))
-
-my_triangles
-
-#write_csv(my_triangles, "my_triangles.csv")
-```
-
-
-
 -30-
-
