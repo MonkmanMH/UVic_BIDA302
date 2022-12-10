@@ -274,6 +274,12 @@ your past self about this course?” Here are some of their answers:
         for Data Science textbook as you read the relevant chapters.
         Practice is the best way to learn programming.
 
+  - If I could travel 4 weeks in the past, I would advise myself 
+    that is no necessary to search Google for functions that we 
+    haven't seen in class yet. All assignments can be solved with 
+    the information seen in class, it is only necessary to review 
+    the lesson files again. So calm down!
+
   - Prepare to learn lots about R and RStudio. …And bring coffee!
 
 
