@@ -149,12 +149,12 @@ Let's write an equation that converts 50 pounds to the equivalent in kilograms.
 
 $$ 1 kg = 2.2046226218488 lb $$
 
-When we translate that formula into code, it looks like this, where `kg` is "kilograms" and `lb` is "pounds":
+When we translate that formula into code that will convert the number of pounds into kilograms, it looks like this, where `kg` is "kilograms" and `lb` is "pounds":
 
 ```{r}
 lb <- 50
 
-kg <- lb * 2.2046226218488
+kg <- lb / 2.2046226218488
 
 kg
 
@@ -167,7 +167,7 @@ We call the function with `lb_to_kg_conversion()`, and pass the value of pounds 
 ```{r}
 
 lb_to_kg_conversion <- function(lb) {
-  kg <- lb * 2.2046226218488
+  kg <- lb / 2.2046226218488
   return(kg)
 }
 
@@ -235,7 +235,7 @@ my_weights %>%
 ```
 
 
-What if we want want to have some flexibility in our rounding? We can add a 2nd argument to our function call -- `rnd` -- which will be then applied in `round()`
+What if we want want to have some flexibility in our rounding? We can add a 2nd argument to our function call—`rnd`—which will be then applied in `round()`
 
 
 ```{r}
@@ -276,7 +276,7 @@ lb_to_kg_conversion <- function(lb, rnd = 2) {
 
 With no specification:
 
-* note that we don't have to be explicit in telling the function how to use the variable `weight_lb` — it assumes that since it is the first argument passed, it is `lb`. And because we don't pass a second argument, the function will use the default value we've specified, in this case "2".
+* note that we don't have to be explicit in telling the function how to use the variable `weight_lb`—it assumes that since it is the first argument passed, it is `lb`. And because we don't pass a second argument, the function will use the default value we've specified, in this case "2".
 
 ```{r}
 
@@ -325,7 +325,7 @@ The function for conversion from pounds to kilograms is pasted below:
 
 # example
 lb_to_kg_conversion <- function(lb, rnd = 2) {
-  kg <- lb * 2.2046226218488
+  kg <- lb / 2.2046226218488
   kg <- round(kg, rnd)
   return(kg)
 }
