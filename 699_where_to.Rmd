@@ -32,13 +32,13 @@ We didn't cover everything in _R for Data Science_. Here's a short summary of th
 
 ### Workflow
 
-We didn't spend much time on the "Workflow" chapters of _R for Data Science_, but before you dive much deeper into R, particularly away from the cozy confines of the rstudio.cloud course space, I strongly recommend you review [Workflow: projects](https://r4ds.had.co.nz/workflow-projects.html).
+We didn't spend much time on the "Workflow" chapters of _R for Data Science_, but before you dive much deeper into R, particularly away from the cozy confines of the rstudio.cloud course space, we strongly recommend you review [Workflow: projects](https://r4ds.had.co.nz/workflow-projects.html).
 
 (A slightly different version of this same content is hosted by RStudio at [Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects))
 
 There is also information on creating an RStudio project in the [_R Cookbook_ (2nd ed.), "Creating a New RStudio Project"](https://rc2e.com/navigatingthesoftware#recipe-CreateProject).
 
-The definitive guide to good working practices is [_What They Forgot to Teach You About R_](https://rstats.wtf/index.html) by Jenny Bryan and Jim Hester. [@Bryan_Hester_WTF] From how to name files (and objects!) to debugging, this guide is an essential next step. I can't recommend it enough.
+The definitive guide to good working practices is [_What They Forgot to Teach You About R_](https://rstats.wtf/index.html) by Jenny Bryan and Jim Hester. [@Bryan_Hester_WTF] From how to name files (and objects!) to debugging, this guide is an essential next step. We can't recommend it enough.
 
 Part of those project-oriented workflow methods is a little R package called [{here}](https://here.r-lib.org/); the article ["Using here with rmarkdown"](https://here.r-lib.org/articles/rmarkdown.html)
 
@@ -129,7 +129,7 @@ result <- map_df(all_files, function(x) {
 
 ```
 
-To go even deeper into programming with R, I would suggest the book _Advanced R_ by Hadley Wickham [@Wickham_advancedR_2] 
+To go even deeper into programming with R, we suggest the book _Advanced R_ by Hadley Wickham [@Wickham_advancedR_2] 
 
 * [online version of _Advanced R_](https://adv-r.hadley.nz/)
 
@@ -146,11 +146,11 @@ And having the skills to clean data is enormously valuable. Some of the things w
 
 This article explains that data cleaning is a project-specific challenge. But there are techniques that can be generalized (to some degree) to help you tackle the data cleaning challenges you confront.
 
-I have started to write a book that introduces these techniques. _The Data Preparation Journey: Finding Your Way with R_ will be published by CRC Press as part of "The R Series". I am hoping to get this completed by mid-2022.
+Martin has started to write a book that introduces these techniques. _The Data Preparation Journey: Finding Your Way with R_ will be published by CRC Press as part of "The R Series". The plan is to get this completed by mid-2023.
 
 ## R Programming
 
-If you are looking to move deeper into using R as a programming tool, I recommend two very different books:
+If you are looking to move deeper into using R as a programming tool, we recommend two very different books:
 
 * Hadley Wickham, _Advanced R_. This is my first recommendation for anyone taking the step into programming R...moving beyond using it for data analysis. 
 
@@ -270,7 +270,7 @@ Of course, [the other courses in the BIDA series at UVic](https://continuingstud
 
 ### Other sources
 
-I started to list a variety of places that I have heard about, but since I have no first-hand experience with them, I don't think it's appropriate that I endorse them here. With that said, if you ask about a specific course or programme, I'll tell you what I have heard.
+We started to list a variety of places that we have heard about, but since we have no first-hand experience with them, we don't think it's appropriate that we endorse them here. With that said, if you ask about a specific course or programme, we'll tell you what we have heard.
 
 
 -30-
