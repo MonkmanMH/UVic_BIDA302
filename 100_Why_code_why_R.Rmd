@@ -368,31 +368,6 @@ Lucy D'Agostino McGowan, 2017-07-28, [R release names](https://livefreeordichoto
 - [an up-to-date list](https://bookdown.org/martin_monkman/DataScienceResources_book/using-r.html#r-release-names)
 
 
-## Installing R on your own computer  {#why-code-r-install}
-
-For BIDA302, we will be using [rstudio.cloud](https://rstudio.com/products/cloud/) and there is no need for you to install R and RStudio on your own computer.
-
-However, if you wish to do so, you are welcome to take that step. And of course, once BIDA302 is complete, my hope is that you see yourself using this powerful too, and want to continue your journey.
-
-Here are some resources for you to take the step of installing the software on your own computer:
-
-J.D. Long and Paul Teetor, _R Cookbook (2nd edition)_
-
-* ["Getting Started and Getting Help"](https://rc2e.com/gettingstarted)
-
-* See recipes 1.1 through 1.3
-
-Garrett Grolemund, _Hands-On Programming with R_
-
-* [Appendix A: "Installing R and RStudio"](https://rstudio-education.github.io/hopr/starting.html)
-
-* [Appendix B: "R Packages"](https://rstudio-education.github.io/hopr/packages2.html)
-
-
-Danielle Navarro, [_running R on your own computer_](https://youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd)
-
-* A series of videos on youtube, with installation instructions for different operating systems (Mac, Windows, and Ubuntu linux), as well as loading and installing packages from both CRAN and GitHub (where many in-development packages are available)
-
 ***
 
 

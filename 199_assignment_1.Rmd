@@ -13,8 +13,9 @@ options(width = 100, dplyr.width = 100)
 # Exercise 1 - data wrangling {#exercise1}
 
 
-Package load:
 ```{r echo=FALSE}
+#Package load
+
 library(tidyverse)
 library(stringr)
 
@@ -41,7 +42,6 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 
 
 ### 1. Assign a variable  {-}
-(1 mark)
 
 Why does this code chunk not work?
 
@@ -54,10 +54,13 @@ stringlength
 Look carefully! (This may seem like an exercise in pointlessness, but training your brain to notice even the tiniest difference will pay off when programming.)
 
 
+#### Answer
+
+This does not work because...
+
 
 
 ### 2. Reducing the size of your data set  {-}
-(3 marks)
 
 Starting with the {mpg} data frame, use `filter()` and `select()` to create a single table that contains the following records and variables:
 
@@ -77,7 +80,6 @@ mpg
 ***
 
 ### 3. Selecting variables  {-}
-(1 mark)
 
 What happens if you include the name of a variable twice in a `select()` call? Demonstrate using the {gapminder} data.  (The package is installed in the workspace, but you will have to load it to access it...)
 
@@ -96,7 +98,6 @@ library(gapminder)
 
 
 ### 4. R Markdown  {-}
-(1 mark)
 
 The following chunk of code produces a chart. When this notebook is previewed, the R code inside the chunk is also rendered.
 
@@ -116,7 +117,6 @@ ggplot(data = mpg) +
 ***
 
 ### 5. Flight data {-}
-(6 marks)
 
 For Q3a-3d, use the data `nycflights13::flights`
 

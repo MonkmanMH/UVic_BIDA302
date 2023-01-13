@@ -77,7 +77,7 @@ Also, keep in mind that a written-out-month is spelled differently in different 
 The ISO 8601 standard is widely recognized as the best way to store dates and times. It removes ambiguity as to which is the day and which is the month (and sometimes the year, if the year is also stored as a two-digit entry). It also sorts in order, with the biggest element (the year) first, followed by the second most important, and so on.
 
 
-![_XKCD: ISO8601 date-time standard_](https://imgs.xkcd.com/comics/iso_8601.png){width=25%}
+![_XKCD: ISO8601 date-time standard_](static/img/iso_8601.png){width=25%}
 
 
 ### How R stores dates

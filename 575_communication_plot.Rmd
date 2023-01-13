@@ -215,9 +215,9 @@ moneyball_plot +
 
 To that plot we might want to add a description of the quadrant that is shaded.
 
-Note that in the label, the "\n" is used to force a line break in the text string.
+Note that in the label, the backslash-n is used to force a line break in the text string.
 
-```{r}
+```{r moneyball_annotation, eval=FALSE}
 # as previously plotted
 moneyball_plot +
   annotate("rect", xmin = 0, xmax = 100, ymin = 0.5, ymax = 0.8,
@@ -518,7 +518,7 @@ Here we will read a data file containing the population centres in British Colum
 
 ```{r}
 
-population_centres_bc <- read_csv(here("data", "population_centres_bc_2021.csv"))
+population_centres_bc <- read_csv(here::here("data", "population_centres_bc_2021.csv"))
 
 ```
 

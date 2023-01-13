@@ -1,0 +1,124 @@
+<!-- This file by Martin Monkman 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+The tables of functions are modified from originals by Gina Reynolds, [Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
+
+```{r setup_120, echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+# Installing R {#install-R}
+
+
+
+## Objectives
+
+At the end of this section, you will have:
+
+* Installed R
+
+* Installed RStudio
+
+* Installed your first packages
+
+
+## How-to
+
+_It depends_
+
+* operating system (Windows, Mac, or Linux)
+
+* administrative privilege & network permissions
+
+
+### References
+
+[_R Cookbook, 2nd edition_, "Getting Started and Getting Help", https://rc2e.com/](https://rc2e.com/gettingstarted)
+
+* [1.1 Downloading and Installing R](https://rc2e.com/gettingstarted#recipe-id001)
+
+* [1.2 Installing RStudio](https://rc2e.com/gettingstarted#recipe-id002b)
+
+* [3.10 Installing Packages from CRAN](https://rc2e.com/navigatingthesoftware#recipe-id012)
+
+
+
+Danielle Navarro, [_running R on your own computer_](https://youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd)
+
+* A series of videos on youtube, with installation instructions for different operating systems (Mac, Windows, and Ubuntu linux), as well as loading and installing packages from both CRAN and GitHub (where many in-development packages are available)
+
+
+
+## Step 1 - Installing R
+
+* Open https://posit.co/download/rstudio-desktop/ in your browser.
+
+* Click on Step 1: Install R's button "DOWNLOAD AND INSTALL R" which will take you to https://cran.rstudio.com/
+
+> If you need to select a CRAN mirror site, choose one near you or the top one listed as "0-Cloud," which tends to work well for most locations (https://cloud.r-project.org/). 
+
+* Click on relevant "Download R for ..." link (e.g., Linux, macos, Windows)
+
+  - *Windows*: click on "base", then the link for the latest version of R (an .exe file)
+
+  - *Mac*: click on the link for the latest version of R (an .pkg file), under "Latest Release:"
+
+* When the download completes, double-click on the .exe file (Windows) or the .pkg file (macOS) and answer the usual questions.
+
+
+## Step 2 - Installing RStudio
+
+* Open https://posit.co/download/rstudio-desktop/ in your browser.
+
+* Click on Step 2: Install RStudio Desktop's button for downloading the latest version of RStudio.
+
+* When the download completes, double-click on the .exe file (Windows) or the .pkg file (macOS) and answer the usual questions.
+
+
+
+## Step 3 - Set up R & install first packages
+
+* Download "R code - set up R" from Brightspace. Double-click this file (called "set_up_r.r") to open in RStudio.
+
+  - this file can also be downloaded [from this link](static\set_up_r.r)
+
+* Follow instructions line by line
+
+* Includes installation of {rmarkdown} and {tidyverse} packages
+
+
+
+## Packages: {tidyverse} 
+
+[tidyverse: Easily Install and Load the 'Tidyverse'](https://cran.r-project.org/web/packages/tidyverse/index.html)
+
+* many of the packages we will, including 
+
+  - wrangling with {dplyr} & {tidyr}
+
+  - visualization with {ggplot2}
+
+  - importing with {readr} & {readxl}
+
+  - working with variables with {forcats}, {lubridate} & {stringr}
+
+```
+install.packages("tidyverse")
+```
+
+
+## Packages: others 
+
+[janitor: Simple Tools for Examining and Cleaning Dirty Data](https://cran.r-project.org/web/packages/janitor/index.html)
+
+[glue: Interpreted String Literals](https://cran.r-project.org/web/packages/glue/index.html)
+
+
+
+
+
+
+-30-
