@@ -5,12 +5,13 @@ https://creativecommons.org/licenses/by/4.0/ -->
 
 # R Markdown {#r-markdown}
 
+## Setup
 
-```{r setup_275, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
+This chunk of R code loads the packages that we will be using.
 
+```{r setup_275, eval=FALSE}
+library(tidyverse)
+library(markdown)
 ```
 
 This document will introduce you to R Markdown notebooks, and give you some hands-on experience adding to the document.

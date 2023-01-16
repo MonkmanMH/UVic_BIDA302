@@ -4,16 +4,15 @@ https://creativecommons.org/licenses/by/4.0/
 
 The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
 
-```{r setup_199, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-```
 
 # Exercise 1 - data wrangling {#exercise1}
 
 
-```{r echo=FALSE}
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+```{r setup_199, eval=FALSE}
 #Package load
 
 library(tidyverse)

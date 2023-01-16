@@ -12,16 +12,6 @@ https://creativecommons.org/licenses/by/4.0/
 
 
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-
-library(tidyverse)
-library(gapminder)
-```
-
-
 ## Objectives
 
 * Understand and describe when and why a function is of value
@@ -30,6 +20,18 @@ library(gapminder)
 
 
 ![_`function()` function, what's your function?_](static/img/shr_function.jpg)
+
+
+
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+
+```{r eval = FALSE}
+library(tidyverse)
+library(gapminder)
+```
 
 
 ## Introduction to functions

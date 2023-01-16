@@ -14,16 +14,6 @@ https://readxl.tidyverse.org/index.html -->
 # Importing {#importing}
 
 
-```{r setup_250, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-
-```
-
-
-
-
 ## Reading
 
 Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
@@ -42,9 +32,17 @@ For this hands-on exercise, we will be loading the data contained in a CSV file.
 
 We will also be loading the contents of an Excel file. While the {readxl} package is part of the tidyverse, it is not part of the core that loads with `library(tidyverse)`: we have to run the `library()` function separately.
 
-```{r}
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+
+```{r setup_200, eval=FALSE}
 library(tidyverse)  # we will be using the functions of {readr}
 library(readxl)     
+
+library(gapminder)
+
 ```
 
 

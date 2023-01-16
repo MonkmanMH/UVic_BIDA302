@@ -4,20 +4,8 @@ https://creativecommons.org/licenses/by/4.0/
 
 The tables of functions are modified from originals by Gina Reynolds, [Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
 
-```{r setup_140, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-```
 
 # Introduction to R {#intro-R}
-
-
-```{r echo = FALSE}
-
-library(tidyverse)
-library(gapminder)
-```
 
 ## Objectives
 
@@ -26,6 +14,18 @@ At the end of this tutorial, you will have:
 * An understanding of and ability to use mathematical and assignment operators in R
 
 * The ability to use basic statistical functions in R
+
+
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+```{r setup_140, eval= FALSE}
+
+library(tidyverse)
+library(gapminder)
+```
+
 
 
 ## R as a calculator

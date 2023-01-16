@@ -2,11 +2,7 @@
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  -->
 
-```{r setup_125, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = FALSE)
-options(width = 100, dplyr.width = 100)
-```
+
 
 # An example of a data analytics project {#walkthrough}
 
@@ -36,9 +32,9 @@ This plot was created in early 2020, when the most recent data available was for
 
 ### Setup
 
-This chunk of R code loads the packages that we will be using
+This chunk of R code loads the packages that we will be using.
 
-```{r, message=FALSE, warning=FALSE}
+```{r setup_125, eval=FALSE}
 # tidyverse
 library(tidyverse)
 library(lubridate)  # date functions

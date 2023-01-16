@@ -9,15 +9,6 @@ https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 
 
-```{r setup_200, echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-
-library(tidyverse)
-library(gapminder)
-```
-
 
 
 
@@ -47,6 +38,20 @@ Julie Lowndes and Allison Horst, ["Tidy Data for Efficiency, Reproducibility, an
 
 
 * [{tidyr} reference at tidyverse.org](https://tidyr.tidyverse.org/)
+
+
+
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+
+```{r setup_200, eval=FALSE}
+
+library(tidyverse)
+library(gapminder)
+
+```
 
 
 

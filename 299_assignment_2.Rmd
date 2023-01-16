@@ -10,9 +10,11 @@ options(width = 100, dplyr.width = 100)
 
 # Assignment week 2 - data wrangling & import {#assignment2}
 
+## Setup
 
-Package load:
-```{r packages}
+This chunk of R code loads the packages that we will be using.
+
+```{r packages_299}
 library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
 library(readxl)    # to read Excel files
 library(janitor)   # for data cleaning

@@ -9,14 +9,24 @@ https://creativecommons.org/licenses/by/4.0/
 # Relational data {#relational-data}
 
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = FALSE)
-options(width = 100, dplyr.width = 100)
+## Objectives
 
+* understand the function of keys in relational databases
+
+* understand how to join tables
+
+* understand the primary types of mutating and filtering joins
+
+
+## Setup
+
+This chunk of R code loads the packages that we will be using.
+
+```{r}
+library(tidyverse)
+#
+library(nycflights13)
 ```
-
-
 
 
 ## Reading
@@ -39,22 +49,6 @@ Another resource with a good explanation of the types of joins can be found at [
 For some additional examples of table joins, see William Surles, [Joining Data in R with dplyr](https://rpubs.com/williamsurles/293454)
 
 
-## Joining two data tables
-
-
-```{r}
-library(tidyverse)
-#
-library(nycflights13)
-```
-
-## Objectives
-
-* understand the function of keys in relational databases
-
-* understand how to join tables
-
-* understand the primary types of mutating and filtering joins
 
 
 ## Relational data

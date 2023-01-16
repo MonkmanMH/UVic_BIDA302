@@ -6,16 +6,6 @@ https://creativecommons.org/licenses/by/4.0/  -->
 # Factors {#factors}
 
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
-
-library(tidyverse)
-library(gapminder)
-library(forcats)  # note that {forcats} isn't part of the core tidyverse so has to be loaded explicitly
-```
-
 
 ## Objectives
 
@@ -30,7 +20,16 @@ library(forcats)  # note that {forcats} isn't part of the core tidyverse so has 
 * Extend learning of {ggplot2} functions.
 
 
+## Setup
 
+This chunk of R code loads the packages that we will be using.
+
+
+```{r eval=FALSE}
+library(tidyverse)
+library(gapminder)
+library(forcats)  # note that {forcats} isn't part of the core tidyverse so has to be loaded explicitly
+```
 
 
 ## Categorical variables: factors
