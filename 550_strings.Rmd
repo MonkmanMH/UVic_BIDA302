@@ -50,8 +50,12 @@ options(width = 100, dplyr.width = 100)
 
 For this exercise, we will be using the tidyverse package {stringr}.
 
+## Setup
 
-```{r}
+This chunk of R code loads the packages that we will be using.
+
+
+```{r, eval=FALSE}
 
 library(tidyverse)
 library(lubridate)

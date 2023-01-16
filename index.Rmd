@@ -32,8 +32,7 @@ library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = FALSE)
 options(width = 100, dplyr.width = 100)
 
-library(tidyverse)
-library(gapminder)
+source("packages_bida302.R")
 
 ```
 

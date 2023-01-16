@@ -9,11 +9,12 @@ https://creativecommons.org/licenses/by/4.0/
 
 # Iteration {#iteration}
 
+## Setup
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
+This chunk of R code loads the packages that we will be using.
+
+```{r setup_600, eval=FALSE}
+library(tidyverse)
 
 library(tidyverse)
 library(gapminder)

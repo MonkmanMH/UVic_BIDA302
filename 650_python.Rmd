@@ -7,14 +7,15 @@ https://creativecommons.org/licenses/by/4.0/
 
 # Python {#python}
 
+## Setup
 
-```{r echo = FALSE}
-library(knitr)
-opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
-options(width = 100, dplyr.width = 100)
+This chunk of R code loads the packages that we will be using.
 
+```{r setup_650, eval=FALSE}
 library(tidyverse)
 library(gapminder)
+
+library(reticulate)
 ```
 
 
@@ -82,9 +83,10 @@ For those of us who are familiar with R and RStudio, the {reticulate} package gi
 (from the [{reticulate} site](https://rstudio.github.io/reticulate/))
 
 
-Load reticulate:
+To load reticulate:
 
-```{r libraries}
+```{r libraries, eval=FALSE}
+
 library(reticulate)
 
 ```
