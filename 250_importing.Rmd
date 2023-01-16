@@ -37,7 +37,7 @@ We will also be loading the contents of an Excel file. While the {readxl} packag
 This chunk of R code loads the packages that we will be using.
 
 
-```{r setup_200, eval=FALSE}
+```{r setup_250, eval=FALSE}
 library(tidyverse)  # we will be using the functions of {readr}
 library(readxl)     
 

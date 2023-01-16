@@ -46,7 +46,7 @@ Julie Lowndes and Allison Horst, ["Tidy Data for Efficiency, Reproducibility, an
 This chunk of R code loads the packages that we will be using.
 
 
-```{r setup_200, eval=FALSE}
+```{r setup_210, eval=FALSE}
 
 library(tidyverse)
 library(gapminder)
@@ -80,9 +80,7 @@ The image below shows the relationship between the two versions of the same data
 The "wide" form doesn't adhere to the rules of tidy data, since each row has multiple observations.
 
 
-<!---
 ![](static/img/tidyr-pivot_wider_longer.gif){width=100%}
---->
 
 > Untidy data most often look like this:
 > * Column headers are values, not variable names.
