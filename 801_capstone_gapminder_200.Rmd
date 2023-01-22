@@ -20,7 +20,7 @@ options(width = 100, dplyr.width = 100)
 
 In this project, you will recreate  single year versions of the chart Hans Rosling shows in the videos here:
 
-* Gapminder, [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)
+* Gapminder, [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world/)
 
 * Gapminder, [Hans Rosling: 200 years in 4 minutes - BBC News](https://www.youtube.com/watch?v=Z8t4k0Q8e8Y)
 
