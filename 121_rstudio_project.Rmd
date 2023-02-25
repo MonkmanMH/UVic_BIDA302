@@ -84,7 +84,7 @@ Packages are collections of R functions, data, and compiled code in a well-defin
 
 To see what packages are currently installed, click on the Packages Pane (near the Files Pane) on bottom right, or use `library()`.
 
-```{r}
+```{r, eval=FALSE}
 
 library()
 

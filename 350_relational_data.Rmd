@@ -334,7 +334,7 @@ Solution
 ```{r}
 # solution
 
-left_join(table_a, table_b, key = "key_var")
+left_join(table_a, table_b, by = "key_var")
 
 ```
 
