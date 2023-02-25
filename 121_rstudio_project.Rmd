@@ -1,0 +1,206 @@
+<!-- This file by Julie Hawkins 
+is licensed under a Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/  
+
+The tables of functions are modified from originals by Gina Reynolds, [Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
+
+```{r setup_121, echo = FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
+options(width = 100, dplyr.width = 100)
+```
+
+# Projects & Packages {#projects-packages}
+
+
+
+## R projects
+
+An R project is a special and very useful way to keep your work together. The main benefit of using a project (as opposed to a bunch of unlinked scripts/RMD files and data) is that importing data is much easier: a project pre-defines a relative working directory (the place R looks for files) in the folder containing the .Rproj file.
+
+If you do NOT have an R project set up, you will need to set the working directory, which means (probably long) path names that may change over time and that are sensitive to the computer and it's operating system (e.g., PCs and Macs use different slashes in file paths; different computers may have different drives, etc.). This will save time for you down the road or others who may need 
+to reproduce your work.
+
+Another benefit is that R projects can allow for version control and collaboration (i.e., GitHub).
+
+
+### How to create a project:
+
+1. Open RStudio.
+2. Click on File and choose "New Project".
+3. Choose "New Directory".
+
+![](images\02_create_proj1.png)
+
+4. Choose "New Project".
+
+
+![](images\02_create_proj1a.png)
+
+5. Name the project (i.e., directory name) and browse to where you want it.  In this example, the directory name is the name of the course ("UVIC_BIDA302") and the directory is going to be in the C:/ drive.
+5b. IF you want this to be a GitHub repository, check the "Create a git repo" box.
+6. Check the box "Open in new session" at the bottom left.
+7. Click "Create Project" button.  
+
+![](images\02_create_proj2.png)
+
+Your newly created project will open in a new RStudio session. It will have created an .Rproj file.
+
+![](images\02_create_proj3.png)
+
+To open this project next time, navigate to where you saved it and double-click the .Rproj file.
+
+![](images\02_create_proj4.png)
+
+### How to open an existing project:
+
+If you opened RStudio from the desktop icon or start menu, you will see "Project: (None)" in the corner instead. 
+
+
+![](images\02_no_project.png)
+
+Click on "Open Project" (or click on File > "Open Project..." and browse to the .RProj you want).  
+
+Once RStudio is open, click on the file you want in the Files pane (e.g., "02_projects_and_packages.Rmd").  
+
+![](images\02_open_script.png)  
+
+
+
+### How to tell if you are in a project:
+
+If you opened this file by opening the project and then clicking on the file, you should see "UVIC_BIDA302" in the far right top corner. A down arrow beside it allows you to start a new project, close the project, or open a different project, etc. 
+
+![](images\02_create_proj3.png)
+
+
+## Packages
+
+<https://www.statmethods.net/interface/packages.html>
+
+Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages (~30) such as `base`, `datasets`[^1], `graphics`, `stats`, `utils` and many more. Hundreds may be downloaded and installed. Once installed, they have to be loaded into the session to be used.
+
+[^1]:Note that the datasets package has over 100 datasets to use (e.g., `mtcars`, `iris`).
+
+To see what packages are currently installed, click on the Packages Pane (near the Files Pane) on bottom right, or use `library()`.
+
+```{r}
+
+library()
+
+```
+
+
+## `base` package
+
+Get the documentation on the `base` package by clicking on "base" in the Packages pane.
+
+Clicking on any of the underlined (linked) words brings up the associated help page. Scroll down and click on `assignOps`.  
+
+![](images\02_packages.png)  
+
+Help pages tell you the name of the function and which package it is in. The next line is the function's descriptive name, followed by a Description, Usage, Arguments, Details, Value, References, See Also, and Examples (if applicable). If you click on "Index" on the last line, it brings you back to the package's documentation.
+
+In the documentation, if you click on Misc (or scroll near the bottom), you will find "<-", which will take you to the same help page as when you clicked on `assignOps`.
+
+Or, type "assignOps" or the first few letters in the Help search box, or double-click on a function name and press F1, or, call a function's help page with `?assignOps`.
+
+```{r, eval=FALSE}
+
+?assignOps
+
+```
+
+
+## Updating existing packages
+
+Updating packages is very easy. Simply click on the Packages Pane, then Update. Anything that has a newer version will be listed. You can select all, one or some, then choose "Install Updates".
+
+![](images\02_packages_update.png)
+
+If the following warning pops up, choose Yes:  
+
+![](images\02_install_package_warning.png)
+
+Alternatively, if you know which package(s) you want to update, use:
+
+```{r, eval=FALSE}
+
+install.packages("base")
+
+```
+
+
+## Installing new packages
+
+There are hundreds more R packages than the standard packages that install with R.
+
+Some of the packages we will use in this course are `tidyverse` (a special package of consistent packages that work together), `here` (simpler way to find files), `lubridate` (dealing with dates more easily), `readxl` (to read data from an Excel file), `janitor` (data frame cleaning and exploring), etc.
+
+![](Images\02_install_package_how.png)
+
+To install a package:
+
+* click on the Packages Pane and then Install.  
+* Install from: Repository (CRAN)  
+* Packages: Type in the package name(s)  
+* Install to Library: C:/RPackages/library [Default]  
+* Install dependencies: checked  
+* click "Install"
+
+Or, to install the package called `here`, use:
+
+```{r, eval=FALSE}
+
+install.packages("here")
+
+```
+
+You can see that a package is installed by searching it in Packages Pane search, or scrolling down.
+![](Images\02_packages_search.png)
+
+
+## Loading packages
+
+To use a package's functions, just call it:
+
+```{r}
+
+four <- 4
+
+```
+
+The above calls the `base` package's `assignOps` function "<-" which assigns "4" to a Value called "four". It saves in your environment.
+
+![](images/02_assignOps.png)
+
+Now, use the `here` package to find that file (i.e., the value called `four`).
+
+```{r, eval=FALSE}
+
+here(four)
+
+```
+
+You just get an error:
+
+![](images/02_error.png)
+
+To use a package, you must have it installed (one-time action). However, every time you open RStudio (i.e., every session), you must load a package to use it (unless it is a base package).
+
+```{r}
+
+library(here)
+
+```
+
+Now, try using the `here` package again to see where `four` is.
+
+```{r}
+
+here(four)
+
+```
+
+
+-30-
