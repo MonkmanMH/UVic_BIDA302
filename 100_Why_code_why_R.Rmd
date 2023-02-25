@@ -222,14 +222,12 @@ The [{tidyverse} site](https://tidyverse.org): tidyverse.org
 
 RStudio is an IDE (interactive development environment).
 
-* we will be using the cloud (internet) version of the IDE
-
 
 Note:
 
-* "RStudio" is also the company that developed and supports the IDE
+* "RStudio" was also the company that developed and supports the IDE; the company is now called [Posit](https://posit.co/)
 
-* and RStudio the company is active creating and supporting packages, including many of the tidyverse packages
+* and Posit is active creating and supporting packages, including many of the tidyverse packages
 
 
 In our car analogy, RStudio is the dashboard and controls

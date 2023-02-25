@@ -10,11 +10,8 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Projects & Packages {#projects-packages}
+# Projects in RStudio {#projects}
 
-
-
-## R projects
 
 An R project is a special and very useful way to keep your work together. The main benefit of using a project (as opposed to a bunch of unlinked scripts/RMD files and data) is that importing data is much easier: a project pre-defines a relative working directory (the place R looks for files) in the folder containing the .Rproj file.
 
@@ -30,23 +27,23 @@ Another benefit is that R projects can allow for version control and collaborati
 2. Click on File and choose "New Project".
 3. Choose "New Directory".
 
-![](images\02_create_proj1.png)
+![](images\02_create_proj1.png){width=75%}
 
 4. Choose "New Project".
 
 
-![](images\02_create_proj1a.png)
+![](images\02_create_proj1a.png){width=75%}
 
 5. Name the project (i.e., directory name) and browse to where you want it.  In this example, the directory name is the name of the course ("UVIC_BIDA302") and the directory is going to be in the C:/ drive.
 5b. IF you want this to be a GitHub repository, check the "Create a git repo" box.
 6. Check the box "Open in new session" at the bottom left.
 7. Click "Create Project" button.  
 
-![](images\02_create_proj2.png)
+![](images\02_create_proj2.png){width=75%}
 
 Your newly created project will open in a new RStudio session. It will have created an .Rproj file.
 
-![](images\02_create_proj3.png)
+![](images\02_create_proj3.png){width=75%}
 
 To open this project next time, navigate to where you saved it and double-click the .Rproj file.
 
@@ -57,7 +54,7 @@ To open this project next time, navigate to where you saved it and double-click 
 If you opened RStudio from the desktop icon or start menu, you will see "Project: (None)" in the corner instead. 
 
 
-![](images\02_no_project.png)
+![](images\02_no_project.png){width=75%}
 
 Click on "Open Project" (or click on File > "Open Project..." and browse to the .RProj you want).  
 
@@ -72,6 +69,15 @@ Once RStudio is open, click on the file you want in the Files pane (e.g., "02_pr
 If you opened this file by opening the project and then clicking on the file, you should see "UVIC_BIDA302" in the far right top corner. A down arrow beside it allows you to start a new project, close the project, or open a different project, etc. 
 
 ![](images\02_create_proj3.png)
+
+### Further reading
+
+For more about RStudio projects:
+
+* the chapter ["Workflow: projects" in _R For Data Science_](https://r4ds.had.co.nz/workflow-projects.html)
+
+* ["Creating a New RStudio Project" in the _R Cookbook (2nd ed.)_](https://rc2e.com/navigatingthesoftware#recipe-CreateProject)
+
 
 
 ## Packages
@@ -201,6 +207,8 @@ Now, try using the `here` package again to see where `four` is.
 here(four)
 
 ```
+
+
 
 
 -30-
