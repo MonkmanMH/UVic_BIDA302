@@ -322,11 +322,9 @@ gapminder %>%
 
 ## Add new variables
 
-`mutate()`
 
-You can calculate new variables that may be useful in your analysis
+You can calculate new variables that may be useful in your analysis. The {dplyr} package function for this is `mutate()`.
 
-_vectors of the same length_
 
 For this example, we will use the "mpg" data set, which is a subset of the fuel economy data that the EPA makes available on http://fueleconomy.gov. For more information about the data set, see the reference page for the dataset: https://ggplot2.tidyverse.org/reference/mpg.html
 
@@ -343,7 +341,8 @@ We can also view the data as a table:
 mpg
 ```
 
-_Vector of the length = 1_
+_vectors of the same length_
+
 
 As part of our analysis, we want to understand the ratio of gas consumption to the size of the engine, measured as the variable `displ` (short for "displacement"). To calculate that ratio, we divide the highway consumption (`hwy`) by the displacement. 
 
@@ -359,6 +358,9 @@ mpg <- mpg %>%
 Notice that there's now a new variable added to the data called `mpg_per_cubic_litre`.
 
 In that example, the two columns are of the same length—for each car (each row in the data) there is a `hwy` value and a `displ` value.
+
+
+_Vector of the length = 1_
 
 In other instances, we might want to have a calculation using a constant—we might want to multiply every one of our cases by 2, or add 10 to each.
 
@@ -388,7 +390,7 @@ mpg %>%
 
 ## Summarize (or Summarise)
 
-<!-- This file by Charlotte Wickham (with some modifications by Martin Monkman) is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
+<!-- This section of the file is by Charlotte Wickham (with some modifications by Martin Monkman), and is licensed under a Creative Commons Attribution 4.0 International License, adapted from the original work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
 
 
 
@@ -612,7 +614,7 @@ There are other counting functions within {dplyr}, see the reference page https:
 We will return to data wrangling [later in the course](#wrangling2), and explore more complex calculations.
 
 
-# Take aways
+## Take aways
 
 * Extract cases with `filter()`. For filtering, we have to specify the _values_ we want and the _variable_ that they are in.
 
@@ -632,9 +634,9 @@ We will return to data wrangling [later in the course](#wrangling2), and explore
 
 
 
-# Functions for data wrangling
+## Functions for data wrangling
 
-## Reference: {dplyr} functions
+### Reference: {dplyr} functions
 
 The functions in {dplyr} (and many other packages) are verbs that describe what they do.
 
@@ -658,7 +660,7 @@ The functions in {dplyr} (and many other packages) are verbs that describe what 
 
 The full list of {dplyr} functions is here: https://dplyr.tidyverse.org/reference/index.html
 
-## Reference: Descriptive statistics
+### Reference: Descriptive statistics
 
 
 These statistics can all be generated individually, using the functions in the table below. Other statistical measures about a variable can be calculated with the appropriate function. Note that these are just a few of the functions that are included in base R; there are also other statistical measures available through various packages.
@@ -688,7 +690,7 @@ These statistics can all be generated individually, using the functions in the t
 
 
 
-## Reference: Boolean operators
+### Reference: Boolean operators
 
 Boolean operators are a special type of operator that return TRUE or FALSE.  They are used when we want to compare values.
 
