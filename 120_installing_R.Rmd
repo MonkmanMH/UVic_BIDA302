@@ -1,4 +1,4 @@
-<!-- This file by Martin Monkman 
+<!-- This file by Martin Monkman and Julie Hawkins
 is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/  
 
@@ -10,7 +10,7 @@ opts_chunk$set(message = FALSE, warning = FALSE, cache = TRUE)
 options(width = 100, dplyr.width = 100)
 ```
 
-# Installing R {#install-R}
+# Setting up the R ecosystem {#install-R}
 
 
 
@@ -24,8 +24,12 @@ At the end of this section, you will have:
 
 * Installed your first packages
 
+* Created an RStudio project for the course
 
-## How-to
+
+## Installing R & RStudio
+
+How do we install R and RStudio on our computers?
 
 _It depends_
 
@@ -79,19 +83,57 @@ Danielle Navarro, [_running R on your own computer_](https://youtube.com/playlis
 
 
 
-## Step 3 - Set up R & install first packages
+## Step 3 - Install first packages
 
-* Download "R code - set up R" from Brightspace. Double-click this file (called "set_up_r.r") to open in RStudio.
+Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library. R comes with a standard set of packages (~30) such as {base}, {datasets}[^1], {graphics}, {stats}, {utils} and many more. Hundreds may be downloaded and installed. Once installed, they have to be loaded into the session to be used.
 
-  - this file can also be downloaded [from this link](static\set_up_r.r)
+[^1]:Note that the datasets package has over 100 datasets to use (e.g., {mtcars} and {iris}).
 
-* Follow instructions line by line
+To see what packages are currently installed, click on the Packages Pane (near the Files Pane) on bottom right, or use `library()`.
 
-* Includes installation of {rmarkdown} and {tidyverse} packages
+```{r, eval=FALSE}
+
+library()
+
+```
 
 
+### Installing new packages
 
-## Packages: {tidyverse} 
+There are hundreds more R packages than the standard packages that install with R.
+
+Some of the packages we will use in this course are `tidyverse` (a special package of consistent packages that work together), `here` (simpler way to find files), `lubridate` (dealing with dates more easily), `readxl` (to read data from an Excel file), `janitor` (data frame cleaning and exploring), etc.
+
+![](Images\02_install_package_how.png)
+
+To install a package:
+
+* click on the Packages Pane and then Install.  
+* Install from: Repository (CRAN)  
+* Packages: Type in the package name(s)  
+* Install to Library: C:/RPackages/library [Default]  
+* Install dependencies: checked  
+* click "Install"
+
+Or, to install the package called {here}, use:
+
+```
+
+install.packages("here")
+
+```
+
+You can see that a package is installed by searching it in Packages pane search, or scrolling down.
+![](Images\02_packages_search.png)
+
+
+The reference page for the {here} package: https://here.r-lib.org/
+
+
+### Package: `{tidyverse}` 
+
+For BIDA302, we will be working extensively with the packages that are part of the tidyverse. To make our lives easier, the core tidyverse packages are bundled together and can be installed in one step, with a package called `{tidyverse}`
+
 
 [tidyverse: Easily Install and Load the 'Tidyverse'](https://cran.r-project.org/web/packages/tidyverse/index.html)
 
@@ -110,11 +152,152 @@ install.packages("tidyverse")
 ```
 
 
-## Packages: others 
+### Packages: others 
+
+Other packages that we will be using include the utilities {janitor} and {glue}. We will be adding more packages to our collection as the course progresses.
+
+Here's the code to install  {janitor} and {glue}. You can copy this line, and paste it into your console and then press <ENTER> to install the packages.
+
+```
+install.packages(c("janitor", "glue")
+```
+
+
 
 [janitor: Simple Tools for Examining and Cleaning Dirty Data](https://cran.r-project.org/web/packages/janitor/index.html)
 
 [glue: Interpreted String Literals](https://cran.r-project.org/web/packages/glue/index.html)
+
+
+
+### Updating existing packages
+
+Updating packages is very easy. Simply click on the Packages pane, then Update. Anything that has a newer version will be listed. You can select all, one or some, then choose "Install Updates".
+
+![](images\02_packages_update.png)
+
+If the following warning pops up, choose Yes:  
+
+![](images\02_install_package_warning.png)
+
+Alternatively, if you know which package(s) you want to update, use the `install.packages()` function.
+
+
+
+### Loading packages
+
+To use a package's functions, we can "call" the function by naming it:
+
+```{r}
+
+four <- 4
+
+```
+
+The above calls the {base} package's `assignOps` function "<-". This operator assigns the numeric value 4 to an object called "four". It saves that object in your environment.
+
+![](images/02_assignOps.png)
+
+Now, use the `here()` function from the {here} package to find the value that object (i.e., the object called `four`).
+
+```{r, eval=FALSE}
+
+here(four)
+
+```
+
+You get an error:
+
+![](images/02_error.png)
+
+To use a package, you must have it installed on you computer (a one-time action). However, every time you open RStudio (i.e., every session), you must load a package to use it (unless it is a base package, which are loaded automatically). We use the `library()` function to load the packages, which gives us access to the functions within that package.
+
+```{r}
+
+library(here)
+
+```
+
+Now that the {here} package has been loaded, try using the `here()` function again to see where `four` is.
+
+```{r}
+
+here(four)
+
+```
+
+
+
+## Projects in RStudio {#projects}
+
+
+An R project is a special and very useful way to keep your work together. The main benefit of using a project (as opposed to a bunch of unlinked scripts/RMD files and data) is that importing data is much easier: a project pre-defines a relative working directory (the place R looks for files) in the folder containing the .Rproj file.
+
+If you do NOT have an R project set up, you will need to set the working directory, which means (probably long) path names that may change over time and that are sensitive to the computer and it's operating system (e.g., PCs and Macs use different slashes in file paths; different computers may have different drives, etc.). This will save time for you down the road or others who may need 
+to reproduce your work.
+
+Another benefit is that R projects can allow for version control and collaboration (i.e., GitHub).
+
+
+### How to create a project:
+
+1. Open RStudio.
+2. Click on File and choose "New Project".
+3. Choose "New Directory".
+
+![](images\02_create_proj1.png){width=75%}
+
+4. Choose "New Project".
+
+
+![](images\02_create_proj1a.png){width=75%}
+
+5. Name the project (i.e., directory name) and browse to where you want it.  In this example, the directory name is the name of the course ("UVIC_BIDA302") and the directory is going to be in the C:/ drive.
+5b. IF you want this to be a GitHub repository, check the "Create a git repo" box.
+6. Check the box "Open in new session" at the bottom left.
+7. Click "Create Project" button.  
+
+![](images\02_create_proj2.png){width=75%}
+
+Your newly created project will open in a new RStudio session. It will have created an .Rproj file.
+
+![](images\02_create_proj3.png){width=75%}
+
+To open this project next time, navigate to where you saved it and double-click the .Rproj file.
+
+![](images\02_create_proj4.png)
+
+### How to open an existing project:
+
+If you opened RStudio from the desktop icon or start menu, you will see "Project: (None)" in the corner instead. 
+
+
+![](images\02_no_project.png){width=75%}
+
+Click on "Open Project" (or click on File > "Open Project..." and browse to the .RProj you want).  
+
+Once RStudio is open, click on the file you want in the Files pane (e.g., "02_projects_and_packages.Rmd").  
+
+![](images\02_open_script.png)  
+
+
+
+### How to tell if you are in a project:
+
+If you opened this file by opening the project and then clicking on the file, you should see "UVIC_BIDA302" in the far right top corner. A down arrow beside it allows you to start a new project, close the project, or open a different project, etc. 
+
+![](images\02_create_proj3.png)
+
+
+
+### Further reading
+
+For more about RStudio projects:
+
+* the chapter ["Workflow: projects" in _R For Data Science_](https://r4ds.had.co.nz/workflow-projects.html)
+
+* ["Creating a New RStudio Project" in the _R Cookbook (2nd ed.)_](https://rc2e.com/navigatingthesoftware#recipe-CreateProject)
+
 
 
 
