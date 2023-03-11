@@ -258,7 +258,7 @@ The histogram above shows the distribution of weights of all of the penguins. We
 Note that what we want is `fill =`. As we saw in the scatterplot example, `colour =` works for points (and below we will see it used for lines), but not the interior of bars.
 
 
-```{r}
+```{r, warning=FALSE}
 ggplot(penguins, aes(x = body_mass_g, fill = species)) +
   geom_histogram(binwidth = 500)
 
