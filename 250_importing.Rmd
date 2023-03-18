@@ -162,7 +162,7 @@ deaths
 
 # solution
 deaths <- read_excel(
-  "data/deaths.xlsx",
+  "data/deaths.xlsx", sheet = "arts", 
   range = "A5:F15"
 )
 
