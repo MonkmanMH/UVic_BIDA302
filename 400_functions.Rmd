@@ -190,11 +190,12 @@ Now we can use that function to convert any number of weights. Let's make a tibb
 ```{r}
 # the `set.seed()` function ensures that our pseudo-random number generation
 # always returns the same values
-set.seed(42)
+set.seed(1)
 
 my_weights <- tibble(
   weight_name = letters[1:10],    # the letters from a to j
-  weight_lb = seq(1, 19, 2))      # a sequence of numbers from 1 to 19, by 2s
+  weight_lb = round(runif(n=10, min=1, max=20), 3)
+    )      # a random sequence of numbers between 1 and 20
 
 my_weights
 
