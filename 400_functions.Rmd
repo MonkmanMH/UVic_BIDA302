@@ -30,7 +30,6 @@ This chunk of R code loads the packages that we will be using.
 
 ```{r eval = FALSE}
 library(tidyverse)
-library(gapminder)
 ```
 
 
@@ -212,7 +211,7 @@ my_weights %>%
 
 That's good. But what if we want our result to be rounded to 2 decimal places?
 
-We could rewrite our function to add that:
+We could rewrite our function to add that additional line of code:
 
 * note that in the 2nd line of the function's code, we are rounding `kg` before returning it.
 
@@ -238,7 +237,7 @@ my_weights %>%
 ```
 
 
-What if we want want to have some flexibility in our rounding? We can add a 2nd argument to our function call—`rnd`—which will be then applied in `round()`
+What if we want want to have some flexibility in our rounding? We can add a second argument to our function call—`rnd`—which will be then applied in `round()`
 
 
 ```{r}
@@ -262,9 +261,10 @@ my_weights %>%
 ```
 
 
+
 ### Setting default values
 
-What if we usually want to round to 2, but to have some flexibility? We can assign the default value of 2 to the rounding argument. If `rnd` doesn't get specified, it will be 2 ... but we can over-ride that with a specific value assignment.
+What if we usually want to round to 2, but want to have some flexibility? We can assign the default value of 2 to the rounding argument. If `rnd` doesn't get specified, it will be 2...but we can over-ride that with a specific value assignment.
 
 ```{r}
 
