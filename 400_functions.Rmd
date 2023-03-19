@@ -219,7 +219,7 @@ We could rewrite our function to add that additional line of code:
 ```{r}
 
 lb_to_kg_conversion <- function(lb) {
-  kg <- lb * 2.2046226218488
+  kg <- lb / 2.2046226218488
   kg <- round(kg, 2)
   return(kg)
 }
@@ -243,7 +243,7 @@ What if we want want to have some flexibility in our rounding? We can add a seco
 ```{r}
 
 lb_to_kg_conversion <- function(lb, rnd) {
-  kg <- lb * 2.2046226218488
+  kg <- lb / 2.2046226218488
   kg <- round(kg, rnd)
   return(kg)
 }
