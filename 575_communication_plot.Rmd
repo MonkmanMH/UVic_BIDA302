@@ -543,9 +543,39 @@ ggplot(population_centres_bc, aes(x = population_2021, y = population_density_20
 
 For more information about modifying the axes, see the ggplot FAQ: https://ggplot2.tidyverse.org/articles/faq-axes.html
 
+---
 
 
-## Animated plots
+## Reading & reference  {#communication-plot-reading}
+
+Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+
+* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
+
+* ["Data Visualization"](https://r4ds.had.co.nz/data-visualisation.html)
+
+
+[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
+
+
+### {ggplot2} extensions
+
+Depending on the type of plot you want to make, {ggplot2} by itself might not have the functionality to do everything. Developers around the world have been creating extensions that add even more functions that integrate with the plot created using the `ggplot()` function.
+
+A full list of {ggplot2} extensions can be found here: https://exts.ggplot2.tidyverse.org/ 
+
+
+The {ggforce} package is one that adds some powerful extensions, notably in the area of annotations:
+
+* {ggforce} reference page: https://ggforce.data-imaginist.com/
+
+* {ggforce} examples: Edgar Ruiz, ("Accelerate your plots with ggforce")[https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/]
+
+* Thomas Lin Pedersen, ("ggforce: Visual Guide")[https://cran.microsoft.com/snapshot/2019-03-14/web/packages/ggforce/vignettes/Visual_Guide.html]
+
+
+
+### Animated plots
 
 If you are interested in exploring animated plots (similar to Hans Rosling's _gapminder_ visualizations), here are some resources for using the {gganimate} package:
 
@@ -560,20 +590,6 @@ If you are interested in exploring animated plots (similar to Hans Rosling's _ga
 * [Animated line chart transition with R](https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html) at the R Graph Gallery
 
 * Alboukadel, ["gganimate: How to Create Plots With Beautiful Animation in R"](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
-
-
-
-## Reading & reference  {#communication-plot-reading}
-
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
-
-* ["Data Visualization"](https://r4ds.had.co.nz/data-visualisation.html)
-
-
-[{ggplot2} reference site](https://ggplot2.tidyverse.org/)
-
 
 
 
@@ -598,7 +614,6 @@ Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.n
 * [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)—the BBC uses R and {ggplot2} to make publication-ready data visualizations. This cookbook gives examples and the code behind some different chart types.
 
   - Many other organizations are using R and {ggplot2} to create plots for their publications, including [the _Financial Times_](https://blog.revolutionanalytics.com/2018/06/ft-bbc-uses-r.html).
-
 
 
 ### More general plotting resources 
