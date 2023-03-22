@@ -45,7 +45,7 @@ For information on the statistics of regression models, see the following:
 
 * Chester Ismay & Albert Y. Kim, [_Modern Dive: Statistical Inference via Data Science_, Chapter 5 Basic Regression](https://moderndive.com/5-regression.html) [@Ismay_Kim_2018]
 
-* An interactive tool that visualizes different 
+* An interactive tool that visualizes different regression models 
 can be found at [Correlation and Covariance Visualiation App with Shiny](https://shiny.rit.albany.edu/stat/rectangles/). 
   - The first entry under the "Visualize Relationships", "1. Relationship Direction and Strength", allows users to explore different patterns. Note that in this tool, the statistics being reported are "Rho" (looks like a lower-case P), which is the correlation between X and Y in the population (i.e. all of the possible points from which our sample could have been drawn), and "r", which is the correlation coefficient (to get the R-squared, we [you guessed it] can multiply the "r" value by itself).
 
@@ -238,7 +238,7 @@ summary(mod_youtube)
 
 Y = 8.44 + (0.048 * X)
 
-The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.48 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
+The way to read this is that we will get 8.44 units sold with zero youtube advertising, but with every dollar of youtube spending we would expect an increase of 0.048 in sales. So if we spent $1,000, we would see a total of 56.4 units sold (`sales = 8.44 + 0.048 * 1000`) 
 
 
 
