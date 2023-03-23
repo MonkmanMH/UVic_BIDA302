@@ -143,10 +143,11 @@ One of the most important pieces of working with dates is turning a character or
 {lubridate} will happily work with numbers and strings, including strings with separators
 
 ```{r}
-
+# a long number
 ymd(20200328)
 
-ymd("2020-03-28")
+# a character string, with a two-digit year
+ymd("20-03-28")
 
 ```
 
@@ -466,6 +467,8 @@ lfs_BC_2000 %>%
 Looks like the B.C. labour force is growing!
 
 ::: {.rmdtip}
+
+
 #### Your turn
 
 
