@@ -55,16 +55,21 @@ Working with dates and times is an important "tidy" skill, but it also comes int
 > * Does every day have 24 hours?
 > * Does every minute have 60 seconds?
 
-The answer to all of these is "no". (See the introduction to the ["Dates and Times"](https://r4ds.had.co.nz/dates-and-times.html#introduction-10) chapter of _R for Data Science for explanations.)
+The answer to all of these is "no". (See the introduction to the ["Dates and Times"](https://r4ds.had.co.nz/dates-and-times.html#introduction-10) chapter of _R for Data Science_ for explanations.)
 
 To add to the challenge, there are different ways to represent a date. Here's some ways that March 28, 2020 might be written:
 
-March 28, 2020
-2020-03-28
-28 Mar 2020
-28-3-20
-3/28/2020
-Saturday, March 28, 2020
+* March 28, 2020
+
+* 2020-03-28
+
+* 28 Mar 2020
+
+* 28-3-20
+
+* 3/28/2020
+
+* Saturday, March 28, 2020
 
 Also, keep in mind that a written-out-month is spelled differently in different languages! For example, April in French is "Avril".
 
@@ -98,7 +103,7 @@ While dates and times can be complex, the {lubridate} package gives us some tool
 
 See https://lubridate.tidyverse.org/reference/index.html 
 
-First, `now()` can be handy. It's based on your computer settings—so whatever time your machine says, this is what will be returned when you run the following code chunk:
+First, `today()` and `now()` can be handy. They are based on your computer settings—so whatever time your machine says, `now()`  returns the current time when you run the following code chunk:
 
 ```{r}
 now()
@@ -119,23 +124,23 @@ One of the most important pieces of working with dates is turning a character or
 
 | function | purpose |
 | ---- | ---- |
-| ymd()  | returns yyyy-mm-dd |
-| dmy() | returns yyyy-mm-dd from day-month-year |
-| my() | returns yyyy-mm-01 from month-year |
+| `ymd()`  | returns yyyy-mm-dd |
+| `dmy()` | returns yyyy-mm-dd from day-month-year |
+| `my()` | returns yyyy-mm-01 from month-year |
 | _etc_ |  |
-| ymd_hms() | returns date and time |
+| `ymd_hms()` | returns date and time |
 
 
 ### getting, setting, rounding
 
 | function | purpose |
 | ---- | ---- |
-| today() |  |
-| now() |  |
-| year(), month(), day() | get components of date|
+| `today()` |  |
+| `now()` |  |
+| `year()`, `month()`, `day()` | get components of a date |
 | _etc_ |  |
-| floor_date() | rounds _down_ to nearest boundary of specified time unit |
-| ceiling_date() | rounds _up_ to nearest boundary of specified time unit |
+| `floor_date(unit = )` | rounds _down_ to nearest boundary of specified time unit |
+| `ceiling_date(unit = )` | rounds _up_ to nearest boundary of specified time unit |
 
 
 ## Parsing {#date-time-parsing}
@@ -491,6 +496,7 @@ To calculate the **monthly** average over the 20 years in our data, we can use t
 lfs_BC_2000 %>%
   group_by(month(ref_date_2)) %>% 
   summarise(monthly_average = mean(VALUE))
+
 ```
 
 In this second solution, the `mutate()` function is used to create a stand-alone variable "ref_month", which becomes the grouping variable.
@@ -525,6 +531,7 @@ lfs_BC_2000 %>%
   mutate(ref_month = month(ref_date_2)) %>% 
   group_by(ref_month) %>% 
   summarise(monthly_average = mean(VALUE)) %>% 
+  # now plot the resulting summary table
   ggplot(aes(x = ref_month, y = monthly_average)) +
   geom_line()
 
@@ -595,6 +602,8 @@ What time is it right now? Specify the time zone in the `now()` function with th
 
 * in Seoul, South Korea
 
+* in Auckland, New Zealand
+
 * and Universal Time Coordinated (the time zone is represented as "UTC")
 
 
@@ -611,6 +620,10 @@ now(tzone = "America/Lima")
 # Seoul, South Korea
 now(tz = "Asia/Seoul")
 
+# Auckland, New Zealand
+now(tz = "Pacific/Auckland")
+
+
 # Universal Time Coordinated (UTC)
 now(tz = "UTC")
 
@@ -622,10 +635,10 @@ Some things to notice:
 
 * Lima doesn't appear with a named "time" unlike the others, but is -05 hours relative to UTC
 
-* For those of us in the western hemisphere, it's almost always tomorrow in Korea!
+* For those of us in the western hemisphere, it's almost always tomorrow in South Korea and New Zealand!
 
 
-You can use the function `OlsonNames()` to print a list of all `r length(OlsonNames())` time zones around the world!
+You can use the function `OlsonNames()` (from base R) to print a list of all `r length(OlsonNames())` time zones around the world!
 
 ```{r}
 # solution -- beware the length!
