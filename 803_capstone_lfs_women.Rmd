@@ -28,7 +28,7 @@ On 2016-11-18, [Dr. Tammy Schirle](https://tammyschirle.org/) posted [a series o
 For this project, you will recreate your own version of this chart (note that the variables are slightly different than what's shown). Then, once you have completed the Canada version, make a second version using British Columbia data.
 
 
-### Going beyond
+## Going Beyond
 
 One way to analyze time series data such as this is to calculate and plot the rate of change from one point in time to the next. A way to do this is with the `lag`  and `lead` functions in {dplyr}:
 
@@ -38,6 +38,13 @@ One way to analyze time series data such as this is to calculate and plot the ra
 Another element in economic data analysis is the impact of recessions, which is usually associated with a drop in the level of employment. You could use your skills with plot annotation elements to show where the recessions in Canada occurred, and whether that is associated with drops or slower growth in employment.
 
 * ["Recession in Canada" from the Canadian Encyclopedia](https://www.thecanadianencyclopedia.ca/en/article/recession)
+
+
+### {cansim} package
+
+You will receive a data file that contains the data necessary to complete this project. If you are interested in exploring a method of accessing the latest data directly from Statistics Canada, you can use the {cansim} R package. The reference page for the package is here:
+https://mountainmath.github.io/cansim/
+
 
 
 ## Data source {#lfs-women-data}
