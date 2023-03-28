@@ -460,13 +460,23 @@ To create the decade groupings, the `case_when()` follows a `mutate()` function.
 date_list <- date_list %>% 
   mutate(ref_decade = case_when(
     year(ref_date) < 2010 ~ "aughts",
-    year(ref_date) < 2020 ~ "teens"
+    year(ref_date) < 2020 ~ "teens",
+    TRUE ~ "other"
   ))
 
 date_list
 
 ```
 
+
+Another option for this problem would be to round the year value down to the nearest 10. This uses the `round_any()` function from the {plyr} package.
+
+```{r}
+# to round year value down to first year of the decade
+date_list %>% 
+  mutate(ref_decade = plyr::round_any(year(ref_date), accuracy = 10, f = floor))
+
+```
 
 ### Multiple comparisons
 
