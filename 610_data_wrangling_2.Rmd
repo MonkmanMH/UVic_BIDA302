@@ -435,6 +435,39 @@ canpop %>%
 
 ```
 
+
+In another example, we might want to group a series of dates by decade.
+
+```{r}
+date_list <- tribble(
+  ~ref_date,
+  "2000-02-29",
+  "2004-02-29", 
+  "2011-01-01",
+  "2014-03-31",
+  "2019-09-01"
+) %>% 
+  mutate(ref_date = ymd(ref_date))
+
+date_list
+```
+
+
+To create the decade groupings, the `case_when()` follows a `mutate()` function. Note that we are using `lubridate::year()` to extract the year value for our comparison.
+
+```{r}
+
+date_list <- date_list %>% 
+  mutate(ref_decade = case_when(
+    year(ref_date) < 2010 ~ "aughts",
+    year(ref_date) < 2020 ~ "teens"
+  ))
+
+date_list
+
+```
+
+
 ### Multiple comparisons
 
 In this example from the [`case_when()` reference page:](https://dplyr.tidyverse.org/reference/case_when.html), it uses different combinations of three variables to create a single fourth variable. It uses the built-in data set "starwars", a list of characters from the movies.
