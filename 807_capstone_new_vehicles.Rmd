@@ -38,8 +38,16 @@ The second part is to create a plot or plots that demonstrate an interesting asp
 or some other element you find in the data.
 
 
+## Going Beyond
 
-### Data source {#vehicles-data}
+### {cansim} package
+
+You will receive a data file that contains the data necessary to complete this project. If you are interested in exploring a method of accessing the latest data directly from Statistics Canada, you can use the {cansim} R package. The reference page for the package is here:
+https://mountainmath.github.io/cansim/
+
+
+
+## Data source {#vehicles-data}
 
 The data for this project are in the "data" folder.
 
