@@ -445,7 +445,8 @@ date_list <- tribble(
   "2004-02-29", 
   "2011-01-01",
   "2014-03-31",
-  "2019-09-01"
+  "2019-09-01",
+  "2023-03-28"
 ) %>% 
   mutate(ref_date = ymd(ref_date))
 
@@ -469,9 +470,10 @@ date_list
 ```
 
 
-Another option for this problem would be to round the year value down to the nearest 10. This uses the `round_any()` function from the {plyr} package.
+Another option for this problem would be to round the year value down to the nearest 10. This uses the `round_any()` function from the {plyr} package. (The `round()` function from base R rounds to the nearest 10, so a year like 2019 gets rounded up to the 2020s. The `floor()` function, related to `round()`, rounds down, but only to the nearest integer.)
 
 ```{r}
+
 # to round year value down to first year of the decade
 date_list %>% 
   mutate(ref_decade = plyr::round_any(year(ref_date), accuracy = 10, f = floor))
