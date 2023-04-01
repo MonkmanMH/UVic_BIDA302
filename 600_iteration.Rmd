@@ -193,9 +193,11 @@ output
 (This is modified from ["21.3.5 Exercises"](https://r4ds.had.co.nz/iteration.html#exercises-56) in _R for Data Science_, which uses CSV files.)
 
 
-Imagine you have a directory full of Excel files that you want to read and then combine into a single dataframe. 
+Imagine you have a directory full of Excel files that you want to read and then combine into a single dataframe. This circumstance is encountered in many data analysis situations—perhaps the finance department of your company produces a monthly report with the data from a single month, but your interest is to compare many months of data over a few years. The challenge is to merge the data into a single R object containing all of the available data.
 
-The steps are 
+For this example, we have three files that are identically structured. Because we now know how to write a loop, we can write some code that will read each file, and then merge them together.
+
+The steps are: 
 
 1. Create a list with the names of the files of interest (that is, the Excel files) in the sub-folder "data_monthly". The function `dir()` returns a character vector of the names of the files (or directories) in the named directory.
 
