@@ -54,6 +54,21 @@ Some projects will be available for you to choose, but you may also bring your o
 | **40** | **TOTAL** |
 
 
+### A note about documentation
+
+You can add documentation as both comments inside code chunks and text outside. Things to think about adding are:
+
+* What: explain what the code chunk is doing (for example, you might write "Here the first table is joined to the second table")
+
+* Why: explain the choices you made ("I decided to see if there was a difference between group #1 and group #2, so I did the following")
+
+* How: explain things that are happening in the code ("Note that the joining variable has a different name in each table" or "I had to change the variable from character to integer so that the line graph would work")
+
+* What: analysis of what the results show ("This chart shows a bigger increase in the first thing than the second thing")
+
+For an example of what your documentation might look lik, refer to the chapter from Week 1, (An example of a data analytics project)[@walkthrough].
+
+
 ## Capstone GitHub page
 
 The chapters that follow have a list of the most popular capstone projects. You can find a longer list of the capstone projects, including some that are still in develoment, at this website:
