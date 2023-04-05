@@ -66,7 +66,7 @@ You can add documentation as both comments inside code chunks and text outside. 
 
 * What: analysis of what the results show ("This chart shows a bigger increase in the first thing than the second thing")
 
-For an example of what your documentation might look lik, refer to the chapter from Week 1, (An example of a data analytics project)[@walkthrough].
+For an example of what your documentation might look lik, refer to the chapter from Week 1, [An example of a data analytics project](#walkthrough).
 
 
 ## Capstone GitHub page
