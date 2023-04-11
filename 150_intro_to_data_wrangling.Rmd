@@ -43,9 +43,11 @@ For this section, and for other exercises throughout this course, we will be usi
 
 * [The best stats you've ever seen](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en)— this is the video that introduced me to Hans Rosling.
 
-* [200 Countries, 200 Years, 4 Minutes](https://www.gapminder.org/videos/200-years-that-changed-the-world-bbc/)—recreating the chart in this video is one of the capstone project options
+* [200 Countries, 200 Years, 4 Minutes](https://www.youtube.com/watch?v=jbkSRLYSojo&ab_channel=BBC)—recreating the chart in this video is one of the capstone project options
 
 * It's outside the scope of this course, but I also recommend Rosling's book _Factfulness_[@Rosling_2018], which goes deeper into the changes in the world and how data explains those changes.
+
+* An article related to the work of Hans Rosling can be found here: ["The world is awful. The world is much better. The world can be much better."](https://ourworldindata.org/much-better-awful-can-be-better), by Max Roser, the Founder and Director of [Our World In Data](https://ourworldindata.org/), an organization dedicated to sharing data and analysis to make progress against the world’s largest problems.
 
 
 
