@@ -91,7 +91,12 @@ They are powerful ways to filter and manipulate strings based on those patterns.
 
 ### regex matching functions
 
+
 Here are some basic matching functions:
+
+**Note:** the square brackets enclose the regex to identify a single character. In the examples below, with three sets of square brackets, "[a][b][c]" contains three separate character positions, whereas "[abc]" is identifying a single character.
+
+
 
 | character | what it does |
 | ---- | ---- |
