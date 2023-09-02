@@ -107,8 +107,8 @@ mpg
 Use `group_by` and `summarise` to create a summary table of the average engine displacement:
 
 ```{r}
-mpg %>%                                
-  group_by(class) %>%                   
+mpg |>                                
+  group_by(class) |>                   
   summarise(displ_mean = mean(displ)) 
 
 ```
@@ -119,9 +119,9 @@ Now if we do the same with vehicle class and number of cylinders, we end up with
 
 ```{r}
 
-class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(displ_mean = mean(displ)) %>%
+class_by_cyl <- mpg |>
+  group_by(class, cyl) |>
+  summarise(displ_mean = mean(displ)) |>
   arrange(desc(displ_mean))
 
 class_by_cyl
@@ -142,7 +142,7 @@ You will note that this is **NOT** a tidy format! But is it one that is human-re
 
 # pivot table (wide)
 
-class_by_cyl_pivot <- class_by_cyl %>%
+class_by_cyl_pivot <- class_by_cyl |>
   pivot_wider(names_from = cyl, values_from = displ_mean)
 
 class_by_cyl_pivot
@@ -155,14 +155,14 @@ Note that the table is sorted by the order in which the variables are encountere
 ```{r}
 
 # sort with `arrange()`
-class_by_cyl %>%
+class_by_cyl |>
   # sort before pivot
-  arrange(cyl, class) %>% 
+  arrange(cyl, class) |> 
   pivot_wider(names_from = cyl, values_from = displ_mean)
 
 # sort with `names_sort =` argument in `pivot_wider()` function
-class_by_cyl %>%
-  arrange(cyl, class) %>% 
+class_by_cyl |>
+  arrange(cyl, class) |> 
   # sort within the `pivot_wider()`
   pivot_wider(names_from = cyl, values_from = displ_mean,
               names_sort = TRUE)
@@ -178,7 +178,7 @@ Now, unpivot it back to the original structure. Note that the names of the new v
 ```{r}
 # and back to longer...
 
-displ_class_by_cyl <- class_by_cyl_pivot %>%
+displ_class_by_cyl <- class_by_cyl_pivot |>
   pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
 
 displ_class_by_cyl
@@ -201,7 +201,7 @@ For example, `spread()` to replicate the `pivot_wider()` function:
 
 ```{r}
 
-class_by_cyl %>%
+class_by_cyl |>
   spread(cyl, value = displ_mean)
 
 ```
@@ -226,11 +226,11 @@ Run the chunk below to create the `displ_class_by_cyl` table:
 
 ```{r}
 # summary table - class by cylinder
-displ_class_by_cyl <- mpg %>%
-  group_by(class, cyl) %>%
-  summarise(displ_mean = mean(displ)) %>%
-  arrange(cyl, class) %>%
-  pivot_wider(names_from = cyl, values_from = displ_mean) %>%
+displ_class_by_cyl <- mpg |>
+  group_by(class, cyl) |>
+  summarise(displ_mean = mean(displ)) |>
+  arrange(cyl, class) |>
+  pivot_wider(names_from = cyl, values_from = displ_mean) |>
   pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
 
 displ_class_by_cyl
@@ -259,12 +259,12 @@ An alternative solution: use a filter with `!na` to remove the records with `NA`
 
 ```{r}
 # example
-displ_class_by_cyl %>%
+displ_class_by_cyl |>
   summarise(displ_mean_all = mean(displ_mean))
 
 # solution
-displ_class_by_cyl %>%
-  filter(!is.na(displ_mean)) %>%
+displ_class_by_cyl |>
+  filter(!is.na(displ_mean)) |>
   summarise(displ_mean_all = mean(displ_mean))
 
 ```
@@ -282,8 +282,8 @@ This is because when we ran the code to create the `displ_class_by_cyl` table, w
 # example
 displ_class_by_cyl
 
-displ_class_by_cyl %>%
-  filter(!is.na(displ_mean)) %>%
+displ_class_by_cyl |>
+  filter(!is.na(displ_mean)) |>
   summarise(displ_mean_all = mean(displ_mean))
 
 
@@ -296,9 +296,9 @@ If you want the mean of _all_ the values, you have to use `ungroup()` before `su
 ```{r}
 
 # solution
-displ_class_by_cyl %>%
-  filter(!is.na(displ_mean)) %>%
-  ungroup() %>%
+displ_class_by_cyl |>
+  filter(!is.na(displ_mean)) |>
+  ungroup() |>
   summarise(displ_mean_all = mean(displ_mean))
 
 
@@ -327,7 +327,7 @@ CDN_elec_2019 <- tibble(party = c("Liberal", "Conservative", "Bloc Québécois",
                         seats = c(157, 121, 32, 24, 3, 1),
                         votes = c(5915950, 6155662, 1376135, 2849214, 1162361, 75836))
 # hahaha! It's easier to make a tidy tibble and untidy it than make a messy one to start with
-CDN_elec_2019 <- CDN_elec_2019 %>%
+CDN_elec_2019 <- CDN_elec_2019 |>
   pivot_longer(-party, names_to = "category", values_to = "number")
 
 CDN_elec_2019
@@ -365,7 +365,7 @@ To tidy the table, we need to `pivot_wider()`
 ```{r}
 # solution
 
-CDN_elec_2019 %>%
+CDN_elec_2019 |>
   pivot_wider(names_from = category, values_from = number)
 
 ```
@@ -401,18 +401,18 @@ Solution
 
 ```{r}
 # solution #1
-gapminder %>% 
+gapminder |> 
   filter(country %in% c("Canada", "United States", "Mexico") &
-           year > 1980) %>%
-  select(country, year, gdpPercap) %>% 
+           year > 1980) |>
+  select(country, year, gdpPercap) |> 
   pivot_wider(names_from = country, values_from = gdpPercap)
 
 # a similar solution that uses "or" for the countries
 # and two separate filter statements
-gapminder %>% 
-  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
-  filter(year > 1980) %>%
-  select(country, year, gdpPercap) %>% 
+gapminder |> 
+  filter(country == "Canada" | country == "United States" | country == "Mexico") |> 
+  filter(year > 1980) |>
+  select(country, year, gdpPercap) |> 
   pivot_wider(names_from = country, values_from = gdpPercap)
 
 ```
@@ -422,9 +422,9 @@ Here's an alternative approach that avoids the use of the `select()` function.
 Note that by adding `year` to the `pivot_wider()` all the variables in the final table are explicitly named in the function, and all the other variables in the source table are dropped.
 
 ```{r}
-gapminder %>% 
-  filter(country == "Canada" | country == "United States" | country == "Mexico") %>% 
-  filter(year > 1980) %>% 
+gapminder |> 
+  filter(country == "Canada" | country == "United States" | country == "Mexico") |> 
+  filter(year > 1980) |> 
   pivot_wider(id_cols = year, 
               names_from = "country", 
               values_from = "gdpPercap")
@@ -434,9 +434,9 @@ gapminder %>%
 In this version, the three variables `continent`, `lifeExp`, and `pop` are dropped with the minus sign—the remaining variables are then reshaped.
 
 ```{r}
-gapminder %>% 
-  filter(country %in% c("Canada", "United States", "Mexico")) %>% 
-  filter(year > 1980) %>% 
+gapminder |> 
+  filter(country %in% c("Canada", "United States", "Mexico")) |> 
+  filter(year > 1980) |> 
   pivot_wider(id_cols = c(-continent, -lifeExp, -pop), 
               names_from = "country", 
               values_from = "gdpPercap")
@@ -450,9 +450,9 @@ It's also possible to have multiple columns selected using the `id_cols =` argum
 
 ```{r}
 # Three countries from three different continents
-gapminder %>% 
-  filter(country %in% c("Canada", "China", "Croatia")) %>% 
-  filter(year > 1980) %>% 
+gapminder |> 
+  filter(country %in% c("Canada", "China", "Croatia")) |> 
+  filter(year > 1980) |> 
   pivot_wider(id_cols = c(country, continent), 
               names_from = "year", 
               values_from = "gdpPercap")
@@ -467,18 +467,18 @@ After that object is created, we can use it to first select for the variables we
 
 ```{r}
 # create intermediate dataframe "gapminder1"
-gapminder1 <- gapminder %>% 
-  filter(year > 1980) %>% 
+gapminder1 <- gapminder |> 
+  filter(year > 1980) |> 
   filter(country == "Canada" | country == "Mexico" | country == "Brazil")
 
 # now using the `id_cols = year`, pull the values from gdpPercap 
-gapminder1 %>% 
+gapminder1 |> 
   pivot_wider(id_cols = year, 
               names_from = country, 
               values_from = gdpPercap)
 
 # and now a 2nd version with life expectancy, pull the values from lifeExp
-gapminder1 %>% 
+gapminder1 |> 
   pivot_wider(id_cols = year, 
               names_from = country, 
               values_from = lifeExp)

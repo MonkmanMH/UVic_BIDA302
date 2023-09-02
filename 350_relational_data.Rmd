@@ -110,17 +110,17 @@ Solution
 
 ```{r}
 # solution (in _R4DS_)
-planes %>% 
-  count(tailnum) %>% 
+planes |> 
+  count(tailnum) |> 
   filter(n > 1)
 
 # alternate solution
-planes %>% 
-  count(tailnum) %>% 
+planes |> 
+  count(tailnum) |> 
   summarise(max(n))
 
-flights %>%
-  group_by(tailnum) %>% 
+flights |>
+  group_by(tailnum) |> 
   tally()
 
 ```
@@ -240,8 +240,8 @@ full_join(table_one, table_two, by = "key_var")
 In this example, we will add the name of the airline to the `flights` table. First, we will make a smaller version of the `flights` table by selecting a few of the variables, and taking the first 100 rows with the `slice()` function (see https://dplyr.tidyverse.org/reference/slice.html).
 
 ```{r}
-flights2 <- flights %>% 
-  select(year:day, hour, origin, dest, tailnum, carrier) %>% 
+flights2 <- flights |> 
+  select(year:day, hour, origin, dest, tailnum, carrier) |> 
   slice(1:100)
 flights2
 ```
@@ -270,7 +270,7 @@ Using a pipe, the same result can be achieved with the following:
 
 ```{r}
 # alternate version, using a pipe
-flights2 %>%
+flights2 |>
   left_join(airlines, by = "carrier")
 
 ```
@@ -282,9 +282,9 @@ Here's an example of where the utility of the pipe operator can be seen. If we w
 
 ```{r}
 
-flights2 %>%
-  left_join(airlines, by = "carrier") %>% 
-  group_by(name) %>% 
+flights2 |>
+  left_join(airlines, by = "carrier") |> 
+  group_by(name) |> 
   tally()
 ```
 
@@ -482,7 +482,7 @@ Here are two different ways of writing the same code:
 # to specify key variables with different names:
 left_join(left_tbl, right_tbl, by = c("key_x" = "key_y"))
 
-left_tbl %>% 
+left_tbl |> 
   left_join(right_tbl, by = c("key_x" = "key_y"))
 
 ```
@@ -518,7 +518,7 @@ left_join(flights, weather)
 
 
 ```{r}
-flights %>% 
+flights |> 
   left_join(select(weather, origin:temp))
 ```
 
@@ -530,7 +530,7 @@ Using our `left_tbl` and `right_tbl` from above, here is a solution that embeds 
 # to specify variables to add to new table
 # one solution: put select in the table naming 
 full_join(left_tbl, 
-          right_tbl %>% select(key_y, val_y2), 
+          right_tbl |> select(key_y, val_y2), 
           by = c("key_x" = "key_y"))
 
 ```
@@ -540,19 +540,19 @@ In the {nycflights13} case, where we are joining on multiple keys _and_ then wan
 ```{r}
 # solution
 
-flights %>% 
-  left_join(weather %>% select("year", "month", "day", "hour", "origin", "temp"),
+flights |> 
+  left_join(weather |> select("year", "month", "day", "hour", "origin", "temp"),
             by = c("year", "month", "day", "hour", "origin"))
 
 # slightly different syntax:
-flights %>% 
+flights |> 
   left_join(select(weather, "year", "month", "day", "hour", "origin", "temp"),
             by = c("year", "month", "day", "hour", "origin"))
 
 
 
 # let {dplyr} decide the variables on which to join
-flights %>% 
+flights |> 
   left_join(select(weather, origin:temp))
 
 ```
@@ -594,7 +594,7 @@ A variable called "dollar_value" exists in both tables, but means different thin
 
 ```{r}
 
-orders_shipped <- orders %>% 
+orders_shipped <- orders |> 
   full_join(shipments, by = "order_number")
 
 orders_shipped
@@ -606,9 +606,9 @@ You could then rename "dollar_value.x" and "dollar_value.y" to make it clear whi
 
 ```{r}
 
-orders_shipped %>% 
+orders_shipped |> 
   rename("dollar_value_order" = dollar_value.x,
-         "dollar_value_shipment" = dollar_value.y) %>% 
+         "dollar_value_shipment" = dollar_value.y) |> 
   mutate(filled_pct = round((dollar_value_shipment / dollar_value_order) *100, 1))
 
 ```

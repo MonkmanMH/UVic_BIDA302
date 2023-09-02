@@ -117,8 +117,8 @@ In this example, we first calculate the average length of the bird's bill by spe
 
 ```{r}
 # the summary data table
-penguin_species_bill <- penguins %>% 
-  group_by(species) %>% 
+penguin_species_bill <- penguins |> 
+  group_by(species) |> 
   summarise(n = n(),
             bill_length_mean = mean(bill_length_mm, na.rm = TRUE)) 
 
@@ -305,8 +305,8 @@ In this example, we will use the gapminder data to show the increase in life exp
 ```{r}
 
 # first, filter the data to have just the records from Canada
-gapminder %>% 
-  filter(country == "Canada") %>% 
+gapminder |> 
+  filter(country == "Canada") |> 
   # now plot
   ggplot(aes(x = year, y = lifeExp)) +
     geom_line()
@@ -319,8 +319,8 @@ A more complex version of the plot could compare three separate countries.
 ```{r}
 
 # first, filter the data to have just the records from Canada
-gapminder %>% 
-  filter(country %in% c("Canada", "Japan", "China")) %>% 
+gapminder |> 
+  filter(country %in% c("Canada", "Japan", "China")) |> 
   # now plot
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
     geom_line()
@@ -342,8 +342,8 @@ This code has one change from what's above—the line size is defined as "1.5" t
 
 pl_lifeexp <- 
 # first, filter the data to have just the records from Canada
-gapminder %>% 
-  filter(country %in% c("Canada", "Japan", "China")) %>% 
+gapminder |> 
+  filter(country %in% c("Canada", "Japan", "China")) |> 
   # now plot
   ggplot(aes(x = year, 
              y = lifeExp, 

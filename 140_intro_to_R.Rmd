@@ -350,7 +350,7 @@ In this example, we have a data frame called "anscombe_1" with 2 variables, and 
 
 ```{r E1, echo=FALSE}
 
-anscombe_1 <- anscombe %>% 
+anscombe_1 <- anscombe |> 
   select(x1, y1)
 
 ```

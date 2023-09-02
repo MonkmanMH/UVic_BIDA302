@@ -44,12 +44,12 @@ Read the quartet data in a tidy form.^[Source: David Robinson, ["Anscombe’s Qu
 
 ```{r, echo = FALSE}
 ## old-school `gather()` and `spread()`
-#anscombe_tidy <- anscombe %>%
-#  mutate(observation = seq_len(n())) %>%
-#  gather(key, value, -observation) %>%
-#  separate(key, c("variable", "set"), 1, convert = TRUE) %>%
-#  mutate(set = c("I", "II", "III", "IV")[set]) %>%
-#  spread(variable, value) %>%
+#anscombe_tidy <- anscombe |>
+#  mutate(observation = seq_len(n())) |>
+#  gather(key, value, -observation) |>
+#  separate(key, c("variable", "set"), 1, convert = TRUE) |>
+#  mutate(set = c("I", "II", "III", "IV")[set]) |>
+#  spread(variable, value) |>
 #  arrange(set)
 #anscombe_tidy
 #write_csv(anscombe_tidy, "anscombe_tidy.csv")
@@ -72,8 +72,8 @@ Each of the four sets in Anscombe's Quartet has the same summary statistics. Let
 
 ```{r, anscombe_summary_stats1}
 # example
-anscombe_tidy %>%
-  group_by(set) %>%
+anscombe_tidy |>
+  group_by(set) |>
   summarize(mean_ex = mean(ex))
 ```
 
@@ -99,8 +99,8 @@ To create a table with these statistics by the four sets, we first `group_by()` 
 
 ```{r, anscombe_summary_stats2}
 # solution
-anscombe_tidy %>% 
-  group_by(set) %>% 
+anscombe_tidy |> 
+  group_by(set) |> 
   summarize(mean(ex), 
             sd(ex), 
             mean(why), 
@@ -164,8 +164,8 @@ In this example, the code increases the size of the points and colours them purp
 
 ```{r}
 # solution
-anscombe_tidy %>%
-  filter(set == "I") %>%
+anscombe_tidy |>
+  filter(set == "I") |>
 ggplot() + 
   geom_point(aes(ex, why), size = 3, colour = "purple")
 ```

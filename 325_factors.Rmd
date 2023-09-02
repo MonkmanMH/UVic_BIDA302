@@ -109,7 +109,7 @@ Solution
 
 ```{r}
 # solution
-gapminder %>%
+gapminder |>
   count(continent)
 
 ```
@@ -135,7 +135,7 @@ nlevels(gapminder$country)
 
 h_countries <- c("Belgium", "India", "Denmark", "Albania")  # see what I did there?
 
-h_gap <- gapminder %>%
+h_gap <- gapminder |>
   filter(country %in% h_countries)
 
 nlevels(h_gap$country)
@@ -163,8 +163,8 @@ Solution
 
 ```{r}
 
-h_gap <- gapminder %>%
-  filter(country %in% h_countries) %>% 
+h_gap <- gapminder |>
+  filter(country %in% h_countries) |> 
   droplevels()
 
 ```
@@ -204,7 +204,7 @@ Here's the way the levels are arranged:
 
 ```{r}
 
-h_gap$country %>% 
+h_gap$country |> 
   levels()
 
 ```
@@ -214,8 +214,8 @@ We can use `fct_relevel()` to change some or all of the levels.
 
 ```{r}
 
-h_gap$country %>%
-  fct_relevel("Belgium", "India", "Denmark", "Albania") %>% 
+h_gap$country |>
+  fct_relevel("Belgium", "India", "Denmark", "Albania") |> 
   levels()
 
 ```
@@ -225,7 +225,7 @@ h_gap$country %>%
 
 What if we want to sort by the number of countries in each continent, that is, the number of times each factor occurs?
 
-`fct_infreq()` is what we need, or `fct_infreq() %>% fct_rev()` for backwards.
+`fct_infreq()` is what we need, or `fct_infreq() |> fct_rev()` for backwards.
 
 
 
@@ -245,14 +245,14 @@ Solution
 
 ```{r}
 # solutions
-gapminder$continent %>%
-  fct_infreq() %>%
+gapminder$continent |>
+  fct_infreq() |>
   levels()
 
 
-gapminder$continent %>%
-  fct_infreq() %>%
-  fct_rev() %>%
+gapminder$continent |>
+  fct_infreq() |>
+  fct_rev() |>
   levels()
 
 ```
@@ -261,10 +261,10 @@ In a pipe where we are using the entire data frame, it would look like this:
 
 ```{r}
 
-gmind <- gapminder %>%
+gmind <- gapminder |>
   # sort the factors
-  mutate(continent = continent %>% 
-           fct_infreq() %>% 
+  mutate(continent = continent |> 
+           fct_infreq() |> 
            fct_rev()) 
 
 levels(gmind$continent)
@@ -285,8 +285,8 @@ You can find other ways to sort in [STAT545, "Reorder factors"](https://stat545.
 
 ```{r}
 
-fct_reorder(gapminder$country, gapminder$lifeExp, min) %>%
-  levels() %>%
+fct_reorder(gapminder$country, gapminder$lifeExp, min) |>
+  levels() |>
   head()
 
 
@@ -297,15 +297,15 @@ fct_reorder(gapminder$country, gapminder$lifeExp, min) %>%
 Recoding levels is similar to the renaming that's possible in `dplyr::select()`
 
 ```{r}
-i_gap <- gapminder %>% 
-  filter(country %in% c("United States", "Sweden", "Australia")) %>% 
+i_gap <- gapminder |> 
+  filter(country %in% c("United States", "Sweden", "Australia")) |> 
   droplevels()
 
-i_gap$country %>% 
+i_gap$country |> 
   levels()
 
-i_gap$country %>%
-  fct_recode("USA" = "United States", "Oz" = "Australia") %>% 
+i_gap$country |>
+  fct_recode("USA" = "United States", "Oz" = "Australia") |> 
   levels()
 
 ```
@@ -409,11 +409,11 @@ To sort the factors in a plot, we first mutate the variable that contains the fa
 In this example, we use the same code that we saw in hands-on 3.3, Your Turn 3.2. Other sort functions (such as `fct_relevel`) could also be used. 
 
 ```{r}
-gapminder %>%
+gapminder |>
   # sort the factors
-  mutate(continent = continent %>% 
-           fct_infreq() %>% 
-           fct_rev()) %>% 
+  mutate(continent = continent |> 
+           fct_infreq() |> 
+           fct_rev()) |> 
   # then plot
   ggplot(aes(x = continent)) +
     geom_bar() +
@@ -423,7 +423,7 @@ gapminder %>%
 
 A generic version of the sorting using `fct_rev()` to put them in reverse order is here:
 
-`df %>% mutate(my_fct = fct_rev(my_fct) %>% ggplot(…)`
+`df |> mutate(my_fct = fct_rev(my_fct) |> ggplot(…)`
 
 
 
@@ -435,13 +435,13 @@ In this example, we will plot the four countries in our BIDA group by life expec
 ```{r}
 h_countries <- c("Belgium", "India", "Denmark", "Albania")  # see what I did there?
 
-h_gap <- gapminder %>%
-  filter(country %in% h_countries) %>%
-  mutate(country = country %>% 
+h_gap <- gapminder |>
+  filter(country %in% h_countries) |>
+  mutate(country = country |> 
   fct_relevel("Belgium", "India", "Denmark", "Albania"))  
 
-h_gap %>%
-  filter(year == 2007) %>%
+h_gap |>
+  filter(year == 2007) |>
   ggplot(mapping = aes(x = country, y = lifeExp)) +
   geom_point(size = 6)
 
@@ -463,11 +463,11 @@ Solution
 
 ```{r}
 # solution
-h_gap %>%
-  filter(year == 2007) %>%
-  mutate(country = country %>% 
-           fct_reorder(lifeExp) %>% 
-           fct_rev()) %>% 
+h_gap |>
+  filter(year == 2007) |>
+  mutate(country = country |> 
+           fct_reorder(lifeExp) |> 
+           fct_rev()) |> 
   # now plot
   ggplot(mapping = aes(x = country, y = lifeExp)) +
   geom_point(size = 6)

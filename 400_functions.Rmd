@@ -204,7 +204,7 @@ What is the weight of those items in kilograms? I can apply my function...
 
 ```{r}
 
-my_weights %>%
+my_weights |>
   mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb))
 
 ```
@@ -231,7 +231,7 @@ Now re-run the `mutate()`:
 
 ```{r}
 
-my_weights %>%
+my_weights |>
   mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb))
 
 ```
@@ -255,7 +255,7 @@ And rerun with the area to 3 decimals:
 
 ```{r}
 
-my_weights %>%
+my_weights |>
   mutate(weight_kg = lb_to_kg_conversion(lb = weight_lb, rnd = 3))
 
 ```
@@ -283,7 +283,7 @@ With no specification:
 
 ```{r}
 
-my_weights %>%
+my_weights |>
   mutate(weight_kg = lb_to_kg_conversion(weight_lb))
 
 ```
@@ -294,7 +294,7 @@ Or override with rounding to 3 decimals:
 
 ```{r}
 
-my_weights %>%
+my_weights |>
   mutate(weight_kg = lb_to_kg_conversion(weight_lb, 3))
 
 ```
@@ -368,7 +368,7 @@ And use the function to convert each temperature to Fahrenheit in the tibble:
 
 ```{r}
 
-my_temperatures %>% 
+my_temperatures |> 
   mutate(temp_Fah = Cel_to_Fah_conversion(temp_Cel))
 
 ```
@@ -378,7 +378,7 @@ Now round to the nearest integer (zero decimals).
 
 ```{r}
 
-my_temperatures %>% 
+my_temperatures |> 
   mutate(temp_Fah = Cel_to_Fah_conversion(temp_Cel, rnd = 0))
 
 ```
