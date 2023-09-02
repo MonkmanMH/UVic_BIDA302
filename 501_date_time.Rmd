@@ -403,9 +403,9 @@ What happens when you mutate `REF_DATE` into a new variable, using the `ymd()` f
 
 ```{r}
 # solution
-lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(REF_DATE)) %>% 
-  select(REF_DATE, ref_date_2) %>% 
+lfs_BC_2000 |> 
+  mutate(ref_date_2 = ymd(REF_DATE)) |> 
+  select(REF_DATE, ref_date_2) |> 
   slice(10:15)
 
 ```
@@ -422,8 +422,8 @@ Fortunately, {lubridate} has an argument in the `ymd()` function that allows us 
 
 ```{r}
 # solution
-lfs_BC_2000 %>% 
-  mutate(ref_date_2 = ymd(REF_DATE, truncated = 2)) %>% 
+lfs_BC_2000 |> 
+  mutate(ref_date_2 = ymd(REF_DATE, truncated = 2)) |> 
   select(REF_DATE, ref_date_2)
 
 ```
@@ -434,7 +434,7 @@ Another approach is to use the `ym()` function, which yields the same result.
 ```{r}
 
 lfs_BC_2000 <-
-  lfs_BC_2000 %>% 
+  lfs_BC_2000 |> 
   mutate(ref_date_2 = ym(REF_DATE))
 
 lfs_BC_2000
@@ -462,8 +462,8 @@ In this code chunk, the variable "ref_date_2" is inside the `year()` function. T
 
 ```{r}
 
-lfs_BC_2000 %>%
-  group_by(year(ref_date_2)) %>% 
+lfs_BC_2000 |>
+  group_by(year(ref_date_2)) |> 
   summarise(annual_average = mean(VALUE))
 
 ```
@@ -493,8 +493,8 @@ To calculate the **monthly** average over the 20 years in our data, we can use t
 ```{r}
 
 # solution 1
-lfs_BC_2000 %>%
-  group_by(month(ref_date_2)) %>% 
+lfs_BC_2000 |>
+  group_by(month(ref_date_2)) |> 
   summarise(monthly_average = mean(VALUE))
 
 ```
@@ -506,9 +506,9 @@ The `month()` function also includes the argument `label = TRUE`, which adds the
 ```{r}
 
 # solution 2
-lfs_BC_2000 %>%
-  mutate(ref_month = month(ref_date_2, label = TRUE)) %>% 
-  group_by(ref_month) %>% 
+lfs_BC_2000 |>
+  mutate(ref_month = month(ref_date_2, label = TRUE)) |> 
+  group_by(ref_month) |> 
   summarise(monthly_average = mean(VALUE))
 
 ```
@@ -527,10 +527,10 @@ Of course the answer is "Yes!" Visualization is an important tool in exploratory
 
 ```{r}
 
-lfs_BC_2000 %>%
-  mutate(ref_month = month(ref_date_2)) %>% 
-  group_by(ref_month) %>% 
-  summarise(monthly_average = mean(VALUE)) %>% 
+lfs_BC_2000 |>
+  mutate(ref_month = month(ref_date_2)) |> 
+  group_by(ref_month) |> 
+  summarise(monthly_average = mean(VALUE)) |> 
   # now plot the resulting summary table
   ggplot(aes(x = ref_month, y = monthly_average)) +
   geom_line()
@@ -545,10 +545,10 @@ An effective solution is specify the type of scale in the x-axis, using `scale_x
 
 ```{r}
 
-lfs_BC_2000 %>%
-  mutate(ref_month = month(ref_date_2)) %>% 
-  group_by(ref_month) %>% 
-  summarise(monthly_average = mean(VALUE)) %>% 
+lfs_BC_2000 |>
+  mutate(ref_month = month(ref_date_2)) |> 
+  group_by(ref_month) |> 
+  summarise(monthly_average = mean(VALUE)) |> 
   ggplot(aes(x = ref_month, y = monthly_average)) +
   geom_line() +
   # add x-axis scale
@@ -679,14 +679,14 @@ df_dates <- tribble(~event, ~event_date,
         "event_3", "2020-04-15"
         )
 
-df_dates <- df_dates %>% 
+df_dates <- df_dates |> 
   mutate(event_date = ymd(event_date))
 
 df_dates
 
-df_summary <- df_dates %>% 
+df_summary <- df_dates |> 
   # create a new variable with the lag from the previous record
-  mutate(lag_date = lag(event_date)) %>% 
+  mutate(lag_date = lag(event_date)) |> 
   # calculate the different between the two dates
   mutate(days_between = event_date - lag_date)
 
@@ -700,10 +700,10 @@ To calculate the number of years (instead of days), we the need to convert "days
 
 ```{r}
 
-df_summary %>% 
+df_summary |> 
   mutate(years_between = as.integer(days_between)/365.25)
 
-df_summary %>% 
+df_summary |> 
   summarise(avg_days_between_events = mean(days_between, na.rm = TRUE))
 
 ```

@@ -27,7 +27,7 @@ library(gapminder)
 Filter so that only the records for Canada are included; assign to new object "gapminder_canada"
 
 ```{r}
-gapminder_canada <- gapminder %>% 
+gapminder_canada <- gapminder |> 
   filter(country == "Canada")
   
 ```

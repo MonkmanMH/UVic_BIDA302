@@ -122,7 +122,7 @@ result <- map_df(all_files, function(x) {
              #Get all the sheet names
              all_sheets <- readxl::excel_sheets(x)  
              #read the excel file with one sheet at a time
-             map_df(all_sheets, ~readxl::read_excel(x, sheet = .x) %>% 
+             map_df(all_sheets, ~readxl::read_excel(x, sheet = .x) |> 
                        #add columns for filename and sheetname
                        dplyr::mutate(filename = basename(x), sheetname = .x))
 })

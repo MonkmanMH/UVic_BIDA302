@@ -105,7 +105,7 @@ First, let's filter the {gapminder} data so we have a smaller piece to work with
 
 ```{r}
 
-gm_3 <- gapminder %>%
+gm_3 <- gapminder |>
   filter(year == 2007,
          country %in% c("Canada", "Japan", "New Zealand"))
 
@@ -117,7 +117,7 @@ Now we can create multiple strings, one for each of the rows in the `gm_3` tibbl
 
 ```{r}
 
-gm_3 %>%
+gm_3 |>
   glue_data("{country} has a life expectancy of {lifeExp}.")
 
 ```
@@ -127,7 +127,7 @@ We can also apply functions within the curly braces:
 
 ```{r}
 
-gm_3 %>%
+gm_3 |>
   glue_data("{country} has a life expectancy of {round(lifeExp, 1)}.")
 
 ```
@@ -147,8 +147,8 @@ Create a new variable in the data frame by gluing the variables `species` and `g
 ```{r}
 # solution
 
-starwars %>% 
-  mutate(species_gender = glue("{species} - {gender}")) %>% 
+starwars |> 
+  mutate(species_gender = glue("{species} - {gender}")) |> 
   select(name, species, gender, species_gender)
 
 ```
@@ -208,14 +208,14 @@ deaths
 If we wanted to filter the cases where the individual had children, we have to surround the variable name in backticks, since there is a space. We also have to remember to capitalize the "H" (although this is less of an issue, as RStudio's autofill is not sensitive to case).
 
 ```{r}
-deaths %>% 
+deaths |> 
   filter(`Has kids` == TRUE)
 ```
 
 Using the `clean_names()` function from {janitor} gives us a solution, in that it makes the variable names consistently lower-case, and with the spaces replaced by an underscore ("_"). 
 
 ```{r}
-deaths <- deaths %>% 
+deaths <- deaths |> 
   janitor::clean_names()
 
 deaths
@@ -224,7 +224,7 @@ deaths
 This then means that our filter statement does not need backticks around the variable name.
 
 ```{r}
-deaths %>% 
+deaths |> 
   filter(has_kids == TRUE)
 ```
 
@@ -248,8 +248,8 @@ roster_raw
 As we can see, this table has messy names and a messy structure. In the code below, we'll use the `clean_names()` and `remove_empty()` functions from {janitor}.
 
 ```{r}
-roster <- roster_raw %>%
-  clean_names() %>%
+roster <- roster_raw |>
+  clean_names() |>
   remove_empty(c("rows", "cols")) 
 
 roster
@@ -260,11 +260,11 @@ roster
 We can also extend the pipe with other cleaning functions. Note that `excel_numeric_to_date()` is another {janitor} function, while `coalesce()` is from {dplyr} (and is similar to the SQL function of the same name).
 
 ```{r}
-roster <- roster_raw %>%
-  clean_names() %>%
-  remove_empty(c("rows", "cols")) %>%
+roster <- roster_raw |>
+  clean_names() |>
+  remove_empty(c("rows", "cols")) |>
   mutate(hire_date = excel_numeric_to_date(hire_date),
-         cert = coalesce(certification_9, certification_10)) %>% # from dplyr
+         cert = coalesce(certification_9, certification_10)) |> # from dplyr
   select(-certification_9, -certification_10) # drop unwanted columns
 
 roster
@@ -299,7 +299,7 @@ coalesce(y, x)
 We can find the cases where there are duplicates in the data records. In this case, we are looking for duplicate names:
 
 ```{r}
-roster %>% get_dupes(first_name, last_name)
+roster |> get_dupes(first_name, last_name)
 ```
 
 
@@ -307,7 +307,7 @@ Find the cases where the subject is duplicated.
 
 ```{r}
 # solution
-roster %>% get_dupes(subject)
+roster |> get_dupes(subject)
 ```
 
 
@@ -318,7 +318,7 @@ The {janitor} package also offers some simple tabulations with the `tabyl()` fun
 One variable returns counts and percentages:
 
 ```{r}
-roster %>%
+roster |>
   tabyl(full_time)
 ```
 
@@ -327,7 +327,7 @@ If we use two variables, it takes the first one as the rows, and the second as t
 
 ```{r}
 
-roster %>%
+roster |>
   tabyl(full_time, subject)
 
   
@@ -338,7 +338,7 @@ And for three variables, it makes separate tables based on the third one, then c
 
 ```{r}
 
-roster %>%
+roster |>
   tabyl(full_time, subject, employee_status)
 
 ```  
@@ -347,7 +347,7 @@ There's also an option to drop levels with zero cases:
 
 ```{r}
 
-roster %>%
+roster |>
   tabyl(full_time, subject, employee_status, show_missing_levels = FALSE)
 
 ```  
@@ -359,12 +359,12 @@ You can also add totals and percentages with the `adorn_()` functions. This exam
 * Note: I found the naming of the totals a bit counter-intuitive. `adorn_totals("row")` creates a new row with the total for that column, while `adorn_totals("col")` is a new column with the row total.
  
 ```{r}
-roster %>%
-  tabyl(employee_status, full_time) %>%
-  adorn_totals("col") %>%  
-  adorn_percentages() %>%
-  adorn_pct_formatting() %>%
-  adorn_ns() %>%
+roster |>
+  tabyl(employee_status, full_time) |>
+  adorn_totals("col") |>  
+  adorn_percentages() |>
+  adorn_pct_formatting() |>
+  adorn_ns() |>
   adorn_title("combined")
 ```
 

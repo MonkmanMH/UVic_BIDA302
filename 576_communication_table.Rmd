@@ -24,7 +24,7 @@ The look of the default table in R markdown is not all that attractive. Here's a
 
 ```{r moneyball_oakland}
 
-oakland_99 <- mlb_pay_wl %>% 
+oakland_99 <- mlb_pay_wl |> 
   filter(tm == "OAK" & year_num < 2009)
 
 oakland_99
@@ -42,12 +42,12 @@ First, {kableExtra} is an extension to the {kable} tool that is part of "knittin
 library(kableExtra)
 
 # print table with {kableExtra} formatting  
-oakland_99 %>%
+oakland_99 |>
   # create table, add title
-  kable(caption = "Oakland Athletics, 1999-2008") %>%
-  kable_styling(bootstrap_options = "striped", font_size = 10) %>%
+  kable(caption = "Oakland Athletics, 1999-2008") |>
+  kable_styling(bootstrap_options = "striped", font_size = 10) |>
   # make variable names bold and large
-  row_spec(0, bold = T, font_size = 14) %>%
+  row_spec(0, bold = T, font_size = 14) |>
   # make 2002 season (row 4) bold
   row_spec(4, bold = T) 
 ```  
@@ -63,8 +63,8 @@ Another table formating package is {flextable}.
 ```{r}
 library(flextable)
 
-oakland_99 %>% 
-  flextable() %>% 
+oakland_99 |> 
+  flextable() |> 
   add_footer_row(values = "Source: baseball-reference.com", colwidths = 8)
 
 ```

@@ -69,11 +69,11 @@ The next step is to identify the teams at the extremes of each quadrant—top wi
 
 ```{r}
 
-mlb_2002 <- mlb_pay_wl %>% 
+mlb_2002 <- mlb_pay_wl |> 
   filter(year_num == 2002)
 
 # add salary group
-mlb_2002 <- mlb_2002 %>% 
+mlb_2002 <- mlb_2002 |> 
   mutate(salary_grp = case_when(
     pay_index >= 100 ~ "above",
     pay_index < 100 ~ "below"
@@ -81,7 +81,7 @@ mlb_2002 <- mlb_2002 %>%
 
 
 # add quadrant
-mlb_2002 <- mlb_2002 %>% 
+mlb_2002 <- mlb_2002 |> 
   mutate(team_quad = case_when(
     pay_index >= 100 & w_l_percent >= 0.5 ~ "I",
     pay_index < 100 & w_l_percent >= 0.5 ~ "II",
@@ -89,8 +89,8 @@ mlb_2002 <- mlb_2002 %>%
     pay_index >= 100 & w_l_percent < 0.5 ~ "IV"
   ))
 
-team_for_label <- mlb_2002 %>% 
-  group_by(salary_grp) %>% 
+team_for_label <- mlb_2002 |> 
+  group_by(salary_grp) |> 
   filter(w_l_percent == max(w_l_percent) |
          w_l_percent == min(w_l_percent))
 
@@ -244,7 +244,7 @@ Another way to tell the "Moneyball" story would be to identify the Oakland Athle
 
 ```{r}
 
-oakland <- mlb_pay_wl %>% 
+oakland <- mlb_pay_wl |> 
   filter(tm == "OAK")
 
 moneyball_plot +
@@ -299,8 +299,8 @@ First, let's add "year_num" as a colour variable to a subset of our Moneyball pl
 **Important:**  In this example, "year_num" is a specified as a "character" variable, it is therefore a discrete variable—but beware: if it had been read as a numeric variable, it would be continuous!
 
 ```{r}
-mlb_pay_wl %>% 
-  filter(year_num > "2014") %>% 
+mlb_pay_wl |> 
+  filter(year_num > "2014") |> 
   ggplot(aes(x = pay_index, y = w_l_percent, color = year_num)) + 
   geom_point()
 
@@ -320,8 +320,8 @@ And for even more information about the use of colorbrewer.org scales, see this 
 
 ```{r}
 
-mlb_pay_wl %>% 
-  filter(year_num > "2014") %>% 
+mlb_pay_wl |> 
+  filter(year_num > "2014") |> 
   ggplot(aes(x = pay_index, y = w_l_percent, colour = year_num)) + 
   geom_point() +
   # add ColorBrewer palette

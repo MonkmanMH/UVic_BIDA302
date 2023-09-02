@@ -459,8 +459,8 @@ Filter by country that has "land" in the name
 
 gapminder <- gapminder::gapminder 
 
-gapminder %>% 
-  filter(str_detect(country, "land")) %>% 
+gapminder |> 
+  filter(str_detect(country, "land")) |> 
   distinct(country)
 
 ```
@@ -469,8 +469,8 @@ What about those countries where "land" is at the end of the name?
 
 ```{r}
 
-gapminder %>% 
-  filter(str_detect(country, "land$")) %>% 
+gapminder |> 
+  filter(str_detect(country, "land$")) |> 
   distinct(country)
 
 ```
@@ -481,8 +481,8 @@ Or those where "land" is at the end and is preceded by only three letters?
 
 pattern_string <- "^\\w{3}land$"
 
-gapminder %>% 
-  filter(str_detect(country, pattern_string)) %>% 
+gapminder |> 
+  filter(str_detect(country, pattern_string)) |> 
   distinct(country)
 
 ```
@@ -518,24 +518,24 @@ head(penguins)
 Here is a way to select the variables that have the length measurements:
 
 ```{r}
-penguins %>% 
-  select(contains("length")) %>%
+penguins |> 
+  select(contains("length")) |>
   head()
 ```
 
 And two ways to select those with the bill measurements:
 
 ```{r}
-penguins %>% 
-  select(starts_with("bill_")) %>%
+penguins |> 
+  select(starts_with("bill_")) |>
   head()
 ```
 
 This second case incorporates regex into the selection code, with the "^" for the start of the string:
 
 ```{r}
-penguins %>% 
-  select(matches("^b")) %>%
+penguins |> 
+  select(matches("^b")) |>
   head()
 ```
 
@@ -561,9 +561,9 @@ If we plot the top 10 municipalities (remember the `slice()` function!), we see 
 
 ```{r}
 
-ggplot(housing1_long %>% 
-  group_by(community) %>% 
-  tally(units, sort = TRUE, name = "3 Year Total") %>% 
+ggplot(housing1_long |> 
+  group_by(community) |> 
+  tally(units, sort = TRUE, name = "3 Year Total") |> 
   slice(1:10), aes(x = reorder(community, `3 Year Total`), y = `3 Year Total`))+
   geom_col() +
   coord_flip()
@@ -598,7 +598,7 @@ str_count(city_name, "\\*")
 In a pipe with our dataframe, it would look like this:
 
 ```{r}
-housing1_long <- housing1_long %>% 
+housing1_long <- housing1_long |> 
   mutate(community = str_remove_all(community, "\\*"))
 
 ```
@@ -607,7 +607,7 @@ Let's filter for North Vancouver to check the success of our efforts:
 
 
 ```{r}
-housing1_long %>% 
+housing1_long |> 
   filter(community == "North Vancouver")
 ```
 
@@ -618,10 +618,10 @@ There's another {stringr} function for this: `str_trim()`.
 * https://stringr.tidyverse.org/reference/str_trim.html
 
 ```{r}
-housing1_long <- housing1_long %>% 
+housing1_long <- housing1_long |> 
   mutate(community = str_trim(community))
 
-housing1_long %>% 
+housing1_long |> 
   filter(community == "North Vancouver")
 
 ```
@@ -638,9 +638,9 @@ Now our plot will have clean names:
 
 ```{r}
 
-ggplot(housing1_long %>% 
-  group_by(community) %>% 
-  tally(units, sort = TRUE, name = "3 Year Total") %>% 
+ggplot(housing1_long |> 
+  group_by(community) |> 
+  tally(units, sort = TRUE, name = "3 Year Total") |> 
   slice(1:10), aes(x = reorder(community, `3 Year Total`), y = `3 Year Total`))+
   geom_col() +
   coord_flip()
@@ -686,7 +686,7 @@ But there's a solution designed for tabular data, in the {tidyr} package: `separ
 
 ```{r}
 
-bced %>% 
+bced |> 
   separate(X1, "\t", into = c("ed_tla", "ed_name"))
 
 ```
@@ -695,7 +695,7 @@ If we add the `remove = ` argument set to `FALSE`, the original variable remains
 
 ```{r}
 
-bced %>% 
+bced |> 
   separate(X1, "\t", into = c("ed_tla", "ed_name"), remove = FALSE)
 
 ```
@@ -712,7 +712,7 @@ bced_space
 
 ```{r}
 
-bced_space %>% 
+bced_space |> 
   separate(X1, " ", into = c("ed_tla", "ed_name"))
 
 ```
@@ -725,7 +725,7 @@ The solution is to use the `extra = "merge"` argument. (Note that the default is
 
 ```{r}
 
-bced_space %>% 
+bced_space |> 
   separate(X1, " ", into = c("ed_tla", "ed_name"), extra = "merge")
 
 ```
