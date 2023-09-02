@@ -36,7 +36,7 @@ In this section, we will begin to work with all three transformations.
 
 ### Reading: Data wrangling {#data-wrangle-reading}
 
-Please refer to [_R for Data Science_, Data transformation](https://r4ds.had.co.nz/transform.html) for more information about this section.
+Please refer to [_R for Data Science_, 2nd ed., Data transformation](https://r4ds.hadley.nz/data-transform) for more information about this section.
 
 
 For this section, and for other exercises throughout this course, we will be using a subset of the Gapminder data. These data tables contain information about the countries of the world, and were used by Hans Rosling to explain that there have been significant changes in the quality of people's lives around the world.
@@ -123,14 +123,14 @@ Boolean operators can be combined with *and* or *or*.
 | &#124;  | *or, returns true if either preceding and following are true, else false* |
 
 
-> see [_R for Data Science_, "Comparisions"](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+> see [_R for Data Science_, 2nd ed., "Comparisions"](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
 
 
 
 
 ## Introducing the pipe operator ` |> `  {#data-wrangle-pipe}
 
-(see [_R for Data Science_, Pipes](https://r4ds.had.co.nz/pipes.html) for a deep dive into pipes)
+(see [_R for Data Science_, 2nd ed., The Pipe](https://r4ds.hadley.nz/data-transform.html#sec-the-pipe) for a deep dive into pipes)
 
 The pipe operator ` |> ` allows us to name the data frame first, and then have the next function work with the outcome of the first line.
 
@@ -717,7 +717,7 @@ Boolean operators can be combined with *and* or *or*.
 | `&`     | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
-.footnote[see [_R for Data Science_, "Comparisions""](https://r4ds.had.co.nz/transform.html#comparisons) and ["Logical Operators"](https://r4ds.had.co.nz/transform.html#logical-operators).]
+.footnote[see [_R for Data Science_, 2nd ed., "Comparisions""](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
 
 
 

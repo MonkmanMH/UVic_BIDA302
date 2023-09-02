@@ -10,7 +10,7 @@ https://creativecommons.org/licenses/by/4.0/  -->
 
 ## The data science process
 
-This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_](https://r4ds.had.co.nz/).
+This walkthrough follows the data science process, as described by Hadley Wickham and Garrett Grolemund in [_R for Data Science_, 2nd ed.](https://r4ds.hadley.nz/intro).
 
 
 ![_The data science process_](static/img/data-science.png)

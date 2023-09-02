@@ -23,9 +23,9 @@ At the end of this lesson, learners will be able to:
 ### Readings {#why-code-readings}
 
 
-* [_R for Data Science_, Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+* [_R for Data Science_ (2nd ed.), Workflow: basics](https://r4ds.hadley.nz/workflow-basics)
 
-* [_R for Data Science_, Data Transformation](https://r4ds.had.co.nz/transform.html)
+* [_R for Data Science_ (2nd ed.), Data Transformation](https://r4ds.hadley.nz/data-transform)
 
 
 

@@ -294,7 +294,7 @@ If you opened this file by opening the project and then clicking on the file, yo
 
 For more about RStudio projects:
 
-* the chapter ["Workflow: projects" in _R For Data Science_](https://r4ds.had.co.nz/workflow-projects.html)
+* the chapter ["Workflow: scripts & projects" in _R For Data Science_, 2nd ed.](https://r4ds.hadley.nz/workflow-scripts.html#projects)
 
 * ["Creating a New RStudio Project" in the _R Cookbook (2nd ed.)_](https://rc2e.com/navigatingthesoftware#recipe-CreateProject)
 
