@@ -124,10 +124,6 @@ In R (as with other programming languages), data is stored as different variable
 
 ### Readings
 
-Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
-
-* [5.2.3 Missing values](https://r4ds.had.co.nz/transform.html#missing-values)
-
 
 J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutput)
 

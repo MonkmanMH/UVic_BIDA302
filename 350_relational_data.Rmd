@@ -34,7 +34,7 @@ library(nycflights13)
 
 This hands-on exercise draws heavily on the following sources:
 
-* ["Relational data" at _R for Data Science_](https://r4ds.had.co.nz/relational-data.html)
+* ["Relational data" at _R for Data Science_, 1st ed.](https://r4ds.had.co.nz/relational-data.html)
 
 * ["Two-table verbs", article at the {dplyr} website](https://dplyr.tidyverse.org/articles/two-table.html)
 

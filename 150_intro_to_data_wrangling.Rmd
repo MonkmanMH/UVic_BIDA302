@@ -175,7 +175,8 @@ gapminder |>
 ```
 
 > **IMPORTANT NOTE**
-> The pipe operator `|>` is in base R, but it wasn't always. Prior to its introduction there was a pipe symbol available through the {magrittr} package, which looks like this: `%>%`. You will still see this version in older texts (such as the first edition of _R for Data Science_) and course materials (such as BIDA302!)
+> The pipe operator `|>` is in base R, but it wasn't always. Prior to its introduction there was a pipe symbol available through the {magrittr} package, which looks like this: `%>%`. You will still see this version in older texts (such as the first edition of _R for Data Science_) and course materials. It was used in BIDA302, so if you come across older course material, it might use the `%>%` pipe operator.
+
 
 ## Filter for rows
 

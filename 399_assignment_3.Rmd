@@ -112,11 +112,11 @@ Plot the total number of housing units built in B.C. by municipality, but only t
 
 **Hints and resources:**
 
-* The [Data visualisation](https://r4ds.had.co.nz/data-visualisation.html) and [Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html) chapters of _R for Data Science_ might be handy references
+* The [Data visualisation](https://r4ds.hadley.nz/data-visualize) and [Exploratory data analysis](https://r4ds.hadley.nz/eda) chapters of _R for Data Science_, 2nd ed. might be handy references
 
 * The [{ggplot2} reference pages](https://ggplot2.tidyverse.org/)
 
-* The [Factors](https://r4ds.had.co.nz/factors.html) chapter of _R for Data Science_ 
+* The [Factors](https://r4ds.hadley.nz/factors) chapter of _R for Data Science_, 2nd ed.
  
 * The [{forcats} reference pages](https://forcats.tidyverse.org/)
  

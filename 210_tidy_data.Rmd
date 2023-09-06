@@ -24,11 +24,11 @@ https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 ## Reading  {#tidy-data-reading}
 
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+Garrett Grolemund and Hadley Wickham, _R for Data Science_, 2nd ed.
 
-* [12. Tidy data](https://r4ds.had.co.nz/tidy-data.html), sections 12.1 to 12.3
+* [6. Data tidying](https://r4ds.hadley.nz/data-tidy)
 
-* [6. Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+* [7.1 Workflow: scripts](https://r4ds.hadley.nz/workflow-scripts.html#scripts)
 
 
 
