@@ -25,7 +25,7 @@ options(width = 100, dplyr.width = 100)
 
 ## Readings and reference {#strings-reading}
 
-["Strings" in _R for Data Science_](https://r4ds.had.co.nz/strings.html) by Hadley Wickham and Garrett Grolemund
+["Strings" in _R for Data Science_ (2nd ed.)](https://r4ds.hadley.nz/strings) by Hadley Wickham and Garrett Grolemund
 
 ["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
 

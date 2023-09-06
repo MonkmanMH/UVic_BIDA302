@@ -25,7 +25,7 @@ library(gapminder)
 
 ### Reading & Resources {#iteration-reading}
 
-[_R4DS_, "21 Iteration"](https://r4ds.had.co.nz/iteration.html)
+[_R for Data Science_ (2nd ed.), "27 Iteration"](https://r4ds.hadley.nz/iteration)
 
 JD Long and Paul Teetor, [R Cookbook, 2nd ed., "Iterating with a Loop"](https://rc2e.com/simpleprogramming#recipe-for_loop), 2019
 

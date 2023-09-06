@@ -49,7 +49,7 @@ Another aspect of workflow is version control (think "track changes" for program
 
 ### Modeling
 
-We covered two of the four chapters on statistical modeling that are included in _R for Data Science_. There's a lot more!
+We covered two of the four chapters on statistical modeling that are included in _R for Data Science_ (1st edition). There's a lot more!
 
 See ["Part IV Model" in _R for Data Science_, starting at 22 "Model: Introduction"](https://r4ds.had.co.nz/model-intro.html)
 
@@ -106,7 +106,7 @@ R, and specifically the package {purrr}, supports a concept called "functional p
 
 > Of course, someone has to write loops. It doesn’t have to be you. — Jenny Bryan
 
-See ["Iteration" in _R for Data Science_, starting at 21.4 "For loops vs. functionals"](https://r4ds.had.co.nz/iteration.html)
+See ["Iteration" in _R for Data Science_ (2nd ed.), starting at 21.4 "For loops vs. functionals"](https://r4ds.had.co.nz/iteration.html)
 
 When we learned the concept of a for-loop earlier, we combined three Excel files. Here's how we would do that using the `map_()` functions within the {purrr} package, with the added twists of: 
 
