@@ -145,7 +145,7 @@ ggplot(mlb_2002, aes(x = pay_index, y = w_l_percent)) +
 
 
 
-For another example of this sort of labeling, see [_R for Data Science_ (2nd ed.), "Graphics for Communication: Annotations"](https://r4ds.hadley.nz/communication#annotations).
+For another example of this sort of labeling, see [Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, _R for Data Science_ (2nd ed.), "Graphics for Communication: Annotations"](https://r4ds.hadley.nz/communication#annotations).
 
 
 ## Annotations
@@ -548,7 +548,7 @@ For more information about modifying the axes, see the ggplot FAQ: https://ggplo
 
 ## Reading & reference  {#communication-plot-reading}
 
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
 
 * ["Visualize" section: Chapters 10-12](https://r4ds.hadley.nz/visualize)
 

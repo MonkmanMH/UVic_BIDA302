@@ -501,7 +501,7 @@ This hands-on exercise draws heavily on material at the following
 
 * The [{forcats} reference site](https://forcats.tidyverse.org/)
 
-* ["Factors" in _R for Data Science_, 2nd ed.](https://r4ds.hadley.nz/factors) by Hadley Wickham & Garrett Grolemund
+* ["Factors" in _R for Data Science_, 2nd ed.](https://r4ds.hadley.nz/factors) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund
 
 * ["Be the boss of your factors" at STAT545](https://stat545.com/factors-boss.html)
 

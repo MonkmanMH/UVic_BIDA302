@@ -36,7 +36,7 @@ In this section, we will begin to work with all three transformations.
 
 ### Reading: Data wrangling {#data-wrangle-reading}
 
-Please refer to [_R for Data Science_, 2nd ed., Data transformation](https://r4ds.hadley.nz/data-transform) for more information about this section.
+Please refer to Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund [_R for Data Science_, 2nd ed., Data transformation](https://r4ds.hadley.nz/data-transform) for more information about this section.
 
 
 For this section, and for other exercises throughout this course, we will be using a subset of the Gapminder data. These data tables contain information about the countries of the world, and were used by Hans Rosling to explain that there have been significant changes in the quality of people's lives around the world.
@@ -123,7 +123,7 @@ Boolean operators can be combined with *and* or *or*.
 | &#124;  | *or, returns true if either preceding and following are true, else false* |
 
 
-> see [_R for Data Science_, 2nd ed., "Comparisions"](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
+> see Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund [_R for Data Science_, 2nd ed., "Comparisions"](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
 
 
 
@@ -718,7 +718,7 @@ Boolean operators can be combined with *and* or *or*.
 | `&`     | *and, returns true if preceeding and following are both true, else false* |
 | &#124;  | *or, returns true if either preceeding and following are true, else false* |
 
-.footnote[see [_R for Data Science_, 2nd ed., "Comparisions""](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
+.footnote[see Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund [_R for Data Science_, 2nd ed., "Comparisions""](https://r4ds.hadley.nz/logicals.html#comparisons) and ["Boolean algebra"](https://r4ds.hadley.nz/logicals.html#boolean-algebra).]
 
 
 

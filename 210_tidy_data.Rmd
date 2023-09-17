@@ -24,7 +24,7 @@ https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 ## Reading  {#tidy-data-reading}
 
-Garrett Grolemund and Hadley Wickham, _R for Data Science_, 2nd ed.
+Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, _R for Data Science_, 2nd ed.
 
 * [6. Data tidying](https://r4ds.hadley.nz/data-tidy)
 

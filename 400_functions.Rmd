@@ -439,8 +439,7 @@ roll2(number_of_dice = 3)
 
 ## Readings and reference
 
-["Functions" in _R for Data Science_, 2nd ed.](https://r4ds.hadley.nz/functions) by Hadley Wickham and Garrett Grolemund
-
+["Functions" in _R for Data Science_, 2nd ed.](https://r4ds.hadley.nz/functions) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund
 
 ["Writing your own Functions" in _Hands-on Programming with R_](https://rstudio-education.github.io/hopr/basics.html#write-functions), by Garrett Grolemund
 
