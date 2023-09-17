@@ -87,6 +87,10 @@ We spent quite a bit of time working with {ggplot2}, adding more features to our
 
 The [R Graph Gallery](https://www.r-graph-gallery.com/index.html) is another resource that can inspire and help you make the specific chart you want.
 
+Here's some additional resources to extend your learning of data visualization with {ggplot2}:
+
+* The materials for Cédric Scherer's workshop [_Graphic Design with ggplot2: How to Create Engaging and Complex Visualizations in R_](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) (2022-07-25)
+
 #### Mapping
 
 There are also tools for working with spatial data, creating maps and working with GIS files in R...but that is well beyond the scope of this course! If you are interested in exploring this topic, here are some resources:
