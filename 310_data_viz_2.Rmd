@@ -327,7 +327,9 @@ gapminder |>
 
 ```
 
-In this plot, we see that in 1950, life expectancy was higher in Canada than the other two countries, but by the early 1970s Japanese people had longer life expectancy. While China still has a lower life expectancy than both, "China's growth in life expectancy between 1950 and 1980 ranks as among the most rapid sustained increases in documented global history."^[Kimberly Singer Babiarz, Karen Eggleston, Grant Miller, and Qiong Zhang, "An exploration of China's mortality decline under Mao: A provincial analysis, 1950–80", _Popul Stud (Camb)._ 2015 Mar; 69(1): 39–56, DOI: 10.1080/00324728.2014.972432. Author manuscript: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331212/]
+In this plot, we see that in 1950, life expectancy was higher in Canada than the other two countries, but by the early 1970s Japanese people had longer life expectancy. Now, Japanese people have the longest life expectancy of any country in the world.^[Shoichiro Tsugane, ["Why has Japan become the world’s most long-lived country: insights from a food and nutrition perspective"](https://www.nature.com/articles/s41430-020-0677-5), _European Journal of Clinical Nutrition_ volume 75, pages 921–928 (2021)] 
+
+While China still has a lower life expectancy than both, "China's growth in life expectancy between 1950 and 1980 ranks as among the most rapid sustained increases in documented global history."^[Kimberly Singer Babiarz, Karen Eggleston, Grant Miller, and Qiong Zhang, "An exploration of China's mortality decline under Mao: A provincial analysis, 1950–80", _Popul Stud (Camb)._ 2015 Mar; 69(1): 39–56, DOI: 10.1080/00324728.2014.972432. Author manuscript: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331212/]
 
 
 ## Formatting our plot
