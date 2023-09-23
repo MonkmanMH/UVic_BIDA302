@@ -456,16 +456,6 @@ I'm not sure it's all that different from the default {ggplot2} colour!
 
 ---
 
-## Exercises - plotting
-
-This short interactive tutorials will provide some additional practice in using {ggplot2} functions.
-
-[BIDA302: Plotting with {ggplot2}](https://monkmanmh.shinyapps.io/BIDA302_3_2_plot/#section-plotting-with-ggplot2)
-
-* an introduction to plotting
-
----
-
 
 ## Reading and reference {#data-viz-2-reading}
 
