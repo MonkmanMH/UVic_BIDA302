@@ -26,9 +26,9 @@ https://github.com/datacarpentry/r-socialsci/blob/master/LICENSE.md -->
 
 Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, _R for Data Science_, 2nd ed.
 
-* [6. Data tidying](https://r4ds.hadley.nz/data-tidy)
+* [5. Data tidying](https://r4ds.hadley.nz/data-tidy)
 
-* [7.1 Workflow: scripts](https://r4ds.hadley.nz/workflow-scripts.html#scripts)
+* [6.1 Workflow: scripts](https://r4ds.hadley.nz/workflow-scripts.html#scripts)
 
 
 
