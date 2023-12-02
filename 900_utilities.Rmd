@@ -169,7 +169,7 @@ The `here()` package is used as part of the Workflow chapter.
 
 ## `{janitor}`  ·
 
-Reference page: https://garthtarr.github.io/meatR/janitor.html
+Reference page: https://sfirke.github.io/janitor/
 
 > The janitor package is an R package that has simple functions for examining and cleaning dirty data. It was built with beginning and intermediate R users in mind and is optimised for user-friendliness.
 
@@ -197,7 +197,55 @@ Reference page: https://garthtarr.github.io/meatR/janitor.html
 
 This is going to demonstrate {janitor} `clean_names()` function.
 
-First we read in the valid rows from the "deaths.xlsx" file (part of the [{readxl} package] https://readxl.tidyverse.org/).
+The function
+
+* changes the capitalization to lower case
+
+* replaces spaces and periods with underscores ("_")
+
+* changes unusual characters (e.g. percent) with text variations
+
+* removes non-standard characters (e.g. dollar signs)
+
+
+```{r}
+# Create a data.frame with dirty names
+test_df <- as.data.frame(matrix(ncol = 7))
+names(test_df) <- c(
+  # snake case
+  "firstName",
+  # non-standard characters
+  "ábc@!*", 
+  # percent and parentheses
+  "% successful (2009)",
+  # repeated name, with period separator
+  "REPEAT.VARIABLE", 
+  "REPEAT.VARIABLE", 
+  # two variables with blank for name
+  "",
+  "")
+
+test_df
+```
+
+
+Now we apply the `clean_names()` function:
+
+```{r}
+clean_df <- test_df  |> 
+  janitor::clean_names()
+
+clean_df
+
+```
+
+Compare the cleaned variable names with those in the original dataframe. What's changed?
+
+
+
+### another `clean_names()` example
+
+In this example, we read in the valid rows from the "deaths.xlsx" file (part of the [{readxl} package] https://readxl.tidyverse.org/).
 
 ```{r}
 deaths <- read_excel("data/deaths.xlsx", skip = 4, n_max = 10)
@@ -205,14 +253,14 @@ deaths <- read_excel("data/deaths.xlsx", skip = 4, n_max = 10)
 deaths
 ```
 
-If we wanted to filter the cases where the individual had children, we have to surround the variable name in backticks, since there is a space. We also have to remember to capitalize the "H" (although this is less of an issue, as RStudio's autofill is not sensitive to case).
+If we wanted to filter the cases where the individual had children, we have to surround the `Has kids` variable name in backticks, since there is a space. We also have to remember to capitalize the "H" (although this is less of an issue if we are using RStudio, as the autofill is not sensitive to case).
 
 ```{r}
 deaths |> 
   filter(`Has kids` == TRUE)
 ```
 
-Using the `clean_names()` function from {janitor} gives us a solution, in that it makes the variable names consistently lower-case, and with the spaces replaced by an underscore ("_"). 
+Using the `clean_names()` function from {janitor} gives us a solution: it makes the variable names consistently lower-case, and with the spaces replaced by an underscore ("_"). 
 
 ```{r}
 deaths <- deaths |> 

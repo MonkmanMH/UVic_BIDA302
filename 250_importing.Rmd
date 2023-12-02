@@ -16,9 +16,9 @@ https://readxl.tidyverse.org/index.html -->
 
 ## Reading
 
-Hadley Wickham and Garrett Grolemund, [R for Data Science](https://r4ds.had.co.nz/)
+Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, _R for Data Science_, 2nd ed.
 
-* [11. Data import](https://r4ds.had.co.nz/data-import.html)
+* [8. Data import](https://r4ds.hadley.nz/data-import)
 
 
 J.D. Long and Paul Teetor, [R Cookbook (2nd ed.)](https://rc2e.com/inputandoutput)
@@ -273,9 +273,6 @@ The Excel portion of this chapter relies on some common methods to deal with how
 ***
 
 ## Reference Material
-
-You can find more details in _R for Data Science_:
-https://r4ds.had.co.nz/data-import.html
 
 
 {readr} 

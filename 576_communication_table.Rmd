@@ -78,13 +78,6 @@ Earlier in this course, covered in the chapter An example of a data analytics pr
 
 ## Reading & reference  {#communication-table-reading}
 
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
-
-* ["Communication" section](https://r4ds.had.co.nz/communicate-intro.html), Chapters 26 "Introduction" to 29 "R Markdown formats"
-
-
-
-
 **R Markdown**
 
 Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
@@ -104,13 +97,6 @@ Packages:
 * [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
 
 
-
-
-**flextable**
-
-* {flextable} - [flextable R package reference](https://davidgohel.github.io/flextable/index.html)
-
-* David Gohel, [flextable book](https://ardata-fr.github.io/flextable-book/)
 
 
 **gt**

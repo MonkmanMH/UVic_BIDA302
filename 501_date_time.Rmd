@@ -35,7 +35,7 @@ library(lubridate)  # part of the tidyverse, but not one of the core packages th
 
 ## Reading and reference {#date-time-reading}
 
-["Dates and times" in _R for Data Science_](https://r4ds.had.co.nz/dates-and-times.html) by Hadley Wickham and Garrett Grolemund
+["Dates and times" in _R for Data Science_ (2nd ed.)](https://r4ds.hadley.nz/datetimes) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund
 
 ["Strings and Dates" in _R Cookbook_ (2nd ed.)](https://rc2e.com/stringsanddates)
 
@@ -55,7 +55,7 @@ Working with dates and times is an important "tidy" skill, but it also comes int
 > * Does every day have 24 hours?
 > * Does every minute have 60 seconds?
 
-The answer to all of these is "no". (See the introduction to the ["Dates and Times"](https://r4ds.had.co.nz/dates-and-times.html#introduction-10) chapter of _R for Data Science_ for explanations.)
+The answer to all of these is "no". (See the introduction to the ["Dates and Times"](https://r4ds.hadley.nz/datetimes#introduction) chapter of Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund _R for Data Science_ (2nd ed.) for explanations.)
 
 To add to the challenge, there are different ways to represent a date. Here's some ways that March 28, 2020 might be written:
 

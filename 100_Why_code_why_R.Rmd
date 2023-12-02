@@ -122,7 +122,7 @@ Another part of the R community is the proliferation of hexagonal laptop sticker
 
 Here's Martin's laptop (October 2020):
 
-```{r, echo=FALSE, out.width = "67%", out.height="67%"}
+```{r graphics_100, echo=FALSE, out.width = "67%", out.height="67%"}
 knitr::include_graphics("static/img/Martin_laptop.jpg")
 ```
 

@@ -3,7 +3,7 @@ is licensed under a Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ -->
 
 
-# R Markdown {#r-markdown}
+# R Markdown {#rmarkdown}
 
 ## Setup
 
@@ -18,7 +18,7 @@ This document will introduce you to R Markdown notebooks, and give you some hand
 
 ## Reading & reference
 
-Garrett Grolemund and Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/)
+Garrett Grolemund and Hadley Wickham, _R for Data Science_, 1st ed.
 
 * [27. R Markdown](https://r4ds.had.co.nz/r-markdown.html)
 

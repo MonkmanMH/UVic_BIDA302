@@ -34,7 +34,7 @@ library(nycflights13)
 
 This hands-on exercise draws heavily on the following sources:
 
-* ["Relational data" at _R for Data Science_](https://r4ds.had.co.nz/relational-data.html)
+* ["Relational data" at _R for Data Science_, 1st ed.](https://r4ds.had.co.nz/relational-data.html)
 
 * ["Two-table verbs", article at the {dplyr} website](https://dplyr.tidyverse.org/articles/two-table.html)
 
@@ -152,14 +152,14 @@ table_one <- tribble(
   ~key_var, ~colour_t1,
      "key1", "red",
      "key2", "blue",
-     "key3", "yellow"
+     "key3", "yellow"    # note that this has key_var == "key3"
 )
 
 table_two <- tribble(
   ~key_var, ~fruit_t2,
      "key1", "apple",
      "key2", "blueberry",
-     "key4", "banana"
+     "key4", "banana"     # note that this has key_var == "key4"
 )
 
 
@@ -168,24 +168,18 @@ table_two <- tribble(
 
 ### Inner joins
 
-An inner join keeps only the observations where there is a **match on both sides**. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
+An inner join keeps only the observations where there is a **match on both sides**. The key variables is identified using the `by =` argument:
+
+
 
 ```{r 350_inner_join_1}
 
-inner_join(x = table_one, y = table_two, key = "key_var")
-
-```
-
-More commonly, you will see the key variables coded as `by =`:
-
-```{r}
-
-inner_join(table_one, table_two, by = "key_var")
+inner_join(x = table_one, y = table_two, by = "key_var")
 
 ```
 
 
-Note that in the circumstances where we are confident that the key variables are named the same in both tables, we can use a bit of coding short-hand and omit the `by =` argument. This the arrangement of arguments in the `left_join` function (and the other joins, too): `by =` is third, after `x` and `y`.
+Note that in the circumstances where we are confident that the key variables are named the same in both tables, we can use a bit of coding short-hand and omit the `by =` argument. You will see a message in the console (and your R markdown thumbnail) letting you know what variables are used for the join.
 
 ```{r}
 
@@ -612,6 +606,87 @@ orders_shipped |>
   mutate(filled_pct = round((dollar_value_shipment / dollar_value_order) *100, 1))
 
 ```
+
+
+### Joining three or more tables
+
+To join three or more tables, we join them sequentially—we can't join them in a single step.
+
+Let's revisit our original example tables, but where there's a consistent and add a third:
+
+
+```{r}
+table_one <- tribble(
+  ~key_var, ~colour_t1,
+     "key1", "red",
+     "key2", "blue",
+     "key3", "yellow"  # note that this has key_var == "key3"
+)
+
+table_two <- tribble(
+  ~key_var, ~fruit_t2,
+     "key1", "apple",
+     "key2", "blueberry",
+     "key4", "banana"  # note that this has key_var == "key4" 
+)
+
+table_three <- tribble(
+  ~key_var, ~food_t2,
+     "key1", "pie",
+     "key2", "muffin",
+     "key4", "bread"   # note that this has key_var == "key4"
+)
+
+```
+
+The first way we will join these tables is by joining `table_one` and `table_two`, and assigning the output to an intermediate table, `table_a`. 
+
+```{r}
+table_a <- full_join(table_one, table_two, by = "key_var")
+
+table_a
+```
+
+
+In the second step, `table_a` becomes the left table, and `table_three` is joined to it.
+
+```{r}
+table_b <- full_join(table_a, table_three, by = "key_var")
+
+table_b
+```
+
+
+
+
+
+::: {.rmdtip}
+#### Your turn
+
+
+How could you write this two-step join process using a pipe?
+
+
+<details>
+
+<summary>
+Solution
+</summary>
+
+
+```{r}
+
+table_c <- table_one |> 
+  full_join(table_two, by = "key_var") |> 
+  full_join(table_three, by = "key_var")
+
+table_c
+
+```
+
+
+</details>
+:::
 
 
 

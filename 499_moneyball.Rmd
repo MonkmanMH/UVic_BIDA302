@@ -140,6 +140,11 @@ The distance between that predicted point and the actual point is the error term
 The equation calculated by the `lm()` function, to create the model `model_mlb_pay_wl`, is:
 
 ```{r, echo=FALSE}
+# The {equatiomatic} is no longer on CRAN
+# - it can be installed from github:
+# - https://datalorax.github.io/equatiomatic/ 
+#remotes::install_github("datalorax/equatiomatic")
+
 equatiomatic::extract_eq(model_mlb_pay_wl, 
                          use_coefs = TRUE,
                          coef_digits = 4)
