@@ -57,8 +57,9 @@ oakland_99 |>
 ## The flextable package {#communication-table-flextable}
 
 
-Another table formating package is {flextable}. 
+Another table formatting package is {flextable}. 
 
+In this first code chunk, we create use `flextable()` to turn our dataframe into a flextable object, and add a "Source" annotation as a footer to our table.
 
 ```{r}
 library(flextable)
@@ -69,6 +70,42 @@ oakland_99 |>
 
 ```
 
+You'll notice that the year has a comma separating the thousands. This is because the "year" variable is numeric. In the chunk below, this is dealt with by using the `as.character()`, _before_ the `flextable()` function is applied.
+
+The code then adds a variety of formatting.
+
+Note that the functions are format-first. For example, font size is the function `fontsize()` and which row is an argument. This is opposite to what we see with {kableExtra}, where the row or column is specified with `row_spec()`, and then the formatting applied. 
+
+It's also possible to make formatting conditional on values in the table. In this code, the background colour is set using the `bg()` function, but only for those cases where wins (the "w" variable) is 100 or higher.
+
+```{r}
+## print table with {flextable} formatting  
+oakland_99 |> 
+  mutate(year_num = as.character(year_num)) |>
+  ## create table
+  flextable() |> 
+  ## add row striping
+  theme_zebra() |>
+  ## set font size to 10
+  fontsize(size = 10, part = "all") |>
+  ## but set variable names larger
+  fontsize(size = 14, part = "header") |>
+  ## make variable names bold
+  bold(part = "header") |>
+  ## make 2002 season (row 4) bold
+  # bold(i = 4) |>
+  ## or with conditional specification: where year_num is 2002
+  bold(~ `year_num` == 2002) |>
+  ## conditional background color as gold where wins are greater than 100
+  bg(~ w >= 100, bg = "gold") |>
+  ## set nicer column labels
+  set_header_labels(year_num = "Year", tm = "Team", attend_g = "Attendance", 
+                    est_payroll = "Payroll ($)", pay_index = "Pay Index",
+                    w = "Wins", l = "Losses", w_l_percent = "Win-Loss Percentage") |>
+  ## add footer
+  add_footer_row(values = "Source: baseball-reference.com", colwidths = 8)
+
+```
 
 ## Another example
 
