@@ -395,7 +395,9 @@ flipper_bill
 
 ```
 
-For the next step we will change the colour palette, using `scale_colour_manual()`. Remember that in the scale functions, the type of data matters—if it's a categorical variable, a "discrete" function will be required. 
+For the next step we will change the colour palette, using `scale_colour_manual()`. 
+
+>Remember that in the scale functions, the type of data matters—here we are working with a continuous variable, but if it's a categorical variable, a "discrete" function will be required. 
 
 ```{r}
 
@@ -467,6 +469,8 @@ flipper_bill_4 +
 We have much more control over the axes if we use the appropriate `scale_()` function. 
 
 * ggplot reference: https://ggplot2.tidyverse.org/reference/index.html#scales
+
+* see also Andrew Heiss, ["How to use natural and base 10 log scales in ggplot2"](https://www.andrewheiss.com/blog/2022/12/08/log10-natural-log-scales-ggplot/)
 
 
 
