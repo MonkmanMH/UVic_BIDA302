@@ -631,7 +631,7 @@ table_two <- tribble(
 )
 
 table_three <- tribble(
-  ~key_var, ~food_t2,
+  ~key_var, ~food_t3,
      "key1", "pie",
      "key2", "muffin",
      "key4", "bread"   # note that this has key_var == "key4"
