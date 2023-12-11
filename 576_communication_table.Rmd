@@ -143,5 +143,13 @@ Packages:
 * [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
 
 
+**flextable**
+
+* [{flextable} R package -- reference site](https://davidgohel.github.io/flextable/)
+
+* David Gohel, [Using the flextable R package](https://ardata-fr.github.io/flextable-book/index.html)
+
+
+
 
 -30-
