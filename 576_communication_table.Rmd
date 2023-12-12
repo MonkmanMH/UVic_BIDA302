@@ -12,6 +12,10 @@ This chunk of R code loads the packages that we will be using.
 
 ```{r setup_576, eval=FALSE}
 library(tidyverse)
+
+library(kableExtra)
+library(gt)
+library(flextable)
 ```
 
 
@@ -21,6 +25,13 @@ library(tidyverse)
 ## Introduction {#communication-table-intro}
 
 The look of the default table in R markdown is not all that attractive. Here's a summary table of the Oakland Athletics' seasons from 1999-2008.
+
+```{r, include=FALSE, message=FALSE}
+
+mlb_pay_wl <- read_csv(here::here("data", "mlb_pay_wl.csv"))
+
+```
+
 
 ```{r moneyball_oakland}
 
@@ -36,10 +47,23 @@ There are a few R packages that allow us to format a table like this, ready for 
 ## The kable package {#communication-table-kable}
 
 
-First, {kableExtra} is an extension to the {kable} tool that is part of "knitting" our R Markdown files.
+First, {kableExtra} is an extension to the {kable} tool that is part of "knitting" our R Markdown files. 
+
+To create a kable table, use the `kable()` function:
 
 ```{r}
-library(kableExtra)
+
+# print table with {kableExtra} formatting  
+oakland_99 |>
+  # create table
+  kable()
+
+```
+
+
+The package allow for additional formatting to be applied. In the code below, the bootstrap theme "striped" is applied, along with specific row formatting. You'll notice that the header row is number "0", and that the rows with data are numbered starting at "1". 
+
+```{r}
 
 # print table with {kableExtra} formatting  
 oakland_99 |>
@@ -51,6 +75,135 @@ oakland_99 |>
   # make 2002 season (row 4) bold
   row_spec(4, bold = T) 
 ```  
+
+
+Other {kableExtra} formatting resources are here:
+
+* [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
+
+* Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+
+* Hao Zhu, [Create Awesome HTML Table with knitr::kable and kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
+
+* Hao Zhu, [Using kableExtra in Bookdown](https://haozhu233.github.io/kableExtra/bookdown/index.html)
+
+
+## The {gt} package {#communication-table-gt}
+
+A recent package that provides a significant amount of formatting possibilities is {gt}.
+
+We create a basic table object with the `gt()` function:
+
+```{r}
+oakland_99 |> 
+  gt()
+```
+
+Additional formatting can then be applied to the parts of the table. 
+
+* `tab_header()` is how we apply the title and subtitle. Notice that the first and last years in the table are assigned as objects, which can then be added to the text using the `glue::glue()` function.
+
+* There are a variety of number formats available. In this case, the columns are specified but it is also possible to apply a global formatting to a variable (for example, two or more columns of dates can be formatted consistently without having to name them). 
+
+  - the `use_seps = TRUE` will place separators for thousands, millions, etc
+  
+  - the `suffixing = TRUE` automatically determines the length of the number and assigns a letter suffix. Here, the salary figures are in millions, but a similar thing would happen with thousands and billions as well.
+  
+  - `decimals = ` allows us to control the number of decimal places shown.
+  
+  - Formatting column data references (with links to each of the different number formats): https://gt.rstudio.com/reference/index.html#formatting-column-data
+
+
+```{r}
+# define year range to add as variable to title
+year_min <- min(oakland_99$year_num)
+year_max <- max(oakland_99$year_num)
+
+
+oakland_table <- oakland_99 |> 
+  gt() |> 
+  tab_header(
+    title = "Oakland Athletics",
+    subtitle = glue::glue("{year_min} to {year_max}")
+  ) |> 
+
+  # apply number formatting
+  fmt_integer(columns = attend_g, use_seps = TRUE) |> 
+  fmt_number(columns = est_payroll, suffixing = TRUE) |> 
+  fmt_number(columns = pay_index, decimals = 2) 
+
+oakland_table
+```
+
+In this next code chunk, we change the column headings to better describe the variables. `cols_label()` gives us control over how the column labels are displayed, rather than changing the variable names.
+
+
+
+* `cols_label()` reference page: https://gt.rstudio.com/reference/cols_label.html
+
+```{r}
+oakland_table |> 
+  # add column heading labels
+  cols_label(
+    year_num = "Year",
+    tm = "Team",
+    attend_g = "Average home game attendance",
+    est_payroll = "Estimated payroll",
+    pay_index = "Pay index (league average for season = 100)",
+    w = "Wins",
+    l = "Loses",
+    w_l_percent = "Win-Loss Percent"
+  ) 
+
+```
+
+
+To have more control over where the column label line breaks occur, we use the HTML tag `<br>`, and add `.fn = md` (which calls the `md()` for markdown function.)
+
+
+```{r}
+oakland_table <- oakland_table |> 
+  # add column heading labels
+  cols_label(
+    year_num = "Year",
+    tm = "Team",
+    attend_g = "Average home<br>game attendance",
+    est_payroll = "Estimated payroll",
+    pay_index = "Pay index<br>(league average for<br>season = 100)",
+    w = "Wins",
+    l = "Loses",
+    w_l_percent = "Win-Loss Percent",
+    .fn = md
+  ) 
+
+oakland_table
+
+```
+
+
+It is also possible to add summary rows that have calculations. In this instance, we will add a row with the average attendance.
+
+* "Add grand summary rows using aggregation functions" reference page: https://gt.rstudio.com/reference/grand_summary_rows.html
+
+
+```{r}
+oakland_table |> 
+  grand_summary_rows(
+    columns = attend_g,
+    fns = list(fn ="mean", id = "attend_g", label = "average"),
+    fmt = ~ fmt_integer(.)
+  )
+```
+
+
+
+More resources are here: 
+
+
+* [{gt} package site](https://gt.rstudio.com/index.html)
+
+* [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
+
 
 
 
@@ -107,47 +260,21 @@ oakland_99 |>
 
 ```
 
+Additional {flextable} resources can be found here:  
+
+* [{flextable} R package -- reference site](https://davidgohel.github.io/flextable/)
+
+* David Gohel, [Using the flextable R package](https://ardata-fr.github.io/flextable-book/index.html)
+
+
+
+
 ## Another example
 
 Earlier in this course, covered in the chapter An example of a data analytics project, we saw some other examples of data tables that were made publication-ready through {kableExtra} and {flextable} formatting. You are encouraged to review that code to see some other options that these packages make available.
 
 
 
-## Reading & reference  {#communication-table-reading}
-
-**R Markdown**
-
-Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
-
-
-
-Packages:
-
-**kableExtra**
-
-* Hao Zhu, [Create Awesome HTML Table with knitr::kable and kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
-
-* Hao Zhu, [Using kableExtra in Bookdown](https://haozhu233.github.io/kableExtra/bookdown/index.html)
-
-* Yihui Xie, Christophe Dervieux, Emily Riederer, ["The kableExtra package", _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
-
-* [KableExtra Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/444395_76727eaf9c774fa8bf932bed16500a00.html)
-
-
-
-
-**gt**
-
-* [{gt} package site](https://gt.rstudio.com/index.html)
-
-* [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) (from the package site)
-
-
-**flextable**
-
-* [{flextable} R package -- reference site](https://davidgohel.github.io/flextable/)
-
-* David Gohel, [Using the flextable R package](https://ardata-fr.github.io/flextable-book/index.html)
 
 
 
