@@ -41,6 +41,15 @@ The project will be introduced in Week 4.
 Some projects will be available for you to choose, but you may also bring your own data. Talk to the instructor to ensure that your project goals are suitable; past experience has indicated that "projects from home" are likely to be more than is required for this course! We can work to ensure that the scope is feasible for the time available, and will set you up for further development if you want to continue.
 
 
+## Submission
+
+Please submit both your .Rmd file and the HTML output that results when you knit the R Markdown file.
+
+These files will contain your code, any tables and plots that the code generates, and the supporting documentation.
+
+If this was to be printed out, it would be between 5 and 10 pages in length—but here we're working with digital documents, so that might be hard to judge!
+
+
 
 ## Project assessment
 
@@ -56,17 +65,19 @@ Some projects will be available for you to choose, but you may also bring your o
 
 ### A note about documentation
 
-You can add documentation as both comments inside code chunks and text outside. Things to think about adding are:
+You can add documentation as both comments inside code chunks and text (in the form of paragraphs or bullet points) outside.
 
-* What: explain what the code chunk is doing (for example, you might write "Here the first table is joined to the second table")
+Things to think about adding are:
 
-* Why: explain the choices you made ("I decided to see if there was a difference between group #1 and group #2, so I did the following")
+* **What**: explain what the code chunk is doing (for example, you might write "Here the first table is joined to the second table")
 
-* How: explain things that are happening in the code ("Note that the joining variable has a different name in each table" or "I had to change the variable from character to integer so that the line graph would work")
+* **Why**: explain the choices you made ("I decided to see if there was a difference between group #1 and group #2, so I did the following")
 
-* What: analysis of what the results show ("This chart shows a bigger increase in the first thing than the second thing")
+* **How**: explain things that are happening in the code ("Note that the joining variable has a different name in each table" or "I had to change the variable from character to integer so that the line graph would work")
 
-For an example of what your documentation might look lik, refer to the chapter from Week 1, [An example of a data analytics project](#walkthrough).
+* **What**: analysis of what the results show ("This chart shows a bigger increase in the first thing than the second thing")
+
+For an example of what your documentation might look like, refer to the chapter from Week 1, [An example of a data analytics project](#walkthrough).
 
 
 ## Capstone GitHub page
