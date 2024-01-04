@@ -32,13 +32,13 @@ We didn't cover everything in _R for Data Science_. Here's a short summary of th
 
 ### Workflow
 
-We didn't spend much time on the "Workflow" chapters of _R for Data Science_, but before you dive much deeper into R, particularly away from the cozy confines of the rstudio.cloud course space, we strongly recommend you review [Workflow: projects](https://r4ds.had.co.nz/workflow-projects.html).
+We didn't spend much time on the "Workflow" chapters of _R for Data Science_, but before you dive much deeper into R, particularly away from the cozy confines of the rstudio.cloud course space, we strongly recommend you review [Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts.html).
 
 (A slightly different version of this same content is hosted by RStudio at [Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects))
 
 There is also information on creating an RStudio project in the [_R Cookbook_ (2nd ed.), "Creating a New RStudio Project"](https://rc2e.com/navigatingthesoftware#recipe-CreateProject).
 
-The definitive guide to good working practices is [_What They Forgot to Teach You About R_](https://rstats.wtf/index.html) by Jenny Bryan and Jim Hester. [@Bryan_Hester_WTF] From how to name files (and objects!) to debugging, this guide is an essential next step. We can't recommend it enough.
+The definitive guide to good working practices is [_What They Forgot to Teach You About R_](https://rstats.wtf/index.html) by Jenny Bryan, Jim Hester, Shannon Pileggi, and E. David Aja. [@Bryan_Hester_WTF] From how to name files (and objects!) to debugging, this guide is an essential next step. We can't recommend it enough.
 
 Part of those project-oriented workflow methods is a little R package called [{here}](https://here.r-lib.org/); the article ["Using here with rmarkdown"](https://here.r-lib.org/articles/rmarkdown.html)
 

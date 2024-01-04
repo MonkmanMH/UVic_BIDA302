@@ -26,7 +26,9 @@ library(nycflights13)
 
 ## Introduction
 
-For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
+For this homework exercise, use the functions that were introduced in class to solve the following problems. **You shouldn't have to use any functions that are not covered in class!** [The course book](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) should be your first point of reference as you tackle the problems.
+
+Please write your answer for each question after the question text but before the line break before the next one.
 
 In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
 
