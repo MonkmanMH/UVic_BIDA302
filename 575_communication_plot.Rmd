@@ -395,6 +395,31 @@ flipper_bill
 
 ```
 
+```{r}
+flipper_bill +
+  theme(
+    panel.background = element_rect(fill = "black")
+  )
+
+flipper_bill +
+  theme(
+    panel.background = element_rect(fill = "black"),
+    panel.grid.minor = element_blank()
+  )
+
+
+
+flipper_bill +
+  theme(
+    panel.background = element_rect(fill = "black"),
+    panel.grid = element_line(colour = "orange")
+  )
+
+
+```
+
+
+
 For the next step we will change the colour palette, using `scale_colour_manual()`. 
 
 >Remember that in the scale functions, the type of data matters—here we are working with a continuous variable, but if it's a categorical variable, a "discrete" function will be required. 

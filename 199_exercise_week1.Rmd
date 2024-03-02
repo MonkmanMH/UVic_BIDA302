@@ -121,6 +121,13 @@ ggplot(data = mpg) +
 
 For Q3a-3d, use the data `nycflights13::flights`
 
+> Sidebar: To see the names of all of the tables in the {nycflights13} package, use the `data()` function:
+
+```{r}
+data(package = "nycflights13")
+```
+
+
 Pay close attention to how the variables are coded. Type `?flights` into the console to access the details about this data in the "Help" pane.
 
 Using the data in the `nycflights13::flights` table, find all flights that:
