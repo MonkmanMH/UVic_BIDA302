@@ -5,10 +5,10 @@ https://creativecommons.org/licenses/by/4.0/
 The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
 
 
-# Exercise 1 - data wrangling {#exercise1}
+# Exercise 1 - data wrangling {#exercise1} {-}
 
 
-## Setup
+## Setup {-}
 
 This chunk of R code loads the packages that we will be using.
 
@@ -24,7 +24,7 @@ library(nycflights13)
 ```
 
 
-## Introduction
+## Introduction {-}
 
 For this homework exercise, use the functions that were introduced in class to solve the following problems. **You shouldn't have to use any functions that are not covered in class!** [The course book](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) should be your first point of reference as you tackle the problems.
 
@@ -39,7 +39,7 @@ Once you have submitted your assignment, I will be hitting the "Knit" button—p
 
 
 
-## Questions
+## Questions {-}
 
 
 ### 1. Assign a variable  {-}
@@ -55,7 +55,7 @@ stringlength
 Look carefully! (This may seem like an exercise in pointlessness, but training your brain to notice even the tiniest difference will pay off when programming.)
 
 
-#### Answer
+#### Answer {-}
 
 This does not work because...
 
