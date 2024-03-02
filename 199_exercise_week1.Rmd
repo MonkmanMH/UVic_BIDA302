@@ -63,7 +63,7 @@ This does not work because...
 
 ### 2. Reducing the size of your data set  {-}
 
-Starting with the {mpg} data frame, use `filter()` and `select()` to create a single table that contains the following records and variables:
+Starting with the {mpg} data frame, use `filter()` and `select()` to create a single table that contains _only_ the following records and variables:
 
 * compact and subcompact Volkswagens from the model year 1999
 
