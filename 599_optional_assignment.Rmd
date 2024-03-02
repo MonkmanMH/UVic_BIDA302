@@ -13,7 +13,7 @@ options(scipen=999)
 
 ```
 
-# Assignment week 5: optional {#assignment5}
+# Assignment week 5: optional {#assignment5} {-}
 
 
 ```{r setup}
@@ -25,7 +25,7 @@ library(Lahman)    # Major League Baseball database
 ```
 
 
-## Introduction
+## Introduction {-}
 
 
 For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
@@ -37,7 +37,7 @@ Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welco
 Once you have finished your assignment, create an HTML document by "knitting" the document using either the "Preview" or "Knit" button in the top left of the script window frame
 
 
-## 1. Where do Major League Baseball players come from?
+## 1. Where do Major League Baseball players come from? {-}
 
 The 30 Major League Baseball teams play in cities in the United States and Canada (only Toronto!), but draw the best players from around the world. In this problem you will create a table and a chart to show the country of birth of the players in the 2020 season.
 
@@ -61,7 +61,7 @@ Here is an ER (Entity Relationship) diagram, showing the key relationships betwe
 ![_Lahman ER diagram_](static/img/Lahman-db-diagram.jpg){width=600px}
 
 
-### 1.a What countries do players come from?
+### 1.a What countries do players come from? {-}
 (marks: 4)
 
 Create a table that shows the country of birth of the players who batted during the 2020 season.
@@ -74,7 +74,7 @@ Create a table that shows the country of birth of the players who batted during 
 ```
 
 
-### 1.b Canadian Pitchers
+### 1.b Canadian Pitchers {-}
 (marks: 4)
 
 Which team had the most Canadian pitchers on their roster during the 2015 season?
@@ -88,11 +88,11 @@ Which team had the most Canadian pitchers on their roster during the 2015 season
 
 
 
-## 2. The B.C. residential housing market
+## 2. The B.C. residential housing market {-}
 
 The file "municipal_monthly_2021.xlsx" has a variety of statistics, collected by the B.C. Ministry of Finance through the Property Transfer Tax. 
 
-### 2.a Import
+### 2.a Import {-}
 (marks: 2)
 
 * Read the contents of the Excel file (there's only one sheet)
@@ -103,7 +103,7 @@ The file "municipal_monthly_2021.xlsx" has a variety of statistics, collected by
 ```
 
 
-### 2.b Wrangle
+### 2.b Wrangle {-}
 (marks: 3)
 
 
@@ -127,7 +127,7 @@ At the end of this process, you will end up with a table that looks something li
 ```
 
 
-### 2.c Plot
+### 2.c Plot {-}
 (marks: 3)
 
 

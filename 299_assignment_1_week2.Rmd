@@ -10,7 +10,7 @@ options(width = 100, dplyr.width = 100)
 
 # Assignment 1 - week 2 - data wrangling & import {#assignment2}
 
-## Setup
+## Setup  {-}
 
 This chunk of R code loads the packages that we will be using.
 
@@ -21,11 +21,11 @@ library(janitor)   # for data cleaning
 
 ```
 
-## YOUR NAME HERE
+## YOUR NAME HERE {-}
 
 
 
-## Introduction
+## Introduction {-}
 
 For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
 
@@ -36,7 +36,7 @@ Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welco
 Once you have finished your assignment, create an HTML document by "knitting" the document using either the "Preview" or "Knit" button in the top left of the script window frame.
 
 
-## Questions
+## Questions {-}
 
 
 ### 1. Religion and income data (USA)  {-}
@@ -57,14 +57,14 @@ b. Using the functions in {tidyr}, arrange this table in such a way that it is n
 
 ### 2. Importing data: csv  {-}
 
-#### 2.a Read the data
+#### 2.a Read the data {-}
 (6 marks)
 
->**NOTE:** Variable names with spaces and special symbols are a challenge to work with. >They require that you put the name inside a pair of back-ticks. For example, in the >dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
->
->You have the option to use the `clean_names()` function in the {janitor} >package to resolve this. You can find more information about the package in the course book ["Utilities" chapter](#utilities).
->
->* The reference page for {janitor} is here: https://garthtarr.github.io/meatR/janitor.html
+**NOTE:** Variable names with spaces and special symbols are a challenge to work with. They require that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
+
+You have the option to use the `clean_names()` function in the {janitor} package to resolve this. You can find more information about the package in the course book ["Utilities" chapter](#utilities).
+
+* The reference page for {janitor} is here: https://garthtarr.github.io/meatR/janitor.html
 
 Comma delimited files are one of the most common formats used for flat files. The tidyverse has a package, {readr}, which will automatically load with the function `library(tidyverse)`.
 
@@ -80,7 +80,7 @@ ii. Read the file again, but specify that the region code should be a character.
 
 
 
-#### 2.b Analysis
+#### 2.b Analysis {-}
 
 c. Now you've read the contents of the file, use your data manipulation skills to create a table that shows the total number of cases that were completed in each court region in 2018. Sort the table so the busiest regions are at the top.
 
@@ -90,7 +90,7 @@ d. Create a table showing the number of cases by court class completed in each r
 
 ### 3. Importing data: Excel  {-}
 
-#### 3.a Read the data
+#### 3.a Read the data {-}
 
 (2 marks)
 
@@ -120,7 +120,7 @@ The problem to solve: read only those rows that have valid data in them.
 Change the options for your read function to address any issues you identified in 3.a.ii
 
 
-#### 3.b Analysis
+#### 3.b Analysis {-}
 (6 marks)
 
 Use your data manipulation skills to answer the following, as separate calculations: 

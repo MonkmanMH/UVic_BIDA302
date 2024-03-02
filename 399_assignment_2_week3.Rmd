@@ -5,10 +5,10 @@ https://creativecommons.org/licenses/by/4.0/  -->
 
 
 
-# Assignment 2 - week 3 - exploratory data analysis {#assignment3}
+# Assignment 2 - week 3 - exploratory data analysis {#assignment3} {-}
 
 
-## Setup
+## Setup {-}
 
 This chunk of R code loads the packages that we will be using.
 
@@ -19,7 +19,7 @@ library(readxl)    # to read Excel files
 ```
 
 
-## Introduction
+## Introduction {-}
 
 
 For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
@@ -31,13 +31,13 @@ Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welco
 Once you have finished your assignment, create an HTML document by "knitting" the document using either the "Preview" or "Knit" button in the top left of the script window frame
 
 
-## New Homes Registry
+## New Homes Registry {-}
 
 The B.C. Ministry of Municipal Affairs and Housing publishes data from BC Housing's New Homes Registry, by regional district and municipality, by three types types of housing: single detached, multi-unit homes, and purpose built rental.^[Data source: British Columbia Data Catalogue, [New Homes Registry (2016-2020)] (https://catalogue.data.gov.bc.ca/dataset/new-homes-registry-2016-2020-). Licensed under Open Government Licence - British Columbia.]
 
 The name of the file is "bc-stats_2018-new-homes-data_tosend.xlsx"
 
-#### Packages used
+#### Packages used {-}
 
 This exercise relies on the following packages:
 
