@@ -60,11 +60,16 @@ b. Using the functions in {tidyr}, arrange this table in such a way that it is n
 #### 2.a Read the data {-}
 (6 marks)
 
-**NOTE:** Variable names with spaces and special symbols are a challenge to work with. They require that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
+**NOTE:**
 
-You have the option to use the `clean_names()` function in the {janitor} package to resolve this. You can find more information about the package in the course book ["Utilities" chapter](#utilities).
+Variable names with spaces and special symbols are a challenge to work with. They require
+that you put the name inside a pair of back-ticks. For example, in the dataset below, a variable called `Court Region` _must_ be inside the back-ticks. 
 
-* The reference page for {janitor} is here: https://garthtarr.github.io/meatR/janitor.html
+* Remember that you have the option to use the `clean_names()` function in the {janitor} package to resolve this!
+
+* An overview of {janitor} functions is here: https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html
+
+
 
 Comma delimited files are one of the most common formats used for flat files. The tidyverse has a package, {readr}, which will automatically load with the function `library(tidyverse)`.
 
