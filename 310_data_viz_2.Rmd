@@ -40,11 +40,11 @@ Your decision should be based on the answer to the question "What is the chart g
 
 In this exercise, we will look at four common plot types.
 
-* scatterplots (as we used with the Anscombe's Quartet data) show correlations between two variables
+* scatterplots (as we used with the Anscombe's Quartet data) show correlations between two continuous variables
 
 * bar charts (and the type that is known as a dot plot or a Cleveland dot plot) are good for showing the difference between categories
 
-* histograms show the distribution of cases that are measured on a continuous scale and are categorized by _bins_ of the same size
+* histograms show the distribution of cases that are measured on a continuous scale and are then categorized by _bins_ of the same size
 
 * line plots are good for showing the change of a value over time
 
@@ -58,7 +58,8 @@ After we have explored how to build those, we move on to some basic plot formatt
 
 
 
-We've seen scatterplots in Anscombe's Quartet, but here's another example using the {palmerpenguin} data, which has a variety of measurements from some penguins near the Palmer Research Station in Antartica.
+We've seen scatterplots in Anscombe's Quartet, but here's another example using the {palmerpenguins} data, which has a variety of measurements from some penguins near the Palmer Research Station in Antartica.
+
 
 ```{r}
 penguins
@@ -467,6 +468,9 @@ I'm not sure it's all that different from the default {ggplot2} colour!
 
 
 Gina Reynolds, [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) has some great examples of different types of plots made using {ggplot2}. Like an animation flipbook, you have the opportunity to "flip" through the code one line at a time, to see what changes with the addition of a line of code (or backwards, as things are removed).
+
+
+This article shows many more examples of {ggplot2} charts made using the {palmerpenguins} data: https://allisonhorst.github.io/palmerpenguins/articles/examples.html 
 
 
 Winston Chang, [_R Graphics Cookbook, 2nd edition_](https://r-graphics.org/) (2020-11-06)
