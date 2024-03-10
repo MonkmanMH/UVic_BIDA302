@@ -16,7 +16,7 @@ options(scipen=999)
 # Assignment week 5: optional {#assignment5} {-}
 
 
-```{r setup}
+```{r setup-optional-assignment}
 library(tidyverse) # functions using {tidyr}, {dplyr}, and {readr}
 library(readxl)    # to read Excel files
 

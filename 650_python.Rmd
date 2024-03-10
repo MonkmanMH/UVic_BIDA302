@@ -11,10 +11,13 @@ https://creativecommons.org/licenses/by/4.0/
 
 This chunk of R code loads the packages that we will be using.
 
-```{r setup_650, eval=FALSE}
+```{r setup-650, eval=FALSE}
 library(tidyverse)
 library(gapminder)
+```
 
+
+```{r setup-650-python}
 library(reticulate)
 ```
 

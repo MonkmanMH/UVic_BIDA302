@@ -138,7 +138,7 @@ Let's take the `class_by_cyl` table and arrange it so that there is a separate v
 You will note that this is **NOT** a tidy format! But is it one that is human-readable, and is often how data tables are published in reports.
 
 
-```{r}
+```{r pivot_wider_1}
 
 # pivot table (wide)
 
@@ -152,7 +152,7 @@ class_by_cyl_pivot
 
 Note that the table is sorted by the order in which the variables are encountered in the data; "class" is not alphabetical, and the cylinder numbers are also not ordered. Below are two solutions that result in the table variables being sorted.
 
-```{r}
+```{rpivot_wider_2}
 
 # sort with `arrange()`
 class_by_cyl |>

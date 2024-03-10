@@ -13,10 +13,11 @@ The tables of functions are modified from originals by Gina Reynolds, [Tidyverse
 This chunk of R code loads the packages that we will be using.
 
 
-```{r setup_150, eval=FALSE}
+```{r setup150}
 
 library(tidyverse)
 library(gapminder)
+
 ```
 
 
@@ -533,7 +534,7 @@ In this section, we will look at three different approaches to get to the same r
 Here we start with the original ungrouped dataset, applying the `group_by()`, then use the `n()` function inside a `summarise()` to count the number of cases (or observations).
 
 
-```{r}
+```{r 150-mpg-summary}
 
 mpg |> 
   group_by(class, cyl) |> 

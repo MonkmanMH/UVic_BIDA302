@@ -12,7 +12,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 This chunk of R code loads the packages that we will be using.
 
-```{r eval = FALSE}
+```{r, eval = FALSE}
 
 library(tidyverse)
 # data packages

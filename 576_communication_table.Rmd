@@ -8,11 +8,9 @@ https://creativecommons.org/licenses/by/4.0/
 
 ## Setup
 
-This chunk of R code loads the packages that we will be using.
+This chunk of R code loads the table formatting packages that we will be using.
 
-```{r setup_576, eval=FALSE}
-library(tidyverse)
-
+```{r setup_576}
 library(kableExtra)
 library(gt)
 library(flextable)

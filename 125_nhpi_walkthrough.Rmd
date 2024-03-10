@@ -34,7 +34,7 @@ This plot was created in early 2020, when the most recent data available was for
 
 This chunk of R code loads the packages that we will be using.
 
-```{r setup_125, eval=FALSE}
+```{r setup_125}
 # tidyverse
 library(tidyverse)
 library(lubridate)  # date functions
@@ -312,20 +312,6 @@ NHPI_table4 <- NHPI_table |>
 head(NHPI_table4)
 
 ```
-
-In the revised example below, the range of the month variables can be specified using the `c_across()` function.
-
-```{r table4b}
-
-NHPI_table4 <- NHPI_table |>
-  rowwise() |> 
-#  use `c_across()` to specify the range of columns
-  mutate(annual_avg = mean(c_across(Jan:Dec), na.rm = TRUE))
-
-head(NHPI_table4)
-
-```
-
 
 For more information about row-wise operations with {dplyr}, see the following resources:
 
