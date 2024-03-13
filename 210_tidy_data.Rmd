@@ -94,46 +94,45 @@ The "wide" form doesn't adhere to the rules of tidy data, since each row has mul
 
 ### An example
 
-Let's create a pivot table crosstab using the {mpg} data package of automobile fuel economy.
+Let's create a pivot table crosstab using the {palmerpenguins} data package of automobile fuel economy.
 
 First, a look at the source table.
 
 ```{r}
-mpg
+penguins
 
 ```
 
 
-Use `group_by` and `summarise` to create a summary table of the average engine displacement:
+Use `group_by` and `summarise` to create a summary table of the average bird weight by species. Note that we have to use `na.rm = TRUE` because of the presence of NA values in the variable `body_mass_g`.
 
 ```{r}
-mpg |>                                
-  group_by(class) |>                   
-  summarise(displ_mean = mean(displ)) 
+penguins |>                                
+  group_by(species) |>                   
+  summarise(mass_mean = mean(body_mass_g, na.rm = TRUE)) 
 
 ```
 
 
 
-Now if we do the same with vehicle class and number of cylinders, we end up with a much longer table. Since we are going to restructure this table, it will be assigned to a new object `class_by_cyl`.
+Now if we do the same with species and island, we end up with a much longer table. Since we are going to restructure this table, it will be assigned to a new object `penguin_species_by_island`.
 
 ```{r}
 
-class_by_cyl <- mpg |>
-  group_by(class, cyl) |>
-  summarise(displ_mean = mean(displ)) |>
-  arrange(desc(displ_mean))
+penguin_species_by_island <- penguins |>                                
+  group_by(species, island) |>                   
+  summarise(mass_mean = mean(body_mass_g, na.rm = TRUE)) 
 
-class_by_cyl
+penguin_species_by_island
 
 ```
 
-While this long tabular structure is useful for coding, it's harder for you and I to compare across both the "class" and "cyl" dimensions. This is a situation where a wide structure is desirable.
+While this long tabular structure is useful for coding, it's harder for you and I to compare across both the "species" and "island" dimensions. This is a situation where a wide structure is desirable.
 
 
 ### `pivot_wider()`
 
-Let's take the `class_by_cyl` table and arrange it so that there is a separate variable for each number of cylinders. Instead of a single "cyl" column, there will be multiple columns, one for each category of cylinder count.
+Let's take the `penguin_species_by_island` table and arrange it so that there is a separate column (variable) for each island. Instead of a single "island" column, there will be multiple columns, one for each island, and with the average weight of the birds of each species on each.
 
 You will note that this is **NOT** a tidy format! But is it one that is human-readable, and is often how data tables are published in reports.
 
@@ -142,52 +141,33 @@ You will note that this is **NOT** a tidy format! But is it one that is human-re
 
 # pivot table (wide)
 
-class_by_cyl_pivot <- class_by_cyl |>
-  pivot_wider(names_from = cyl, values_from = displ_mean)
+penguin_species_by_island_pivot <- penguin_species_by_island |>
+  pivot_wider(names_from = island, values_from = mass_mean)
 
-class_by_cyl_pivot
-
-
-```
-
-Note that the table is sorted by the order in which the variables are encountered in the data; "class" is not alphabetical, and the cylinder numbers are also not ordered. Below are two solutions that result in the table variables being sorted.
-
-```{rpivot_wider_2}
-
-# sort with `arrange()`
-class_by_cyl |>
-  # sort before pivot
-  arrange(cyl, class) |> 
-  pivot_wider(names_from = cyl, values_from = displ_mean)
-
-# sort with `names_sort =` argument in `pivot_wider()` function
-class_by_cyl |>
-  arrange(cyl, class) |> 
-  # sort within the `pivot_wider()`
-  pivot_wider(names_from = cyl, values_from = displ_mean,
-              names_sort = TRUE)
+penguin_species_by_island_pivot
 
 
 ```
 
+Note that there are "NA" values introduced into the table. Chinstrap penguins were only recorded on Dream Island, and Gentoo penguins were only on Biscoe Island...NA values appear in the columns where there were no birds of that species row.
 
 ### `pivot_longer()`
 
-Now, unpivot it back to the original structure. Note that the names of the new variables "cyl" and "displ_mean" need to be inside quotation marks!
+Now we will pivot the new table back to the original structure. Note that the names of the new variables "island" and "mean_mass" need to be inside quotation marks!
 
 ```{r}
 # and back to longer...
 
-displ_class_by_cyl <- class_by_cyl_pivot |>
-  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
+penguin_species_by_island_unpivot <- penguin_species_by_island_pivot |>
+  pivot_longer(-species, names_to = "island", values_to = "mean_mass")
 
-displ_class_by_cyl
+penguin_species_by_island_unpivot
 
 ```
 
 What do you notice about the structure of the unpivoted table?
 
-The creation of the wider table introduced "NA" values where there was not a "cyl" category to match the "class" of vehicle. In our new long table, those "NA" values have been retained.
+The creation of the wider table introduced "NA" values where there was not an "island" category to match the "species" of penguin. In our new long table, those "NA" values have been retained.
 
 
 
@@ -201,109 +181,10 @@ For example, `spread()` to replicate the `pivot_wider()` function:
 
 ```{r}
 
-class_by_cyl |>
-  spread(cyl, value = displ_mean)
+penguin_species_by_island |>
+  spread(key = island, value = mass_mean)
 
 ```
-
-
-
-
-### A longer example
-
-First step: review the structure of the `mpg` data set:
-
-```{r}
-mpg
-```
-
-
-Run the chunk below to create the `displ_class_by_cyl` table:
-
-* group the cars by class and cylinder size, and 
-
-* show the mean displacement (engine size)
-
-```{r}
-# summary table - class by cylinder
-displ_class_by_cyl <- mpg |>
-  group_by(class, cyl) |>
-  summarise(displ_mean = mean(displ)) |>
-  arrange(cyl, class) |>
-  pivot_wider(names_from = cyl, values_from = displ_mean) |>
-  pivot_longer(-class, names_to = "cyl", values_to = "displ_mean")
-
-displ_class_by_cyl
-
-```
-
-Calculate the mean of `displ_mean`:
-
-```{r}
-# example
-mean(displ_class_by_cyl$displ_mean)
-
-```
-
-The "NA" values get in the way of the calculation. If `na.rm = TRUE` is added to the `mean()` function, R will calculate the value for us by removing the "NA" values.
-
-```{r}
-
-# solution
-mean(displ_class_by_cyl$displ_mean, na.rm = TRUE)
-
-```
-
-
-An alternative solution: use a filter with `!na` to remove the records with `NA` values:
-
-```{r}
-# example
-displ_class_by_cyl |>
-  summarise(displ_mean_all = mean(displ_mean))
-
-# solution
-displ_class_by_cyl |>
-  filter(!is.na(displ_mean)) |>
-  summarise(displ_mean_all = mean(displ_mean))
-
-```
-
-
-### Summarize with `group()` and `ungroup()`
-
-
-You'll notice in the example above that when we summarize `displ_class_by_cyl` it gives the mean values by class, even though we didn't use any grouping variable.
-
-This is because when we ran the code to create the `displ_class_by_cyl` table, we grouped by `class` and `cyl`. Running the `summarise()` function is applied, it removes one level of the grouping (in this case, `cyl`): 
-
-```{r}
-
-# example
-displ_class_by_cyl
-
-displ_class_by_cyl |>
-  filter(!is.na(displ_mean)) |>
-  summarise(displ_mean_all = mean(displ_mean))
-
-
-```
-
-
-If you want the mean of _all_ the values, you have to use `ungroup()` before `summarise()`, to "peel off" `class`.
-
-
-```{r}
-
-# solution
-displ_class_by_cyl |>
-  filter(!is.na(displ_mean)) |>
-  ungroup() |>
-  summarise(displ_mean_all = mean(displ_mean))
-
-
-```
-
 
 
 

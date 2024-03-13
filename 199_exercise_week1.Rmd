@@ -69,6 +69,8 @@ Starting with the {mpg} data frame, use `filter()` and `select()` to create a si
 
 * manufacturer, model, mileage in both city and highway 
 
+First, view the data table:
+
 ```{r}
 mpg
 
