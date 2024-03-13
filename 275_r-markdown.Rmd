@@ -12,6 +12,8 @@ This chunk of R code loads the packages that we will be using.
 ```{r setup_275, eval=FALSE}
 library(tidyverse)
 library(markdown)
+
+library(palmerpenguins)
 ```
 
 This document will introduce you to R Markdown notebooks, and give you some hands-on experience adding to the document.
@@ -159,13 +161,15 @@ my_total
 
 R code chunks can contain anything you want to do in R.
 
-Here's a chunk that contains code to create a chart from everyone's favourite data set, `mpg`
+Here's a chunk that contains code to create a chart from everyone's favourite data set, `penguins` (from the {palmerpenguins} package).
 
 Run the chunk and see what happens...
 
 ```{r}
-ggplot(data = mpg) +
-  geom_point(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm))
+
 ```
 
 
