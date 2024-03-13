@@ -27,12 +27,34 @@ https://creativecommons.org/licenses/by/4.0/
 
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+
 library(knitr)
 opts_chunk$set(message = FALSE, warning = FALSE, cache = FALSE)
 options(width = 100, dplyr.width = 100)
 
-source("packages_bida302.R")
+#source("packages_bida302.R")
+
+# package-a-rama
+#
+# all of the packages for all the modules of BIDA302
+
+# tidyverse etc
+library(tidyverse)
+# note that the packages below aren't part of the core tidyverse so have to be loaded explicitly
+library(forcats)    # working with factors
+library(glue)       # for gluing strings together
+library(lubridate)  # date functions
+library(readxl)     # to read Excel files
+library(scales)     # extending {ggplot2}
+library(stringr)    # working with strings
+
+# data
+library(gapminder)
+library(Lahman)
+library(nycflights13)
+library(palmerpenguins)
+
 
 ```
 
@@ -102,7 +124,11 @@ Concepts and practices that you can carry through to data analysis in other envi
 
 ## Text books and other readings {-}
 
-In addition to the material in this ebook, the text book for this course is Garrett Grolemund and Hadley Wickham, _R for Data Science_ [@Wickham_Grolemund2016]. While _R for Data Science_ is available in paper form, it also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
+In addition to the material in this ebook, the text book for this course is _R for Data Science (2nd edition)_ by Hadley Wickham, Mine Çetinkaya-Rundel, and Garret Grolemund [@Wickham_etal_R4DS_2023]. While the book is available for purchase from your favourite bookseller, it also has a free online version at [r4ds.hadley.nz](https://r4ds.hadley.nz/)
+
+* Solutions to the exercises can be found at https://mine-cetinkaya-rundel.github.io/r4ds-solutions/
+
+For some elements, we will refer to the first edition of _R for Data Science_ (by Garrett Grolemund and Hadley Wickham) [@Wickham_Grolemund2016]. Like the 2nd edition, the first edition of _R for Data Science_ is also exists as a freely available online text at [r4ds.had.co.nz](https://r4ds.had.co.nz/).
 
 
 ![_R for Data Science_](static/img/R4DS_400.png){width=25%}
@@ -115,7 +141,7 @@ A useful reference book for this course is JD Long & Paul Teetor, _R Cookbook, 2
 Additional readings and reference material are noted in each section, and included in the comprehensive bibliography.
 
 
-### Code of Conduct {-}
+## Code of Conduct {-}
 
 The [R Consortium and R Community Code of Conduct](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct) serves well for us. This class,
 
