@@ -327,7 +327,7 @@ The function for conversion from pounds to kilograms is pasted below:
 ```{r}
 
 # example
-lb_to_kg_conversion <- function(lb, rnd = 2) {
+lb_to_kg_conversion <- function(lb, rnd = 1) {
   kg <- lb / 2.2046226218488
   kg <- round(kg, rnd)
   return(kg)

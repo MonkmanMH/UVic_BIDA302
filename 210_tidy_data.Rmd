@@ -94,7 +94,7 @@ The "wide" form doesn't adhere to the rules of tidy data, since each row has mul
 
 ### An example
 
-Let's create a pivot table crosstab using the {palmerpenguins} data package of automobile fuel economy.
+Let's create a pivot table crosstab using the penguin data in the {palmerpenguins} data package.
 
 First, a look at the source table.
 
