@@ -13,7 +13,7 @@ options(scipen=999)
 
 ```
 
-# Assignment 3 - week 4 - Moneyball {#moneyball} {-}
+# Assignment 3 - week 4 - Moneyball {-}
 
 
 
