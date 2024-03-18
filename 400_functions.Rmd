@@ -388,6 +388,7 @@ my_temperatures |>
 
 
 ::: {.rmdtip}
+
 ### Multiple dice rolls
 
 

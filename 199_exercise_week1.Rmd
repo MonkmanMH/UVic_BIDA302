@@ -5,7 +5,7 @@ https://creativecommons.org/licenses/by/4.0/
 The tables of functions are modified from originals by Gina Reynolds,[Tidyverse in Action](https://github.com/EvaMaeRey/tidyverse_in_action) -->
 
 
-# Exercise 1 - data wrangling {#exercise1} {-}
+# Exercise 1 - data wrangling {-}
 
 
 ## Setup {-}
@@ -28,19 +28,11 @@ library(nycflights13)
 
 For this homework exercise, use the functions that were introduced in class to solve the following problems. **You shouldn't have to use any functions that are not covered in class!** [The course book](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/) should be your first point of reference as you tackle the problems.
 
-Please write your answer for each question after the question text but before the line break before the next one.
-
-In some cases, you will have to insert R code chunks, and run them to ensure that you've got the right result.
-
-Use all of the R Markdown formatting you want! Bullets, bold text, etc. is welcome.
-
-Once you have submitted your assignment, I will be hitting the "Knit" button—please ensure that the output renders correctly.
-
-
 
 
 ## Questions {-}
 
+::: {.rmdtip}
 
 ### 1. Assign a variable  {-}
 
@@ -55,9 +47,22 @@ stringlength
 Look carefully! (This may seem like an exercise in pointlessness, but training your brain to notice even the tiniest difference will pay off when programming.)
 
 
-#### Answer {-}
+<details>
 
-This does not work because...
+<summary>
+**Solution**
+</summary>
+
+First, the code chunk was missing the {r} portion.
+
+Second, the object name is spelled differently in each case: it ends with `ht` in the first line, and `th` in the second.
+
+</details>
+:::
+
+
+::: {.rmdtip}
+
 
 
 
@@ -69,6 +74,13 @@ Starting with the {mpg} data frame, use `filter()` and `select()` to create a si
 
 * manufacturer, model, mileage in both city and highway 
 
+<details>
+
+<summary>
+**Solution**
+</summary>
+
+
 First, view the data table:
 
 ```{r}
@@ -76,6 +88,48 @@ mpg
 
 ```
 
+In this first solution, each evaluation gets its own `filter()` function:
+
+```{r}
+mpg |>
+  filter(manufacturer == "volkswagen")  |> 
+  filter(class == "compact" | class == "subcompact")  |>   ##  - use of "OR" `|` instead of `%in%`
+  filter(year == 1999) |>
+  select(manufacturer, model, cty, hwy)
+
+```
+
+Another possible solution combines the three evaluations into a single `filter()` function:
+
+
+```{r}
+mpg |>
+  filter(manufacturer == "volkswagen",
+         class %in% c("compact", "subcompact"),
+         year == 1999) |>
+  select(manufacturer, model, cty, hwy)
+
+```
+
+In this variant, the `filter()` function uses "&" instead of commas at the end of each evaluation:
+
+```{r}
+
+## variant
+mpg |>
+  filter(manufacturer == "volkswagen" &   # use of "&" instead of commas in filter
+         class %in% c("compact", "subcompact") &
+         year == 1999) |>
+  select(manufacturer, model, cty, hwy)
+```
+
+
+
+</details>
+:::
+
+
+::: {.rmdtip}
 
 
 
@@ -89,16 +143,27 @@ What happens if you include the name of a variable twice in a `select()` call? D
 ```{r}
 library(gapminder)
 
+```
+<details>
 
+<summary>
+**Solution**
+</summary>
+
+The variable is _not_ duplicated. In the example below, the variable "year" is duplicated but it appears only once in the output from the `select()` function.
+
+```{r}
+gapminder |>
+  select(country, year, lifeExp, year)
 
 ```
 
 
+</details>
+:::
 
 
-
-***
-
+::: {.rmdtip}
 
 ### 4. R Markdown  {-}
 
@@ -116,8 +181,27 @@ ggplot(data = mpg) +
 
 ```
 
+<details>
 
-***
+<summary>
+**Solution**
+</summary>
+
+
+The solution is to put the option "echo = FALSE" after the "r" in the opening bit of the code.
+
+
+`{r, echo=FALSE}`
+`ggplot(data = mpg) +`
+`  geom_point(mapping = aes(x = displ, y = hwy))`
+
+
+
+</details>
+:::
+
+
+::: {.rmdtip}
 
 ### 5. Flight data {-}
 
@@ -141,6 +225,146 @@ b. Flew to Houston (there are two airports, with the codes IAH or HOU)
 c. Were operated by United, American, or Delta (you may want to review the separate airlines table to check the codes for each airline)
 
 d. Departed in summer (July, August, and September)
+
+<details>
+
+<summary>
+**Solution**
+</summary>
+
+
+
+
+**Solution a**
+
+_a. Had an arrival delay of two or more hours_
+
+Note that variable `arr_delay` is measured in minutes, so we need to find the flights where that's greater than or equal to 120 minutes.
+
+```{r}
+filter(flights, arr_delay >= 120)
+```
+
+
+
+**Solution b**
+
+_b. Flew to Houston (there are two airports, with the codes IAH or HOU)_
+
+
+```{r}
+
+filter(flights, dest == "IAH" | dest == "HOU")
+
+```
+
+
+Note that you could also use `%in%`
+
+```{r}
+
+filter(flights, dest %in% c("IAH", "HOU"))
+
+# create named variable "houston"
+houston <- c("IAH", "HOU")
+filter(flights, dest %in% houston)
+
+```
+
+
+**Solution c**
+
+_c. Were operated by United, American, or Delta_ 
+
+This one takes a bit of effort--you have to find the codes that match the values in the variable `carrier` with the airline names.
+
+In addition to the `flights` table, the {nycflights13} package has a number of other tables, including `airlines`
+
+```{r}
+nycflights13::airlines
+```
+
+
+From this, we can find:
+
+* United == UA
+
+* American == AA
+
+* Delta == DL
+
+```{r}
+# the `%in%` approach -- other methods are possible!
+filter(flights, carrier %in% c("AA", "DL", "UA"))
+
+```
+
+
+
+**Solution d**
+
+d. Departed in summer (July, August, and September)
+
+The variable `month` is numeric, so we have to use greater than and less than to define the range.
+
+```{r}
+
+filter(flights, month >= 7, month <= 9)
+
+```
+
+
+Using the `:` operator would also allow us to make a range. 
+
+```{r}
+
+filter(flights, month %in% 7:9)
+
+```
+
+
+You could also use "or" `|`, or `between()`
+
+```{r}
+
+filter(flights, month == 7 |
+         month == 8 |
+         month == 9)
+
+filter(flights, between(month, 7, 9))
+
+```
+
+
+**Solution a-d**
+
+It is possible to combine all four of the elements in Q6 into a single code sequence:
+
+```{r}
+# with each step as a separate `filter()` statement
+flights |> 
+  filter(arr_delay >= 120) |> 
+  filter(dest == "IAH" | dest == "HOU") |> 
+  filter(carrier %in% c("AA", "DL", "UA")) |> 
+  filter(month %in% 7:9)
+
+```
+
+We could go one step further and combine it all into a single `filter()` function:
+
+```{r}
+flights |> 
+  filter(arr_delay >= 120 &
+           dest %in% c("IAH", "HOU") & 
+           carrier %in% c("AA", "DL", "UA") & 
+           month %in% 7:9)
+
+```
+
+
+
+</details>
+:::
 
 
 

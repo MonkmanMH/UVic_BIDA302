@@ -655,8 +655,6 @@ Note: this exercise does not delve into the question of how to _design_ your plo
 
   - [Storytelling with Data: quick reference guide](http://storage.cloversites.com/flemingmartinllc/documents/storytelling%20with%20data%20QUICK%20REFERENCE%20GUIDE.pdf)
 
-* Stephanie Evergreen, _Presenting Data Effectively: Communicating Your Findings for Maximum Impact_ [@Evergreen_2014]
-
 * Jim Stikeleather's series of three articles in the _Harvard Business Review_ make a good summary of effective data visualizations:
 
   - ["When Data Visualization Works — And When It Doesn’t"](https://hbr.org/2013/03/when-data-visualization-works-and), _Harvard Business Review_, 2013-03-27
@@ -671,7 +669,15 @@ Note: this exercise does not delve into the question of how to _design_ your plo
   - "The problem boiled down to this: how do I pick nice-looking colors that cover a broad set of use cases for categorical data while meeting accessibility goals?"
 
 
+### Data visualization books
 
+Unfortunately these don't have a free online version, but are worth finding your local library or bookstore:
+
+
+* Stephanie Evergreen, _Presenting Data Effectively: Communicating Your Findings for Maximum Impact_ [@Evergreen_2014]
+
+
+* Scott Berinato, _Good Charts: The HBR Guide to Making Smarter, More Persuasive Data Visualizations_ [@Berinato_2023]
 
 -30-
 
