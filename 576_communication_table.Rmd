@@ -269,7 +269,7 @@ Additional {flextable} resources can be found here:
 
 ## Another example
 
-Earlier in this course, covered in the chapter An example of a data analytics project, we saw some other examples of data tables that were made publication-ready through {kableExtra} and {flextable} formatting. You are encouraged to review that code to see some other options that these packages make available.
+Earlier in this course, in the workflow example of the Statistics Canada New Housing Price Index (NHPI), we saw some other examples of data tables that were made publication-ready through {kableExtra} and {flextable} formatting. You are encouraged to review that code to see some of the other options that these packages make available.
 
 
 
