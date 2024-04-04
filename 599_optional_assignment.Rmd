@@ -27,6 +27,8 @@ library(Lahman)    # Major League Baseball database
 
 ## Introduction {-}
 
+_NOTE: This optional assignment is for those course participants who were not able to complete one of assignments #1–#3._
+
 
 For this homework assignment, please write your answer for each question after the question text but before the line break before the next one.
 
