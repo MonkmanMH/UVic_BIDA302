@@ -570,7 +570,12 @@ ggplot(population_centres_bc, aes(x = population_2021, y = population_density_20
 
 
 
-For more information about modifying the axes, see the ggplot FAQ: https://ggplot2.tidyverse.org/articles/faq-axes.html
+For more information about modifying the axes, see 
+
+* The ggplot FAQ: https://ggplot2.tidyverse.org/articles/faq-axes.html
+
+* Andrew Heiss, 2022-12-08, ["How to use natural and base 10 log scales in ggplot2"](https://www.andrewheiss.com/blog/2022/12/08/log10-natural-log-scales-ggplot/)
+
 
 ---
 
