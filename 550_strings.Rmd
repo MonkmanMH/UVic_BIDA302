@@ -43,6 +43,8 @@ options(width = 100, dplyr.width = 100)
 
 * a handy tool: [regex101.com](https://regex101.com/)
 
+* a visual tool: [cyrilex](https://extendsclass.com/regex-tester.html)
+
 * Jeff Atwood, [Regular Expressions: Now You Have Two Problems](https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/)
 
 
