@@ -401,6 +401,13 @@ Wes McKinney, [_Python for Data Analysis_]—McKinney is the lead developer behi
 * the [main website for the book (including links to additional resources)](https://wesmckinney.com/pages/book.html)
 
 
+Nailong Zhang, [_A Tour of Data Science: Learn R and Python in Parallel_], 2021
+
+* this text book has a side-by-side comparison of R and Python code to achieve the same result, including a chapter on linear regression modeling
+
+* [the open version of the book](https://www.anotherbookondatascience.com/)
+
+
 
 Jake VanderPlas, [Python Data Science Handbook: Essential Tools for Working with Data](https://www.oreilly.com/library/view/python-data-science/9781491912126/), 2016
 
